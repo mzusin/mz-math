@@ -1,5 +1,13 @@
 # A collection of typescript-based math helpers
 
+## Table of contents
+- [TypeScript Usage](#typescript-usage)
+- [Browser Usage](#browser-usage)
+- Vectors
+    - [Vectors Sum](#vectors-sum)
+    - [Vector Length](#vector-length)
+- [License](#license)
+
 ## TypeScript Usage
 
 To use the library with TypeScript, you need to install the module from npm:
@@ -88,3 +96,8 @@ const len2 = v2Length({ x: 1, y: 2 }, 2); // 2.24
 const len3 = v3Length({ x: 1, y: 2, z: 3 }); // 3.7416573867739413
 const len4 = v3Length({ x: 1, y: 2, z: 3 }, 2); // 3.74
 ```
+
+## License
+[MIT license](https://github.com/toolcool-org/toolcool-math/blob/main/LICENSE)
+
+It can be used **for free** in any personal or commercial project :gift: 
