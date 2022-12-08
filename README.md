@@ -24,8 +24,11 @@ Any function can also be used in the browser using the **tc-math.min.js** file. 
 ```html
 <script src="tc-math.min.js"></script>
 <script>
-    // vector sum example -----------------
-    console.log(TCMath.v2Sum({ x: 1, y: 2 }, { x: 3, y: 4 }));
+    const sum = TCMath.v2Sum(
+        { x: 1, y: 2 }, 
+        { x: 3, y: 4 }
+    );
+    console.log(sum);
 </script>
 ```
 
@@ -72,4 +75,16 @@ const v2 = { x: 3, y: 4, z: 4 };
 const v3 = { x: 7, y: 8, z: 9 };
 const v4 = { x: 10, y: 11, z: 12 };
 const sum = v3Sum(v1, v2, v3, v4); // { x: 21, y: 25, z: 28 }
+```
+
+## Vector Length
+
+Vector length can be found using the **v2Length** and **v3Length** functions. Each function receives an optional **decimalPlaces** parameter.
+
+```js
+const len1 = v2Length({ x: 1, y: 2 }); // 2.23606797749979
+const len2 = v2Length({ x: 1, y: 2 }, 2); // 2.24
+
+const len3 = v3Length({ x: 1, y: 2, z: 3 }); // 3.7416573867739413
+const len4 = v3Length({ x: 1, y: 2, z: 3 }, 2); // 3.74
 ```

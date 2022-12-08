@@ -1,10 +1,16 @@
-import { v2Sum, v3Sum } from '../src/vector';
+import { v2Length, v3Length, v2Sum, v3Sum } from '../src/vector';
 
 describe('Vector Sum', () => {
     test('{1,2} + {3,4}', () => {
         const v1 = { x: 1, y: 2 };
         const v2 = { x: 3, y: 4 };
         expect(v2Sum(v1, v2)).toStrictEqual({ x: 4, y: 6 });
+    });
+
+    test('{-1,-2} + {3,4}', () => {
+        const v1 = { x: -1, y: -2 };
+        const v2 = { x: 3, y: 4 };
+        expect(v2Sum(v1, v2)).toStrictEqual({ x: 2, y: 2 });
     });
 
     test('{1,2} + {3,4} + {5,6}', () => {
@@ -41,5 +47,23 @@ describe('Vector Sum', () => {
         const v3 = { x: 7, y: 8, z: 9 };
         const v4 = { x: 10, y: 11, z: 12 };
         expect(v3Sum(v1, v2, v3, v4)).toStrictEqual({ x: 21, y: 25, z: 28 });
+    });
+});
+
+describe('Vector Length', () => {
+    test('Length of {1,2} with 2 decimal places', () => {
+        expect(v2Length({ x: 1, y: 2 })).toStrictEqual(2.23606797749979);
+    });
+
+    test('Length of {1,2} with 2 decimal places', () => {
+        expect(v2Length({ x: 1, y: 2 }, 2)).toStrictEqual(2.24);
+    });
+
+    test('Length of {1,2,3}', () => {
+        expect(v3Length({ x: 1, y: 2, z: 3 })).toStrictEqual(3.7416573867739413);
+    });
+
+    test('Length of {1,2,3} with 2 decimal places', () => {
+        expect(v3Length({ x: 1, y: 2, z: 3 }, 2)).toStrictEqual(3.74);
     });
 });

@@ -12,11 +12,16 @@ declare module 'toolcool-math' {
 
     export const v2Sum: (...vectors: IVector2[]) => IVector2;
     export const v3Sum: (...vectors: IVector3[]) => IVector3;
+    export const v2Length: (vector: IVector2, decimalPlaces?: number) => number;
+    export const v3Length: (vector: IVector3, decimalPlaces?: number) => number;
 
     global {
         interface Window {
             TCMath: {
                 v2Sum: typeof v2Sum;
+                v3Sum: typeof v3Sum;
+                v2Length: typeof v2Length;
+                v3Length: typeof v3Length;
             };
         }
     }
