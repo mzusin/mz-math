@@ -15,6 +15,8 @@ declare module 'toolcool-math' {
     export const v2Length: (vector: IVector2, decimalPlaces?: number) => number;
     export const v3Length: (vector: IVector3, decimalPlaces?: number) => number;
 
+    export const setDecimalPlaces: (num: number, decimalPlaces?: number | undefined) => number;
+
     global {
         interface Window {
             TCMath: {
@@ -22,6 +24,8 @@ declare module 'toolcool-math' {
                 v3Sum: typeof v3Sum;
                 v2Length: typeof v2Length;
                 v3Length: typeof v3Length;
+
+                setDecimalPlaces: typeof setDecimalPlaces;
             };
         }
     }

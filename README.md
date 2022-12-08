@@ -6,6 +6,8 @@
 - Vectors
     - [Vectors Sum](#vectors-sum)
     - [Vector Length](#vector-length)
+- Format
+  - [Set decimal places](#set-decimal-places)
 - [License](#license)
 
 ## TypeScript Usage
@@ -39,6 +41,10 @@ Any function can also be used in the browser using the **tc-math.min.js** file. 
     console.log(sum);
 </script>
 ```
+
+-----------------------------------------------
+
+# Vectors
 
 ## Vectors Sum
 
@@ -96,6 +102,28 @@ const len2 = v2Length({ x: 1, y: 2 }, 2); // 2.24
 const len3 = v3Length({ x: 1, y: 2, z: 3 }); // 3.7416573867739413
 const len4 = v3Length({ x: 1, y: 2, z: 3 }, 2); // 3.74
 ```
+
+-----------------------------------------------
+
+# Format
+
+## Set Decimal Places
+
+This helper allows to format a number to show a selected number of decimal places.
+
+```js
+const res = setDecimalPlaces(1.2345, 2); // 1.23
+const res = setDecimalPlaces(1.2399, 2); // 1.24
+const res = setDecimalPlaces(1.2399, 0); // 1
+```
+
+The result of this function is a number (not a string), so sometimes fewer decimal places will be displayed after rounding:
+
+```js
+const res = setDecimalPlaces(1.239999, 4); // 1.2400 = 1.24
+```
+
+-----------------------------------------------
 
 ## License
 [MIT license](https://github.com/toolcool-org/toolcool-math/blob/main/LICENSE)
