@@ -1,0 +1,42 @@
+{
+  "name": "toolcool-math",
+  "version": "1.0.0",
+  "description": "A collection of typescript-based math helpers.",
+  "main": "./dist/tc-math.min.js",
+  "types": "./index.d.ts",
+  "scripts": {
+    "core:build": "node run/core.js",
+    "core:watch": "node run/core.js -- watch",
+    "test": "./node_modules/karma/bin/karma start ./karma.conf.cjs",
+    "eslint": "eslint ./src/**",
+    "typescript-declarations": "tsc --emitDeclarationOnly"
+  },
+  "type": "module",
+  "keywords": [
+    "math",
+    "vector"
+  ],
+  "author": "Tool Cool <toolcool.org@gmail.com>",
+  "license": "MIT",
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toolcool-org/toolcool-math.git"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "ignore": [
+      ".git",
+      "node_modules/**/node_modules"
+    ],
+    "verbose": false,
+    "watch": [
+      "src/docs/"
+    ],
+    "ext": "js,json,html,css,md,ts,tsx,glsl"
+  }
+}
