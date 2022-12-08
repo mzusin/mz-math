@@ -5,9 +5,10 @@
   "main": "./dist/tc-math.min.js",
   "types": "./index.d.ts",
   "scripts": {
-    "core:build": "node run/core.js",
-    "core:watch": "node run/core.js -- watch",
-    "test": "./node_modules/karma/bin/karma start ./karma.conf.cjs",
+    "build": "node run/core.js",
+    "watch": "node run/core.js -- watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "eslint": "eslint ./src/**",
     "typescript-declarations": "tsc --emitDeclarationOnly"
   },
@@ -38,5 +39,16 @@
       "src/docs/"
     ],
     "ext": "js,json,html,css,md,ts,tsx,glsl"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.20.2",
+    "@types/jest": "^29.2.3",
+    "@typescript-eslint/eslint-plugin": "^5.43.0",
+    "@typescript-eslint/parser": "^5.43.0",
+    "esbuild": "^0.16.3",
+    "eslint": "^8.27.0",
+    "jest": "^29.3.1",
+    "ts-jest": "^29.0.3",
+    "ts-node": "^10.9.1"
   }
 }
