@@ -8,6 +8,8 @@
     - [Vector Length](#vector-length)
 - Angles
   - [Get vector angle](#get-vector-angle)
+  - [Degrees to radians](#degrees-to-radians)
+  - [Radians to degrees](#radians-to-degrees)
 - Format
   - [Set decimal places](#set-decimal-places)
 - [License](#license)
@@ -116,6 +118,22 @@ The **getV2Angle** function returns the angle **in radians** between the positiv
 ```js
 const angle1 = getV2Angle({ x: 10, y: 20 }); // 1.1071487177940904 radians
 const angle2 = getV2Angle({ x: 10, y: 20 }, 2); // 1.11 radians
+```
+
+## Degrees to radians
+
+```js
+const res1 = degreesToRadians(90); // 1.5707963267948966
+const res2 = degreesToRadians(90, 2); // 1.57
+```
+
+## Radians to degrees
+
+```js
+const res = radiansToDegrees(1.5708); // 90.00021045914971
+const res = radiansToDegrees(1.5708, 0); // 90
+const res = radiansToDegrees(3.14159, 3); // 180
+const res = radiansToDegrees(4.71239, 3); // 270
 ```
 
 -----------------------------------------------

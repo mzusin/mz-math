@@ -11,6 +11,8 @@ declare global {
             v3Length: typeof vector.v3Length;
 
             getV2Angle: typeof angle.getV2Angle;
+            radiansToDegrees: typeof angle.radiansToDegrees;
+            degreesToRadians: typeof angle.degreesToRadians;
 
             setDecimalPlaces: typeof format.setDecimalPlaces;
         }
@@ -24,6 +26,8 @@ window.TCMath = window.TCMath || {
     v3Length: vector.v3Length,
 
     getV2Angle: angle.getV2Angle,
+    radiansToDegrees: angle.radiansToDegrees,
+    degreesToRadians: angle.degreesToRadians,
 
     setDecimalPlaces: format.setDecimalPlaces,
 };
