@@ -6,6 +6,8 @@
 - Vectors
     - [Vectors Sum](#vectors-sum)
     - [Vector Length](#vector-length)
+- Angles
+  - [Get vector angle](#get-vector-angle)
 - Format
   - [Set decimal places](#set-decimal-places)
 - [License](#license)
@@ -101,6 +103,19 @@ const len2 = v2Length({ x: 1, y: 2 }, 2); // 2.24
 
 const len3 = v3Length({ x: 1, y: 2, z: 3 }); // 3.7416573867739413
 const len4 = v3Length({ x: 1, y: 2, z: 3 }, 2); // 3.74
+```
+
+-----------------------------------------------
+
+# Angles
+
+## Get vector angle
+
+The **getV2Angle** function returns the angle **in radians** between the positive x-axis and the ray from (0, 0) to the vector (x, y). It supports an optional **decimalPlaces** parameter.
+
+```js
+const angle1 = getV2Angle({ x: 10, y: 20 }); // 1.1071487177940904 radians
+const angle2 = getV2Angle({ x: 10, y: 20 }, 2); // 1.11 radians
 ```
 
 -----------------------------------------------

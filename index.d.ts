@@ -15,6 +15,8 @@ declare module 'toolcool-math' {
     export const v2Length: (vector: IVector2, decimalPlaces?: number) => number;
     export const v3Length: (vector: IVector3, decimalPlaces?: number) => number;
 
+    export const getV2Angle: (v2: IVector2, decimalPlaces?: number) => number;
+
     export const setDecimalPlaces: (num: number, decimalPlaces?: number | undefined) => number;
 
     global {
@@ -24,6 +26,8 @@ declare module 'toolcool-math' {
                 v3Sum: typeof v3Sum;
                 v2Length: typeof v2Length;
                 v3Length: typeof v3Length;
+
+                getV2Angle: typeof getV2Angle;
 
                 setDecimalPlaces: typeof setDecimalPlaces;
             };
