@@ -8,6 +8,7 @@
     - [Vector Length](#vector-length)
 - Angles
   - [Get vector angle](#get-vector-angle)
+  - [Set vector angle](#set-vector-angle)
   - [Degrees to radians](#degrees-to-radians)
   - [Radians to degrees](#radians-to-degrees)
 - Format
@@ -124,6 +125,15 @@ The **getV2Angle** function returns the angle **in radians** between the positiv
 ```js
 const angle1 = getV2Angle({ x: 10, y: 20 }); // 1.1071487177940904 radians
 const angle2 = getV2Angle({ x: 10, y: 20 }, 2); // 1.11 radians
+```
+
+## Set vector angle
+
+If a 2D vector is given, change it to have the new angle (in radians). This function supports an optional **decimalPlaces** parameter.
+
+```js
+const updatedVector1 = setV2Angle({ x: 10, y: 20 }, 1.22); // { x: 7.684152489413291, y: 20.99889998355732 }
+const updatedVector2 = setV2Angle({ x: 10, y: 20 }, 1.22, 2); // { x: 7.68, y: 21 }
 ```
 
 ## Degrees to radians

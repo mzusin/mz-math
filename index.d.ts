@@ -16,6 +16,7 @@ declare module 'toolcool-math' {
     export const v3Length: (vector: IVector3, decimalPlaces?: number) => number;
 
     export const getV2Angle: (v2: IVector2, decimalPlaces?: number) => number;
+    export const setV2Angle: (v2: IVector2, newAngleRad: number, decimalPlaces?: number) => IVector2;
     export const radiansToDegrees: (radians: number, decimalPlaces?: number) => number;
     export const degreesToRadians: (degrees: number, decimalPlaces?: number) => number;
 
@@ -36,6 +37,7 @@ declare module 'toolcool-math' {
                 v3Length: typeof v3Length;
 
                 getV2Angle: typeof getV2Angle;
+                setV2Angle: typeof setV2Angle;
                 radiansToDegrees: typeof radiansToDegrees;
                 degreesToRadians: typeof degreesToRadians;
 

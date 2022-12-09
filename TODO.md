@@ -1,4 +1,3 @@
-- set vector angle
 - get / set angle for v3
 - parse number
 - vectors sub
