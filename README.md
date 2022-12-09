@@ -12,6 +12,10 @@
   - [Radians to degrees](#radians-to-degrees)
 - Format
   - [Set decimal places](#set-decimal-places)
+- Random
+  - [Get random number in range](#get-random-number-in-range)
+  - [Get random integer](#get-random-integer)
+  - [Get random boolean value](#get-random-boolean-value)
 - [License](#license)
 
 ## TypeScript Usage
@@ -154,6 +158,33 @@ The result of this function is a number (not a string), so sometimes fewer decim
 
 ```js
 const res = setDecimalPlaces(1.239999, 4); // 1.2400 = 1.24
+```
+
+-----------------------------------------------
+
+# Random
+
+## Get random number in range
+
+This function returns a random number in the range [min, max]. It supports an optional **decimalPlaces** parameter.
+
+```js
+const res1 = getRandom(10, 100); // 93.57877355999018
+const res2 = getRandom(10, 100, 2); // 80.28
+```
+
+## Get random integer 
+
+This function returns a random integer number in the range [min, max].
+
+```js
+const res = getRandomInt(0, 100); // 63
+```
+
+## Get random boolean value
+
+```js
+const res = getRandomBoolean(); // true or false
 ```
 
 -----------------------------------------------

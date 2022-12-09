@@ -21,6 +21,10 @@ declare module 'toolcool-math' {
 
     export const setDecimalPlaces: (num: number, decimalPlaces?: number | undefined) => number;
 
+    export const getRandom: (min: number, max: number, decimalPlaces?: number) => number;
+    export const getRandomInt: (min: number, max: number) => number;
+    export const getRandomBoolean: () => boolean;
+
     global {
         interface Window {
             TCMath: {
@@ -34,6 +38,10 @@ declare module 'toolcool-math' {
                 degreesToRadians: typeof degreesToRadians;
 
                 setDecimalPlaces: typeof setDecimalPlaces;
+
+                getRandom: typeof getRandom;
+                getRandomInt: typeof getRandomInt;
+                getRandomBoolean: typeof getRandomBoolean;
             };
         }
     }

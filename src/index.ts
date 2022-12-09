@@ -1,6 +1,7 @@
 import * as vector from './vector';
 import * as format from './format';
 import * as angle from './angle';
+import * as random from './random';
 
 declare global {
     interface Window {
@@ -15,6 +16,10 @@ declare global {
             degreesToRadians: typeof angle.degreesToRadians;
 
             setDecimalPlaces: typeof format.setDecimalPlaces;
+
+            getRandom: typeof random.getRandom;
+            getRandomInt: typeof random.getRandomInt;
+            getRandomBoolean: typeof random.getRandomBoolean;
         }
     }
 }
@@ -30,4 +35,8 @@ window.TCMath = window.TCMath || {
     degreesToRadians: angle.degreesToRadians,
 
     setDecimalPlaces: format.setDecimalPlaces,
+
+    getRandom: random.getRandom,
+    getRandomInt: random.getRandomInt,
+    getRandomBoolean: random.getRandomBoolean,
 };
