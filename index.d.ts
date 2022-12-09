@@ -30,6 +30,8 @@ declare module 'toolcool-math' {
 
     export const mod: (n: number, m: number) => number;
 
+    export const stringToNumber: (value: string, defaultNumber: number) => number;
+
     global {
         interface Window {
             TCMath: {
@@ -52,6 +54,8 @@ declare module 'toolcool-math' {
                 getRandomBoolean: typeof getRandomBoolean;
 
                 mod: typeof mod;
+
+                stringToNumber: typeof stringToNumber;
             };
         }
     }

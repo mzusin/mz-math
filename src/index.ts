@@ -3,6 +3,7 @@ import * as format from './format';
 import * as angle from './angle';
 import * as random from './random';
 import * as other from './other';
+import * as convert from './convert';
 
 declare global {
     interface Window {
@@ -26,6 +27,8 @@ declare global {
             getRandomBoolean: typeof random.getRandomBoolean;
 
             mod: typeof other.mod;
+
+            stringToNumber: typeof convert.stringToNumber;
         }
     }
 }
@@ -50,4 +53,6 @@ window.TCMath = window.TCMath || {
     getRandomBoolean: random.getRandomBoolean,
 
     mod: other.mod,
+
+    stringToNumber: convert.stringToNumber,
 };

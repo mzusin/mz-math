@@ -14,6 +14,8 @@
   - [Radians to degrees](#radians-to-degrees)
 - Format
   - [Set decimal places](#set-decimal-places)
+- Convert
+  - [Convert string to number](#convert-string-to-number)
 - Random
   - [Get random number in range](#get-random-number-in-range)
   - [Get random integer](#get-random-integer)
@@ -214,6 +216,21 @@ The result of this function is a number (not a string), so sometimes fewer decim
 
 ```js
 const res = setDecimalPlaces(1.239999, 4); // 1.2400 = 1.24
+```
+
+-----------------------------------------------
+
+# Convert
+
+## Convert string to number
+
+This function converts a numeric string to a number. If the string is not a number, it returns the provided default value.
+
+```js
+const res = stringToNumber('10.1234', 10); // 10.1234
+const res = stringToNumber(undefined, 10); // 10
+const res = stringToNumber(null, 10); // 10
+const res = stringToNumber('aaa', 10); // 10
 ```
 
 -----------------------------------------------
