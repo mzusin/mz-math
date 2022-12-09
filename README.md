@@ -22,7 +22,7 @@
   - [Get random boolean value](#get-random-boolean-value)
 - Other
   - [Modulo](#modulo)
-  - [Convert range](#)
+  - [Convert range](#convert-range)
 - [License](#license)
 
 ## TypeScript Usage
