@@ -1,5 +1,7 @@
 # A collection of TypeScript-based math helpers 🚀
 
+This project is a collection of TypeScript math helpers and utilities for the browser and Node.js. The modular approach allows to select only the required functions. It works well with all modern bundlers and supports **tree shaking** 🌲.
+
 ## Table of contents
 - [TypeScript Usage](#typescript-usage)
 - [Browser Usage](#browser-usage)
