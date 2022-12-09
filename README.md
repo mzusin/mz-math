@@ -77,42 +77,25 @@ To add vectors, the **v2Sum** and **v3Sum** functions are used. They can accept 
 
 **2D Vector**
 ```js
-import { v2Sum, Vector2 } from 'toolcool-math';
+import { v2Sum } from 'toolcool-math';
 
-const v1: Vector2 = [1, 2];
-const v2: Vector2 = [3, 4];
-const sum = v2Sum(v1, v2); // [4, 6]
-
-const v1: Vector2 = [1, 2];
-const v2: Vector2 = [3, 4];
-const v3: Vector2 = [5, 6];
-const sum = v2Sum(v1, v2, v3); // [9, 12]
-
-const v1: Vector2 = [1, 2];
-const v2: Vector2 = [3, 4];
-const v3: Vector2 = [5, 6];
-const v4: Vector2 = [7, 8];
-const sum = v2Sum(v1, v2, v3, v4); // [16, 20]
+const sum1 = v2Sum([1, 2], [3, 4]); // [4, 6]
+const sum2 = v2Sum([1, 2], [3, 4], [5, 6]); // [9, 12]
+const sum3 = v2Sum([1, 2], [3, 4], [5, 6], [7, 8]); // [16, 20]
 ```
 
 **3D Vector**
 ```js
 import { v3Sum, Vector3 } from 'toolcool-math';
 
-const v1: Vector3 = [1, 2, 3];
-const v2: Vector3 = [3, 4, 4];
-const sum = v3Sum(v1, v2); // [4, 6, 7]
-
-const v1: Vector3 = [1, 2, 3];
-const v2: Vector3 = [3, 4, 4];
-const v3: Vector3 = [7, 8, 9];
-const sum = v3Sum(v1, v2, v3); // [11, 14, 16]
+const sum1 = v3Sum([1, 2, 3], [3, 4, 4]); // [4, 6, 7]
+const sum2 = v3Sum([1, 2, 3], [3, 4, 4], [7, 8, 9]); // [11, 14, 16]
 
 const v1: Vector3 = [1, 2, 3];
 const v2: Vector3 = [3, 4, 4];
 const v3: Vector3 = [7, 8, 9];
 const v4: Vector3 = [10, 11, 12];
-const sum = v3Sum(v1, v2, v3, v4); // [21, 25, 28]
+const sum3 = v3Sum(v1, v2, v3, v4); // [21, 25, 28]
 ```
 
 ## Vectors Subtraction
@@ -121,42 +104,24 @@ To subtract vectors, the **v2Sub** and **v3Sub** functions are used. They can ac
 
 **2D Vector**
 ```js
-import { v2Sub, Vector2 } from 'toolcool-math';
+import { v2Sub } from 'toolcool-math';
 
-const v1: Vector2 = [1, 2];
-const v2: Vector2 = [3, 4];
-const sum = v2Sub(v1, v2); // [-2, -2]
-
-const v1: Vector2 = [1, 2];
-const v2: Vector2 = [3, 4];
-const v3: Vector2 = [5, 6];
-const sum = v2Sub(v1, v2, v3); // [-7, -8]
-
-const v1: Vector2 = [1, 2];
-const v2: Vector2 = [3, 4];
-const v3: Vector2 = [5, 6];
-const v4: Vector2 = [7, 8];
-const sum = v2Sub(v1, v2, v3, v4); // [-14, -16]
+const sum1 = v2Sub([1, 2], [3, 4]); // [-2, -2]
+const sum2 = v2Sub([1, 2], [3, 4], [5, 6]); // [-7, -8]
+const sum3 = v2Sub([1, 2], [3, 4], [5, 6], [7, 8]); // [-14, -16]
 ```
 
 **3D Vector**
 ```js
 import { v3Sub, Vector3 } from 'toolcool-math';
-
-const v1: Vector3 = [1, 2, 3];
-const v2: Vector3 = [3, 4, 4];
-const sum = v3Sub(v1, v2); // [-2, -2, -1]
-
-const v1: Vector3 = [1, 2, 3];
-const v2: Vector3 = [3, 4, 4];
-const v3: Vector3 = [7, 8, 9];
-const sum = v3Sub(v1, v2, v3); // [-9, -10, -10]
+const sum1 = v3Sub([1, 2, 3], [3, 4, 4]); // [-2, -2, -1]
+const sum2 = v3Sub([1, 2, 3], [3, 4, 4], [7, 8, 9]); // [-9, -10, -10]
 
 const v1: Vector3 = [1, 2, 3];
 const v2: Vector3 = [3, 4, 4];
 const v3: Vector3 = [7, 8, 9];
 const v4: Vector3 = [10, 11, 12];
-const sum = v3Sub(v1, v2, v3, v4); // [-19, -21, -22]
+const sum3 = v3Sub(v1, v2, v3, v4); // [-19, -21, -22]
 ```
 
 ## Multiply vector by scalar
