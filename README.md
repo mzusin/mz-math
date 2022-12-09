@@ -34,6 +34,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
   - [Modulo](#modulo)
   - [Convert range](#convert-range)
   - [Do ranges overlap?](#check-if-two-ranges-overlap)
+  - [Can be converted to number?](#check-if-value-can-be-converted-to-number)
 - [License](#license)
 
 ## TypeScript Usage
@@ -481,6 +482,20 @@ const res1 = doRangesOverlap(0, 1, 100, 200); // false
 
 // [0,1] and [0.5, 1.5] overlap
 const res2 = doRangesOverlap(0, 1, 0.5, 1.5); // true
+```
+
+## Check if value can be converted to number
+
+```js
+const res = isNumber('12'); // true
+const res = isNumber(12.5); // true
+const res = isNumber('0'); // true
+const res = isNumber(0); // true
+
+const res = isNumber('aaa'); // false
+const res = isNumber(null); // false
+const res = isNumber(undefined); // false
+const res = isNumber(Infinity); // false
 ```
 
 -----------------------------------------------

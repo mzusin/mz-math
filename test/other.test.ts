@@ -1,4 +1,4 @@
-import { mod, convertRange, doRangesOverlap } from '../src/other';
+import { mod, convertRange, doRangesOverlap, isNumber } from '../src/other';
 
 describe('Modulo', () => {
     test('-21 % 4 => 3', () => {
@@ -76,5 +76,47 @@ describe('Do Ranges Overlap', () => {
 
     test(`'[0,1] and [-100,-200] don't overlap`, () => {
         expect(doRangesOverlap(0, 1, -100, -200)).toStrictEqual(false);
+    });
+});
+
+describe('Is Number?', () => {
+    test(`aaa is not a number`, () => {
+        expect(isNumber('aaa')).toStrictEqual(false);
+    });
+
+    test(`"12" is a number`, () => {
+        expect(isNumber('12')).toStrictEqual(true);
+    });
+
+    test(`10 is a number`, () => {
+        expect(isNumber(10)).toStrictEqual(true);
+    });
+
+    test(`0 is a number`, () => {
+        expect(isNumber(0)).toStrictEqual(true);
+    });
+
+    test(`"0" is a number`, () => {
+        expect(isNumber(0)).toStrictEqual(true);
+    });
+
+    test(`null is not a number`, () => {
+        expect(isNumber(null)).toStrictEqual(false);
+    });
+
+    test(`undefined is not a number`, () => {
+        expect(isNumber(undefined)).toStrictEqual(false);
+    });
+
+    test(`"12.2" is a number`, () => {
+        expect(isNumber('12.2')).toStrictEqual(true);
+    });
+
+    test(`12.2 is a number`, () => {
+        expect(isNumber(12.2)).toStrictEqual(true);
+    });
+
+    test(`Infinity is not a number`, () => {
+        expect(isNumber(Infinity)).toStrictEqual(false);
     });
 });

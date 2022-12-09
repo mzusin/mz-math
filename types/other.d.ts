@@ -8,3 +8,4 @@ export declare const convertRange: (x: number, a: number, b: number, c: number, 
  * Check if 2 ranges [a,b] and [c,d] overlap.
  */
 export declare const doRangesOverlap: (a: number, b: number, c: number, d: number) => boolean;
+export declare const isNumber: (value: any) => boolean;

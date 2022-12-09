@@ -16,3 +16,8 @@ export const convertRange = (x: number, a: number, b: number, c: number, d: numb
 export const doRangesOverlap = (a: number, b: number, c: number, d: number) => {
     return Math.max(a, c) <= Math.min(b, d) ;
 };
+
+// eslint-disable-next-line
+export const isNumber = (value: any) => {
+    return !isNaN(parseFloat(value)) && isFinite(value);
+};

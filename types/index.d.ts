@@ -33,6 +33,7 @@ declare global {
             mod: typeof other.mod;
             convertRange: typeof other.convertRange;
             doRangesOverlap: typeof other.doRangesOverlap;
+            isNumber: typeof other.isNumber;
             stringToNumber: typeof convert.stringToNumber;
             v2QuadraticBezierCurve: typeof bezierCurve.v2QuadraticBezierCurve;
             v3QuadraticBezierCurve: typeof bezierCurve.v3QuadraticBezierCurve;
