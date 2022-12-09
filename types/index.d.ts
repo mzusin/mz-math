@@ -21,6 +21,7 @@ declare global {
             v3Normalize: typeof vector.v3Normalize;
             v2DotProduct: typeof vector.v2DotProduct;
             v3DotProduct: typeof vector.v3DotProduct;
+            v3CrossProduct: typeof vector.v3CrossProduct;
             getV2Angle: typeof angle.getV2Angle;
             setV2Angle: typeof angle.setV2Angle;
             radiansToDegrees: typeof angle.radiansToDegrees;

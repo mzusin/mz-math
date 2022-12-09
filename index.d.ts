@@ -1,32 +1,25 @@
 declare module 'toolcool-math' {
 
-    export interface IVector2 {
-        x: number;
-        y: number;
-    }
-    export interface IVector3 {
-        x: number;
-        y: number;
-        z: number;
-    }
+    export type Vector2 = [number, number];
+    export type Vector3 = [number, number, number];
 
-    export const v2Sum: (...vectors: IVector2[]) => IVector2;
-    export const v3Sum: (...vectors: IVector3[]) => IVector3;
-    export const v2Sub: (...vectors: IVector2[]) => IVector2;
-    export const v3Sub: (...vectors: IVector3[]) => IVector3;
-    export const v2MulScalar: (v2: IVector2, scalar: number, decimalPlaces?: number) => IVector2;
-    export const v3MulScalar: (v3: IVector3, scalar: number, decimalPlaces?: number) => IVector3;
-    export const v2Length: (vector: IVector2, decimalPlaces?: number) => number;
-    export const v3Length: (vector: IVector3, decimalPlaces?: number) => number;
-    export const v2SetLength: (v2: IVector2, newLength: number, decimalPlaces?: number) => IVector2;
-    export const v2Normalize: (v2: IVector2, decimalPlaces?: number) => IVector2;
-    export const v3Normalize: (v3: IVector3, decimalPlaces?: number) => IVector3;
-    export const v2DotProduct: (vector1: IVector2, vector2: IVector2, decimalPlaces?: number) => number;
-    export const v3DotProduct: (vector1: IVector3, vector2: IVector3, decimalPlaces?: number) => number;
-    export const v3CrossProduct: (vector1: IVector3, vector2: IVector3, decimalPlaces?: number) => IVector3;
+    export const v2Sum: (...vectors: Vector2[]) => Vector2;
+    export const v3Sum: (...vectors: Vector3[]) => Vector3;
+    export const v2Sub: (...vectors: Vector2[]) => Vector2;
+    export const v3Sub: (...vectors: Vector3[]) => Vector3;
+    export const v2MulScalar: (v2: Vector2, scalar: number, decimalPlaces?: number) => Vector2;
+    export const v3MulScalar: (v3: Vector3, scalar: number, decimalPlaces?: number) => Vector3;
+    export const v2Length: (vector: Vector2, decimalPlaces?: number) => number;
+    export const v3Length: (vector: Vector3, decimalPlaces?: number) => number;
+    export const v2SetLength: (v2: Vector2, newLength: number, decimalPlaces?: number) => Vector2;
+    export const v2Normalize: (v2: Vector2, decimalPlaces?: number) => Vector2;
+    export const v3Normalize: (v3: Vector3, decimalPlaces?: number) => Vector3;
+    export const v2DotProduct: (vector1: Vector2, vector2: Vector2, decimalPlaces?: number) => number;
+    export const v3DotProduct: (vector1: Vector3, vector2: Vector3, decimalPlaces?: number) => number;
+    export const v3CrossProduct: (vector1: Vector3, vector2: Vector3, decimalPlaces?: number) => Vector3;
 
-    export const getV2Angle: (v2: IVector2, decimalPlaces?: number) => number;
-    export const setV2Angle: (v2: IVector2, newAngleRad: number, decimalPlaces?: number) => IVector2;
+    export const getV2Angle: (v2: Vector2, decimalPlaces?: number) => number;
+    export const setV2Angle: (v2: Vector2, newAngleRad: number, decimalPlaces?: number) => Vector2;
     export const radiansToDegrees: (radians: number, decimalPlaces?: number) => number;
     export const degreesToRadians: (degrees: number, decimalPlaces?: number) => number;
 
@@ -44,10 +37,10 @@ declare module 'toolcool-math' {
 
     export const stringToNumber: (value: string, defaultNumber: number) => number;
 
-    export const v2QuadraticBezierCurve: (t: number, startControlPoint: IVector2, centerControlPoint: IVector2, endControlPoint: IVector2) => IVector2;
-    export const v3QuadraticBezierCurve: (t: number, startControlPoint: IVector3, centerControlPoint: IVector3, endControlPoint: IVector3) => IVector3;
-    export const v2CubicBezierCurve: (t: number, startControlPoint: IVector2, center1ControlPoint: IVector2, center2ControlPoint: IVector2, endControlPoint: IVector2) => IVector2;
-    export const v3CubicBezierCurve: (t: number, startControlPoint: IVector3, center1ControlPoint: IVector3, center2ControlPoint: IVector3, endControlPoint: IVector3) => IVector3;
+    export const v2QuadraticBezierCurve: (t: number, startControlPoint: Vector2, centerControlPoint: Vector2, endControlPoint: Vector2) => Vector2;
+    export const v3QuadraticBezierCurve: (t: number, startControlPoint: Vector3, centerControlPoint: Vector3, endControlPoint: Vector3) => Vector3;
+    export const v2CubicBezierCurve: (t: number, startControlPoint: Vector2, center1ControlPoint: Vector2, center2ControlPoint: Vector2, endControlPoint: Vector2) => Vector2;
+    export const v3CubicBezierCurve: (t: number, startControlPoint: Vector3, center1ControlPoint: Vector3, center2ControlPoint: Vector3, endControlPoint: Vector3) => Vector3;
 
     global {
         interface Window {

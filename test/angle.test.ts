@@ -1,39 +1,39 @@
 import { degreesToRadians, getV2Angle, radiansToDegrees, setV2Angle } from '../src/angle';
 
 describe('Get Vector Angle', () => {
-    test('angle of { x: 10, y: 20 } should be 1.11', () => {
-        expect(getV2Angle({ x: 10, y: 20 })).toStrictEqual(1.1071487177940904);
+    test('angle of [10, 20] should be 1.11', () => {
+        expect(getV2Angle([10, 20])).toStrictEqual(1.1071487177940904);
     });
 
-    test('angle of { x: 10, y: 20 } with 2 decimal places should be 1.11', () => {
-        expect(getV2Angle({ x: 10, y: 20 }, 2)).toStrictEqual(1.11);
+    test('angle of [10, 20] with 2 decimal places should be 1.11', () => {
+        expect(getV2Angle([10, 20], 2)).toStrictEqual(1.11);
     });
 
-    test('angle of { x: 10, y: 0 } should be 0', () => {
-        expect(getV2Angle({ x: 10, y: 0 })).toStrictEqual(0);
+    test('angle of [10, 0] should be 0', () => {
+        expect(getV2Angle([10, 0])).toStrictEqual(0);
     });
 
-    test('angle of { x: 0, y: 10 } should be 1.5707963267948966', () => {
-        expect(getV2Angle({ x: 0, y: 10 })).toStrictEqual(1.5707963267948966);
+    test('angle of [0, 10] should be 1.5707963267948966', () => {
+        expect(getV2Angle([0, 10])).toStrictEqual(1.5707963267948966);
     });
 });
 
 describe('Set Vector Angle', () => {
 
-    test('Given vector { x: 10, y: 20 } with angle 1.11 --> change the angle to 1.22. ', () => {
-        expect(setV2Angle({ x: 10, y: 20 }, 1.22)).toStrictEqual({ x: 7.684152489413291, y: 20.99889998355732 });
+    test('Given vector [10, 20] with angle 1.11 --> change the angle to 1.22. ', () => {
+        expect(setV2Angle([10, 20], 1.22)).toStrictEqual([7.684152489413291, 20.99889998355732]);
     });
 
-    test('Given vector { x: 10, y: 20 } with angle 1.11 --> change the angle to 1.22 (decimal places = 2). ', () => {
-        expect(setV2Angle({ x: 10, y: 20 }, 1.22, 2)).toStrictEqual({ x: 7.68, y: 21 });
+    test('Given vector [10, 20] with angle 1.11 --> change the angle to 1.22 (decimal places = 2). ', () => {
+        expect(setV2Angle([10, 20], 1.22, 2)).toStrictEqual([7.68, 21]);
     });
 
-    test('Given vector { x: 5, y: 6 } --> change the angle to 0', () => {
-        expect(setV2Angle({ x: 5, y: 6 }, 0)).toStrictEqual({ x: 7.810249675906654, y: 0 });
+    test('Given vector [5, 6] --> change the angle to 0', () => {
+        expect(setV2Angle([5, 6], 0)).toStrictEqual([7.810249675906654, 0]);
     });
 
-    test('Given vector { x: 5, y: 6 } --> change the angle to Math.PI / 6 with 4 decimal places', () => {
-        expect(setV2Angle({ x: 5, y: 6 }, Math.PI / 6, 4)).toStrictEqual({ x: 6.7639, y: 3.9051 });
+    test('Given vector [5, 6] --> change the angle to Math.PI / 6 with 4 decimal places', () => {
+        expect(setV2Angle([5, 6], Math.PI / 6, 4)).toStrictEqual([6.7639, 3.9051]);
     });
 });
 

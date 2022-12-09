@@ -1,41 +1,41 @@
-import { IVector2, IVector3 } from './interfaces';
+import { Vector2, Vector3 } from './types';
 
 /**
  * Get a point on a quadratic Bézier curve as a function of time.
  */
 export const v2QuadraticBezierCurve = (
     t: number,
-    startControlPoint: IVector2,
-    centerControlPoint: IVector2,
-    endControlPoint: IVector2
-) : IVector2 => {
+    startControlPoint: Vector2,
+    centerControlPoint: Vector2,
+    endControlPoint: Vector2
+) : Vector2 => {
 
     const temp1 = Math.pow(1 - t, 2);
     const temp2 = (1 - t) * 2 * t;
     const temp3 = t * t;
 
-    return {
-        x: temp1 * startControlPoint.x + temp2 * centerControlPoint.x + temp3 * endControlPoint.x,
-        y: temp1 * startControlPoint.y + temp2 * centerControlPoint.y + temp3 * endControlPoint.y,
-    }
+    return [
+        temp1 * startControlPoint[0] + temp2 * centerControlPoint[0] + temp3 * endControlPoint[0],
+        temp1 * startControlPoint[1] + temp2 * centerControlPoint[1] + temp3 * endControlPoint[1],
+    ];
 };
 
 export const v3QuadraticBezierCurve = (
     t: number,
-    startControlPoint: IVector3,
-    centerControlPoint: IVector3,
-    endControlPoint: IVector3
-) : IVector3 => {
+    startControlPoint: Vector3,
+    centerControlPoint: Vector3,
+    endControlPoint: Vector3
+) : Vector3 => {
 
     const temp1 = Math.pow(1 - t, 2);
     const temp2 = (1 - t) * 2 * t;
     const temp3 = t * t;
 
-    return {
-        x: temp1 * startControlPoint.x + temp2 * centerControlPoint.x + temp3 * endControlPoint.x,
-        y: temp1 * startControlPoint.y + temp2 * centerControlPoint.y + temp3 * endControlPoint.y,
-        z: temp1 * startControlPoint.z + temp2 * centerControlPoint.z + temp3 * endControlPoint.z,
-    }
+    return [
+        temp1 * startControlPoint[0] + temp2 * centerControlPoint[0] + temp3 * endControlPoint[0],
+        temp1 * startControlPoint[1] + temp2 * centerControlPoint[1] + temp3 * endControlPoint[1],
+        temp1 * startControlPoint[2] + temp2 * centerControlPoint[2] + temp3 * endControlPoint[2],
+    ];
 };
 
 /**
@@ -43,39 +43,39 @@ export const v3QuadraticBezierCurve = (
  */
 export const v2CubicBezierCurve = (
     t: number,
-    startControlPoint: IVector2,
-    center1ControlPoint: IVector2,
-    center2ControlPoint: IVector2,
-    endControlPoint: IVector2
-) : IVector2 => {
+    startControlPoint: Vector2,
+    center1ControlPoint: Vector2,
+    center2ControlPoint: Vector2,
+    endControlPoint: Vector2
+) : Vector2 => {
 
     const temp1 = Math.pow(1 - t, 3);
     const temp2 = Math.pow(1 - t, 2) * 3 * t;
     const temp3 = (1 - t) * 3 * t * t;
     const temp4 = t * t * t;
 
-    return {
-        x: temp1 * startControlPoint.x + temp2 * center1ControlPoint.x + temp3 * center2ControlPoint.x + temp4 * endControlPoint.x,
-        y: temp1 * startControlPoint.y + temp2 * center1ControlPoint.y + temp3 * center2ControlPoint.y + temp4 * endControlPoint.y,
-    }
+    return [
+        temp1 * startControlPoint[0] + temp2 * center1ControlPoint[0] + temp3 * center2ControlPoint[0] + temp4 * endControlPoint[0],
+        temp1 * startControlPoint[1] + temp2 * center1ControlPoint[1] + temp3 * center2ControlPoint[1] + temp4 * endControlPoint[1],
+    ];
 };
 
 export const v3CubicBezierCurve = (
     t: number,
-    startControlPoint: IVector3,
-    center1ControlPoint: IVector3,
-    center2ControlPoint: IVector3,
-    endControlPoint: IVector3
-) : IVector3 => {
+    startControlPoint: Vector3,
+    center1ControlPoint: Vector3,
+    center2ControlPoint: Vector3,
+    endControlPoint: Vector3
+) : Vector3 => {
 
     const temp1 = Math.pow(1 - t, 3);
     const temp2 = Math.pow(1 - t, 2) * 3 * t;
     const temp3 = (1 - t) * 3 * t * t;
     const temp4 = t * t * t;
 
-    return {
-        x: temp1 * startControlPoint.x + temp2 * center1ControlPoint.x + temp3 * center2ControlPoint.x + temp4 * endControlPoint.x,
-        y: temp1 * startControlPoint.y + temp2 * center1ControlPoint.y + temp3 * center2ControlPoint.y + temp4 * endControlPoint.y,
-        z: temp1 * startControlPoint.z + temp2 * center1ControlPoint.z + temp3 * center2ControlPoint.z + temp4 * endControlPoint.z,
-    }
+    return [
+        temp1 * startControlPoint[0] + temp2 * center1ControlPoint[0] + temp3 * center2ControlPoint[0] + temp4 * endControlPoint[0],
+        temp1 * startControlPoint[1] + temp2 * center1ControlPoint[1] + temp3 * center2ControlPoint[1] + temp4 * endControlPoint[1],
+        temp1 * startControlPoint[2] + temp2 * center1ControlPoint[2] + temp3 * center2ControlPoint[2] + temp4 * endControlPoint[2],
+    ];
 };
