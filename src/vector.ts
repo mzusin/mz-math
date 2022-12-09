@@ -120,3 +120,11 @@ export const v3DotProduct = (vector1: IVector3, vector2: IVector3, decimalPlaces
         decimalPlaces
     );
 };
+
+export const v3CrossProduct = (vector1: IVector3, vector2: IVector3, decimalPlaces = Infinity): IVector3 => {
+    return {
+        x: setDecimalPlaces(vector1.y * vector2.z - vector1.z * vector2.y, decimalPlaces),
+        y: setDecimalPlaces(vector1.z * vector2.x - vector1.x * vector2.z, decimalPlaces),
+        z: setDecimalPlaces(vector1.x * vector2.y - vector1.y * vector2.x, decimalPlaces),
+    };
+};
