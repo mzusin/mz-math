@@ -13,7 +13,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
     - [Set Vector Length](#set-vector-length)
     - [Normalize Vector](#normalize-vector)
     - [Dot Product](#vectors-dot-product)
-    - [Cross Product](#)
+    - [Cross Product](#vectors-cross-product)
 - Angles
   - [Get vector angle](#get-vector-angle)
   - [Set vector angle](#set-vector-angle)
