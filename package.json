@@ -20,7 +20,9 @@
     "linear algebra",
     "random",
     "modulo",
-    "range"
+    "range",
+    "Bézier curve",
+    "Bezier curve"
   ],
   "author": "Tool Cool <toolcool.org@gmail.com>",
   "license": "MIT",

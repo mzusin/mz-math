@@ -312,7 +312,7 @@ const item3 = getRandomItemFromArray([{ test: 1 }, { test: 2 }, { test: 3 }]); /
 
 ## Get a point on a quadratic Bézier curve
 
-Get a point on a quadratic Bézier curve as a function of time.
+Get a point on a quadratic Bézier curve as a function of time, where t is in the range [0, 1].
 
 **2D Vector**
 
@@ -366,7 +366,7 @@ const v3 = v3QuadraticBezierCurve(
 
 ## Get a point on a cubic Bézier curve
 
-Get a point on a cubic Bézier curve as a function of time.
+Get a point on a cubic Bézier curve as a function of time, where t is in the range [0, 1].
 
 **2D Vector**
 
