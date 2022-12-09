@@ -1,7 +1,6 @@
 - set vector angle
 - get / set angle for v3
 - parse number
-- modulo
 - vectors sub
 - multiply vector by scalar
 - Bezier Curves

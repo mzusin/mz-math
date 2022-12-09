@@ -2,6 +2,7 @@ import * as vector from './vector';
 import * as format from './format';
 import * as angle from './angle';
 import * as random from './random';
+import * as other from './other';
 
 declare global {
     interface Window {
@@ -20,6 +21,8 @@ declare global {
             getRandom: typeof random.getRandom;
             getRandomInt: typeof random.getRandomInt;
             getRandomBoolean: typeof random.getRandomBoolean;
+
+            mod: typeof other.mod;
         }
     }
 }
@@ -39,4 +42,6 @@ window.TCMath = window.TCMath || {
     getRandom: random.getRandom,
     getRandomInt: random.getRandomInt,
     getRandomBoolean: random.getRandomBoolean,
+
+    mod: other.mod,
 };

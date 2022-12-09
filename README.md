@@ -16,6 +16,8 @@
   - [Get random number in range](#get-random-number-in-range)
   - [Get random integer](#get-random-integer)
   - [Get random boolean value](#get-random-boolean-value)
+- Other
+  - [Modulo](#modulo)
 - [License](#license)
 
 ## TypeScript Usage
@@ -185,6 +187,18 @@ const res = getRandomInt(0, 100); // 63
 
 ```js
 const res = getRandomBoolean(); // true or false
+```
+-----------------------------------------------
+
+# Other
+
+## Modulo
+
+Calculate the modulo for positive or negative numbers.
+
+```js
+const res1 = mod(-21, 4); // 3
+const res2 = mod(7, 3); // 1
 ```
 
 -----------------------------------------------

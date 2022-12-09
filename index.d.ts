@@ -25,6 +25,8 @@ declare module 'toolcool-math' {
     export const getRandomInt: (min: number, max: number) => number;
     export const getRandomBoolean: () => boolean;
 
+    export const mod: (n: number, m: number) => number;
+
     global {
         interface Window {
             TCMath: {
@@ -42,6 +44,8 @@ declare module 'toolcool-math' {
                 getRandom: typeof getRandom;
                 getRandomInt: typeof getRandomInt;
                 getRandomBoolean: typeof getRandomBoolean;
+
+                mod: typeof mod;
             };
         }
     }
