@@ -1,2 +1,0 @@
-- get / set angle for v3
-- shapes calculations like perimeter, areas, etc.
