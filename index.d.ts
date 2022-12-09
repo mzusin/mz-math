@@ -14,6 +14,8 @@ declare module 'toolcool-math' {
     export const v3Sum: (...vectors: IVector3[]) => IVector3;
     export const v2Sub: (...vectors: IVector2[]) => IVector2;
     export const v3Sub: (...vectors: IVector3[]) => IVector3;
+    export const v2MulScalar: (v2: IVector2, scalar: number, decimalPlaces?: number) => IVector2;
+    export const v3MulScalar: (v3: IVector3, scalar: number, decimalPlaces?: number) => IVector3;
     export const v2Length: (vector: IVector2, decimalPlaces?: number) => number;
     export const v3Length: (vector: IVector3, decimalPlaces?: number) => number;
 
@@ -42,6 +44,8 @@ declare module 'toolcool-math' {
                 v3Sum: typeof v3Sum;
                 v2Sub: typeof v2Sub;
                 v3Sub: typeof v3Sub;
+                v2MulScalar: typeof v2MulScalar;
+                v3MulScalar: typeof v3MulScalar;
                 v2Length: typeof v2Length;
                 v3Length: typeof v3Length;
 

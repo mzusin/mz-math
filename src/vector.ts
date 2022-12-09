@@ -55,6 +55,21 @@ export const v3Sub = (...vectors: IVector3[]) : IVector3 => {
     return res;
 };
 
+export const v2MulScalar = (v2: IVector2, scalar: number, decimalPlaces = Infinity): IVector2 => {
+    return {
+        x: setDecimalPlaces(v2.x * scalar, decimalPlaces),
+        y: setDecimalPlaces(v2.y * scalar, decimalPlaces),
+    };
+};
+
+export const v3MulScalar = (v3: IVector3, scalar: number, decimalPlaces = Infinity): IVector3 => {
+    return {
+        x: setDecimalPlaces(v3.x * scalar, decimalPlaces),
+        y: setDecimalPlaces(v3.y * scalar, decimalPlaces),
+        z: setDecimalPlaces(v3.z * scalar, decimalPlaces),
+    };
+};
+
 export const v2Length = (vector: IVector2, decimalPlaces = Infinity) => {
     const len = Math.sqrt(vector.x * vector.x + vector.y * vector.y);
     return setDecimalPlaces(len, decimalPlaces);

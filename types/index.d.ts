@@ -21,6 +21,7 @@ declare global {
             getRandom: typeof random.getRandom;
             getRandomInt: typeof random.getRandomInt;
             getRandomBoolean: typeof random.getRandomBoolean;
+            getRandomItemFromArray: typeof random.getRandomItemFromArray;
             mod: typeof other.mod;
             convertRange: typeof other.convertRange;
             doRangesOverlap: typeof other.doRangesOverlap;

@@ -18,7 +18,9 @@
     "vector",
     "angle",
     "linear algebra",
-    "random"
+    "random",
+    "modulo",
+    "range"
   ],
   "author": "Tool Cool <toolcool.org@gmail.com>",
   "license": "MIT",

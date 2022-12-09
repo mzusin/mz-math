@@ -1,4 +1,3 @@
 - get / set angle for v3
-- multiply vector by scalar
 - Bezier Curves
 - shapes calculations like perimeter, areas, etc.

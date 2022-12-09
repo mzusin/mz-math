@@ -1,4 +1,4 @@
-import { v2Length, v3Length, v2Sum, v3Sum, v2Sub, v3Sub } from '../src/vector';
+import { v2Length, v3Length, v2Sum, v3Sum, v2Sub, v3Sub, v2MulScalar, v3MulScalar } from '../src/vector';
 
 describe('Vector Sum', () => {
     test('{1,2} + {3,4}', () => {
@@ -97,6 +97,40 @@ describe('Vector Sub', () => {
         const v3 = { x: 7, y: 8, z: 9 };
         const v4 = { x: 10, y: 11, z: 12 };
         expect(v3Sub(v1, v2, v3, v4)).toStrictEqual({ x: -19, y: -21, z: -22 });
+    });
+});
+
+describe('Multiply vector by scalar', () => {
+    test('{ x: 1, y: 2 } * 2 => { x: 2, y: 4 }', () => {
+        expect(v2MulScalar({ x: 1, y: 2 }, 2)).toStrictEqual({ x: 2, y: 4 });
+    });
+
+    test('{ x: 1, y: 2 } * 0.5 => { x: 0.5, y: 1 }', () => {
+        expect(v2MulScalar({ x: 1, y: 2 }, 0.5)).toStrictEqual({ x: 0.5, y: 1 });
+    });
+
+    test('{ x: 1, y: 2 } * Math.PI => { x: 3.141592653589793, y: 6.283185307179586 }', () => {
+        expect(v2MulScalar({ x: 1, y: 2 }, Math.PI)).toStrictEqual({ x: 3.141592653589793, y: 6.283185307179586 });
+    });
+
+    test('{ x: 1, y: 2 } * Math.PI with 2 decimal places => { x: 3.14, y: 6.28 }', () => {
+        expect(v2MulScalar({ x: 1, y: 2 }, Math.PI, 2)).toStrictEqual({ x: 3.14, y: 6.28 });
+    });
+
+    test('{ x: 1, y: 2, z: 3 } * 2 => { x: 2, y: 4, z: 6 }', () => {
+        expect(v3MulScalar({ x: 1, y: 2, z: 3 }, 2)).toStrictEqual({ x: 2, y: 4, z: 6 });
+    });
+
+    test('{ x: 1, y: 2, z: 3 } * 0.5 => { x: 0.5, y: 1, z: 1.5 }', () => {
+        expect(v3MulScalar({ x: 1, y: 2, z: 3 }, 0.5)).toStrictEqual({ x: 0.5, y: 1, z: 1.5 });
+    });
+
+    test('{ x: 1, y: 2, z: 3 } * Math.PI => { x: 3.141592653589793, y: 6.283185307179586, z: 9.42477796076938 }', () => {
+        expect(v3MulScalar({ x: 1, y: 2, z: 3 }, Math.PI)).toStrictEqual({ x: 3.141592653589793, y: 6.283185307179586, z: 9.42477796076938 });
+    });
+
+    test('{ x: 1, y: 2, z: 3 } * Math.PI with 2 decimal places => { x: 3.14, y: 6.28, z: 9.42 }', () => {
+        expect(v3MulScalar({ x: 1, y: 2, z: 3 }, Math.PI, 2)).toStrictEqual({ x: 3.14, y: 6.28, z: 9.42 });
     });
 });
 

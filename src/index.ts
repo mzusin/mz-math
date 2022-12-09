@@ -12,6 +12,8 @@ declare global {
             v3Sum: typeof vector.v3Sum;
             v2Sub: typeof vector.v2Sub;
             v3Sub: typeof vector.v3Sub;
+            v2MulScalar: typeof vector.v2MulScalar;
+            v3MulScalar: typeof vector.v3MulScalar;
             v2Length: typeof vector.v2Length;
             v3Length: typeof vector.v3Length;
 
@@ -41,6 +43,8 @@ window.TCMath = window.TCMath || {
     v3Sum: vector.v3Sum,
     v2Sub: vector.v2Sub,
     v3Sub: vector.v3Sub,
+    v2MulScalar: vector.v2MulScalar,
+    v3MulScalar: vector.v3MulScalar,
     v2Length: vector.v2Length,
     v3Length: vector.v3Length,
 
