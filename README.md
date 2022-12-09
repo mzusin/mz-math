@@ -1,6 +1,6 @@
 # A collection of TypeScript-based math helpers 🚀
 
-This project is a collection of TypeScript math helpers and utilities for the browser and Node.js. The modular approach allows to select only the required functions. It works well with all modern bundlers and supports **tree shaking** 🌲. It is built using immutable/pure functions.
+This project is a collection of TypeScript math helpers and utilities for the browser and Node.js. The modular approach allows to select only the required functions. It works well with all modern bundlers and supports **tree shaking** 🌲. The library is built using immutable/pure functions.
 
 ## Table of contents
 - [TypeScript Usage](#typescript-usage)
@@ -25,6 +25,9 @@ This project is a collection of TypeScript math helpers and utilities for the br
   - [Get random integer](#get-random-integer)
   - [Get random boolean value](#get-random-boolean-value)
   - [Get random item from array](#get-random-item-from-array)
+- Bézier Curve
+  - [Get a point on a quadratic Bézier curve](#get-a-point-on-a-quadratic-bézier-curve)
+  - [Get a point on a cubic Bézier curve](#get-a-point-on-a-cubic-bézier-curve)
 - Other
   - [Modulo](#modulo)
   - [Convert range](#convert-range)
@@ -301,6 +304,124 @@ const res = getRandomBoolean(); // true or false
 const item1 = getRandomItemFromArray([1,2,3,4,5]); // 2
 const item2 = getRandomItemFromArray(['a', 'b', 'c']); // 'a'
 const item3 = getRandomItemFromArray([{ test: 1 }, { test: 2 }, { test: 3 }]); // { test: 3 }
+```
+
+-----------------------------------------------
+
+# Bézier Curve
+
+## Get a point on a quadratic Bézier curve
+
+Get a point on a quadratic Bézier curve as a function of time.
+
+**2D Vector**
+
+```js
+const v2 = v2QuadraticBezierCurve(
+        0.5,
+        { x: 0, y: 100 },
+        { x: 50, y: 0 },
+        { x: 100, y: 100 }
+); // { x: 50, y: 50 }
+
+const v2 = v2QuadraticBezierCurve(
+        0,
+        { x: 0, y: 100 },
+        { x: 50, y: 0 },
+        { x: 100, y: 100 }
+); // { x: 0, y: 100 }
+
+const v2 = v2QuadraticBezierCurve(
+        1,
+        { x: 0, y: 100 },
+        { x: 50, y: 0 },
+        { x: 100, y: 100 }
+); // { x: 100, y: 100 }
+```
+
+**3D Vector**
+
+```js
+const v3 = v3QuadraticBezierCurve(
+        0.5,
+        { x: 0, y: 100, z: 0 },
+        { x: 50, y: 0, z: 0 },
+        { x: 100, y: 100, z: 0 }
+); // { x: 50, y: 50, z: 0 }
+
+const v3 = v3QuadraticBezierCurve(
+        0,
+        { x: 0, y: 100, z: 0 },
+        { x: 50, y: 0, z: 0 },
+        { x: 100, y: 100, z: 0 }
+); // { x: 0, y: 100, z: 0 }
+
+const v3 = v3QuadraticBezierCurve(
+        1,
+        { x: 0, y: 100, z: 0 },
+        { x: 50, y: 0, z: 0 },
+        { x: 100, y: 100, z: 0 }
+); // { x: 100, y: 100, z: 0 }
+```
+
+## Get a point on a cubic Bézier curve
+
+Get a point on a cubic Bézier curve as a function of time.
+
+**2D Vector**
+
+```js
+const v2 = v2CubicBezierCurve(
+        0.5,
+        { x: 0, y: 100 },
+        { x: 0, y: 0 },
+        { x: 100, y: 0 },
+        { x: 100, y: 100 }
+); // { x: 50, y: 25 }
+
+const v2 = v2CubicBezierCurve(
+        0,
+        { x: 0, y: 100 },
+        { x: 0, y: 0 },
+        { x: 100, y: 0 },
+        { x: 100, y: 100 }
+); // { x: 0, y: 100 }
+
+const v2 = v2CubicBezierCurve(
+        1,
+        { x: 0, y: 100 },
+        { x: 0, y: 0 },
+        { x: 100, y: 0 },
+        { x: 100, y: 100 }
+); // { x: 100, y: 100 }
+```
+
+**3D Vector**
+
+```js
+const v3 = v3CubicBezierCurve(
+        0.5,
+        { x: 0, y: 100, z: 0 },
+        { x: 0, y: 0, z: 0 },
+        { x: 100, y: 0, z: 0 },
+        { x: 100, y: 100, z: 0 }
+); // { x: 50, y: 25, z: 0 }
+
+const v3 = v3CubicBezierCurve(
+        0,
+        { x: 0, y: 100, z: 0 },
+        { x: 0, y: 0, z: 0 },
+        { x: 100, y: 0, z: 0 },
+        { x: 100, y: 100, z: 0 }
+); // { x: 0, y: 100, z: 0 }
+
+const v3 = v3CubicBezierCurve(
+        1,
+        { x: 0, y: 100, z: 0 },
+        { x: 0, y: 0, z: 0 },
+        { x: 100, y: 0, z: 0 },
+        { x: 100, y: 100, z: 0 }
+); // { x: 100, y: 100, z: 0 }
 ```
 
 -----------------------------------------------

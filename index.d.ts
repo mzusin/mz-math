@@ -38,6 +38,11 @@ declare module 'toolcool-math' {
 
     export const stringToNumber: (value: string, defaultNumber: number) => number;
 
+    export const v2QuadraticBezierCurve: (t: number, startControlPoint: IVector2, centerControlPoint: IVector2, endControlPoint: IVector2) => IVector2;
+    export const v3QuadraticBezierCurve: (t: number, startControlPoint: IVector3, centerControlPoint: IVector3, endControlPoint: IVector3) => IVector3;
+    export const v2CubicBezierCurve: (t: number, startControlPoint: IVector2, center1ControlPoint: IVector2, center2ControlPoint: IVector2, endControlPoint: IVector2) => IVector2;
+    export const v3CubicBezierCurve: (t: number, startControlPoint: IVector3, center1ControlPoint: IVector3, center2ControlPoint: IVector3, endControlPoint: IVector3) => IVector3;
+
     global {
         interface Window {
             TCMath: {
@@ -68,6 +73,11 @@ declare module 'toolcool-math' {
                 doRangesOverlap: typeof doRangesOverlap;
 
                 stringToNumber: typeof stringToNumber;
+
+                v2QuadraticBezierCurve: typeof v2QuadraticBezierCurve;
+                v3QuadraticBezierCurve: typeof v3QuadraticBezierCurve;
+                v2CubicBezierCurve: typeof v2CubicBezierCurve;
+                v3CubicBezierCurve: typeof v3CubicBezierCurve;
             };
         }
     }

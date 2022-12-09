@@ -4,6 +4,7 @@ import * as angle from './angle';
 import * as random from './random';
 import * as other from './other';
 import * as convert from './convert';
+import * as bezierCurve from './bezier-curve';
 
 declare global {
     interface Window {
@@ -35,6 +36,11 @@ declare global {
             doRangesOverlap: typeof other.doRangesOverlap;
 
             stringToNumber: typeof convert.stringToNumber;
+
+            v2QuadraticBezierCurve: typeof bezierCurve.v2QuadraticBezierCurve;
+            v3QuadraticBezierCurve: typeof bezierCurve.v3QuadraticBezierCurve;
+            v2CubicBezierCurve: typeof bezierCurve.v2CubicBezierCurve;
+            v3CubicBezierCurve: typeof bezierCurve.v3CubicBezierCurve;
         }
     }
 }
@@ -67,4 +73,9 @@ window.TCMath = window.TCMath || {
     doRangesOverlap: other.doRangesOverlap,
 
     stringToNumber: convert.stringToNumber,
+
+    v2QuadraticBezierCurve: bezierCurve.v2QuadraticBezierCurve,
+    v3QuadraticBezierCurve: bezierCurve.v3QuadraticBezierCurve,
+    v2CubicBezierCurve: bezierCurve.v2CubicBezierCurve,
+    v3CubicBezierCurve: bezierCurve.v3CubicBezierCurve,
 };
