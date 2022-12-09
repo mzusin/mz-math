@@ -11,7 +11,8 @@ import {
     v2Normalize,
     v3Normalize,
     v2DotProduct,
-    v3DotProduct
+    v3DotProduct,
+    v3CrossProduct
 } from '../src/vector';
 
 describe('Vector Sum', () => {
@@ -275,5 +276,26 @@ describe('Vectors Dot Product', () => {
         const v1 = { x: 0, y: 0, z: 0 };
         const v2 = { x: 0, y: 0, z: 0 };
         expect(v3DotProduct(v1, v2)).toStrictEqual(0);
+    });
+});
+
+describe('Vectors Cross Product', () => {
+
+    test('Cross product of { x: 1, y: 2, z: 3 } and { x: 4, y: 5, z: 6 } is { x: -3, y: 6, z: -3 }', () => {
+        const v1 = { x: 1, y: 2, z: 3 };
+        const v2 = { x: 4, y: 5, z: 6 };
+        expect(v3CrossProduct(v1, v2)).toStrictEqual({ x: -3, y: 6, z: -3 });
+    });
+
+    test('Cross product of { x: 0, y: 0, z: 0 } and { x: 0, y: 0, z: 0 } is { x: 0, y: 0, z: 0 }', () => {
+        const v1 = { x: 0, y: 0, z: 0 };
+        const v2 = { x: 0, y: 0, z: 0 };
+        expect(v3CrossProduct(v1, v2)).toStrictEqual({ x: 0, y: 0, z: 0 });
+    });
+
+    test('Cross product of { x: 1.1143, y: 2.1205, z: 3.57294 } and { x: 4.8294, y: 5.0001111, z: 6.48634 } with 2 decimal places is { x: -4.11, y: 10.03, z: -4.67 }', () => {
+        const v1 = { x: 1.1143, y: 2.1205, z: 3.57294 };
+        const v2 = { x: 4.8294, y: 5.0001111, z: 6.48634 };
+        expect(v3CrossProduct(v1, v2, 2)).toStrictEqual({ x: -4.11, y: 10.03, z: -4.67 });
     });
 });

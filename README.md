@@ -12,7 +12,8 @@ This project is a collection of TypeScript math helpers and utilities for the br
     - [Get Vector Length](#get-vector-length)
     - [Set Vector Length](#set-vector-length)
     - [Normalize Vector](#normalize-vector)
-    - [Vectors Dot Product](#vectors-dot-product)
+    - [Dot Product](#vectors-dot-product)
+    - [Cross Product](#)
 - Angles
   - [Get vector angle](#get-vector-angle)
   - [Set vector angle](#set-vector-angle)
@@ -216,7 +217,7 @@ const res4 = v3Normalize({ x: 10, y: 20, z: 30 }, 2); // { x: 0.27, y: 0.53, z: 
 
 ## Vectors Dot Product
 
-It's possible to normalize vectors using the **v2DotProduct** and **v3DotProduct** functions. Each function receives an optional **decimalPlaces** parameter.
+It's possible to calculate vector dot product using the **v2DotProduct** and **v3DotProduct** functions. Each function receives an optional **decimalPlaces** parameter.
 
 ```js
 const res1 = v2DotProduct({ x: 1, y: 2 }, { x: 3, y: 4 }); // 11
@@ -225,6 +226,20 @@ const res2 = v2DotProduct({ x: 1.1234, y: 2.35678 }, { x: 3.1265, y: 4.91355 }, 
 const res3 = v3DotProduct({ x: 1, y: 2, z: 3 }, { x: 4, y: 5, z: 6 }); // 32
 const res4 = v3DotProduct({ x: 1.73845, y: 2.88465, z: 3.000111 }, { x: 4.1163, y: 5.5501, z: 6.120777 }, 2); // 41.53
 ```
+
+## Vectors Cross Product
+
+```js
+const v1 = { x: 1, y: 2, z: 3 };
+const v2 = { x: 4, y: 5, z: 6 };
+const res1 = v3CrossProduct(v1, v2); // { x: -3, y: 6, z: -3 }
+
+const v3 = { x: 1.1143, y: 2.1205, z: 3.57294 };
+const v4 = { x: 4.8294, y: 5.0001111, z: 6.48634 };
+// round to 2 decimal places after the dot
+const res2 = v3CrossProduct(v3, v4, 2); // { x: -4.11, y: 10.03, z: -4.67 }
+```
+
 -----------------------------------------------
 
 # Angles

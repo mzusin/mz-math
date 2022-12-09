@@ -12,3 +12,4 @@ export declare const v2Normalize: (v2: IVector2, decimalPlaces?: number) => IVec
 export declare const v3Normalize: (v3: IVector3, decimalPlaces?: number) => IVector3;
 export declare const v2DotProduct: (vector1: IVector2, vector2: IVector2, decimalPlaces?: number) => number;
 export declare const v3DotProduct: (vector1: IVector3, vector2: IVector3, decimalPlaces?: number) => number;
+export declare const v3CrossProduct: (vector1: IVector3, vector2: IVector3, decimalPlaces?: number) => IVector3;

@@ -1,3 +1,2 @@
 - get / set angle for v3
 - shapes calculations like perimeter, areas, etc.
-- v2 / v3 cross product + tests
