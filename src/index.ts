@@ -1,4 +1,5 @@
 import * as vector from './vector';
+import * as matrix from './matrix';
 import * as format from './format';
 import * as angle from './angle';
 import * as random from './random';
@@ -23,6 +24,9 @@ declare global {
             v2DotProduct: typeof vector.v2DotProduct;
             v3DotProduct: typeof vector.v3DotProduct;
             v3CrossProduct: typeof vector.v3CrossProduct;
+
+            m2MulScalar: typeof matrix.m2MulScalar;
+            m3MulScalar: typeof matrix.m3MulScalar;
 
             getV2Angle: typeof angle.getV2Angle;
             setV2Angle: typeof angle.setV2Angle;
@@ -66,6 +70,9 @@ window.TCMath = window.TCMath || {
     v2DotProduct: vector.v2DotProduct,
     v3DotProduct: vector.v3DotProduct,
     v3CrossProduct: vector.v3CrossProduct,
+
+    m2MulScalar: matrix.m2MulScalar,
+    m3MulScalar: matrix.m3MulScalar,
 
     getV2Angle: angle.getV2Angle,
     setV2Angle: angle.setV2Angle,

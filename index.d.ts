@@ -2,6 +2,8 @@ declare module 'toolcool-math' {
 
     export type Vector2 = [number, number];
     export type Vector3 = [number, number, number];
+    export type Matrix2 = Vector2[];
+    export type Matrix3 = Vector3[];
 
     export const v2Sum: (...vectors: Vector2[]) => Vector2;
     export const v3Sum: (...vectors: Vector3[]) => Vector3;
@@ -17,6 +19,9 @@ declare module 'toolcool-math' {
     export const v2DotProduct: (vector1: Vector2, vector2: Vector2, decimalPlaces?: number) => number;
     export const v3DotProduct: (vector1: Vector3, vector2: Vector3, decimalPlaces?: number) => number;
     export const v3CrossProduct: (vector1: Vector3, vector2: Vector3, decimalPlaces?: number) => Vector3;
+
+    export const m2MulScalar: (m2: Matrix2, scalar: number, decimalPlaces?: number) => Matrix2;
+    export const m3MulScalar: (m3: Matrix3, scalar: number, decimalPlaces?: number) => Matrix3;
 
     export const getV2Angle: (v2: Vector2, decimalPlaces?: number) => number;
     export const setV2Angle: (v2: Vector2, newAngleRad: number, decimalPlaces?: number) => Vector2;
@@ -59,6 +64,9 @@ declare module 'toolcool-math' {
                 v2DotProduct: typeof v2DotProduct;
                 v3DotProduct: typeof v3DotProduct;
                 v3CrossProduct: typeof v3CrossProduct;
+
+                m2MulScalar: typeof m2MulScalar;
+                m3MulScalar: typeof m3MulScalar;
 
                 getV2Angle: typeof getV2Angle;
                 setV2Angle: typeof setV2Angle;
