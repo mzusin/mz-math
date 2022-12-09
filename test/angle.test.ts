@@ -19,6 +19,7 @@ describe('Get Vector Angle', () => {
 });
 
 describe('Set Vector Angle', () => {
+
     test('Given vector { x: 10, y: 20 } with angle 1.11 --> change the angle to 1.22. ', () => {
         expect(setV2Angle({ x: 10, y: 20 }, 1.22)).toStrictEqual({ x: 7.684152489413291, y: 20.99889998355732 });
     });
@@ -29,6 +30,10 @@ describe('Set Vector Angle', () => {
 
     test('Given vector { x: 5, y: 6 } --> change the angle to 0', () => {
         expect(setV2Angle({ x: 5, y: 6 }, 0)).toStrictEqual({ x: 7.810249675906654, y: 0 });
+    });
+
+    test('Given vector { x: 5, y: 6 } --> change the angle to Math.PI / 6 with 4 decimal places', () => {
+        expect(setV2Angle({ x: 5, y: 6 }, Math.PI / 6, 4)).toStrictEqual({ x: 6.7639, y: 3.9051 });
     });
 });
 

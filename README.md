@@ -1,6 +1,6 @@
 # A collection of TypeScript-based math helpers 🚀
 
-This project is a collection of TypeScript math helpers and utilities for the browser and Node.js. The modular approach allows to select only the required functions. It works well with all modern bundlers and supports **tree shaking** 🌲.
+This project is a collection of TypeScript math helpers and utilities for the browser and Node.js. The modular approach allows to select only the required functions. It works well with all modern bundlers and supports **tree shaking** 🌲. It is built using immutable/pure functions.
 
 ## Table of contents
 - [TypeScript Usage](#typescript-usage)

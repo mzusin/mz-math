@@ -33,7 +33,7 @@ export const v3Sum = (...vectors: IVector3[]) : IVector3 => {
 
 export const v2Sub = (...vectors: IVector2[]) : IVector2 => {
 
-    const res = vectors[0];
+    const res = {...vectors[0]};
 
     for(let i=1; i<vectors.length; i++){
         res.x -= vectors[i].x;
@@ -45,7 +45,7 @@ export const v2Sub = (...vectors: IVector2[]) : IVector2 => {
 
 export const v3Sub = (...vectors: IVector3[]) : IVector3 => {
 
-    const res = vectors[0];
+    const res = {...vectors[0]};
 
     for(let i=1; i<vectors.length; i++){
         res.x -= vectors[i].x;
