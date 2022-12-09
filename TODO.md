@@ -1,3 +1,2 @@
 - get / set angle for v3
-- Bezier Curves
 - shapes calculations like perimeter, areas, etc.

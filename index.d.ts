@@ -21,6 +21,8 @@ declare module 'toolcool-math' {
     export const v2SetLength: (v2: IVector2, newLength: number, decimalPlaces?: number) => IVector2;
     export const v2Normalize: (v2: IVector2, decimalPlaces?: number) => IVector2;
     export const v3Normalize: (v3: IVector3, decimalPlaces?: number) => IVector3;
+    export const v2DotProduct: (vector1: IVector2, vector2: IVector2, decimalPlaces?: number) => number;
+    export const v3DotProduct: (vector1: IVector3, vector2: IVector3, decimalPlaces?: number) => number;
 
     export const getV2Angle: (v2: IVector2, decimalPlaces?: number) => number;
     export const setV2Angle: (v2: IVector2, newAngleRad: number, decimalPlaces?: number) => IVector2;
@@ -59,6 +61,8 @@ declare module 'toolcool-math' {
                 v2SetLength: typeof v2SetLength;
                 v2Normalize: typeof v2Normalize;
                 v3Normalize: typeof v3Normalize;
+                v2DotProduct: typeof v2DotProduct;
+                v3DotProduct: typeof v3DotProduct;
 
                 getV2Angle: typeof getV2Angle;
                 setV2Angle: typeof setV2Angle;

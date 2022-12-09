@@ -10,3 +10,5 @@ export declare const v3Length: (vector: IVector3, decimalPlaces?: number) => num
 export declare const v2SetLength: (v2: IVector2, newLength: number, decimalPlaces?: number) => IVector2;
 export declare const v2Normalize: (v2: IVector2, decimalPlaces?: number) => IVector2;
 export declare const v3Normalize: (v3: IVector3, decimalPlaces?: number) => IVector3;
+export declare const v2DotProduct: (vector1: IVector2, vector2: IVector2, decimalPlaces?: number) => number;
+export declare const v3DotProduct: (vector1: IVector3, vector2: IVector3, decimalPlaces?: number) => number;

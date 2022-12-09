@@ -107,3 +107,16 @@ export const v3Normalize = (v3: IVector3, decimalPlaces = Infinity) : IVector3 =
         z: length === 0 ? 0 : setDecimalPlaces(v3.z / length, decimalPlaces),
     };
 };
+
+export const v2DotProduct = (vector1: IVector2, vector2: IVector2, decimalPlaces = Infinity) => {
+    return setDecimalPlaces(vector1.x * vector2.x + vector1.y * vector2.y, decimalPlaces);
+};
+
+export const v3DotProduct = (vector1: IVector3, vector2: IVector3, decimalPlaces = Infinity) => {
+    return setDecimalPlaces(
+        vector1.x * vector2.x +
+              vector1.y * vector2.y +
+              vector1.z * vector2.z,
+        decimalPlaces
+    );
+};

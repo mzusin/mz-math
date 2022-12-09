@@ -9,7 +9,9 @@ import {
     v3MulScalar,
     v2SetLength,
     v2Normalize,
-    v3Normalize
+    v3Normalize,
+    v2DotProduct,
+    v3DotProduct
 } from '../src/vector';
 
 describe('Vector Sum', () => {
@@ -222,5 +224,56 @@ describe('Normalize Vector', function () {
 
     test('Normalize { x: 0, y: 0, z: 0 } => { x: 0, y: 0, z: 0 }', () => {
         expect(v3Normalize({ x: 0, y: 0, z: 0 })).toStrictEqual({ x: 0, y: 0, z: 0 });
+    });
+});
+
+describe('Vectors Dot Product', () => {
+
+    test('Dot product of { x: 1, y: 2 } and { x: 3, y: 4 } is 11', () => {
+        const v1 = { x: 1, y: 2 };
+        const v2 = { x: 3, y: 4 };
+        expect(v2DotProduct(v1, v2)).toStrictEqual(11);
+    });
+
+    test('Dot product of { x: 1.1234, y: 2.35678 } and { x: 3.1265, y: 4.91355 } with 2 decimal places is 15.09', () => {
+        const v1 = { x: 1.1234, y: 2.35678 };
+        const v2 = { x: 3.1265, y: 4.91355 };
+        expect(v2DotProduct(v1, v2, 2)).toStrictEqual(15.09);
+    });
+
+    test('Dot product of { x: 0, y: 25 } and { x: 10, y: 28 } is 11', () => {
+        const v1 = { x: 0, y: 25 };
+        const v2 = { x: 10, y: 28 };
+        expect(v2DotProduct(v1, v2)).toStrictEqual(700);
+    });
+
+    test('Dot product of { x: 0, y: 0 } and { x: 0, y: 0 } is 0', () => {
+        const v1 = { x: 0, y: 0 };
+        const v2 = { x: 0, y: 0 };
+        expect(v2DotProduct(v1, v2)).toStrictEqual(0);
+    });
+
+    test('Dot product of { x: 1, y: 2, z: 3 } and { x: 4, y: 5, z: 6 } is 32', () => {
+        const v1 = { x: 1, y: 2, z: 3 };
+        const v2 = { x: 4, y: 5, z: 6 };
+        expect(v3DotProduct(v1, v2)).toStrictEqual(32);
+    });
+
+    test('Dot product of { x: 1.73845, y: 2.88465, z: 3.000111 } and { x: 4.1163, y: 5.5501, z: 6.120777 } with 2 decimal places is 41.53', () => {
+        const v1 = { x: 1.73845, y: 2.88465, z: 3.000111 };
+        const v2 = { x: 4.1163, y: 5.5501, z: 6.120777 };
+        expect(v3DotProduct(v1, v2, 2)).toStrictEqual(41.53);
+    });
+
+    test('Dot product of { x: 0, y: 25, z: 1.5 } and { x: 10, y: 28, z: 9 } is 713.5', () => {
+        const v1 = { x: 0, y: 25, z: 1.5 };
+        const v2 = { x: 10, y: 28, z: 9 };
+        expect(v3DotProduct(v1, v2)).toStrictEqual(713.5);
+    });
+
+    test('Dot product of { x: 0, y: 0 } and { x: 0, y: 0 } is 0', () => {
+        const v1 = { x: 0, y: 0, z: 0 };
+        const v2 = { x: 0, y: 0, z: 0 };
+        expect(v3DotProduct(v1, v2)).toStrictEqual(0);
     });
 });

@@ -20,6 +20,8 @@ declare global {
             v2SetLength: typeof vector.v2SetLength;
             v2Normalize: typeof vector.v2Normalize;
             v3Normalize: typeof vector.v3Normalize;
+            v2DotProduct: typeof vector.v2DotProduct;
+            v3DotProduct: typeof vector.v3DotProduct;
 
             getV2Angle: typeof angle.getV2Angle;
             setV2Angle: typeof angle.setV2Angle;
@@ -59,6 +61,8 @@ window.TCMath = window.TCMath || {
     v2SetLength: vector.v2SetLength,
     v2Normalize: vector.v2Normalize,
     v3Normalize: vector.v3Normalize,
+    v2DotProduct: vector.v2DotProduct,
+    v3DotProduct: vector.v3DotProduct,
 
     getV2Angle: angle.getV2Angle,
     setV2Angle: angle.setV2Angle,
