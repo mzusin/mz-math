@@ -1,4 +1,4 @@
-# A collection of typescript-based math helpers
+# A collection of TypeScript-based math helpers 🚀
 
 ## Table of contents
 - [TypeScript Usage](#typescript-usage)
@@ -23,6 +23,7 @@
 - Other
   - [Modulo](#modulo)
   - [Convert range](#convert-range)
+  - [Do ranges overlap?](#check-if-two-ranges-overlap)
 - [License](#license)
 
 ## TypeScript Usage
@@ -281,6 +282,18 @@ Converting a number from the range [a,b] to the range [c,d].
 // convert the value 0.5 from the range [0,1] to the range [100,200]
 const res = convertRange(0.5, 0, 1, 100, 200); // 150
 ```
+
+## Check if two ranges overlap
+
+```js
+
+// [0,1] and [100,200] don't overlap
+const res1 = doRangesOverlap(0, 1, 100, 200); // false
+
+// [0,1] and [0.5, 1.5] overlap
+const res2 = doRangesOverlap(0, 1, 0.5, 1.5); // true
+```
+
 -----------------------------------------------
 
 ## License

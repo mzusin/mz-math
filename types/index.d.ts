@@ -22,6 +22,7 @@ declare global {
             getRandomInt: typeof random.getRandomInt;
             getRandomBoolean: typeof random.getRandomBoolean;
             mod: typeof other.mod;
+            convertRange: typeof other.convertRange;
             stringToNumber: typeof convert.stringToNumber;
         };
     }

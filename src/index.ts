@@ -28,6 +28,7 @@ declare global {
 
             mod: typeof other.mod;
             convertRange: typeof other.convertRange;
+            doRangesOverlap: typeof other.doRangesOverlap;
 
             stringToNumber: typeof convert.stringToNumber;
         }
@@ -55,6 +56,7 @@ window.TCMath = window.TCMath || {
 
     mod: other.mod,
     convertRange: other.convertRange,
+    doRangesOverlap: other.doRangesOverlap,
 
     stringToNumber: convert.stringToNumber,
 };

@@ -30,6 +30,7 @@ declare module 'toolcool-math' {
 
     export const mod: (n: number, m: number) => number;
     export const convertRange: (a: number, b: number, c: number, d: number, x: number) => number;
+    export const doRangesOverlap: (a: number, b: number, c: number, d: number) => boolean;
 
     export const stringToNumber: (value: string, defaultNumber: number) => number;
 
@@ -56,6 +57,7 @@ declare module 'toolcool-math' {
 
                 mod: typeof mod;
                 convertRange: typeof convertRange;
+                doRangesOverlap: typeof doRangesOverlap;
 
                 stringToNumber: typeof stringToNumber;
             };

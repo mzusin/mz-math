@@ -1,4 +1,4 @@
-import { mod, convertRange } from '../src/other';
+import { mod, convertRange, doRangesOverlap } from '../src/other';
 
 describe('Modulo', () => {
     test('-21 % 4 => 3', () => {
@@ -57,5 +57,24 @@ describe('Convert Range', () => {
     test('1.5 from [0,1] to [100, 200] => 250', () => {
         const res = convertRange(1.5, 0, 1, 100, 200)
         expect(res).toStrictEqual(250);
+    });
+});
+
+describe('Do Ranges Overlap', () => {
+
+    test(`'[0,1] and [100,200] don't overlap`, () => {
+        expect(doRangesOverlap(0, 1, 100, 200)).toStrictEqual(false);
+    });
+
+    test(`'[0,1] and [1,2] overlap`, () => {
+        expect(doRangesOverlap(0, 1, 1, 2)).toStrictEqual(true);
+    });
+
+    test(`'[0,1] and [0.5, 1.5] overlap`, () => {
+        expect(doRangesOverlap(0, 1, 0.5, 1.5)).toStrictEqual(true);
+    });
+
+    test(`'[0,1] and [-100,-200] don't overlap`, () => {
+        expect(doRangesOverlap(0, 1, -100, -200)).toStrictEqual(false);
     });
 });
