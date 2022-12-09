@@ -11,6 +11,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
     - [Multiple vector by scalar](#multiply-vector-by-scalar)
     - [Get Vector Length](#get-vector-length)
     - [Set Vector Length](#set-vector-length)
+    - [Normalize Vector](#normalize-vector)
 - Angles
   - [Get vector angle](#get-vector-angle)
   - [Set vector angle](#set-vector-angle)
