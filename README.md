@@ -48,10 +48,10 @@ npm install toolcool-math
 
 The import any function like **v2Sum**:
 ```js
-import { v2Sum } from 'toolcool-math';
+import { v2Sum, Vector2 } from 'toolcool-math';
 
-const v1 = [1, 2];
-const v2 = [3, 4];
+const v1: Vector2 = [1, 2];
+const v2: Vector2 = [3, 4];
 const sum = v2Sum(v1, v2); // [4, 6]
 ```
 
