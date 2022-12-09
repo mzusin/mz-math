@@ -7,3 +7,4 @@ export declare const getRandom: (min: number, max: number, decimalPlaces?: numbe
  */
 export declare const getRandomInt: (min: number, max: number) => number;
 export declare const getRandomBoolean: () => boolean;
+export declare const getRandomItemFromArray: (array: any[]) => any;

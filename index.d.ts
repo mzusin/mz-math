@@ -27,6 +27,7 @@ declare module 'toolcool-math' {
     export const getRandom: (min: number, max: number, decimalPlaces?: number) => number;
     export const getRandomInt: (min: number, max: number) => number;
     export const getRandomBoolean: () => boolean;
+    export const getRandomItemFromArray: (array: any[]) => any;
 
     export const mod: (n: number, m: number) => number;
     export const convertRange: (a: number, b: number, c: number, d: number, x: number) => number;
@@ -54,6 +55,7 @@ declare module 'toolcool-math' {
                 getRandom: typeof getRandom;
                 getRandomInt: typeof getRandomInt;
                 getRandomBoolean: typeof getRandomBoolean;
+                getRandomItemFromArray: typeof getRandomItemFromArray;
 
                 mod: typeof mod;
                 convertRange: typeof convertRange;

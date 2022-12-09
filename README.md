@@ -20,6 +20,7 @@
   - [Get random number in range](#get-random-number-in-range)
   - [Get random integer](#get-random-integer)
   - [Get random boolean value](#get-random-boolean-value)
+  - [Get random item from array](#get-random-item-from-array)
 - Other
   - [Modulo](#modulo)
   - [Convert range](#convert-range)
@@ -261,6 +262,15 @@ const res = getRandomInt(0, 100); // 63
 ```js
 const res = getRandomBoolean(); // true or false
 ```
+
+## Get random item from array
+
+```js
+const item1 = getRandomItemFromArray([1,2,3,4,5]); // 2
+const item2 = getRandomItemFromArray(['a', 'b', 'c']); // 'a'
+const item3 = getRandomItemFromArray([{ test: 1 }, { test: 2 }, { test: 3 }]); // { test: 3 }
+```
+
 -----------------------------------------------
 
 # Other

@@ -25,6 +25,7 @@ declare global {
             getRandom: typeof random.getRandom;
             getRandomInt: typeof random.getRandomInt;
             getRandomBoolean: typeof random.getRandomBoolean;
+            getRandomItemFromArray: typeof random.getRandomItemFromArray;
 
             mod: typeof other.mod;
             convertRange: typeof other.convertRange;
@@ -53,6 +54,7 @@ window.TCMath = window.TCMath || {
     getRandom: random.getRandom,
     getRandomInt: random.getRandomInt,
     getRandomBoolean: random.getRandomBoolean,
+    getRandomItemFromArray: random.getRandomItemFromArray,
 
     mod: other.mod,
     convertRange: other.convertRange,

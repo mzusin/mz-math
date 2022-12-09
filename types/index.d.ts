@@ -23,6 +23,7 @@ declare global {
             getRandomBoolean: typeof random.getRandomBoolean;
             mod: typeof other.mod;
             convertRange: typeof other.convertRange;
+            doRangesOverlap: typeof other.doRangesOverlap;
             stringToNumber: typeof convert.stringToNumber;
         };
     }
