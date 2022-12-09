@@ -17,6 +17,8 @@ declare global {
             v2Length: typeof vector.v2Length;
             v3Length: typeof vector.v3Length;
             v2SetLength: typeof vector.v2SetLength;
+            v2Normalize: typeof vector.v2Normalize;
+            v3Normalize: typeof vector.v3Normalize;
             getV2Angle: typeof angle.getV2Angle;
             setV2Angle: typeof angle.setV2Angle;
             radiansToDegrees: typeof angle.radiansToDegrees;

@@ -8,3 +8,5 @@ export declare const v3MulScalar: (v3: IVector3, scalar: number, decimalPlaces?:
 export declare const v2Length: (vector: IVector2, decimalPlaces?: number) => number;
 export declare const v3Length: (vector: IVector3, decimalPlaces?: number) => number;
 export declare const v2SetLength: (v2: IVector2, newLength: number, decimalPlaces?: number) => IVector2;
+export declare const v2Normalize: (v2: IVector2, decimalPlaces?: number) => IVector2;
+export declare const v3Normalize: (v3: IVector3, decimalPlaces?: number) => IVector3;

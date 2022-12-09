@@ -88,3 +88,22 @@ export const v2SetLength = (v2: IVector2, newLength: number, decimalPlaces = Inf
         y: setDecimalPlaces(Math.sin(angle) * newLength, decimalPlaces),
     };
 };
+
+export const v2Normalize = (v2: IVector2, decimalPlaces = Infinity) : IVector2 => {
+    const length = v2Length(v2);
+
+    return {
+        x: length === 0 ? 0 : setDecimalPlaces(v2.x / length, decimalPlaces),
+        y: length === 0 ? 0 : setDecimalPlaces(v2.y / length, decimalPlaces),
+    };
+};
+
+export const v3Normalize = (v3: IVector3, decimalPlaces = Infinity) : IVector3 => {
+    const length = v3Length(v3);
+
+    return {
+        x: length === 0 ? 0 : setDecimalPlaces(v3.x / length, decimalPlaces),
+        y: length === 0 ? 0 : setDecimalPlaces(v3.y / length, decimalPlaces),
+        z: length === 0 ? 0 : setDecimalPlaces(v3.z / length, decimalPlaces),
+    };
+};

@@ -198,6 +198,19 @@ const res1 = v2SetLength({ x: 1, y: 2 }, 10); // { x: 4.4721359549995805, y: 8.9
 const res2 = v2SetLength({ x: 1, y: 2 }, 10, 2); // { x: 4.47, y: 8.94 }
 ```
 
+
+## Normalize Vector
+
+It's possible to normalize vectors using the **v2Normalize** and **v3Normalize** functions. Each function receives an optional **decimalPlaces** parameter.
+
+```js
+const res1 = v2Normalize({ x: 10, y: 20 }); // { x: 0.4472135954999579, y: 0.8944271909999159 }
+const res2 = v2Normalize({ x: 10, y: 20 }, 2); // { x: 0.45, y: 0.89 }
+
+const res3 = v3Normalize({ x: 10, y: 20, z: 30 }); // { x: 0.2672612419124244, y: 0.5345224838248488, z: 0.8017837257372731 }
+const res4 = v3Normalize({ x: 10, y: 20, z: 30 }, 2); // { x: 0.27, y: 0.53, z: 0.8 }
+```
+
 -----------------------------------------------
 
 # Angles

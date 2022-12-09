@@ -1,4 +1,16 @@
-import { v2Length, v3Length, v2Sum, v3Sum, v2Sub, v3Sub, v2MulScalar, v3MulScalar, v2SetLength } from '../src/vector';
+import {
+    v2Length,
+    v3Length,
+    v2Sum,
+    v3Sum,
+    v2Sub,
+    v3Sub,
+    v2MulScalar,
+    v3MulScalar,
+    v2SetLength,
+    v2Normalize,
+    v3Normalize
+} from '../src/vector';
 
 describe('Vector Sum', () => {
     test('{1,2} + {3,4}', () => {
@@ -153,7 +165,7 @@ describe('Get Vector Length', () => {
 });
 
 describe('Set Vector Length', () => {
-    test('Set length of { x: 1, y: 2 } to be 10 => { x: 4.4721359549995805, y: 8.94427190999916 } ', () => {
+    test('Set length of { x: 1, y: 2 } to be 10 => { x: 4.4721359549995805, y: 8.94427190999916 }', () => {
         expect(v2SetLength({ x: 1, y: 2 }, 10)).toStrictEqual({ x: 4.4721359549995805, y: 8.94427190999916 });
     });
 
@@ -167,5 +179,48 @@ describe('Set Vector Length', () => {
 
     test('Set length of { x: 1, y: 2 } to be -1 => { x: -0.44721359549995804, y: -0.8944271909999159 }', () => {
         expect(v2SetLength({ x: 1, y: 2 }, -1)).toStrictEqual({ x: -0.44721359549995804, y: -0.8944271909999159 });
+    });
+});
+
+describe('Normalize Vector', function () {
+
+    test('Normalize { x: 10, y: 20 } => { x: 0.4472135954999579, y: 0.8944271909999159 }', () => {
+        expect(v2Normalize({ x: 10, y: 20 })).toStrictEqual({ x: 0.4472135954999579, y: 0.8944271909999159 });
+    });
+
+    test('Normalize { x: 10, y: 20 } with 2 decimal places => { x: 0.45, y: 0.89 }', () => {
+        expect(v2Normalize({ x: 10, y: 20 }, 2)).toStrictEqual({ x: 0.45, y: 0.89 });
+    });
+
+    test('Normalize { x: 1, y: 1 } => { x: 0.7071067811865475, y: 0.7071067811865475 }', () => {
+        expect(v2Normalize({ x: 1, y: 1 })).toStrictEqual({ x: 0.7071067811865475, y: 0.7071067811865475 });
+    });
+
+    test('Normalize { x: 0, y: 1 } => { x: 0, y: 1 }', () => {
+        expect(v2Normalize({ x: 0, y: 1 })).toStrictEqual({ x: 0, y: 1 });
+    });
+
+    test('Normalize { x: 0, y: 0 } => { x: 0, y: 0 }', () => {
+        expect(v2Normalize({ x: 0, y: 0 })).toStrictEqual({ x: 0, y: 0 });
+    });
+
+    test('Normalize { x: 10, y: 20, z: 30 } => { x: 0.2672612419124244, y: 0.5345224838248488, z: 0.8017837257372731 }', () => {
+        expect(v3Normalize({ x: 10, y: 20, z: 30 })).toStrictEqual({ x: 0.2672612419124244, y: 0.5345224838248488, z: 0.8017837257372731 });
+    });
+
+    test('Normalize { x: 10, y: 20, z: 30 } with 2 decimal places => { x: 0.27, y: 0.53, z: 0.8 }', () => {
+        expect(v3Normalize({ x: 10, y: 20, z: 30 }, 2)).toStrictEqual({ x: 0.27, y: 0.53, z: 0.8 });
+    });
+
+    test('Normalize { x: 1, y: 1, z: 0 } => { x: 0.7071067811865475, y: 0.7071067811865475, z: 0 }', () => {
+        expect(v3Normalize({ x: 1, y: 1, z: 0 })).toStrictEqual({ x: 0.7071067811865475, y: 0.7071067811865475, z: 0 });
+    });
+
+    test('Normalize { x: 0, y: 1, z: 1 } => { x: 0, y: 1, z: 0.7071067811865475 }', () => {
+        expect(v3Normalize({ x: 0, y: 1, z: 1 })).toStrictEqual({ x: 0, y: 0.7071067811865475, z: 0.7071067811865475 });
+    });
+
+    test('Normalize { x: 0, y: 0, z: 0 } => { x: 0, y: 0, z: 0 }', () => {
+        expect(v3Normalize({ x: 0, y: 0, z: 0 })).toStrictEqual({ x: 0, y: 0, z: 0 });
     });
 });
