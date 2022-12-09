@@ -7,3 +7,4 @@ export declare const v2MulScalar: (v2: IVector2, scalar: number, decimalPlaces?:
 export declare const v3MulScalar: (v3: IVector3, scalar: number, decimalPlaces?: number) => IVector3;
 export declare const v2Length: (vector: IVector2, decimalPlaces?: number) => number;
 export declare const v3Length: (vector: IVector3, decimalPlaces?: number) => number;
+export declare const v2SetLength: (v2: IVector2, newLength: number, decimalPlaces?: number) => IVector2;

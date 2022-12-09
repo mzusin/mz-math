@@ -1,5 +1,6 @@
 import { IVector2, IVector3 } from './interfaces';
 import { setDecimalPlaces } from './format';
+import { getV2Angle } from './angle';
 
 export const v2Sum = (...vectors: IVector2[]) : IVector2 => {
 
@@ -78,4 +79,12 @@ export const v2Length = (vector: IVector2, decimalPlaces = Infinity) => {
 export const v3Length = (vector: IVector3, decimalPlaces = Infinity) => {
     const len = Math.sqrt(vector.x * vector.x + vector.y * vector.y + vector.z * vector.z);
     return setDecimalPlaces(len, decimalPlaces);
+};
+
+export const v2SetLength = (v2: IVector2, newLength: number, decimalPlaces = Infinity): IVector2 => {
+    const angle = getV2Angle(v2);
+    return {
+        x: setDecimalPlaces(Math.cos(angle) * newLength, decimalPlaces),
+        y: setDecimalPlaces(Math.sin(angle) * newLength, decimalPlaces),
+    };
 };

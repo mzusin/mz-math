@@ -11,8 +11,11 @@ declare global {
             v3Sum: typeof vector.v3Sum;
             v2Sub: typeof vector.v2Sub;
             v3Sub: typeof vector.v3Sub;
+            v2MulScalar: typeof vector.v2MulScalar;
+            v3MulScalar: typeof vector.v3MulScalar;
             v2Length: typeof vector.v2Length;
             v3Length: typeof vector.v3Length;
+            v2SetLength: typeof vector.v2SetLength;
             getV2Angle: typeof angle.getV2Angle;
             setV2Angle: typeof angle.setV2Angle;
             radiansToDegrees: typeof angle.radiansToDegrees;

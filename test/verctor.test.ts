@@ -1,4 +1,4 @@
-import { v2Length, v3Length, v2Sum, v3Sum, v2Sub, v3Sub, v2MulScalar, v3MulScalar } from '../src/vector';
+import { v2Length, v3Length, v2Sum, v3Sum, v2Sub, v3Sub, v2MulScalar, v3MulScalar, v2SetLength } from '../src/vector';
 
 describe('Vector Sum', () => {
     test('{1,2} + {3,4}', () => {
@@ -134,7 +134,7 @@ describe('Multiply vector by scalar', () => {
     });
 });
 
-describe('Vector Length', () => {
+describe('Get Vector Length', () => {
     test('Length of {1,2} with 2 decimal places', () => {
         expect(v2Length({ x: 1, y: 2 })).toStrictEqual(2.23606797749979);
     });
@@ -149,5 +149,23 @@ describe('Vector Length', () => {
 
     test('Length of {1,2,3} with 2 decimal places', () => {
         expect(v3Length({ x: 1, y: 2, z: 3 }, 2)).toStrictEqual(3.74);
+    });
+});
+
+describe('Set Vector Length', () => {
+    test('Set length of { x: 1, y: 2 } to be 10 => { x: 4.4721359549995805, y: 8.94427190999916 } ', () => {
+        expect(v2SetLength({ x: 1, y: 2 }, 10)).toStrictEqual({ x: 4.4721359549995805, y: 8.94427190999916 });
+    });
+
+    test('Set length of { x: 1, y: 2 } to be 10 with 2 decimal places => { x: 4.47, y: 8.94 }', () => {
+        expect(v2SetLength({ x: 1, y: 2 }, 10, 2)).toStrictEqual({ x: 4.47, y: 8.94 });
+    });
+
+    test('Set length of { x: 1, y: 2 } to be 0 => { x: 0, y: 0 }', () => {
+        expect(v2SetLength({ x: 1, y: 2 }, 0)).toStrictEqual({ x: 0, y: 0 });
+    });
+
+    test('Set length of { x: 1, y: 2 } to be -1 => { x: -0.44721359549995804, y: -0.8944271909999159 }', () => {
+        expect(v2SetLength({ x: 1, y: 2 }, -1)).toStrictEqual({ x: -0.44721359549995804, y: -0.8944271909999159 });
     });
 });

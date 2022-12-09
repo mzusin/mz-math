@@ -7,7 +7,8 @@
     - [Vectors Sum](#vectors-sum)
     - [Vectors Subtraction](#vectors-subtraction)
     - [Multiple vector by scalar](#multiply-vector-by-scalar)
-    - [Vector Length](#vector-length)
+    - [Get Vector Length](#get-vector-length)
+    - [Set Vector Length](#set-vector-length)
 - Angles
   - [Get vector angle](#get-vector-angle)
   - [Set vector angle](#set-vector-angle)
@@ -171,7 +172,7 @@ const res = v3MulScalar({ x: 1, y: 2, z: 3 }, Math.PI); // { x: 3.14159265358979
 const res = v3MulScalar({ x: 1, y: 2, z: 3 }, Math.PI, 2); // { x: 3.14, y: 6.28, z: 9.42 }
 ```
 
-## Vector Length
+## Get Vector Length
 
 Vector length can be found using the **v2Length** and **v3Length** functions. Each function receives an optional **decimalPlaces** parameter.
 
@@ -181,6 +182,15 @@ const len2 = v2Length({ x: 1, y: 2 }, 2); // 2.24
 
 const len3 = v3Length({ x: 1, y: 2, z: 3 }); // 3.7416573867739413
 const len4 = v3Length({ x: 1, y: 2, z: 3 }, 2); // 3.74
+```
+
+## Set Vector Length
+
+It's possible to update vector length using **v2SetLength** function. The function receives an optional **decimalPlaces** parameter.
+
+```js
+const res1 = v2SetLength({ x: 1, y: 2 }, 10); // { x: 4.4721359549995805, y: 8.94427190999916 }
+const res2 = v2SetLength({ x: 1, y: 2 }, 10, 2); // { x: 4.47, y: 8.94 }
 ```
 
 -----------------------------------------------
