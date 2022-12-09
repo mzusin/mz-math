@@ -5,6 +5,7 @@
 - [Browser Usage](#browser-usage)
 - Vectors
     - [Vectors Sum](#vectors-sum)
+    - [Vectors Subtraction](#vectors-subtraction)
     - [Vector Length](#vector-length)
 - Angles
   - [Get vector angle](#get-vector-angle)
@@ -59,7 +60,7 @@ Any function can also be used in the browser using the **tc-math.min.js** file. 
 
 ## Vectors Sum
 
-To add vectors, the v2Sum and v3Sum functions are used. They can accept any number of vectors as input.
+To add vectors, the **v2Sum** and **v3Sum** functions are used. They can accept any number of vectors as input.
 
 **2D Vector**
 ```js
@@ -92,7 +93,6 @@ const sum = v3Sum(v1, v2); // { x: 4, y: 6, z: 7 }
 const v1 = { x: 1, y: 2, z: 3 };
 const v2 = { x: 3, y: 4, z: 4 };
 const v3 = { x: 7, y: 8, z: 9 };
-const v2 = { x: 3, y: 4, z: 4 };
 const sum = v3Sum(v1, v2, v3); // { x: 11, y: 14, z: 16 }
 
 const v1 = { x: 1, y: 2, z: 3 };
@@ -100,6 +100,50 @@ const v2 = { x: 3, y: 4, z: 4 };
 const v3 = { x: 7, y: 8, z: 9 };
 const v4 = { x: 10, y: 11, z: 12 };
 const sum = v3Sum(v1, v2, v3, v4); // { x: 21, y: 25, z: 28 }
+```
+
+## Vectors Subtraction
+
+To subtract vectors, the **v2Sub** and **v3Sub** functions are used. They can accept any number of vectors as input.
+
+**2D Vector**
+```js
+import { v2Sub } from 'toolcool-math';
+
+const v1 = { x: 1, y: 2 };
+const v2 = { x: 3, y: 4 };
+const sum = v2Sub(v1, v2); // { x: -2, y: -2 }
+
+const v1 = { x: 1, y: 2 };
+const v2 = { x: 3, y: 4 };
+const v3 = { x: 5, y: 6 };
+const sum = v2Sub(v1, v2, v3); // { x: -7, y: -8 }
+
+const v1 = { x: 1, y: 2 };
+const v2 = { x: 3, y: 4 };
+const v3 = { x: 5, y: 6 };
+const v4 = { x: 7, y: 8 };
+const sum = v2Sub(v1, v2, v3, v4); // { x: -14, y: -16 }
+```
+
+**3D Vector**
+```js
+import { v3Sub } from 'toolcool-math';
+
+const v1 = { x: 1, y: 2, z: 3 };
+const v2 = { x: 3, y: 4, z: 4 };
+const sum = v3Sub(v1, v2); // { x: -2, y: -2, z: -1 }
+
+const v1 = { x: 1, y: 2, z: 3 };
+const v2 = { x: 3, y: 4, z: 4 };
+const v3 = { x: 7, y: 8, z: 9 };
+const sum = v3Sub(v1, v2, v3); // { x: -9, y: -10, z: -10 }
+
+const v1 = { x: 1, y: 2, z: 3 };
+const v2 = { x: 3, y: 4, z: 4 };
+const v3 = { x: 7, y: 8, z: 9 };
+const v4 = { x: 10, y: 11, z: 12 };
+const sum = v3Sub(v1, v2, v3, v4); // { x: -19, y: -21, z: -22 }
 ```
 
 ## Vector Length

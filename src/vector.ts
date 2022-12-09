@@ -3,10 +3,7 @@ import { setDecimalPlaces } from './format';
 
 export const v2Sum = (...vectors: IVector2[]) : IVector2 => {
 
-    const res = {
-        x: 0,
-        y: 0,
-    }
+    const res = { x: 0, y: 0 };
 
     for(const vector of vectors){
         res.x += vector.x;
@@ -22,12 +19,37 @@ export const v3Sum = (...vectors: IVector3[]) : IVector3 => {
         x: 0,
         y: 0,
         z: 0,
-    }
+    };
 
     for(const vector of vectors){
         res.x += vector.x;
         res.y += vector.y;
         res.z += vector.z;
+    }
+
+    return res;
+};
+
+export const v2Sub = (...vectors: IVector2[]) : IVector2 => {
+
+    const res = vectors[0];
+
+    for(let i=1; i<vectors.length; i++){
+        res.x -= vectors[i].x;
+        res.y -= vectors[i].y;
+    }
+
+    return res;
+};
+
+export const v3Sub = (...vectors: IVector3[]) : IVector3 => {
+
+    const res = vectors[0];
+
+    for(let i=1; i<vectors.length; i++){
+        res.x -= vectors[i].x;
+        res.y -= vectors[i].y;
+        res.z -= vectors[i].z;
     }
 
     return res;
