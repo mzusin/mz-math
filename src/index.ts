@@ -27,6 +27,7 @@ declare global {
             getRandomBoolean: typeof random.getRandomBoolean;
 
             mod: typeof other.mod;
+            convertRange: typeof other.convertRange;
 
             stringToNumber: typeof convert.stringToNumber;
         }
@@ -53,6 +54,7 @@ window.TCMath = window.TCMath || {
     getRandomBoolean: random.getRandomBoolean,
 
     mod: other.mod,
+    convertRange: other.convertRange,
 
     stringToNumber: convert.stringToNumber,
 };

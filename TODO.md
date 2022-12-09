@@ -1,5 +1,4 @@
 - get / set angle for v3
 - multiply vector by scalar
 - Bezier Curves
-- range conversions
 - shapes calculations like perimeter, areas, etc.

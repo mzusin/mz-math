@@ -1,4 +1,4 @@
-import { mod } from '../src/other';
+import { mod, convertRange } from '../src/other';
 
 describe('Modulo', () => {
     test('-21 % 4 => 3', () => {
@@ -19,5 +19,43 @@ describe('Modulo', () => {
 
     test('-871 % -20 => -11', () => {
         expect(mod(-871, -20)).toStrictEqual(-11);
+    });
+});
+
+describe('Convert Range', () => {
+
+    test('0.5 from [0,1] to [100,200] => 150', () => {
+        const res = convertRange(0.5, 0, 1, 100, 200)
+        expect(res).toStrictEqual(150);
+    });
+
+    test('0 from [0,1] to [100, 200] => 100', () => {
+        const res = convertRange(0, 0, 1, 100, 200)
+        expect(res).toStrictEqual(100);
+    });
+
+    test('1 from [0,1] to [100, 200] => 200', () => {
+        const res = convertRange(1, 0, 1, 100, 200)
+        expect(res).toStrictEqual(200);
+    });
+
+    test('150 from [100, 200] to [0, 1] => 0.5', () => {
+        const res = convertRange(150, 100, 200, 0, 1)
+        expect(res).toStrictEqual(0.5);
+    });
+
+    test('100 from [100, 200] to [0, 1] => 0', () => {
+        const res = convertRange(100, 100, 200, 0, 1)
+        expect(res).toStrictEqual(0);
+    });
+
+    test('200 from [100, 200] to [0, 1] => 1', () => {
+        const res = convertRange(200, 100, 200, 0, 1)
+        expect(res).toStrictEqual(1);
+    });
+
+    test('1.5 from [0,1] to [100, 200] => 250', () => {
+        const res = convertRange(1.5, 0, 1, 100, 200)
+        expect(res).toStrictEqual(250);
     });
 });

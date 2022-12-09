@@ -29,6 +29,7 @@ declare module 'toolcool-math' {
     export const getRandomBoolean: () => boolean;
 
     export const mod: (n: number, m: number) => number;
+    export const convertRange: (a: number, b: number, c: number, d: number, x: number) => number;
 
     export const stringToNumber: (value: string, defaultNumber: number) => number;
 
@@ -54,6 +55,7 @@ declare module 'toolcool-math' {
                 getRandomBoolean: typeof getRandomBoolean;
 
                 mod: typeof mod;
+                convertRange: typeof convertRange;
 
                 stringToNumber: typeof stringToNumber;
             };
