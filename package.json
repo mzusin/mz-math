@@ -27,7 +27,10 @@
     "Bézier curve",
     "Bézier",
     "Bezier curve",
-    "Bezier"
+    "Bezier",
+    "transformation matrix",
+    "rotation matrix",
+    "rotation"
   ],
   "author": "Tool Cool <toolcool.org@gmail.com>",
   "license": "MIT",

@@ -1,5 +1,5 @@
 import { Matrix2, Matrix3, Matrix, Vector, Vector2, Vector3 } from './types';
-import { vMulScalar, vSum, vSub, vDotProduct, vN, vEqual } from './vector';
+import { vMulScalar, vSum, vSub, vDotProduct, vN, vEqual, v2Normalize, v3Normalize } from './vector';
 
 // --------------- SUM ----------------------
 
@@ -266,7 +266,8 @@ export const m2Rotation = (angleRad: number): Matrix2 => {
 };
 
 export const v2Rotate = (angleRad: number, vector: Vector2): Vector2 => {
-    return mMulVector(m2Rotation(angleRad), vector) as Vector2;
+    const unitVector = v2Normalize(vector);
+    return mMulVector(m2Rotation(angleRad), unitVector) as Vector2;
 };
 
 /**
@@ -281,7 +282,8 @@ export const m3RotationX = (angleRad: number): Matrix3 => {
 };
 
 export const v3RotateX = (angleRad: number, vector: Vector3): Vector3 => {
-    return mMulVector(m3RotationX(angleRad), vector) as Vector3;
+    const unitVector = v3Normalize(vector);
+    return mMulVector(m3RotationX(angleRad), unitVector) as Vector3;
 };
 
 /**
@@ -296,7 +298,8 @@ export const m3RotationY = (angleRad: number): Matrix3 => {
 };
 
 export const v3RotateY = (angleRad: number, vector: Vector3): Vector3 => {
-    return mMulVector(m3RotationY(angleRad), vector) as Vector3;
+    const unitVector = v3Normalize(vector);
+    return mMulVector(m3RotationY(angleRad), unitVector) as Vector3;
 };
 
 /**
@@ -311,5 +314,6 @@ export const m3RotationZ = (angleRad: number): Matrix3 => {
 };
 
 export const v3RotateZ = (angleRad: number, vector: Vector3): Vector3 => {
-    return mMulVector(m3RotationZ(angleRad), vector) as Vector3;
+    const unitVector = v3Normalize(vector);
+    return mMulVector(m3RotationZ(angleRad), unitVector) as Vector3;
 };

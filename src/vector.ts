@@ -94,15 +94,18 @@ export const v2SetLength = (v2: Vector2, newLength: number, decimalPlaces = Infi
 
 // ------------ NORMALIZE ------------------------
 
+/**
+ * Normalization creates a unit vector, which is a vector of length 1.
+ */
 export const vNormalize = (v: Vector, decimalPlaces = Infinity) : Vector => {
     const length = vLength(v);
-    const vector: Vector = [];
+    const unitVector: Vector = [];
 
     for(let i=0; i<v.length; i++){
-        vector.push(length === 0 ? 0 : setDecimalPlaces(v[i] / length, decimalPlaces));
+        unitVector.push(length === 0 ? 0 : setDecimalPlaces(v[i] / length, decimalPlaces));
     }
 
-    return vector;
+    return unitVector;
 };
 
 export const v2Normalize = (v2: Vector2, decimalPlaces = Infinity) : Vector2 => {
