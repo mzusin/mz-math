@@ -886,4 +886,19 @@ describe('Matrix Inverse', () => {
         ]);
     });
 
+    test(`Inverse of [
+                [3, -4],
+                [2, -5],
+            ] with 3 decimal places`, () => {
+        expect(m2Inverse(
+            [
+                [3, -4],
+                [2, -5],
+            ], 3
+        )).toStrictEqual([
+            [0.714, -0.571],
+            [0.286, -0.429],
+        ]);
+    });
+
 });

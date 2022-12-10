@@ -1133,7 +1133,7 @@ const m2x2: Matrix2 = [
   [-7, 2],
 ];
 
-const inverted: Matrix2 = m2Inverse(m2x2, 3); // round to 3 decimal places
+const inverted: Matrix2|null = m2Inverse(m2x2, 3); // round to 3 decimal places
 /*
 [
     [0.049, -0.122],
