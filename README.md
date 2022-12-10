@@ -75,6 +75,20 @@ Any function can also be used in the browser using the **tc-math.min.js** file. 
 
 # Vectors
 
+There are the following types of vectors:
+**Vector2** for a 2D vector, **Vector3** for a 3D vector, and **Vector** for the general case.
+
+```js
+import { Vector2, Vector3, Vector } from 'toolcool-math';
+
+const v2: Vector2 = [1, 2];
+const v3: Vector2 = [1, 2, 3];
+
+const v4: Vector = [1, 2, 3, 4];
+const v5: Vector = [1, 2, 3, 4, 5];
+const v6: Vector = [1, 2, 3, 4, 5, 6];
+```
+
 ## Vectors Sum
 
 The following functions are used to add vectors: **v2Sum** for a 2D vector, **v3Sum** for a 3D vector, and **vSum** for the general case. Each function receives an optional **decimalPlaces** parameter.
@@ -150,13 +164,19 @@ const sum = vSub(v1, v2); // [-4, -4, -4, -4]
 You can multiply a vector by a scalar using the **v2MulScalar** and **v3MulScalar** functions.
  Each function receives an optional **decimalPlaces** parameter.
 
+**2D Vector**
 ```js
-import { v2MulScalar, v3MulScalar } from 'toolcool-math';
+import { v2MulScalar } from 'toolcool-math';
 
 const res = v2MulScalar([1, 2], 2); // [2, 4]
 const res = v2MulScalar([1, 2], 0.5); // x: 0.5, 1
 const res = v2MulScalar([1, 2], Math.PI); // [3.141592653589793, 6.283185307179586]
 const res = v2MulScalar([1, 2], Math.PI, 2); // [3.14, 6.28]
+```
+
+**3D Vector**
+```js
+import { v3MulScalar } from 'toolcool-math';
 
 const res = v3MulScalar([1, 2, 3], 2); // [2, 4, 6]
 const res = v3MulScalar([1, 2, 3], 0.5); // [0.5, 1, 1.5]
