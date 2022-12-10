@@ -395,6 +395,7 @@ export const m2Adjugate = (m2: Matrix2): Matrix2 => {
  * Square matrix A (nxn) is invertible is there is another square matrix B (nxn) so AxB = BxA = I
  * For A (2x2) matrix, the inverse is:
  * (1 / (determinant(A))) * adj(A)
+ * Singular Matrix = a square matrix that does not have a matrix inverse. A matrix is singular iff its determinant is 0.
  */
 export const m2Inverse = (m2: Matrix2, decimalPlaces = Infinity): (Matrix2 | null) => {
 
