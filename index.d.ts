@@ -8,6 +8,13 @@ declare module 'toolcool-math' {
     export type Matrix3 = Vector3[];
     export type Matrix = Vector[];
 
+    export const v2: (defaultValue?: number) => Vector2;
+    export const v3: (defaultValue?: number) => Vector3;
+    export const vN: (N: number, defaultValue?: number) => Vector;
+    export const m2x2: (defaultValue?: number) => Matrix2;
+    export const m3x3: (defaultValue?: number) => Matrix3;
+    export const mNxM: (N: number, M: number, defaultValue?: number) => Matrix;
+
     export const vSum: (vector1: Vector, vector2: Vector, decimalPlaces?: number) => Vector;
     export const v2Sum: (vector1: Vector2, vector2: Vector2, decimalPlaces?: number) => Vector2;
     export const v3Sum: (vector1: Vector3, vector2: Vector3, decimalPlaces?: number) => Vector3;

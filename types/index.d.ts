@@ -9,6 +9,12 @@ import * as bezierCurve from './bezier-curve';
 declare global {
     interface Window {
         TCMath: {
+            v2: typeof vector.v2;
+            v3: typeof vector.v3;
+            vN: typeof vector.vN;
+            m2x2: typeof matrix.m2x2;
+            m3x3: typeof matrix.m3x3;
+            mNxM: typeof matrix.mNxM;
             vSum: typeof vector.vSum;
             v2Sum: typeof vector.v2Sum;
             v3Sum: typeof vector.v3Sum;
@@ -43,6 +49,9 @@ declare global {
             m3Transpose: typeof matrix.m3Transpose;
             mMul: typeof matrix.mMul;
             mMulVector: typeof matrix.mMulVector;
+            mReset: typeof matrix.mReset;
+            m2Reset: typeof matrix.m2Reset;
+            m3Reset: typeof matrix.m3Reset;
             getV2Angle: typeof angle.getV2Angle;
             setV2Angle: typeof angle.setV2Angle;
             radiansToDegrees: typeof angle.radiansToDegrees;

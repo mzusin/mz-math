@@ -142,3 +142,21 @@ export const v3CrossProduct = (vector1: Vector3, vector2: Vector3, decimalPlaces
         setDecimalPlaces(vector1[0] * vector2[1] - vector1[1] * vector2[0], decimalPlaces),
     ];
 };
+
+// --------------- INIT VECTOR HELPER -----------------
+
+export const v2 = (defaultValue = 0): Vector2 => {
+    return [defaultValue, defaultValue];
+};
+
+export const v3 = (defaultValue = 0): Vector3 => {
+    return [defaultValue, defaultValue, defaultValue];
+};
+
+export const vN = (N: number, defaultValue = 0): Vector => {
+    const vector: Vector = [];
+    for(let i=0; i<N; i++){
+        vector.push(defaultValue);
+    }
+    return vector;
+};

@@ -2,7 +2,7 @@ import {
     m2MulScalar, m3MulScalar, mMulScalar,
     mSum, m2Sum, m2Sub, m3Sum, m3Sub, mSub,
     m2Transpose, m3Transpose, mTranspose,
-    mMul, mMulVector, m2Reset, m3Reset, mReset
+    mMul, mMulVector, m2Reset, m3Reset, mReset, m2x2, m3x3, mNxM
 } from '../src/matrix';
 import { Matrix, Matrix2, Matrix3, Vector3 } from '../src/types';
 
@@ -667,6 +667,52 @@ describe('Reset Matrix', () => {
 
         expect(mReset(m, 100)).toStrictEqual([
             [100, 100, 100, 100, 100]
+        ]);
+    });
+});
+
+describe('Matrix Init Helpers', () => {
+
+    test(`m2x2`, () => {
+        expect(m2x2()).toStrictEqual([
+            [0, 0],
+            [0, 0],
+        ]);
+    });
+
+    test(`m2x2 with default value 10`, () => {
+        expect(m2x2(10)).toStrictEqual([
+            [10, 10],
+            [10, 10],
+        ]);
+    });
+
+    test(`m3x3`, () => {
+        expect(m3x3()).toStrictEqual([
+            [0, 0, 0],
+            [0, 0, 0],
+            [0, 0, 0],
+        ]);
+    });
+
+    test(`m3x3 with default value 1`, () => {
+        expect(m3x3(1)).toStrictEqual([
+            [1, 1, 1],
+            [1, 1, 1],
+            [1, 1, 1],
+        ]);
+    });
+
+    test(`mNxM with N=1 and M=5`, () => {
+        expect(mNxM(1, 5)).toStrictEqual([
+            [0, 0, 0, 0, 0],
+        ]);
+    });
+
+    test(`mNxM with N=2 and M=3 and default value = 1`, () => {
+        expect(mNxM(2, 3, 1)).toStrictEqual([
+            [1, 1, 1],
+            [1, 1, 1],
         ]);
     });
 });

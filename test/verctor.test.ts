@@ -18,7 +18,7 @@ import {
     vDotProduct,
     v2DotProduct,
     v3DotProduct,
-    v3CrossProduct
+    v3CrossProduct, v2, v3, vN
 } from '../src/vector';
 import { Vector, Vector2, Vector3 } from '../src/types';
 
@@ -324,5 +324,31 @@ describe('Vectors Cross Product', () => {
         const v1: Vector3 = [1.1143, 2.1205, 3.57294];
         const v2: Vector3 = [4.8294, 5.0001111, 6.48634];
         expect(v3CrossProduct(v1, v2, 2)).toStrictEqual([-4.11, 10.03, -4.67]);
+    });
+});
+
+describe('Vectors Init Helpers', () => {
+    test('v2', () => {
+        expect(v2()).toStrictEqual([0, 0]);
+    });
+
+    test('v2 with default value 5', () => {
+        expect(v2(5)).toStrictEqual([5, 5]);
+    });
+
+    test('v3', () => {
+        expect(v3()).toStrictEqual([0, 0, 0]);
+    });
+
+    test('v3 with default value 15', () => {
+        expect(v3(15)).toStrictEqual([15, 15, 15]);
+    });
+
+    test('vN with N = 5', () => {
+        expect(vN(5)).toStrictEqual([0, 0, 0, 0, 0]);
+    });
+
+    test('vN with N = 5 and default value = 1.5', () => {
+        expect(vN(5, 1.5)).toStrictEqual([1.5, 1.5, 1.5, 1.5, 1.5]);
     });
 });

@@ -1,5 +1,5 @@
 import { Matrix2, Matrix3, Matrix, Vector } from './types';
-import { vMulScalar, vSum, vSub, vDotProduct } from './vector';
+import { vMulScalar, vSum, vSub, vDotProduct, vN } from './vector';
 
 // --------------- SUM ----------------------
 
@@ -121,6 +121,33 @@ export const m2Reset = (m2: Matrix2, defaultValue = 0): Matrix2 => {
 
 export const m3Reset = (m3: Matrix3, defaultValue = 0): Matrix3 => {
     return mReset(m3, defaultValue) as Matrix3;
+};
+
+// --------------- MATRIX INIT HELPERS -----------------
+
+export const m2x2 = (defaultValue = 0): Matrix2 => {
+    return [
+        [defaultValue, defaultValue],
+        [defaultValue, defaultValue],
+    ];
+};
+
+export const m3x3 = (defaultValue = 0): Matrix3 => {
+    return [
+        [defaultValue, defaultValue, defaultValue],
+        [defaultValue, defaultValue, defaultValue],
+        [defaultValue, defaultValue, defaultValue],
+    ];
+};
+
+export const mNxM = (N: number, M: number, defaultValue = 0): Matrix => {
+    const matrix: Matrix = [];
+
+    for(let i=0; i<N; i++){
+        matrix.push(vN(M, defaultValue));
+    }
+
+    return matrix;
 };
 
 // --------------- MULTIPLICATION ----------------------

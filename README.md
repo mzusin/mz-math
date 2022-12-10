@@ -14,6 +14,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
     - [Normalize Vector](#normalize-vector)
     - [Dot Product](#vectors-dot-product)
     - [Cross Product](#vectors-cross-product)
+    - [Vector Initialization Helper](#vector-initialization-helper)
 - [Matrix](#matrix)
   - [Matrix Sum](#matrix-sum)
   - [Matrix Subtraction](#matrix-subtraction)
@@ -22,6 +23,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
   - [Matrix Multiplication](#matrix-multiplication)
   - [Multiply matrix by vector](#multiply-matrix-by-vector)
   - [Reset matrix with a default value](#reset-matrix-with-a-default-value)
+  - [Matrix Initialization Helper](#matrix-initialization-helper)
 - Angles
   - [Get vector angle](#get-vector-angle)
   - [Set vector angle](#set-vector-angle)
@@ -279,6 +281,23 @@ const v3: Vector3 = [1.1143, 2.1205, 3.57294];
 const v4: Vector3 = [4.8294, 5.0001111, 6.48634];
 // round to 2 decimal places after the dot
 const res2 = v3CrossProduct(v3, v4, 2); // [-4.11, 10.03, -4.67]
+```
+
+## Vector Initialization Helper
+
+There are helpers for creating v2, v3 and vN vectors with a default value. If no default value is specified, it will be zero.
+
+```js
+import { v2, v3, vN } from 'toolcool-math';
+
+const v2 = v2(); // [0, 0]
+const v2_10 = v2(10); // [10, 10]
+
+const v3 = v3(); // [0, 0, 0]
+const v3_10 = v3(10); // [10, 10, 10]
+
+const v5 = vN(5); // [0, 0, 0, 0, 0]
+const v5_10 = vN(5, 10); // [10, 10, 10, 10, 10]
 ```
 
 -----------------------------------------------
@@ -807,14 +826,14 @@ const res = m3Reset(m3, 1.5);
 **General Case**
 
 ```js
-import { Matrix, m3eset } from 'toolcool-math';
+import { Matrix, m3Reset } from 'toolcool-math';
 
 const m: Matrix = [
   [1, 2, 3, 4, 5],
   [6, 7, 8, 9, 10],
 ];
 
-const res = m3eset(m); 
+const res = m3Reset(m); 
 /*
 [
   [0, 0, 0, 0, 0],
@@ -824,20 +843,78 @@ const res = m3eset(m);
 ```
 
 ```js
-import { Matrix, m3eset } from 'toolcool-math';
+import { Matrix, m3Reset } from 'toolcool-math';
 
 const m: Matrix = [
   [1, 2, 3, 4, 5],
   [6, 7, 8, 9, 10],
 ];
 
-const res = m3eset(m, 50);
+const res = m3Reset(m, 50);
 /*
 [
   [50, 50, 50, 50, 50],
   [50, 50, 50, 50, 50],
 ]
  */
+```
+
+## Matrix Initialization Helper
+
+There are helpers for creating m2x2, m3x3 and mNxM matrices with a default value. If no default value is specified, it will be zero.
+
+```js
+import { m2x2, m3x3, mNxM } from 'toolcool-math';
+
+const mat2x2 = m2x2(); 
+/*
+[
+    [0, 0],
+    [0, 0],
+]
+ */
+
+const mat2x2_10 = m2x2(10);
+/*
+[
+    [10, 10],
+    [10, 10],
+]
+ */
+
+const mat3x3 = m3x3();
+/*
+[
+    [0, 0, 0],
+    [0, 0, 0],
+    [0, 0, 0],
+]
+ */
+
+const mat3x3_20 = m3x3(20);
+/*
+[
+    [20, 20, 20],
+    [20, 20, 20],
+    [20, 20, 20],
+]
+ */
+
+const matNxM = mNxM(1, 5);
+/*
+[
+      [0, 0, 0, 0, 0],
+]
+ */
+
+const matNxM = mNxM(2, 3, 1);
+/*
+[
+      [1, 1, 1],
+      [1, 1, 1],
+]
+ */
+
 ```
 
 -----------------------------------------------
