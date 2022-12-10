@@ -113,21 +113,27 @@ export const v3Normalize = (v3: Vector3, decimalPlaces = Infinity) : Vector3 => 
     return vNormalize(v3, decimalPlaces) as Vector3;
 };
 
+// ------------ DOT PRODUCT ------------------------
 
+export const vDotProduct = (vector1: Vector, vector2: Vector, decimalPlaces = Infinity) => {
+    let sum = 0;
 
+    for(let i=0; i<vector1.length; i++){
+        sum += vector1[i] * vector2[i];
+    }
+
+    return setDecimalPlaces(sum, decimalPlaces);
+};
 
 export const v2DotProduct = (vector1: Vector2, vector2: Vector2, decimalPlaces = Infinity) => {
-    return setDecimalPlaces(vector1[0] * vector2[0] + vector1[1] * vector2[1], decimalPlaces);
+    return vDotProduct(vector1, vector2, decimalPlaces);
 };
 
 export const v3DotProduct = (vector1: Vector3, vector2: Vector3, decimalPlaces = Infinity) => {
-    return setDecimalPlaces(
-        vector1[0] * vector2[0] +
-              vector1[1] * vector2[1] +
-              vector1[2] * vector2[2],
-        decimalPlaces
-    );
+    return vDotProduct(vector1, vector2, decimalPlaces);
 };
+
+// ------------ CROSS PRODUCT ------------------------
 
 export const v3CrossProduct = (vector1: Vector3, vector2: Vector3, decimalPlaces = Infinity): Vector3 => {
     return [

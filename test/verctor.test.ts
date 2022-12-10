@@ -15,6 +15,7 @@ import {
     vNormalize,
     v2Normalize,
     v3Normalize,
+    vDotProduct,
     v2DotProduct,
     v3DotProduct,
     v3CrossProduct
@@ -290,6 +291,18 @@ describe('Vectors Dot Product', () => {
         const v1: Vector3 = [0, 0, 0];
         const v2: Vector3 = [0, 0, 0];
         expect(v3DotProduct(v1, v2)).toStrictEqual(0);
+    });
+
+    test('Dot product of [1, 2, 3, 4] and [5, 6, 7, 8] is 70', () => {
+        const v1: Vector = [1, 2, 3, 4];
+        const v2: Vector = [5, 6, 7, 8];
+        expect(vDotProduct(v1, v2)).toStrictEqual(70);
+    });
+
+    test('Dot product of [1.123, 2.123, 3.123, 4.123] and [5.123, 6.123, 7.123, 8.123] with 1 decimal place is 70', () => {
+        const v1: Vector = [1.123, 2.123, 3.123, 4.123];
+        const v2: Vector = [5.123, 6.123, 7.123, 8.123];
+        expect(vDotProduct(v1, v2, 1)).toStrictEqual(74.5);
     });
 });
 

@@ -22,6 +22,7 @@ declare global {
             v2Length: typeof vector.v2Length;
             v3Length: typeof vector.v3Length;
             v2SetLength: typeof vector.v2SetLength;
+            vNormalize: typeof vector.vNormalize;
             v2Normalize: typeof vector.v2Normalize;
             v3Normalize: typeof vector.v3Normalize;
             v2DotProduct: typeof vector.v2DotProduct;

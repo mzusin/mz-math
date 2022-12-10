@@ -28,8 +28,10 @@ declare module 'toolcool-math' {
     export const v2Normalize: (v2: Vector2, decimalPlaces?: number) => Vector2;
     export const v3Normalize: (v3: Vector3, decimalPlaces?: number) => Vector3;
 
+    export const vDotProduct: (vector1: Vector, vector2: Vector, decimalPlaces?: number) => number;
     export const v2DotProduct: (vector1: Vector2, vector2: Vector2, decimalPlaces?: number) => number;
     export const v3DotProduct: (vector1: Vector3, vector2: Vector3, decimalPlaces?: number) => number;
+
     export const v3CrossProduct: (vector1: Vector3, vector2: Vector3, decimalPlaces?: number) => Vector3;
 
     export const m2Sum: (matrix1: Matrix2, matrix2: Matrix2, decimalPlaces?: number) => Matrix2;
@@ -86,6 +88,7 @@ declare module 'toolcool-math' {
                 v2Normalize: typeof v2Normalize;
                 v3Normalize: typeof v3Normalize;
 
+                vDotProduct: typeof vDotProduct;
                 v2DotProduct: typeof v2DotProduct;
                 v3DotProduct: typeof v3DotProduct;
                 v3CrossProduct: typeof v3CrossProduct;

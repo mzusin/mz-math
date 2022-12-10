@@ -31,6 +31,7 @@ declare global {
             v2Normalize: typeof vector.v2Normalize;
             v3Normalize: typeof vector.v3Normalize;
 
+            vDotProduct: typeof vector.vDotProduct;
             v2DotProduct: typeof vector.v2DotProduct;
             v3DotProduct: typeof vector.v3DotProduct;
             v3CrossProduct: typeof vector.v3CrossProduct;
@@ -93,6 +94,7 @@ window.TCMath = window.TCMath || {
     v2Normalize: vector.v2Normalize,
     v3Normalize: vector.v3Normalize,
 
+    vDotProduct: vector.vDotProduct,
     v2DotProduct: vector.v2DotProduct,
     v3DotProduct: vector.v3DotProduct,
     v3CrossProduct: vector.v3CrossProduct,
