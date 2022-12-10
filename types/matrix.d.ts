@@ -19,3 +19,4 @@ export declare const m3x3: (defaultValue?: number) => Matrix3;
 export declare const mNxM: (N: number, M: number, defaultValue?: number) => Matrix;
 export declare const mMul: (matrix1: Matrix, matrix2: Matrix, decimalPlaces?: number) => Matrix;
 export declare const mMulVector: (matrix: Matrix, vector: Vector, decimalPlaces?: number) => Vector;
+export declare const mEqual: (matrix1: Matrix, matrix2: Matrix) => boolean;

@@ -15,6 +15,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
     - [Dot Product](#vectors-dot-product)
     - [Cross Product](#vectors-cross-product)
     - [Vector Initialization Helpers](#vector-initialization-helpers)
+    - [Check if 2 vectors are equal](#check-if-2-vectors-are-equal)
 - [Matrix](#matrix)
   - [Matrix Sum](#matrix-sum)
   - [Matrix Subtraction](#matrix-subtraction)
@@ -24,6 +25,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
   - [Multiply matrix by vector](#multiply-matrix-by-vector)
   - [Reset matrix with a default value](#reset-matrix-with-a-default-value)
   - [Matrix Initialization Helpers](#matrix-initialization-helpers)
+  - [Check if 2 matrices are equal](#check-if-2-matrices-are-equal)
 - Angles
   - [Get vector angle](#get-vector-angle)
   - [Set vector angle](#set-vector-angle)
@@ -300,6 +302,17 @@ const v5 = vN(5); // [0, 0, 0, 0, 0]
 const v5_10 = vN(5, 10); // [10, 10, 10, 10, 10]
 ```
 
+## Check if 2 vectors are equal
+
+It's possible to perform a deep comparison of two vectors using the **vEqual** function:
+
+```js
+import { vEqual } from 'toolcool-math';
+
+const res1 = vEqual([1, 0], [1, 0]); // true
+const res2 = vEqual([1, 0], [0, 1]); // false
+const res3 = vEqual([0, 0, 0], [0, 0]); // false
+```
 -----------------------------------------------
 
 # Matrix
@@ -917,6 +930,33 @@ const matNxM = mNxM(2, 3, 1);
 
 ```
 
+## Check if 2 matrices are equal
+
+It's possible to perform a deep comparison of two matrices using the **mEqual** function:
+
+```js
+import { mEqual } from 'toolcool-math';
+
+const res1 = mEqual(
+        [
+          [0, 0],
+          [0, 0],
+        ],
+        [
+          [0, 0],
+          [0, 0],
+        ]); // true
+
+const res2 = mEqual(
+        [
+          [1, 0],
+          [0, 0],
+        ],
+        [
+          [0, 0],
+          [0, 1],
+        ]); // false
+```
 -----------------------------------------------
 
 # Angles

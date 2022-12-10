@@ -15,6 +15,8 @@ declare global {
             m2x2: typeof matrix.m2x2;
             m3x3: typeof matrix.m3x3;
             mNxM: typeof matrix.mNxM;
+            vEqual: typeof vector.vEqual;
+            mEqual: typeof matrix.mEqual;
             vSum: typeof vector.vSum;
             v2Sum: typeof vector.v2Sum;
             v3Sum: typeof vector.v3Sum;

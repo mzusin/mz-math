@@ -22,3 +22,4 @@ export declare const v3CrossProduct: (vector1: Vector3, vector2: Vector3, decima
 export declare const v2: (defaultValue?: number) => Vector2;
 export declare const v3: (defaultValue?: number) => Vector3;
 export declare const vN: (N: number, defaultValue?: number) => Vector;
+export declare const vEqual: (vector1: Vector, vector2: Vector) => boolean;

@@ -160,3 +160,15 @@ export const vN = (N: number, defaultValue = 0): Vector => {
     }
     return vector;
 };
+
+// --------------- EQUALITY -------------------------
+
+export const vEqual = (vector1: Vector, vector2: Vector): boolean => {
+    if(vector1.length !== vector2.length) return false;
+
+    for(let i=0; i<vector1.length; i++){
+        if(vector1[i] !== vector2[i]) return false;
+    }
+
+    return true;
+};

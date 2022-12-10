@@ -15,6 +15,9 @@ declare module 'toolcool-math' {
     export const m3x3: (defaultValue?: number) => Matrix3;
     export const mNxM: (N: number, M: number, defaultValue?: number) => Matrix;
 
+    export const vEqual: (vector1: Vector, vector2: Vector) => boolean;
+    export const mEqual: (matrix1: Matrix, matrix2: Matrix) => boolean;
+
     export const vSum: (vector1: Vector, vector2: Vector, decimalPlaces?: number) => Vector;
     export const v2Sum: (vector1: Vector2, vector2: Vector2, decimalPlaces?: number) => Vector2;
     export const v3Sum: (vector1: Vector3, vector2: Vector3, decimalPlaces?: number) => Vector3;

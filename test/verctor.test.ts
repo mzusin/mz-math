@@ -18,7 +18,8 @@ import {
     vDotProduct,
     v2DotProduct,
     v3DotProduct,
-    v3CrossProduct, v2, v3, vN
+    v3CrossProduct, v2, v3, vN,
+    vEqual
 } from '../src/vector';
 import { Vector, Vector2, Vector3 } from '../src/types';
 
@@ -350,5 +351,27 @@ describe('Vectors Init Helpers', () => {
 
     test('vN with N = 5 and default value = 1.5', () => {
         expect(vN(5, 1.5)).toStrictEqual([1.5, 1.5, 1.5, 1.5, 1.5]);
+    });
+});
+
+describe('Vectors Equality', () => {
+    test('[1, 0] and [1, 0] => true', () => {
+        expect(vEqual([1, 0], [1, 0])).toStrictEqual(true);
+    });
+
+    test('[1, 0] and [0, 1] => false', () => {
+        expect(vEqual([1, 0], [0, 1])).toStrictEqual(false);
+    });
+
+    test('[1, 0] and [1, 0, 0] => false', () => {
+        expect(vEqual([1, 0] , [1, 0, 0])).toStrictEqual(false);
+    });
+
+    test('[0, 0] and [0, 0, 0] => false', () => {
+        expect(vEqual([0, 0] , [0, 0, 0])).toStrictEqual(false);
+    });
+
+    test('[0, 0, 0] and [0, 0, 0] => true', () => {
+        expect(vEqual([0, 0, 0] , [0, 0, 0])).toStrictEqual(true);
     });
 });

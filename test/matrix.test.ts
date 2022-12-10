@@ -2,7 +2,8 @@ import {
     m2MulScalar, m3MulScalar, mMulScalar,
     mSum, m2Sum, m2Sub, m3Sum, m3Sub, mSub,
     m2Transpose, m3Transpose, mTranspose,
-    mMul, mMulVector, m2Reset, m3Reset, mReset, m2x2, m3x3, mNxM
+    mMul, mMulVector, m2Reset, m3Reset, mReset,
+    m2x2, m3x3, mNxM, mEqual
 } from '../src/matrix';
 import { Matrix, Matrix2, Matrix3, Vector3 } from '../src/types';
 
@@ -715,4 +716,94 @@ describe('Matrix Init Helpers', () => {
             [1, 1, 1],
         ]);
     });
+});
+
+describe('Matrix Equality', () => {
+
+    test(`[
+                [0, 0, 0],
+                [0, 0, 0],
+                [0, 0, 0],
+            ] and [
+                [0, 0, 0],
+                [0, 0, 0],
+                [0, 0, 0],
+            ] => true`, () => {
+        expect(mEqual(
+            [
+                [0, 0, 0],
+                [0, 0, 0],
+                [0, 0, 0],
+            ],
+            [
+                [0, 0, 0],
+                [0, 0, 0],
+                [0, 0, 0],
+            ]
+        )).toStrictEqual(true);
+    });
+
+    test(`[
+                [1, 0, 0],
+                [0, 0, 0],
+                [0, 0, 0],
+            ] and [
+                [0, 0, 0],
+                [0, 0, 0],
+                [0, 0, 1],
+            ] => false`, () => {
+        expect(mEqual(
+            [
+                [1, 0, 0],
+                [0, 0, 0],
+                [0, 0, 0],
+            ],
+            [
+                [0, 0, 0],
+                [0, 0, 0],
+                [0, 0, 1],
+            ]
+        )).toStrictEqual(false);
+    });
+
+    test(`[
+                [1, 1, 1],
+                [0, 0, 0],
+            ] and [
+                [1, 1, 1],
+                [0, 0, 0],
+            ] => false`, () => {
+        expect(mEqual(
+            [
+                [1, 1, 1],
+                [0, 0, 0],
+            ],
+            [
+                [1, 1, 1],
+                [0, 0, 0],
+            ]
+        )).toStrictEqual(true);
+    });
+
+    test(`[
+                [0, 0],
+                [0, 0],
+            ] and [
+                [0, 0, 0],
+                [0, 0, 0],
+                [0, 0, 1],
+            ] => false`, () => {
+        expect(mEqual(
+            [
+                [0, 0],
+                [0, 0],
+            ],
+            [
+                [0, 0, 0],
+                [0, 0, 0],
+                [0, 0, 1],
+            ]
+        )).toStrictEqual(false);
+    });
+
 });

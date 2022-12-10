@@ -17,6 +17,9 @@ declare global {
             m3x3: typeof matrix.m3x3;
             mNxM: typeof matrix.mNxM;
 
+            vEqual: typeof vector.vEqual;
+            mEqual: typeof matrix.mEqual;
+
             vSum: typeof vector.vSum;
             v2Sum: typeof vector.v2Sum;
             v3Sum: typeof vector.v3Sum;
@@ -100,6 +103,9 @@ window.TCMath = window.TCMath || {
     m2x2: matrix.m2x2,
     m3x3: matrix.m3x3,
     mNxM: matrix.mNxM,
+
+    vEqual: vector.vEqual,
+    mEqual: matrix.mEqual,
 
     vSum: vector.vSum,
     v2Sum: vector.v2Sum,

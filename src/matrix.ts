@@ -1,5 +1,5 @@
 import { Matrix2, Matrix3, Matrix, Vector } from './types';
-import { vMulScalar, vSum, vSub, vDotProduct, vN } from './vector';
+import { vMulScalar, vSum, vSub, vDotProduct, vN, vEqual } from './vector';
 
 // --------------- SUM ----------------------
 
@@ -193,4 +193,16 @@ export const mMulVector = (matrix: Matrix, vector: Vector, decimalPlaces = Infin
     }
 
     return res;
+};
+
+// --------------- EQUALITY -------------------------
+
+export const mEqual = (matrix1: Matrix, matrix2: Matrix): boolean => {
+    if(matrix1.length !== matrix2.length) return false;
+
+    for(let i=0; i<matrix1.length; i++){
+        if(!vEqual(matrix1[i], matrix2[i])) return false;
+    }
+
+    return true;
 };
