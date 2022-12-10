@@ -42,6 +42,7 @@ declare global {
             m2Transpose: typeof matrix.m2Transpose;
             m3Transpose: typeof matrix.m3Transpose;
             mMul: typeof matrix.mMul;
+            mMulVector: typeof matrix.mMulVector;
             getV2Angle: typeof angle.getV2Angle;
             setV2Angle: typeof angle.setV2Angle;
             radiansToDegrees: typeof angle.radiansToDegrees;

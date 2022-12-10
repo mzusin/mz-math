@@ -93,6 +93,36 @@ export const m3Transpose = (m3: Matrix3): Matrix => {
     return mTranspose(m3);
 };
 
+// ----------------- RESET ----------------------
+
+export const mReset = (m: Matrix, defaultValue = 0): Matrix => {
+
+    if(m.length <= 0) return [];
+
+    const res: Matrix = [];
+
+    for(let i=0; i<m.length; i++){
+        const size = m[i].length;
+
+        const vector: Vector = [];
+        for(let j=0; j<size; j++){
+            vector.push(defaultValue);
+        }
+
+        res.push(vector);
+    }
+
+    return res;
+};
+
+export const m2Reset = (m2: Matrix2, defaultValue = 0): Matrix2 => {
+    return mReset(m2, defaultValue) as Matrix2;
+};
+
+export const m3Reset = (m3: Matrix3, defaultValue = 0): Matrix3 => {
+    return mReset(m3, defaultValue) as Matrix3;
+};
+
 // --------------- MULTIPLICATION ----------------------
 
 export const mMul = (matrix1: Matrix, matrix2: Matrix, decimalPlaces = Infinity): Matrix => {

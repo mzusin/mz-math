@@ -55,6 +55,10 @@ declare global {
             mMul: typeof matrix.mMul;
             mMulVector: typeof matrix.mMulVector;
 
+            mReset: typeof matrix.mReset;
+            m2Reset: typeof matrix.m2Reset;
+            m3Reset: typeof matrix.m3Reset;
+
             getV2Angle: typeof angle.getV2Angle;
             setV2Angle: typeof angle.setV2Angle;
             radiansToDegrees: typeof angle.radiansToDegrees;
@@ -126,7 +130,11 @@ window.TCMath = window.TCMath || {
     m3Transpose: matrix.m3Transpose,
 
     mMul: matrix.mMul,
-    mMulVector:matrix.mMulVector,
+    mMulVector: matrix.mMulVector,
+
+    mReset: matrix.mReset,
+    m2Reset: matrix.m2Reset,
+    m3Reset: matrix.m3Reset,
 
     getV2Angle: angle.getV2Angle,
     setV2Angle: angle.setV2Angle,

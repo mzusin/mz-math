@@ -1,17 +1,8 @@
 import {
-    m2MulScalar,
-    m3MulScalar,
-    mMulScalar,
-    mSum,
-    m2Sum,
-    m2Sub,
-    m3Sum,
-    m3Sub,
-    mSub,
-    m2Transpose,
-    m3Transpose,
-    mTranspose,
-    mMul, mMulVector
+    m2MulScalar, m3MulScalar, mMulScalar,
+    mSum, m2Sum, m2Sub, m3Sum, m3Sub, mSub,
+    m2Transpose, m3Transpose, mTranspose,
+    mMul, mMulVector, m2Reset, m3Reset, mReset
 } from '../src/matrix';
 import { Matrix, Matrix2, Matrix3, Vector3 } from '../src/types';
 
@@ -579,5 +570,103 @@ describe('Matrix Multiplication', () => {
         const vector: Vector3 = [3, 4, 3];
 
         expect(mMulVector(matrix, vector)).toStrictEqual([27, 41]);
+    });
+});
+
+describe('Reset Matrix', () => {
+    test(`Reset [
+          [1, 2],
+        ]`, () => {
+        const m2: Matrix2 = [
+            [1, 2],
+        ];
+
+        expect(m2Reset(m2)).toStrictEqual([
+            [0, 0],
+        ]);
+    });
+
+    test(`Reset [
+          [1, 2],
+          [3, 4],
+        ]`, () => {
+        const m2: Matrix2 = [
+          [1, 2],
+          [3, 4],
+        ];
+
+        expect(m2Reset(m2)).toStrictEqual([
+            [0, 0],
+            [0, 0],
+        ]);
+    });
+
+    test(`Reset [
+          [1, 2],
+          [3, 4],
+        ] with value 10`, () => {
+        const m2: Matrix2 = [
+            [1, 2],
+            [3, 4],
+        ];
+
+        expect(m2Reset(m2, 10)).toStrictEqual([
+            [10, 10],
+            [10, 10],
+        ]);
+    });
+
+    test(`Reset [
+          [1, 2, 3],
+          [4, 5, 6],
+        ]`, () => {
+        const m3: Matrix3 = [
+            [1, 2, 3],
+            [4, 5, 6],
+        ];
+
+        expect(m3Reset(m3)).toStrictEqual([
+            [0, 0, 0],
+            [0, 0, 0],
+        ]);
+    });
+
+    test(`Reset [
+          [1, 2, 3],
+          [4, 5, 6],
+        ] with 1.5`, () => {
+        const m3: Matrix3 = [
+            [1, 2, 3],
+            [4, 5, 6],
+        ];
+
+        expect(m3Reset(m3, 1.5)).toStrictEqual([
+            [1.5, 1.5, 1.5],
+            [1.5, 1.5, 1.5],
+        ]);
+    });
+
+    test(`Reset [
+          [1, 2, 3, 5, 6],
+        ]`, () => {
+        const m: Matrix = [
+            [1, 2, 3, 5, 6],
+        ];
+
+        expect(mReset(m)).toStrictEqual([
+            [0, 0, 0, 0, 0]
+        ]);
+    });
+
+    test(`Reset [
+          [1, 2, 3, 5, 6],
+        ] with 100`, () => {
+        const m: Matrix = [
+            [1, 2, 3, 5, 6],
+        ];
+
+        expect(mReset(m, 100)).toStrictEqual([
+            [100, 100, 100, 100, 100]
+        ]);
     });
 });
