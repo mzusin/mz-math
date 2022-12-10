@@ -51,6 +51,8 @@ declare module 'toolcool-math' {
     export const m2Transpose: (m2: Matrix2) => Matrix;
     export const m3Transpose: (m3: Matrix3) => Matrix;
 
+    export const mMul: (matrix1: Matrix, matrix2: Matrix, decimalPlaces?: number) => Matrix;
+
     export const getV2Angle: (v2: Vector2, decimalPlaces?: number) => number;
     export const setV2Angle: (v2: Vector2, newAngleRad: number, decimalPlaces?: number) => Vector2;
     export const radiansToDegrees: (radians: number, decimalPlaces?: number) => number;
@@ -115,6 +117,8 @@ declare module 'toolcool-math' {
                 mTranspose: typeof mTranspose;
                 m2Transpose: typeof m2Transpose;
                 m3Transpose: typeof m3Transpose;
+
+                mMul: typeof mMul;
 
                 getV2Angle: typeof getV2Angle;
                 setV2Angle: typeof setV2Angle;

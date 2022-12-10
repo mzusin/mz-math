@@ -38,6 +38,9 @@ declare global {
             mMulScalar: typeof matrix.mMulScalar;
             m2MulScalar: typeof matrix.m2MulScalar;
             m3MulScalar: typeof matrix.m3MulScalar;
+            mTranspose: typeof matrix.mTranspose;
+            m2Transpose: typeof matrix.m2Transpose;
+            m3Transpose: typeof matrix.m3Transpose;
             getV2Angle: typeof angle.getV2Angle;
             setV2Angle: typeof angle.setV2Angle;
             radiansToDegrees: typeof angle.radiansToDegrees;

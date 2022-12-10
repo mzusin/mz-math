@@ -10,7 +10,8 @@ import {
     mSub,
     m2Transpose,
     m3Transpose,
-    mTranspose
+    mTranspose,
+    mMul
 } from '../src/matrix';
 import { Matrix, Matrix2, Matrix3 } from '../src/types';
 
@@ -485,6 +486,83 @@ describe('Matrix Transpose', () => {
         expect(m2Transpose(m2)).toStrictEqual([
             [-1, Math.PI],
             [5, 3],
+        ]);
+    });
+});
+
+describe('Matrix Multiplication', () => {
+
+    test(`Multiply [
+            [2, -2],
+            [5, 3],
+        ] and [
+            [-1, 4],
+            [7, -6],
+        ]`, () => {
+
+        const matrix1: Matrix2 = [
+            [2, -2],
+            [5, 3],
+        ];
+
+        const matrix2: Matrix2 = [
+            [-1, 4],
+            [7, -6],
+        ];
+
+        expect(mMul(matrix1, matrix2)).toStrictEqual([
+            [-16, 20],
+            [16, 2],
+        ]);
+    });
+
+    test(`Multiply [
+            [0, 3, 5],
+            [5, 5, 2],
+        ] and [
+            [3, 4],
+            [3, -2],
+            [4, -2],
+        ]`, () => {
+
+        const matrix1: Matrix3 = [
+            [0, 3, 5],
+            [5, 5, 2],
+        ];
+
+        const matrix2: Matrix2 = [
+            [3, 4],
+            [3, -2],
+            [4, -2],
+        ];
+
+        expect(mMul(matrix1, matrix2)).toStrictEqual([
+            [29, -16],
+            [38, 6],
+        ]);
+    });
+
+    test(`Multiply [
+            [2.092345, -2.2345234],
+            [5.56745, 3.235479],
+        ] and [
+            [-1.46874567, 4.23453245],
+            [7.234505, -6.93245],
+        ] with 2 decimal places`, () => {
+
+        const matrix1: Matrix2 = [
+            [2.092345, -2.2345234],
+            [5.56745, 3.235479],
+        ];
+
+        const matrix2: Matrix2 = [
+            [-1.46874567, 4.23453245],
+            [7.234505, -6.93245],
+        ];
+
+        expect(mMul(matrix1, matrix2, 2)).toStrictEqual([
+            [-19.24, 24.35],
+            [15.23, 1.15],
         ]);
     });
 });

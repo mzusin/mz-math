@@ -1,5 +1,5 @@
 import { Matrix2, Matrix3, Matrix } from './types';
-import { vMulScalar, vSum, vSub } from './vector';
+import { vMulScalar, vSum, vSub, vDotProduct } from './vector';
 
 // --------------- SUM ----------------------
 
@@ -93,3 +93,30 @@ export const m3Transpose = (m3: Matrix3): Matrix => {
     return mTranspose(m3);
 };
 
+// --------------- MULTIPLICATION ----------------------
+
+export const mMul = (matrix1: Matrix, matrix2: Matrix, decimalPlaces = Infinity): Matrix => {
+
+    const matrix: Matrix = [];
+    for(let i=0; i<matrix1.length; i++){
+        matrix.push([]);
+    }
+
+    const transposed = mTranspose(matrix2);
+
+    if(matrix.length !== transposed.length){
+        throw 'The number of columns in the 1st matrix must be equal to the number of rows in the 2nd matrix.';
+    }
+
+    for(let i=0; i<matrix1.length; i++){
+        const vector1 = matrix1[i];
+
+        for(let j=0; j<transposed.length; j++){
+            const vector2 = transposed[j];
+            const product = vDotProduct(vector1, vector2, decimalPlaces);
+            matrix[i].push(product);
+        }
+    }
+
+    return matrix;
+};
