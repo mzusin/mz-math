@@ -224,7 +224,7 @@ const res2 = v2SetLength([1, 2], 10, 2); // [4.47, 8.94]
 
 ## Normalize Vector
 
-It's possible to normalize vectors using the **v2Normalize** and **v3Normalize** functions. Each function receives an optional **decimalPlaces** parameter.
+It's possible to normalize vectors using the **v2Normalize**, **v3Normalize**, and **vNormalize** functions. Each function receives an optional **decimalPlaces** parameter.
 
 ```js
 import { v2Normalize, v3Normalize, vNormalize } from 'toolcool-math';
