@@ -19,8 +19,10 @@ declare module 'toolcool-math' {
     export const v2MulScalar: (v2: Vector2, scalar: number, decimalPlaces?: number) => Vector2;
     export const v3MulScalar: (v3: Vector3, scalar: number, decimalPlaces?: number) => Vector3;
 
+    export const vLength: (vector: Vector, decimalPlaces?: number) => number;
     export const v2Length: (vector: Vector2, decimalPlaces?: number) => number;
     export const v3Length: (vector: Vector3, decimalPlaces?: number) => number;
+
     export const v2SetLength: (v2: Vector2, newLength: number, decimalPlaces?: number) => Vector2;
     export const v2Normalize: (v2: Vector2, decimalPlaces?: number) => Vector2;
     export const v3Normalize: (v3: Vector3, decimalPlaces?: number) => Vector3;
@@ -73,6 +75,7 @@ declare module 'toolcool-math' {
                 v2MulScalar: typeof v2MulScalar;
                 v3MulScalar: typeof v3MulScalar;
 
+                vLength: typeof vLength;
                 v2Length: typeof v2Length;
                 v3Length: typeof v3Length;
                 v2SetLength: typeof v2SetLength;

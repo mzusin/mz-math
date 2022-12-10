@@ -22,6 +22,7 @@ declare global {
             v2MulScalar: typeof vector.v2MulScalar;
             v3MulScalar: typeof vector.v3MulScalar;
 
+            vLength: typeof vector.vLength;
             v2Length: typeof vector.v2Length;
             v3Length: typeof vector.v3Length;
             v2SetLength: typeof vector.v2SetLength;
@@ -82,6 +83,7 @@ window.TCMath = window.TCMath || {
     v2MulScalar: vector.v2MulScalar,
     v3MulScalar: vector.v3MulScalar,
 
+    vLength: vector.vLength,
     v2Length: vector.v2Length,
     v3Length: vector.v3Length,
     v2SetLength: vector.v2SetLength,

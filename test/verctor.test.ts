@@ -1,4 +1,5 @@
 import {
+    vLength,
     v2Length,
     v3Length,
     vSum,
@@ -146,20 +147,28 @@ describe('Multiply vector by scalar', () => {
 });
 
 describe('Get Vector Length', () => {
-    test('Length of [1,2} with 2 decimal places', () => {
+    test('Length of [1, 2]', () => {
         expect(v2Length([1, 2])).toStrictEqual(2.23606797749979);
     });
 
-    test('Length of [1,2] with 2 decimal places', () => {
+    test('Length of [1, 2] with 2 decimal places', () => {
         expect(v2Length([1, 2], 2)).toStrictEqual(2.24);
     });
 
-    test('Length of [1,2,3]', () => {
+    test('Length of [1, 2, 3]', () => {
         expect(v3Length([1, 2, 3])).toStrictEqual(3.7416573867739413);
     });
 
-    test('Length of [1,2,3] with 2 decimal places', () => {
+    test('Length of [1, 2, 3] with 2 decimal places', () => {
         expect(v3Length([1, 2, 3], 2)).toStrictEqual(3.74);
+    });
+
+    test('Length of [1, 2, 3, 4]', () => {
+        expect(vLength([1, 2, 3, 4])).toStrictEqual(5.477225575051661);
+    });
+
+    test('Length of [1, 2, 3, 4] with 2 decimal places', () => {
+        expect(vLength([1, 2, 3, 4], 2)).toStrictEqual(5.48);
     });
 });
 

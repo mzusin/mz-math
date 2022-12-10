@@ -15,6 +15,7 @@ declare global {
             vSub: typeof vector.vSub;
             v2Sub: typeof vector.v2Sub;
             v3Sub: typeof vector.v3Sub;
+            vMulScalar: typeof vector.vMulScalar;
             v2MulScalar: typeof vector.v2MulScalar;
             v3MulScalar: typeof vector.v3MulScalar;
             v2Length: typeof vector.v2Length;

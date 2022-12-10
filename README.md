@@ -192,16 +192,22 @@ const res = v3MulScalar([1, 2, 3, 4], 2); // [2, 4, 6, 8]
 
 ## Get Vector Length
 
-Vector length can be found using the **v2Length** and **v3Length** functions. Each function receives an optional **decimalPlaces** parameter.
+Vector length can be found using the **v2Length**, **v3Length**, and **vLength** functions. Each function receives an optional **decimalPlaces** parameter.
 
 ```js
-import { v2Length, v3Length } from 'toolcool-math';
+import { v2Length, v3Length, vLength } from 'toolcool-math';
 
+// 2D vector
 const len1 = v2Length([1, 2]); // 2.23606797749979
 const len2 = v2Length([1, 2], 2); // 2.24
 
+// 3D vector
 const len3 = v3Length([1, 2, 3]); // 3.7416573867739413
 const len4 = v3Length([1, 2, 3], 2); // 3.74
+
+// General case
+const len5 = v3Length([1, 2, 3, 4]); // 5.477225575051661
+const len6 = v3Length([1, 2, 3, 4], 2); // 5.48
 ```
 
 ## Set Vector Length

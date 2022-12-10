@@ -64,15 +64,24 @@ export const v3MulScalar = (v3: Vector3, scalar: number, decimalPlaces = Infinit
     return vMulScalar(v3, scalar, decimalPlaces) as Vector3;
 };
 
+// ------------ LENGTH ------------------------
+
+export const vLength = (vector: Vector, decimalPlaces = Infinity) => {
+    let sum = 0;
+
+    for(let i=0; i<vector.length; i++){
+        sum += vector[i] * vector[i];
+    }
+
+    return setDecimalPlaces(Math.sqrt(sum), decimalPlaces);
+};
 
 export const v2Length = (vector: Vector2, decimalPlaces = Infinity) => {
-    const len = Math.sqrt(vector[0] * vector[0] + vector[1] * vector[1]);
-    return setDecimalPlaces(len, decimalPlaces);
+    return vLength(vector, decimalPlaces);
 };
 
 export const v3Length = (vector: Vector3, decimalPlaces = Infinity) => {
-    const len = Math.sqrt(vector[0] * vector[0] + vector[1] * vector[1] + vector[2] * vector[2]);
-    return setDecimalPlaces(len, decimalPlaces);
+    return vLength(vector, decimalPlaces);
 };
 
 export const v2SetLength = (v2: Vector2, newLength: number, decimalPlaces = Infinity): Vector2 => {
@@ -82,6 +91,8 @@ export const v2SetLength = (v2: Vector2, newLength: number, decimalPlaces = Infi
         setDecimalPlaces(Math.sin(angle) * newLength, decimalPlaces),
     ];
 };
+
+
 
 export const v2Normalize = (v2: Vector2, decimalPlaces = Infinity) : Vector2 => {
     const length = v2Length(v2);
