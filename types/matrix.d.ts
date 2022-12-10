@@ -54,3 +54,31 @@ export declare const m2Scale: (scaleVector: Vector2) => Matrix2;
 export declare const v2Scale: (scaleVector: Vector2, vector: Vector2) => Vector2;
 export declare const m3Scale: (scaleVector: Vector3) => Matrix3;
 export declare const v3Scale: (scaleVector: Vector3, vector: Vector3) => Vector3;
+/**
+ * Calculate determinant for NxN matrix.
+ * Matrix should be square.
+
+export const mDeterminant = (matrix: Matrix): number => {
+    if(matrix.length === 0) return 1;
+
+    if(matrix.length !== matrix[0].length){
+        throw new Error('The matrix must be square.');
+    }
+
+    if(matrix.length === 1) return matrix[0][0];
+    if(matrix.length === 2) return m2Determinant(matrix as Matrix2);
+}; */
+/**
+ * Calculate determinant for 2x2 matrix.
+ * Matrix should be square.
+ */
+export declare const m2Determinant: (m2: Matrix2) => number;
+/**
+ * Calculate determinant for 3x3 matrix.
+ * Matrix should be square.
+
+export const m3Determinant = (m3: Matrix3): number => {
+    if(m3.length !== m3[0].length){
+        throw new Error('The matrix must be square.');
+    }
+}; */ 

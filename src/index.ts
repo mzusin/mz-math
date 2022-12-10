@@ -81,6 +81,8 @@ declare global {
             m3RotationZ: typeof matrix.m3RotationZ;
             v3RotateZ: typeof matrix.v3RotateZ;
 
+            m2Determinant: typeof matrix.m2Determinant;
+
             m2Scale: typeof matrix.m2Scale;
             v2Scale: typeof matrix.v2Scale;
             m3Scale: typeof matrix.m3Scale;
@@ -189,6 +191,8 @@ window.TCMath = window.TCMath || {
     v2Scale: matrix.v2Scale,
     m3Scale: matrix.m3Scale,
     v3Scale: matrix.v3Scale,
+
+    m2Determinant: matrix.m2Determinant,
 
     getV2Angle: angle.getV2Angle,
     setV2Angle: angle.setV2Angle,

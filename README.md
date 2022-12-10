@@ -31,6 +31,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
   - Transformation Matrices
     - [Rotation Matrix](#rotation-matrix)
     - [Scale Matrix](#scale-matrix)
+  - [Matrix Determinant](#matrix-determinant)
 - Angles
   - [Get vector angle](#get-vector-angle)
   - [Set vector angle](#set-vector-angle)
@@ -1097,6 +1098,23 @@ import { Vector3, v3Scale } from 'toolcool-math';
 
 // scale the vector [10, 20, 30] with [2, 4, 6] scale vector
 const scaledVector: Vector3 = v3Scale([2, 4, 6], [10, 20, 30]); 
+```
+
+-----------------------------------------------
+
+## Matrix Determinant
+
+Calculating the determinant for a 2x2 matrix:
+
+```js
+import { Matrix2, m2Determinant } from 'toolcool-math';
+
+const m2x2: Matrix2 = [
+  [5, 3],
+  [-1, 4],
+];
+
+const d = m2Determinant(m2x2); // 23
 ```
 
 -----------------------------------------------

@@ -3,7 +3,7 @@ import {
     mSum, m2Sum, m2Sub, m3Sum, m3Sub, mSub,
     m2Transpose, m3Transpose, mTranspose,
     mMul, mMulVector, m2Reset, m3Reset, mReset,
-    m2x2, m3x3, mNxM, mEqual, identity2, identity3, identityN
+    m2x2, m3x3, mNxM, mEqual, identity2, identity3, identityN, m2Determinant
 } from '../src/matrix';
 import { Matrix, Matrix2, Matrix3, Vector3 } from '../src/types';
 
@@ -849,6 +849,22 @@ describe('Matrix Equality', () => {
                 [0, 0, 1],
             ]
         )).toStrictEqual(false);
+    });
+
+});
+
+describe('Matrix Determinant', () => {
+
+    test(`Determinant of [
+                [5, 3],
+                [-1, 4],
+            ] => 23`, () => {
+        expect(m2Determinant(
+            [
+                [5, 3],
+                [-1, 4],
+            ]
+        )).toStrictEqual(23);
     });
 
 });
