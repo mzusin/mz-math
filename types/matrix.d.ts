@@ -1,4 +1,4 @@
-import { Matrix2, Matrix3, Matrix, Vector } from './types';
+import { Matrix2, Matrix3, Matrix, Vector, Vector2, Vector3 } from './types';
 export declare const mSum: (matrix1: Matrix, matrix2: Matrix, decimalPlaces?: number) => Matrix;
 export declare const m2Sum: (matrix1: Matrix2, matrix2: Matrix2, decimalPlaces?: number) => Matrix2;
 export declare const m3Sum: (matrix1: Matrix3, matrix2: Matrix3, decimalPlaces?: number) => Matrix3;
@@ -19,7 +19,34 @@ export declare const m3x3: (defaultValue?: number) => Matrix3;
 export declare const mNxM: (N: number, M: number, defaultValue?: number) => Matrix;
 export declare const identity2: () => Matrix2;
 export declare const identity3: () => Matrix3;
+/**
+ * Identity Matrix (I).
+ * M x I = I x M = M for any matrix M.
+ */
 export declare const identityN: (N: number) => Matrix;
+/**
+ * Matrix Multiplication.
+ * - Matrix multiplication is not commutative: M1 x M2 !== M2 x M1
+ * - Matrix multiplication is associative: A x (B x C) = (A x B) x C.
+ * - A x (B + C) = A x B + A x C
+ */
 export declare const mMul: (matrix1: Matrix, matrix2: Matrix, decimalPlaces?: number) => Matrix;
 export declare const mMulVector: (matrix: Matrix, vector: Vector, decimalPlaces?: number) => Vector;
 export declare const mEqual: (matrix1: Matrix, matrix2: Matrix) => boolean;
+export declare const m2Rotation: (angleRad: number) => Matrix2;
+export declare const v2Rotate: (angleRad: number, vector: Vector2) => Vector2;
+/**
+ * Rotation around the X axis.
+ */
+export declare const m3RotationX: (angleRad: number) => Matrix3;
+export declare const v3RotateX: (angleRad: number, vector: Vector3) => Vector3;
+/**
+ * Rotation around the Y axis.
+ */
+export declare const m3RotationY: (angleRad: number) => Matrix3;
+export declare const v3RotateY: (angleRad: number, vector: Vector3) => Vector3;
+/**
+ * Rotation around the Z axis.
+ */
+export declare const m3RotationZ: (angleRad: number) => Matrix3;
+export declare const v3RotateZ: (angleRad: number, vector: Vector3) => Vector3;

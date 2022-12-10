@@ -1,4 +1,4 @@
-import { Matrix2, Matrix3, Matrix, Vector } from './types';
+import { Matrix2, Matrix3, Matrix, Vector, Vector2, Vector3 } from './types';
 import { vMulScalar, vSum, vSub, vDotProduct, vN, vEqual } from './vector';
 
 // --------------- SUM ----------------------
@@ -244,7 +244,7 @@ export const mMulVector = (matrix: Matrix, vector: Vector, decimalPlaces = Infin
     return res;
 };
 
-// --------------- EQUALITY -------------------------
+// --------------- EQUALITY -----------------------------
 
 export const mEqual = (matrix1: Matrix, matrix2: Matrix): boolean => {
     if(matrix1.length !== matrix2.length) return false;
@@ -254,4 +254,62 @@ export const mEqual = (matrix1: Matrix, matrix2: Matrix): boolean => {
     }
 
     return true;
+};
+
+// ---------------- TRANSFORMATION MATRICES -------------
+
+export const m2Rotation = (angleRad: number): Matrix2 => {
+    return [
+      [Math.cos(angleRad), -Math.sin(angleRad)],
+      [Math.sin(angleRad), Math.cos(angleRad)],
+    ];
+};
+
+export const v2Rotate = (angleRad: number, vector: Vector2): Vector2 => {
+    return mMulVector(m2Rotation(angleRad), vector) as Vector2;
+};
+
+/**
+ * Rotation around the X axis.
+ */
+export const m3RotationX = (angleRad: number): Matrix3 => {
+    return [
+      [1, 0, 0],
+      [0, Math.cos(angleRad), -Math.sin(angleRad)],
+      [0, Math.sin(angleRad), Math.cos(angleRad)],
+    ];
+};
+
+export const v3RotateX = (angleRad: number, vector: Vector3): Vector3 => {
+    return mMulVector(m3RotationX(angleRad), vector) as Vector3;
+};
+
+/**
+ * Rotation around the Y axis.
+ */
+export const m3RotationY = (angleRad: number): Matrix3 => {
+    return [
+        [Math.cos(angleRad), 0, Math.sin(angleRad)],
+        [0, 1, 0],
+        [-Math.sin(angleRad), 0, Math.cos(angleRad)],
+    ];
+};
+
+export const v3RotateY = (angleRad: number, vector: Vector3): Vector3 => {
+    return mMulVector(m3RotationY(angleRad), vector) as Vector3;
+};
+
+/**
+ * Rotation around the Z axis.
+ */
+export const m3RotationZ = (angleRad: number): Matrix3 => {
+    return [
+        [Math.cos(angleRad), -Math.sin(angleRad), 0],
+        [Math.sin(angleRad), Math.cos(angleRad), 0],
+        [0, 0, 1],
+    ];
+};
+
+export const v3RotateZ = (angleRad: number, vector: Vector3): Vector3 => {
+    return mMulVector(m3RotationZ(angleRad), vector) as Vector3;
 };

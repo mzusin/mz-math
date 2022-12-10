@@ -57,6 +57,14 @@ declare global {
             mReset: typeof matrix.mReset;
             m2Reset: typeof matrix.m2Reset;
             m3Reset: typeof matrix.m3Reset;
+            m2Rotation: typeof matrix.m2Rotation;
+            v2Rotate: typeof matrix.v2Rotate;
+            m3RotationX: typeof matrix.m3RotationX;
+            v3RotateX: typeof matrix.v3RotateX;
+            m3RotationY: typeof matrix.m3RotationY;
+            v3RotateY: typeof matrix.v3RotateY;
+            m3RotationZ: typeof matrix.m3RotationZ;
+            v3RotateZ: typeof matrix.v3RotateZ;
             getV2Angle: typeof angle.getV2Angle;
             setV2Angle: typeof angle.setV2Angle;
             radiansToDegrees: typeof angle.radiansToDegrees;

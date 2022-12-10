@@ -73,6 +73,15 @@ declare module 'toolcool-math' {
     export const m2Reset: (m2: Matrix2, defaultValue?: number) => Matrix2;
     export const m3Reset: (m3: Matrix3, defaultValue?: number) => Matrix3;
 
+    export const m2Rotation: (angleRad: number) => Matrix2;
+    export const v2Rotate: (angleRad: number, vector: Vector2) => Vector2;
+    export const m3RotationX: (angleRad: number) => Matrix3;
+    export const v3RotateX: (angleRad: number, vector: Vector3) => Vector3;
+    export const m3RotationY: (angleRad: number) => Matrix3;
+    export const v3RotateY: (angleRad: number, vector: Vector3) => Vector3;
+    export const m3RotationZ: (angleRad: number) => Matrix3;
+    export const v3RotateZ: (angleRad: number, vector: Vector3) => Vector3;
+
     export const getV2Angle: (v2: Vector2, decimalPlaces?: number) => number;
     export const setV2Angle: (v2: Vector2, newAngleRad: number, decimalPlaces?: number) => Vector2;
     export const radiansToDegrees: (radians: number, decimalPlaces?: number) => number;
@@ -156,6 +165,15 @@ declare module 'toolcool-math' {
                 mReset: typeof mReset;
                 m2Reset: typeof m2Reset;
                 m3Reset: typeof m3Reset;
+
+                m2Rotation: typeof m2Rotation;
+                v2Rotate: typeof v2Rotate;
+                m3RotationX: typeof m3RotationX;
+                v3RotateX: typeof v3RotateX;
+                m3RotationY: typeof m3RotationY;
+                v3RotateY: typeof v3RotateY;
+                m3RotationZ: typeof m3RotationZ;
+                v3RotateZ: typeof v3RotateZ;
 
                 getV2Angle: typeof getV2Angle;
                 setV2Angle: typeof setV2Angle;

@@ -28,6 +28,8 @@ This project is a collection of TypeScript math helpers and utilities for the br
     - [m2x2, m3x3, and mNxM](#m2x2-m3x3-and-mnxm)
     - [Identity Matrix](#identity-matrix)
   - [Check if 2 matrices are equal](#check-if-2-matrices-are-equal)
+  - Transformation Matrices
+    - [Rotation Matrix](#rotation-matrix)
 - Angles
   - [Get vector angle](#get-vector-angle)
   - [Set vector angle](#set-vector-angle)
@@ -997,6 +999,63 @@ const res2 = mEqual(
           [0, 1],
         ]); // false
 ```
+-----------------------------------------------
+
+## Transformation Matrices
+
+## Rotation Matrix
+
+**2D rotation matrix**
+
+It's possible to get a 2D rotation matrix for a given angle in radians as follows:
+
+```js
+import { m2Rotation } from 'toolcool-math';
+
+const rmat2 = m2Rotation(Math.PI/2); // rotation matrix for 90 deg
+```
+
+It is also possible to get the actual rotated vector using the **v2Rotate** function:
+
+```js
+import { Vector2, v2Rotate } from 'toolcool-math';
+
+// vector rotated 90 degrees
+const rotatedVector: Vector2 = v2Rotate(Math.PI/2, [10, 20]); 
+```
+
+**3D rotation matrices**
+
+It's possible to get the following 3D rotation matrices:
+
+```js
+import { m3RotationX, m3RotationY, m3RotationZ } from 'toolcool-math';
+
+// rotation matrix around the X axis
+const rmat3x = m3RotationX(Math.PI/2);
+
+// rotation matrix around the Y axis
+const rmat3y = m3RotationY(Math.PI/2);
+
+// rotation matrix around the Z axis
+const rmat3z = m3RotationZ(Math.PI/2); 
+```
+
+It is also possible to get the actual rotated vector using the following functions:
+
+```js
+import { Vector3, v3RotateX, v3RotateY, v3RotateZ } from 'toolcool-math';
+
+// rotation around the X axis
+const rotatedVector1: Vector3 = v3RotateX(Math.PI/2, [10, 20, 30]);
+
+// rotation around the Y axis
+const rotatedVector2: Vector3 = v3RotateY(Math.PI/2, [10, 20, 30]);
+
+// rotation around the Z axis
+const rotatedVector3: Vector3 = v3RotateZ(Math.PI/2, [10, 20, 30]);
+```
+
 -----------------------------------------------
 
 # Angles
