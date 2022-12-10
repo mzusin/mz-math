@@ -1,6 +1,14 @@
 import esbuild from 'esbuild';
 import fs from 'fs';
 import path from 'path';
+import pkg from 'npm-dts';
+const { Generator } = pkg;
+
+// generate typescript types
+new Generator({
+    entry: './src/index.ts',
+    output: './dist/index.d.ts',
+}).generate();
 
 const packageJson = fs.readFileSync(path.join(process.cwd(), './package.json'), 'utf-8');
 let version = '1.0.0';
@@ -10,7 +18,7 @@ try {
     version = parsed.version;
 } catch (ex) {}
 
-const settings = {
+export const settings = {
     entryPoints: ['./src/index.ts'],
     bundle: true,
     sourcemap: 'linked', // external
@@ -52,3 +60,15 @@ esbuild
         console.log(watch ? 'Watching...' : 'Done.');
     })
     .catch(() => process.exit(1));
+
+/*
+// compile for node.js
+esbuild
+    .build({
+        ...settings,
+        platform: 'node',
+    })
+    .then(result => {
+        console.log(watch ? 'Watching...' : 'Done.');
+    })
+    .catch(() => process.exit(1));*/

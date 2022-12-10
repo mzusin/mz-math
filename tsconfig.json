@@ -31,6 +31,9 @@
     "src",
   ],
   "exclude": [
-    "types"
+    "types",
+    "node_modules",
+    "dist",
+    "**/*.test.ts"
   ]
 }

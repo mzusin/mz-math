@@ -66,6 +66,8 @@ declare global {
             m3RotationZ: typeof matrix.m3RotationZ;
             v3RotateZ: typeof matrix.v3RotateZ;
             m2Determinant: typeof matrix.m2Determinant;
+            m2Inverse: typeof matrix.m2Inverse;
+            m2Adjugate: typeof matrix.m2Adjugate;
             m2Scale: typeof matrix.m2Scale;
             v2Scale: typeof matrix.v2Scale;
             m3Scale: typeof matrix.m3Scale;
