@@ -161,8 +161,7 @@ const sum = vSub(v1, v2); // [-4, -4, -4, -4]
 
 ## Multiply vector by scalar
 
-You can multiply a vector by a scalar using the **v2MulScalar** and **v3MulScalar** functions.
- Each function receives an optional **decimalPlaces** parameter.
+The following functions are used to multiply a vector by a scalar: **v2MulScalar** for a 2D vector, **v3MulScalar** for a 3D vector, and **vMulScalar** for the general case. Each function receives an optional **decimalPlaces** parameter.
 
 **2D Vector**
 ```js
