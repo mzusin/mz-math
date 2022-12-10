@@ -1,6 +1,8 @@
 import esbuild from 'esbuild';
 import fs from 'fs';
 import path from 'path';
+
+/*
 import pkg from 'npm-dts';
 const { Generator } = pkg;
 
@@ -9,6 +11,7 @@ new Generator({
     entry: './src/index.ts',
     output: './dist/index.d.ts',
 }).generate();
+*/
 
 const packageJson = fs.readFileSync(path.join(process.cwd(), './package.json'), 'utf-8');
 let version = '1.0.0';
