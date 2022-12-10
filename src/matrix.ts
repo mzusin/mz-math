@@ -1,4 +1,4 @@
-import { Matrix2, Matrix3, Matrix } from './types';
+import { Matrix2, Matrix3, Matrix, Vector } from './types';
 import { vMulScalar, vSum, vSub, vDotProduct } from './vector';
 
 // --------------- SUM ----------------------
@@ -119,4 +119,21 @@ export const mMul = (matrix1: Matrix, matrix2: Matrix, decimalPlaces = Infinity)
     }
 
     return matrix;
+};
+
+export const mMulVector = (matrix: Matrix, vector: Vector, decimalPlaces = Infinity): Vector => {
+
+    if(matrix.length < 0) return [];
+
+    if(matrix[0].length !== vector.length){
+        throw 'The number of columns in the matrix must be equal to the length of the vector.';
+    }
+
+    const res: Vector = [];
+
+    for(let i=0; i<matrix.length; i++){
+        res[i] = vDotProduct(matrix[i], vector, decimalPlaces);
+    }
+
+    return res;
 };

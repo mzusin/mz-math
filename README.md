@@ -20,6 +20,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
   - [Multiply matrix by scalar](#multiply-matrix-by-scalar)
   - [Matrix Transposition](#matrix-transposition)
   - [Matrix Multiplication](#matrix-multiplication)
+  - [Multiply matrix by vector](#multiply-matrix-by-vector)
 - Angles
   - [Get vector angle](#get-vector-angle)
   - [Set vector angle](#set-vector-angle)
@@ -707,6 +708,23 @@ const res = mMul(matrix1, matrix2, 2); // round to 2 decimal places
     [15.23, 1.15],
 ]
  */
+```
+
+## Multiply matrix by vector
+
+You can multiply matrix by vector using the **mMulVector** function. The function receives an optional **decimalPlaces** parameter.
+
+```js
+import { mMulVector, Matrix3 } from 'toolcool-math';
+
+const matrix: Matrix3 = [
+    [0, 3, 5],
+    [5, 5, 2],
+];
+
+const vector: Vector3 = [3, 4, 3];
+
+const res = mMulVector(matrix, vector); // [27, 41]
 ```
 
 -----------------------------------------------

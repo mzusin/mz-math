@@ -11,9 +11,9 @@ import {
     m2Transpose,
     m3Transpose,
     mTranspose,
-    mMul
+    mMul, mMulVector
 } from '../src/matrix';
-import { Matrix, Matrix2, Matrix3 } from '../src/types';
+import { Matrix, Matrix2, Matrix3, Vector3 } from '../src/types';
 
 describe('Matrix Sum', () => {
     test(`[
@@ -564,5 +564,20 @@ describe('Matrix Multiplication', () => {
             [-19.24, 24.35],
             [15.23, 1.15],
         ]);
+    });
+
+    test(`Multiply matrix by vector: [
+            [0, 3, 5],
+            [5, 5, 2],
+        ] and [3, 4, 3]`, () => {
+
+        const matrix: Matrix3 = [
+            [0, 3, 5],
+            [5, 5, 2],
+        ];
+
+        const vector: Vector3 = [3, 4, 3];
+
+        expect(mMulVector(matrix, vector)).toStrictEqual([27, 41]);
     });
 });
