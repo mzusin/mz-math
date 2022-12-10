@@ -50,3 +50,7 @@ export declare const v3RotateY: (angleRad: number, vector: Vector3) => Vector3;
  */
 export declare const m3RotationZ: (angleRad: number) => Matrix3;
 export declare const v3RotateZ: (angleRad: number, vector: Vector3) => Vector3;
+export declare const m2Scale: (scaleVector: Vector2) => Matrix2;
+export declare const v2Scale: (scaleVector: Vector2, vector: Vector2) => Vector2;
+export declare const m3Scale: (scaleVector: Vector3) => Matrix3;
+export declare const v3Scale: (scaleVector: Vector3, vector: Vector3) => Vector3;

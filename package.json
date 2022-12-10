@@ -30,7 +30,9 @@
     "Bezier",
     "transformation matrix",
     "rotation matrix",
-    "rotation"
+    "rotation",
+    "scale matrix",
+    "scale"
   ],
   "author": "Tool Cool <toolcool.org@gmail.com>",
   "license": "MIT",

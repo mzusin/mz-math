@@ -82,6 +82,11 @@ declare module 'toolcool-math' {
     export const m3RotationZ: (angleRad: number) => Matrix3;
     export const v3RotateZ: (angleRad: number, vector: Vector3) => Vector3;
 
+    export const m2Scale: (scaleVector: Vector2) => Matrix2;
+    export const v2Scale: (scaleVector: Vector2, vector: Vector2) => Vector2;
+    export const m3Scale: (scaleVector: Vector3) => Matrix3;
+    export const v3Scale: (scaleVector: Vector3, vector: Vector3) => Vector3;
+
     export const getV2Angle: (v2: Vector2, decimalPlaces?: number) => number;
     export const setV2Angle: (v2: Vector2, newAngleRad: number, decimalPlaces?: number) => Vector2;
     export const radiansToDegrees: (radians: number, decimalPlaces?: number) => number;
@@ -174,6 +179,11 @@ declare module 'toolcool-math' {
                 v3RotateY: typeof v3RotateY;
                 m3RotationZ: typeof m3RotationZ;
                 v3RotateZ: typeof v3RotateZ;
+
+                m2Scale: typeof m2Scale;
+                v2Scale: typeof v2Scale;
+                m3Scale: typeof m3Scale;
+                v3Scale: typeof v3Scale;
 
                 getV2Angle: typeof getV2Angle;
                 setV2Angle: typeof setV2Angle;

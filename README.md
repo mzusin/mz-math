@@ -30,6 +30,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
   - [Check if 2 matrices are equal](#check-if-2-matrices-are-equal)
   - Transformation Matrices
     - [Rotation Matrix](#rotation-matrix)
+    - [Scale Matrix](#scale-matrix)
 - Angles
   - [Get vector angle](#get-vector-angle)
   - [Set vector angle](#set-vector-angle)
@@ -1054,6 +1055,48 @@ const rotatedVector2: Vector3 = v3RotateY(Math.PI/2, [10, 20, 30]);
 
 // rotation around the Z axis
 const rotatedVector3: Vector3 = v3RotateZ(Math.PI/2, [10, 20, 30]);
+```
+
+-----------------------------------------------
+
+## Scale Matrix
+
+**2D scale matrix**
+
+It's possible to get a 2D scale matrix for a given scale vector as follows:
+
+```js
+import { m2Scale } from 'toolcool-math';
+
+const smat2 = m2Scale([2, 4]); // scale matrix with 2x and 4y
+```
+
+It is also possible to get the actual scaled vector using the **v2Scale** function:
+
+```js
+import { Vector2, v2Scale } from 'toolcool-math';
+
+// scale the vector [10, 20] with [2, 4] scale vector
+const scaledVector: Vector2 = v2Scale([2, 4], [10, 20]); 
+```
+
+**3D scale matrix**
+
+It's possible to get a 3D scale matrix for a given scale vector as follows:
+
+```js
+import { m3Scale } from 'toolcool-math';
+
+const smat3 = m3Scale([2, 4, 6]); // scale matrix with 2x, 4y, and 6z
+```
+
+It is also possible to get the actual scaled vector using the **v3Scale** function:
+
+```js
+import { Vector3, v3Scale } from 'toolcool-math';
+
+// scale the vector [10, 20, 30] with [2, 4, 6] scale vector
+const scaledVector: Vector3 = v3Scale([2, 4, 6], [10, 20, 30]); 
 ```
 
 -----------------------------------------------

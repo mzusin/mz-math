@@ -256,7 +256,7 @@ export const mEqual = (matrix1: Matrix, matrix2: Matrix): boolean => {
     return true;
 };
 
-// ---------------- TRANSFORMATION MATRICES -------------
+// ---------------- ROTATION MATRICES -------------
 
 export const m2Rotation = (angleRad: number): Matrix2 => {
     return [
@@ -316,4 +316,29 @@ export const m3RotationZ = (angleRad: number): Matrix3 => {
 export const v3RotateZ = (angleRad: number, vector: Vector3): Vector3 => {
     const unitVector = v3Normalize(vector);
     return mMulVector(m3RotationZ(angleRad), unitVector) as Vector3;
+};
+
+// ---------------- SCALE MATRICES -------------
+
+export const m2Scale = (scaleVector: Vector2): Matrix2 => {
+    return [
+        [scaleVector[0], 0],
+        [0, scaleVector[1]],
+    ];
+};
+
+export const v2Scale = (scaleVector: Vector2, vector: Vector2): Vector2 => {
+    return mMulVector(m2Scale(scaleVector), vector) as Vector2;
+};
+
+export const m3Scale = (scaleVector: Vector3): Matrix3 => {
+    return [
+        [scaleVector[0], 0, 0],
+        [0, scaleVector[1], 0],
+        [0, 0, scaleVector[2]],
+    ];
+};
+
+export const v3Scale = (scaleVector: Vector3, vector: Vector3): Vector3 => {
+    return mMulVector(m3Scale(scaleVector), vector) as Vector3;
 };
