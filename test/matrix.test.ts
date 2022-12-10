@@ -1,4 +1,17 @@
-import { m2MulScalar, m3MulScalar, mMulScalar, mSum, m2Sum, m2Sub, m3Sum, m3Sub, mSub } from '../src/matrix';
+import {
+    m2MulScalar,
+    m3MulScalar,
+    mMulScalar,
+    mSum,
+    m2Sum,
+    m2Sub,
+    m3Sum,
+    m3Sub,
+    mSub,
+    m2Transpose,
+    m3Transpose,
+    mTranspose
+} from '../src/matrix';
 import { Matrix, Matrix2, Matrix3 } from '../src/types';
 
 describe('Matrix Sum', () => {
@@ -353,6 +366,125 @@ describe('Multiply matrix by scalar', () => {
         expect(mMulScalar(m, 5)).toStrictEqual([
             [5, 10, 15, 20],
             [25, 30, 35, 40],
+        ]);
+    });
+});
+
+describe('Matrix Transpose', () => {
+    test(`Transpose [
+            [0, 0],
+            [0, 0],
+        ]`, () => {
+        const m2: Matrix2 = [
+            [0, 0],
+            [0, 0],
+        ];
+
+        expect(m2Transpose(m2)).toStrictEqual([
+            [0, 0],
+            [0, 0],
+        ]);
+    });
+
+    test(`Transpose [
+            [1, -2],
+            [3, 0],
+            [7, 5],
+        ]`, () => {
+        const m2: Matrix2 = [
+            [1, -2],
+            [3, 0],
+            [7, 5],
+        ];
+
+        expect(m2Transpose(m2)).toStrictEqual([
+            [1, 3, 7],
+            [-2, 0, 5],
+        ]);
+    });
+
+    test(`Transpose [
+            [0, 0, 0],
+            [0, 0, 0],
+            [0, 0, 0],
+        ]`, () => {
+        const m3: Matrix3 = [
+            [0, 0, 0],
+            [0, 0, 0],
+            [0, 0, 0],
+        ];
+
+        expect(m3Transpose(m3)).toStrictEqual([
+            [0, 0, 0],
+            [0, 0, 0],
+            [0, 0, 0],
+        ]);
+    });
+
+    test(`Transpose [
+            [1, 3, 7],
+            [-2, 0, 5],
+        ]`, () => {
+        const m3: Matrix3 = [
+            [1, 3, 7],
+            [-2, 0, 5],
+        ];
+
+        expect(m3Transpose(m3)).toStrictEqual([
+            [1, -2],
+            [3, 0],
+            [7, 5],
+        ]);
+    });
+
+    test(`Transpose [
+            [1, 2, 3, 4],
+            [5, 6, 7, 8],
+        ]`, () => {
+        const m: Matrix = [
+            [1, 2, 3, 4],
+            [5, 6, 7, 8],
+        ];
+
+        expect(mTranspose(m)).toStrictEqual([
+            [1, 5],
+            [2, 6],
+            [3, 7],
+            [4, 8],
+        ]);
+    });
+
+    test(`Transpose [
+            [1, 5],
+            [2, 6],
+            [3, 7],
+            [4, 8],
+        ]`, () => {
+        const m: Matrix = [
+            [1, 5],
+            [2, 6],
+            [3, 7],
+            [4, 8],
+        ];
+
+        expect(mTranspose(m)).toStrictEqual([
+            [1, 2, 3, 4],
+            [5, 6, 7, 8],
+        ]);
+    });
+
+    test(`Transpose [
+           [-1, 5],
+           [Math.PI, 3],
+        ]`, () => {
+        const m2: Matrix2 = [
+            [-1, 5],
+            [Math.PI, 3],
+        ];
+
+        expect(m2Transpose(m2)).toStrictEqual([
+            [-1, Math.PI],
+            [5, 3],
         ]);
     });
 });

@@ -18,6 +18,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
   - [Matrix Sum](#matrix-sum)
   - [Matrix Subtraction](#matrix-subtraction)
   - [Multiply matrix by scalar](#multiply-matrix-by-scalar)
+  - [Matrix Transposition](#matrix-transposition)
 - Angles
   - [Get vector angle](#get-vector-angle)
   - [Set vector angle](#set-vector-angle)
@@ -589,6 +590,70 @@ const res = mMulScalar(matrix, 5);
 [
     [5, 10, 15, 20],
     [25, 30, 35, 40],
+]
+ */
+```
+
+## Matrix Transposition
+
+You can transpose a matrix using the **m2Transpose**, **m3Transpose**, or **mTranspose** functions.
+
+**2D Matrix**
+
+```js
+import { m2Transpose, Matrix2 } from 'toolcool-math';
+
+const m2: Matrix2 = [
+  [-1, 5],
+  [Math.PI, 3],
+];
+
+const res = m2Transpose(m2); 
+/*
+[
+    [-1, Math.PI],
+    [5, 3],
+]
+ */
+```
+
+**3D Matrix**
+
+```js
+import { m3Transpose, Matrix3 } from 'toolcool-math';
+
+const m3: Matrix3 = [
+  [1, 3, 7],
+  [-2, 0, 5],
+];
+
+const res = m3Transpose(m3); 
+/*
+[
+    [1, -2],
+    [3, 0],
+    [7, 5],
+]
+ */
+```
+
+**General Case**
+
+```js
+import { mTranspose, Matrix } from 'toolcool-math';
+
+const matrix: Matrix = [
+  [1, 2, 3, 4],
+  [5, 6, 7, 8],
+];
+
+const res = mTranspose(matrix);
+/*
+[
+    [1, 5],
+    [2, 6],
+    [3, 7],
+    [4, 8],
 ]
  */
 ```

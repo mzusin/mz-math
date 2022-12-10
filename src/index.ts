@@ -48,6 +48,10 @@ declare global {
             m2MulScalar: typeof matrix.m2MulScalar;
             m3MulScalar: typeof matrix.m3MulScalar;
 
+            mTranspose: typeof matrix.mTranspose;
+            m2Transpose: typeof matrix.m2Transpose;
+            m3Transpose: typeof matrix.m3Transpose;
+
             getV2Angle: typeof angle.getV2Angle;
             setV2Angle: typeof angle.setV2Angle;
             radiansToDegrees: typeof angle.radiansToDegrees;
@@ -113,6 +117,10 @@ window.TCMath = window.TCMath || {
     mMulScalar: matrix.mMulScalar,
     m2MulScalar: matrix.m2MulScalar,
     m3MulScalar: matrix.m3MulScalar,
+
+    mTranspose: matrix.mTranspose,
+    m2Transpose: matrix.m2Transpose,
+    m3Transpose: matrix.m3Transpose,
 
     getV2Angle: angle.getV2Angle,
     setV2Angle: angle.setV2Angle,

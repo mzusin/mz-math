@@ -3,6 +3,7 @@ declare module 'toolcool-math' {
     export type Vector2 = [number, number];
     export type Vector3 = [number, number, number];
     export type Vector = number[];
+
     export type Matrix2 = Vector2[];
     export type Matrix3 = Vector3[];
     export type Matrix = Vector[];
@@ -45,6 +46,10 @@ declare module 'toolcool-math' {
     export const mMulScalar: (m: Matrix, scalar: number, decimalPlaces?: number) => Matrix;
     export const m2MulScalar: (m2: Matrix2, scalar: number, decimalPlaces?: number) => Matrix2;
     export const m3MulScalar: (m3: Matrix3, scalar: number, decimalPlaces?: number) => Matrix3;
+
+    export const mTranspose: (m: Matrix) => Matrix;
+    export const m2Transpose: (m2: Matrix2) => Matrix;
+    export const m3Transpose: (m3: Matrix3) => Matrix;
 
     export const getV2Angle: (v2: Vector2, decimalPlaces?: number) => number;
     export const setV2Angle: (v2: Vector2, newAngleRad: number, decimalPlaces?: number) => Vector2;
@@ -106,6 +111,10 @@ declare module 'toolcool-math' {
 
                 m2MulScalar: typeof m2MulScalar;
                 m3MulScalar: typeof m3MulScalar;
+
+                mTranspose: typeof mTranspose;
+                m2Transpose: typeof m2Transpose;
+                m3Transpose: typeof m3Transpose;
 
                 getV2Angle: typeof getV2Angle;
                 setV2Angle: typeof setV2Angle;

@@ -61,11 +61,35 @@ export const m3MulScalar = (m3: Matrix3, scalar: number, decimalPlaces = Infinit
     return mMulScalar(m3, scalar, decimalPlaces) as Matrix3;
 };
 
-/*
-export const m2Transpose = (m2: Matrix2): Matrix2 => {
-    return [
-        [m2[0][0], m2[1][0]],
-        [m2[0][1], m2[1][1]],
-    ];
-};*/
+// --------------- MUL SCALAR ----------------------
+
+export const mTranspose = (m: Matrix): Matrix => {
+
+    const vectorsCount = m.length;
+    if(vectorsCount <= 0) return m;
+
+    const vectorLength = m[0].length;
+    if(vectorLength <= 0) return m;
+
+    const matrix: Matrix = [];
+    for(let i=0; i<vectorLength; i++){
+        matrix.push([]);
+    }
+
+    for(let i=0; i<vectorsCount; i++){
+        for(let j=0; j<vectorLength; j++){
+            matrix[j].push(m[i][j]);
+        }
+    }
+
+    return matrix;
+};
+
+export const m2Transpose = (m2: Matrix2): Matrix => {
+    return mTranspose(m2);
+};
+
+export const m3Transpose = (m3: Matrix3): Matrix => {
+    return mTranspose(m3);
+};
 
