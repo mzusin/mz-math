@@ -20,6 +20,10 @@ declare module 'toolcool-math' {
     export const v3DotProduct: (vector1: Vector3, vector2: Vector3, decimalPlaces?: number) => number;
     export const v3CrossProduct: (vector1: Vector3, vector2: Vector3, decimalPlaces?: number) => Vector3;
 
+    export const m2Sum: (matrix1: Matrix2, matrix2: Matrix2, decimalPlaces?: number) => Matrix2;
+    export const m2Sub: (matrix1: Matrix2, matrix2: Matrix2, decimalPlaces?: number) => Matrix2;
+    export const m3Sum: (matrix1: Matrix3, matrix2: Matrix3, decimalPlaces?: number) => Matrix3;
+    export const m3Sub: (matrix1: Matrix3, matrix2: Matrix3, decimalPlaces?: number) => Matrix3;
     export const m2MulScalar: (m2: Matrix2, scalar: number, decimalPlaces?: number) => Matrix2;
     export const m3MulScalar: (m3: Matrix3, scalar: number, decimalPlaces?: number) => Matrix3;
 
@@ -65,6 +69,10 @@ declare module 'toolcool-math' {
                 v3DotProduct: typeof v3DotProduct;
                 v3CrossProduct: typeof v3CrossProduct;
 
+                m2Sum: typeof m2Sum;
+                m3Sum: typeof m3Sum;
+                m2Sub: typeof m2Sub;
+                m3Sub: typeof m3Sub;
                 m2MulScalar: typeof m2MulScalar;
                 m3MulScalar: typeof m3MulScalar;
 

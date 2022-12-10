@@ -15,6 +15,8 @@ This project is a collection of TypeScript math helpers and utilities for the br
     - [Dot Product](#vectors-dot-product)
     - [Cross Product](#vectors-cross-product)
 - Matrix
+  - [Matrix Sum](#matrix-sum)
+  - [Matrix Subtraction](#matrix-subtraction)
   - [Multiply matrix by scalar](#multiply-matrix-by-scalar)
 - Angles
   - [Get vector angle](#get-vector-angle)
@@ -203,6 +205,106 @@ const res2 = v3CrossProduct(v3, v4, 2); // [-4.11, 10.03, -4.67]
 -----------------------------------------------
 
 # Matrix
+
+## Matrix Sum
+
+To add matrices, the **m2Sum** and **m3Sum** functions are used. Each function receives an optional **decimalPlaces** parameter.
+
+**2D Vector**
+```js
+import { m2Sum, Matrix2 } from 'toolcool-math';
+
+const matrix1: Matrix2 = [
+  [1, 2],
+  [3, 4],
+];
+
+const matrix2: Matrix2 = [
+  [5, 6],
+  [7, 8],
+];
+
+const sum = m2Sum(matrix1, matrix2); 
+/*
+[
+  [6, 8],
+  [10, 12],
+]
+ */
+```
+
+**3D Vector**
+```js
+import { m3Sum, Matrix3 } from 'toolcool-math';
+
+const matrix1: Matrix3 = [
+  [1, 2, 10],
+  [3, 4, 20],
+];
+
+const matrix2: Matrix3 = [
+  [5, 6, 30],
+  [7, 8, 40],
+];
+
+const sum = m3Sum(matrix1, matrix2);
+/*
+[
+  [6, 8, 40],
+  [10, 12, 60],
+]
+ */
+```
+
+## Matrix Subtraction
+
+To subtract matrices, the **m2Sub** and **m2Sub** functions are used. Each function receives an optional **decimalPlaces** parameter.
+
+**2D Vector**
+```js
+import { m2Sub, Matrix2 } from 'toolcool-math';
+
+const matrix1: Matrix2 = [
+  [1, 2],
+  [3, 4],
+];
+
+const matrix2: Matrix2 = [
+  [5, 6],
+  [7, 8],
+];
+
+const sum = m2Sub(matrix1, matrix2); 
+/*
+[
+  [-4, -4],
+  [-4, -4],
+]
+ */
+```
+
+**3D Vector**
+```js
+import { m2Sub, Matrix3 } from 'toolcool-math';
+
+const matrix1: Matrix3 = [
+  [1, 2, 10],
+  [3, 4, 20],
+];
+
+const matrix2: Matrix3 = [
+  [5, 6, 30],
+  [7, 8, 40],
+];
+
+const sum = m2Sub(matrix1, matrix2);
+/*
+[
+  [-4, -4, -20],
+  [-4, -4, -20],
+]
+ */
+```
 
 ## Multiply matrix by scalar
 
