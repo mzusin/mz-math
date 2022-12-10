@@ -25,13 +25,17 @@ declare global {
             vNormalize: typeof vector.vNormalize;
             v2Normalize: typeof vector.v2Normalize;
             v3Normalize: typeof vector.v3Normalize;
+            vDotProduct: typeof vector.vDotProduct;
             v2DotProduct: typeof vector.v2DotProduct;
             v3DotProduct: typeof vector.v3DotProduct;
             v3CrossProduct: typeof vector.v3CrossProduct;
+            mSum: typeof matrix.mSum;
             m2Sum: typeof matrix.m2Sum;
             m3Sum: typeof matrix.m3Sum;
+            mSub: typeof matrix.mSub;
             m2Sub: typeof matrix.m2Sub;
             m3Sub: typeof matrix.m3Sub;
+            mMulScalar: typeof matrix.mMulScalar;
             m2MulScalar: typeof matrix.m2MulScalar;
             m3MulScalar: typeof matrix.m3MulScalar;
             getV2Angle: typeof angle.getV2Angle;

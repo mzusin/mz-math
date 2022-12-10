@@ -36,12 +36,15 @@ declare global {
             v3DotProduct: typeof vector.v3DotProduct;
             v3CrossProduct: typeof vector.v3CrossProduct;
 
+            mSum: typeof matrix.mSum;
             m2Sum: typeof matrix.m2Sum;
             m3Sum: typeof matrix.m3Sum;
 
+            mSub: typeof matrix.mSub;
             m2Sub: typeof matrix.m2Sub;
             m3Sub: typeof matrix.m3Sub;
 
+            mMulScalar: typeof matrix.mMulScalar;
             m2MulScalar: typeof matrix.m2MulScalar;
             m3MulScalar: typeof matrix.m3MulScalar;
 
@@ -99,12 +102,15 @@ window.TCMath = window.TCMath || {
     v3DotProduct: vector.v3DotProduct,
     v3CrossProduct: vector.v3CrossProduct,
 
+    mSum: matrix.mSum,
     m2Sum: matrix.m2Sum,
     m3Sum: matrix.m3Sum,
 
+    mSub: matrix.mSub,
     m2Sub: matrix.m2Sub,
     m3Sub: matrix.m3Sub,
 
+    mMulScalar: matrix.mMulScalar,
     m2MulScalar: matrix.m2MulScalar,
     m3MulScalar: matrix.m3MulScalar,
 

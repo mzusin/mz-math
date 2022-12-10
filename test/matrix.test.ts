@@ -1,5 +1,5 @@
-import { m2MulScalar, m3MulScalar, m2Sum, m2Sub, m3Sum, m3Sub } from '../src/matrix';
-import { Matrix2, Matrix3 } from '../src/types';
+import { m2MulScalar, m3MulScalar, mMulScalar, mSum, m2Sum, m2Sub, m3Sum, m3Sub, mSub } from '../src/matrix';
+import { Matrix, Matrix2, Matrix3 } from '../src/types';
 
 describe('Matrix Sum', () => {
     test(`[
@@ -87,6 +87,28 @@ describe('Matrix Sum', () => {
         expect(m3Sum(matrix1, matrix2, 2)).toStrictEqual([
             [6.35, 9.16, 40.09],
             [10.59, 13.46, 61.13],
+        ]);
+    });
+
+    test(`[
+            [1, 2, 3, 4],
+            [5, 6, 7, 8],
+        ] + [
+            [9,  10, 11, 12],
+            [13, 14, 15, 16],
+        ]`, () => {
+        const matrix1: Matrix = [
+            [1, 2, 3, 4],
+            [5, 6, 7, 8],
+        ];
+        const matrix2: Matrix = [
+            [9,  10, 11, 12],
+            [13, 14, 15, 16],
+        ];
+
+        expect(mSum(matrix1, matrix2)).toStrictEqual([
+            [10, 12, 14, 16],
+            [18, 20, 22, 24],
         ]);
     });
 });
@@ -201,6 +223,28 @@ describe('Matrix Subtraction', () => {
             [-4.5, -4.49, -20],
         ]);
     });
+
+    test(`[
+            [1, 2, 3, 4],
+            [5, 6, 7, 8],
+        ] - [
+            [9,  10, 11, 12],
+            [13, 14, 15, 16],
+        ]`, () => {
+        const matrix1: Matrix = [
+            [1, 2, 3, 4],
+            [5, 6, 7, 8],
+        ];
+        const matrix2: Matrix = [
+            [9,  10, 11, 12],
+            [13, 14, 15, 16],
+        ];
+
+        expect(mSub(matrix1, matrix2)).toStrictEqual([
+            [-8, -8, -8, -8],
+            [-8, -8, -8, -8],
+        ]);
+    });
 });
 
 describe('Multiply matrix by scalar', () => {
@@ -294,6 +338,21 @@ describe('Multiply matrix by scalar', () => {
         expect(m3MulScalar(m3, 1.5123123, 1)).toStrictEqual([
             [1.5, 3, 4.5],
             [6, 7.6, 9.1],
+        ]);
+    });
+
+    test(`[
+            [1, 2, 3, 4],
+            [5, 6, 7, 8],
+        ] multiply by 5`, () => {
+        const m: Matrix = [
+            [1, 2, 3, 4],
+            [5, 6, 7, 8],
+        ];
+
+        expect(mMulScalar(m, 5)).toStrictEqual([
+            [5, 10, 15, 20],
+            [25, 30, 35, 40],
         ]);
     });
 });

@@ -14,7 +14,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
     - [Normalize Vector](#normalize-vector)
     - [Dot Product](#vectors-dot-product)
     - [Cross Product](#vectors-cross-product)
-- Matrix
+- [Matrix](#matrix)
   - [Matrix Sum](#matrix-sum)
   - [Matrix Subtraction](#matrix-subtraction)
   - [Multiply matrix by scalar](#multiply-matrix-by-scalar)
@@ -281,11 +281,80 @@ const res2 = v3CrossProduct(v3, v4, 2); // [-4.11, 10.03, -4.67]
 
 # Matrix
 
+There are the following types of matrices:
+**Matrix2**, **Matrix3**, and **Matrix** for the general case.
+
+**Matrix2**
+
+```js
+import { Matrix2 } from 'toolcool-math';
+
+const m2: Matrix2 = [
+  [1, 2],
+];
+
+const m2: Matrix2 = [
+  [1, 2],
+  [3, 4],
+];
+
+// or
+
+const m2: Matrix2 = [
+  [1, 2],
+  [3, 4],
+  [5, 6],
+];
+
+// etc...
+```
+
+**Matrix3**
+
+```js
+import { Matrix3 } from 'toolcool-math';
+
+const m3: Matrix3 = [
+  [1, 2, 3],
+];
+
+// or
+
+const m3: Matrix3 = [
+  [1, 2, 3],
+  [4, 5, 6],
+];
+
+// or
+
+const m3: Matrix3 = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
+
+// etc...
+```
+
+The generic **Matrix** type is used for all other cases:
+
+```js
+import { Matrix } from 'toolcool-math';
+
+const m: Matrix = [
+  [1, 2, 3, 4],
+  [1, 2, 3, 4],
+  [1, 2, 3, 4],
+  [1, 2, 3, 4],
+];
+```
+
 ## Matrix Sum
 
-To add matrices, the **m2Sum** and **m3Sum** functions are used. Each function receives an optional **decimalPlaces** parameter.
+The following functions are used to add matrices: **m2Sum** for a 2D matrices, **m3Sum** for a 3D matrices, and **mSum** for the general case. Each function receives an optional **decimalPlaces** parameter.
 
-**2D Vector**
+**2D Matrix**
+
 ```js
 import { m2Sum, Matrix2 } from 'toolcool-math';
 
@@ -308,7 +377,7 @@ const sum = m2Sum(matrix1, matrix2);
  */
 ```
 
-**3D Vector**
+**3D Matrix**
 ```js
 import { m3Sum, Matrix3 } from 'toolcool-math';
 
@@ -331,11 +400,34 @@ const sum = m3Sum(matrix1, matrix2);
  */
 ```
 
+**General Case**
+```js
+import { mSum, Matrix } from 'toolcool-math';
+
+const matrix1: Matrix = [
+  [1, 2, 3, 4],
+  [5, 6, 7, 8],
+];
+
+const matrix2: Matrix = [
+  [9,  10, 11, 12],
+  [13, 14, 15, 16],
+];
+
+const sum = mSum(matrix1, matrix2);
+/*
+[
+  [10, 12, 14, 16],
+  [18, 20, 22, 24],
+]
+ */
+```
+
 ## Matrix Subtraction
 
-To subtract matrices, the **m2Sub** and **m2Sub** functions are used. Each function receives an optional **decimalPlaces** parameter.
+The following functions are used to subtract matrices: **m2Sub** for a 2D matrices, **m3Sub** for a 3D matrices, and **mSub** for the general case. Each function receives an optional **decimalPlaces** parameter.
 
-**2D Vector**
+**2D Matrix**
 ```js
 import { m2Sub, Matrix2 } from 'toolcool-math';
 
@@ -358,7 +450,7 @@ const sub = m2Sub(matrix1, matrix2);
  */
 ```
 
-**3D Vector**
+**3D Matrix**
 ```js
 import { m2Sub, Matrix3 } from 'toolcool-math';
 
@@ -381,12 +473,36 @@ const sub = m2Sub(matrix1, matrix2);
  */
 ```
 
+**General Case**
+
+```js
+import { mSub, Matrix } from 'toolcool-math';
+
+const matrix1: Matrix = [
+  [1, 2, 3, 4],
+  [5, 6, 7, 8],
+];
+
+const matrix2: Matrix = [
+  [9,  10, 11, 12],
+  [13, 14, 15, 16],
+];
+
+const sum = mSub(matrix1, matrix2);
+/*
+[
+    [-8, -8, -8, -8],
+    [-8, -8, -8, -8],
+]
+ */
+```
+
 ## Multiply matrix by scalar
 
-You can multiply a matrix by a scalar using the **m2MulScalar** and **m3MulScalar** functions.
+You can multiply a matrix by a scalar using the **m2MulScalar**, **m3MulScalar**, or **mMulScalar** functions.
 Each function receives an optional **decimalPlaces** parameter.
 
-**2D Vector**
+**2D Matrix**
 
 ```js
 import { m2MulScalar, Matrix2 } from 'toolcool-math';
@@ -422,7 +538,7 @@ const res = m2MulScalar(m2, 10, 2); // 2 decimal places
  */
 ```
 
-**3D Vector**
+**3D Matrix**
 
 ```js
 import { m3MulScalar, Matrix3 } from 'toolcool-math';
@@ -454,6 +570,25 @@ const res = m3MulScalar(m3, 1.5123123, 1); // 1 decimal place
 [
   [1.5, 3, 4.5],
   [6, 7.6, 9.1],
+]
+ */
+```
+
+**General Case**
+
+```js
+import { mMulScalar, Matrix } from 'toolcool-math';
+
+const matrix: Matrix = [
+  [1, 2, 3, 4],
+  [5, 6, 7, 8],
+];
+
+const res = mMulScalar(matrix, 5);
+/*
+[
+    [5, 10, 15, 20],
+    [25, 30, 35, 40],
 ]
  */
 ```

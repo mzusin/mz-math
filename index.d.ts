@@ -34,10 +34,15 @@ declare module 'toolcool-math' {
 
     export const v3CrossProduct: (vector1: Vector3, vector2: Vector3, decimalPlaces?: number) => Vector3;
 
+    export const mSum: (matrix1: Matrix, matrix2: Matrix, decimalPlaces?: number) => Matrix;
     export const m2Sum: (matrix1: Matrix2, matrix2: Matrix2, decimalPlaces?: number) => Matrix2;
-    export const m2Sub: (matrix1: Matrix2, matrix2: Matrix2, decimalPlaces?: number) => Matrix2;
     export const m3Sum: (matrix1: Matrix3, matrix2: Matrix3, decimalPlaces?: number) => Matrix3;
+
+    export const mSub: (matrix1: Matrix, matrix2: Matrix, decimalPlaces?: number) => Matrix;
+    export const m2Sub: (matrix1: Matrix2, matrix2: Matrix2, decimalPlaces?: number) => Matrix2;
     export const m3Sub: (matrix1: Matrix3, matrix2: Matrix3, decimalPlaces?: number) => Matrix3;
+
+    export const mMulScalar: (m: Matrix, scalar: number, decimalPlaces?: number) => Matrix;
     export const m2MulScalar: (m2: Matrix2, scalar: number, decimalPlaces?: number) => Matrix2;
     export const m3MulScalar: (m3: Matrix3, scalar: number, decimalPlaces?: number) => Matrix3;
 
