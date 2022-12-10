@@ -5,7 +5,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
 ## Table of contents
 - [TypeScript Usage](#typescript-usage)
 - [Browser Usage](#browser-usage)
-- Vectors
+- [Vectors](#vectors)
     - [Vectors Sum](#vectors-sum)
     - [Vectors Subtraction](#vectors-subtraction)
     - [Multiple vector by scalar](#multiply-vector-by-scalar)
