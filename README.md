@@ -14,7 +14,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
     - [Normalize Vector](#normalize-vector)
     - [Dot Product](#vectors-dot-product)
     - [Cross Product](#vectors-cross-product)
-    - [Vector Initialization Helper](#vector-initialization-helper)
+    - [Vector Initialization Helpers](#vector-initialization-helpers)
 - [Matrix](#matrix)
   - [Matrix Sum](#matrix-sum)
   - [Matrix Subtraction](#matrix-subtraction)
@@ -23,7 +23,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
   - [Matrix Multiplication](#matrix-multiplication)
   - [Multiply matrix by vector](#multiply-matrix-by-vector)
   - [Reset matrix with a default value](#reset-matrix-with-a-default-value)
-  - [Matrix Initialization Helper](#matrix-initialization-helper)
+  - [Matrix Initialization Helpers](#matrix-initialization-helpers)
 - Angles
   - [Get vector angle](#get-vector-angle)
   - [Set vector angle](#set-vector-angle)
@@ -283,7 +283,7 @@ const v4: Vector3 = [4.8294, 5.0001111, 6.48634];
 const res2 = v3CrossProduct(v3, v4, 2); // [-4.11, 10.03, -4.67]
 ```
 
-## Vector Initialization Helper
+## Vector Initialization Helpers
 
 There are helpers for creating v2, v3 and vN vectors with a default value. If no default value is specified, it will be zero.
 
@@ -859,7 +859,7 @@ const res = m3Reset(m, 50);
  */
 ```
 
-## Matrix Initialization Helper
+## Matrix Initialization Helpers
 
 There are helpers for creating m2x2, m3x3 and mNxM matrices with a default value. If no default value is specified, it will be zero.
 
