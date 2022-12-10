@@ -103,15 +103,15 @@ To subtract vectors, the **v2Sub** and **v3Sub** functions are used. Each functi
 ```js
 import { v2Sub } from 'toolcool-math';
 
-const sum1 = v2Sub([1, 2], [3, 4]); // [-2, -2]
-const sum2 = v2Sub([-1.125324, -2.23453245], [3.2345, 4.3574365], 2); // [-4.36, -6.59]
+const sub1 = v2Sub([1, 2], [3, 4]); // [-2, -2]
+const sub2 = v2Sub([-1.125324, -2.23453245], [3.2345, 4.3574365], 2); // [-4.36, -6.59]
 ```
 
 **3D Vector**
 ```js
 import { v3Sub, Vector3 } from 'toolcool-math';
-const sum1 = v3Sub([1, 2, 3], [3, 4, 4]); // [-2, -2, -1]
-const sum2 = v3Sub([1.12754, 2.999345, 3.34653456], [7.352345, 8.35734, 9.2345], 2); // [-6.22, -5.36, -5.89]
+const sub1 = v3Sub([1, 2, 3], [3, 4, 4]); // [-2, -2, -1]
+const sub2 = v3Sub([1.12754, 2.999345, 3.34653456], [7.352345, 8.35734, 9.2345], 2); // [-6.22, -5.36, -5.89]
 ```
 
 ## Multiply vector by scalar
@@ -274,7 +274,7 @@ const matrix2: Matrix2 = [
   [7, 8],
 ];
 
-const sum = m2Sub(matrix1, matrix2); 
+const sub = m2Sub(matrix1, matrix2); 
 /*
 [
   [-4, -4],
@@ -297,7 +297,7 @@ const matrix2: Matrix3 = [
   [7, 8, 40],
 ];
 
-const sum = m2Sub(matrix1, matrix2);
+const sub = m2Sub(matrix1, matrix2);
 /*
 [
   [-4, -4, -20],
