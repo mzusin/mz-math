@@ -141,6 +141,10 @@ export const m3x3 = (defaultValue = 0): Matrix3 => {
 };
 
 export const mNxM = (N: number, M: number, defaultValue = 0): Matrix => {
+    if(N <= 0 || M <= 0){
+        throw new Error('M and N must be positive numbers.');
+    }
+
     const matrix: Matrix = [];
 
     for(let i=0; i<N; i++){

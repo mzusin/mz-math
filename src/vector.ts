@@ -154,6 +154,11 @@ export const v3 = (defaultValue = 0): Vector3 => {
 };
 
 export const vN = (N: number, defaultValue = 0): Vector => {
+
+    if(N < 0){
+        throw new Error('N must be a non-negative number.');
+    }
+
     const vector: Vector = [];
     for(let i=0; i<N; i++){
         vector.push(defaultValue);
