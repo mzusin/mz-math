@@ -184,6 +184,13 @@ const res = v3MulScalar([1, 2, 3], Math.PI); // [3.141592653589793, 6.2831853071
 const res = v3MulScalar([1, 2, 3], Math.PI, 2); // [3.14, 6.28, 9.42]
 ```
 
+**General Case**
+```js
+import { vMulScalar } from 'toolcool-math';
+
+const res = v3MulScalar([1, 2, 3, 4], 2); // [2, 4, 6, 8]
+```
+
 ## Get Vector Length
 
 Vector length can be found using the **v2Length** and **v3Length** functions. Each function receives an optional **decimalPlaces** parameter.

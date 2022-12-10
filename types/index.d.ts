@@ -9,8 +9,10 @@ import * as bezierCurve from './bezier-curve';
 declare global {
     interface Window {
         TCMath: {
+            vSum: typeof vector.vSum;
             v2Sum: typeof vector.v2Sum;
             v3Sum: typeof vector.v3Sum;
+            vSub: typeof vector.vSub;
             v2Sub: typeof vector.v2Sub;
             v3Sub: typeof vector.v3Sub;
             v2MulScalar: typeof vector.v2MulScalar;

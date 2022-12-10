@@ -7,6 +7,7 @@ import {
     vSub,
     v2Sub,
     v3Sub,
+    vMulScalar,
     v2MulScalar,
     v3MulScalar,
     v2SetLength,
@@ -137,6 +138,10 @@ describe('Multiply vector by scalar', () => {
 
     test('[1, 2, 3] * Math.PI with 2 decimal places => [3.14, 6.28, 9.42]', () => {
         expect(v3MulScalar([1, 2, 3], Math.PI, 2)).toStrictEqual([3.14, 6.28, 9.42]);
+    });
+
+    test('[1, 2, 3, 4] * 2 => [2, 4, 6, 8]', () => {
+        expect(vMulScalar([1, 2, 3, 4], 2)).toStrictEqual([2, 4, 6, 8]);
     });
 });
 

@@ -2,6 +2,8 @@ import { Vector, Vector2, Vector3 } from './types';
 import { setDecimalPlaces } from './format';
 import { getV2Angle } from './angle';
 
+// ------------ SUM ------------------------
+
 export const vSum = (vector1: Vector, vector2: Vector, decimalPlaces = Infinity) : Vector => {
 
     const vector: Vector = [];
@@ -20,6 +22,8 @@ export const v2Sum = (vector1: Vector2, vector2: Vector2, decimalPlaces = Infini
 export const v3Sum = (vector1: Vector3, vector2: Vector3, decimalPlaces = Infinity) : Vector3 => {
     return vSum(vector1, vector2, decimalPlaces) as Vector3;
 };
+
+// ------------ SUB ------------------------
 
 export const vSub = (vector1: Vector, vector2: Vector, decimalPlaces = Infinity) : Vector => {
 
@@ -40,20 +44,26 @@ export const v3Sub = (vector1: Vector3, vector2: Vector3, decimalPlaces = Infini
     return vSub(vector1, vector2, decimalPlaces) as Vector3;
 };
 
+// ------------ MUL SCALAR ------------------------
+
+export const vMulScalar = (v: Vector, scalar: number, decimalPlaces = Infinity): Vector => {
+    const vector: Vector = [];
+
+    for(let i=0; i<v.length; i++){
+        vector.push(setDecimalPlaces(v[i] * scalar, decimalPlaces));
+    }
+
+    return vector;
+};
+
 export const v2MulScalar = (v2: Vector2, scalar: number, decimalPlaces = Infinity): Vector2 => {
-    return [
-        setDecimalPlaces(v2[0] * scalar, decimalPlaces),
-        setDecimalPlaces(v2[1] * scalar, decimalPlaces),
-    ];
+    return vMulScalar(v2, scalar, decimalPlaces) as Vector2;
 };
 
 export const v3MulScalar = (v3: Vector3, scalar: number, decimalPlaces = Infinity): Vector3 => {
-    return [
-        setDecimalPlaces(v3[0] * scalar, decimalPlaces),
-        setDecimalPlaces(v3[1] * scalar, decimalPlaces),
-        setDecimalPlaces(v3[2] * scalar, decimalPlaces),
-    ];
+    return vMulScalar(v3, scalar, decimalPlaces) as Vector3;
 };
+
 
 export const v2Length = (vector: Vector2, decimalPlaces = Infinity) => {
     const len = Math.sqrt(vector[0] * vector[0] + vector[1] * vector[1]);

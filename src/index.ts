@@ -17,21 +17,28 @@ declare global {
             vSub: typeof vector.vSub;
             v2Sub: typeof vector.v2Sub;
             v3Sub: typeof vector.v3Sub;
+
+            vMulScalar: typeof vector.vMulScalar,
             v2MulScalar: typeof vector.v2MulScalar;
             v3MulScalar: typeof vector.v3MulScalar;
+
             v2Length: typeof vector.v2Length;
             v3Length: typeof vector.v3Length;
             v2SetLength: typeof vector.v2SetLength;
+
             v2Normalize: typeof vector.v2Normalize;
             v3Normalize: typeof vector.v3Normalize;
+
             v2DotProduct: typeof vector.v2DotProduct;
             v3DotProduct: typeof vector.v3DotProduct;
             v3CrossProduct: typeof vector.v3CrossProduct;
 
             m2Sum: typeof matrix.m2Sum;
             m3Sum: typeof matrix.m3Sum;
+
             m2Sub: typeof matrix.m2Sub;
             m3Sub: typeof matrix.m3Sub;
+
             m2MulScalar: typeof matrix.m2MulScalar;
             m3MulScalar: typeof matrix.m3MulScalar;
 
@@ -71,6 +78,7 @@ window.TCMath = window.TCMath || {
     v2Sub: vector.v2Sub,
     v3Sub: vector.v3Sub,
 
+    vMulScalar: vector.vMulScalar,
     v2MulScalar: vector.v2MulScalar,
     v3MulScalar: vector.v3MulScalar,
 
