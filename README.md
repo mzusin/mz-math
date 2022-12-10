@@ -75,15 +75,14 @@ Any function can also be used in the browser using the **tc-math.min.js** file. 
 
 ## Vectors Sum
 
-To add vectors, the **v2Sum** and **v3Sum** functions are used. They can accept any number of vectors as input.
+To add vectors, the **v2Sum** and **v3Sum** functions are used. Each function receives an optional **decimalPlaces** parameter.
 
 **2D Vector**
 ```js
 import { v2Sum } from 'toolcool-math';
 
 const sum1 = v2Sum([1, 2], [3, 4]); // [4, 6]
-const sum2 = v2Sum([1, 2], [3, 4], [5, 6]); // [9, 12]
-const sum3 = v2Sum([1, 2], [3, 4], [5, 6], [7, 8]); // [16, 20]
+const sum2 = v2Sum([3.12456, 4.56734], [5.12323, 6.001234], 2); // [8.25, 10.57]
 ```
 
 **3D Vector**
@@ -91,39 +90,26 @@ const sum3 = v2Sum([1, 2], [3, 4], [5, 6], [7, 8]); // [16, 20]
 import { v3Sum, Vector3 } from 'toolcool-math';
 
 const sum1 = v3Sum([1, 2, 3], [3, 4, 4]); // [4, 6, 7]
-const sum2 = v3Sum([1, 2, 3], [3, 4, 4], [7, 8, 9]); // [11, 14, 16]
-
-const v1: Vector3 = [1, 2, 3];
-const v2: Vector3 = [3, 4, 4];
-const v3: Vector3 = [7, 8, 9];
-const v4: Vector3 = [10, 11, 12];
-const sum3 = v3Sum(v1, v2, v3, v4); // [21, 25, 28]
+const sum2 = v3Sum([3.2345, 4.0013234, 5.2523453], [6.111, 7.222, 8.333], 2); // [9.35, 11.22, 13.59]
 ```
 
 ## Vectors Subtraction
 
-To subtract vectors, the **v2Sub** and **v3Sub** functions are used. They can accept any number of vectors as input.
+To subtract vectors, the **v2Sub** and **v3Sub** functions are used. Each function receives an optional **decimalPlaces** parameter.
 
 **2D Vector**
 ```js
 import { v2Sub } from 'toolcool-math';
 
 const sum1 = v2Sub([1, 2], [3, 4]); // [-2, -2]
-const sum2 = v2Sub([1, 2], [3, 4], [5, 6]); // [-7, -8]
-const sum3 = v2Sub([1, 2], [3, 4], [5, 6], [7, 8]); // [-14, -16]
+const sum2 = v2Sub([-1.125324, -2.23453245], [3.2345, 4.3574365], 2); // [-4.36, -6.59]
 ```
 
 **3D Vector**
 ```js
 import { v3Sub, Vector3 } from 'toolcool-math';
 const sum1 = v3Sub([1, 2, 3], [3, 4, 4]); // [-2, -2, -1]
-const sum2 = v3Sub([1, 2, 3], [3, 4, 4], [7, 8, 9]); // [-9, -10, -10]
-
-const v1: Vector3 = [1, 2, 3];
-const v2: Vector3 = [3, 4, 4];
-const v3: Vector3 = [7, 8, 9];
-const v4: Vector3 = [10, 11, 12];
-const sum3 = v3Sub(v1, v2, v3, v4); // [-19, -21, -22]
+const sum2 = v3Sub([1.12754, 2.999345, 3.34653456], [7.352345, 8.35734, 9.2345], 2); // [-6.22, -5.36, -5.89]
 ```
 
 ## Multiply vector by scalar

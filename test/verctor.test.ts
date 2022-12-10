@@ -29,19 +29,16 @@ describe('Vector Sum', () => {
         expect(v2Sum(v1, v2)).toStrictEqual([2, 2]);
     });
 
-    test('[1, 2] + [3, 4] + [5, 6]', () => {
-        const v1: Vector2 = [1, 2];
-        const v2: Vector2 = [3, 4];
-        const v3: Vector2 = [5, 6];
-        expect(v2Sum(v1, v2, v3)).toStrictEqual([9, 12]);
+    test('[3, 4] + [5, 6]', () => {
+        const v1: Vector2 = [3, 4];
+        const v2: Vector2 = [5, 6];
+        expect(v2Sum(v1, v2)).toStrictEqual([8, 10]);
     });
 
-    test('[1, 2] + [3, 4] + [5, 6] + [7, 8]', () => {
-        const v1: Vector2 = [1, 2];
-        const v2: Vector2 = [3, 4];
-        const v3: Vector2 = [5, 6];
-        const v4: Vector2 = [7, 8];
-        expect(v2Sum(v1, v2, v3, v4)).toStrictEqual([16, 20]);
+    test('[3.12456, 4.56734] + [5.12323, 6.001234] with 2 decimal places', () => {
+        const v1: Vector2 = [3.12456, 4.56734];
+        const v2: Vector2 = [5.12323, 6.001234];
+        expect(v2Sum(v1, v2, 2)).toStrictEqual([8.25, 10.57]);
     });
 
     test('[1, 2, 3] + [3, 4, 4];', () => {
@@ -50,19 +47,16 @@ describe('Vector Sum', () => {
         expect(v3Sum(v1, v2)).toStrictEqual([4, 6, 7]);
     });
 
-    test('[1, 2, 3] + [3, 4, 4] + [7, 8, 9]', () => {
-        const v1: Vector3 = [1, 2, 3];
-        const v2: Vector3 = [3, 4, 4];
-        const v3: Vector3 = [7, 8, 9];
-        expect(v3Sum(v1, v2, v3)).toStrictEqual([11, 14, 16]);
+    test('[3, 4, 5] + [6, 7, 8]', () => {
+        const v1: Vector3 = [3, 4, 5];
+        const v2: Vector3 = [6, 7, 8];
+        expect(v3Sum(v1, v2)).toStrictEqual([9, 11, 13]);
     });
 
-    test('[1, 2, 3] + [3, 4, 4] + [7, 8, 9] + [10, 11, 12]', () => {
-        const v1: Vector3 = [1, 2, 3];
-        const v2: Vector3 = [3, 4, 4];
-        const v3: Vector3 = [7, 8, 9];
-        const v4: Vector3 = [10, 11, 12];
-        expect(v3Sum(v1, v2, v3, v4)).toStrictEqual([21, 25, 28]);
+    test('[3.2345, 4.0013234, 5.2523453] + [6.111, 7.222, 8.333] with 2 decimal places', () => {
+        const v1: Vector3 = [3.2345, 4.0013234, 5.2523453];
+        const v2: Vector3 = [6.111, 7.222, 8.333];
+        expect(v3Sum(v1, v2, 2)).toStrictEqual([9.35, 11.22, 13.59]);
     });
 });
 
@@ -73,25 +67,16 @@ describe('Vector Sub', () => {
         expect(v2Sub(v1, v2)).toStrictEqual([-2, -2]);
     });
 
+    test('[-1.125324, -2.23453245] - [3.2345, 4.3574365] with 2 decimal places', () => {
+        const v1: Vector2 = [-1.125324, -2.23453245];
+        const v2: Vector2 = [3.2345, 4.3574365];
+        expect(v2Sub(v1, v2, 2)).toStrictEqual([-4.36, -6.59]);
+    });
+
     test('[-1, -2] - [3, 4]', () => {
         const v1: Vector2 = [-1, -2];
         const v2: Vector2 = [3, 4];
         expect(v2Sub(v1, v2)).toStrictEqual([-4, -6]);
-    });
-
-    test('[1, 2] - [3, 4] - [5, 6]', () => {
-        const v1: Vector2 = [1, 2];
-        const v2: Vector2 = [3, 4];
-        const v3: Vector2 = [5, 6];
-        expect(v2Sub(v1, v2, v3)).toStrictEqual([-7, -8]);
-    });
-
-    test('[1, 2] - [3, 4] - [5, 6] - [7, 8]', () => {
-        const v1: Vector2 = [1, 2];
-        const v2: Vector2 = [3, 4];
-        const v3: Vector2 = [5, 6];
-        const v4: Vector2 = [7, 8];
-        expect(v2Sub(v1, v2, v3, v4)).toStrictEqual([-14, -16]);
     });
 
     test('[1, 2, 3] - [3, 4, 4]', () => {
@@ -100,19 +85,10 @@ describe('Vector Sub', () => {
         expect(v3Sub(v1, v2)).toStrictEqual([-2, -2, -1]);
     });
 
-    test('[1,2,3] - [3,4,4] - [7,8,9]', () => {
-        const v1: Vector3 = [1, 2, 3];
-        const v2: Vector3 = [3, 4, 4];
-        const v3: Vector3 = [7, 8, 9];
-        expect(v3Sub(v1, v2, v3)).toStrictEqual([-9, -10, -10]);
-    });
-
-    test('[1,2,3] - [3,4,4] - [7,8,9] - [10,11,12]', () => {
-        const v1: Vector3 = [1, 2, 3];
-        const v2: Vector3 = [3, 4, 4];
-        const v3: Vector3 = [7, 8, 9];
-        const v4: Vector3 = [10, 11, 12];
-        expect(v3Sub(v1, v2, v3, v4)).toStrictEqual([-19, -21, -22]);
+    test('[1.12754, 2.999345, 3.34653456] - [7.352345, 8.35734, 9.2345] with 2 decimal places', () => {
+        const v1: Vector3 = [1.12754, 2.999345, 3.34653456];
+        const v2: Vector3 = [7.352345, 8.35734, 9.2345];
+        expect(v3Sub(v1, v2, 2)).toStrictEqual([-6.22, -5.36, -5.89]);
     });
 });
 
