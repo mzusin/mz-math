@@ -22,10 +22,12 @@ declare module 'toolcool-math' {
     export const vLength: (vector: Vector, decimalPlaces?: number) => number;
     export const v2Length: (vector: Vector2, decimalPlaces?: number) => number;
     export const v3Length: (vector: Vector3, decimalPlaces?: number) => number;
-
     export const v2SetLength: (v2: Vector2, newLength: number, decimalPlaces?: number) => Vector2;
+
+    export const vNormalize: (v: Vector, decimalPlaces?: number) => Vector;
     export const v2Normalize: (v2: Vector2, decimalPlaces?: number) => Vector2;
     export const v3Normalize: (v3: Vector3, decimalPlaces?: number) => Vector3;
+
     export const v2DotProduct: (vector1: Vector2, vector2: Vector2, decimalPlaces?: number) => number;
     export const v3DotProduct: (vector1: Vector3, vector2: Vector3, decimalPlaces?: number) => number;
     export const v3CrossProduct: (vector1: Vector3, vector2: Vector3, decimalPlaces?: number) => Vector3;
@@ -80,6 +82,7 @@ declare module 'toolcool-math' {
                 v3Length: typeof v3Length;
                 v2SetLength: typeof v2SetLength;
 
+                vNormalize: typeof vNormalize;
                 v2Normalize: typeof v2Normalize;
                 v3Normalize: typeof v3Normalize;
 

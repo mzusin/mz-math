@@ -92,26 +92,29 @@ export const v2SetLength = (v2: Vector2, newLength: number, decimalPlaces = Infi
     ];
 };
 
+// ------------ NORMALIZE ------------------------
 
+export const vNormalize = (v: Vector, decimalPlaces = Infinity) : Vector => {
+    const length = vLength(v);
+    const vector: Vector = [];
+
+    for(let i=0; i<v.length; i++){
+        vector.push(length === 0 ? 0 : setDecimalPlaces(v[i] / length, decimalPlaces));
+    }
+
+    return vector;
+};
 
 export const v2Normalize = (v2: Vector2, decimalPlaces = Infinity) : Vector2 => {
-    const length = v2Length(v2);
-
-    return [
-        length === 0 ? 0 : setDecimalPlaces(v2[0] / length, decimalPlaces),
-        length === 0 ? 0 : setDecimalPlaces(v2[1] / length, decimalPlaces),
-    ];
+    return vNormalize(v2, decimalPlaces) as Vector2;
 };
 
 export const v3Normalize = (v3: Vector3, decimalPlaces = Infinity) : Vector3 => {
-    const length = v3Length(v3);
-
-    return [
-        length === 0 ? 0 : setDecimalPlaces(v3[0] / length, decimalPlaces),
-        length === 0 ? 0 : setDecimalPlaces(v3[1] / length, decimalPlaces),
-        length === 0 ? 0 : setDecimalPlaces(v3[2] / length, decimalPlaces),
-    ];
+    return vNormalize(v3, decimalPlaces) as Vector3;
 };
+
+
+
 
 export const v2DotProduct = (vector1: Vector2, vector2: Vector2, decimalPlaces = Infinity) => {
     return setDecimalPlaces(vector1[0] * vector2[0] + vector1[1] * vector2[1], decimalPlaces);

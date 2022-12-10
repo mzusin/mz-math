@@ -27,6 +27,7 @@ declare global {
             v3Length: typeof vector.v3Length;
             v2SetLength: typeof vector.v2SetLength;
 
+            vNormalize: typeof vector.vNormalize,
             v2Normalize: typeof vector.v2Normalize;
             v3Normalize: typeof vector.v3Normalize;
 
@@ -88,6 +89,7 @@ window.TCMath = window.TCMath || {
     v3Length: vector.v3Length,
     v2SetLength: vector.v2SetLength,
 
+    vNormalize: vector.vNormalize,
     v2Normalize: vector.v2Normalize,
     v3Normalize: vector.v3Normalize,
 

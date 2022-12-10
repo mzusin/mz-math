@@ -12,6 +12,7 @@ import {
     v2MulScalar,
     v3MulScalar,
     v2SetLength,
+    vNormalize,
     v2Normalize,
     v3Normalize,
     v2DotProduct,
@@ -230,6 +231,14 @@ describe('Normalize Vector', function () {
 
     test('Normalize [0, 0, 0] => [0, 0, 0]', () => {
         expect(v3Normalize([0, 0, 0])).toStrictEqual([0, 0, 0]);
+    });
+
+    test('Normalize [10, 20, 30, 40] => [0.18257418583505536, 0.3651483716701107, 0.5477225575051661, 0.7302967433402214]', () => {
+        expect(vNormalize( [10, 20, 30, 40])).toStrictEqual([0.18257418583505536, 0.3651483716701107, 0.5477225575051661, 0.7302967433402214]);
+    });
+
+    test('Normalize [10, 20, 30, 40] with 2 decimal places', () => {
+        expect(vNormalize( [10, 20, 30, 40], 2)).toStrictEqual([0.18, 0.37, 0.55, 0.73]);
     });
 });
 
