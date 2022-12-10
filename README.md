@@ -33,7 +33,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
     - [Scale Matrix](#scale-matrix)
   - [Matrix Determinant](#matrix-determinant)
   - [Inverse Matrix](#inverse-matrix)
-  - [Adjugate Matrix](#)
+  - [Adjugate Matrix](#adjugate-matrix)
 - Angles
   - [Get vector angle](#get-vector-angle)
   - [Set vector angle](#set-vector-angle)
