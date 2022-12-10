@@ -3,7 +3,7 @@ import {
     mSum, m2Sum, m2Sub, m3Sum, m3Sub, mSub,
     m2Transpose, m3Transpose, mTranspose,
     mMul, mMulVector, m2Reset, m3Reset, mReset,
-    m2x2, m3x3, mNxM, mEqual, identity2, identity3, identityN, m2Determinant
+    m2x2, m3x3, mNxM, mEqual, identity2, identity3, identityN, m2Determinant, m2Inverse
 } from '../src/matrix';
 import { Matrix, Matrix2, Matrix3, Vector3 } from '../src/types';
 
@@ -865,6 +865,25 @@ describe('Matrix Determinant', () => {
                 [-1, 4],
             ]
         )).toStrictEqual(23);
+    });
+
+});
+
+describe('Matrix Inverse', () => {
+
+    test(`Inverse of [
+                [3, 5],
+                [-7, 2],
+            ] with 3 decimal places`, () => {
+        expect(m2Inverse(
+            [
+                [3, 5],
+                [-7, 2],
+            ], 3
+        )).toStrictEqual([
+            [0.049, -0.122],
+            [0.171, 0.073],
+        ]);
     });
 
 });

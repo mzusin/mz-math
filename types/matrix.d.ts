@@ -81,4 +81,11 @@ export const m3Determinant = (m3: Matrix3): number => {
     if(m3.length !== m3[0].length){
         throw new Error('The matrix must be square.');
     }
-}; */ 
+}; */
+export declare const m2Adjugate: (m2: Matrix2) => Matrix2;
+/**
+ * Square matrix A (nxn) is invertible is there is another square matrix B (nxn) so AxB = BxA = I
+ * For A (2x2) matrix, the inverse is:
+ * (1 / (determinant(A))) * adj(A)
+ */
+export declare const m2Inverse: (m2: Matrix2, decimalPlaces?: number) => (Matrix2 | null);

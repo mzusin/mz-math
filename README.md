@@ -32,6 +32,8 @@ This project is a collection of TypeScript math helpers and utilities for the br
     - [Rotation Matrix](#rotation-matrix)
     - [Scale Matrix](#scale-matrix)
   - [Matrix Determinant](#matrix-determinant)
+  - [Inverse Matrix](#inverse-matrix)
+  - [Adjugate Matrix](#)
 - Angles
   - [Get vector angle](#get-vector-angle)
   - [Set vector angle](#set-vector-angle)
@@ -1115,6 +1117,44 @@ const m2x2: Matrix2 = [
 ];
 
 const d = m2Determinant(m2x2); // 23
+```
+
+-----------------------------------------------
+
+## Inverse Matrix
+
+To inverse a 2x2 matrix, you can use the **m2Inverse** function. It supports an optional **decimalPlaces** parameter. If matrix is not invertible, the function returns **null**.
+
+```js
+import { Matrix2, m2Inverse } from 'toolcool-math';
+
+const m2x2: Matrix2 = [
+  [3, 5],
+  [-7, 2],
+];
+
+const inverted: Matrix2 = m2Inverse(m2x2, 3); // round to 3 decimal places
+/*
+[
+    [0.049, -0.122],
+    [0.171, 0.073],
+]
+ */
+```
+
+-----------------------------------------------
+
+## Adjugate Matrix
+
+```js
+import { Matrix2, m2Adjugate } from 'toolcool-math';
+
+const m2x2: Matrix2 = [
+  [3, 5],
+  [-7, 2],
+];
+
+const adj: Matrix2 = m2Adjugate(m2x2);
 ```
 
 -----------------------------------------------

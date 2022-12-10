@@ -381,3 +381,31 @@ export const m3Determinant = (m3: Matrix3): number => {
         throw new Error('The matrix must be square.');
     }
 }; */
+
+// ------------------ INVERSE -----------------------
+
+export const m2Adjugate = (m2: Matrix2): Matrix2 => {
+    return [
+      [m2[1][1], -m2[0][1]],
+      [-m2[1][0], m2[0][0]],
+    ];
+};
+
+/**
+ * Square matrix A (nxn) is invertible is there is another square matrix B (nxn) so AxB = BxA = I
+ * For A (2x2) matrix, the inverse is:
+ * (1 / (determinant(A))) * adj(A)
+ */
+export const m2Inverse = (m2: Matrix2, decimalPlaces = Infinity): (Matrix2 | null) => {
+
+    if(m2.length !== m2[0].length){
+        throw new Error('The matrix must be square.');
+    }
+
+    const d = m2Determinant(m2);
+    if(d === 0) return null;
+
+    const adj = m2Adjugate(m2);
+
+    return m2MulScalar(adj, 1/d, decimalPlaces);
+};
