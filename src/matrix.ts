@@ -169,6 +169,10 @@ export const identity3 = (): Matrix3 => {
     ];
 };
 
+/**
+ * Identity Matrix (I).
+ * M x I = I x M = M for any matrix M.
+ */
 export const identityN = (N: number): Matrix => {
     if(N < 0){
         throw new Error('N must be a non-negative number.');
@@ -191,6 +195,12 @@ export const identityN = (N: number): Matrix => {
 
 // --------------- MULTIPLICATION ----------------------
 
+/**
+ * Matrix Multiplication.
+ * - Matrix multiplication is not commutative: M1 x M2 !== M2 x M1
+ * - Matrix multiplication is associative: A x (B x C) = (A x B) x C.
+ * - A x (B + C) = A x B + A x C
+ */
 export const mMul = (matrix1: Matrix, matrix2: Matrix, decimalPlaces = Infinity): Matrix => {
 
     const matrix: Matrix = [];

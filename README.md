@@ -25,6 +25,8 @@ This project is a collection of TypeScript math helpers and utilities for the br
   - [Multiply matrix by vector](#multiply-matrix-by-vector)
   - [Reset matrix with a default value](#reset-matrix-with-a-default-value)
   - [Matrix Initialization Helpers](#matrix-initialization-helpers)
+    - [m2x2, m3x3, and mNxM](#m2x2-m3x3-and-mnxm)
+    - [Identity Matrix](#identity-matrix)
   - [Check if 2 matrices are equal](#check-if-2-matrices-are-equal)
 - Angles
   - [Get vector angle](#get-vector-angle)
@@ -874,12 +876,12 @@ const res = m3Reset(m, 50);
 
 ## Matrix Initialization Helpers
 
+### m2x2, m3x3, and mNxM
+
 There are helpers for creating **m2x2**, **m3x3**, and **mNxM** matrices with a default value. If no default value is specified, it will be zero.
 
-There are also helpers for creating identity matrices: **identity2**, **identity3**, and **identityN**.
-
 ```js
-import { m2x2, m3x3, mNxM, identity2, identity3, identityN } from 'toolcool-math';
+import { m2x2, m3x3, mNxM } from 'toolcool-math';
 
 const mat2x2 = m2x2(); 
 /*
@@ -929,6 +931,15 @@ const matNxM = mNxM(2, 3, 1);
       [1, 1, 1],
 ]
  */
+
+```
+
+### Identity Matrix
+
+There are helpers for creating identity matrices: **identity2**, **identity3**, and **identityN**.
+
+```js
+import { identity2, identity3, identityN } from 'toolcool-math';
 
 const idt2 = identity2();
 /*
