@@ -150,6 +150,41 @@ export const mNxM = (N: number, M: number, defaultValue = 0): Matrix => {
     return matrix;
 };
 
+export const identity2 = (): Matrix2 => {
+    return [
+        [1, 0],
+        [0, 1],
+    ];
+};
+
+export const identity3 = (): Matrix3 => {
+    return [
+        [1, 0, 0],
+        [0, 1, 0],
+        [0, 0, 1],
+    ];
+};
+
+export const identityN = (N: number): Matrix => {
+    if(N < 0){
+        throw new Error('N must be a non-negative number.');
+    }
+
+    if(N === 0) return [];
+
+    const matrix: Matrix = [];
+
+    for(let i=0; i<N; i++){
+        const vector: Vector = [];
+        for(let j=0; j<N; j++){
+            vector.push(i === j ? 1 : 0);
+        }
+        matrix.push(vector);
+    }
+
+    return matrix;
+};
+
 // --------------- MULTIPLICATION ----------------------
 
 export const mMul = (matrix1: Matrix, matrix2: Matrix, decimalPlaces = Infinity): Matrix => {
@@ -162,7 +197,7 @@ export const mMul = (matrix1: Matrix, matrix2: Matrix, decimalPlaces = Infinity)
     const transposed = mTranspose(matrix2);
 
     if(matrix.length !== transposed.length){
-        throw 'The number of columns in the 1st matrix must be equal to the number of rows in the 2nd matrix.';
+        throw new Error('The number of columns in the 1st matrix must be equal to the number of rows in the 2nd matrix.');
     }
 
     for(let i=0; i<matrix1.length; i++){
@@ -183,7 +218,7 @@ export const mMulVector = (matrix: Matrix, vector: Vector, decimalPlaces = Infin
     if(matrix.length < 0) return [];
 
     if(matrix[0].length !== vector.length){
-        throw 'The number of columns in the matrix must be equal to the length of the vector.';
+        throw new Error('The number of columns in the matrix must be equal to the length of the vector.');
     }
 
     const res: Vector = [];

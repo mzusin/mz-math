@@ -3,7 +3,7 @@ import {
     mSum, m2Sum, m2Sub, m3Sum, m3Sub, mSub,
     m2Transpose, m3Transpose, mTranspose,
     mMul, mMulVector, m2Reset, m3Reset, mReset,
-    m2x2, m3x3, mNxM, mEqual
+    m2x2, m3x3, mNxM, mEqual, identity2, identity3, identityN
 } from '../src/matrix';
 import { Matrix, Matrix2, Matrix3, Vector3 } from '../src/types';
 
@@ -672,7 +672,7 @@ describe('Reset Matrix', () => {
     });
 });
 
-describe('Matrix Init Helpers', () => {
+describe('Matrix Initialization Helpers', () => {
 
     test(`m2x2`, () => {
         expect(m2x2()).toStrictEqual([
@@ -714,6 +714,51 @@ describe('Matrix Init Helpers', () => {
         expect(mNxM(2, 3, 1)).toStrictEqual([
             [1, 1, 1],
             [1, 1, 1],
+        ]);
+    });
+
+    test(`identity2`, () => {
+        expect(identity2()).toStrictEqual([
+            [1, 0],
+            [0, 1],
+        ]);
+    });
+
+    test(`identity3`, () => {
+        expect(identity3()).toStrictEqual([
+            [1, 0, 0],
+            [0, 1, 0],
+            [0, 0, 1],
+        ]);
+    });
+
+    test(`identityN, N = 1`, () => {
+        expect(identityN(1)).toStrictEqual([
+            [1],
+        ]);
+    });
+
+    test(`identityN, N = 2`, () => {
+        expect(identityN(2)).toStrictEqual([
+            [1, 0],
+            [0, 1],
+        ]);
+    });
+
+    test(`identityN, N = 3`, () => {
+        expect(identityN(3)).toStrictEqual([
+            [1, 0, 0],
+            [0, 1, 0],
+            [0, 0, 1],
+        ]);
+    });
+
+    test(`identityN, N = 4`, () => {
+        expect(identityN(4)).toStrictEqual([
+            [1, 0, 0, 0],
+            [0, 1, 0, 0],
+            [0, 0, 1, 0],
+            [0, 0, 0, 1],
         ]);
     });
 });

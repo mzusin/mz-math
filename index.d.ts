@@ -11,9 +11,14 @@ declare module 'toolcool-math' {
     export const v2: (defaultValue?: number) => Vector2;
     export const v3: (defaultValue?: number) => Vector3;
     export const vN: (N: number, defaultValue?: number) => Vector;
+
     export const m2x2: (defaultValue?: number) => Matrix2;
     export const m3x3: (defaultValue?: number) => Matrix3;
     export const mNxM: (N: number, M: number, defaultValue?: number) => Matrix;
+
+    export const identity2: () => Matrix2;
+    export const identity3: () => Matrix3;
+    export const identityN: (N: number) => Matrix;
 
     export const vEqual: (vector1: Vector, vector2: Vector) => boolean;
     export const mEqual: (matrix1: Matrix, matrix2: Matrix) => boolean;
@@ -95,6 +100,18 @@ declare module 'toolcool-math' {
     global {
         interface Window {
             TCMath: {
+                v2: typeof v2;
+                v3: typeof v3;
+                vN: typeof vN;
+
+                m2x2: typeof m2x2;
+                m3x3: typeof m3x3;
+                mNxM: typeof mNxM;
+
+                identity2: typeof identity2;
+                identity3: typeof identity3;
+                identityN: typeof identityN;
+
                 vSum: typeof vSum;
                 v2Sum: typeof v2Sum;
                 v3Sum: typeof v3Sum;
