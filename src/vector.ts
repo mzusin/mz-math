@@ -1,35 +1,43 @@
-import { Vector2, Vector3 } from './types';
+import { Vector, Vector2, Vector3 } from './types';
 import { setDecimalPlaces } from './format';
 import { getV2Angle } from './angle';
 
+export const vSum = (vector1: Vector, vector2: Vector, decimalPlaces = Infinity) : Vector => {
+
+    const vector: Vector = [];
+
+    for(let i=0; i<vector1.length; i++){
+        vector.push(setDecimalPlaces(vector1[i] + vector2[i], decimalPlaces));
+    }
+
+    return vector;
+};
+
 export const v2Sum = (vector1: Vector2, vector2: Vector2, decimalPlaces = Infinity) : Vector2 => {
-    return [
-        setDecimalPlaces(vector1[0] + vector2[0], decimalPlaces),
-        setDecimalPlaces(vector1[1] + vector2[1], decimalPlaces),
-    ];
+    return vSum(vector1, vector2, decimalPlaces) as Vector2;
 };
 
 export const v3Sum = (vector1: Vector3, vector2: Vector3, decimalPlaces = Infinity) : Vector3 => {
-    return [
-        setDecimalPlaces(vector1[0] + vector2[0], decimalPlaces),
-        setDecimalPlaces(vector1[1] + vector2[1], decimalPlaces),
-        setDecimalPlaces(vector1[2] + vector2[2], decimalPlaces),
-    ];
+    return vSum(vector1, vector2, decimalPlaces) as Vector3;
+};
+
+export const vSub = (vector1: Vector, vector2: Vector, decimalPlaces = Infinity) : Vector => {
+
+    const vector: Vector = [];
+
+    for(let i=0; i<vector1.length; i++){
+        vector.push(setDecimalPlaces(vector1[i] - vector2[i], decimalPlaces));
+    }
+
+    return vector;
 };
 
 export const v2Sub = (vector1: Vector2, vector2: Vector2, decimalPlaces = Infinity) : Vector2 => {
-    return [
-        setDecimalPlaces(vector1[0] - vector2[0], decimalPlaces),
-        setDecimalPlaces(vector1[1] - vector2[1], decimalPlaces),
-    ];
+    return vSub(vector1, vector2, decimalPlaces) as Vector2;
 };
 
 export const v3Sub = (vector1: Vector3, vector2: Vector3, decimalPlaces = Infinity) : Vector3 => {
-    return [
-        setDecimalPlaces(vector1[0] - vector2[0], decimalPlaces),
-        setDecimalPlaces(vector1[1] - vector2[1], decimalPlaces),
-        setDecimalPlaces(vector1[2] - vector2[2], decimalPlaces),
-    ];
+    return vSub(vector1, vector2, decimalPlaces) as Vector3;
 };
 
 export const v2MulScalar = (v2: Vector2, scalar: number, decimalPlaces = Infinity): Vector2 => {

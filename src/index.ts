@@ -10,8 +10,11 @@ import * as bezierCurve from './bezier-curve';
 declare global {
     interface Window {
         TCMath: {
+            vSum: typeof vector.vSum;
             v2Sum: typeof vector.v2Sum;
             v3Sum: typeof vector.v3Sum;
+
+            vSub: typeof vector.vSub;
             v2Sub: typeof vector.v2Sub;
             v3Sub: typeof vector.v3Sub;
             v2MulScalar: typeof vector.v2MulScalar;
@@ -60,25 +63,34 @@ declare global {
 }
 
 window.TCMath = window.TCMath || {
+    vSum: vector.vSum,
     v2Sum: vector.v2Sum,
     v3Sum: vector.v3Sum,
+
+    vSub: vector.vSub,
     v2Sub: vector.v2Sub,
     v3Sub: vector.v3Sub,
+
     v2MulScalar: vector.v2MulScalar,
     v3MulScalar: vector.v3MulScalar,
+
     v2Length: vector.v2Length,
     v3Length: vector.v3Length,
     v2SetLength: vector.v2SetLength,
+
     v2Normalize: vector.v2Normalize,
     v3Normalize: vector.v3Normalize,
+
     v2DotProduct: vector.v2DotProduct,
     v3DotProduct: vector.v3DotProduct,
     v3CrossProduct: vector.v3CrossProduct,
 
     m2Sum: matrix.m2Sum,
     m3Sum: matrix.m3Sum,
+
     m2Sub: matrix.m2Sub,
     m3Sub: matrix.m3Sub,
+
     m2MulScalar: matrix.m2MulScalar,
     m3MulScalar: matrix.m3MulScalar,
 

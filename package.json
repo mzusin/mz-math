@@ -25,7 +25,9 @@
     "modulo",
     "range",
     "Bézier curve",
-    "Bezier curve"
+    "Bézier",
+    "Bezier curve",
+    "Bezier"
   ],
   "author": "Tool Cool <toolcool.org@gmail.com>",
   "license": "MIT",

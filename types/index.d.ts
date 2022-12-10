@@ -23,6 +23,10 @@ declare global {
             v2DotProduct: typeof vector.v2DotProduct;
             v3DotProduct: typeof vector.v3DotProduct;
             v3CrossProduct: typeof vector.v3CrossProduct;
+            m2Sum: typeof matrix.m2Sum;
+            m3Sum: typeof matrix.m3Sum;
+            m2Sub: typeof matrix.m2Sub;
+            m3Sub: typeof matrix.m3Sub;
             m2MulScalar: typeof matrix.m2MulScalar;
             m3MulScalar: typeof matrix.m3MulScalar;
             getV2Angle: typeof angle.getV2Angle;

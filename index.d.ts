@@ -2,13 +2,19 @@ declare module 'toolcool-math' {
 
     export type Vector2 = [number, number];
     export type Vector3 = [number, number, number];
+    export type Vector = number[];
     export type Matrix2 = Vector2[];
     export type Matrix3 = Vector3[];
+    export type Matrix = Vector[];
 
+    export const vSum: (vector1: Vector, vector2: Vector, decimalPlaces?: number) => Vector;
     export const v2Sum: (vector1: Vector2, vector2: Vector2, decimalPlaces?: number) => Vector2;
     export const v3Sum: (vector1: Vector3, vector2: Vector3, decimalPlaces?: number) => Vector3;
+
+    export const vSub: (vector1: Vector, vector2: Vector, decimalPlaces?: number) => Vector;
     export const v2Sub: (vector1: Vector2, vector2: Vector2, decimalPlaces?: number) => Vector2;
     export const v3Sub: (vector1: Vector3, vector2: Vector3, decimalPlaces?: number) => Vector3;
+
     export const v2MulScalar: (v2: Vector2, scalar: number, decimalPlaces?: number) => Vector2;
     export const v3MulScalar: (v3: Vector3, scalar: number, decimalPlaces?: number) => Vector3;
     export const v2Length: (vector: Vector2, decimalPlaces?: number) => number;
@@ -54,30 +60,40 @@ declare module 'toolcool-math' {
     global {
         interface Window {
             TCMath: {
+                vSum: typeof vSum;
                 v2Sum: typeof v2Sum;
                 v3Sum: typeof v3Sum;
+
+                vSub: typeof vSub;
                 v2Sub: typeof v2Sub;
                 v3Sub: typeof v3Sub;
+
                 v2MulScalar: typeof v2MulScalar;
                 v3MulScalar: typeof v3MulScalar;
+
                 v2Length: typeof v2Length;
                 v3Length: typeof v3Length;
                 v2SetLength: typeof v2SetLength;
+
                 v2Normalize: typeof v2Normalize;
                 v3Normalize: typeof v3Normalize;
+
                 v2DotProduct: typeof v2DotProduct;
                 v3DotProduct: typeof v3DotProduct;
                 v3CrossProduct: typeof v3CrossProduct;
 
                 m2Sum: typeof m2Sum;
                 m3Sum: typeof m3Sum;
+
                 m2Sub: typeof m2Sub;
                 m3Sub: typeof m3Sub;
+
                 m2MulScalar: typeof m2MulScalar;
                 m3MulScalar: typeof m3MulScalar;
 
                 getV2Angle: typeof getV2Angle;
                 setV2Angle: typeof setV2Angle;
+
                 radiansToDegrees: typeof radiansToDegrees;
                 degreesToRadians: typeof degreesToRadians;
 

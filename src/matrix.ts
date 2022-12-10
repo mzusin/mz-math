@@ -61,3 +61,11 @@ export const m3Sub = (matrix1: Matrix3, matrix2: Matrix3, decimalPlaces = Infini
     return res;
 };
 
+/*
+export const m2Transpose = (m2: Matrix2): Matrix2 => {
+    return [
+        [m2[0][0], m2[1][0]],
+        [m2[0][1], m2[1][1]],
+    ];
+};*/
+

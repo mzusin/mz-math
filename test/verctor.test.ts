@@ -1,8 +1,10 @@
 import {
     v2Length,
     v3Length,
+    vSum,
     v2Sum,
     v3Sum,
+    vSub,
     v2Sub,
     v3Sub,
     v2MulScalar,
@@ -14,7 +16,7 @@ import {
     v3DotProduct,
     v3CrossProduct
 } from '../src/vector';
-import { Vector2, Vector3 } from '../src/types';
+import { Vector, Vector2, Vector3 } from '../src/types';
 
 describe('Vector Sum', () => {
     test('[1, 2] + [3, 4]', () => {
@@ -58,6 +60,12 @@ describe('Vector Sum', () => {
         const v2: Vector3 = [6.111, 7.222, 8.333];
         expect(v3Sum(v1, v2, 2)).toStrictEqual([9.35, 11.22, 13.59]);
     });
+
+    test('[1, 2, 3, 4] + [5, 6, 7, 8]', () => {
+        const v1: Vector = [1, 2, 3, 4];
+        const v2: Vector = [5, 6, 7, 8];
+        expect(vSum(v1, v2)).toStrictEqual([6, 8, 10, 12]);
+    });
 });
 
 describe('Vector Sub', () => {
@@ -89,6 +97,12 @@ describe('Vector Sub', () => {
         const v1: Vector3 = [1.12754, 2.999345, 3.34653456];
         const v2: Vector3 = [7.352345, 8.35734, 9.2345];
         expect(v3Sub(v1, v2, 2)).toStrictEqual([-6.22, -5.36, -5.89]);
+    });
+
+    test('[1, 2, 3, 4] - [5, 6, 7, 8]', () => {
+        const v1: Vector = [1, 2, 3, 4];
+        const v2: Vector = [5, 6, 7, 8];
+        expect(vSub(v1, v2)).toStrictEqual([-4, -4, -4, -4]);
     });
 });
 
