@@ -129,6 +129,8 @@ declare global {
             v3CubicBezierCurve: typeof bezierCurve.v3CubicBezierCurve;
 
             equationSystem2: typeof equations.equationSystem2;
+            equationSystem3: typeof equations.equationSystem3;
+            equationSystemN: typeof equations.equationSystemN;
         }
     }
 }
@@ -256,6 +258,8 @@ const api = {
     v3CubicBezierCurve: bezierCurve.v3CubicBezierCurve,
 
     equationSystem2: equations.equationSystem2,
+    equationSystem3: equations.equationSystem3,
+    equationSystemN: equations.equationSystemN,
 };
 
 window.TCMath = window.TCMath || api;

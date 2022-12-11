@@ -132,6 +132,8 @@ declare module 'toolcool-math' {
     export const v3CubicBezierCurve: (t: number, startControlPoint: Vector3, center1ControlPoint: Vector3, center2ControlPoint: Vector3, endControlPoint: Vector3) => Vector3;
 
     export const equationSystem2: (equation1: Vector3, equation2: Vector3, decimalPlaces?: number) => Vector2 | null;
+    export const equationSystem3: (equation1: Vector, equation2: Vector, equation3: Vector, decimalPlaces?: number) => Vector3 | null;
+    export const equationSystemN: (equations: Matrix, decimalPlaces?: number) => Vector | null;
 
     global {
         interface Window {
@@ -257,6 +259,8 @@ declare module 'toolcool-math' {
                 v3CubicBezierCurve: typeof v3CubicBezierCurve;
 
                 equationSystem2: typeof equationSystem2;
+                equationSystem3: typeof equationSystem3;
+                equationSystemN: typeof equationSystemN;
             };
         }
     }

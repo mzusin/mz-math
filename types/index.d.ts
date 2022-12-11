@@ -102,6 +102,8 @@ declare global {
             v2CubicBezierCurve: typeof bezierCurve.v2CubicBezierCurve;
             v3CubicBezierCurve: typeof bezierCurve.v3CubicBezierCurve;
             equationSystem2: typeof equations.equationSystem2;
+            equationSystem3: typeof equations.equationSystem3;
+            equationSystemN: typeof equations.equationSystemN;
         };
     }
 }

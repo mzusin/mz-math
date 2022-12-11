@@ -33,9 +33,9 @@ export const equationSystem2 = (equation1: Vector3, equation2: Vector3, decimalP
  * 2x + 7y - z = 4
  */
 export const equationSystem3 = (
-    equation1: Vector3,
-    equation2: Vector3,
-    equation3: Vector3,
+    equation1: Vector,
+    equation2: Vector,
+    equation3: Vector,
     decimalPlaces = Infinity) : Vector3 | null => {
     const equationParams: Matrix3 = [
         [equation1[0], equation1[1], equation1[2]],
@@ -47,9 +47,9 @@ export const equationSystem3 = (
     if(inversed === null) return null; // no results
 
     const equationResults: Vector3 = [
-        equation1[2],
-        equation2[2],
-        equation3[2]
+        equation1[3],
+        equation2[3],
+        equation3[3]
     ];
 
     return mMulVector(inversed, equationResults, decimalPlaces) as Vector3;
@@ -62,12 +62,13 @@ export const equationSystemN = (equations: Matrix, decimalPlaces = Infinity) : V
     if(equations.length <= 0) return null;
 
     const equationParams: Matrix = [];
+    const size = equations.length;
 
     // fill params matrix - it contains all values from equations matrix except the last column,
     // as the last columns is the results
-    for(let i=0; i<equations.length; i++){
+    for(let i=0; i<size; i++){
         const vector: Vector = [];
-        for(let j=0; j<equations[i].length - 1; i++){
+        for(let j=0; j<size; j++){
             vector.push(equations[i][j]);
         }
         equationParams.push(vector);
@@ -78,7 +79,7 @@ export const equationSystemN = (equations: Matrix, decimalPlaces = Infinity) : V
 
     // the last column of the equations matrix
     const equationResults: Vector = [];
-    for(let i=0; i<equations.length; i++){
+    for(let i=0; i<size; i++){
         const row = equations[i];
         equationResults.push(row[row.length - 1]);
     }
