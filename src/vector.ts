@@ -64,6 +64,30 @@ export const v3MulScalar = (v3: Vector3, scalar: number, decimalPlaces = Infinit
     return vMulScalar(v3, scalar, decimalPlaces) as Vector3;
 };
 
+// ------------ DIVIDE ------------------------
+
+export const vDivideScalar = (v: Vector, scalar: number, decimalPlaces = Infinity): Vector => {
+    if(scalar === 0){
+        throw new Error('Division by zero error.');
+    }
+
+    const vector: Vector = [];
+
+    for(let i=0; i<v.length; i++){
+        vector.push(setDecimalPlaces(v[i] / scalar, decimalPlaces));
+    }
+
+    return vector;
+};
+
+export const v2DivideScalar = (v2: Vector2, scalar: number, decimalPlaces = Infinity): Vector2 => {
+    return vDivideScalar(v2, scalar, decimalPlaces) as Vector2;
+};
+
+export const v3DivideScalar = (v3: Vector3, scalar: number, decimalPlaces = Infinity): Vector3 => {
+    return vDivideScalar(v3, scalar, decimalPlaces) as Vector3;
+};
+
 // ------------ LENGTH ------------------------
 
 export const vLength = (vector: Vector, decimalPlaces = Infinity) => {

@@ -1,5 +1,5 @@
 import { Matrix2, Matrix3, Matrix, Vector, Vector2, Vector3 } from './types';
-import { vMulScalar, vSum, vSub, vDotProduct, vN, vEqual, v2Normalize, v3Normalize } from './vector';
+import { vMulScalar, vSum, vSub, vDotProduct, vN, vEqual, v2Normalize, v3Normalize, vDivideScalar } from './vector';
 
 // --------------- SUM ----------------------
 
@@ -61,7 +61,32 @@ export const m3MulScalar = (m3: Matrix3, scalar: number, decimalPlaces = Infinit
     return mMulScalar(m3, scalar, decimalPlaces) as Matrix3;
 };
 
-// --------------- MUL SCALAR ----------------------
+// --------------- DIVIDE SCALAR ----------------------
+
+export const mDivideScalar = (m: Matrix, scalar: number, decimalPlaces = Infinity): Matrix => {
+    if(scalar === 0){
+        throw new Error('Division by zero error.');
+    }
+
+    const matrix: Matrix = [];
+
+    for(const v of m){
+        matrix.push(vDivideScalar(v, scalar, decimalPlaces));
+    }
+
+    return matrix;
+};
+
+export const m2DivideScalar = (m2: Matrix2, scalar: number, decimalPlaces = Infinity): Matrix2 => {
+    return mDivideScalar(m2, scalar, decimalPlaces) as Matrix2;
+};
+
+export const m3DivideScalar = (m3: Matrix3, scalar: number, decimalPlaces = Infinity): Matrix3 => {
+    return mDivideScalar(m3, scalar, decimalPlaces) as Matrix3;
+};
+
+
+// --------------- TRANSPOSE ----------------------
 
 export const mTranspose = (m: Matrix): Matrix => {
 
@@ -408,5 +433,5 @@ export const m2Inverse = (m2: Matrix2, decimalPlaces = Infinity): (Matrix2 | nul
 
     const adj = m2Adjugate(m2);
 
-    return m2MulScalar(adj, 1/d, decimalPlaces);
+    return m2DivideScalar(adj, d, decimalPlaces);
 };
