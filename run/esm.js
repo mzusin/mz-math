@@ -6,6 +6,7 @@ const watch = args.length > 1 && args[1].trim().toLowerCase() === 'watch';
 
 settings.platform = 'neutral';
 settings.format = 'esm';
+settings.entryPoints = ['./src/index-esm.ts'];
 settings.outfile = './dist/tc-math.esm.js';
 
 if(watch){
