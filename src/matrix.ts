@@ -482,11 +482,52 @@ export const m3Determinant = (m3: Matrix3): number => {
 
 // ------------------ INVERSE -----------------------
 
-export const m2Adjugate = (m2: Matrix2): Matrix2 => {
+export const m2Adjugate = (m2: Matrix2): Matrix2|null => {
+    if(m2.length !== m2[0].length){
+        throw new Error('The matrix must be square.');
+    }
+
     return [
       [m2[1][1], -m2[0][1]],
       [-m2[1][0], m2[0][0]],
     ];
+};
+
+export const m3Adjugate = (m3: Matrix3) : Matrix3|null => {
+    return mAdjugate(m3) as (Matrix3|null);
+};
+
+/**
+ * Adjugate is a transpose of a cofactor matrix
+ */
+export const mAdjugate = (m: Matrix): Matrix|null => {
+
+    const size = m.length;
+    if(size <= 0) return null;
+
+    if(size !== m[0].length){
+        throw new Error('The matrix must be square.');
+    }
+
+    if(size === 1) return m;
+
+    if(size === 2) return m2Adjugate(m as Matrix2);
+
+    // build a cofactor matrix ----------------
+    const cofactors: Matrix = [];
+
+    for(let i=0; i<size; i++){
+        const vector: Vector = [];
+        for(let j=0; j<size; j++){
+            const minor = mMinor(m, i, j);
+            const sign = Math.pow(-1, i + j)
+            vector.push(sign * minor);
+        }
+        cofactors.push(vector);
+    }
+
+    // find an Adjugate - a transpose of a cofactor matrix
+    return mTranspose(cofactors);
 };
 
 /**
@@ -496,6 +537,7 @@ export const m2Adjugate = (m2: Matrix2): Matrix2 => {
  * Singular Matrix = a square matrix that does not have a matrix inverse. A matrix is singular iff its determinant is 0.
  */
 export const m2Inverse = (m2: Matrix2, decimalPlaces = Infinity): (Matrix2 | null) => {
+    if(m2.length <= 0) return null;
 
     if(m2.length !== m2[0].length){
         throw new Error('The matrix must be square.');
@@ -505,6 +547,29 @@ export const m2Inverse = (m2: Matrix2, decimalPlaces = Infinity): (Matrix2 | nul
     if(d === 0) return null;
 
     const adj = m2Adjugate(m2);
+    if(adj === null) return null;
 
     return m2DivideScalar(adj, d, decimalPlaces);
+};
+
+export const m3Inverse = (m3: Matrix3, decimalPlaces = Infinity): (Matrix3 | null) => {
+    return mInverse(m3, decimalPlaces) as (Matrix3|null);
+};
+
+export const mInverse = (m: Matrix, decimalPlaces = Infinity): (Matrix | null) => {
+    const size = m.length;
+    if(size <= 0) return null;
+
+    if(size !== m[0].length){
+        throw new Error('The matrix must be square.');
+    }
+
+    // find a determinant ----------------------
+    const d = mDeterminant(m);
+
+    // find an Adjugate - a transpose of a cofactor matrix
+    const adj = mAdjugate(m);
+    if(adj === null) return null;
+
+    return mDivideScalar(adj, d, decimalPlaces);
 };

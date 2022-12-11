@@ -73,7 +73,11 @@ declare global {
             m3Determinant: typeof matrix.m3Determinant;
             mDeterminant: typeof matrix.mDeterminant;
             m2Inverse: typeof matrix.m2Inverse;
+            m3Inverse: typeof matrix.m3Inverse;
+            mInverse: typeof matrix.mInverse;
             m2Adjugate: typeof matrix.m2Adjugate;
+            m3Adjugate: typeof matrix.m3Adjugate;
+            mAdjugate: typeof matrix.mAdjugate;
             mMinor: typeof matrix.mMinor;
             m2Scale: typeof matrix.m2Scale;
             v2Scale: typeof matrix.v2Scale;

@@ -76,7 +76,12 @@ export declare const m2Determinant: (m2: Matrix2) => number;
  * Matrix should be square.
  */
 export declare const m3Determinant: (m3: Matrix3) => number;
-export declare const m2Adjugate: (m2: Matrix2) => Matrix2;
+export declare const m2Adjugate: (m2: Matrix2) => Matrix2 | null;
+export declare const m3Adjugate: (m3: Matrix3) => Matrix3 | null;
+/**
+ * Adjugate is a transpose of a cofactor matrix
+ */
+export declare const mAdjugate: (m: Matrix) => Matrix | null;
 /**
  * Square matrix A (nxn) is invertible is there is another square matrix B (nxn) so AxB = BxA = I
  * For A (2x2) matrix, the inverse is:
@@ -84,3 +89,5 @@ export declare const m2Adjugate: (m2: Matrix2) => Matrix2;
  * Singular Matrix = a square matrix that does not have a matrix inverse. A matrix is singular iff its determinant is 0.
  */
 export declare const m2Inverse: (m2: Matrix2, decimalPlaces?: number) => (Matrix2 | null);
+export declare const m3Inverse: (m3: Matrix3, decimalPlaces?: number) => (Matrix3 | null);
+export declare const mInverse: (m: Matrix, decimalPlaces?: number) => (Matrix | null);

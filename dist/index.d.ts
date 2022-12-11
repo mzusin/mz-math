@@ -100,7 +100,12 @@ declare module 'toolcool-math' {
     export const mMinor: (m: Matrix, row: number, col: number) => number;
 
     export const m2Inverse: (m2: Matrix2, decimalPlaces?: number) => (Matrix2 | null);
+    export const m3Inverse: (m3: Matrix3, decimalPlaces?: number) => (Matrix3 | null);
+    export const mInverse: (m: Matrix, decimalPlaces?: number) => (Matrix | null);
+
     export const m2Adjugate: (m2: Matrix2) => Matrix2;
+    export const m3Adjugate: (m3: Matrix3) => Matrix3 | null;
+    export const mAdjugate: (m: Matrix) => Matrix | null;
 
     export const getV2Angle: (v2: Vector2, decimalPlaces?: number) => number;
     export const setV2Angle: (v2: Vector2, newAngleRad: number, decimalPlaces?: number) => Vector2;
@@ -213,8 +218,13 @@ declare module 'toolcool-math' {
                 m3Determinant: typeof m3Determinant;
                 mDeterminant: typeof mDeterminant;
                 mMinor:typeof mMinor;
+
                 m2Inverse: typeof m2Inverse;
+                m3Inverse: typeof m3Inverse;
+                mInverse: typeof mInverse;
                 m2Adjugate: typeof m2Adjugate;
+                m3Adjugate: typeof m3Adjugate;
+                mAdjugate: typeof mAdjugate;
 
                 m2Scale: typeof m2Scale;
                 v2Scale: typeof v2Scale;

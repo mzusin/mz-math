@@ -4,8 +4,10 @@ import {
     m2Transpose, m3Transpose, mTranspose,
     mMul, mMulVector, m2Reset, m3Reset, mReset,
     m2x2, m3x3, mNxM, mEqual, identity2, identity3, identityN,
-    m2Determinant, m3Determinant, mDeterminant, m2Inverse,
-    m2DivideScalar, m3DivideScalar, mDivideScalar, mMinor
+    m2Determinant, m3Determinant, mDeterminant,
+    m2Inverse, m3Inverse, mInverse,
+    m2DivideScalar, m3DivideScalar, mDivideScalar, mMinor,
+    m2Adjugate, m3Adjugate, mAdjugate
 } from '../src/matrix';
 import { Matrix, Matrix2, Matrix3, Vector3 } from '../src/types';
 
@@ -1057,6 +1059,18 @@ describe('Matrix Inverse', () => {
     });
 
     test(`Inverse of [
+                 [1, -1],
+                 [-1, 1] doesn't exist - The determinant is 0, the matrix is not invertible,
+            ]`, () => {
+        expect(m2Inverse(
+            [
+                [1, -1],
+                [-1, 1],
+            ]
+        )).toStrictEqual(null);
+    });
+
+    test(`Inverse of [
                 [3, -4],
                 [2, -5],
             ] with 3 decimal places`, () => {
@@ -1068,6 +1082,121 @@ describe('Matrix Inverse', () => {
         )).toStrictEqual([
             [0.714, -0.571],
             [0.286, -0.429],
+        ]);
+    });
+
+    test(`Inverse of [
+                [-1, -2, 2],
+                [2, 1, 1],
+                [3, 4, 5]
+            ]`, () => {
+        expect(m3Inverse(
+            [
+                [-1, -2, 2],
+                [2, 1, 1],
+                [3, 4, 5]
+            ]
+        )).toStrictEqual([
+            [0.043478260869565216, 0.782608695652174, -0.17391304347826086],
+            [-0.30434782608695654, -0.4782608695652174, 0.21739130434782608],
+            [0.21739130434782608, -0.08695652173913043, 0.13043478260869565]
+        ]);
+    });
+
+    test(`Inverse of [
+                [-1, -2, 2],
+                [2, 1, 1],
+                [3, 4, 5]
+            ] with 2 decimal places`, () => {
+        expect(m3Inverse(
+            [
+                [-1, -2, 2],
+                [2, 1, 1],
+                [3, 4, 5]
+            ], 2
+        )).toStrictEqual([
+            [0.04, 0.78, -0.17],
+            [-0.30, -0.48, 0.22],
+            [0.22, -0.09, 0.13]
+        ]);
+    });
+
+    test(`Inverse of [
+                [1, 1, 1, -1],
+                [1, 1, -1, 1],
+                [1, -1, 1, 1],
+                [-1, 1, 1, 1],
+            ]`, () => {
+        expect(mInverse(
+            [
+                [1, 1, 1, -1],
+                [1, 1, -1, 1],
+                [1, -1, 1, 1],
+                [-1, 1, 1, 1],
+            ]
+        )).toStrictEqual([
+            [0.25, 0.25, 0.25, -0.25],
+            [0.25, 0.25, -0.25, 0.25],
+            [0.25, -0.25, 0.25, 0.25],
+            [-0.25, 0.25, 0.25, 0.25],
+        ]);
+    });
+
+});
+
+describe('Matrix Adjugate', () => {
+
+    test(`Adjugate of [
+                [3, 5],
+                [-7, 2],
+            ]`, () => {
+        expect(m2Adjugate(
+            [
+                [3, 5],
+                [-7, 2],
+            ]
+        )).toStrictEqual([
+            [2, -5],
+            [7, 3],
+        ]);
+    });
+
+    test(`Adjugate of [
+                [3, 5, 1],
+                [-7, 2, 5],
+                [1, 2, 3],
+            ]`, () => {
+        expect(m3Adjugate(
+            [
+                [3, 5, 1],
+                [-7, 2, 5],
+                [1, 2, 3],
+            ]
+        )).toStrictEqual([
+            [-4, -13, 23],
+            [26, 8, -22],
+            [-16, -1, 41],
+        ]);
+    });
+
+    test(`Adjugate of [
+                [1, 1, 1, -1],
+                [1, 1, -1, 1],
+                [1, -1, 1, 1],
+                [-1, 1, 1, 1],
+            ]`, () => {
+        expect(mAdjugate(
+            [
+                [1, 1, 1, -1],
+                [1, 1, -1, 1],
+                [1, -1, 1, 1],
+                [-1, 1, 1, 1],
+            ]
+        )).toStrictEqual([
+            [-4, -4, -4, 4],
+            [-4, -4, 4, -4],
+            [-4, 4, -4, -4],
+            [4, -4, -4, -4],
         ]);
     });
 
