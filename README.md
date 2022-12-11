@@ -1569,16 +1569,18 @@ const v3 = v3CubicBezierCurve(
 
 Using the **equationSystem2** function, you can solve a system of equations of the second degree. It receives **2 vectors** of equation parameters and an optional **decimalPlaces** parameter.
 
+If the system of equations has no solution, then **null** is returned.
+
 For example:
 ```js
-import { equationSystem2, Vector3 } from 'toolcool-math';
+import { equationSystem2, Vector2, Vector3 } from 'toolcool-math';
 
 // 3x + 2y = 7 
 // -6x + 6y = 6
 
 const equation1: Vector3 = [3, 2, 7];
 const equation2: Vector3 = [-6, 6, 6];
-const result = equationSystem2(equation1, equation2); // [1, 2] i.e. x=1, y=2
+const result: Vector2|null = equationSystem2(equation1, equation2); // [1, 2] i.e. x=1, y=2
 ```
 
 -----------------------------------------------
