@@ -12,6 +12,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
 ## Table of contents
 - [TypeScript Usage](#typescript-usage)
 - [Browser Usage](#browser-usage)
+- [Node.js Usage](#nodejs-usage)
 - [Vectors](#vectors)
     - [Vectors Sum](#vectors-sum)
     - [Vectors Subtraction](#vectors-subtraction)
@@ -82,6 +83,8 @@ const v2: Vector2 = [3, 4];
 const sum = v2Sum(v1, v2); // [4, 6]
 ```
 
+-----------------------------------------------
+
 ## Browser Usage
 
 Any function can also be used in the browser using the **tc-math.min.js** file. All functions are located in the **TCMath** namespace:
@@ -102,6 +105,22 @@ The library is also available on the [jsDelivr CND](https://www.jsdelivr.com/pac
     const sum = TCMath.v2Sum([1, 2], [3, 4]);
     console.log(sum);
 </script>
+```
+-----------------------------------------------
+
+## Node.js Usage
+
+The library can also be used in Node.js.
+
+```
+npm install toolcool-math
+```
+
+```js
+const { setDecimalPlaces } = require('toolcool-math/dist/tc-math.node.cjs');
+
+const rounded = setDecimalPlaces(Math.PI, 2);
+console.log(rounded);
 ```
 
 -----------------------------------------------
