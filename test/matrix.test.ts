@@ -3,7 +3,8 @@ import {
     mSum, m2Sum, m2Sub, m3Sum, m3Sub, mSub,
     m2Transpose, m3Transpose, mTranspose,
     mMul, mMulVector, m2Reset, m3Reset, mReset,
-    m2x2, m3x3, mNxM, mEqual, identity2, identity3, identityN, m2Determinant, m2Inverse,
+    m2x2, m3x3, mNxM, mEqual, identity2, identity3, identityN,
+    m2Determinant, m3Determinant, mDeterminant, m2Inverse,
     m2DivideScalar, m3DivideScalar, mDivideScalar
 } from '../src/matrix';
 import { Matrix, Matrix2, Matrix3, Vector3 } from '../src/types';
@@ -966,16 +967,42 @@ describe('Matrix Equality', () => {
 
 describe('Matrix Determinant', () => {
 
+    test(`Determinant of empty matrix should be 1`, () => {
+        expect(mDeterminant(
+            []
+        )).toStrictEqual(1);
+    });
+
+    test(`Determinant of matrix with 1 element should be equal to this element`, () => {
+        expect(mDeterminant(
+            [[15]]
+        )).toStrictEqual(15);
+    });
+
     test(`Determinant of [
                 [5, 3],
                 [-1, 4],
-            ] => 23`, () => {
+            ] => 16`, () => {
         expect(m2Determinant(
             [
                 [5, 3],
                 [-1, 4],
             ]
         )).toStrictEqual(23);
+    });
+
+    test(`Determinant of [
+                [4, -1, 1],
+                [4, 5, 3],
+                [-2, 0, 0],
+            ] => 23`, () => {
+        expect(m3Determinant(
+            [
+                [4, -1, 1],
+                [4, 5, 3],
+                [-2, 0, 0],
+            ]
+        )).toStrictEqual(16);
     });
 
 });

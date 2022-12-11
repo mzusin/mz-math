@@ -371,19 +371,90 @@ export const v3Scale = (scaleVector: Vector3, vector: Vector3): Vector3 => {
 // ------------------- Determinant ---------------
 
 /**
- * Calculate determinant for NxN matrix.
- * Matrix should be square.
+ * Returns a matrix without provided row / col.
+ * If we received a matrix M (mxm) ===> returns matrix N (m-1 x m-1)
+ * The matrix must be square.
+ */
+const mMinorHelper = (m: Matrix, row: number, col: number) => {
+    const size = m.length;
 
-export const mDeterminant = (matrix: Matrix): number => {
-    if(matrix.length === 0) return 1;
+    if(size <= 0){
+        throw new Error('The matrix should not be empty.');
+    }
 
-    if(matrix.length !== matrix[0].length){
+    if(size !== m[0].length){
         throw new Error('The matrix must be square.');
     }
 
-    if(matrix.length === 1) return matrix[0][0];
-    if(matrix.length === 2) return m2Determinant(matrix as Matrix2);
-}; */
+    const matrix: Matrix = [];
+
+    for(let i=0; i<size; i++){
+        if(i === row) continue;
+
+        const vector: Vector = [];
+
+        for(let j=0; j<size; j++){
+            if(j === col) continue;
+            vector.push(m[i][j]);
+        }
+
+        matrix.push(vector);
+    }
+
+    return matrix;
+};
+
+/**
+ * Calculate matrix minor.
+ */
+export const mMinor = (m: Matrix, row: number, col: number) => {
+    const size = m.length;
+
+    if(size <= 0){
+        throw new Error('The matrix should not be empty.');
+    }
+
+    if(size !== m[0].length){
+        throw new Error('The matrix must be square.');
+    }
+
+    // prepare the matrix without provided row and column
+    const matrix = mMinorHelper(m, row, col);
+
+    // calculate the matrix determinant
+    return mDeterminant(matrix);
+};
+
+/**
+ * Calculate determinant for NxN matrix.
+ * Matrix should be square.
+ */
+export const mDeterminant = (matrix: Matrix): number => {
+    const size = matrix.length;
+    if(size === 0) return 1;
+
+    if(size !== matrix[0].length){
+        throw new Error('The matrix must be square.');
+    }
+
+    if(size === 1) return matrix[0][0];
+    if(size === 2) return m2Determinant(matrix as Matrix2);
+
+    let d = 0;
+
+    for(let i=0; i<size; i++){
+        const minor = mMinor(matrix, 0, i);
+
+        let param = matrix[0][i];
+        if(i % 2 !== 0){
+            param = -param;
+        }
+
+        d += minor * param;
+    }
+
+    return d;
+};
 
 /**
  * Calculate determinant for 2x2 matrix.
@@ -400,12 +471,14 @@ export const m2Determinant = (m2: Matrix2): number => {
 /**
  * Calculate determinant for 3x3 matrix.
  * Matrix should be square.
-
+ */
 export const m3Determinant = (m3: Matrix3): number => {
     if(m3.length !== m3[0].length){
         throw new Error('The matrix must be square.');
     }
-}; */
+
+    return mDeterminant(m3);
+};
 
 // ------------------ INVERSE -----------------------
 
