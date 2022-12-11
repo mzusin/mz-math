@@ -17,6 +17,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
     - [Vectors Sum](#vectors-sum)
     - [Vectors Subtraction](#vectors-subtraction)
     - [Multiple vector by scalar](#multiply-vector-by-scalar)
+    - [Divide vector by scalar](#divide-vector-by-scalar)
     - [Get Vector Length](#get-vector-length)
     - [Set Vector Length](#set-vector-length)
     - [Normalize Vector](#normalize-vector)
@@ -220,7 +221,7 @@ The following functions are used to multiply a vector by a scalar: **v2MulScalar
 import { v2MulScalar } from 'toolcool-math';
 
 const res = v2MulScalar([1, 2], 2); // [2, 4]
-const res = v2MulScalar([1, 2], 0.5); // x: 0.5, 1
+const res = v2MulScalar([1, 2], 0.5); // [0.5, 1]
 const res = v2MulScalar([1, 2], Math.PI); // [3.141592653589793, 6.283185307179586]
 const res = v2MulScalar([1, 2], Math.PI, 2); // [3.14, 6.28]
 ```
@@ -240,6 +241,37 @@ const res = v3MulScalar([1, 2, 3], Math.PI, 2); // [3.14, 6.28, 9.42]
 import { vMulScalar } from 'toolcool-math';
 
 const res = v3MulScalar([1, 2, 3, 4], 2); // [2, 4, 6, 8]
+```
+
+## Divide vector by scalar
+
+The following functions are used to divide a vector by a scalar: **v2DivideScalar** for a 2D vector, **v3DivideScalar** for a 3D vector, and **vDivideScalar** for the general case. Each function receives an optional **decimalPlaces** parameter.
+
+**2D Vector**
+```js
+import { v2DivideScalar } from 'toolcool-math';
+
+const res = v2DivideScalar([1, 2], 2); // [0.5, 1]
+const res = v2DivideScalar([1, 2], 0.5); // [2, 4]
+const res = v2DivideScalar([1, 2], Math.PI); // [0.3183098861837907, 0.6366197723675814]
+const res = v2DivideScalar([1, 2], Math.PI, 2); // [0.32, 0.64]
+```
+
+**3D Vector**
+```js
+import { v3DivideScalar } from 'toolcool-math';
+
+const res = v3DivideScalar([1, 2, 3], 2); // [0.5, 1, 1.5]
+const res = v3DivideScalar([1, 2, 3], 0.5); // [2, 4, 6]
+const res = v3DivideScalar([1, 2, 3], Math.PI); // [0.3183098861837907, 0.6366197723675814, 0.954929658551372]
+const res = v3DivideScalar([1, 2, 3], Math.PI, 2); // [0.32, 0.64, 0.95]
+```
+
+**General Case**
+```js
+import { vDivideScalar } from 'toolcool-math';
+
+const res = vDivideScalar([1, 2, 3, 4], 2); // [0.5, 1, 1.5, 2]
 ```
 
 ## Get Vector Length

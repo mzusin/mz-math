@@ -6,6 +6,7 @@ import * as random from './random';
 import * as other from './other';
 import * as convert from './convert';
 import * as bezierCurve from './bezier-curve';
+import * as equations from './equations';
 
 declare global {
     interface Window {
@@ -143,6 +144,10 @@ const api = {
     v2MulScalar: vector.v2MulScalar,
     v3MulScalar: vector.v3MulScalar,
 
+    vDivideScalar: vector.vDivideScalar,
+    v2DivideScalar: vector.v2DivideScalar,
+    v3DivideScalar: vector.v3DivideScalar,
+
     vLength: vector.vLength,
     v2Length: vector.v2Length,
     v3Length: vector.v3Length,
@@ -221,6 +226,8 @@ const api = {
     v3QuadraticBezierCurve: bezierCurve.v3QuadraticBezierCurve,
     v2CubicBezierCurve: bezierCurve.v2CubicBezierCurve,
     v3CubicBezierCurve: bezierCurve.v3CubicBezierCurve,
+
+    equationSystem2: equations.equationSystem2,
 };
 
 window.TCMath = window.TCMath || api;
@@ -233,3 +240,4 @@ export * from './random';
 export * from './other';
 export * from './convert';
 export * from './bezier-curve';
+export * from './equations';

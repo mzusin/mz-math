@@ -19,7 +19,7 @@ import {
     v2DotProduct,
     v3DotProduct,
     v3CrossProduct, v2, v3, vN,
-    vEqual
+    vEqual, v2DivideScalar, v3DivideScalar, vDivideScalar
 } from '../src/vector';
 import { Vector, Vector2, Vector3 } from '../src/types';
 
@@ -146,6 +146,44 @@ describe('Multiply vector by scalar', () => {
 
     test('[1, 2, 3, 4] * 2 => [2, 4, 6, 8]', () => {
         expect(vMulScalar([1, 2, 3, 4], 2)).toStrictEqual([2, 4, 6, 8]);
+    });
+});
+
+describe('Divide vector by scalar', () => {
+    test('[1, 2] / 2 => [0.5, 1]', () => {
+        expect(v2DivideScalar([1, 2], 2)).toStrictEqual([0.5, 1]);
+    });
+
+    test('[1, 2] / 0.5 => [2, 4]', () => {
+        expect(v2DivideScalar([1, 2], 0.5)).toStrictEqual([2, 4]);
+    });
+
+    test('[1, 2] / Math.PI => [0.3183098861837907, 0.6366197723675814', () => {
+        expect(v2DivideScalar([1, 2], Math.PI)).toStrictEqual([0.3183098861837907, 0.6366197723675814]);
+    });
+
+    test('[1, 2] / Math.PI with 2 decimal places => [0.32, 0.64]', () => {
+        expect(v2DivideScalar([1, 2], Math.PI, 2)).toStrictEqual([0.32, 0.64]);
+    });
+
+    test('[1, 2, 3] / 2 => [0.5, 1, 1.5]', () => {
+        expect(v3DivideScalar([1, 2, 3], 2)).toStrictEqual([0.5, 1, 1.5]);
+    });
+
+    test('[1, 2, 3] / 0.5 => [2, 4, 6]', () => {
+        expect(v3DivideScalar([1, 2, 3], 0.5)).toStrictEqual([2, 4, 6]);
+    });
+
+    test('[1, 2, 3] / Math.PI => [0.3183098861837907, 0.6366197723675814, 0.954929658551372]', () => {
+        expect(v3DivideScalar([1, 2, 3], Math.PI)).toStrictEqual([0.3183098861837907, 0.6366197723675814, 0.954929658551372]);
+    });
+
+    test('[1, 2, 3] / Math.PI with 2 decimal places => [0.32, 0.64, 0.95]', () => {
+        expect(v3DivideScalar([1, 2, 3], Math.PI, 2)).toStrictEqual([0.32, 0.64, 0.95]);
+    });
+
+    test('[1, 2, 3, 4] / 2 => [0.5, 1, 1.5, 2]', () => {
+        expect(vDivideScalar([1, 2, 3, 4], 2)).toStrictEqual([0.5, 1, 1.5, 2]);
     });
 });
 

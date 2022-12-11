@@ -8,6 +8,9 @@ export declare const v3Sub: (vector1: Vector3, vector2: Vector3, decimalPlaces?:
 export declare const vMulScalar: (v: Vector, scalar: number, decimalPlaces?: number) => Vector;
 export declare const v2MulScalar: (v2: Vector2, scalar: number, decimalPlaces?: number) => Vector2;
 export declare const v3MulScalar: (v3: Vector3, scalar: number, decimalPlaces?: number) => Vector3;
+export declare const vDivideScalar: (v: Vector, scalar: number, decimalPlaces?: number) => Vector;
+export declare const v2DivideScalar: (v2: Vector2, scalar: number, decimalPlaces?: number) => Vector2;
+export declare const v3DivideScalar: (v3: Vector3, scalar: number, decimalPlaces?: number) => Vector3;
 export declare const vLength: (vector: Vector, decimalPlaces?: number) => number;
 export declare const v2Length: (vector: Vector2, decimalPlaces?: number) => number;
 export declare const v3Length: (vector: Vector3, decimalPlaces?: number) => number;

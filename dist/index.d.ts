@@ -35,6 +35,10 @@ declare module 'toolcool-math' {
     export const v2MulScalar: (v2: Vector2, scalar: number, decimalPlaces?: number) => Vector2;
     export const v3MulScalar: (v3: Vector3, scalar: number, decimalPlaces?: number) => Vector3;
 
+    export const vDivideScalar: (v: Vector, scalar: number, decimalPlaces?: number) => Vector;
+    export const v2DivideScalar: (v2: Vector2, scalar: number, decimalPlaces?: number) => Vector2;
+    export const v3DivideScalar: (v3: Vector3, scalar: number, decimalPlaces?: number) => Vector3;
+
     export const vLength: (vector: Vector, decimalPlaces?: number) => number;
     export const v2Length: (vector: Vector2, decimalPlaces?: number) => number;
     export const v3Length: (vector: Vector3, decimalPlaces?: number) => number;
@@ -115,6 +119,8 @@ declare module 'toolcool-math' {
     export const v2CubicBezierCurve: (t: number, startControlPoint: Vector2, center1ControlPoint: Vector2, center2ControlPoint: Vector2, endControlPoint: Vector2) => Vector2;
     export const v3CubicBezierCurve: (t: number, startControlPoint: Vector3, center1ControlPoint: Vector3, center2ControlPoint: Vector3, endControlPoint: Vector3) => Vector3;
 
+    export const equationSystem2: (equation1: Vector3, equation2: Vector3, decimalPlaces?: number) => Vector2 | null;
+
     global {
         interface Window {
             TCMath: {
@@ -138,8 +144,13 @@ declare module 'toolcool-math' {
                 v2Sub: typeof v2Sub;
                 v3Sub: typeof v3Sub;
 
+                vMulScalar: typeof vMulScalar;
                 v2MulScalar: typeof v2MulScalar;
                 v3MulScalar: typeof v3MulScalar;
+
+                vDivideScalar: typeof vDivideScalar;
+                v2DivideScalar: typeof v2DivideScalar;
+                v3DivideScalar: typeof v3DivideScalar;
 
                 vLength: typeof vLength;
                 v2Length: typeof v2Length;
@@ -155,12 +166,15 @@ declare module 'toolcool-math' {
                 v3DotProduct: typeof v3DotProduct;
                 v3CrossProduct: typeof v3CrossProduct;
 
+                mSum: typeof mSum;
                 m2Sum: typeof m2Sum;
                 m3Sum: typeof m3Sum;
 
+                mSub: typeof mSub;
                 m2Sub: typeof m2Sub;
                 m3Sub: typeof m3Sub;
 
+                mMulScalar: typeof mMulScalar;
                 m2MulScalar: typeof m2MulScalar;
                 m3MulScalar: typeof m3MulScalar;
 
@@ -217,6 +231,8 @@ declare module 'toolcool-math' {
                 v3QuadraticBezierCurve: typeof v3QuadraticBezierCurve;
                 v2CubicBezierCurve: typeof v2CubicBezierCurve;
                 v3CubicBezierCurve: typeof v3CubicBezierCurve;
+
+                equationSystem2: typeof equationSystem2;
             };
         }
     }
