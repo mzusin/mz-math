@@ -117,7 +117,7 @@ declare global {
     }
 }
 
-window.TCMath = window.TCMath || {
+const api = {
     v2: vector.v2,
     v3: vector.v3,
     vN: vector.vN,
@@ -222,3 +222,7 @@ window.TCMath = window.TCMath || {
     v2CubicBezierCurve: bezierCurve.v2CubicBezierCurve,
     v3CubicBezierCurve: bezierCurve.v3CubicBezierCurve,
 };
+
+window.TCMath = window.TCMath || api;
+
+export default api;

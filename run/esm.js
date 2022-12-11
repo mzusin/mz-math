@@ -7,7 +7,6 @@ const watch = args.length > 1 && args[1].trim().toLowerCase() === 'watch';
 settings.platform = 'neutral';
 settings.format = 'esm';
 settings.outfile = './dist/tc-math.esm.js';
-settings.bundle = false;
 
 if(watch){
     // ------------- watch ---------------
