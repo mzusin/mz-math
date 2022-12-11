@@ -87,8 +87,11 @@ declare global {
             v3RotateZ: typeof matrix.v3RotateZ;
 
             m2Determinant: typeof matrix.m2Determinant;
+            m3Determinant: typeof matrix.m3Determinant;
+            mDeterminant: typeof matrix.mDeterminant;
             m2Inverse: typeof matrix.m2Inverse;
             m2Adjugate: typeof matrix.m2Adjugate;
+            mMinor: typeof matrix.mMinor;
 
             m2Scale: typeof matrix.m2Scale;
             v2Scale: typeof matrix.v2Scale;
@@ -210,8 +213,11 @@ const api = {
     v3Scale: matrix.v3Scale,
 
     m2Determinant: matrix.m2Determinant,
+    m3Determinant: matrix.m3Determinant,
+    mDeterminant: matrix.mDeterminant,
     m2Inverse: matrix.m2Inverse,
     m2Adjugate: matrix.m2Adjugate,
+    mMinor: matrix.mMinor,
 
     getV2Angle: angle.getV2Angle,
     setV2Angle: angle.setV2Angle,

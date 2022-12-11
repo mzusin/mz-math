@@ -1256,6 +1256,8 @@ const scaledVector: Vector3 = v3Scale([2, 4, 6], [10, 20, 30]);
 
 ## Matrix Determinant
 
+The determinant can be calculated for any square matrix using the **m2Determinant**, **m3Determinant**, or **mDeterminant** functions.
+
 Calculating the determinant for a 2x2 matrix:
 
 ```js
@@ -1267,6 +1269,35 @@ const m2x2: Matrix2 = [
 ];
 
 const d = m2Determinant(m2x2); // 23
+```
+
+Calculating the determinant for a 3x3 matrix:
+
+```js
+import { Matrix3, m3Determinant } from 'toolcool-math';
+
+const m3x3: Matrix3 = [
+  [4, -1, 1],
+  [4, 5, 3],
+  [-2, 0, 0],
+];
+
+const d = m3Determinant(m3x3); // 16
+```
+
+Calculating the determinant for a 4x4 matrix:
+
+```js
+import { Matrix, mDeterminant } from 'toolcool-math';
+
+const m4x4: Matrix = [
+  [4, 3, 2, 2],
+  [0, 1, -3, 3],
+  [0, -1, 3, 3],
+  [0, 3, 1, 1]
+];
+
+const d = mDeterminant(m4x4); // -240
 ```
 
 -----------------------------------------------

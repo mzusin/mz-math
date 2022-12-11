@@ -1005,6 +1005,22 @@ describe('Matrix Determinant', () => {
         )).toStrictEqual(16);
     });
 
+    test(`Determinant of [
+                [4, 3, 2, 2],
+                [0, 1, -3, 3],
+                [0, -1, 3, 3],
+                [0, 3, 1, 1]
+            ] => -240`, () => {
+        expect(mDeterminant(
+            [
+                [4, 3, 2, 2],
+                [0, 1, -3, 3],
+                [0, -1, 3, 3],
+                [0, 3, 1, 1]
+            ]
+        )).toStrictEqual(-240);
+    });
+
 });
 
 describe('Matrix Inverse', () => {
