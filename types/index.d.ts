@@ -6,6 +6,7 @@ import * as random from './random';
 import * as other from './other';
 import * as convert from './convert';
 import * as bezierCurve from './bezier-curve';
+import * as equations from './equations';
 declare global {
     interface Window {
         TCMath: {
@@ -49,6 +50,9 @@ declare global {
             mMulScalar: typeof matrix.mMulScalar;
             m2MulScalar: typeof matrix.m2MulScalar;
             m3MulScalar: typeof matrix.m3MulScalar;
+            mDivideScalar: typeof matrix.mDivideScalar;
+            m2DivideScalar: typeof matrix.m2DivideScalar;
+            m3DivideScalar: typeof matrix.m3DivideScalar;
             mTranspose: typeof matrix.mTranspose;
             m2Transpose: typeof matrix.m2Transpose;
             m3Transpose: typeof matrix.m3Transpose;
@@ -90,6 +94,7 @@ declare global {
             v3QuadraticBezierCurve: typeof bezierCurve.v3QuadraticBezierCurve;
             v2CubicBezierCurve: typeof bezierCurve.v2CubicBezierCurve;
             v3CubicBezierCurve: typeof bezierCurve.v3CubicBezierCurve;
+            equationSystem2: typeof equations.equationSystem2;
         };
     }
 }

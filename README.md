@@ -61,6 +61,8 @@ This project is a collection of TypeScript math helpers and utilities for the br
 - Bézier Curve
   - [Get a point on a quadratic Bézier curve](#get-a-point-on-a-quadratic-bézier-curve)
   - [Get a point on a cubic Bézier curve](#get-a-point-on-a-cubic-bézier-curve)
+- Equations
+  - [System of equations](#system-of-equations)
 - Other
   - [Modulo](#modulo)
   - [Convert range](#convert-range)
@@ -1557,6 +1559,26 @@ const v3 = v3CubicBezierCurve(
         [100, 0, 0],
         [100, 100, 0]
 ); // [100, 100, 0]
+```
+
+-----------------------------------------------
+
+# Equations
+
+## System of equations
+
+Using the **equationSystem2** function, you can solve a system of equations of the second degree. It receives **2 vectors** of equation parameters and an optional **decimalPlaces** parameter.
+
+For example:
+```js
+import { equationSystem2, Vector3 } from 'toolcool-math';
+
+// 3x + 2y = 7 
+// -6x + 6y = 6
+
+const equation1: Vector3 = [3, 2, 7];
+const equation2: Vector3 = [-6, 6, 6];
+const result = equationSystem2(equation1, equation2); // [1, 2] i.e. x=1, y=2
 ```
 
 -----------------------------------------------

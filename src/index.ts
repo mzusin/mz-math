@@ -118,6 +118,8 @@ declare global {
             v3QuadraticBezierCurve: typeof bezierCurve.v3QuadraticBezierCurve;
             v2CubicBezierCurve: typeof bezierCurve.v2CubicBezierCurve;
             v3CubicBezierCurve: typeof bezierCurve.v3CubicBezierCurve;
+
+            equationSystem2: typeof equations.equationSystem2;
         }
     }
 }
