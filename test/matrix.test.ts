@@ -5,7 +5,7 @@ import {
     mMul, mMulVector, m2Reset, m3Reset, mReset,
     m2x2, m3x3, mNxM, mEqual, identity2, identity3, identityN,
     m2Determinant, m3Determinant, mDeterminant, m2Inverse,
-    m2DivideScalar, m3DivideScalar, mDivideScalar
+    m2DivideScalar, m3DivideScalar, mDivideScalar, mMinor
 } from '../src/matrix';
 import { Matrix, Matrix2, Matrix3, Vector3 } from '../src/types';
 
@@ -1019,6 +1019,22 @@ describe('Matrix Determinant', () => {
                 [0, 3, 1, 1]
             ]
         )).toStrictEqual(-240);
+    });
+
+    test(`Minor of [
+                [4, 3, 2, 2],
+                [0, 1, -3, 3],
+                [0, -1, 3, 3],
+                [0, 3, 1, 1]
+            ] for [0, 0] => -60`, () => {
+        expect(mMinor(
+            [
+                [4, 3, 2, 2],
+                [0, 1, -3, 3],
+                [0, -1, 3, 3],
+                [0, 3, 1, 1]
+            ], 0, 0
+        )).toStrictEqual(-60);
     });
 
 });

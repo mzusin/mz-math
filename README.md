@@ -44,6 +44,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
   - [Matrix Determinant](#matrix-determinant)
   - [Inverse Matrix](#inverse-matrix)
   - [Adjugate Matrix](#adjugate-matrix)
+  - [Get Matrix Minor](#get-matrix-minor)
 - Angles
   - [Get vector angle](#get-vector-angle)
   - [Set vector angle](#set-vector-angle)
@@ -1336,6 +1337,24 @@ const m2x2: Matrix2 = [
 ];
 
 const adj: Matrix2 = m2Adjugate(m2x2);
+```
+
+-----------------------------------------------
+
+## Get Matrix Minor
+
+```js
+import { Matrix, mMinor } from 'toolcool-math';
+
+const m: Matrix = [
+  [4, 3, 2, 2],
+  [0, 1, -3, 3],
+  [0, -1, 3, 3],
+  [0, 3, 1, 1],
+];
+
+// get minor for the row = 0 and column = 0
+const minor: Matrix = mMinor(m, 0, 0); // -60
 ```
 
 -----------------------------------------------
