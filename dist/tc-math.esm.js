@@ -1,6 +1,6 @@
 /* 
 Tool Cool Math Helpers
-Version: 1.0.7
+Version: 1.0.8
 Documentation: https://github.com/toolcool-org/toolcool-math
 License: MIT License        
 Author: Tool Cool, toolcool.org@gmail.com>                          

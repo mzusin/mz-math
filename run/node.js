@@ -5,6 +5,7 @@ const args = process.argv.slice(2);
 const watch = args.length > 1 && args[1].trim().toLowerCase() === 'watch';
 
 settings.platform = 'node';
+settings.entryPoints = ['./src/index-esm.ts'];
 settings.outfile = './dist/tc-math.node.cjs';
 
 if(watch){
