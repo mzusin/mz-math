@@ -65,6 +65,9 @@ declare module 'toolcool-math' {
     export const mMulScalar: (m: Matrix, scalar: number, decimalPlaces?: number) => Matrix;
     export const m2MulScalar: (m2: Matrix2, scalar: number, decimalPlaces?: number) => Matrix2;
     export const m3MulScalar: (m3: Matrix3, scalar: number, decimalPlaces?: number) => Matrix3;
+    export const mDivideScalar: (m: Matrix, scalar: number, decimalPlaces?: number) => Matrix;
+    export const m2DivideScalar: (m2: Matrix2, scalar: number, decimalPlaces?: number) => Matrix2;
+    export const m3DivideScalar: (m3: Matrix3, scalar: number, decimalPlaces?: number) => Matrix3;
 
     export const mTranspose: (m: Matrix) => Matrix;
     export const m2Transpose: (m2: Matrix2) => Matrix;
@@ -177,6 +180,10 @@ declare module 'toolcool-math' {
                 mMulScalar: typeof mMulScalar;
                 m2MulScalar: typeof m2MulScalar;
                 m3MulScalar: typeof m3MulScalar;
+
+                mDivideScalar: typeof mDivideScalar;
+                m2DivideScalar: typeof m2DivideScalar;
+                m3DivideScalar: typeof m3DivideScalar;
 
                 mTranspose: typeof mTranspose;
                 m2Transpose: typeof m2Transpose;

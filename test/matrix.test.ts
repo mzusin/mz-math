@@ -3,7 +3,8 @@ import {
     mSum, m2Sum, m2Sub, m3Sum, m3Sub, mSub,
     m2Transpose, m3Transpose, mTranspose,
     mMul, mMulVector, m2Reset, m3Reset, mReset,
-    m2x2, m3x3, mNxM, mEqual, identity2, identity3, identityN, m2Determinant, m2Inverse
+    m2x2, m3x3, mNxM, mEqual, identity2, identity3, identityN, m2Determinant, m2Inverse,
+    m2DivideScalar, m3DivideScalar, mDivideScalar
 } from '../src/matrix';
 import { Matrix, Matrix2, Matrix3, Vector3 } from '../src/types';
 
@@ -359,6 +360,116 @@ describe('Multiply matrix by scalar', () => {
         expect(mMulScalar(m, 5)).toStrictEqual([
             [5, 10, 15, 20],
             [25, 30, 35, 40],
+        ]);
+    });
+});
+
+describe('Divide matrix by scalar', () => {
+    test(`[
+            [1, 2],
+            [3, 4],
+        ] divide by 5`, () => {
+        const m2: Matrix2 = [
+            [1, 2],
+            [3, 4],
+        ];
+
+        expect(m2DivideScalar(m2, 5)).toStrictEqual([
+            [0.2, 0.4],
+            [0.6, 0.8],
+        ]);
+    });
+
+    test(`[
+            [0, 0],
+            [0, 0],
+        ] divide by 5`, () => {
+        const m2: Matrix2 = [
+            [0, 0],
+            [0, 0],
+        ];
+
+        expect(m2DivideScalar(m2, 5)).toStrictEqual([
+            [0, 0],
+            [0, 0],
+        ]);
+    });
+
+    test(`[
+            [1.12345, 12.66746776],
+            [15.74432, -12.345345],
+        ] divide by 10 with 2 decimal places`, () => {
+        const m2: Matrix2 = [
+            [0.112345, 1.266746776],
+            [1.574432, -1.2345345],
+        ];
+
+        expect(m2DivideScalar(m2, 10, 2)).toStrictEqual([
+            [0.01, 0.13],
+            [0.16, -0.12],
+        ]);
+    });
+
+    test(`[
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9],
+        ] divide by 2`, () => {
+        const m3: Matrix3 = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9],
+        ];
+
+        expect(m3DivideScalar(m3, 2)).toStrictEqual([
+            [0.5, 1, 1.5],
+            [2, 2.5, 3],
+            [3.5, 4, 4.5],
+        ]);
+    });
+
+    test(`[
+            [1, 2, 3],
+            [4, 5, 6],
+        ] divide by 2`, () => {
+        const m3: Matrix3 = [
+            [1, 2, 3],
+            [4, 5, 6],
+        ];
+
+        expect(m3DivideScalar(m3, 2)).toStrictEqual([
+            [0.5, 1, 1.5],
+            [2, 2.5, 3],
+        ]);
+    });
+
+    test(`[
+            [1, 2, 3],
+            [4, 5, 6],
+        ] divide by 1.5123123 with 1 decimal place`, () => {
+        const m3: Matrix3 = [
+            [1, 2, 3],
+            [4, 5, 6],
+        ];
+
+        expect(m3DivideScalar(m3, 1.5123123, 1)).toStrictEqual([
+            [0.7, 1.3, 2],
+            [2.6, 3.3, 4],
+        ]);
+    });
+
+    test(`[
+            [1, 2, 3, 4],
+            [5, 6, 7, 8],
+        ] divide by 5`, () => {
+        const m: Matrix = [
+            [1, 2, 3, 4],
+            [5, 6, 7, 8],
+        ];
+
+        expect(mDivideScalar(m, 5)).toStrictEqual([
+            [0.2, 0.4, 0.6, 0.8],
+            [1, 1.2, 1.4, 1.6],
         ]);
     });
 });

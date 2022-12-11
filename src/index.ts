@@ -62,6 +62,10 @@ declare global {
             m2MulScalar: typeof matrix.m2MulScalar;
             m3MulScalar: typeof matrix.m3MulScalar;
 
+            mDivideScalar: typeof matrix.mDivideScalar;
+            m2DivideScalar: typeof matrix.m2DivideScalar;
+            m3DivideScalar: typeof matrix.m3DivideScalar;
+
             mTranspose: typeof matrix.mTranspose;
             m2Transpose: typeof matrix.m2Transpose;
             m3Transpose: typeof matrix.m3Transpose;
@@ -173,6 +177,10 @@ const api = {
     mMulScalar: matrix.mMulScalar,
     m2MulScalar: matrix.m2MulScalar,
     m3MulScalar: matrix.m3MulScalar,
+
+    mDivideScalar: matrix.mDivideScalar,
+    m2DivideScalar: matrix.m2DivideScalar,
+    m3DivideScalar: matrix.m3DivideScalar,
 
     mTranspose: matrix.mTranspose,
     m2Transpose: matrix.m2Transpose,
