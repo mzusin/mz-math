@@ -31,6 +31,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
     - [Identity Matrix](#identity-matrix)
   - Manipulation Helpers
     - [Check if 2 matrices are equal](#check-if-2-matrices-are-equal)
+    - [Matrix deep copy](#)
   - [Matrix Sum](#matrix-sum)
   - [Matrix Subtraction](#matrix-subtraction)
   - [Multiply matrix by scalar](#multiply-matrix-by-scalar)
@@ -594,6 +595,40 @@ const res2 = mEqual(
           [0, 0],
           [0, 1],
         ]); // false
+```
+
+### Matrix Deep Copy
+
+There are 3 function for matrices deep copy: **m2DeepCopy** for 2D matrices, **m3DeepCopy** for 3D matrices, and **mDeepCopy** for the general case:
+
+```js
+import { Matrix2, m2DeepCopy } from 'toolcool-math';
+
+const m2: Matrix2 = [
+  [3, 5],
+  [-7, 2],
+];
+const copyM2 = m2DeepCopy(m2);
+```
+
+```js
+import { Matrix3, m3DeepCopy } from 'toolcool-math';
+
+const m2: Matrix3 = [
+  [3, 5, 1],
+  [-7, 2, 6],
+];
+const copyM3 = m2DeepCopy(m3);
+```
+
+```js
+import { Matrix, mDeepCopy } from 'toolcool-math';
+
+const m: Matrix = [
+  [1, 0, 1, 2, 4],
+  [1, 7, 8, 6, 12],
+];
+const copy = mDeepCopy(m);
 ```
 
 -----------------------------------------------
