@@ -34,7 +34,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
     - [Matrix deep copy](#matrix-deep-copy)
     - [Append / prepend row](#append-or-prepend-a-row-to-a-matrix)
     - [Append / prepend column](#append-or-prepend-a-column-to-a-matrix)
-    - [Delete row / column](#aaa)
+    - [Delete row / column](#remove-row-or-column-from-matrix)
   - [Matrix Sum](#matrix-sum)
   - [Matrix Subtraction](#matrix-subtraction)
   - [Multiply matrix by scalar](#multiply-matrix-by-scalar)
