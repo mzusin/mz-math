@@ -252,6 +252,18 @@ export const mAppendCol = (m: Matrix, col: Vector): Matrix  => {
     for(let i=0; i<copy.length; i++){
         copy[i].push(col[i]);
     }
+
+    return copy;
+};
+
+export const mPrependCol = (m: Matrix, col: Vector): Matrix  => {
+    if(m.length <= 0) return [];
+
+    const copy = mDeepCopy(m);
+    for(let i=0; i<copy.length; i++){
+        copy[i].unshift(col[i]);
+    }
+
     return copy;
 };
 

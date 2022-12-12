@@ -32,6 +32,8 @@ const api = {
     mPrependRow: matrix.mPrependRow,
     m2PrependRow: matrix.m2PrependRow,
     m3PrependRow: matrix.m3PrependRow,
+    mAppendCol: matrix.mAppendCol,
+    mPrependCol: matrix.mPrependCol,
 
     vSum: vector.vSum,
     v2Sum: vector.v2Sum,

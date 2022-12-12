@@ -45,7 +45,7 @@ import {
     m2PrependRow,
     m3PrependRow,
     mPrependRow,
-    mAppendCol
+    mAppendCol, mPrependCol
 } from '../src/matrix';
 import { Matrix, Matrix2, Matrix3, Vector3 } from '../src/types';
 
@@ -1460,4 +1460,48 @@ describe('Matrix Add Column', () => {
         ]);
     });
 
+    test(`Prepend [3, 4] col to [
+                [3, 5],
+                [-7, 2],
+            ]`, () => {
+        expect(mPrependCol(
+            [
+                [3, 5],
+                [-7, 2],
+            ], [3, 4]
+        )).toStrictEqual([
+            [3, 3, 5],
+            [4, -7, 2],
+        ]);
+    });
+
+    test(`Prepend [7, 8] col to [
+                [1, 2, 3],
+                [4, 5, 6],
+            ]`, () => {
+        expect(mPrependCol(
+            [
+                [1, 2, 3],
+                [4, 5, 6],
+            ], [7, 8]
+        )).toStrictEqual([
+            [7, 1, 2, 3],
+            [8, 4, 5, 6],
+        ]);
+    });
+
+    test(`Prepend [9, 10] col to [
+                [1, 2, 3, 4],
+                [5, 6, 7, 8],
+            ]`, () => {
+        expect(mPrependCol(
+            [
+                [1, 2, 3, 4],
+                [5, 6, 7, 8],
+            ], [9, 10]
+        )).toStrictEqual([
+            [9, 1, 2, 3, 4],
+            [10, 5, 6, 7, 8],
+        ]);
+    });
 });

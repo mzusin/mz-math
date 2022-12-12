@@ -33,6 +33,8 @@ declare module 'toolcool-math' {
     export const mPrependRow: (m: Matrix, row: Vector) => Matrix;
     export const m2PrependRow: (m2: Matrix2, row: Vector2) => Matrix2;
     export const m3PrependRow: (m3: Matrix3, row: Vector3) => Matrix3;
+    export const mAppendCol: (m: Matrix, col: Vector) => Matrix;
+    export const mPrependCol: (m: Matrix, col: Vector) => Matrix;
 
     export const vSum: (vector1: Vector, vector2: Vector, decimalPlaces?: number) => Vector;
     export const v2Sum: (vector1: Vector2, vector2: Vector2, decimalPlaces?: number) => Vector2;
