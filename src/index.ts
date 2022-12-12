@@ -22,6 +22,10 @@ const api = {
     vEqual: vector.vEqual,
     mEqual: matrix.mEqual,
 
+    mDeepCopy: matrix.mDeepCopy,
+    m2DeepCopy: matrix.m2DeepCopy,
+    m3DeepCopy: matrix.m3DeepCopy,
+
     vSum: vector.vSum,
     v2Sum: vector.v2Sum,
     v3Sum: vector.v3Sum,
@@ -134,7 +138,6 @@ const api = {
     equationSystem3: equations.equationSystem3,
     equationSystemN: equations.equationSystemN,
 };
-
 
 declare global {
     interface Window {

@@ -23,6 +23,10 @@ declare module 'toolcool-math' {
     export const vEqual: (vector1: Vector, vector2: Vector) => boolean;
     export const mEqual: (matrix1: Matrix, matrix2: Matrix) => boolean;
 
+    export const mDeepCopy: (m: Matrix) => Matrix;
+    export const m2DeepCopy: (m2: Matrix2) => Matrix2;
+    export const m3DeepCopy: (m3: Matrix3) => Matrix3;
+
     export const vSum: (vector1: Vector, vector2: Vector, decimalPlaces?: number) => Vector;
     export const v2Sum: (vector1: Vector2, vector2: Vector2, decimalPlaces?: number) => Vector2;
     export const v3Sum: (vector1: Vector3, vector2: Vector3, decimalPlaces?: number) => Vector3;
@@ -134,134 +138,4 @@ declare module 'toolcool-math' {
     export const equationSystem2: (equation1: Vector3, equation2: Vector3, decimalPlaces?: number) => Vector2 | null;
     export const equationSystem3: (equation1: Vector, equation2: Vector, equation3: Vector, decimalPlaces?: number) => Vector3 | null;
     export const equationSystemN: (equations: Matrix, decimalPlaces?: number) => Vector | null;
-
-    global {
-        interface Window {
-            TCMath: {
-                v2: typeof v2;
-                v3: typeof v3;
-                vN: typeof vN;
-
-                m2x2: typeof m2x2;
-                m3x3: typeof m3x3;
-                mNxM: typeof mNxM;
-
-                identity2: typeof identity2;
-                identity3: typeof identity3;
-                identityN: typeof identityN;
-
-                vSum: typeof vSum;
-                v2Sum: typeof v2Sum;
-                v3Sum: typeof v3Sum;
-
-                vSub: typeof vSub;
-                v2Sub: typeof v2Sub;
-                v3Sub: typeof v3Sub;
-
-                vMulScalar: typeof vMulScalar;
-                v2MulScalar: typeof v2MulScalar;
-                v3MulScalar: typeof v3MulScalar;
-
-                vDivideScalar: typeof vDivideScalar;
-                v2DivideScalar: typeof v2DivideScalar;
-                v3DivideScalar: typeof v3DivideScalar;
-
-                vLength: typeof vLength;
-                v2Length: typeof v2Length;
-                v3Length: typeof v3Length;
-                v2SetLength: typeof v2SetLength;
-
-                vNormalize: typeof vNormalize;
-                v2Normalize: typeof v2Normalize;
-                v3Normalize: typeof v3Normalize;
-
-                vDotProduct: typeof vDotProduct;
-                v2DotProduct: typeof v2DotProduct;
-                v3DotProduct: typeof v3DotProduct;
-                v3CrossProduct: typeof v3CrossProduct;
-
-                mSum: typeof mSum;
-                m2Sum: typeof m2Sum;
-                m3Sum: typeof m3Sum;
-
-                mSub: typeof mSub;
-                m2Sub: typeof m2Sub;
-                m3Sub: typeof m3Sub;
-
-                mMulScalar: typeof mMulScalar;
-                m2MulScalar: typeof m2MulScalar;
-                m3MulScalar: typeof m3MulScalar;
-
-                mDivideScalar: typeof mDivideScalar;
-                m2DivideScalar: typeof m2DivideScalar;
-                m3DivideScalar: typeof m3DivideScalar;
-
-                mTranspose: typeof mTranspose;
-                m2Transpose: typeof m2Transpose;
-                m3Transpose: typeof m3Transpose;
-
-                mMul: typeof mMul;
-                mMulVector: typeof mMulVector;
-
-                mReset: typeof mReset;
-                m2Reset: typeof m2Reset;
-                m3Reset: typeof m3Reset;
-
-                m2Rotation: typeof m2Rotation;
-                v2Rotate: typeof v2Rotate;
-                m3RotationX: typeof m3RotationX;
-                v3RotateX: typeof v3RotateX;
-                m3RotationY: typeof m3RotationY;
-                v3RotateY: typeof v3RotateY;
-                m3RotationZ: typeof m3RotationZ;
-                v3RotateZ: typeof v3RotateZ;
-
-                m2Determinant: typeof m2Determinant;
-                m3Determinant: typeof m3Determinant;
-                mDeterminant: typeof mDeterminant;
-                mMinor:typeof mMinor;
-
-                m2Inverse: typeof m2Inverse;
-                m3Inverse: typeof m3Inverse;
-                mInverse: typeof mInverse;
-                m2Adjugate: typeof m2Adjugate;
-                m3Adjugate: typeof m3Adjugate;
-                mAdjugate: typeof mAdjugate;
-
-                m2Scale: typeof m2Scale;
-                v2Scale: typeof v2Scale;
-                m3Scale: typeof m3Scale;
-                v3Scale: typeof v3Scale;
-
-                getV2Angle: typeof getV2Angle;
-                setV2Angle: typeof setV2Angle;
-
-                radiansToDegrees: typeof radiansToDegrees;
-                degreesToRadians: typeof degreesToRadians;
-
-                setDecimalPlaces: typeof setDecimalPlaces;
-
-                getRandom: typeof getRandom;
-                getRandomInt: typeof getRandomInt;
-                getRandomBoolean: typeof getRandomBoolean;
-                getRandomItemFromArray: typeof getRandomItemFromArray;
-
-                mod: typeof mod;
-                convertRange: typeof convertRange;
-                doRangesOverlap: typeof doRangesOverlap;
-                isNumber: typeof isNumber;
-
-                stringToNumber: typeof stringToNumber;
-
-                v2QuadraticBezierCurve: typeof v2QuadraticBezierCurve;
-                v3QuadraticBezierCurve: typeof v3QuadraticBezierCurve;
-                v2CubicBezierCurve: typeof v2CubicBezierCurve;
-                v3CubicBezierCurve: typeof v3CubicBezierCurve;
-
-                equationSystem2: typeof equationSystem2;
-                equationSystem3: typeof equationSystem3;
-                equationSystemN: typeof equationSystemN;
-            };
-        }
-    }
 }

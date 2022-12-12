@@ -218,7 +218,39 @@ export const identityN = (N: number): Matrix => {
     return matrix;
 };
 
-// --------------- MULTIPLICATION ----------------------
+// -------------- MATRIX MANIPULATION HELPERS ------------
+
+export const mDeepCopy = (m: Matrix): Matrix => {
+    const matrix: Matrix = [];
+
+    for(let i=0; i<m.length; i++){
+        const v = m[i];
+        const vector: Vector = [];
+        for(let j=0; j<v.length; j++){
+            vector.push(v[j]);
+        }
+        matrix.push(vector);
+    }
+
+    return matrix;
+};
+
+export const m2DeepCopy = (m2: Matrix2): Matrix2 => {
+    return mDeepCopy(m2) as Matrix2;
+};
+
+export const m3DeepCopy = (m3: Matrix3): Matrix3 => {
+    return mDeepCopy(m3) as Matrix3;
+};
+
+// -------------- MATRIX MANIPULATION HELPERS ------------
+
+/*
+export const mAddRow = (row: Vector) : Matrix => {
+
+};*/
+
+// --------------- MULTIPLICATION ------------------------
 
 /**
  * Matrix Multiplication.

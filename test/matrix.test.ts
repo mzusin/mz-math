@@ -7,7 +7,8 @@ import {
     m2Determinant, m3Determinant, mDeterminant,
     m2Inverse, m3Inverse, mInverse,
     m2DivideScalar, m3DivideScalar, mDivideScalar, mMinor,
-    m2Adjugate, m3Adjugate, mAdjugate
+    m2Adjugate, m3Adjugate, mAdjugate,
+    m2DeepCopy, m3DeepCopy, mDeepCopy,
 } from '../src/matrix';
 import { Matrix, Matrix2, Matrix3, Vector3 } from '../src/types';
 
@@ -1198,6 +1199,64 @@ describe('Matrix Adjugate', () => {
             [-4, 4, -4, -4],
             [4, -4, -4, -4],
         ]);
+    });
+
+});
+
+describe('Matrix Deep Copy', () => {
+
+    test(`Deep copy of [
+                [3, 5],
+                [-7, 2],
+            ]`, () => {
+        expect(m2DeepCopy(
+            [
+                [3, 5],
+                [-7, 2],
+            ]
+        )).toStrictEqual([
+            [3, 5],
+            [-7, 2],
+        ]);
+    });
+
+    test(`Deep copy of [
+                [3, 5, 1],
+                [-7, 2, 6],
+            ]`, () => {
+        expect(m3DeepCopy(
+            [
+                [3, 5, 1],
+                [-7, 2, 6],
+            ]
+        )).toStrictEqual([
+            [3, 5, 1],
+            [-7, 2, 6],
+        ]);
+    });
+
+    test(`Deep copy of [
+                [1, 0, 1, 2, 4],
+                [1, 7, 8, 6, 12],
+                [1.5, 8, 12, 3, 1]
+            ]`, () => {
+        expect(mDeepCopy(
+            [
+                [1, 0, 1, 2, 4],
+                [1, 7, 8, 6, 12],
+                [1.5, 8, 12, 3, 1]
+            ]
+        )).toStrictEqual([
+            [1, 0, 1, 2, 4],
+            [1, 7, 8, 6, 12],
+            [1.5, 8, 12, 3, 1]
+        ]);
+    });
+
+    test(`Deep copy of []`, () => {
+        expect(mDeepCopy(
+            []
+        )).toStrictEqual([]);
     });
 
 });

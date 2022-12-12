@@ -26,6 +26,11 @@ This project is a collection of TypeScript math helpers and utilities for the br
     - [Vector Initialization Helpers](#vector-initialization-helpers)
     - [Check if 2 vectors are equal](#check-if-2-vectors-are-equal)
 - [Matrix](#matrix)
+  - Initialization Helpers
+    - [m2x2, m3x3, and mNxM](#m2x2-m3x3-and-mnxm)
+    - [Identity Matrix](#identity-matrix)
+  - Manipulation Helpers
+    - [Check if 2 matrices are equal](#check-if-2-matrices-are-equal)
   - [Matrix Sum](#matrix-sum)
   - [Matrix Subtraction](#matrix-subtraction)
   - [Multiply matrix by scalar](#multiply-matrix-by-scalar)
@@ -34,10 +39,6 @@ This project is a collection of TypeScript math helpers and utilities for the br
   - [Matrix Multiplication](#matrix-multiplication)
   - [Multiply matrix by vector](#multiply-matrix-by-vector)
   - [Reset matrix with a default value](#reset-matrix-with-a-default-value)
-  - [Matrix Initialization Helpers](#matrix-initialization-helpers)
-    - [m2x2, m3x3, and mNxM](#m2x2-m3x3-and-mnxm)
-    - [Identity Matrix](#identity-matrix)
-  - [Check if 2 matrices are equal](#check-if-2-matrices-are-equal)
   - Transformation Matrices
     - [Rotation Matrix](#rotation-matrix)
     - [Scale Matrix](#scale-matrix)
@@ -464,6 +465,138 @@ const m: Matrix = [
   [1, 2, 3, 4],
 ];
 ```
+
+------------------------------------
+
+## Matrix Initialization Helpers
+
+### m2x2, m3x3, and mNxM
+
+There are helpers for creating **m2x2**, **m3x3**, and **mNxM** matrices with a default value. If no default value is specified, it will be zero.
+
+```js
+import { m2x2, m3x3, mNxM } from 'toolcool-math';
+
+const mat2x2 = m2x2(); 
+/*
+[
+    [0, 0],
+    [0, 0],
+]
+ */
+
+const mat2x2_10 = m2x2(10);
+/*
+[
+    [10, 10],
+    [10, 10],
+]
+ */
+
+const mat3x3 = m3x3();
+/*
+[
+    [0, 0, 0],
+    [0, 0, 0],
+    [0, 0, 0],
+]
+ */
+
+const mat3x3_20 = m3x3(20);
+/*
+[
+    [20, 20, 20],
+    [20, 20, 20],
+    [20, 20, 20],
+]
+ */
+
+const matNxM = mNxM(1, 5);
+/*
+[
+      [0, 0, 0, 0, 0],
+]
+ */
+
+const matNxM = mNxM(2, 3, 1);
+/*
+[
+      [1, 1, 1],
+      [1, 1, 1],
+]
+ */
+
+```
+
+### Identity Matrix
+
+There are helpers for creating identity matrices: **identity2**, **identity3**, and **identityN**.
+
+```js
+import { identity2, identity3, identityN } from 'toolcool-math';
+
+const idt2 = identity2();
+/*
+[
+  [1, 0],
+  [0, 1],
+]
+ */
+
+const idt3 = identity3();
+/*
+[
+    [1, 0, 0],
+    [0, 1, 0],
+    [0, 0, 1],
+]
+ */
+
+const idt4 = identityN(4);
+/*
+[
+  [1, 0, 0, 0],
+  [0, 1, 0, 0],
+  [0, 0, 1, 0],
+  [0, 0, 0, 1],
+]
+ */
+
+```
+
+-------------------------------------
+
+## Manipulation Helpers
+
+### Check if 2 matrices are equal
+
+It's possible to perform a deep comparison of two matrices using the **mEqual** function:
+
+```js
+import { mEqual } from 'toolcool-math';
+
+const res1 = mEqual(
+        [
+          [0, 0],
+          [0, 0],
+        ],
+        [
+          [0, 0],
+          [0, 0],
+        ]); // true
+
+const res2 = mEqual(
+        [
+          [1, 0],
+          [0, 0],
+        ],
+        [
+          [0, 0],
+          [0, 1],
+        ]); // false
+```
+
+-----------------------------------------------
 
 ## Matrix Sum
 
@@ -1031,130 +1164,7 @@ const res = m3Reset(m, 50);
  */
 ```
 
-## Matrix Initialization Helpers
-
-### m2x2, m3x3, and mNxM
-
-There are helpers for creating **m2x2**, **m3x3**, and **mNxM** matrices with a default value. If no default value is specified, it will be zero.
-
-```js
-import { m2x2, m3x3, mNxM } from 'toolcool-math';
-
-const mat2x2 = m2x2(); 
-/*
-[
-    [0, 0],
-    [0, 0],
-]
- */
-
-const mat2x2_10 = m2x2(10);
-/*
-[
-    [10, 10],
-    [10, 10],
-]
- */
-
-const mat3x3 = m3x3();
-/*
-[
-    [0, 0, 0],
-    [0, 0, 0],
-    [0, 0, 0],
-]
- */
-
-const mat3x3_20 = m3x3(20);
-/*
-[
-    [20, 20, 20],
-    [20, 20, 20],
-    [20, 20, 20],
-]
- */
-
-const matNxM = mNxM(1, 5);
-/*
-[
-      [0, 0, 0, 0, 0],
-]
- */
-
-const matNxM = mNxM(2, 3, 1);
-/*
-[
-      [1, 1, 1],
-      [1, 1, 1],
-]
- */
-
-```
-
-### Identity Matrix
-
-There are helpers for creating identity matrices: **identity2**, **identity3**, and **identityN**.
-
-```js
-import { identity2, identity3, identityN } from 'toolcool-math';
-
-const idt2 = identity2();
-/*
-[
-  [1, 0],
-  [0, 1],
-]
- */
-
-const idt3 = identity3();
-/*
-[
-    [1, 0, 0],
-    [0, 1, 0],
-    [0, 0, 1],
-]
- */
-
-const idt4 = identityN(4);
-/*
-[
-  [1, 0, 0, 0],
-  [0, 1, 0, 0],
-  [0, 0, 1, 0],
-  [0, 0, 0, 1],
-]
- */
-
-```
-
-## Check if 2 matrices are equal
-
-It's possible to perform a deep comparison of two matrices using the **mEqual** function:
-
-```js
-import { mEqual } from 'toolcool-math';
-
-const res1 = mEqual(
-        [
-          [0, 0],
-          [0, 0],
-        ],
-        [
-          [0, 0],
-          [0, 0],
-        ]); // true
-
-const res2 = mEqual(
-        [
-          [1, 0],
-          [0, 0],
-        ],
-        [
-          [0, 0],
-          [0, 1],
-        ]); // false
-```
------------------------------------------------
+----------------------------------------
 
 ## Transformation Matrices
 

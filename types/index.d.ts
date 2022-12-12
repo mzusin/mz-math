@@ -10,6 +10,9 @@ declare const api: {
     identityN: (N: number) => import("./types").Matrix;
     vEqual: (vector1: import("./types").Vector, vector2: import("./types").Vector) => boolean;
     mEqual: (matrix1: import("./types").Matrix, matrix2: import("./types").Matrix) => boolean;
+    mDeepCopy: (m: import("./types").Matrix) => import("./types").Matrix;
+    m2DeepCopy: (m2: import("./types").Matrix2) => import("./types").Matrix2;
+    m3DeepCopy: (m3: import("./types").Matrix3) => import("./types").Matrix3;
     vSum: (vector1: import("./types").Vector, vector2: import("./types").Vector, decimalPlaces?: number) => import("./types").Vector;
     v2Sum: (vector1: import("./types").Vector2, vector2: import("./types").Vector2, decimalPlaces?: number) => import("./types").Vector2;
     v3Sum: (vector1: import("./types").Vector3, vector2: import("./types").Vector3, decimalPlaces?: number) => import("./types").Vector3;
