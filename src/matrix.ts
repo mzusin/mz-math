@@ -245,10 +245,23 @@ export const m3DeepCopy = (m3: Matrix3): Matrix3 => {
 
 // -------------- MATRIX MANIPULATION HELPERS ------------
 
-/*
-export const mAddRow = (row: Vector) : Matrix => {
+export const mAppendRow = (m: Matrix, row: Vector) : Matrix => {
+    const copy = mDeepCopy(m);
+    copy.push(row);
+    return copy;
+};
 
-};*/
+export const m2AppendRow = (m2: Matrix2, row: Vector2) : Matrix2 => {
+    const copy = m2DeepCopy(m2);
+    copy.push(row);
+    return copy;
+};
+
+export const m3AppendRow = (m3: Matrix3, row: Vector3) : Matrix3 => {
+    const copy = m3DeepCopy(m3);
+    copy.push(row);
+    return copy;
+};
 
 // --------------- MULTIPLICATION ------------------------
 

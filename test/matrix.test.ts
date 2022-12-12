@@ -8,7 +8,7 @@ import {
     m2Inverse, m3Inverse, mInverse,
     m2DivideScalar, m3DivideScalar, mDivideScalar, mMinor,
     m2Adjugate, m3Adjugate, mAdjugate,
-    m2DeepCopy, m3DeepCopy, mDeepCopy,
+    m2DeepCopy, m3DeepCopy, mDeepCopy, m2AppendRow, m3AppendRow, mAppendRow
 } from '../src/matrix';
 import { Matrix, Matrix2, Matrix3, Vector3 } from '../src/types';
 
@@ -1257,6 +1257,66 @@ describe('Matrix Deep Copy', () => {
         expect(mDeepCopy(
             []
         )).toStrictEqual([]);
+    });
+
+});
+
+describe('Matrix Add Row', () => {
+
+    test(`Add [3, 4] row to [
+                [3, 5],
+                [-7, 2],
+            ]`, () => {
+        expect(m2AppendRow(
+            [
+                [3, 5],
+                [-7, 2],
+            ], [3, 4]
+        )).toStrictEqual([
+            [3, 5],
+            [-7, 2],
+            [3, 4]
+        ]);
+    });
+
+    test(`Add [3, 4] row to []`, () => {
+        expect(m2AppendRow(
+            [], [3, 4]
+        )).toStrictEqual([
+            [3, 4]
+        ]);
+    });
+
+    test(`Add [7, 8, 9] row to [
+                [1, 2, 3],
+                [4, 5, 6],
+            ]`, () => {
+        expect(m3AppendRow(
+            [
+                [1, 2, 3],
+                [4, 5, 6],
+            ], [7, 8, 9]
+        )).toStrictEqual([
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9],
+        ]);
+    });
+
+    test(`Add [9, 10, 11, 12] row to [
+                [1, 2, 3, 4],
+                [5, 6, 7, 8],
+            ]`, () => {
+        expect(mAppendRow(
+            [
+                [1, 2, 3, 4],
+                [5, 6, 7, 8],
+            ], [9, 10, 11, 12]
+        )).toStrictEqual([
+            [1, 2, 3, 4],
+            [5, 6, 7, 8],
+            [9, 10, 11, 12],
+        ]);
     });
 
 });
