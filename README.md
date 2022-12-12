@@ -63,7 +63,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
   - [Get a point on a quadratic Bézier curve](#get-a-point-on-a-quadratic-bézier-curve)
   - [Get a point on a cubic Bézier curve](#get-a-point-on-a-cubic-bézier-curve)
 - Equations
-  - [System of equations](#system-of-equations)
+  - [System of linear equations](#system-of-linear-equations)
 - Other
   - [Modulo](#modulo)
   - [Convert range](#convert-range)
@@ -1718,11 +1718,11 @@ const v3 = v3CubicBezierCurve(
 
 # Equations
 
-## System of equations
+## System of linear equations
 
-**System of equations of the second degree**
+**System of 2 linear equations**
 
-Using the **equationSystem2** function, you can solve a system of equations of the second degree. It receives **2 vectors** of equation parameters and an optional **decimalPlaces** parameter.
+Using the **equationSystem2** function, you can solve a system of 2 linear equations. It receives **2 vectors** of equation parameters and an optional **decimalPlaces** parameter.
 
 If the system of equations has no solution, then **null** is returned.
 
@@ -1738,9 +1738,9 @@ const equation2: Vector3 = [-6, 6, 6];
 const result: Vector2|null = equationSystem2(equation1, equation2); // [1, 2] i.e. x=1, y=2
 ```
 
-**System of equations of the third degree**
+**System of 3 linear equations**
 
-Using the **equationSystem3** function, you can solve a system of equations of the third degree. It receives **3 vectors** of equation parameters and an optional **decimalPlaces** parameter.
+Using the **equationSystem3** function, you can solve a system of 3 linear equations. It receives **3 vectors** of equation parameters and an optional **decimalPlaces** parameter.
 
 If the system of equations has no solution, then **null** is returned.
 
@@ -1758,9 +1758,9 @@ const equation3: Vector = [4, 1, 2, 0];
 const result: Vector3|null = equationSystem3(equation1, equation2, equation3); // [1, -2, -1] i.e. x=1, y=-2, z=-1
 ```
 
-**System of equations of any degree**
+**System of N linear equations**
 
-Using the **equationSystemN** function, you can solve a system of equations of any degree. It receives a matrix of equation parameters, and an optional **decimalPlaces** parameter.
+Using the **equationSystemN** function, you can solve a system of N linear equations. It receives a matrix of equation parameters, and an optional **decimalPlaces** parameter.
 
 If the system of equations has no solution, then **null** is returned.
 

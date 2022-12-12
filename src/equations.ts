@@ -2,7 +2,7 @@ import { Matrix, Matrix2, Matrix3, Vector, Vector2, Vector3 } from './types';
 import { m2Inverse, m3Inverse, mInverse, mMulVector } from './matrix';
 
 /**
- * System of equations of the second degree.
+ * System of 2 linear equations.
  * [x, y] = inverse(Matrix of equation parameters) x (vector of equation results)
  * ---------------
  * 3x + 2y = 7
@@ -26,7 +26,7 @@ export const equationSystem2 = (equation1: Vector3, equation2: Vector3, decimalP
 };
 
 /**
- * System of equations of the third degree.
+ * System of 3 linear equations.
  * ---------------------------------------
  * 3x + 2y + 5z = 7
  * -6x + 6y + 6z = 6
@@ -56,7 +56,7 @@ export const equationSystem3 = (
 };
 
 /**
- * System of equations of the Nth degree.
+ * System of N linear equations.
  */
 export const equationSystemN = (equations: Matrix, decimalPlaces = Infinity) : Vector | null => {
     if(equations.length <= 0) return null;

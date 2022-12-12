@@ -1,0 +1,2 @@
+- add / remove row / column of a matrix
+- simplify index.ts
