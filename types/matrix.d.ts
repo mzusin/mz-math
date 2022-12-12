@@ -30,6 +30,12 @@ export declare const identityN: (N: number) => Matrix;
 export declare const mDeepCopy: (m: Matrix) => Matrix;
 export declare const m2DeepCopy: (m2: Matrix2) => Matrix2;
 export declare const m3DeepCopy: (m3: Matrix3) => Matrix3;
+export declare const mAppendRow: (m: Matrix, row: Vector) => Matrix;
+export declare const m2AppendRow: (m2: Matrix2, row: Vector2) => Matrix2;
+export declare const m3AppendRow: (m3: Matrix3, row: Vector3) => Matrix3;
+export declare const mPrependRow: (m: Matrix, row: Vector) => Matrix;
+export declare const m2PrependRow: (m2: Matrix2, row: Vector2) => Matrix2;
+export declare const m3PrependRow: (m3: Matrix3, row: Vector3) => Matrix3;
 /**
  * Matrix Multiplication.
  * - Matrix multiplication is not commutative: M1 x M2 !== M2 x M1

@@ -13,6 +13,12 @@ declare const api: {
     mDeepCopy: (m: import("./types").Matrix) => import("./types").Matrix;
     m2DeepCopy: (m2: import("./types").Matrix2) => import("./types").Matrix2;
     m3DeepCopy: (m3: import("./types").Matrix3) => import("./types").Matrix3;
+    mAppendRow: (m: import("./types").Matrix, row: import("./types").Vector) => import("./types").Matrix;
+    m2AppendRow: (m2: import("./types").Matrix2, row: import("./types").Vector2) => import("./types").Matrix2;
+    m3AppendRow: (m3: import("./types").Matrix3, row: import("./types").Vector3) => import("./types").Matrix3;
+    mPrependRow: (m: import("./types").Matrix, row: import("./types").Vector) => import("./types").Matrix;
+    m2PrependRow: (m2: import("./types").Matrix2, row: import("./types").Vector2) => import("./types").Matrix2;
+    m3PrependRow: (m3: import("./types").Matrix3, row: import("./types").Vector3) => import("./types").Matrix3;
     vSum: (vector1: import("./types").Vector, vector2: import("./types").Vector, decimalPlaces?: number) => import("./types").Vector;
     v2Sum: (vector1: import("./types").Vector2, vector2: import("./types").Vector2, decimalPlaces?: number) => import("./types").Vector2;
     v3Sum: (vector1: import("./types").Vector3, vector2: import("./types").Vector3, decimalPlaces?: number) => import("./types").Vector3;

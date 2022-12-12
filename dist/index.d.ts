@@ -27,6 +27,13 @@ declare module 'toolcool-math' {
     export const m2DeepCopy: (m2: Matrix2) => Matrix2;
     export const m3DeepCopy: (m3: Matrix3) => Matrix3;
 
+    export const mAppendRow: (m: Matrix, row: Vector) => Matrix;
+    export const m2AppendRow: (m2: Matrix2, row: Vector2) => Matrix2;
+    export const m3AppendRow: (m3: Matrix3, row: Vector3) => Matrix3;
+    export const mPrependRow: (m: Matrix, row: Vector) => Matrix;
+    export const m2PrependRow: (m2: Matrix2, row: Vector2) => Matrix2;
+    export const m3PrependRow: (m3: Matrix3, row: Vector3) => Matrix3;
+
     export const vSum: (vector1: Vector, vector2: Vector, decimalPlaces?: number) => Vector;
     export const v2Sum: (vector1: Vector2, vector2: Vector2, decimalPlaces?: number) => Vector2;
     export const v3Sum: (vector1: Vector3, vector2: Vector3, decimalPlaces?: number) => Vector3;

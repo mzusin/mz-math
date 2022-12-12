@@ -31,7 +31,8 @@ This project is a collection of TypeScript math helpers and utilities for the br
     - [Identity Matrix](#identity-matrix)
   - Manipulation Helpers
     - [Check if 2 matrices are equal](#check-if-2-matrices-are-equal)
-    - [Matrix deep copy](#)
+    - [Matrix deep copy](#matrix-deep-copy)
+    - [Append / prepend row](#append-or-prepend-a-row-to-a-matrix)
   - [Matrix Sum](#matrix-sum)
   - [Matrix Subtraction](#matrix-subtraction)
   - [Multiply matrix by scalar](#multiply-matrix-by-scalar)
@@ -629,6 +630,87 @@ const m: Matrix = [
   [1, 7, 8, 6, 12],
 ];
 const copy = mDeepCopy(m);
+```
+
+### Append or prepend a row to a matrix
+
+```js
+import { Matrix2, Vector2, m2AppendRow, m2PrependRow } from 'toolcool-math';
+
+const m2: Matrix2 = [
+  [3, 5],
+  [-7, 2],
+];
+const v2: Vector2 = [3, 4];
+const res1 = m2AppendRow(m2, v2);
+/*
+[
+  [3, 5],
+  [-7, 2],
+  [3, 4]
+]
+ */
+
+const res2 = m2PrependRow(m2, v2);
+/*
+[
+  [3, 4],
+  [3, 5],
+  [-7, 2],
+]
+ */
+```
+
+```js
+import { Matrix3, Vector3, m3AppendRow, m3PrependRow } from 'toolcool-math';
+
+const m3: Matrix3 = [
+  [1, 2, 3],
+  [4, 5, 6],
+];
+const v3: Vector3 = [7, 8, 9];
+const res1 = m3AppendRow(m3, v3);
+/*
+[
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+]
+ */
+const res2 = m3PrependRow(m3, v3);
+/*
+[
+  [7, 8, 9],
+  [1, 2, 3],
+  [4, 5, 6],
+]
+ */
+```
+
+```js
+import { Matrix, Vector, mAppendRow } from 'toolcool-math';
+
+const m: Matrix = [
+  [1, 2, 3, 4],
+  [5, 6, 7, 8],
+];
+const v: Vector = [9, 10, 11, 12];
+const res1 = mAppendRow(m, v);
+/*
+[
+  [1, 2, 3, 4],
+  [5, 6, 7, 8],
+  [9, 10, 11, 12],
+]
+ */
+const res2 = mPrependRow(m, v);
+/*
+[
+  [9, 10, 11, 12],
+  [1, 2, 3, 4],
+  [5, 6, 7, 8],
+]
+ */
 ```
 
 -----------------------------------------------

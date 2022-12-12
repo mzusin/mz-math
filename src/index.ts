@@ -26,6 +26,13 @@ const api = {
     m2DeepCopy: matrix.m2DeepCopy,
     m3DeepCopy: matrix.m3DeepCopy,
 
+    mAppendRow: matrix.mAppendRow,
+    m2AppendRow: matrix.m2AppendRow,
+    m3AppendRow: matrix.m3AppendRow,
+    mPrependRow: matrix.mPrependRow,
+    m2PrependRow: matrix.m2PrependRow,
+    m3PrependRow: matrix.m3PrependRow,
+
     vSum: vector.vSum,
     v2Sum: vector.v2Sum,
     v3Sum: vector.v3Sum,
