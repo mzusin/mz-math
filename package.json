@@ -6,6 +6,7 @@
   "module": "./dist/tc-math.esm.js",
   "types": "./dist/index.d.ts",
   "scripts": {
+    "build:all": "npm run build:es6 & npm run build:node & npm run build:esm",
     "build:es6": "node run/es6.js",
     "watch:es6": "node run/es6.js -- watch",
     "build:node": "node run/node.js",
