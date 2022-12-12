@@ -1,7 +1,7 @@
 import { equationSystem2, equationSystem3, equationSystemN } from '../src/equations';
 import { Vector3, Vector, Matrix } from '../types/types';
 
-describe('System of equations of the second degree.', () => {
+describe('System of equations', () => {
     test(`
         3x + 2y = 7
         -6x + 6y = 6`, () => {
@@ -36,13 +36,11 @@ describe('System of equations of the second degree.', () => {
     });
 
     test(`
-        2x + y + 2z = -2
-        -2x + 2y -z = -5
-        4x + y + 2x = 0`, () => {
-        const equation1: Vector = [2, 1, 2, -2];
-        const equation2: Vector = [-2, 2, -1, -5];
-        const equation3: Vector = [4, 1, 2, 0];
-        expect(equationSystem3(equation1, equation2, equation3)).toStrictEqual([1, -2, -1]);
+        2s - 5t = 7
+        -2s + 4t = -6`, () => {
+        const equation1: Vector3 = [2, -5, 7];
+        const equation2: Vector3 = [-2, 4, -6];
+        expect(equationSystem2(equation1, equation2)).toStrictEqual([1, -1]);
     });
 
     test(`
