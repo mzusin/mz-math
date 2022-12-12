@@ -245,6 +245,16 @@ export const m3DeepCopy = (m3: Matrix3): Matrix3 => {
 
 // -------------- MATRIX MANIPULATION HELPERS ------------
 
+export const mAppendCol = (m: Matrix, col: Vector): Matrix  => {
+    if(m.length <= 0) return [];
+
+    const copy = mDeepCopy(m);
+    for(let i=0; i<copy.length; i++){
+        copy[i].push(col[i]);
+    }
+    return copy;
+};
+
 export const mAppendRow = (m: Matrix, row: Vector) : Matrix => {
     const copy = mDeepCopy(m);
     copy.push(row);

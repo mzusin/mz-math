@@ -1,14 +1,51 @@
 import {
-    m2MulScalar, m3MulScalar, mMulScalar,
-    mSum, m2Sum, m2Sub, m3Sum, m3Sub, mSub,
-    m2Transpose, m3Transpose, mTranspose,
-    mMul, mMulVector, m2Reset, m3Reset, mReset,
-    m2x2, m3x3, mNxM, mEqual, identity2, identity3, identityN,
-    m2Determinant, m3Determinant, mDeterminant,
-    m2Inverse, m3Inverse, mInverse,
-    m2DivideScalar, m3DivideScalar, mDivideScalar, mMinor,
-    m2Adjugate, m3Adjugate, mAdjugate,
-    m2DeepCopy, m3DeepCopy, mDeepCopy, m2AppendRow, m3AppendRow, mAppendRow, m2PrependRow, m3PrependRow, mPrependRow
+    m2MulScalar,
+    m3MulScalar,
+    mMulScalar,
+    mSum,
+    m2Sum,
+    m2Sub,
+    m3Sum,
+    m3Sub,
+    mSub,
+    m2Transpose,
+    m3Transpose,
+    mTranspose,
+    mMul,
+    mMulVector,
+    m2Reset,
+    m3Reset,
+    mReset,
+    m2x2,
+    m3x3,
+    mNxM,
+    mEqual,
+    identity2,
+    identity3,
+    identityN,
+    m2Determinant,
+    m3Determinant,
+    mDeterminant,
+    m2Inverse,
+    m3Inverse,
+    mInverse,
+    m2DivideScalar,
+    m3DivideScalar,
+    mDivideScalar,
+    mMinor,
+    m2Adjugate,
+    m3Adjugate,
+    mAdjugate,
+    m2DeepCopy,
+    m3DeepCopy,
+    mDeepCopy,
+    m2AppendRow,
+    m3AppendRow,
+    mAppendRow,
+    m2PrependRow,
+    m3PrependRow,
+    mPrependRow,
+    mAppendCol
 } from '../src/matrix';
 import { Matrix, Matrix2, Matrix3, Vector3 } from '../src/types';
 
@@ -1374,4 +1411,53 @@ describe('Matrix Add Row', () => {
             [5, 6, 7, 8],
         ]);
     });
+});
+
+describe('Matrix Add Column', () => {
+
+    test(`Append [3, 4] col to [
+                [3, 5],
+                [-7, 2],
+            ]`, () => {
+        expect(mAppendCol(
+            [
+                [3, 5],
+                [-7, 2],
+            ], [3, 4]
+        )).toStrictEqual([
+            [3, 5, 3],
+            [-7, 2, 4],
+        ]);
+    });
+
+    test(`Append [7, 8] col to [
+                [1, 2, 3],
+                [4, 5, 6],
+            ]`, () => {
+        expect(mAppendCol(
+            [
+                [1, 2, 3],
+                [4, 5, 6],
+            ], [7, 8]
+        )).toStrictEqual([
+            [1, 2, 3, 7],
+            [4, 5, 6, 8],
+        ]);
+    });
+
+    test(`Append [9, 10] col to [
+                [1, 2, 3, 4],
+                [5, 6, 7, 8],
+            ]`, () => {
+        expect(mAppendCol(
+            [
+                [1, 2, 3, 4],
+                [5, 6, 7, 8],
+            ], [9, 10]
+        )).toStrictEqual([
+            [1, 2, 3, 4, 9],
+            [5, 6, 7, 8, 10],
+        ]);
+    });
+
 });
