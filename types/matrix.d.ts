@@ -38,6 +38,10 @@ export declare const m3AppendRow: (m3: Matrix3, row: Vector3) => Matrix3;
 export declare const mPrependRow: (m: Matrix, row: Vector) => Matrix;
 export declare const m2PrependRow: (m2: Matrix2, row: Vector2) => Matrix2;
 export declare const m3PrependRow: (m3: Matrix3, row: Vector3) => Matrix3;
+export declare const mDelLastRow: (m: Matrix) => Matrix;
+export declare const mDelFirstRow: (m: Matrix) => Matrix;
+export declare const mDelLastColumn: (m: Matrix) => Matrix;
+export declare const mDelFirstColumn: (m: Matrix) => Matrix;
 /**
  * Matrix Multiplication.
  * - Matrix multiplication is not commutative: M1 x M2 !== M2 x M1

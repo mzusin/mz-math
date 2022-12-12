@@ -34,6 +34,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
     - [Matrix deep copy](#matrix-deep-copy)
     - [Append / prepend row](#append-or-prepend-a-row-to-a-matrix)
     - [Append / prepend column](#append-or-prepend-a-column-to-a-matrix)
+    - [Delete row / column](#aaa)
   - [Matrix Sum](#matrix-sum)
   - [Matrix Subtraction](#matrix-subtraction)
   - [Multiply matrix by scalar](#multiply-matrix-by-scalar)
@@ -736,6 +737,82 @@ const res2 = mPrependCol(m, v);
 [
   [9, 1, 2, 3, 4],
   [10, 5, 6, 7, 8],
+]
+ */
+```
+
+### Remove row or column from matrix
+
+**Delete last row**
+
+```js
+import { mDelLastRow } from 'toolcool-math';
+
+const res = mDelLastRow(
+        [
+          [3, 5],
+          [-7, 2],
+        ]
+);
+/*
+[
+    [3, 5],
+]
+ */
+```
+
+**Delete first row**
+
+```js
+import { mDelFirstRow } from 'toolcool-math';
+
+const res = mDelFirstRow(
+        [
+          [3, 5],
+          [-7, 2],
+        ]
+);
+/*
+[
+    [-7, 2],
+]
+ */
+```
+
+**Delete last column**
+
+```js
+import { mDelLastColumn } from 'toolcool-math';
+
+const res = mDelLastColumn(
+        [
+          [3, 5],
+          [-7, 2],
+        ]
+);
+/*
+[
+    [3],
+    [-7],
+]
+ */
+```
+
+**Delete first column**
+
+```js
+import { mDelFirstColumn } from 'toolcool-math';
+
+const res = mDelFirstColumn(
+        [
+          [3, 5],
+          [-7, 2],
+        ]
+);
+/*
+[
+    [5],
+    [2],
 ]
  */
 ```

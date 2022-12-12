@@ -45,7 +45,7 @@ import {
     m2PrependRow,
     m3PrependRow,
     mPrependRow,
-    mAppendCol, mPrependCol
+    mAppendCol, mPrependCol, mDelLastRow, mDelFirstRow, mDelLastColumn, mDelFirstColumn
 } from '../src/matrix';
 import { Matrix, Matrix2, Matrix3, Vector3 } from '../src/types';
 
@@ -1502,6 +1502,164 @@ describe('Matrix Add Column', () => {
         )).toStrictEqual([
             [9, 1, 2, 3, 4],
             [10, 5, 6, 7, 8],
+        ]);
+    });
+});
+
+describe('Matrix Delete Row', () => {
+
+    test(`Delete last row to []`, () => {
+        expect(mDelLastRow(
+            []
+        )).toStrictEqual([]);
+    });
+
+    test(`Delete last row to [
+                [3, 5],
+                [-7, 2],
+            ]`, () => {
+        expect(mDelLastRow(
+            [
+                [3, 5],
+                [-7, 2],
+            ]
+        )).toStrictEqual([
+            [3, 5],
+        ]);
+    });
+
+    test(`Delete last row to [
+                [3, 5, 1],
+                [-7, 2, 4],
+                [1, 0, 4],
+            ]`, () => {
+        expect(mDelLastRow(
+            [
+                [3, 5, 1],
+                [-7, 2, 4],
+                [1, 0, 4],
+            ]
+        )).toStrictEqual([
+            [3, 5, 1],
+            [-7, 2, 4],
+        ]);
+    });
+
+    test(`Delete first row to []`, () => {
+        expect(mDelFirstRow(
+            []
+        )).toStrictEqual([]);
+    });
+
+    test(`Delete first row to [
+                [3, 5],
+                [-7, 2],
+            ]`, () => {
+        expect(mDelFirstRow(
+            [
+                [3, 5],
+                [-7, 2],
+            ]
+        )).toStrictEqual([
+            [-7, 2],
+        ]);
+    });
+
+    test(`Delete first row to [
+                [3, 5, 1],
+                [-7, 2, 4],
+                [1, 0, 4],
+            ]`, () => {
+        expect(mDelFirstRow(
+            [
+                [3, 5, 1],
+                [-7, 2, 4],
+                [1, 0, 4],
+            ]
+        )).toStrictEqual([
+            [-7, 2, 4],
+            [1, 0, 4],
+        ]);
+    });
+});
+
+describe('Matrix Delete Column', () => {
+
+    test(`Delete last column to []`, () => {
+        expect(mDelLastColumn(
+            []
+        )).toStrictEqual([]);
+    });
+
+    test(`Delete last column to [
+                [3, 5],
+                [-7, 2],
+            ]`, () => {
+        expect(mDelLastColumn(
+            [
+                [3, 5],
+                [-7, 2],
+            ]
+        )).toStrictEqual([
+            [3],
+            [-7],
+        ]);
+    });
+
+    test(`Delete last column to [
+                [3, 5, 1],
+                [-7, 2, 4],
+                [1, 0, 4],
+            ]`, () => {
+        expect(mDelLastColumn(
+            [
+                [3, 5, 1],
+                [-7, 2, 4],
+                [1, 0, 4],
+            ]
+        )).toStrictEqual([
+            [3, 5],
+            [-7, 2],
+            [1, 0],
+        ]);
+    });
+
+    test(`Delete first column to []`, () => {
+        expect(mDelFirstColumn(
+            []
+        )).toStrictEqual([]);
+    });
+
+    test(`Delete first column to [
+                [3, 5],
+                [-7, 2],
+            ]`, () => {
+        expect(mDelFirstColumn(
+            [
+                [3, 5],
+                [-7, 2],
+            ]
+        )).toStrictEqual([
+            [5],
+            [2],
+        ]);
+    });
+
+    test(`Delete first column to [
+                [3, 5, 1],
+                [-7, 2, 4],
+                [1, 0, 4],
+            ]`, () => {
+        expect(mDelFirstColumn(
+            [
+                [3, 5, 1],
+                [-7, 2, 4],
+                [1, 0, 4],
+            ]
+        )).toStrictEqual([
+            [5, 1],
+            [2, 4],
+            [0, 4],
         ]);
     });
 });

@@ -243,7 +243,7 @@ export const m3DeepCopy = (m3: Matrix3): Matrix3 => {
     return mDeepCopy(m3) as Matrix3;
 };
 
-// -------------- MATRIX MANIPULATION HELPERS ------------
+// -------------- APPEND / PREPEND ROW OR COLUMN ---------------
 
 export const mAppendCol = (m: Matrix, col: Vector): Matrix  => {
     if(m.length <= 0) return [];
@@ -300,6 +300,46 @@ export const m2PrependRow = (m2: Matrix2, row: Vector2) : Matrix2 => {
 export const m3PrependRow = (m3: Matrix3, row: Vector3) : Matrix3 => {
     const copy = m3DeepCopy(m3);
     copy.unshift(row);
+    return copy;
+};
+
+// ------------ DELETE ROW OR COLUMN ----------------------------
+
+export const mDelLastRow = (m: Matrix): Matrix => {
+    if(m.length <= 0) return [];
+
+    const copy = mDeepCopy(m);
+    copy.pop();
+    return copy;
+};
+
+export const mDelFirstRow = (m: Matrix): Matrix => {
+    if(m.length <= 0) return [];
+
+    const copy = mDeepCopy(m);
+    copy.shift();
+    return copy;
+};
+
+export const mDelLastColumn = (m: Matrix): Matrix => {
+    if(m.length <= 0) return [];
+
+    const copy = mDeepCopy(m);
+    for(let i=0; i<copy.length; i++){
+        copy[i].pop();
+    }
+
+    return copy;
+};
+
+export const mDelFirstColumn = (m: Matrix): Matrix => {
+    if(m.length <= 0) return [];
+
+    const copy = mDeepCopy(m);
+    for(let i=0; i<copy.length; i++){
+        copy[i].shift();
+    }
+
     return copy;
 };
 
