@@ -59,6 +59,9 @@ declare const api: {
     mDelFirstRow: (m: import("./types").Matrix) => import("./types").Matrix;
     mDelLastColumn: (m: import("./types").Matrix) => import("./types").Matrix;
     mDelFirstColumn: (m: import("./types").Matrix) => import("./types").Matrix;
+    mGetFirstColumn: (m: import("./types").Matrix) => import("./types").Vector;
+    mGetLastColumn: (m: import("./types").Matrix) => import("./types").Vector;
+    mGetColumn: (m: import("./types").Matrix, colIndex: number) => import("./types").Vector;
     mMul: (matrix1: import("./types").Matrix, matrix2: import("./types").Matrix, decimalPlaces?: number) => import("./types").Matrix;
     mMulVector: (matrix: import("./types").Matrix, vector: import("./types").Vector, decimalPlaces?: number) => import("./types").Vector;
     mEqual: (matrix1: import("./types").Matrix, matrix2: import("./types").Matrix) => boolean;

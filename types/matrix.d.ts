@@ -42,6 +42,9 @@ export declare const mDelLastRow: (m: Matrix) => Matrix;
 export declare const mDelFirstRow: (m: Matrix) => Matrix;
 export declare const mDelLastColumn: (m: Matrix) => Matrix;
 export declare const mDelFirstColumn: (m: Matrix) => Matrix;
+export declare const mGetFirstColumn: (m: Matrix) => Vector;
+export declare const mGetLastColumn: (m: Matrix) => Vector;
+export declare const mGetColumn: (m: Matrix, colIndex: number) => Vector;
 /**
  * Matrix Multiplication.
  * - Matrix multiplication is not commutative: M1 x M2 !== M2 x M1

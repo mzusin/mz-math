@@ -343,6 +343,40 @@ export const mDelFirstColumn = (m: Matrix): Matrix => {
     return copy;
 };
 
+// ----------- GET COLUMN ---------------------------
+
+export const mGetFirstColumn = (m: Matrix) : Vector => {
+    if(m.length <= 0) return [];
+
+    const vector: Vector = [];
+    for(let i=0; i<m.length; i++){
+        vector.push(m[i][0]);
+    }
+    return vector;
+};
+
+export const mGetLastColumn = (m: Matrix) : Vector => {
+    if(m.length <= 0) return [];
+
+    const size = m[0].length;
+
+    const vector: Vector = [];
+    for(let i=0; i<m.length; i++){
+        vector.push(m[i][size - 1]);
+    }
+    return vector;
+};
+
+export const mGetColumn = (m: Matrix, colIndex: number) : Vector => {
+    if(m.length <= 0) return [];
+
+    const vector: Vector = [];
+    for(let i=0; i<m.length; i++){
+        vector.push(m[i][colIndex]);
+    }
+    return vector;
+};
+
 // --------------- MULTIPLICATION ------------------------
 
 /**

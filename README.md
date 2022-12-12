@@ -35,6 +35,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
     - [Append / prepend row](#append-or-prepend-a-row-to-a-matrix)
     - [Append / prepend column](#append-or-prepend-a-column-to-a-matrix)
     - [Delete row / column](#remove-row-or-column-from-matrix)
+    - [Get column](#get-column-from-matrix)
   - [Matrix Sum](#matrix-sum)
   - [Matrix Subtraction](#matrix-subtraction)
   - [Multiply matrix by scalar](#multiply-matrix-by-scalar)
@@ -815,6 +816,23 @@ const res = mDelFirstColumn(
     [2],
 ]
  */
+```
+
+## Get column from matrix
+
+```js
+import { Matrix, mGetFirstColumn, mGetLastColumn, mGetColumn } from 'toolcool-math';
+
+const m: Matrix = [
+  [1, 0, 1, 1],
+  [1, 0, 1, 1],
+  [0, 0, 1, 1],
+  [0, 0, 1, -1],
+];
+
+const firstColumn = mGetFirstColumn(m); // [1, 1, 0, 0]
+const lastColumn = mGetLastColumn(m); // [1, 1, 1, -1]
+const col2 = mGetColumn(m, 2); // [1, 1, 1, 1] - column at index 2 
 ```
 
 -----------------------------------------------

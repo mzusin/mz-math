@@ -45,7 +45,15 @@ import {
     m2PrependRow,
     m3PrependRow,
     mPrependRow,
-    mAppendCol, mPrependCol, mDelLastRow, mDelFirstRow, mDelLastColumn, mDelFirstColumn
+    mAppendCol,
+    mPrependCol,
+    mDelLastRow,
+    mDelFirstRow,
+    mDelLastColumn,
+    mDelFirstColumn,
+    mGetFirstColumn,
+    mGetLastColumn,
+    mGetColumn
 } from '../src/matrix';
 import { Matrix, Matrix2, Matrix3, Vector3 } from '../src/types';
 
@@ -1663,3 +1671,97 @@ describe('Matrix Delete Column', () => {
         ]);
     });
 });
+
+describe('Matrix Get Column', () => {
+
+    test(`Get first column from [
+                [3, 5],
+                [-7, 2],
+            ]`, () => {
+        expect(mGetFirstColumn(
+            [
+                [3, 5],
+                [-7, 2],
+            ]
+        )).toStrictEqual([3, -7]);
+    });
+
+    test(`Get last column from [
+                [3, 5],
+                [-7, 2],
+            ]`, () => {
+        expect(mGetLastColumn(
+            [
+                [3, 5],
+                [-7, 2],
+            ]
+        )).toStrictEqual([5, 2]);
+    });
+
+    test(`Get first column from []`, () => {
+        expect(mGetFirstColumn(
+            []
+        )).toStrictEqual([]);
+    });
+
+    test(`Get last column from []`, () => {
+        expect(mGetLastColumn(
+            []
+        )).toStrictEqual([]);
+    });
+
+    test(`Get first column from [
+                [1, 0, 1, 1],
+                [1, 0, 1, 1],
+                [0, 0, 1, 1],
+                [0, 0, 1, -1],
+            ]`, () => {
+        expect(mGetFirstColumn(
+            [
+                [1, 0, 1, 1],
+                [1, 0, 1, 1],
+                [0, 0, 1, 1],
+                [0, 0, 1, -1],
+            ]
+        )).toStrictEqual([1, 1, 0, 0]);
+    });
+
+    test(`Get last column from [
+                [1, 0, 1, 1],
+                [1, 0, 1, 1],
+                [0, 0, 1, 1],
+                [0, 0, 1, -1],
+            ]`, () => {
+        expect(mGetLastColumn(
+            [
+                [1, 0, 1, 1],
+                [1, 0, 1, 1],
+                [0, 0, 1, 1],
+                [0, 0, 1, -1],
+            ]
+        )).toStrictEqual([1, 1, 1, -1]);
+    });
+
+    test(`Get 2nd column from [
+                [1, 0, 1, 1],
+                [1, 0, 1, 1],
+                [0, 0, 1, 1],
+                [0, 0, 1, -1],
+            ]`, () => {
+        expect(mGetColumn(
+            [
+                [1, 0, 1, 1],
+                [1, 0, 1, 1],
+                [0, 0, 1, 1],
+                [0, 0, 1, -1],
+            ], 2
+        )).toStrictEqual([1, 1, 1, 1]);
+    });
+
+    test(`Get 2nd column from []`, () => {
+        expect(mGetColumn(
+            [], 2
+        )).toStrictEqual([]);
+    });
+});
+

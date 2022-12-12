@@ -1,5 +1,5 @@
 import { Matrix, Matrix2, Matrix3, Vector, Vector2, Vector3 } from './types';
-import { m2Inverse, m3Inverse, mInverse, mMulVector } from './matrix';
+import { m2Inverse, m3Inverse, mInverse, mMulVector, mDelLastColumn } from './matrix';
 
 /**
  * System of 2 linear equations.
@@ -61,18 +61,8 @@ export const equationSystem3 = (
 export const equationSystemN = (equations: Matrix, decimalPlaces = Infinity) : Vector | null => {
     if(equations.length <= 0) return null;
 
-    const equationParams: Matrix = [];
     const size = equations.length;
-
-    // fill params matrix - it contains all values from equations matrix except the last column,
-    // as the last columns is the results
-    for(let i=0; i<size; i++){
-        const vector: Vector = [];
-        for(let j=0; j<size; j++){
-            vector.push(equations[i][j]);
-        }
-        equationParams.push(vector);
-    }
+    const equationParams = mDelLastColumn(equations);
 
     const inversed = mInverse(equationParams);
     if(inversed === null) return null; // no results

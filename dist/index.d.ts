@@ -39,6 +39,9 @@ declare module 'toolcool-math' {
     export const mDelFirstRow: (m: Matrix) => Matrix;
     export const mDelLastColumn: (m: Matrix) => Matrix;
     export const mDelFirstColumn: (m: Matrix) => Matrix;
+    export const mGetFirstColumn: (m: Matrix) => Vector;
+    export const mGetLastColumn: (m: Matrix) => Vector;
+    export const mGetColumn: (m: Matrix, colIndex: number) => Vector;
 
     export const vSum: (vector1: Vector, vector2: Vector, decimalPlaces?: number) => Vector;
     export const v2Sum: (vector1: Vector2, vector2: Vector2, decimalPlaces?: number) => Vector2;
