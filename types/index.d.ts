@@ -84,6 +84,7 @@ declare const api: {
     m2Adjugate: (m2: import("./types").Matrix2) => import("./types").Matrix2 | null;
     m3Adjugate: (m3: import("./types").Matrix3) => import("./types").Matrix3 | null;
     mAdjugate: (m: import("./types").Matrix) => import("./types").Matrix | null;
+    isSingularMatrix: (m: import("./types").Matrix) => boolean;
     m2Inverse: (m2: import("./types").Matrix2, decimalPlaces?: number) => import("./types").Matrix2 | null;
     m3Inverse: (m3: import("./types").Matrix3, decimalPlaces?: number) => import("./types").Matrix3 | null;
     mInverse: (m: import("./types").Matrix, decimalPlaces?: number) => import("./types").Matrix | null;

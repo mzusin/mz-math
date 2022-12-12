@@ -24,6 +24,9 @@ export declare const v3Normalize: (v3: Vector3, decimalPlaces?: number) => Vecto
 export declare const vDotProduct: (vector1: Vector, vector2: Vector, decimalPlaces?: number) => number;
 export declare const v2DotProduct: (vector1: Vector2, vector2: Vector2, decimalPlaces?: number) => number;
 export declare const v3DotProduct: (vector1: Vector3, vector2: Vector3, decimalPlaces?: number) => number;
+/**
+ * Cross product is possible on 3D vectors only.
+ */
 export declare const v3CrossProduct: (vector1: Vector3, vector2: Vector3, decimalPlaces?: number) => Vector3;
 export declare const v2: (defaultValue?: number) => Vector2;
 export declare const v3: (defaultValue?: number) => Vector3;

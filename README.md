@@ -23,8 +23,9 @@ This project is a collection of TypeScript math helpers and utilities for the br
     - [Normalize Vector](#normalize-vector)
     - [Dot Product](#vectors-dot-product)
     - [Cross Product](#vectors-cross-product)
-    - [Vector Initialization Helpers](#vector-initialization-helpers)
-    - [Check if 2 vectors are equal](#check-if-2-vectors-are-equal)
+    - Helpers
+      - [Vector Initialization Helpers](#vector-initialization-helpers)
+      - [Check if 2 vectors are equal](#check-if-2-vectors-are-equal)
 - [Matrix](#matrix)
   - Initialization Helpers
     - [m2x2, m3x3, and mNxM](#m2x2-m3x3-and-mnxm)
@@ -49,6 +50,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
     - [Scale Matrix](#scale-matrix)
   - [Matrix Determinant](#matrix-determinant)
   - [Inverse Matrix](#inverse-matrix)
+  - [Check if matrix is singular](#check-if-matrix-is-singular)
   - [Adjugate Matrix](#adjugate-matrix)
   - [Get Matrix Minor](#get-matrix-minor)
 - Angles
@@ -1617,6 +1619,33 @@ const inverted: Matrix|null = mInverse(m4x4);
     [-0.25, 0.25, 0.25, 0.25],
 ]
  */
+```
+
+-----------------------------------------------
+
+### Check if matrix is singular
+
+```js
+import { Matrix, isSingularMatrix } from 'toolcool-math';
+
+const m: Matrix = [
+  [3, 5],
+  [-7, 2],
+];
+
+const isSingular = isSingularMatrix(m); // false
+```
+
+```js
+import { Matrix, isSingularMatrix } from 'toolcool-math';
+
+const m: Matrix = [
+  [2, 4, 6],
+  [2, 0, 2],
+  [6, 8, 14],
+];
+
+const isSingular = isSingularMatrix(m); // true
 ```
 
 -----------------------------------------------

@@ -53,7 +53,7 @@ import {
     mDelFirstColumn,
     mGetFirstColumn,
     mGetLastColumn,
-    mGetColumn
+    mGetColumn, isSingularMatrix
 } from '../src/matrix';
 import { Matrix, Matrix2, Matrix3, Vector3 } from '../src/types';
 
@@ -1188,6 +1188,24 @@ describe('Matrix Inverse', () => {
         ]);
     });
 
+    test(`Inverse of [
+                [1, 0, 1],
+                [0, 2, 1],
+                [1, 1, 1],
+            ]`, () => {
+        expect(m3Inverse(
+            [
+                [1, 0, 1],
+                [0, 2, 1],
+                [1, 1, 1],
+            ]
+        )).toStrictEqual([
+            [-1, -1, 2],
+            [-1, -0, 1],
+            [2, 1, -2]
+        ]);
+    });
+
 });
 
 describe('Matrix Adjugate', () => {
@@ -1762,6 +1780,77 @@ describe('Matrix Get Column', () => {
         expect(mGetColumn(
             [], 2
         )).toStrictEqual([]);
+    });
+});
+
+describe('Is Singular Matrix', () => {
+
+    test(`Is Singular Matrix []`, () => {
+        expect(isSingularMatrix(
+            []
+        )).toStrictEqual(false);
+    });
+
+    test(`Is Singular Matrix [
+                [1],
+            ]`, () => {
+        expect(isSingularMatrix(
+            [
+                [1],
+            ]
+        )).toStrictEqual(false);
+    });
+
+    test(`Is Singular Matrix [
+                [3, 5],
+                [-7, 2],
+            ]`, () => {
+        expect(isSingularMatrix(
+            [
+                [3, 5],
+                [-7, 2],
+            ]
+        )).toStrictEqual(false);
+    });
+
+    test(`Is Singular Matrix [
+                [1, 0, 1],
+                [0, 2, 1],
+                [1, 1, 1],
+            ]`, () => {
+        expect(isSingularMatrix(
+            [
+                [1, 0, 1],
+                [0, 2, 1],
+                [1, 1, 1],
+            ]
+        )).toStrictEqual(false);
+    });
+
+    test(`Is Singular Matrix [
+                [2, 4, 6],
+                [2, 0, 2],
+                [6, 8, 14],
+            ]`, () => {
+        expect(isSingularMatrix(
+            [
+                [2, 4, 6],
+                [2, 0, 2],
+                [6, 8, 14],
+            ]
+        )).toStrictEqual(true);
+    });
+
+    test(`Is Singular Matrix [
+                [3, 6],
+                [2, 4],
+            ]`, () => {
+        expect(isSingularMatrix(
+            [
+                [3, 6],
+                [2, 4],
+            ]
+        )).toStrictEqual(true);
     });
 });
 

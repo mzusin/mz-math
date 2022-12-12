@@ -690,15 +690,25 @@ export const mAdjugate = (m: Matrix): Matrix|null => {
 };
 
 /**
+ * Singular Matrix = a square matrix that does not have a matrix inverse.
+ * A matrix is singular iff its determinant is 0.
+ */
+export const isSingularMatrix = (m: Matrix) => {
+    if(m.length > 0 && m.length !== m[0].length){
+        throw new Error('The matrix must be square.');
+    }
+
+    const d = mDeterminant(m);
+    return d === 0;
+};
+
+/**
  * Square matrix A (nxn) is invertible is there is another square matrix B (nxn) so AxB = BxA = I
  * For A (2x2) matrix, the inverse is:
  * (1 / (determinant(A))) * adj(A)
- * Singular Matrix = a square matrix that does not have a matrix inverse. A matrix is singular iff its determinant is 0.
  */
 export const m2Inverse = (m2: Matrix2, decimalPlaces = Infinity): (Matrix2 | null) => {
-    if(m2.length <= 0) return null;
-
-    if(m2.length !== m2[0].length){
+    if(m2.length > 0 && m2.length !== m2[0].length){
         throw new Error('The matrix must be square.');
     }
 
@@ -717,9 +727,8 @@ export const m3Inverse = (m3: Matrix3, decimalPlaces = Infinity): (Matrix3 | nul
 
 export const mInverse = (m: Matrix, decimalPlaces = Infinity): (Matrix | null) => {
     const size = m.length;
-    if(size <= 0) return null;
 
-    if(size !== m[0].length){
+    if(size > 0 && size !== m[0].length){
         throw new Error('The matrix must be square.');
     }
 

@@ -101,10 +101,14 @@ export declare const m3Adjugate: (m3: Matrix3) => Matrix3 | null;
  */
 export declare const mAdjugate: (m: Matrix) => Matrix | null;
 /**
+ * Singular Matrix = a square matrix that does not have a matrix inverse.
+ * A matrix is singular iff its determinant is 0.
+ */
+export declare const isSingularMatrix: (m: Matrix) => boolean;
+/**
  * Square matrix A (nxn) is invertible is there is another square matrix B (nxn) so AxB = BxA = I
  * For A (2x2) matrix, the inverse is:
  * (1 / (determinant(A))) * adj(A)
- * Singular Matrix = a square matrix that does not have a matrix inverse. A matrix is singular iff its determinant is 0.
  */
 export declare const m2Inverse: (m2: Matrix2, decimalPlaces?: number) => (Matrix2 | null);
 export declare const m3Inverse: (m3: Matrix3, decimalPlaces?: number) => (Matrix3 | null);

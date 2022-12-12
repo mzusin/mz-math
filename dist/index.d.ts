@@ -122,6 +122,7 @@ declare module 'toolcool-math' {
     export const m2Inverse: (m2: Matrix2, decimalPlaces?: number) => (Matrix2 | null);
     export const m3Inverse: (m3: Matrix3, decimalPlaces?: number) => (Matrix3 | null);
     export const mInverse: (m: Matrix, decimalPlaces?: number) => (Matrix | null);
+    export const isSingularMatrix: (m: Matrix) => boolean;
 
     export const m2Adjugate: (m2: Matrix2) => Matrix2;
     export const m3Adjugate: (m3: Matrix3) => Matrix3 | null;

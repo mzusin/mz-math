@@ -162,6 +162,9 @@ export const v3DotProduct = (vector1: Vector3, vector2: Vector3, decimalPlaces =
 
 // ------------ CROSS PRODUCT ------------------------
 
+/**
+ * Cross product is possible on 3D vectors only.
+ */
 export const v3CrossProduct = (vector1: Vector3, vector2: Vector3, decimalPlaces = Infinity): Vector3 => {
     return [
         setDecimalPlaces(vector1[1] * vector2[2] - vector1[2] * vector2[1], decimalPlaces),
