@@ -1416,18 +1416,39 @@ const res = m3Reset(m, 50);
 It's possible to get a 2D rotation matrix for a given angle in radians as follows:
 
 ```js
-import { m2Rotation } from 'toolcool-math';
+import { m2Rotation, Matrix2, Matrix3 } from 'toolcool-math';
 
-const rmat2 = m2Rotation(Math.PI/2); // rotation matrix for 90 deg
+// Rotation of an angle 90deg about the origin.
+const mat1: Matrix2 = m2Rotation(Math.PI/2, 3); // 3 decimal places
+
+/*
+[
+    [Math.cos(Math.PI/2), -Math.sin(Math.PI/2)],
+    [Math.sin(Math.PI/2), Math.cos(Math.PI/2)],
+];
+ */
+
+// Rotation of an angle 90deg about the origin in homogeneous coordinates.
+const mat2: Matrix3 = m2RotationH(Math.PI/2, 3); // 3 decimal places
+/*
+[
+    [Math.cos(angleRad), -Math.sin(angleRad), 0],
+    [Math.sin(angleRad), Math.cos(angleRad), 0],
+    [0, 0, 1],
+];
+ */
 ```
 
-It is also possible to get the actual rotated vector using the **v2Rotate** function:
+It is also possible to get the actual rotated vector using the **v2Rotate** and **v2RotateH** functions.  Each function supports an optional **decimalPlaces** parameter.
 
 ```js
-import { Vector2, v2Rotate } from 'toolcool-math';
+import { Vector2, Vector3, v2Rotate, v2RotateH } from 'toolcool-math';
 
-// vector rotated 90 degrees
-const rotatedVector: Vector2 = v2Rotate(Math.PI/2, [10, 20]); 
+// vector rotated by 90 degrees around the origin
+const rotatedVector1: Vector2 = v2Rotate(Math.PI/2, [10, 20], 3); // 3 decimal places
+
+// vector rotated by 90 degrees around the origin in homogeneous coordinates
+const rotatedVector2: Vector3 = v2RotateH(Math.PI/2, [10, 20, 1], 3); // 3 decimal places
 ```
 
 **3D rotation matrices**

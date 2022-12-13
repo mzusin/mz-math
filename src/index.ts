@@ -1,5 +1,6 @@
 import * as vector from './vector';
 import * as matrix from './matrix';
+import * as matrixTransformations from './matrix-transformations';
 import * as format from './format';
 import * as angle from './angle';
 import * as random from './random';
@@ -11,6 +12,7 @@ import * as equations from './equations';
 const api = {
     ...vector,
     ...matrix,
+    ...matrixTransformations,
     ...format,
     ...angle,
     ...random,
@@ -30,6 +32,7 @@ window.TCMath = window.TCMath || api;
 
 export * from './vector';
 export * from './matrix';
+export * from './matrix-transformations';
 export * from './format';
 export * from './angle';
 export * from './random';

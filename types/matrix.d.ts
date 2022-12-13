@@ -54,27 +54,6 @@ export declare const mGetColumn: (m: Matrix, colIndex: number) => Vector;
 export declare const mMul: (matrix1: Matrix, matrix2: Matrix, decimalPlaces?: number) => Matrix;
 export declare const mMulVector: (matrix: Matrix, vector: Vector, decimalPlaces?: number) => Vector;
 export declare const mEqual: (matrix1: Matrix, matrix2: Matrix) => boolean;
-export declare const m2Rotation: (angleRad: number) => Matrix2;
-export declare const v2Rotate: (angleRad: number, vector: Vector2) => Vector2;
-/**
- * Rotation around the X axis.
- */
-export declare const m3RotationX: (angleRad: number) => Matrix3;
-export declare const v3RotateX: (angleRad: number, vector: Vector3) => Vector3;
-/**
- * Rotation around the Y axis.
- */
-export declare const m3RotationY: (angleRad: number) => Matrix3;
-export declare const v3RotateY: (angleRad: number, vector: Vector3) => Vector3;
-/**
- * Rotation around the Z axis.
- */
-export declare const m3RotationZ: (angleRad: number) => Matrix3;
-export declare const v3RotateZ: (angleRad: number, vector: Vector3) => Vector3;
-export declare const m2Scale: (scaleVector: Vector2) => Matrix2;
-export declare const v2Scale: (scaleVector: Vector2, vector: Vector2) => Vector2;
-export declare const m3Scale: (scaleVector: Vector3) => Matrix3;
-export declare const v3Scale: (scaleVector: Vector3, vector: Vector3) => Vector3;
 /**
  * Calculate matrix minor.
  */

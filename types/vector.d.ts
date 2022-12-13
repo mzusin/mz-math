@@ -26,6 +26,7 @@ export declare const v2DotProduct: (vector1: Vector2, vector2: Vector2, decimalP
 export declare const v3DotProduct: (vector1: Vector3, vector2: Vector3, decimalPlaces?: number) => number;
 /**
  * Cross product is possible on 3D vectors only.
+ * The cross product a × b is defined as a vector c that is perpendicular (orthogonal) to both a and b.
  */
 export declare const v3CrossProduct: (vector1: Vector3, vector2: Vector3, decimalPlaces?: number) => Vector3;
 export declare const v2: (defaultValue?: number) => Vector2;

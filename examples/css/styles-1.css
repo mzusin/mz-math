@@ -1,0 +1,25 @@
+html, body{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background: #232323;
+    color: #efefef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#center {
+    width: 1rem;
+    height: 1rem;
+    background: red;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 100%;
+    transform: translate(-0.5rem, -0.5rem);
+}

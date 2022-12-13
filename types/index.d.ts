@@ -20,6 +20,20 @@ declare const api: {
     radiansToDegrees: (radians: number, decimalPlaces?: number) => number;
     degreesToRadians: (degrees: number, decimalPlaces?: number) => number;
     setDecimalPlaces: (num: number, decimalPlaces?: number | undefined) => number;
+    m2Rotation: (angleRad: number, decimalPlaces?: number) => import("./types").Matrix2;
+    m2RotationH: (angleRad: number, decimalPlaces?: number) => import("./types").Matrix3;
+    v2Rotate: (angleRad: number, vector: import("./types").Vector2, decimalPlaces?: number) => import("./types").Vector2;
+    v2RotateH: (angleRad: number, vector: import("./types").Vector3, decimalPlaces?: number) => import("./types").Vector3;
+    m3RotationX: (angleRad: number, decimalPlaces?: number) => import("./types").Matrix3;
+    v3RotateX: (angleRad: number, vector: import("./types").Vector3, decimalPlaces?: number) => import("./types").Vector3;
+    m3RotationY: (angleRad: number, decimalPlaces?: number) => import("./types").Matrix3;
+    v3RotateY: (angleRad: number, vector: import("./types").Vector3, decimalPlaces?: number) => import("./types").Vector3;
+    m3RotationZ: (angleRad: number, decimalPlaces?: number) => import("./types").Matrix3;
+    v3RotateZ: (angleRad: number, vector: import("./types").Vector3, decimalPlaces?: number) => import("./types").Vector3;
+    m2Scale: (scaleVector: import("./types").Vector2) => import("./types").Matrix2;
+    v2Scale: (scaleVector: import("./types").Vector2, vector: import("./types").Vector2) => import("./types").Vector2;
+    m3Scale: (scaleVector: import("./types").Vector3) => import("./types").Matrix3;
+    v3Scale: (scaleVector: import("./types").Vector3, vector: import("./types").Vector3) => import("./types").Vector3;
     mSum: (matrix1: import("./types").Matrix, matrix2: import("./types").Matrix, decimalPlaces?: number) => import("./types").Matrix;
     m2Sum: (matrix1: import("./types").Matrix2, matrix2: import("./types").Matrix2, decimalPlaces?: number) => import("./types").Matrix2;
     m3Sum: (matrix1: import("./types").Matrix3, matrix2: import("./types").Matrix3, decimalPlaces?: number) => import("./types").Matrix3;
@@ -65,18 +79,6 @@ declare const api: {
     mMul: (matrix1: import("./types").Matrix, matrix2: import("./types").Matrix, decimalPlaces?: number) => import("./types").Matrix;
     mMulVector: (matrix: import("./types").Matrix, vector: import("./types").Vector, decimalPlaces?: number) => import("./types").Vector;
     mEqual: (matrix1: import("./types").Matrix, matrix2: import("./types").Matrix) => boolean;
-    m2Rotation: (angleRad: number) => import("./types").Matrix2;
-    v2Rotate: (angleRad: number, vector: import("./types").Vector2) => import("./types").Vector2;
-    m3RotationX: (angleRad: number) => import("./types").Matrix3;
-    v3RotateX: (angleRad: number, vector: import("./types").Vector3) => import("./types").Vector3;
-    m3RotationY: (angleRad: number) => import("./types").Matrix3;
-    v3RotateY: (angleRad: number, vector: import("./types").Vector3) => import("./types").Vector3;
-    m3RotationZ: (angleRad: number) => import("./types").Matrix3;
-    v3RotateZ: (angleRad: number, vector: import("./types").Vector3) => import("./types").Vector3;
-    m2Scale: (scaleVector: import("./types").Vector2) => import("./types").Matrix2;
-    v2Scale: (scaleVector: import("./types").Vector2, vector: import("./types").Vector2) => import("./types").Vector2;
-    m3Scale: (scaleVector: import("./types").Vector3) => import("./types").Matrix3;
-    v3Scale: (scaleVector: import("./types").Vector3, vector: import("./types").Vector3) => import("./types").Vector3;
     mMinor: (m: import("./types").Matrix, row: number, col: number) => number;
     mDeterminant: (matrix: import("./types").Matrix) => number;
     m2Determinant: (m2: import("./types").Matrix2) => number;
@@ -123,6 +125,7 @@ declare global {
 }
 export * from './vector';
 export * from './matrix';
+export * from './matrix-transformations';
 export * from './format';
 export * from './angle';
 export * from './random';
