@@ -46,7 +46,9 @@ This project is a collection of TypeScript math helpers and utilities for the br
   - [Multiply matrix by vector](#multiply-matrix-by-vector)
   - [Reset matrix with a default value](#reset-matrix-with-a-default-value)
   - Transformation Matrices
+    - [Translation Matrix](#translation-matrix)
     - [Rotation Matrix](#rotation-matrix)
+    - [Rotate around the point](#)
     - [Scale Matrix](#scale-matrix)
   - [Matrix Determinant](#matrix-determinant)
   - [Inverse Matrix](#inverse-matrix)
@@ -1409,6 +1411,25 @@ const res = m3Reset(m, 50);
 
 ## Transformation Matrices
 
+## Translation Matrix
+
+It's possible to get a 2D translation matrix using **m2TranslationH** function. The function supports an optional **decimalPlaces** parameter.
+
+```js
+import { m2TranslationH } from 'toolcool-math';
+
+// translation matrix for the position [10, 20] in homogeneous coordinates.
+const mat1: Matrix3 = m2TranslationH([10, 20, 1]);
+
+/*
+[
+    [1, 0, 10],
+    [0, 1, 20],
+    [0, 0, 1],
+];
+ */
+```
+
 ## Rotation Matrix
 
 **2D rotation matrix**
@@ -1439,7 +1460,7 @@ const mat2: Matrix3 = m2RotationH(Math.PI/2, 3); // 3 decimal places
  */
 ```
 
-It is also possible to get the actual rotated vector using the **v2Rotate** and **v2RotateH** functions.  Each function supports an optional **decimalPlaces** parameter.
+It is also possible to get the actual rotated vector using the **v2Rotate** and **v2RotateH** functions. Each function supports an optional **decimalPlaces** parameter.
 
 ```js
 import { Vector2, Vector3, v2Rotate, v2RotateH } from 'toolcool-math';
@@ -1481,6 +1502,21 @@ const rotatedVector2: Vector3 = v3RotateY(Math.PI/2, [10, 20, 30]);
 
 // rotation around the Z axis
 const rotatedVector3: Vector3 = v3RotateZ(Math.PI/2, [10, 20, 30]);
+```
+
+## Rotate around the point
+
+It's possible to rotate a point [x, y] (in homogeneous coordinates) around the given origin as follows:
+
+```js
+import { Vector3, m2RotationAroundPointH } from 'toolcool-math';
+
+const angle = Math.PI/4; // radians
+const transformOrigin = [100, 100, 1]; // in homogeneous coordinates
+const point: Vector3 = [150, 150, 1]; // [x, y, 1]
+const decimalPlaces = 2; // optional
+
+const pos: Vector3 = m2RotateAroundPointH(angle, transformOrigin, [pos[0], pos[1], decimalPlaces]);
 ```
 
 -----------------------------------------------

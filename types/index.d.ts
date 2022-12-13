@@ -20,8 +20,11 @@ declare const api: {
     radiansToDegrees: (radians: number, decimalPlaces?: number) => number;
     degreesToRadians: (degrees: number, decimalPlaces?: number) => number;
     setDecimalPlaces: (num: number, decimalPlaces?: number | undefined) => number;
+    m2TranslationH: (position: import("./types").Vector3, decimalPlaces?: number) => import("./types").Matrix3;
     m2Rotation: (angleRad: number, decimalPlaces?: number) => import("./types").Matrix2;
     m2RotationH: (angleRad: number, decimalPlaces?: number) => import("./types").Matrix3;
+    m2RotationAroundPointH: (angleRad: number, transformOrigin: import("./types").Vector3, decimalPlaces?: number) => import("./types").Matrix3;
+    m2RotateAroundPointH: (angleRad: number, transformOrigin: import("./types").Vector3, position: import("./types").Vector3, decimalPlaces?: number) => import("./types").Vector3;
     v2Rotate: (angleRad: number, vector: import("./types").Vector2, decimalPlaces?: number) => import("./types").Vector2;
     v2RotateH: (angleRad: number, vector: import("./types").Vector3, decimalPlaces?: number) => import("./types").Vector3;
     m3RotationX: (angleRad: number, decimalPlaces?: number) => import("./types").Matrix3;

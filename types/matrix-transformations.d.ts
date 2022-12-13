@@ -1,5 +1,9 @@
 import { Matrix2, Matrix3, Vector2, Vector3 } from './types';
 /**
+ * Translation matrix in homogeneous coordinates.
+ */
+export declare const m2TranslationH: (position: Vector3, decimalPlaces?: number) => Matrix3;
+/**
  * Rotation of an angle about the origin.
  */
 export declare const m2Rotation: (angleRad: number, decimalPlaces?: number) => Matrix2;
@@ -7,6 +11,12 @@ export declare const m2Rotation: (angleRad: number, decimalPlaces?: number) => M
  * Rotation of an angle about the origin in homogeneous coordinates.
  */
 export declare const m2RotationH: (angleRad: number, decimalPlaces?: number) => Matrix3;
+/**
+ * Rotation of an angle "angleRad" around the given point (transformOrigin) in homogeneous coordinates.
+ * result_vector = TranslationMatrix(x, y) * RotationMatrix() * TranslationMatrix(-x, -y) * position_vector
+ */
+export declare const m2RotationAroundPointH: (angleRad: number, transformOrigin: Vector3, decimalPlaces?: number) => Matrix3;
+export declare const m2RotateAroundPointH: (angleRad: number, transformOrigin: Vector3, position: Vector3, decimalPlaces?: number) => Vector3;
 /**
  * Rotate vector around the origin by angle "angleRad".
  */
