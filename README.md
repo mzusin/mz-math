@@ -48,7 +48,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
   - Transformation Matrices
     - [Translation Matrix](#translation-matrix)
     - [Rotation Matrix](#rotation-matrix)
-    - [Rotate around the point](#)
+    - [Rotate around the point](#rotate-around-the-point)
     - [Scale Matrix](#scale-matrix)
   - [Matrix Determinant](#matrix-determinant)
   - [Inverse Matrix](#inverse-matrix)
