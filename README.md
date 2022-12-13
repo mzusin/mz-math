@@ -1519,6 +1519,8 @@ const decimalPlaces = 2; // optional
 const pos: Vector3 = m2RotateAroundPointH(angle, transformOrigin, [pos[0], pos[1], decimalPlaces]);
 ```
 
+[Example](https://github.com/toolcool-org/toolcool-math/blob/main/examples/rotation-1.html)
+
 -----------------------------------------------
 
 ## Scale Matrix
