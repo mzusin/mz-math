@@ -84,6 +84,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
   - [Can be converted to number?](#check-if-value-can-be-converted-to-number)
 - Examples
   - [Circle Movement Example](https://github.com/toolcool-org/toolcool-math/blob/main/examples/circle-movement.html)
+  - [Matrix to CSS transform example (rotation)](https://github.com/toolcool-org/toolcool-math/blob/main/examples/matrix-to-css-rotation.html)
 - [License](#license)
 
 ## TypeScript Usage
@@ -2078,6 +2079,8 @@ const mat: Matrix2 = [
 ];
 const str1 = m2ToCSS(mat); // matrix(1, 3, 2, 4, 0, 0)
 ```
+
+[Matrix to CSS transform example (rotation)](https://github.com/toolcool-org/toolcool-math/blob/main/examples/matrix-to-css-rotation.html)
 
 -----------------------------------------------
 
