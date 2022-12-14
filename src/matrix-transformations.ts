@@ -442,6 +442,18 @@ export const m2ReflectionOrigin = (): Matrix2 => {
 /**
  * Reflection about the origin.
  */
+export const m2ReflectionOriginH = (): Matrix3 => {
+
+    return [
+        [-1, 0, 0],
+        [0, -1, 0],
+        [0, 0, 1],
+    ];
+};
+
+/**
+ * Reflection about the origin in non-homogeneous coordinates
+ */
 export const m3ReflectionOrigin = (): Matrix3 => {
 
     return [
@@ -452,25 +464,15 @@ export const m3ReflectionOrigin = (): Matrix3 => {
 };
 
 /**
- * Reflection about y=x
+ * Reflection about the origin in homogeneous coordinates
  */
-export const m2ReflectionYX = (): Matrix2 => {
+export const m3ReflectionOriginH = (): Matrix => {
 
     return [
-        [1, 0],
-        [0, 1],
-    ];
-};
-
-/**
- * Reflection about y=x
- */
-export const m3ReflectionYX = (): Matrix3 => {
-
-    return [
-        [0, 1, 0],
-        [1, 0, 0],
-        [0, 0, 1],
+        [-1, 0, 0, 0],
+        [0, -1, 0, 0],
+        [0, 0, -1, 0],
+        [0, 0, 0, 1],
     ];
 };
 
@@ -497,6 +499,18 @@ export const m2ReflectionX = (): Matrix2 => {
 };
 
 /**
+ * Reflection in the x-axis.
+ */
+export const m2ReflectionXH = (): Matrix3 => {
+
+    return [
+        [1, 0, 0],
+        [0, -1, 0],
+        [0, 0, 1],
+    ];
+};
+
+/**
  * Reflection in the y-axis.
  */
 export const m2ReflectionY = (): Matrix2 => {
@@ -507,10 +521,7 @@ export const m2ReflectionY = (): Matrix2 => {
     ];
 };
 
-/**
- * Reflection in the plane x=0
- */
-export const m3ReflectionX = (): Matrix3 => {
+export const m2ReflectionYH = (): Matrix3 => {
 
     return [
         [-1, 0, 0],
@@ -520,9 +531,34 @@ export const m3ReflectionX = (): Matrix3 => {
 };
 
 /**
- * Reflection in the plane y=0
+ * Reflection relative to YZ plane in non-homogeneous coordinates
  */
-export const m3ReflectionY = (): Matrix3 => {
+export const m3ReflectionYZ = (): Matrix3 => {
+
+    return [
+        [-1, 0, 0],
+        [0, 1, 0],
+        [0, 0, 1],
+    ];
+};
+
+/**
+ * Reflection relative to YZ plane in homogeneous coordinates
+ */
+export const m3ReflectionYZH = (): Matrix => {
+
+    return [
+        [-1, 0, 0, 0],
+        [0, 1, 0, 0],
+        [0, 0, 1, 0],
+        [0, 0, 0, 1],
+    ];
+};
+
+/**
+ * Reflection relative to XZ plane in non-homogeneous coordinates
+ */
+export const m3ReflectionXZ = (): Matrix3 => {
 
     return [
         [1, 0, 0],
@@ -532,14 +568,40 @@ export const m3ReflectionY = (): Matrix3 => {
 };
 
 /**
- * Reflection in the plane z=0
+ * Reflection relative to XZ plane in homogeneous coordinates
  */
-export const m3ReflectionZ = (): Matrix3 => {
+export const m3ReflectionXZH = (): Matrix => {
+
+    return [
+        [1, 0, 0, 0],
+        [0, -1, 0, 0],
+        [0, 0, 1, 0],
+        [0, 0, 0, 1],
+    ];
+};
+
+/**
+ * Reflection relative to XY plane in non-homogeneous coordinates
+ */
+export const m3ReflectionXY = (): Matrix3 => {
 
     return [
         [1, 0, 0],
         [0, 1, 0],
         [0, 0, -1],
+    ];
+};
+
+/**
+ * Reflection relative to XY plane in homogeneous coordinates
+ */
+export const m3ReflectionXYH = (): Matrix => {
+
+    return [
+        [1, 0, 0, 0],
+        [0, 1, 0, 0],
+        [0, 0, -1, 0],
+        [0, 0, 0, 1],
     ];
 };
 

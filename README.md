@@ -1813,9 +1813,15 @@ const mat3: Matrix = m3ScaleZH(2);
 It's possible to get a 2D reflection matrices as follows:
 
 ```js
-import { m2ReflectionOrigin, m2ReflectionX, m2ReflectionY, m2ReflectionYX, m2ReflectionYmX, Matrix2 } from 'toolcool-math';
+import { 
+    m2ReflectionOrigin, m2ReflectionOriginH,
+    m2ReflectionX, m2ReflectionXH, 
+    m2ReflectionY, m2ReflectionYH,
+    m2ReflectionYX, m2ReflectionYmX, 
+    Matrix2 
+} from 'toolcool-math';
 
-// reflection about the origin.
+// reflection about the origin in non-homogeneous coordinates
 const mat0: Matrix2 = m2ReflectionOrigin();
 /*
 [
@@ -1824,7 +1830,18 @@ const mat0: Matrix2 = m2ReflectionOrigin();
 ];
  */
 
-// reflection in the x-axis.
+
+// reflection about the origin in homogeneous coordinates
+const mat0: Matrix3 = m2ReflectionOriginH();
+/*
+[
+    [-1, 0, 0],
+    [0, -1, 0],
+    [0, 0, 1],
+];
+ */
+
+// reflection in the x-axis in non-homogeneous coordinates
 const mat1: Matrix2 = m2ReflectionX();
 /*
 [
@@ -1833,7 +1850,17 @@ const mat1: Matrix2 = m2ReflectionX();
 ];
  */
 
-// reflection in the y-axis.
+// reflection in the x-axis in homogeneous coordinates
+const mat1: Matrix3 = m2ReflectionXH();
+/*
+[
+    [1, 0, 0],
+    [0, -1, 0],
+    [0, 0, 1],
+];
+ */
+
+// reflection in the y-axis in non-homogeneous coordinates
 const mat2: Matrix2 = m2ReflectionY();
 /*
 [
@@ -1842,7 +1869,17 @@ const mat2: Matrix2 = m2ReflectionY();
 ];
  */
 
-// reflection about y=x
+// reflection in the y-axis in homogeneous coordinates
+const mat2: Matrix3 = m2ReflectionYH();
+/*
+[
+    [-1, 0, 0],
+    [0, 1, 0],
+    [0, 0, 1],
+];
+ */
+
+// reflection about y=x  in non-homogeneous coordinates
 const mat3: Matrix2 = m2ReflectionYX();
 /*
 [
@@ -1851,7 +1888,7 @@ const mat3: Matrix2 = m2ReflectionYX();
 ];
  */
 
-// reflection about y=-x
+// reflection about y=-x in non-homogeneous coordinates
 const mat3: Matrix2 = m2ReflectionYmX();
 /*
 [
@@ -1866,9 +1903,14 @@ const mat3: Matrix2 = m2ReflectionYmX();
 It's possible to get a 3D reflection matrices as follows:
 
 ```js
-import { m3ReflectionOrigin, m3ReflectionX, m3ReflectionY, m3ReflectionZ, m3ReflectionYX, Matrix3 } from 'toolcool-math';
+import { 
+  m3ReflectionOrigin, m3ReflectionOriginH, 
+  m3ReflectionYZ, m3ReflectionYZH,
+  m3ReflectionXZ, m3ReflectionXZH,
+  m3ReflectionXY, m3ReflectionXYH,
+  Matrix3, Matrix } from 'toolcool-math';
 
-// reflection about the origin
+// reflection about the origin in non-homogeneous coordinates
 const mat0: Matrix3 = m3ReflectionOrigin();
 /*
 [
@@ -1878,8 +1920,19 @@ const mat0: Matrix3 = m3ReflectionOrigin();
 ];
  */
 
-// reflection in the plane x=0
-const mat1: Matrix3 = m3ReflectionX();
+// reflection about the origin in homogeneous coordinates
+const mat0: Matrix = m3ReflectionOriginH();
+/*
+[
+    [-1, 0, 0, 0],
+    [0, -1, 0, 0],
+    [0, 0, -1, 0],
+    [0, 0, 0, 1],
+];
+ */
+
+// Reflection relative to YZ plane - in non-homogeneous coordinates
+const mat2: Matrix3 = m3ReflectionYZ();
 /*
 [
     [-1, 0, 0],
@@ -1888,8 +1941,19 @@ const mat1: Matrix3 = m3ReflectionX();
 ];
  */
 
-// reflection in the plane y=0
-const mat2: Matrix3 = m3ReflectionY();
+// Reflection relative to YZ plane - in homogeneous coordinates
+const mat2: Matrix = m3ReflectionYZH();
+/*
+[
+    [-1, 0, 0, 0],
+    [0, 1, 0, 0],
+    [0, 0, 1, 0],
+    [0, 0, 0, 1],
+];
+ */
+
+// Reflection relative to XZ plane - in non-homogeneous coordinates
+const mat2: Matrix3 = m3ReflectionXZ();
 /*
 [
     [1, 0, 0],
@@ -1898,8 +1962,19 @@ const mat2: Matrix3 = m3ReflectionY();
 ];
  */
 
-// reflection in the plane z=0
-const mat3: Matrix3 = m3ReflectionZ();
+// Reflection relative to XZ plane - in homogeneous coordinates
+const mat2: Matrix = m3ReflectionXZH();
+/*
+[
+    [1, 0, 0, 0],
+    [0, -1, 0, 0],
+    [0, 0, 1, 0],
+    [0, 0, 0, 1],
+];
+ */
+
+// Reflection relative to XY plane - in non-homogeneous coordinates
+const mat2: Matrix3 = m3ReflectionXY();
 /*
 [
     [1, 0, 0],
@@ -1908,13 +1983,14 @@ const mat3: Matrix3 = m3ReflectionZ();
 ];
  */
 
-// reflection about y=x
-const mat4: Matrix3 = m3ReflectionYX();
+// Reflection relative to XY plane - in homogeneous coordinates
+const mat2: Matrix = m3ReflectionXYH();
 /*
 [
-    [1, 0, 0],
-    [0, 1, 0],
-    [0, 0, -1],
+    [1, 0, 0, 0],
+    [0, 1, 0, 0],
+    [0, 0, -1, 0],
+    [0, 0, 0, 1],
 ];
  */
 ```

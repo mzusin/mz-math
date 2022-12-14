@@ -80,13 +80,25 @@ export declare const m2ScaleXH: (scale: number) => Matrix3;
  */
 export declare const m3ScaleX: (scale: number) => Matrix3;
 /**
+ * Stretch in x-direction
+ */
+export declare const m3ScaleXH: (scale: number) => Matrix;
+/**
  * Stretch in y-direction
  */
 export declare const m3ScaleY: (scale: number) => Matrix3;
 /**
+ * Stretch in y-direction
+ */
+export declare const m3ScaleYH: (scale: number) => Matrix;
+/**
  * Stretch in z-direction
  */
 export declare const m3ScaleZ: (scale: number) => Matrix3;
+/**
+ * Stretch in z-direction
+ */
+export declare const m3ScaleZH: (scale: number) => Matrix;
 /**
  * Stretch, parallel to the y-axis.
  */
@@ -102,15 +114,15 @@ export declare const m2ReflectionOrigin: () => Matrix2;
 /**
  * Reflection about the origin.
  */
+export declare const m2ReflectionOriginH: () => Matrix3;
+/**
+ * Reflection about the origin in non-homogeneous coordinates
+ */
 export declare const m3ReflectionOrigin: () => Matrix3;
 /**
- * Reflection about y=x
+ * Reflection about the origin in homogeneous coordinates
  */
-export declare const m2ReflectionYX: () => Matrix2;
-/**
- * Reflection about y=x
- */
-export declare const m3ReflectionYX: () => Matrix3;
+export declare const m3ReflectionOriginH: () => Matrix;
 /**
  * Reflection about y=-x
  */
@@ -120,21 +132,38 @@ export declare const m2ReflectionYmX: () => Matrix2;
  */
 export declare const m2ReflectionX: () => Matrix2;
 /**
+ * Reflection in the x-axis.
+ */
+export declare const m2ReflectionXH: () => Matrix3;
+/**
  * Reflection in the y-axis.
  */
 export declare const m2ReflectionY: () => Matrix2;
+export declare const m2ReflectionYH: () => Matrix3;
 /**
- * Reflection in the plane x=0
+ * Reflection relative to YZ plane in non-homogeneous coordinates
  */
-export declare const m3ReflectionX: () => Matrix3;
+export declare const m3ReflectionYZ: () => Matrix3;
 /**
- * Reflection in the plane y=0
+ * Reflection relative to YZ plane in homogeneous coordinates
  */
-export declare const m3ReflectionY: () => Matrix3;
+export declare const m3ReflectionYZH: () => Matrix;
 /**
- * Reflection in the plane z=0
+ * Reflection relative to XZ plane in non-homogeneous coordinates
  */
-export declare const m3ReflectionZ: () => Matrix3;
+export declare const m3ReflectionXZ: () => Matrix3;
+/**
+ * Reflection relative to XZ plane in homogeneous coordinates
+ */
+export declare const m3ReflectionXZH: () => Matrix;
+/**
+ * Reflection relative to XY plane in non-homogeneous coordinates
+ */
+export declare const m3ReflectionXY: () => Matrix3;
+/**
+ * Reflection relative to XY plane in homogeneous coordinates
+ */
+export declare const m3ReflectionXYH: () => Matrix;
 /**
  * Shearing in y-axis, with x-axis fixed with (0,1) moving to (factor, 1)
  */
