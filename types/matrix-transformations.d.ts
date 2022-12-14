@@ -1,4 +1,5 @@
 import { Matrix2, Matrix3, Matrix, Vector2, Vector3, Vector } from './types';
+export declare const m2Translation: (position: Vector2, decimalPlaces?: number) => Matrix2;
 /**
  * 2D Translation matrix in homogeneous coordinates.
  */

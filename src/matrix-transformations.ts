@@ -5,6 +5,15 @@ import { setDecimalPlaces } from './format';
 
 // ---------------- TRANSLATION MATRICES ----------------------
 
+export const m2Translation = (position: Vector2, decimalPlaces = Infinity): Matrix2 => {
+
+    return [
+        [1, 0],
+        [0, 1],
+        [setDecimalPlaces(position[0], decimalPlaces), setDecimalPlaces(position[1], decimalPlaces)],
+    ];
+};
+
 /**
  * 2D Translation matrix in homogeneous coordinates.
  */

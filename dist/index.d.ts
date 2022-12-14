@@ -100,6 +100,7 @@ declare module 'toolcool-math' {
     export const m2Reset: (m2: Matrix2, defaultValue?: number) => Matrix2;
     export const m3Reset: (m3: Matrix3, defaultValue?: number) => Matrix3;
 
+    export const m2Translation: (position: Vector2, decimalPlaces?: number) => Matrix2;
     export const m2TranslationH: (position: Vector3, decimalPlaces?: number) => Matrix3;
     export const m3TranslationH: (position: Vector, decimalPlaces?: number) => Matrix;
 

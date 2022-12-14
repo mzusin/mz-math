@@ -79,6 +79,8 @@ This project is a collection of TypeScript math helpers and utilities for the br
   - [Convert range](#convert-range)
   - [Do ranges overlap?](#check-if-two-ranges-overlap)
   - [Can be converted to number?](#check-if-value-can-be-converted-to-number)
+- Examples
+  - [Circle Movement Example](https://github.com/toolcool-org/toolcool-math/blob/main/examples/circle-movement.html)
 - [License](#license)
 
 ## TypeScript Usage
@@ -1413,7 +1415,24 @@ const res = m3Reset(m, 50);
 
 ## Translation Matrix
 
-It's possible to get a 2D translation matrix using **m2TranslationH** function, and 3D translation matrix using **m3TranslationH** function. Each function supports an optional **decimalPlaces** parameter.
+It's possible to get a translation matrix using the functions below. Each function supports an optional **decimalPlaces** parameter.
+
+```js
+import { m2Translation, Matrix2 } from 'toolcool-math';
+
+// translation matrix for the position [10, 20]
+const mat1: Matrix2 = m2Translation([10, 20]);
+
+/*
+[
+    [1, 0],
+    [0, 1],
+    [10, 20],
+];
+ */
+```
+
+**Translation in homogeneous coordinates**
 
 ```js
 import { m2TranslationH, m3TranslationH, Matrix3, Matrix } from 'toolcool-math';
@@ -1531,7 +1550,7 @@ const decimalPlaces = 2; // optional
 const pos: Vector3 = m2RotateAroundPointH(angle, transformOrigin, [pos[0], pos[1], decimalPlaces]);
 ```
 
-[Example](https://github.com/toolcool-org/toolcool-math/blob/main/examples/rotation-1.html)
+[Circle Movement Example](https://github.com/toolcool-org/toolcool-math/blob/main/examples/circle-movement.html)
 
 -----------------------------------------------
 
