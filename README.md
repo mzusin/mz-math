@@ -1632,12 +1632,30 @@ import { m2Scale, m2ScaleX } from 'toolcool-math';
 
 // scale matrix with 2x and 4y
 const mat1 = m2Scale([2, 4]); 
+/*
+[
+    [2, 0],
+    [0, 4],
+]
+ */
 
 // stretch, parallel to the x-axis.
 const mat2 = m2ScaleX(2);
+/*
+[
+    [2, 0],
+    [0, 1],
+]
+ */
 
 // stretch, parallel to the y-axis.
 const mat3 = m2ScaleY(2);
+/*
+[
+    [1, 0],
+    [0, 2],
+]
+ */
 ```
 
 It is also possible to get the actual scaled vector using the **v2Scale** function:
