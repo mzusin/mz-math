@@ -21,6 +21,7 @@ declare const api: {
     degreesToRadians: (degrees: number, decimalPlaces?: number) => number;
     setDecimalPlaces: (num: number, decimalPlaces?: number | undefined) => number;
     m2TranslationH: (position: import("./types").Vector3, decimalPlaces?: number) => import("./types").Matrix3;
+    m3TranslationH: (position: import("./types").Vector, decimalPlaces?: number) => import("./types").Matrix;
     m2Rotation: (angleRad: number, decimalPlaces?: number) => import("./types").Matrix2;
     m2RotationH: (angleRad: number, decimalPlaces?: number) => import("./types").Matrix3;
     m2RotationAroundPointH: (angleRad: number, transformOrigin: import("./types").Vector3, decimalPlaces?: number) => import("./types").Matrix3;

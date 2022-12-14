@@ -1,8 +1,12 @@
-import { Matrix2, Matrix3, Vector2, Vector3 } from './types';
+import { Matrix2, Matrix3, Matrix, Vector2, Vector3, Vector } from './types';
 /**
- * Translation matrix in homogeneous coordinates.
+ * 2D Translation matrix in homogeneous coordinates.
  */
 export declare const m2TranslationH: (position: Vector3, decimalPlaces?: number) => Matrix3;
+/**
+ * 3D Translation matrix in homogeneous coordinates.
+ */
+export declare const m3TranslationH: (position: Vector, decimalPlaces?: number) => Matrix;
 /**
  * Rotation of an angle about the origin.
  */

@@ -1,4 +1,4 @@
-import { Matrix2, Matrix3, Vector2, Vector3 } from './types';
+import { Matrix2, Matrix3, Matrix, Vector2, Vector3, Vector } from './types';
 import { v2Normalize, v3MulScalar, v3Normalize } from './vector';
 import { mMulVector, mMul } from './matrix';
 import { setDecimalPlaces } from './format';
@@ -6,7 +6,7 @@ import { setDecimalPlaces } from './format';
 // ---------------- TRANSLATION MATRICES ----------------------
 
 /**
- * Translation matrix in homogeneous coordinates.
+ * 2D Translation matrix in homogeneous coordinates.
  */
 export const m2TranslationH = (position: Vector3, decimalPlaces = Infinity): Matrix3 => {
 
@@ -14,6 +14,19 @@ export const m2TranslationH = (position: Vector3, decimalPlaces = Infinity): Mat
         [1, 0, setDecimalPlaces(position[0], decimalPlaces)],
         [0, 1, setDecimalPlaces(position[1], decimalPlaces)],
         [0, 0, 1],
+    ];
+};
+
+/**
+ * 3D Translation matrix in homogeneous coordinates.
+ */
+export const m3TranslationH = (position: Vector, decimalPlaces = Infinity): Matrix => {
+
+    return [
+        [1, 0, 0, setDecimalPlaces(position[0], decimalPlaces)],
+        [0, 1, 0, setDecimalPlaces(position[1], decimalPlaces)],
+        [0, 0, 1, setDecimalPlaces(position[2], decimalPlaces)],
+        [0, 0, 0, 1],
     ];
 };
 

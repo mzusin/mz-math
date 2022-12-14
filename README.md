@@ -1413,10 +1413,10 @@ const res = m3Reset(m, 50);
 
 ## Translation Matrix
 
-It's possible to get a 2D translation matrix using **m2TranslationH** function. The function supports an optional **decimalPlaces** parameter.
+It's possible to get a 2D translation matrix using **m2TranslationH** function, and 3D translation matrix using **m3TranslationH** function. Each function supports an optional **decimalPlaces** parameter.
 
 ```js
-import { m2TranslationH } from 'toolcool-math';
+import { m2TranslationH, m3TranslationH, Matrix3, Matrix } from 'toolcool-math';
 
 // translation matrix for the position [10, 20] in homogeneous coordinates.
 const mat1: Matrix3 = m2TranslationH([10, 20, 1]);
@@ -1426,6 +1426,18 @@ const mat1: Matrix3 = m2TranslationH([10, 20, 1]);
     [1, 0, 10],
     [0, 1, 20],
     [0, 0, 1],
+];
+ */
+
+// translation matrix for the position [10, 20, 30] in homogeneous coordinates.
+const mat2: Matrix = m3TranslationH([10, 20, 30, 1]);
+
+/*
+[
+    [1, 0, 0, 10],
+    [0, 1, 0, 20],
+    [0, 0, 1, 30],
+    [0, 0, 0, 1],
 ];
  */
 ```

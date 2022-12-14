@@ -101,6 +101,8 @@ declare module 'toolcool-math' {
     export const m3Reset: (m3: Matrix3, defaultValue?: number) => Matrix3;
 
     export const m2TranslationH: (position: Vector3, decimalPlaces?: number) => Matrix3;
+    export const m3TranslationH: (position: Vector, decimalPlaces?: number) => Matrix;
+
     export const m2Rotation: (angleRad: number, decimalPlaces?: number) => Matrix2;
     export const m2RotationH: (angleRad: number, decimalPlaces?: number) => Matrix3;
     export const v2Rotate: (angleRad: number, vector: Vector2, decimalPlaces?: number) => Vector2;
