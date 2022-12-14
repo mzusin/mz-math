@@ -154,6 +154,27 @@ export const m3RotationX = (angleRad: number, isClockwise = true, decimalPlaces 
     ];
 };
 
+/**
+ * Rotation around the X axis (clockwise) - in homogeneous coordinates
+ */
+export const m3RotationXH = (angleRad: number, isClockwise = true, decimalPlaces = Infinity): Matrix => {
+    const cos = setDecimalPlaces(Math.cos(angleRad), decimalPlaces);
+    const sin = setDecimalPlaces(Math.sin(angleRad), decimalPlaces);
+
+    return isClockwise ? [
+            [1, 0, 0, 0],
+            [0, cos, -sin, 0],
+            [0, sin, cos, 0],
+            [0, 0, 0, 1],
+        ] :
+        [
+            [1, 0, 0, 0],
+            [0, cos, sin, 0],
+            [0, -sin, cos, 0],
+            [0, 0, 0, 1],
+        ];
+};
+
 export const v3RotateX = (angleRad: number, vector: Vector3, isClockwise = true, decimalPlaces = Infinity): Vector3 => {
     const unitVector = v3Normalize(vector);
     return mMulVector(m3RotationX(angleRad, isClockwise, decimalPlaces), unitVector) as Vector3;
@@ -178,6 +199,27 @@ export const m3RotationY = (angleRad: number, isClockwise = true, decimalPlaces 
     ];
 };
 
+/**
+ * Rotation around the Y axis (clockwise) - in homogeneous coordinates
+ */
+export const m3RotationYH = (angleRad: number, isClockwise = true, decimalPlaces = Infinity): Matrix => {
+    const cos = setDecimalPlaces(Math.cos(angleRad), decimalPlaces);
+    const sin = setDecimalPlaces(Math.sin(angleRad), decimalPlaces);
+
+    return isClockwise ? [
+            [cos, 0, sin, 0],
+            [0, 1, 0, 0],
+            [-sin, 0, cos, 0],
+            [0, 0, 0, 1],
+        ] :
+        [
+            [cos, 0, -sin, 0],
+            [0, 1, 0, 0],
+            [sin, 0, cos, 0],
+            [0, 0, 0, 1],
+        ];
+};
+
 export const v3RotateY = (angleRad: number, vector: Vector3, isClockwise = true, decimalPlaces = Infinity): Vector3 => {
     const unitVector = v3Normalize(vector);
     return mMulVector(m3RotationY(angleRad, isClockwise, decimalPlaces), unitVector) as Vector3;
@@ -199,6 +241,27 @@ export const m3RotationZ = (angleRad: number, isClockwise = true, decimalPlaces 
         [cos, sin, 0],
         [-sin, cos, 0],
         [0, 0, 1],
+    ];
+};
+
+/**
+ * Rotation around the Z axis (clockwise)- in homogeneous coordinates
+ */
+export const m3RotationZH = (angleRad: number, isClockwise = true, decimalPlaces = Infinity): Matrix => {
+
+    const cos = setDecimalPlaces(Math.cos(angleRad), decimalPlaces);
+    const sin = setDecimalPlaces(Math.sin(angleRad), decimalPlaces);
+
+    return isClockwise ? [
+        [cos, -sin, 0, 0],
+        [sin, cos, 0, 0],
+        [0, 0, 1, 0],
+        [0, 0, 0, 1],
+    ] : [
+        [cos, sin, 0, 0],
+        [-sin, cos, 0, 0],
+        [0, 0, 1, 0],
+        [0, 0, 0, 1],
     ];
 };
 
@@ -239,6 +302,15 @@ export const m3Scale = (scaleVector: Vector3): Matrix3 => {
     ];
 };
 
+export const m3ScaleH = (scaleVector: Vector): Matrix => {
+    return [
+        [scaleVector[0], 0, 0, 0],
+        [0, scaleVector[1], 0, 0],
+        [0, 0, scaleVector[2], 0],
+        [0, 0, 0, 1]
+    ];
+};
+
 export const v3Scale = (scaleVector: Vector3, vector: Vector3): Vector3 => {
     return mMulVector(m3Scale(scaleVector), vector) as Vector3;
 };
@@ -276,6 +348,18 @@ export const m3ScaleX = (scale: number): Matrix3 => {
 };
 
 /**
+ * Stretch in x-direction
+ */
+export const m3ScaleXH = (scale: number): Matrix => {
+    return [
+        [scale, 0, 0, 0],
+        [0, 1, 0, 0],
+        [0, 0, 1, 0],
+        [0, 0, 0, 1],
+    ];
+};
+
+/**
  * Stretch in y-direction
  */
 export const m3ScaleY = (scale: number): Matrix3 => {
@@ -287,6 +371,18 @@ export const m3ScaleY = (scale: number): Matrix3 => {
 };
 
 /**
+ * Stretch in y-direction
+ */
+export const m3ScaleYH = (scale: number): Matrix => {
+    return [
+        [1, 0, 0, 0],
+        [0, scale, 0, 0],
+        [0, 0, 1, 0],
+        [0, 0, 0, 1],
+    ];
+};
+
+/**
  * Stretch in z-direction
  */
 export const m3ScaleZ = (scale: number): Matrix3 => {
@@ -294,6 +390,18 @@ export const m3ScaleZ = (scale: number): Matrix3 => {
         [1, 0, 0],
         [0, 1, 0],
         [0, 0, scale],
+    ];
+};
+
+/**
+ * Stretch in z-direction
+ */
+export const m3ScaleZH = (scale: number): Matrix => {
+    return [
+        [1, 0, 0, 0],
+        [0, 1, 0, 0],
+        [0, 0, scale, 0],
+        [0, 0, 0, 1],
     ];
 };
 

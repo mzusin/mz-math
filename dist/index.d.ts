@@ -113,10 +113,13 @@ declare module 'toolcool-math' {
     export const m2RotateAroundPointH: (angleRad: number, transformOrigin: Vector3, position: Vector3, isClockwise?: boolean, decimalPlaces?: number) => Vector3;
 
     export const m3RotationX: (angleRad: number, isClockwise?: boolean, decimalPlaces?: number) => Matrix3;
+    export const m3RotationXH: (angleRad: number, isClockwise?: boolean, decimalPlaces?: number) => Matrix;
     export const v3RotateX: (angleRad: number, vector: Vector3, isClockwise?: boolean, decimalPlaces?: number) => Vector3;
     export const m3RotationY: (angleRad: number, isClockwise?: boolean, decimalPlaces?: number) => Matrix3;
+    export const m3RotationYH: (angleRad: number, isClockwise?: boolean, decimalPlaces?: number) => Matrix;
     export const v3RotateY: (angleRad: number, vector: Vector3, isClockwise?: boolean, decimalPlaces?: number) => Vector3;
     export const m3RotationZ: (angleRad: number, isClockwise?: boolean, decimalPlaces?: number) => Matrix3;
+    export const m3RotationZH: (angleRad: number, isClockwise?: boolean, decimalPlaces?: number) => Matrix;
     export const v3RotateZ: (angleRad: number, vector: Vector3, isClockwise?: boolean, decimalPlaces?: number) => Vector3;
 
     export const m2Scale: (scaleVector: Vector2) => Matrix2;
@@ -127,8 +130,10 @@ declare module 'toolcool-math' {
     export const m2ScaleY: (scale: number) => Matrix2;
     export const m2ScaleYH: (scale: number) => Matrix3;
     export const m3Scale: (scaleVector: Vector3) => Matrix3;
+    export const m3ScaleH: (scaleVector: Vector) => Matrix;
     export const v3Scale: (scaleVector: Vector3, vector: Vector3) => Vector3;
     export const m3ScaleX: (scale: number) => Matrix3;
+    export const m3ScaleXH: (scale: number) => Matrix;
     export const m3ScaleY: (scale: number) => Matrix3;
     export const m3ScaleZ: (scale: number) => Matrix3;
 

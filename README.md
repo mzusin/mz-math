@@ -1702,15 +1702,26 @@ const scaledVector: Vector2 = v2Scale([2, 4], [10, 20]);
 It's possible to get a 3D scale matrix for a given scale vector as follows:
 
 ```js
-import { m3Scale, Matrix3 } from 'toolcool-math';
+import { m3Scale, m3ScaleH, Matrix3, Matrix } from 'toolcool-math';
 
-const smat3: Matrix3 = m3Scale([2, 4, 6]); // scale matrix with 2x, 4y, and 6z
-
+// scale matrix with 2x, 4y, and 6z - non-homogeneous coordinates
+const smat3: Matrix3 = m3Scale([2, 4, 6]);
 /*
 [
     [2, 0, 0],
     [0, 4, 0],
     [0, 0, 6],
+]
+ */
+
+// scale matrix with 2x, 4y, and 6z - in homogeneous coordinates
+const smat3: Matrix = m3ScaleH([2, 4, 6, 1]);
+/*
+[
+    [2, 0, 0, 0],
+    [0, 4, 0, 0],
+    [0, 0, 6, 0],
+    [0, 0, 0, 1],
 ]
  */
 ```
@@ -1727,9 +1738,10 @@ const scaledVector: Vector3 = v3Scale([2, 4, 6], [10, 20, 30]);
 Stretch in different directions:
 
 ```js
-import { m3ScaleX, m3ScaleY, m3ScaleZ, Matrix3 } from 'toolcool-math';
+import { m3ScaleX, m3ScaleY, m3ScaleZ, m3ScaleXH, Matrix3 } from 'toolcool-math';
 
-const mat1: Matrix3 = m3ScaleX(2); // stretch in x-direction
+// stretch in x-direction - non-homogeneous coordinates
+const mat1: Matrix3 = m3ScaleX(2); 
 /*
 [
     [2, 0, 0],
@@ -1738,7 +1750,19 @@ const mat1: Matrix3 = m3ScaleX(2); // stretch in x-direction
 ]
  */
 
-const mat2: Matrix3 = m3ScaleY(2); // stretch in y-direction
+// stretch in x-direction - in homogeneous coordinates
+const mat1: Matrix = m3ScaleXH(2);
+/*
+[
+    [2, 0, 0, 0],
+    [0, 1, 0, 0],
+    [0, 0, 1, 0],
+    [0, 0, 0, 1],
+]
+ */
+
+// stretch in y-direction - non-homogeneous coordinates
+const mat2: Matrix3 = m3ScaleY(2); 
 /*
 [
     [1, 0, 0],
@@ -1747,7 +1771,19 @@ const mat2: Matrix3 = m3ScaleY(2); // stretch in y-direction
 ]
  */
 
-const mat3: Matrix3 = m3ScaleZ(2); // stretch in z-direction
+// stretch in y-direction - in homogeneous coordinates
+const mat2: Matrix = m3ScaleYH(2);
+/*
+[
+    [1, 0, 0, 0],
+    [0, 2, 0, 0],
+    [0, 0, 1, 0],
+    [0, 0, 0, 1],
+]
+ */
+
+// stretch in z-direction - non-homogeneous coordinates
+const mat3: Matrix3 = m3ScaleZ(2); 
 /*
 [
     [1, 0, 0],
@@ -1755,8 +1791,18 @@ const mat3: Matrix3 = m3ScaleZ(2); // stretch in z-direction
     [0, 0, 2],
 ]
  */
-```
 
+// stretch in z-direction - in homogeneous coordinates
+const mat3: Matrix = m3ScaleZH(2);
+/*
+[
+    [1, 0, 0, 0],
+    [0, 1, 0, 0],
+    [0, 0, 2, 0],
+    [0, 0, 0, 1],
+]
+ */
+```
 
 -----------------------------------------------
 

@@ -35,16 +35,28 @@ export declare const v2RotateH: (angleRad: number, vector: Vector3, isClockwise?
  * Rotation around the X axis (clockwise).
  */
 export declare const m3RotationX: (angleRad: number, isClockwise?: boolean, decimalPlaces?: number) => Matrix3;
+/**
+ * Rotation around the X axis (clockwise) - in homogeneous coordinates
+ */
+export declare const m3RotationXH: (angleRad: number, isClockwise?: boolean, decimalPlaces?: number) => Matrix;
 export declare const v3RotateX: (angleRad: number, vector: Vector3, isClockwise?: boolean, decimalPlaces?: number) => Vector3;
 /**
  * Rotation around the Y axis (clockwise).
  */
 export declare const m3RotationY: (angleRad: number, isClockwise?: boolean, decimalPlaces?: number) => Matrix3;
+/**
+ * Rotation around the Y axis (clockwise) - in homogeneous coordinates
+ */
+export declare const m3RotationYH: (angleRad: number, isClockwise?: boolean, decimalPlaces?: number) => Matrix;
 export declare const v3RotateY: (angleRad: number, vector: Vector3, isClockwise?: boolean, decimalPlaces?: number) => Vector3;
 /**
  * Rotation around the Z axis (clockwise).
  */
 export declare const m3RotationZ: (angleRad: number, isClockwise?: boolean, decimalPlaces?: number) => Matrix3;
+/**
+ * Rotation around the Z axis (clockwise)- in homogeneous coordinates
+ */
+export declare const m3RotationZH: (angleRad: number, isClockwise?: boolean, decimalPlaces?: number) => Matrix;
 export declare const v3RotateZ: (angleRad: number, vector: Vector3, isClockwise?: boolean, decimalPlaces?: number) => Vector3;
 export declare const m2Scale: (scaleVector: Vector2) => Matrix2;
 export declare const v2Scale: (scaleVector: Vector2, vector: Vector2) => Vector2;
@@ -53,6 +65,7 @@ export declare const v2Scale: (scaleVector: Vector2, vector: Vector2) => Vector2
  */
 export declare const m2ScaleH: (scaleVector: Vector3) => Matrix3;
 export declare const m3Scale: (scaleVector: Vector3) => Matrix3;
+export declare const m3ScaleH: (scaleVector: Vector) => Matrix;
 export declare const v3Scale: (scaleVector: Vector3, vector: Vector3) => Vector3;
 /**
  * Stretch, parallel to the x-axis.
