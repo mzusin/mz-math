@@ -216,26 +216,6 @@ export const m2Scale = (scaleVector: Vector2): Matrix2 => {
     ];
 };
 
-/**
- * Stretch, parallel to the x-axis.
- */
-export const m2ScaleX = (scale: number): Matrix2 => {
-    return [
-        [scale, 0],
-        [0, 1],
-    ];
-};
-
-/**
- * Stretch, parallel to the y-axis.
- */
-export const m2ScaleY = (scale: number): Matrix2 => {
-    return [
-        [1, 0],
-        [0, scale],
-    ];
-};
-
 export const v2Scale = (scaleVector: Vector2, vector: Vector2): Vector2 => {
     return mMulVector(m2Scale(scaleVector), vector) as Vector2;
 };
@@ -250,6 +230,59 @@ export const m3Scale = (scaleVector: Vector3): Matrix3 => {
 
 export const v3Scale = (scaleVector: Vector3, vector: Vector3): Vector3 => {
     return mMulVector(m3Scale(scaleVector), vector) as Vector3;
+};
+
+/**
+ * Stretch, parallel to the x-axis.
+ */
+export const m2ScaleX = (scale: number): Matrix2 => {
+    return [
+        [scale, 0],
+        [0, 1],
+    ];
+};
+
+/**
+ * Stretch in x-direction
+ */
+export const m3ScaleX = (scale: number): Matrix3 => {
+    return [
+        [scale, 0, 0],
+        [0, 1, 0],
+        [0, 0, 1],
+    ];
+};
+
+/**
+ * Stretch in y-direction
+ */
+export const m3ScaleY = (scale: number): Matrix3 => {
+    return [
+        [1, 0, 0],
+        [0, scale, 0],
+        [0, 0, 1],
+    ];
+};
+
+/**
+ * Stretch in z-direction
+ */
+export const m3ScaleZ = (scale: number): Matrix3 => {
+    return [
+        [1, 0, 0],
+        [0, 1, 0],
+        [0, 0, scale],
+    ];
+};
+
+/**
+ * Stretch, parallel to the y-axis.
+ */
+export const m2ScaleY = (scale: number): Matrix2 => {
+    return [
+        [1, 0],
+        [0, scale],
+    ];
 };
 
 // ---------------- REFLECTION MATRICES -------------------------

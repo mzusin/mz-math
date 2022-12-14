@@ -1653,9 +1653,17 @@ const scaledVector: Vector2 = v2Scale([2, 4], [10, 20]);
 It's possible to get a 3D scale matrix for a given scale vector as follows:
 
 ```js
-import { m3Scale } from 'toolcool-math';
+import { m3Scale, Matrix3 } from 'toolcool-math';
 
-const smat3 = m3Scale([2, 4, 6]); // scale matrix with 2x, 4y, and 6z
+const smat3: Matrix3 = m3Scale([2, 4, 6]); // scale matrix with 2x, 4y, and 6z
+
+/*
+[
+    [2, 0, 0],
+    [0, 4, 0],
+    [0, 0, 6],
+]
+ */
 ```
 
 It is also possible to get the actual scaled vector using the **v3Scale** function:
@@ -1666,6 +1674,40 @@ import { Vector3, v3Scale } from 'toolcool-math';
 // scale the vector [10, 20, 30] with [2, 4, 6] scale vector
 const scaledVector: Vector3 = v3Scale([2, 4, 6], [10, 20, 30]); 
 ```
+
+Stretch in different directions:
+
+```js
+import { m3ScaleX, m3ScaleY, m3ScaleZ, Matrix3 } from 'toolcool-math';
+
+const mat1: Matrix3 = m3ScaleX(2); // stretch in x-direction
+/*
+[
+    [2, 0, 0],
+    [0, 1, 0],
+    [0, 0, 1],
+]
+ */
+
+const mat2: Matrix3 = m3ScaleY(2); // stretch in y-direction
+/*
+[
+    [1, 0, 0],
+    [0, 2, 0],
+    [0, 0, 1],
+]
+ */
+
+const mat3: Matrix3 = m3ScaleZ(2); // stretch in z-direction
+/*
+[
+    [1, 0, 0],
+    [0, 1, 0],
+    [0, 0, 2],
+]
+ */
+```
+
 
 -----------------------------------------------
 
