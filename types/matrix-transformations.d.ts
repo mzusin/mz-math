@@ -110,3 +110,11 @@ export declare const m3ReflectionY: () => Matrix3;
  * Reflection in the plane z=0
  */
 export declare const m3ReflectionZ: () => Matrix3;
+/**
+ * Shearing in y-axis, with x-axis fixed with (0,1) moving to (factor, 1)
+ */
+export declare const m2ShearingY: (factor: number) => Matrix2;
+/**
+ * Shearing in x-axis, with y-axis fixed with (1,0) moving to (1, factor)
+ */
+export declare const m2ShearingX: (factor: number) => Matrix2;

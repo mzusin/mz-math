@@ -51,6 +51,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
     - [Rotate around the point](#rotate-around-the-point)
     - [Scale/Stretch Matrix](#scalestretch-matrix)
     - [Reflection Matrix](#reflection-matrix)
+    - [Shearing Matrix](#shearing-matrix)
   - [Matrix Determinant](#matrix-determinant)
   - [Inverse Matrix](#inverse-matrix)
   - [Check if matrix is singular](#check-if-matrix-is-singular)
@@ -1820,6 +1821,36 @@ const mat4: Matrix3 = m3ReflectionYX();
     [1, 0, 0],
     [0, 1, 0],
     [0, 0, -1],
+];
+ */
+```
+
+-----------------------------------------------
+
+## Shearing Matrix
+
+**2D shearing matrix**
+
+```js
+import { m2ShearingX, m2ShearingY, Matrix2 } from 'toolcool-math';
+
+// shearing in x-axis, with y-axis fixed with (1,0) moving to (1, factor)
+const factor = 5;
+const mat1: Matrix2 = m2ShearingX(factor);
+/*
+[
+    [1, 0],
+    [5, 1],
+];
+ */
+
+// shearing in y-axis, with x-axis fixed with (0,1) moving to (factor, 1)
+const factor = 5;
+const mat2: Matrix2 = m2ShearingY(factor);
+/*
+[
+    [1, 5],
+    [0, 1],
 ];
  */
 ```

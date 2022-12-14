@@ -55,6 +55,8 @@ declare const api: {
     m3ReflectionX: () => import("./types").Matrix3;
     m3ReflectionY: () => import("./types").Matrix3;
     m3ReflectionZ: () => import("./types").Matrix3;
+    m2ShearingY: (factor: number) => import("./types").Matrix2;
+    m2ShearingX: (factor: number) => import("./types").Matrix2;
     mSum: (matrix1: import("./types").Matrix, matrix2: import("./types").Matrix, decimalPlaces?: number) => import("./types").Matrix;
     m2Sum: (matrix1: import("./types").Matrix2, matrix2: import("./types").Matrix2, decimalPlaces?: number) => import("./types").Matrix2;
     m3Sum: (matrix1: import("./types").Matrix3, matrix2: import("./types").Matrix3, decimalPlaces?: number) => import("./types").Matrix3;

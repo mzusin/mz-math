@@ -44,7 +44,9 @@
     "equation",
     "translation matrix",
     "reflection",
-    "reflection matrix"
+    "reflection matrix",
+    "shearing",
+    "shearing matrix"
   ],
   "author": "Tool Cool <toolcool.org@gmail.com>",
   "license": "MIT",
