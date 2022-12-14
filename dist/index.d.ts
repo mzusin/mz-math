@@ -199,4 +199,8 @@ declare module 'toolcool-math' {
     export const equationSystem2: (equation1: Vector3, equation2: Vector3, decimalPlaces?: number) => Vector2 | null;
     export const equationSystem3: (equation1: Vector, equation2: Vector, equation3: Vector, decimalPlaces?: number) => Vector3 | null;
     export const equationSystemN: (equations: Matrix, decimalPlaces?: number) => Vector | null;
+
+    export const m2ToCSS: (m: Matrix2) => string;
+    export const m2hToCSS: (m: Matrix3) => string;
+    export const m2hToCSS3d: (m: Matrix3) => string;
 }

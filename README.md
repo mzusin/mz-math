@@ -52,6 +52,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
     - [Scale/Stretch Matrix](#scalestretch-matrix)
     - [Reflection Matrix](#reflection-matrix)
     - [Shearing Matrix](#shearing-matrix)
+  - [Matrix to CSS conversion](#matrix-to-css-conversion)
   - [Matrix Determinant](#matrix-determinant)
   - [Inverse Matrix](#inverse-matrix)
   - [Check if matrix is singular](#check-if-matrix-is-singular)
@@ -2023,6 +2024,59 @@ const mat2: Matrix2 = m2ShearingY(factor);
     [0, 1],
 ];
  */
+```
+
+-----------------------------------------------
+
+## Matrix to CSS conversion
+
+The functions below help to convert the matrix to the following CSS functions: [matrix()](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix) and [matrix3d()](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix3d).
+
+```js
+import { Matrix3, m2hToCSS } from 'toolcool-math';
+
+// 2d matrix in homogeneous coordinates
+const mat: Matrix3 = [
+  [1, 2, 0],
+  [3, 4, 0],
+  [0, 0, 1],
+];
+const str1 = m2hToCSS(mat); // matrix(1, 3, 2, 4, 0, 4)
+```
+
+It can be used as:
+
+```css
+.box{
+  transform: matrix(1, 3, 2, 4, 0, 4);
+}
+```
+
+[matrix3d()](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix3d) representation:
+
+```js
+import { Matrix3, m2hToCSS3d } from 'toolcool-math';
+
+// 2d matrix in homogeneous coordinates
+const mat: Matrix3 = [
+  [1, 2, 0],
+  [3, 4, 0],
+  [0, 0, 1],
+];
+const str1 = m2hToCSS3d(mat); // matrix3d(1, 3, 0, 0, 2, 4, 0, 0, 0, 0, 1, 0, 0, 4, 0, 1)
+```
+
+Non-homogeneous coordinates version:
+
+```js
+import { Matrix2, m2ToCSS } from 'toolcool-math';
+
+// 2d matrix in homogeneous coordinates
+const mat: Matrix2 = [
+  [1, 2],
+  [3, 4],
+];
+const str1 = m2ToCSS(mat); // matrix(1, 3, 2, 4, 0, 0)
 ```
 
 -----------------------------------------------

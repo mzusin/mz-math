@@ -3,6 +3,51 @@ import { v2Normalize, v3MulScalar, v3Normalize } from './vector';
 import { mMulVector, mMul } from './matrix';
 import { setDecimalPlaces } from './format';
 
+// ----------------- CSS -------------------------------------
+
+/**
+ * Matrix 2D in non-homogeneous coordinates to CSS matrix() function
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix
+ */
+export const m2ToCSS = (m: Matrix2) : string => {
+    const a = m[0][0];
+    const b = m[1][0];
+    const c = m[0][1];
+    const d = m[1][1];
+
+    return `matrix(${ a }, ${ b }, ${ c }, ${ d }, 0, 0)`;
+};
+
+/**
+ * Matrix 2D in homogeneous coordinates to CSS matrix() function
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix
+ */
+export const m2hToCSS = (m: Matrix3) : string => {
+    const a = m[0][0];
+    const b = m[1][0];
+    const c = m[0][1];
+    const d = m[1][1];
+    const tx = m[0][2];
+    const ty = m[1][1];
+
+    return `matrix(${ a }, ${ b }, ${ c }, ${ d }, ${ tx }, ${ ty })`;
+};
+
+/**
+ * Matrix 2D in homogeneous coordinates to CSS matrix3d() function
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix3d
+ */
+export const m2hToCSS3d = (m: Matrix3) : string => {
+    const a = m[0][0];
+    const b = m[1][0];
+    const c = m[0][1];
+    const d = m[1][1];
+    const tx = m[0][2];
+    const ty = m[1][1];
+
+    return `matrix3d(${ a }, ${ b }, 0, 0, ${ c }, ${ d }, 0, 0, 0, 0, 1, 0, ${ tx }, ${ ty }, 0, 1)`;
+};
+
 // ---------------- TRANSLATION MATRICES ----------------------
 
 export const m2Translation = (position: Vector2, decimalPlaces = Infinity): Matrix2 => {

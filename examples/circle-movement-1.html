@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Circle Movement</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/styles-1.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="star">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-north-star" width="50" height="50" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M3 12h18"></path>
+            <path d="M12 21v-18"></path>
+            <path d="M7.5 7.5l9 9"></path>
+            <path d="M7.5 16.5l9 -9"></path>
+        </svg>
+    </div>
+
+    <div id="center"></div>
+
+    <script src="../../dist/tc-math.min.js"></script>
+    <script>
+        let handler = null;
+
+        const animate = () => {
+            const $center = document.getElementById('center');
+            const centerBox = $center.getBoundingClientRect();
+            const centerX = centerBox.x + centerBox.width/2;
+            const centerY = centerBox.y + centerBox.height/2;
+
+            const $star = document.getElementById('star');
+            const starBox = $star.getBoundingClientRect();
+
+            const radius = 250; // px
+
+            const TIME = Infinity; // Infinity;
+
+            let start, previousTimeStamp;
+            let angle = Math.PI*2 / 360; // speed = 1 angle per frame
+            let transformOrigin = [window.innerWidth/2, window.innerHeight/2];
+
+            let pos = [centerX + radius, centerY];
+
+            const step = (timestamp) => {
+                if (start === undefined) {
+                    start = timestamp;
+                }
+
+                const elapsed = timestamp - start;
+
+                if (previousTimeStamp !== timestamp) {
+                    // const percent = Math.min(elapsed * 100 / TIME, 100);
+
+                    pos = TCMath.m2RotateAroundPointH(angle, transformOrigin, [pos[0], pos[1], 1]);
+
+                    $star.style.position = 'absolute';
+                    //$star.style.left = `${ pos[0] - starBox.width/2 }px`;
+                    //$star.style.top = `${ pos[1] - starBox.height/2 }px`;
+                    $star.style.transform = `matrix3d(
+                        a, b, 0, 0,
+                        c, d, 0, 0,
+                        0, 0, 1, 0,
+                        tx, ty, 0, 1
+                    )`;
+                }
+
+                if (elapsed < TIME) {
+                    previousTimeStamp = timestamp;
+                    window.requestAnimationFrame(step);
+                }
+            };
+
+            handler = window.requestAnimationFrame(step);
+        };
+
+        const observer = new ResizeObserver(entries => {
+            for (const entry of entries) {
+                window.cancelAnimationFrame(handler);
+                animate();
+            }
+        });
+        observer.observe(document.body, {box: 'border-box'});
+
+        /*
+        // $star.style.transform = 'matrix(1.2, 0.2, -1, 0.9, 0, 20)';
+        // scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY()
+
+        /*
+        matrix(a, b, c, d, tx, ty) is a shorthand for
+
+        matrix3d(
+            a, b, 0, 0,
+            c, d, 0, 0,
+            0, 0, 1, 0,
+            tx, ty, 0, 1
+        ).
+         */
+    </script>
+</body>
+</html>

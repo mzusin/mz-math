@@ -1,4 +1,19 @@
 import { Matrix2, Matrix3, Matrix, Vector2, Vector3, Vector } from './types';
+/**
+ * Matrix 2D in non-homogeneous coordinates to CSS matrix() function
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix
+ */
+export declare const m2ToCSS: (m: Matrix2) => string;
+/**
+ * Matrix 2D in homogeneous coordinates to CSS matrix() function
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix
+ */
+export declare const m2hToCSS: (m: Matrix3) => string;
+/**
+ * Matrix 2D in homogeneous coordinates to CSS matrix3d() function
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix3d
+ */
+export declare const m2hToCSS3d: (m: Matrix3) => string;
 export declare const m2Translation: (position: Vector2, decimalPlaces?: number) => Matrix2;
 export declare const m3Translation: (position: Vector3, decimalPlaces?: number) => Matrix3;
 /**
