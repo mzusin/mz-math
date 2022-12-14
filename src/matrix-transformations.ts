@@ -231,3 +231,63 @@ export const m3Scale = (scaleVector: Vector3): Matrix3 => {
 export const v3Scale = (scaleVector: Vector3, vector: Vector3): Vector3 => {
     return mMulVector(m3Scale(scaleVector), vector) as Vector3;
 };
+
+// ---------------- REFLECTION MATRICES -------------------------
+
+/**
+ * Reflection in the x-axis.
+ */
+export const m2ReflectionX = (): Matrix2 => {
+
+    return [
+        [1, 0],
+        [0, -1],
+    ];
+};
+
+/**
+ * Reflection in the y-axis.
+ */
+export const m2ReflectionY = (): Matrix2 => {
+
+    return [
+        [-1, 0],
+        [0, 1],
+    ];
+};
+
+/**
+ * Reflection in the plane x=0
+ */
+export const m3ReflectionX = (): Matrix3 => {
+
+    return [
+        [-1, 0, 0],
+        [0, 1, 0],
+        [0, 0, 1],
+    ];
+};
+
+/**
+ * Reflection in the plane y=0
+ */
+export const m3ReflectionY = (): Matrix3 => {
+
+    return [
+        [1, 0, 0],
+        [0, -1, 0],
+        [0, 0, 1],
+    ];
+};
+
+/**
+ * Reflection in the plane z=0
+ */
+export const m3ReflectionZ = (): Matrix3 => {
+
+    return [
+        [1, 0, 0],
+        [0, 1, 0],
+        [0, 0, -1],
+    ];
+};
