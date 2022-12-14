@@ -58,41 +58,51 @@ export const m3TranslationH = (position: Vector, decimalPlaces = Infinity): Matr
 /**
  * Rotation of an angle about the origin.
  */
-export const m2Rotation = (angleRad: number, decimalPlaces = Infinity): Matrix2 => {
+export const m2Rotation = (angleRad: number, isClockwise = true, decimalPlaces = Infinity): Matrix2 => {
     const cos = setDecimalPlaces(Math.cos(angleRad), decimalPlaces);
     const sin = setDecimalPlaces(Math.sin(angleRad), decimalPlaces);
 
-    return [
+    return isClockwise ? [
         [cos, -sin],
         [sin, cos],
+    ] :
+    [
+        [cos, sin],
+        [-sin, cos],
     ];
 };
 
 /**
- * Rotation of an angle about the origin in homogeneous coordinates.
+ * Rotation of an angle about the origin in homogeneous coordinates (clockwise).
  */
-export const m2RotationH = (angleRad: number, decimalPlaces = Infinity): Matrix3 => {
+export const m2RotationH = (angleRad: number, isClockwise = true, decimalPlaces = Infinity): Matrix3 => {
     const cos = setDecimalPlaces(Math.cos(angleRad), decimalPlaces);
     const sin = setDecimalPlaces(Math.sin(angleRad), decimalPlaces);
 
-    return [
+    return isClockwise ? [
         [cos, -sin, 0],
         [sin, cos, 0],
+        [0, 0, 1],
+    ]:
+    [
+        [cos, sin, 0],
+        [-sin, cos, 0],
         [0, 0, 1],
     ];
 };
 
 /**
- * Rotation of an angle "angleRad" around the given point (transformOrigin) in homogeneous coordinates.
+ * Rotation of an angle "angleRad" around the given point (transformOrigin) in homogeneous coordinates (clockwise).
  * result_vector = TranslationMatrix(x, y) * RotationMatrix() * TranslationMatrix(-x, -y) * position_vector
  */
 export const m2RotationAroundPointH = (
     angleRad: number,
     transformOrigin: Vector3,
+    isClockwise = true,
     decimalPlaces = Infinity): Matrix3 => {
 
     const translation = m2TranslationH(transformOrigin, decimalPlaces);
-    const rotation = m2RotationH(angleRad, decimalPlaces);
+    const rotation = m2RotationH(angleRad, isClockwise, decimalPlaces);
     const translationBack = m2TranslationH(v3MulScalar(transformOrigin, -1), decimalPlaces);
     const temp1 = mMul(translation, rotation);
     return mMul(temp1, translationBack) as Matrix3;
@@ -102,84 +112,99 @@ export const m2RotateAroundPointH = (
     angleRad: number,
     transformOrigin: Vector3,
     position: Vector3,
+    isClockwise = true,
     decimalPlaces = Infinity): Vector3 => {
 
-    const mat3h = m2RotationAroundPointH(angleRad, transformOrigin, decimalPlaces);
+    const mat3h = m2RotationAroundPointH(angleRad, transformOrigin, isClockwise, decimalPlaces);
     return mMulVector(mat3h, position) as Vector3;
 };
 
 /**
- * Rotate vector around the origin by angle "angleRad".
+ * Rotate vector around the origin by angle "angleRad" (clockwise).
  */
-export const v2Rotate = (angleRad: number, vector: Vector2, decimalPlaces = Infinity): Vector2 => {
+export const v2Rotate = (angleRad: number, vector: Vector2, isClockwise = true, decimalPlaces = Infinity): Vector2 => {
     const unitVector = v2Normalize(vector);
-    return mMulVector(m2Rotation(angleRad, decimalPlaces), unitVector) as Vector2;
+    return mMulVector(m2Rotation(angleRad, isClockwise, decimalPlaces), unitVector) as Vector2;
 };
 
 /**
- * Rotate vector around the origin by angle "angleRad".
+ * Rotate vector around the origin by angle "angleRad" (clockwise).
  */
-export const v2RotateH = (angleRad: number, vector: Vector3, decimalPlaces = Infinity): Vector3 => {
+export const v2RotateH = (angleRad: number, vector: Vector3, isClockwise = true, decimalPlaces = Infinity): Vector3 => {
     const unitVector = v3Normalize(vector);
-    return mMulVector(m2RotationH(angleRad, decimalPlaces), unitVector) as Vector3;
+    return mMulVector(m2RotationH(angleRad, isClockwise, decimalPlaces), unitVector) as Vector3;
 };
 
 /**
- * Rotation around the X axis.
+ * Rotation around the X axis (clockwise).
  */
-export const m3RotationX = (angleRad: number, decimalPlaces = Infinity): Matrix3 => {
+export const m3RotationX = (angleRad: number, isClockwise = true, decimalPlaces = Infinity): Matrix3 => {
     const cos = setDecimalPlaces(Math.cos(angleRad), decimalPlaces);
     const sin = setDecimalPlaces(Math.sin(angleRad), decimalPlaces);
 
-    return [
+    return isClockwise ? [
         [1, 0, 0],
         [0, cos, -sin],
         [0, sin, cos],
+    ] :
+    [
+        [1, 0, 0],
+        [0, cos, sin],
+        [0, -sin, cos],
     ];
 };
 
-export const v3RotateX = (angleRad: number, vector: Vector3, decimalPlaces = Infinity): Vector3 => {
+export const v3RotateX = (angleRad: number, vector: Vector3, isClockwise = true, decimalPlaces = Infinity): Vector3 => {
     const unitVector = v3Normalize(vector);
-    return mMulVector(m3RotationX(angleRad, decimalPlaces), unitVector) as Vector3;
+    return mMulVector(m3RotationX(angleRad, isClockwise, decimalPlaces), unitVector) as Vector3;
 };
 
 /**
- * Rotation around the Y axis.
+ * Rotation around the Y axis (clockwise).
  */
-export const m3RotationY = (angleRad: number, decimalPlaces = Infinity): Matrix3 => {
+export const m3RotationY = (angleRad: number, isClockwise = true, decimalPlaces = Infinity): Matrix3 => {
     const cos = setDecimalPlaces(Math.cos(angleRad), decimalPlaces);
     const sin = setDecimalPlaces(Math.sin(angleRad), decimalPlaces);
 
-    return [
+    return isClockwise ? [
         [cos, 0, sin],
         [0, 1, 0],
         [-sin, 0, cos],
+    ] :
+    [
+        [cos, 0, -sin],
+        [0, 1, 0],
+        [sin, 0, cos],
     ];
 };
 
-export const v3RotateY = (angleRad: number, vector: Vector3, decimalPlaces = Infinity): Vector3 => {
+export const v3RotateY = (angleRad: number, vector: Vector3, isClockwise = true, decimalPlaces = Infinity): Vector3 => {
     const unitVector = v3Normalize(vector);
-    return mMulVector(m3RotationY(angleRad, decimalPlaces), unitVector) as Vector3;
+    return mMulVector(m3RotationY(angleRad, isClockwise, decimalPlaces), unitVector) as Vector3;
 };
 
 /**
- * Rotation around the Z axis.
+ * Rotation around the Z axis (clockwise).
  */
-export const m3RotationZ = (angleRad: number, decimalPlaces = Infinity): Matrix3 => {
+export const m3RotationZ = (angleRad: number, isClockwise = true, decimalPlaces = Infinity): Matrix3 => {
 
     const cos = setDecimalPlaces(Math.cos(angleRad), decimalPlaces);
     const sin = setDecimalPlaces(Math.sin(angleRad), decimalPlaces);
 
-    return [
+    return isClockwise ? [
         [cos, -sin, 0],
         [sin, cos, 0],
+        [0, 0, 1],
+    ] : [
+        [cos, sin, 0],
+        [-sin, cos, 0],
         [0, 0, 1],
     ];
 };
 
-export const v3RotateZ = (angleRad: number, vector: Vector3, decimalPlaces = Infinity): Vector3 => {
+export const v3RotateZ = (angleRad: number, vector: Vector3, isClockwise = true, decimalPlaces = Infinity): Vector3 => {
     const unitVector = v3Normalize(vector);
-    return mMulVector(m3RotationZ(angleRad, decimalPlaces), unitVector) as Vector3;
+    return mMulVector(m3RotationZ(angleRad, isClockwise, decimalPlaces), unitVector) as Vector3;
 };
 
 // ---------------- SCALE MATRICES -------------

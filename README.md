@@ -1484,8 +1484,11 @@ It's possible to get a 2D rotation matrix for a given angle in radians as follow
 ```js
 import { m2Rotation, Matrix2, Matrix3 } from 'toolcool-math';
 
-// Rotation of an angle 90deg about the origin.
-const mat1: Matrix2 = m2Rotation(Math.PI/2, 3); // 3 decimal places
+// Rotation of an angle 90deg about the origin
+let angle = Math.PI/2; // radians
+let isClockwise = true; // optional
+let decimalPlaces = 3; // optional
+const mat1: Matrix2 = m2Rotation(angle, isClockwise, decimalPlaces);
 
 /*
 [
@@ -1494,8 +1497,11 @@ const mat1: Matrix2 = m2Rotation(Math.PI/2, 3); // 3 decimal places
 ];
  */
 
-// Rotation of an angle 90deg about the origin in homogeneous coordinates.
-const mat2: Matrix3 = m2RotationH(Math.PI/2, 3); // 3 decimal places
+// Rotation of an angle 90deg about the origin in homogeneous coordinates
+let angle = Math.PI/2; // radians
+let isClockwise = true; // optional
+let decimalPlaces = 3; // optional
+let const mat2: Matrix3 = m2RotationH(angle, isClockwise, decimalPlaces); 
 /*
 [
     [Math.cos(angleRad), -Math.sin(angleRad), 0],
@@ -1511,10 +1517,18 @@ It is also possible to get the actual rotated vector using the **v2Rotate** and 
 import { Vector2, Vector3, v2Rotate, v2RotateH } from 'toolcool-math';
 
 // vector rotated by 90 degrees around the origin
-const rotatedVector1: Vector2 = v2Rotate(Math.PI/2, [10, 20], 3); // 3 decimal places
+let angle = Math.PI/2; // radians
+let vector: Vector2 = [10, 20];
+let isClockwise = true; // optional
+let decimalPlaces = 3; // optional
+const rotatedVector1: Vector2 = v2Rotate(angle, vector, isClockwise, decimalPlaces);
 
 // vector rotated by 90 degrees around the origin in homogeneous coordinates
-const rotatedVector2: Vector3 = v2RotateH(Math.PI/2, [10, 20, 1], 3); // 3 decimal places
+let angle = Math.PI/2; // radians
+let vector: Vector3 = [10, 20, 1];
+let isClockwise = true; // optional
+let decimalPlaces = 3; // optional
+const rotatedVector2: Vector3 = v2RotateH(angle, vector, isClockwise, decimalPlaces);
 ```
 
 **3D rotation matrices**
@@ -1525,13 +1539,22 @@ It's possible to get the following 3D rotation matrices:
 import { m3RotationX, m3RotationY, m3RotationZ } from 'toolcool-math';
 
 // rotation matrix around the X axis
-const rmat3x = m3RotationX(Math.PI/2);
+let angle = Math.PI/2; // radians
+let isClockwise = true; // optional
+let decimalPlaces = 3; // optional
+const rmat3x = m3RotationX(angle, isClockwise, decimalPlaces);
 
 // rotation matrix around the Y axis
-const rmat3y = m3RotationY(Math.PI/2);
+let angle = Math.PI/2; // radians
+let isClockwise = true; // optional
+let decimalPlaces = 3; // optional
+const rmat3y = m3RotationY(angle, isClockwise, decimalPlaces);
 
 // rotation matrix around the Z axis
-const rmat3z = m3RotationZ(Math.PI/2); 
+let angle = Math.PI/2; // radians
+let isClockwise = true; // optional
+let decimalPlaces = 3; // optional
+const rmat3z = m3RotationZ(angle, isClockwise, decimalPlaces); 
 ```
 
 It is also possible to get the actual rotated vector using the following functions:
@@ -1540,13 +1563,25 @@ It is also possible to get the actual rotated vector using the following functio
 import { Vector3, v3RotateX, v3RotateY, v3RotateZ } from 'toolcool-math';
 
 // rotation around the X axis
-const rotatedVector1: Vector3 = v3RotateX(Math.PI/2, [10, 20, 30]);
+let angle = Math.PI/2; // radians
+let vector: Vector3 = [10, 20, 30];
+let isClockwise = true; // optional
+let decimalPlaces = 3; // optional
+const rotatedVector1: Vector3 = v3RotateX(angle, vector, isClockwise, decimalPlaces);
 
 // rotation around the Y axis
-const rotatedVector2: Vector3 = v3RotateY(Math.PI/2, [10, 20, 30]);
+let angle = Math.PI/2; // radians
+let vector: Vector3 = [10, 20, 30];
+let isClockwise = true; // optional
+let decimalPlaces = 3; // optional
+const rotatedVector2: Vector3 = v3RotateY(angle, vector, isClockwise, decimalPlaces);
 
 // rotation around the Z axis
-const rotatedVector3: Vector3 = v3RotateZ(Math.PI/2, [10, 20, 30]);
+let angle = Math.PI/2; // radians
+let vector: Vector3 = [10, 20, 30];
+let isClockwise = true; // optional
+let decimalPlaces = 3; // optional
+const rotatedVector3: Vector3 = v3RotateZ(angle, vector, isClockwise, decimalPlaces);
 ```
 
 ## Rotate around the point
@@ -1559,9 +1594,25 @@ import { Vector3, m2RotationAroundPointH } from 'toolcool-math';
 const angle = Math.PI/4; // radians
 const transformOrigin = [100, 100, 1]; // in homogeneous coordinates
 const point: Vector3 = [150, 150, 1]; // [x, y, 1]
+const isClockwise = true; // optional
 const decimalPlaces = 2; // optional
 
-const pos: Vector3 = m2RotateAroundPointH(angle, transformOrigin, [pos[0], pos[1], decimalPlaces]);
+// get the new position after rotation
+const pos: Vector3 = m2RotateAroundPointH(
+    angle, 
+    transformOrigin,
+    point,
+    isClockwise,
+    decimalPlaces
+);
+
+// it's also possible to get the appropriate rotation matrix
+const mat3: Matrix3 = m2RotationAroundPointH(
+    angle,
+    transformOrigin,
+    isClockwise,
+    decimalPlaces
+);
 ```
 
 [Circle Movement Example](https://github.com/toolcool-org/toolcool-math/blob/main/examples/circle-movement.html)

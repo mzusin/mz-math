@@ -105,19 +105,19 @@ declare module 'toolcool-math' {
     export const m2TranslationH: (position: Vector3, decimalPlaces?: number) => Matrix3;
     export const m3TranslationH: (position: Vector, decimalPlaces?: number) => Matrix;
 
-    export const m2Rotation: (angleRad: number, decimalPlaces?: number) => Matrix2;
-    export const m2RotationH: (angleRad: number, decimalPlaces?: number) => Matrix3;
-    export const v2Rotate: (angleRad: number, vector: Vector2, decimalPlaces?: number) => Vector2;
-    export const v2RotateH: (angleRad: number, vector: Vector3, decimalPlaces?: number) => Vector3;
-    export const m2RotationAroundPointH: (angleRad: number, transformOrigin: Vector3, decimalPlaces?: number) => Matrix3;
-    export const m2RotateAroundPointH: (angleRad: number, transformOrigin: Vector3, position: Vector3, decimalPlaces?: number) => Vector3;
+    export const m2Rotation: (angleRad: number, isClockwise?: boolean, decimalPlaces?: number) => Matrix2;
+    export const m2RotationH: (angleRad: number, isClockwise?: boolean, decimalPlaces?: number) => Matrix3;
+    export const v2Rotate: (angleRad: number, vector: Vector2, isClockwise?: boolean, decimalPlaces?: number) => Vector2;
+    export const v2RotateH: (angleRad: number, vector: Vector3, isClockwise?: boolean, decimalPlaces?: number) => Vector3;
+    export const m2RotationAroundPointH: (angleRad: number, transformOrigin: Vector3, isClockwise?: boolean, decimalPlaces?: number) => Matrix3;
+    export const m2RotateAroundPointH: (angleRad: number, transformOrigin: Vector3, position: Vector3, isClockwise?: boolean, decimalPlaces?: number) => Vector3;
 
-    export const m3RotationX: (angleRad: number, decimalPlaces?: number) => Matrix3;
-    export const v3RotateX: (angleRad: number, vector: Vector3, decimalPlaces?: number) => Vector3;
-    export const m3RotationY: (angleRad: number, decimalPlaces?: number) => Matrix3;
-    export const v3RotateY: (angleRad: number, vector: Vector3, decimalPlaces?: number) => Vector3;
-    export const m3RotationZ: (angleRad: number, decimalPlaces?: number) => Matrix3;
-    export const v3RotateZ: (angleRad: number, vector: Vector3, decimalPlaces?: number) => Vector3;
+    export const m3RotationX: (angleRad: number, isClockwise?: boolean, decimalPlaces?: number) => Matrix3;
+    export const v3RotateX: (angleRad: number, vector: Vector3, isClockwise?: boolean, decimalPlaces?: number) => Vector3;
+    export const m3RotationY: (angleRad: number, isClockwise?: boolean, decimalPlaces?: number) => Matrix3;
+    export const v3RotateY: (angleRad: number, vector: Vector3, isClockwise?: boolean, decimalPlaces?: number) => Vector3;
+    export const m3RotationZ: (angleRad: number, isClockwise?: boolean, decimalPlaces?: number) => Matrix3;
+    export const v3RotateZ: (angleRad: number, vector: Vector3, isClockwise?: boolean, decimalPlaces?: number) => Vector3;
 
     export const m2Scale: (scaleVector: Vector2) => Matrix2;
     export const v2Scale: (scaleVector: Vector2, vector: Vector2) => Vector2;
