@@ -50,6 +50,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
     - [Rotation Matrix](#rotation-matrix)
     - [Rotate around the point](#rotate-around-the-point)
     - [Scale Matrix](#scale-matrix)
+    - [Reflection Matrix](#reflection-matrix)
   - [Matrix Determinant](#matrix-determinant)
   - [Inverse Matrix](#inverse-matrix)
   - [Check if matrix is singular](#check-if-matrix-is-singular)
@@ -1501,7 +1502,7 @@ const mat1: Matrix2 = m2Rotation(angle, isClockwise, decimalPlaces);
 let angle = Math.PI/2; // radians
 let isClockwise = true; // optional
 let decimalPlaces = 3; // optional
-let const mat2: Matrix3 = m2RotationH(angle, isClockwise, decimalPlaces); 
+let mat2: Matrix3 = m2RotationH(angle, isClockwise, decimalPlaces); 
 /*
 [
     [Math.cos(angleRad), -Math.sin(angleRad), 0],
@@ -1657,6 +1658,74 @@ import { Vector3, v3Scale } from 'toolcool-math';
 
 // scale the vector [10, 20, 30] with [2, 4, 6] scale vector
 const scaledVector: Vector3 = v3Scale([2, 4, 6], [10, 20, 30]); 
+```
+
+-----------------------------------------------
+
+## Reflection Matrix
+
+**2D reflection matrix**
+
+It's possible to get a 2D reflection matrices as follows:
+
+```js
+import { m2ReflectionX, m2ReflectionY, Matrix2 } from 'toolcool-math';
+
+// reflection in the x-axis.
+const mat1: Matrix2 = m2ReflectionX();
+/*
+[
+    [1, 0],
+    [0, -1],
+];
+ */
+
+// reflection in the y-axis.
+const mat2: Matrix2 = m2ReflectionY();
+/*
+[
+    [-1, 0],
+    [0, 1],
+];
+ */
+```
+
+**3D reflection matrix**
+
+It's possible to get a 3D reflection matrices as follows:
+
+```js
+import { m3ReflectionX, m3ReflectionY, m3ReflectionZ, Matrix3 } from 'toolcool-math';
+
+// reflection in the plane x=0
+const mat1: Matrix3 = m3ReflectionX();
+/*
+[
+    [-1, 0, 0],
+    [0, 1, 0],
+    [0, 0, 1],
+];
+ */
+
+// reflection in the plane y=0
+const mat2: Matrix3 = m3ReflectionY();
+/*
+[
+    [1, 0, 0],
+    [0, -1, 0],
+    [0, 0, 1],
+];
+ */
+
+// reflection in the plane z=0
+const mat2: Matrix3 = m3ReflectionZ();
+/*
+[
+    [1, 0, 0],
+    [0, 1, 0],
+    [0, 0, -1],
+];
+ */
 ```
 
 -----------------------------------------------

@@ -50,3 +50,23 @@ export declare const m2Scale: (scaleVector: Vector2) => Matrix2;
 export declare const v2Scale: (scaleVector: Vector2, vector: Vector2) => Vector2;
 export declare const m3Scale: (scaleVector: Vector3) => Matrix3;
 export declare const v3Scale: (scaleVector: Vector3, vector: Vector3) => Vector3;
+/**
+ * Reflection in the x-axis.
+ */
+export declare const m2ReflectionX: () => Matrix2;
+/**
+ * Reflection in the y-axis.
+ */
+export declare const m2ReflectionY: () => Matrix2;
+/**
+ * Reflection in the plane x=0
+ */
+export declare const m3ReflectionX: () => Matrix3;
+/**
+ * Reflection in the plane y=0
+ */
+export declare const m3ReflectionY: () => Matrix3;
+/**
+ * Reflection in the plane z=0
+ */
+export declare const m3ReflectionZ: () => Matrix3;

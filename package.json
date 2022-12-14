@@ -42,7 +42,9 @@
     "scale",
     "system of equations",
     "equation",
-    "translation matrix"
+    "translation matrix",
+    "reflection",
+    "reflection matrix"
   ],
   "author": "Tool Cool <toolcool.org@gmail.com>",
   "license": "MIT",
