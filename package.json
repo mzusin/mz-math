@@ -46,7 +46,8 @@
     "reflection",
     "reflection matrix",
     "shearing",
-    "shearing matrix"
+    "shearing matrix",
+    "css transform"
   ],
   "author": "Tool Cool <toolcool.org@gmail.com>",
   "license": "MIT",

@@ -52,7 +52,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
     - [Scale/Stretch Matrix](#scalestretch-matrix)
     - [Reflection Matrix](#reflection-matrix)
     - [Shearing Matrix](#shearing-matrix)
-  - [Matrix to CSS conversion](#matrix-to-css-conversion)
+  - [Matrix to CSS transform](#matrix-to-css-transform)
   - [Matrix Determinant](#matrix-determinant)
   - [Inverse Matrix](#inverse-matrix)
   - [Check if matrix is singular](#check-if-matrix-is-singular)
@@ -2028,7 +2028,7 @@ const mat2: Matrix2 = m2ShearingY(factor);
 
 -----------------------------------------------
 
-## Matrix to CSS conversion
+## Matrix to CSS transform
 
 The functions below help to convert the matrix to the following CSS functions: [matrix()](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix) and [matrix3d()](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix3d).
 
