@@ -128,12 +128,14 @@ declare module 'toolcool-math' {
     export const v3Scale: (scaleVector: Vector3, vector: Vector3) => Vector3;
 
     export const m2ReflectionOrigin: () => Matrix2;
-    export const m2ReflectionYX: () => Matrix2;
-    export const m2ReflectionYmX: () => Matrix2;
+    export const m3ReflectionOrigin: () => Matrix3;
     export const m2ReflectionX: () => Matrix2;
-    export const m2ReflectionY: () => Matrix2;
     export const m3ReflectionX: () => Matrix3;
+    export const m2ReflectionY: () => Matrix2;
     export const m3ReflectionY: () => Matrix3;
+    export const m2ReflectionYX: () => Matrix2;
+    export const m3ReflectionYX: () => Matrix3;
+    export const m2ReflectionYmX: () => Matrix2;
     export const m3ReflectionZ: () => Matrix3;
 
     export const m3Determinant: (m3: Matrix3) => number;

@@ -266,6 +266,18 @@ export const m2ReflectionOrigin = (): Matrix2 => {
 };
 
 /**
+ * Reflection about the origin.
+ */
+export const m3ReflectionOrigin = (): Matrix3 => {
+
+    return [
+        [-1, 0, 0],
+        [0, -1, 0],
+        [0, 0, -1],
+    ];
+};
+
+/**
  * Reflection about y=x
  */
 export const m2ReflectionYX = (): Matrix2 => {
@@ -273,6 +285,18 @@ export const m2ReflectionYX = (): Matrix2 => {
     return [
         [1, 0],
         [0, 1],
+    ];
+};
+
+/**
+ * Reflection about y=x
+ */
+export const m3ReflectionYX = (): Matrix3 => {
+
+    return [
+        [0, 1, 0],
+        [1, 0, 0],
+        [0, 0, 1],
     ];
 };
 

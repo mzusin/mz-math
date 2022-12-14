@@ -1676,7 +1676,7 @@ const scaledVector: Vector3 = v3Scale([2, 4, 6], [10, 20, 30]);
 It's possible to get a 2D reflection matrices as follows:
 
 ```js
-import { m2ReflectionX, m2ReflectionY, Matrix2 } from 'toolcool-math';
+import { m2ReflectionOrigin, m2ReflectionX, m2ReflectionY, m2ReflectionYX, m2ReflectionYmX, Matrix2 } from 'toolcool-math';
 
 // reflection about the origin.
 const mat0: Matrix2 = m2ReflectionOrigin();
@@ -1729,7 +1729,17 @@ const mat3: Matrix2 = m2ReflectionYmX();
 It's possible to get a 3D reflection matrices as follows:
 
 ```js
-import { m3ReflectionX, m3ReflectionY, m3ReflectionZ, Matrix3 } from 'toolcool-math';
+import { m3ReflectionOrigin, m3ReflectionX, m3ReflectionY, m3ReflectionZ, m3ReflectionYX, Matrix3 } from 'toolcool-math';
+
+// reflection about the origin
+const mat0: Matrix3 = m3ReflectionOrigin();
+/*
+[
+    [-1, 0, 0],
+    [0, -1, 0],
+    [0, 0, -1],
+];
+ */
 
 // reflection in the plane x=0
 const mat1: Matrix3 = m3ReflectionX();
@@ -1752,7 +1762,17 @@ const mat2: Matrix3 = m3ReflectionY();
  */
 
 // reflection in the plane z=0
-const mat2: Matrix3 = m3ReflectionZ();
+const mat3: Matrix3 = m3ReflectionZ();
+/*
+[
+    [1, 0, 0],
+    [0, 1, 0],
+    [0, 0, -1],
+];
+ */
+
+// reflection about y=x
+const mat4: Matrix3 = m3ReflectionYX();
 /*
 [
     [1, 0, 0],

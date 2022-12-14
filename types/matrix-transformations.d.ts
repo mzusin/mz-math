@@ -63,9 +63,17 @@ export declare const v3Scale: (scaleVector: Vector3, vector: Vector3) => Vector3
  */
 export declare const m2ReflectionOrigin: () => Matrix2;
 /**
+ * Reflection about the origin.
+ */
+export declare const m3ReflectionOrigin: () => Matrix3;
+/**
  * Reflection about y=x
  */
 export declare const m2ReflectionYX: () => Matrix2;
+/**
+ * Reflection about y=x
+ */
+export declare const m3ReflectionYX: () => Matrix3;
 /**
  * Reflection about y=-x
  */
