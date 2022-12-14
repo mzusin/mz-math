@@ -220,6 +220,17 @@ export const v2Scale = (scaleVector: Vector2, vector: Vector2): Vector2 => {
     return mMulVector(m2Scale(scaleVector), vector) as Vector2;
 };
 
+/**
+ * homogeneous coordinates
+ */
+export const m2ScaleH = (scaleVector: Vector3): Matrix3 => {
+    return [
+        [scaleVector[0], 0, 0],
+        [0, scaleVector[1], 0],
+        [0, 0, 1],
+    ];
+};
+
 export const m3Scale = (scaleVector: Vector3): Matrix3 => {
     return [
         [scaleVector[0], 0, 0],
@@ -239,6 +250,17 @@ export const m2ScaleX = (scale: number): Matrix2 => {
     return [
         [scale, 0],
         [0, 1],
+    ];
+};
+
+/**
+ * Stretch, parallel to the x-axis - homogeneous coordinates
+ */
+export const m2ScaleXH = (scale: number): Matrix3 => {
+    return [
+        [scale, 0, 0],
+        [0, 1, 0],
+        [0, 0, 1],
     ];
 };
 
@@ -282,6 +304,17 @@ export const m2ScaleY = (scale: number): Matrix2 => {
     return [
         [1, 0],
         [0, scale],
+    ];
+};
+
+/**
+ * Stretch, parallel to the y-axis - homogeneous coordinates
+ */
+export const m2ScaleYH = (scale: number): Matrix3 => {
+    return [
+        [1, 0, 0],
+        [0, scale, 0],
+        [0, 0, 1],
     ];
 };
 

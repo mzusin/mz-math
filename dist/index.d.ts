@@ -120,9 +120,12 @@ declare module 'toolcool-math' {
     export const v3RotateZ: (angleRad: number, vector: Vector3, isClockwise?: boolean, decimalPlaces?: number) => Vector3;
 
     export const m2Scale: (scaleVector: Vector2) => Matrix2;
+    export const m2ScaleH: (scaleVector: Vector3) => Matrix3;
     export const v2Scale: (scaleVector: Vector2, vector: Vector2) => Vector2;
     export const m2ScaleX: (scale: number) => Matrix2;
+    export const m2ScaleXH: (scale: number) => Matrix3;
     export const m2ScaleY: (scale: number) => Matrix2;
+    export const m2ScaleYH: (scale: number) => Matrix3;
     export const m3Scale: (scaleVector: Vector3) => Matrix3;
     export const v3Scale: (scaleVector: Vector3, vector: Vector3) => Vector3;
     export const m3ScaleX: (scale: number) => Matrix3;

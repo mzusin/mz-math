@@ -1628,10 +1628,10 @@ const mat3: Matrix3 = m2RotationAroundPointH(
 It's possible to get a 2D scale matrix for a given scale vector as follows:
 
 ```js
-import { m2Scale, m2ScaleX } from 'toolcool-math';
+import { m2Scale, m2ScaleX, m2ScaleH, m2ScaleXH, m2ScaleYH, Matrix2, Matrix3 } from 'toolcool-math';
 
-// scale matrix with 2x and 4y
-const mat1 = m2Scale([2, 4]); 
+// scale matrix with 2x and 4y - non-homogeneous coordinates
+const mat1: Matrix2 = m2Scale([2, 4]); 
 /*
 [
     [2, 0],
@@ -1639,8 +1639,18 @@ const mat1 = m2Scale([2, 4]);
 ]
  */
 
-// stretch, parallel to the x-axis.
-const mat2 = m2ScaleX(2);
+// scale matrix with 2x and 4y - in homogeneous coordinates
+const mat1: Matrix3 = m2ScaleH([2, 4, 1]);
+/*
+[
+    [2, 0, 0],
+    [0, 4, 0],
+    [0, 0, 1],
+];
+ */
+
+// stretch, parallel to the x-axis - non-homogeneous coordinates
+const mat2: Matrix2 = m2ScaleX(2);
 /*
 [
     [2, 0],
@@ -1648,12 +1658,32 @@ const mat2 = m2ScaleX(2);
 ]
  */
 
-// stretch, parallel to the y-axis.
-const mat3 = m2ScaleY(2);
+// stretch, parallel to the x-axis - in homogeneous coordinates
+const mat2: Matrix3 = m2ScaleXH(2);
+/*
+[
+    [2, 0, 0],
+    [0, 1, 0],
+    [0, 0, 1],
+]
+ */
+
+// stretch, parallel to the y-axis - non-homogeneous coordinates
+const mat3: Matrix2 = m2ScaleY(2);
 /*
 [
     [1, 0],
     [0, 2],
+]
+ */
+
+// stretch, parallel to the y-axis - in homogeneous coordinates
+const mat3: Matrix3 = m2ScaleYH(2);
+/*
+[
+    [1, 0, 0],
+    [0, 2, 0],
+    [0, 0, 1],
 ]
  */
 ```

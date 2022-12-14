@@ -48,12 +48,20 @@ export declare const m3RotationZ: (angleRad: number, isClockwise?: boolean, deci
 export declare const v3RotateZ: (angleRad: number, vector: Vector3, isClockwise?: boolean, decimalPlaces?: number) => Vector3;
 export declare const m2Scale: (scaleVector: Vector2) => Matrix2;
 export declare const v2Scale: (scaleVector: Vector2, vector: Vector2) => Vector2;
+/**
+ * homogeneous coordinates
+ */
+export declare const m2ScaleH: (scaleVector: Vector3) => Matrix3;
 export declare const m3Scale: (scaleVector: Vector3) => Matrix3;
 export declare const v3Scale: (scaleVector: Vector3, vector: Vector3) => Vector3;
 /**
  * Stretch, parallel to the x-axis.
  */
 export declare const m2ScaleX: (scale: number) => Matrix2;
+/**
+ * Stretch, parallel to the x-axis - homogeneous coordinates
+ */
+export declare const m2ScaleXH: (scale: number) => Matrix3;
 /**
  * Stretch in x-direction
  */
@@ -70,6 +78,10 @@ export declare const m3ScaleZ: (scale: number) => Matrix3;
  * Stretch, parallel to the y-axis.
  */
 export declare const m2ScaleY: (scale: number) => Matrix2;
+/**
+ * Stretch, parallel to the y-axis - homogeneous coordinates
+ */
+export declare const m2ScaleYH: (scale: number) => Matrix3;
 /**
  * Reflection about the origin.
  */

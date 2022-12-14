@@ -38,13 +38,16 @@ declare const api: {
     v3RotateZ: (angleRad: number, vector: import("./types").Vector3, isClockwise?: boolean, decimalPlaces?: number) => import("./types").Vector3;
     m2Scale: (scaleVector: import("./types").Vector2) => import("./types").Matrix2;
     v2Scale: (scaleVector: import("./types").Vector2, vector: import("./types").Vector2) => import("./types").Vector2;
+    m2ScaleH: (scaleVector: import("./types").Vector3) => import("./types").Matrix3;
     m3Scale: (scaleVector: import("./types").Vector3) => import("./types").Matrix3;
     v3Scale: (scaleVector: import("./types").Vector3, vector: import("./types").Vector3) => import("./types").Vector3;
     m2ScaleX: (scale: number) => import("./types").Matrix2;
+    m2ScaleXH: (scale: number) => import("./types").Matrix3;
     m3ScaleX: (scale: number) => import("./types").Matrix3;
     m3ScaleY: (scale: number) => import("./types").Matrix3;
     m3ScaleZ: (scale: number) => import("./types").Matrix3;
     m2ScaleY: (scale: number) => import("./types").Matrix2;
+    m2ScaleYH: (scale: number) => import("./types").Matrix3;
     m2ReflectionOrigin: () => import("./types").Matrix2;
     m3ReflectionOrigin: () => import("./types").Matrix3;
     m2ReflectionYX: () => import("./types").Matrix2;
