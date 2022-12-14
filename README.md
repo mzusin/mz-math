@@ -49,7 +49,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
     - [Translation Matrix](#translation-matrix)
     - [Rotation Matrix](#rotation-matrix)
     - [Rotate around the point](#rotate-around-the-point)
-    - [Scale Matrix](#scale-matrix)
+    - [Scale/Stretch Matrix](#scalestretch-matrix)
     - [Reflection Matrix](#reflection-matrix)
   - [Matrix Determinant](#matrix-determinant)
   - [Inverse Matrix](#inverse-matrix)
@@ -1620,16 +1620,23 @@ const mat3: Matrix3 = m2RotationAroundPointH(
 
 -----------------------------------------------
 
-## Scale Matrix
+## Scale/Stretch Matrix
 
 **2D scale matrix**
 
 It's possible to get a 2D scale matrix for a given scale vector as follows:
 
 ```js
-import { m2Scale } from 'toolcool-math';
+import { m2Scale, m2ScaleX } from 'toolcool-math';
 
-const smat2 = m2Scale([2, 4]); // scale matrix with 2x and 4y
+// scale matrix with 2x and 4y
+const mat1 = m2Scale([2, 4]); 
+
+// stretch, parallel to the x-axis.
+const mat2 = m2ScaleX(2);
+
+// stretch, parallel to the y-axis.
+const mat3 = m2ScaleY(2);
 ```
 
 It is also possible to get the actual scaled vector using the **v2Scale** function:

@@ -216,6 +216,26 @@ export const m2Scale = (scaleVector: Vector2): Matrix2 => {
     ];
 };
 
+/**
+ * Stretch, parallel to the x-axis.
+ */
+export const m2ScaleX = (scale: number): Matrix2 => {
+    return [
+        [scale, 0],
+        [0, 1],
+    ];
+};
+
+/**
+ * Stretch, parallel to the y-axis.
+ */
+export const m2ScaleY = (scale: number): Matrix2 => {
+    return [
+        [1, 0],
+        [0, scale],
+    ];
+};
+
 export const v2Scale = (scaleVector: Vector2, vector: Vector2): Vector2 => {
     return mMulVector(m2Scale(scaleVector), vector) as Vector2;
 };

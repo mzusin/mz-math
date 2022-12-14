@@ -197,6 +197,7 @@ export const identity3 = (): Matrix3 => {
 /**
  * Identity Matrix (I).
  * M x I = I x M = M for any matrix M.
+ * Identity Matrix is a special case of scale matrix.
  */
 export const identityN = (N: number): Matrix => {
     if(N < 0){
