@@ -1417,8 +1417,10 @@ const res = m3Reset(m, 50);
 
 It's possible to get a translation matrix using the functions below. Each function supports an optional **decimalPlaces** parameter.
 
+**Translation in non-homogeneous coordinates**
+
 ```js
-import { m2Translation, Matrix2 } from 'toolcool-math';
+import { m2Translation, m3Translation, Matrix2, Matrix3 } from 'toolcool-math';
 
 // translation matrix for the position [10, 20]
 const mat1: Matrix2 = m2Translation([10, 20]);
@@ -1428,6 +1430,18 @@ const mat1: Matrix2 = m2Translation([10, 20]);
     [1, 0],
     [0, 1],
     [10, 20],
+];
+ */
+
+// translation matrix for the position [10, 20, 30]
+const mat2: Matrix3 = m3Translation([10, 20, 30]);
+
+/*
+[
+   [1, 0, 0],
+   [0, 1, 0],
+   [0, 0, 1],
+   [10, 20, 30],
 ];
  */
 ```

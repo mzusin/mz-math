@@ -14,6 +14,20 @@ export const m2Translation = (position: Vector2, decimalPlaces = Infinity): Matr
     ];
 };
 
+export const m3Translation = (position: Vector3, decimalPlaces = Infinity): Matrix3 => {
+
+    return [
+        [1, 0, 0],
+        [0, 1, 0],
+        [0, 0, 1],
+        [
+            setDecimalPlaces(position[0], decimalPlaces),
+            setDecimalPlaces(position[1], decimalPlaces),
+            setDecimalPlaces(position[2], decimalPlaces)
+        ],
+    ];
+};
+
 /**
  * 2D Translation matrix in homogeneous coordinates.
  */
