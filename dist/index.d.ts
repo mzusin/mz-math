@@ -127,9 +127,9 @@ declare module 'toolcool-math' {
     export const m3Scale: (scaleVector: Vector3) => Matrix3;
     export const v3Scale: (scaleVector: Vector3, vector: Vector3) => Vector3;
 
-    /**
-     * Reflection in the x-axis.
-     */
+    export const m2ReflectionOrigin: () => Matrix2;
+    export const m2ReflectionYX: () => Matrix2;
+    export const m2ReflectionYmX: () => Matrix2;
     export const m2ReflectionX: () => Matrix2;
     export const m2ReflectionY: () => Matrix2;
     export const m3ReflectionX: () => Matrix3;

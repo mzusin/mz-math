@@ -1678,6 +1678,15 @@ It's possible to get a 2D reflection matrices as follows:
 ```js
 import { m2ReflectionX, m2ReflectionY, Matrix2 } from 'toolcool-math';
 
+// reflection about the origin.
+const mat0: Matrix2 = m2ReflectionOrigin();
+/*
+[
+    [-1, 0],
+    [0, -1],
+];
+ */
+
 // reflection in the x-axis.
 const mat1: Matrix2 = m2ReflectionX();
 /*
@@ -1693,6 +1702,24 @@ const mat2: Matrix2 = m2ReflectionY();
 [
     [-1, 0],
     [0, 1],
+];
+ */
+
+// reflection about y=x
+const mat3: Matrix2 = m2ReflectionYX();
+/*
+[
+    [-1, 0],
+    [0, 1],
+];
+ */
+
+// reflection about y=-x
+const mat3: Matrix2 = m2ReflectionYmX();
+/*
+[
+    [0, -1],
+    [-1, 0],
 ];
  */
 ```

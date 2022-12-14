@@ -255,6 +255,39 @@ export const v3Scale = (scaleVector: Vector3, vector: Vector3): Vector3 => {
 // ---------------- REFLECTION MATRICES -------------------------
 
 /**
+ * Reflection about the origin.
+ */
+export const m2ReflectionOrigin = (): Matrix2 => {
+
+    return [
+        [-1, 0],
+        [0, -1],
+    ];
+};
+
+/**
+ * Reflection about y=x
+ */
+export const m2ReflectionYX = (): Matrix2 => {
+
+    return [
+        [1, 0],
+        [0, 1],
+    ];
+};
+
+/**
+ * Reflection about y=-x
+ */
+export const m2ReflectionYmX = (): Matrix2 => {
+
+    return [
+        [0, -1],
+        [-1, 0],
+    ];
+};
+
+/**
  * Reflection in the x-axis.
  */
 export const m2ReflectionX = (): Matrix2 => {

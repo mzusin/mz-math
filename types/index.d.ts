@@ -42,6 +42,9 @@ declare const api: {
     v2Scale: (scaleVector: import("./types").Vector2, vector: import("./types").Vector2) => import("./types").Vector2;
     m3Scale: (scaleVector: import("./types").Vector3) => import("./types").Matrix3;
     v3Scale: (scaleVector: import("./types").Vector3, vector: import("./types").Vector3) => import("./types").Vector3;
+    m2ReflectionOrigin: () => import("./types").Matrix2;
+    m2ReflectionYX: () => import("./types").Matrix2;
+    m2ReflectionYmX: () => import("./types").Matrix2;
     m2ReflectionX: () => import("./types").Matrix2;
     m2ReflectionY: () => import("./types").Matrix2;
     m3ReflectionX: () => import("./types").Matrix3;
