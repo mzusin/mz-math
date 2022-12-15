@@ -79,6 +79,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
   - [System of linear equations](#system-of-linear-equations)
 - Path Movement
   - [Circle Movement](#circle-movement)
+  - [Ellipse Movement](#ellipse-movement)
 - Other
   - [Modulo](#modulo)
   - [Convert range](#convert-range)
