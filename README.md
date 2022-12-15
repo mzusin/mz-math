@@ -4,7 +4,6 @@
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/toolcool-org/toolcool-math)
 [![npm](https://img.shields.io/npm/dw/toolcool-math)](https://www.npmjs.com/package/toolcool-math)
 [![NPM](https://img.shields.io/badge/npm-math-brightgreen)](https://www.npmjs.com/package/toolcool-math)
-[![Featured on Openbase](https://badges.openbase.com/js/featured/toolcool-math.svg?token=sUaswkA1YmMFk8F+JBWQZoWo4wGL7wZwyIaglD6kAlQ=)](https://openbase.com/js/toolcool-math?utm_source=embedded&amp;utm_medium=badge&amp;utm_campaign=rate-badge)
 [![Twitter](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Ftoolcool-org%2Ftoolcool-math)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Ftoolcool-org%2Ftoolcool-math)
 
 This project is a collection of TypeScript math helpers and utilities for the browser and Node.js. The modular approach allows to select only the required functions. It works well with all modern bundlers and supports **tree shaking** 🌲. The library is built using immutable/pure functions.
