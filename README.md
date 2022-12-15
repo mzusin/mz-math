@@ -1893,7 +1893,7 @@ const mat: Matrix4 = m3ScaleZH(2);
 It's possible to scale a point [x, y] (in homogeneous coordinates) around the given pivot point as follows:
 
 ```js
-import { Vector3, m2ScaleAtPointH } from 'toolcool-math';
+import { Vector3, m2ScaleAtPointH, m2ScaleAtPointHMatrix } from 'toolcool-math';
 
 const scaleVector: Vector3 = [2, 4, 1]; // in homogeneous coordinates
 const transformOrigin = [100, 100, 1]; // in homogeneous coordinates
