@@ -73,6 +73,12 @@ export declare const m3RotationZ: (angleRad: number, isClockwise?: boolean, deci
  */
 export declare const m3RotationZH: (angleRad: number, isClockwise?: boolean, decimalPlaces?: number) => Matrix4;
 export declare const v3RotateZ: (angleRad: number, vector: Vector3, isClockwise?: boolean, decimalPlaces?: number) => Vector3;
+/**
+ * Get matrix for arbitrary scaling pivot point.
+ * result_vector = TranslationMatrix(x, y) * ScaleMatrix() * TranslationMatrix(-x, -y) * scale_vector
+ */
+export declare const m2ScaleAtPointHMatrix: (scaleVector: Vector3, transformOrigin: Vector3, decimalPlaces?: number) => Matrix3;
+export declare const m2ScaleAtPointH: (scaleVector: Vector3, transformOrigin: Vector3, point: Vector3, decimalPlaces?: number) => Vector3;
 export declare const m2Scale: (scaleVector: Vector2) => Matrix2;
 export declare const v2Scale: (scaleVector: Vector2, vector: Vector2) => Vector2;
 /**

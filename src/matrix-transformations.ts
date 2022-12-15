@@ -317,6 +317,32 @@ export const v3RotateZ = (angleRad: number, vector: Vector3, isClockwise = true,
 
 // ---------------- SCALE MATRICES -------------
 
+/**
+ * Get matrix for arbitrary scaling pivot point.
+ * result_vector = TranslationMatrix(x, y) * ScaleMatrix() * TranslationMatrix(-x, -y) * scale_vector
+ */
+export const m2ScaleAtPointHMatrix = (
+    scaleVector: Vector3,
+    transformOrigin: Vector3,
+    decimalPlaces = Infinity): Matrix3 => {
+
+    const translation = m2TranslationH(transformOrigin, decimalPlaces);
+    const rotation = m2ScaleH(scaleVector);
+    const translationBack = m2TranslationH(v3MulScalar(transformOrigin, -1), decimalPlaces);
+    const temp1 = mMul(translation, rotation);
+    return mMul(temp1, translationBack) as Matrix3;
+};
+
+export const m2ScaleAtPointH = (
+    scaleVector: Vector3,
+    transformOrigin: Vector3,
+    point: Vector3,
+    decimalPlaces = Infinity): Vector3 => {
+
+    const mat3h = m2ScaleAtPointHMatrix(scaleVector, transformOrigin, decimalPlaces);
+    return mMulVector(mat3h, point) as Vector3;
+};
+
 export const m2Scale = (scaleVector: Vector2): Matrix2 => {
     return [
         [scaleVector[0], 0],

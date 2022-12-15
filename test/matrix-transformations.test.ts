@@ -59,7 +59,7 @@ describe('Matrix to CSS', () => {
             [3, 4, 0],
             [0, 0, 1],
         ];
-        expect(m2hToCSS3d(mat)).toStrictEqual('matrix3d(1, 3, 0, 0, 2, 4, 0, 0, 0, 0, 1, 0, 0, 4, 0, 1)');
+        expect(m2hToCSS3d(mat)).toStrictEqual('matrix3d(1, 3, 0, 0, 2, 4, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)');
     });
 
     test(`[
@@ -72,7 +72,7 @@ describe('Matrix to CSS', () => {
             [3, 4, 0],
             [0, 0, 1],
         ];
-        expect(m2hToCSS(mat)).toStrictEqual('matrix(1, 3, 2, 4, 0, 4)');
+        expect(m2hToCSS(mat)).toStrictEqual('matrix(1, 3, 2, 4, 0, 0)');
     });
 
     test(`[

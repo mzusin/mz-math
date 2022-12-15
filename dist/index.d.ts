@@ -143,6 +143,8 @@ declare module 'toolcool-math' {
     export const m3ScaleYH: (scale: number) => Matrix4;
     export const m3ScaleZ: (scale: number) => Matrix3;
     export const m3ScaleZH: (scale: number) => Matrix4;
+    export const m2ScaleAtPointHMatrix: (scaleVector: Vector3, transformOrigin: Vector3, decimalPlaces?: number) => Matrix3;
+    export const m2ScaleAtPointH: (scaleVector: Vector3, transformOrigin: Vector3, point: Vector3, decimalPlaces?: number) => Vector3;
 
     export const m2ReflectionOrigin: () => Matrix2;
     export const m2ReflectionOriginH: () => Matrix3;

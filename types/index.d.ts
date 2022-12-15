@@ -45,6 +45,8 @@ declare const api: {
     m3RotationZ: (angleRad: number, isClockwise?: boolean, decimalPlaces?: number) => import("./types").Matrix3;
     m3RotationZH: (angleRad: number, isClockwise?: boolean, decimalPlaces?: number) => import("./types").Matrix4;
     v3RotateZ: (angleRad: number, vector: import("./types").Vector3, isClockwise?: boolean, decimalPlaces?: number) => import("./types").Vector3;
+    m2ScaleAtPointHMatrix: (scaleVector: import("./types").Vector3, transformOrigin: import("./types").Vector3, decimalPlaces?: number) => import("./types").Matrix3;
+    m2ScaleAtPointH: (scaleVector: import("./types").Vector3, transformOrigin: import("./types").Vector3, point: import("./types").Vector3, decimalPlaces?: number) => import("./types").Vector3;
     m2Scale: (scaleVector: import("./types").Vector2) => import("./types").Matrix2;
     v2Scale: (scaleVector: import("./types").Vector2, vector: import("./types").Vector2) => import("./types").Vector2;
     m2ScaleH: (scaleVector: import("./types").Vector3) => import("./types").Matrix3;
