@@ -80,7 +80,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
 - Path Movement
   - [Circle Movement](#circle-movement)
   - [Ellipse Movement](#ellipse-movement)
-  - [Sine Wave Movement](#)
+  - [Sine Wave Movement](#sine-wave-movement)
 - Other
   - [Modulo](#modulo)
   - [Convert range](#convert-range)
