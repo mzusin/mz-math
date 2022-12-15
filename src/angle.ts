@@ -1,6 +1,6 @@
-import { Vector2 } from './types';
+import { Vector, Vector2, Vector3 } from './types';
 import { setDecimalPlaces } from './format';
-import { v2Length } from './vector';
+import { v2Length, vNormalize, vDotProduct } from './vector';
 
 export const getV2Angle = (v2: Vector2, decimalPlaces = Infinity) => {
     const angle = Math.atan2(v2[1], v2[0]);
@@ -23,4 +23,20 @@ export const radiansToDegrees = (radians: number, decimalPlaces = Infinity) => {
 export const degreesToRadians = (degrees: number, decimalPlaces = Infinity) => {
     const res = degrees * (Math.PI / 180);
     return setDecimalPlaces(res, decimalPlaces);
+};
+
+export const getVNAngleBetween = (vector1: Vector, vector2: Vector, decimalPlaces = Infinity) : number => {
+    const unitVector1 = vNormalize(vector1);
+    const unitVector2 = vNormalize(vector2);
+    const dotProduct = vDotProduct(unitVector1, unitVector2);
+    const angle = Math.acos(dotProduct);
+    return setDecimalPlaces(angle, decimalPlaces);
+};
+
+export const getV2AngleBetween = (vector1: Vector2, vector2: Vector2, decimalPlaces = Infinity) : number => {
+    return getVNAngleBetween(vector1, vector2, decimalPlaces);
+};
+
+export const getV3AngleBetween = (vector1: Vector3, vector2: Vector3, decimalPlaces = Infinity) : number => {
+    return getVNAngleBetween(vector1, vector2, decimalPlaces);
 };

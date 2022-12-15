@@ -24,17 +24,38 @@
 
     <script src="../../dist/tc-math.min.js"></script>
     <script>
+        const $star = document.getElementById('star');
+        const $center = document.getElementById('center');
+
+        const centerBox = $center.getBoundingClientRect();
+        const center = [centerBox.x, centerBox.y];
+
+        const radius = 120; // px
+
         document.body.addEventListener('mousemove', (evt) => {
 
             // pageX/Y coordinates are relative to the top left corner of the whole rendered page (including parts hidden by scrolling),
             // screenX and screenY: Relative to the top left of the physical screen/monitor, this reference point only moves if you increase or decrease the number of monitors or the monitor resolution.
             // clientX/Y coordinates are relative to the top left corner of the visible part of the page, "seen" through browser window.
             // offsetX and offsetY are relative to the parent container,
-
             const mouse = [evt.clientX, evt.clientY];
-            const angle = TCMath.getV2Angle(mouse);
-            console.log(TCMath.radiansToDegrees(angle, 2));
-            // const angle2 = getV2Angle([10, 20], 2); // 1.11 radians
+
+            //const angle = TCMath.getV2Angle(mouse);
+            //console.log(TCMath.radiansToDegrees(angle, 2));
+            //const temp = [0, centerBox.y];
+            //console.log(center)
+            //const aaa = TCMath.v2Sub(center, temp);
+
+            //const angle = TCMath.getVNAngleBetween(center, mouse);
+            const angle = TCMath.getV2Angle(TCMath.v2Sub(mouse, center));
+
+            //console.log(TCMath.radiansToDegrees(angle, 2), center, mouse);
+
+
+            // set star css position ----------------------
+            const position = TCMath.circleMovement(center, angle, radius);
+            $star.style.left = `${ position[0] }px`;
+            $star.style.top = `${ position[1] }px`;
         });
     </script>
 </body>

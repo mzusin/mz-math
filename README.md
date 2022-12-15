@@ -62,6 +62,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
 - Angles
   - [Get vector angle](#get-vector-angle)
   - [Set vector angle](#set-vector-angle)
+  - [Get angle between two vectors](#get-angle-between-two-vectors)
   - [Degrees to radians](#degrees-to-radians)
   - [Radians to degrees](#radians-to-degrees)
 - Format
@@ -2450,6 +2451,41 @@ import { setV2Angle } from 'toolcool-math';
 
 const updatedVector1 = setV2Angle([10, 20], 1.22); // [7.684152489413291, 20.99889998355732]
 const updatedVector2 = setV2Angle([10, 20], 1.22, 2); // [7.68, 21]
+```
+
+## Get angle between two vectors
+
+2D vectors:
+
+```js
+import { getV2AngleBetween, Vector2 } from 'toolcool-math';
+
+const vector1: Vector2 = [10, 20];
+const vector2: Vector2 = [100, 150];
+const decimalPlaces = 2; // optional
+const angle = getV2AngleBetween(vector1, vector2, decimalPlaces);
+```
+
+3D vectors:
+
+```js
+import { getV3AngleBetween, Vector3 } from 'toolcool-math';
+
+const vector1: Vector3 = [10, 20, 1];
+const vector2: Vector3 = [100, 150, 1];
+const decimalPlaces = 2; // optional
+const angle = getV3AngleBetween(vector1, vector2, decimalPlaces);
+```
+
+General case:
+
+```js
+import { getVNAngleBetween, Vector } from 'toolcool-math';
+
+const vector1: Vector = [10, 20, 1];
+const vector2: Vector = [100, 150, 1];
+const decimalPlaces = 2; // optional
+const angle = getVNAngleBetween(vector1, vector2, decimalPlaces);
 ```
 
 ## Degrees to radians

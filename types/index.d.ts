@@ -22,6 +22,9 @@ declare const api: {
     setV2Angle: (v2: import("./types").Vector2, newAngleRad: number, decimalPlaces?: number) => import("./types").Vector2;
     radiansToDegrees: (radians: number, decimalPlaces?: number) => number;
     degreesToRadians: (degrees: number, decimalPlaces?: number) => number;
+    getVNAngleBetween: (vector1: import("./types").Vector, vector2: import("./types").Vector, decimalPlaces?: number) => number;
+    getV2AngleBetween: (vector1: import("./types").Vector2, vector2: import("./types").Vector2, decimalPlaces?: number) => number;
+    getV3AngleBetween: (vector1: import("./types").Vector3, vector2: import("./types").Vector3, decimalPlaces?: number) => number;
     setDecimalPlaces: (num: number, decimalPlaces?: number | undefined) => number;
     m2ToCSS: (m: import("./types").Matrix2) => string;
     m2hToCSS: (m: import("./types").Matrix3) => string;
