@@ -1,5 +1,5 @@
-import { m3RotationZ, m3RotationY, m3RotationX, m2Rotation, m2hToCSS, m2ToCSS, m2hToCSS3d } from '../src/matrix-transformations';
-import { Matrix3, Matrix2 } from '../src/types';
+import { m3RotationZ, m3RotationY, m3RotationX, m2Rotation, m2hToCSS, m2ToCSS, m2hToCSS3d, m3hToCSS3d } from '../src/matrix-transformations';
+import { Matrix4, Matrix3, Matrix2 } from '../src/types';
 
 describe('Rotation', () => {
     test('2d rotation by 90 degrees about the origin with 2 decimal places', () => {
@@ -84,5 +84,25 @@ describe('Matrix to CSS', () => {
             [3, 4],
         ];
         expect(m2ToCSS(mat)).toStrictEqual('matrix(1, 3, 2, 4, 0, 0)');
+    });
+
+    test(`[
+            [1, 0, 0, 10],
+            [0, 1, 0, 20],
+            [0, 0, 1, 30],
+            [0, 0, 0, 1],
+        ] to matrix3d() function`, () => {
+        const mat: Matrix4 = [
+            [1, 0, 0, 10],
+            [0, 1, 0, 20],
+            [0, 0, 1, 30],
+            [0, 0, 0, 1],
+        ];
+        expect(m3hToCSS3d(mat)).toStrictEqual(`matrix3d(
+        1, 0, 0, 10,
+        0, 1, 0, 20,
+        0, 0, 1, 30,
+        0, 0, 0, 1
+    )`);
     });
 });

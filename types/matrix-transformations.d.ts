@@ -14,6 +14,11 @@ export declare const m2hToCSS: (m: Matrix3) => string;
  * https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix3d
  */
 export declare const m2hToCSS3d: (m: Matrix3) => string;
+/**
+ * Matrix 3D in homogeneous coordinates to CSS matrix3d() function
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix3d
+ */
+export declare const m3hToCSS3d: (m: Matrix4) => string;
 export declare const m2Translation: (position: Vector2, decimalPlaces?: number) => Matrix2;
 export declare const m3Translation: (position: Vector3, decimalPlaces?: number) => Matrix3;
 /**

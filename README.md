@@ -2191,6 +2191,29 @@ const mat: Matrix2 = [
 const str1 = m2ToCSS(mat); // matrix(1, 3, 2, 4, 0, 0)
 ```
 
+3D matrix in homogeneous coordinates:
+
+```js
+import { Matrix4, m3hToCSS3d } from 'toolcool-math';
+
+// 2d matrix in homogeneous coordinates
+const mat: Matrix4 = [
+  [1, 0, 0, 10],
+  [0, 1, 0, 20],
+  [0, 0, 1, 30],
+  [0, 0, 0, 1],
+];
+const str1 = m3hToCSS3d(mat); 
+/*
+matrix3d(
+      1, 0, 0, 10,
+      0, 1, 0, 20,
+      0, 0, 1, 30,
+      0, 0, 0, 1
+)
+ */
+```
+
 [Matrix to CSS transform example (rotation)](https://github.com/toolcool-org/toolcool-math/blob/main/examples/matrix-to-css-rotation.html)
 
 -----------------------------------------------

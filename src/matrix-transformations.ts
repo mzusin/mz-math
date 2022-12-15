@@ -3,6 +3,14 @@ import { v2Normalize, v3MulScalar, v3Normalize } from './vector';
 import { mMulVector, mMul } from './matrix';
 import { setDecimalPlaces } from './format';
 
+/*
+Any 2D affine transformation can be decomposed
+into a rotation, followed by a scaling, followed by a
+shearing, and followed by a translation.
+---------------------------------------------------------
+Affine matrix = translation x shearing x scaling x rotation
+ */
+
 // ----------------- CSS -------------------------------------
 
 /**
@@ -46,6 +54,20 @@ export const m2hToCSS3d = (m: Matrix3) : string => {
     const ty = m[1][2];
 
     return `matrix3d(${ a }, ${ b }, 0, 0, ${ c }, ${ d }, 0, 0, 0, 0, 1, 0, ${ tx }, ${ ty }, 0, 1)`;
+};
+
+/**
+ * Matrix 3D in homogeneous coordinates to CSS matrix3d() function
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix3d
+ */
+export const m3hToCSS3d = (m: Matrix4) : string => {
+
+    return `matrix3d(
+        ${ m[0][0] }, ${ m[0][1] }, ${ m[0][2] }, ${ m[0][3] },
+        ${ m[1][0] }, ${ m[1][1] }, ${ m[1][2] }, ${ m[1][3] },
+        ${ m[2][0] }, ${ m[2][1] }, ${ m[2][2] }, ${ m[2][3] },
+        ${ m[3][0] }, ${ m[3][1] }, ${ m[3][2] }, ${ m[3][3] }
+    )`;
 };
 
 // ---------------- TRANSLATION MATRICES ----------------------

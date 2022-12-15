@@ -29,6 +29,7 @@ declare const api: {
     m2ToCSS: (m: import("./types").Matrix2) => string;
     m2hToCSS: (m: import("./types").Matrix3) => string;
     m2hToCSS3d: (m: import("./types").Matrix3) => string;
+    m3hToCSS3d: (m: import("./types").Matrix4) => string;
     m2Translation: (position: import("./types").Vector2, decimalPlaces?: number) => import("./types").Matrix2;
     m3Translation: (position: import("./types").Vector3, decimalPlaces?: number) => import("./types").Matrix3;
     m2TranslationH: (position: import("./types").Vector3, decimalPlaces?: number) => import("./types").Matrix3;

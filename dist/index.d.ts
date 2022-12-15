@@ -213,6 +213,7 @@ declare module 'toolcool-math' {
     export const m2ToCSS: (m: Matrix2) => string;
     export const m2hToCSS: (m: Matrix3) => string;
     export const m2hToCSS3d: (m: Matrix3) => string;
+    export const m3hToCSS3d: (m: Matrix4) => string;
 
     export const circleMovement: (center: Vector2, angle: number, radius: number) => Vector2;
     export const ellipseMovement: (center: Vector2, angle: number, radius1: number, radius2: number) => Vector2;
