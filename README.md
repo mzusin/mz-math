@@ -2433,7 +2433,7 @@ const minor: Matrix = mMinor(m, 0, 0); // -60
 
 ## Get vector angle
 
-The **getV2Angle** function returns the angle **in radians** between the positive x-axis and the ray from (0, 0) to the vector (x, y). It supports an optional **decimalPlaces** parameter.
+The **getV2Angle** function returns the angle **in radians** between the positive x-axis and the ray from (0, 0) to the vector (x, y). It supports an optional **decimalPlaces** parameter. Each function returns a result in the range [0, Math.PI].
 
 ```js
 import { getV2Angle } from 'toolcool-math';
@@ -2455,7 +2455,9 @@ const updatedVector2 = setV2Angle([10, 20], 1.22, 2); // [7.68, 21]
 
 ## Get angle between two vectors
 
-2D vectors:
+The following functions can be used to find the angle between two vectors. Each function returns a result in the range [0, Math.PI].
+
+**2D vectors:**
 
 ```js
 import { getV2AngleBetween, Vector2 } from 'toolcool-math';
@@ -2466,7 +2468,7 @@ const decimalPlaces = 2; // optional
 const angle = getV2AngleBetween(vector1, vector2, decimalPlaces);
 ```
 
-3D vectors:
+**3D vectors:**
 
 ```js
 import { getV3AngleBetween, Vector3 } from 'toolcool-math';
@@ -2477,7 +2479,7 @@ const decimalPlaces = 2; // optional
 const angle = getV3AngleBetween(vector1, vector2, decimalPlaces);
 ```
 
-General case:
+**General case:**
 
 ```js
 import { getVNAngleBetween, Vector } from 'toolcool-math';
@@ -2487,6 +2489,8 @@ const vector2: Vector = [100, 150, 1];
 const decimalPlaces = 2; // optional
 const angle = getVNAngleBetween(vector1, vector2, decimalPlaces);
 ```
+
+---------------------------------------
 
 ## Degrees to radians
 

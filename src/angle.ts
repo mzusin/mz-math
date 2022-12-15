@@ -25,6 +25,9 @@ export const degreesToRadians = (degrees: number, decimalPlaces = Infinity) => {
     return setDecimalPlaces(res, decimalPlaces);
 };
 
+/**
+ * Returns the range [0, Math.PI]
+ */
 export const getVNAngleBetween = (vector1: Vector, vector2: Vector, decimalPlaces = Infinity) : number => {
     const unitVector1 = vNormalize(vector1);
     const unitVector2 = vNormalize(vector2);
