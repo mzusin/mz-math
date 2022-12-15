@@ -1,0 +1,45 @@
+html, body{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background: #232323;
+    color: #efefef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    position: absolute;
+    top: 1rem;
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+#center {
+    width: 1rem;
+    height: 1rem;
+    background: red;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 100%;
+    transform: translate(-0.5rem, -0.5rem);
+}
+
+#star{
+    box-shadow: 0 0 1rem #fff;
+    border-radius: 100%;
+    background: #000;
+}
+
+.circle{
+    width: 270px;
+    height: 270px;
+    border: 5px solid #81b2d6;
+    border-radius: 100%;
+}

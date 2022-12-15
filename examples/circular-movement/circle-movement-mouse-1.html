@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Circle movement after mouse</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../css/styles-2.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>Circle movement after mouse</h1>
+    <div class="circle"></div>
+
+    <div id="star" style="position: absolute">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-north-star" width="50" height="50" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M3 12h18"></path>
+            <path d="M12 21v-18"></path>
+            <path d="M7.5 7.5l9 9"></path>
+            <path d="M7.5 16.5l9 -9"></path>
+        </svg>
+    </div>
+
+    <div id="center"></div>
+
+    <script src="../../dist/tc-math.min.js"></script>
+    <script>
+        document.body.addEventListener('mousemove', (evt) => {
+
+            // pageX/Y coordinates are relative to the top left corner of the whole rendered page (including parts hidden by scrolling),
+            // screenX and screenY: Relative to the top left of the physical screen/monitor, this reference point only moves if you increase or decrease the number of monitors or the monitor resolution.
+            // clientX/Y coordinates are relative to the top left corner of the visible part of the page, "seen" through browser window.
+            // offsetX and offsetY are relative to the parent container,
+
+            const mouse = [evt.clientX, evt.clientY];
+            const angle = TCMath.getV2Angle(mouse);
+            console.log(TCMath.radiansToDegrees(angle, 2));
+            // const angle2 = getV2Angle([10, 20], 2); // 1.11 radians
+        });
+    </script>
+</body>
+</html>
