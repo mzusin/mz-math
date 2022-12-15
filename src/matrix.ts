@@ -1,4 +1,4 @@
-import { Matrix2, Matrix3, Matrix, Vector, Vector2, Vector3 } from './types';
+import { Matrix2, Matrix3, Matrix4, Matrix, Vector, Vector2, Vector3 } from './types';
 import { vMulScalar, vSum, vSub, vDotProduct, vN, vEqual, vDivideScalar } from './vector';
 
 // --------------- SUM ----------------------
@@ -165,6 +165,15 @@ export const m3x3 = (defaultValue = 0): Matrix3 => {
     ];
 };
 
+export const m4x4 = (defaultValue = 0): Matrix4 => {
+    return [
+        [defaultValue, defaultValue, defaultValue, defaultValue],
+        [defaultValue, defaultValue, defaultValue, defaultValue],
+        [defaultValue, defaultValue, defaultValue, defaultValue],
+        [defaultValue, defaultValue, defaultValue, defaultValue],
+    ];
+};
+
 export const mNxM = (N: number, M: number, defaultValue = 0): Matrix => {
     if(N <= 0 || M <= 0){
         throw new Error('M and N must be positive numbers.');
@@ -191,6 +200,15 @@ export const identity3 = (): Matrix3 => {
         [1, 0, 0],
         [0, 1, 0],
         [0, 0, 1],
+    ];
+};
+
+export const identity4 = (): Matrix4 => {
+    return [
+        [1, 0, 0, 0],
+        [0, 1, 0, 0],
+        [0, 0, 1, 0],
+        [0, 0, 0, 1],
     ];
 };
 

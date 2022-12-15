@@ -1,4 +1,4 @@
-import { Matrix2, Matrix3, Matrix, Vector2, Vector3, Vector } from './types';
+import { Matrix2, Matrix3, Matrix4, Matrix, Vector2, Vector3, Vector4 } from './types';
 import { v2Normalize, v3MulScalar, v3Normalize } from './vector';
 import { mMulVector, mMul } from './matrix';
 import { setDecimalPlaces } from './format';
@@ -88,7 +88,7 @@ export const m2TranslationH = (position: Vector3, decimalPlaces = Infinity): Mat
 /**
  * 3D Translation matrix in homogeneous coordinates.
  */
-export const m3TranslationH = (position: Vector, decimalPlaces = Infinity): Matrix => {
+export const m3TranslationH = (position: Vector4, decimalPlaces = Infinity): Matrix4 => {
 
     return [
         [1, 0, 0, setDecimalPlaces(position[0], decimalPlaces)],
@@ -202,7 +202,7 @@ export const m3RotationX = (angleRad: number, isClockwise = true, decimalPlaces 
 /**
  * Rotation around the X axis (clockwise) - in homogeneous coordinates
  */
-export const m3RotationXH = (angleRad: number, isClockwise = true, decimalPlaces = Infinity): Matrix => {
+export const m3RotationXH = (angleRad: number, isClockwise = true, decimalPlaces = Infinity): Matrix4 => {
     const cos = setDecimalPlaces(Math.cos(angleRad), decimalPlaces);
     const sin = setDecimalPlaces(Math.sin(angleRad), decimalPlaces);
 
@@ -247,7 +247,7 @@ export const m3RotationY = (angleRad: number, isClockwise = true, decimalPlaces 
 /**
  * Rotation around the Y axis (clockwise) - in homogeneous coordinates
  */
-export const m3RotationYH = (angleRad: number, isClockwise = true, decimalPlaces = Infinity): Matrix => {
+export const m3RotationYH = (angleRad: number, isClockwise = true, decimalPlaces = Infinity): Matrix4 => {
     const cos = setDecimalPlaces(Math.cos(angleRad), decimalPlaces);
     const sin = setDecimalPlaces(Math.sin(angleRad), decimalPlaces);
 
@@ -292,7 +292,7 @@ export const m3RotationZ = (angleRad: number, isClockwise = true, decimalPlaces 
 /**
  * Rotation around the Z axis (clockwise)- in homogeneous coordinates
  */
-export const m3RotationZH = (angleRad: number, isClockwise = true, decimalPlaces = Infinity): Matrix => {
+export const m3RotationZH = (angleRad: number, isClockwise = true, decimalPlaces = Infinity): Matrix4 => {
 
     const cos = setDecimalPlaces(Math.cos(angleRad), decimalPlaces);
     const sin = setDecimalPlaces(Math.sin(angleRad), decimalPlaces);
@@ -347,7 +347,7 @@ export const m3Scale = (scaleVector: Vector3): Matrix3 => {
     ];
 };
 
-export const m3ScaleH = (scaleVector: Vector): Matrix => {
+export const m3ScaleH = (scaleVector: Vector4): Matrix4 => {
     return [
         [scaleVector[0], 0, 0, 0],
         [0, scaleVector[1], 0, 0],
@@ -395,7 +395,7 @@ export const m3ScaleX = (scale: number): Matrix3 => {
 /**
  * Stretch in x-direction
  */
-export const m3ScaleXH = (scale: number): Matrix => {
+export const m3ScaleXH = (scale: number): Matrix4 => {
     return [
         [scale, 0, 0, 0],
         [0, 1, 0, 0],
@@ -441,7 +441,7 @@ export const m3ScaleZ = (scale: number): Matrix3 => {
 /**
  * Stretch in z-direction
  */
-export const m3ScaleZH = (scale: number): Matrix => {
+export const m3ScaleZH = (scale: number): Matrix4 => {
     return [
         [1, 0, 0, 0],
         [0, 1, 0, 0],
@@ -511,7 +511,7 @@ export const m3ReflectionOrigin = (): Matrix3 => {
 /**
  * Reflection about the origin in homogeneous coordinates
  */
-export const m3ReflectionOriginH = (): Matrix => {
+export const m3ReflectionOriginH = (): Matrix4 => {
 
     return [
         [-1, 0, 0, 0],
@@ -590,7 +590,7 @@ export const m3ReflectionYZ = (): Matrix3 => {
 /**
  * Reflection relative to YZ plane in homogeneous coordinates
  */
-export const m3ReflectionYZH = (): Matrix => {
+export const m3ReflectionYZH = (): Matrix4 => {
 
     return [
         [-1, 0, 0, 0],
@@ -615,7 +615,7 @@ export const m3ReflectionXZ = (): Matrix3 => {
 /**
  * Reflection relative to XZ plane in homogeneous coordinates
  */
-export const m3ReflectionXZH = (): Matrix => {
+export const m3ReflectionXZH = (): Matrix4 => {
 
     return [
         [1, 0, 0, 0],
@@ -640,7 +640,7 @@ export const m3ReflectionXY = (): Matrix3 => {
 /**
  * Reflection relative to XY plane in homogeneous coordinates
  */
-export const m3ReflectionXYH = (): Matrix => {
+export const m3ReflectionXYH = (): Matrix4 => {
 
     return [
         [1, 0, 0, 0],

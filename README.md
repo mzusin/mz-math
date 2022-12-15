@@ -152,12 +152,12 @@ There are the following types of vectors:
 **Vector2** for a 2D vector, **Vector3** for a 3D vector, and **Vector** for the general case.
 
 ```js
-import { Vector2, Vector3, Vector } from 'toolcool-math';
+import { Vector2, Vector3, Vector4, Vector } from 'toolcool-math';
 
 const v2: Vector2 = [1, 2];
-const v3: Vector2 = [1, 2, 3];
+const v3: Vector3 = [1, 2, 3];
+const v4: Vector4 = [1, 2, 3, 4];
 
-const v4: Vector = [1, 2, 3, 4];
 const v5: Vector = [1, 2, 3, 4, 5];
 const v6: Vector = [1, 2, 3, 4, 5, 6];
 ```
@@ -310,8 +310,8 @@ const len3 = v3Length([1, 2, 3]); // 3.7416573867739413
 const len4 = v3Length([1, 2, 3], 2); // 3.74
 
 // General case
-const len5 = v3Length([1, 2, 3, 4]); // 5.477225575051661
-const len6 = v3Length([1, 2, 3, 4], 2); // 5.48
+const len5 = vLength([1, 2, 3, 4]); // 5.477225575051661
+const len6 = vLength([1, 2, 3, 4], 2); // 5.48
 ```
 
 ## Set Vector Length
@@ -386,13 +386,16 @@ const res2 = v3CrossProduct(v3, v4, 2); // [-4.11, 10.03, -4.67]
 There are helpers for creating v2, v3 and vN vectors with a default value. If no default value is specified, it will be zero.
 
 ```js
-import { v2, v3, vN } from 'toolcool-math';
+import { v2, v3, v4, vN } from 'toolcool-math';
 
 const v2 = v2(); // [0, 0]
 const v2_10 = v2(10); // [10, 10]
 
 const v3 = v3(); // [0, 0, 0]
 const v3_10 = v3(10); // [10, 10, 10]
+
+const v4 = v4(); // [0, 0, 0, 0]
+const v4_10 = v4(10); // [10, 10, 10, 10]
 
 const v5 = vN(5); // [0, 0, 0, 0, 0]
 const v5_10 = vN(5, 10); // [10, 10, 10, 10, 10]
@@ -468,16 +471,45 @@ const m3: Matrix3 = [
 // etc...
 ```
 
+**Matrix4**
+
+```js
+import { Matrix4 } from 'toolcool-math';
+
+const m4: Matrix4 = [
+  [1, 2, 3, 4],
+];
+
+// or
+
+const m4: Matrix4 = [
+  [1, 2, 3, 4],
+  [5, 6, 7, 8],
+];
+
+// or
+
+const m4: Matrix4 = [
+  [1, 2, 3, 4],
+  [5, 6, 7, 8],
+  [9, 10, 11, 12],
+  [13, 14, 15, 16],
+];
+
+// etc...
+```
+
 The generic **Matrix** type is used for all other cases:
 
 ```js
 import { Matrix } from 'toolcool-math';
 
 const m: Matrix = [
-  [1, 2, 3, 4],
-  [1, 2, 3, 4],
-  [1, 2, 3, 4],
-  [1, 2, 3, 4],
+  [1, 2, 3, 4, 5],
+  [1, 2, 3, 4, 5],
+  [1, 2, 3, 4, 5],
+  [1, 2, 3, 4, 5],
+  [1, 2, 3, 4, 5],
 ];
 ```
 
@@ -490,7 +522,7 @@ const m: Matrix = [
 There are helpers for creating **m2x2**, **m3x3**, and **mNxM** matrices with a default value. If no default value is specified, it will be zero.
 
 ```js
-import { m2x2, m3x3, mNxM } from 'toolcool-math';
+import { m2x2, m3x3, m4x4, mNxM } from 'toolcool-math';
 
 const mat2x2 = m2x2(); 
 /*
@@ -526,6 +558,16 @@ const mat3x3_20 = m3x3(20);
 ]
  */
 
+const mat4x4_5 = m5x5(5);
+/*
+[
+    [5, 5, 5, 5],
+    [5, 5, 5, 5],
+    [5, 5, 5, 5],
+    [5, 5, 5, 5],
+]
+ */
+
 const matNxM = mNxM(1, 5);
 /*
 [
@@ -548,7 +590,7 @@ const matNxM = mNxM(2, 3, 1);
 There are helpers for creating identity matrices: **identity2**, **identity3**, and **identityN**.
 
 ```js
-import { identity2, identity3, identityN } from 'toolcool-math';
+import { identity2, identity3, identity4, identityN } from 'toolcool-math';
 
 const idt2 = identity2();
 /*
@@ -567,13 +609,24 @@ const idt3 = identity3();
 ]
  */
 
-const idt4 = identityN(4);
+const idt4 = identity4();
 /*
 [
   [1, 0, 0, 0],
   [0, 1, 0, 0],
   [0, 0, 1, 0],
   [0, 0, 0, 1],
+]
+ */
+
+const idt5 = identityN(5);
+/*
+[
+  [1, 0, 0, 0, 0],
+  [0, 1, 0, 0, 0],
+  [0, 0, 1, 0, 0],
+  [0, 0, 0, 1, 0],
+  [0, 0, 0, 0, 1],
 ]
  */
 
@@ -1453,7 +1506,7 @@ const mat2: Matrix3 = m3Translation([10, 20, 30]);
 **Translation in homogeneous coordinates**
 
 ```js
-import { m2TranslationH, m3TranslationH, Matrix3, Matrix } from 'toolcool-math';
+import { m2TranslationH, m3TranslationH, Matrix3, Matrix4 } from 'toolcool-math';
 
 // translation matrix for the position [10, 20] in homogeneous coordinates.
 const mat1: Matrix3 = m2TranslationH([10, 20, 1]);
@@ -1467,7 +1520,7 @@ const mat1: Matrix3 = m2TranslationH([10, 20, 1]);
  */
 
 // translation matrix for the position [10, 20, 30] in homogeneous coordinates.
-const mat2: Matrix = m3TranslationH([10, 20, 30, 1]);
+const mat2: Matrix4 = m3TranslationH([10, 20, 30, 1]);
 
 /*
 [
@@ -1539,26 +1592,52 @@ const rotatedVector2: Vector3 = v2RotateH(angle, vector, isClockwise, decimalPla
 
 It's possible to get the following 3D rotation matrices:
 
+**non-homogeneous coordinates**
+
 ```js
-import { m3RotationX, m3RotationY, m3RotationZ } from 'toolcool-math';
+import { m3RotationX, m3RotationY, m3RotationZ, Matrix3 } from 'toolcool-math';
 
 // rotation matrix around the X axis
 let angle = Math.PI/2; // radians
 let isClockwise = true; // optional
 let decimalPlaces = 3; // optional
-const rmat3x = m3RotationX(angle, isClockwise, decimalPlaces);
+const rmat3x: Matrix3 = m3RotationX(angle, isClockwise, decimalPlaces);
 
 // rotation matrix around the Y axis
 let angle = Math.PI/2; // radians
 let isClockwise = true; // optional
 let decimalPlaces = 3; // optional
-const rmat3y = m3RotationY(angle, isClockwise, decimalPlaces);
+const rmat3y: Matrix3 = m3RotationY(angle, isClockwise, decimalPlaces);
 
 // rotation matrix around the Z axis
 let angle = Math.PI/2; // radians
 let isClockwise = true; // optional
 let decimalPlaces = 3; // optional
-const rmat3z = m3RotationZ(angle, isClockwise, decimalPlaces); 
+const rmat3z: Matrix3 = m3RotationZ(angle, isClockwise, decimalPlaces); 
+```
+
+**homogeneous coordinates**
+
+```js
+import { m3RotationXH, m3RotationYH, m3RotationZH, Matrix4 } from 'toolcool-math';
+
+// rotation matrix around the X axis
+let angle = Math.PI/2; // radians
+let isClockwise = true; // optional
+let decimalPlaces = 3; // optional
+const rmat3x: Matrix4 = m3RotationXH(angle, isClockwise, decimalPlaces);
+
+// rotation matrix around the Y axis
+let angle = Math.PI/2; // radians
+let isClockwise = true; // optional
+let decimalPlaces = 3; // optional
+const rmat3y: Matrix4 = m3RotationYH(angle, isClockwise, decimalPlaces);
+
+// rotation matrix around the Z axis
+let angle = Math.PI/2; // radians
+let isClockwise = true; // optional
+let decimalPlaces = 3; // optional
+const rmat3z: Matrix4 = m3RotationZH(angle, isClockwise, decimalPlaces); 
 ```
 
 It is also possible to get the actual rotated vector using the following functions:
@@ -1704,7 +1783,7 @@ const scaledVector: Vector2 = v2Scale([2, 4], [10, 20]);
 It's possible to get a 3D scale matrix for a given scale vector as follows:
 
 ```js
-import { m3Scale, m3ScaleH, Matrix3, Matrix } from 'toolcool-math';
+import { m3Scale, m3ScaleH, Matrix3, Matrix4 } from 'toolcool-math';
 
 // scale matrix with 2x, 4y, and 6z - non-homogeneous coordinates
 const smat3: Matrix3 = m3Scale([2, 4, 6]);
@@ -1717,7 +1796,7 @@ const smat3: Matrix3 = m3Scale([2, 4, 6]);
  */
 
 // scale matrix with 2x, 4y, and 6z - in homogeneous coordinates
-const smat3: Matrix = m3ScaleH([2, 4, 6, 1]);
+const smat3: Matrix4 = m3ScaleH([2, 4, 6, 1]);
 /*
 [
     [2, 0, 0, 0],
@@ -1740,10 +1819,10 @@ const scaledVector: Vector3 = v3Scale([2, 4, 6], [10, 20, 30]);
 Stretch in different directions:
 
 ```js
-import { m3ScaleX, m3ScaleY, m3ScaleZ, m3ScaleXH, Matrix3 } from 'toolcool-math';
+import { m3ScaleX, m3ScaleY, m3ScaleZ, m3ScaleXH, Matrix3, Matrix4 } from 'toolcool-math';
 
 // stretch in x-direction - non-homogeneous coordinates
-const mat1: Matrix3 = m3ScaleX(2); 
+const mat: Matrix3 = m3ScaleX(2); 
 /*
 [
     [2, 0, 0],
@@ -1753,7 +1832,7 @@ const mat1: Matrix3 = m3ScaleX(2);
  */
 
 // stretch in x-direction - in homogeneous coordinates
-const mat1: Matrix = m3ScaleXH(2);
+const mat: Matrix4 = m3ScaleXH(2);
 /*
 [
     [2, 0, 0, 0],
@@ -1764,7 +1843,7 @@ const mat1: Matrix = m3ScaleXH(2);
  */
 
 // stretch in y-direction - non-homogeneous coordinates
-const mat2: Matrix3 = m3ScaleY(2); 
+const mat: Matrix3 = m3ScaleY(2); 
 /*
 [
     [1, 0, 0],
@@ -1774,7 +1853,7 @@ const mat2: Matrix3 = m3ScaleY(2);
  */
 
 // stretch in y-direction - in homogeneous coordinates
-const mat2: Matrix = m3ScaleYH(2);
+const mat: Matrix4 = m3ScaleYH(2);
 /*
 [
     [1, 0, 0, 0],
@@ -1785,7 +1864,7 @@ const mat2: Matrix = m3ScaleYH(2);
  */
 
 // stretch in z-direction - non-homogeneous coordinates
-const mat3: Matrix3 = m3ScaleZ(2); 
+const mat: Matrix3 = m3ScaleZ(2); 
 /*
 [
     [1, 0, 0],
@@ -1795,7 +1874,7 @@ const mat3: Matrix3 = m3ScaleZ(2);
  */
 
 // stretch in z-direction - in homogeneous coordinates
-const mat3: Matrix = m3ScaleZH(2);
+const mat: Matrix4 = m3ScaleZH(2);
 /*
 [
     [1, 0, 0, 0],
@@ -1910,7 +1989,7 @@ import {
   m3ReflectionYZ, m3ReflectionYZH,
   m3ReflectionXZ, m3ReflectionXZH,
   m3ReflectionXY, m3ReflectionXYH,
-  Matrix3, Matrix } from 'toolcool-math';
+  Matrix3, Matrix4 } from 'toolcool-math';
 
 // reflection about the origin in non-homogeneous coordinates
 const mat0: Matrix3 = m3ReflectionOrigin();
@@ -1923,7 +2002,7 @@ const mat0: Matrix3 = m3ReflectionOrigin();
  */
 
 // reflection about the origin in homogeneous coordinates
-const mat0: Matrix = m3ReflectionOriginH();
+const mat0: Matrix4 = m3ReflectionOriginH();
 /*
 [
     [-1, 0, 0, 0],
@@ -1944,7 +2023,7 @@ const mat2: Matrix3 = m3ReflectionYZ();
  */
 
 // Reflection relative to YZ plane - in homogeneous coordinates
-const mat2: Matrix = m3ReflectionYZH();
+const mat2: Matrix4 = m3ReflectionYZH();
 /*
 [
     [-1, 0, 0, 0],
@@ -1965,7 +2044,7 @@ const mat2: Matrix3 = m3ReflectionXZ();
  */
 
 // Reflection relative to XZ plane - in homogeneous coordinates
-const mat2: Matrix = m3ReflectionXZH();
+const mat2: Matrix4 = m3ReflectionXZH();
 /*
 [
     [1, 0, 0, 0],
@@ -1986,7 +2065,7 @@ const mat2: Matrix3 = m3ReflectionXY();
  */
 
 // Reflection relative to XY plane - in homogeneous coordinates
-const mat2: Matrix = m3ReflectionXYH();
+const mat2: Matrix4 = m3ReflectionXYH();
 /*
 [
     [1, 0, 0, 0],

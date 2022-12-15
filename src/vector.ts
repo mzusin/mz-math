@@ -1,4 +1,4 @@
-import { Vector, Vector2, Vector3 } from './types';
+import { Vector, Vector2, Vector3, Vector4 } from './types';
 import { setDecimalPlaces } from './format';
 import { getV2Angle } from './angle';
 
@@ -182,6 +182,10 @@ export const v2 = (defaultValue = 0): Vector2 => {
 
 export const v3 = (defaultValue = 0): Vector3 => {
     return [defaultValue, defaultValue, defaultValue];
+};
+
+export const v4 = (defaultValue = 0): Vector4 => {
+    return [defaultValue, defaultValue, defaultValue, defaultValue];
 };
 
 export const vN = (N: number, defaultValue = 0): Vector => {

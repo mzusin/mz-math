@@ -1,4 +1,4 @@
-import { Vector, Vector2, Vector3 } from './types';
+import { Vector, Vector2, Vector3, Vector4 } from './types';
 export declare const vSum: (vector1: Vector, vector2: Vector, decimalPlaces?: number) => Vector;
 export declare const v2Sum: (vector1: Vector2, vector2: Vector2, decimalPlaces?: number) => Vector2;
 export declare const v3Sum: (vector1: Vector3, vector2: Vector3, decimalPlaces?: number) => Vector3;
@@ -31,5 +31,6 @@ export declare const v3DotProduct: (vector1: Vector3, vector2: Vector3, decimalP
 export declare const v3CrossProduct: (vector1: Vector3, vector2: Vector3, decimalPlaces?: number) => Vector3;
 export declare const v2: (defaultValue?: number) => Vector2;
 export declare const v3: (defaultValue?: number) => Vector3;
+export declare const v4: (defaultValue?: number) => Vector4;
 export declare const vN: (N: number, defaultValue?: number) => Vector;
 export declare const vEqual: (vector1: Vector, vector2: Vector) => boolean;

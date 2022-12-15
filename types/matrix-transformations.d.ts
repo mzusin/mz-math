@@ -1,4 +1,4 @@
-import { Matrix2, Matrix3, Matrix, Vector2, Vector3, Vector } from './types';
+import { Matrix2, Matrix3, Matrix4, Matrix, Vector2, Vector3, Vector4 } from './types';
 /**
  * Matrix 2D in non-homogeneous coordinates to CSS matrix() function
  * https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix
@@ -23,7 +23,7 @@ export declare const m2TranslationH: (position: Vector3, decimalPlaces?: number)
 /**
  * 3D Translation matrix in homogeneous coordinates.
  */
-export declare const m3TranslationH: (position: Vector, decimalPlaces?: number) => Matrix;
+export declare const m3TranslationH: (position: Vector4, decimalPlaces?: number) => Matrix4;
 /**
  * Rotation of an angle about the origin.
  */
@@ -53,7 +53,7 @@ export declare const m3RotationX: (angleRad: number, isClockwise?: boolean, deci
 /**
  * Rotation around the X axis (clockwise) - in homogeneous coordinates
  */
-export declare const m3RotationXH: (angleRad: number, isClockwise?: boolean, decimalPlaces?: number) => Matrix;
+export declare const m3RotationXH: (angleRad: number, isClockwise?: boolean, decimalPlaces?: number) => Matrix4;
 export declare const v3RotateX: (angleRad: number, vector: Vector3, isClockwise?: boolean, decimalPlaces?: number) => Vector3;
 /**
  * Rotation around the Y axis (clockwise).
@@ -62,7 +62,7 @@ export declare const m3RotationY: (angleRad: number, isClockwise?: boolean, deci
 /**
  * Rotation around the Y axis (clockwise) - in homogeneous coordinates
  */
-export declare const m3RotationYH: (angleRad: number, isClockwise?: boolean, decimalPlaces?: number) => Matrix;
+export declare const m3RotationYH: (angleRad: number, isClockwise?: boolean, decimalPlaces?: number) => Matrix4;
 export declare const v3RotateY: (angleRad: number, vector: Vector3, isClockwise?: boolean, decimalPlaces?: number) => Vector3;
 /**
  * Rotation around the Z axis (clockwise).
@@ -71,7 +71,7 @@ export declare const m3RotationZ: (angleRad: number, isClockwise?: boolean, deci
 /**
  * Rotation around the Z axis (clockwise)- in homogeneous coordinates
  */
-export declare const m3RotationZH: (angleRad: number, isClockwise?: boolean, decimalPlaces?: number) => Matrix;
+export declare const m3RotationZH: (angleRad: number, isClockwise?: boolean, decimalPlaces?: number) => Matrix4;
 export declare const v3RotateZ: (angleRad: number, vector: Vector3, isClockwise?: boolean, decimalPlaces?: number) => Vector3;
 export declare const m2Scale: (scaleVector: Vector2) => Matrix2;
 export declare const v2Scale: (scaleVector: Vector2, vector: Vector2) => Vector2;
@@ -80,7 +80,7 @@ export declare const v2Scale: (scaleVector: Vector2, vector: Vector2) => Vector2
  */
 export declare const m2ScaleH: (scaleVector: Vector3) => Matrix3;
 export declare const m3Scale: (scaleVector: Vector3) => Matrix3;
-export declare const m3ScaleH: (scaleVector: Vector) => Matrix;
+export declare const m3ScaleH: (scaleVector: Vector4) => Matrix4;
 export declare const v3Scale: (scaleVector: Vector3, vector: Vector3) => Vector3;
 /**
  * Stretch, parallel to the x-axis.
@@ -97,7 +97,7 @@ export declare const m3ScaleX: (scale: number) => Matrix3;
 /**
  * Stretch in x-direction
  */
-export declare const m3ScaleXH: (scale: number) => Matrix;
+export declare const m3ScaleXH: (scale: number) => Matrix4;
 /**
  * Stretch in y-direction
  */
@@ -113,7 +113,7 @@ export declare const m3ScaleZ: (scale: number) => Matrix3;
 /**
  * Stretch in z-direction
  */
-export declare const m3ScaleZH: (scale: number) => Matrix;
+export declare const m3ScaleZH: (scale: number) => Matrix4;
 /**
  * Stretch, parallel to the y-axis.
  */
@@ -137,7 +137,7 @@ export declare const m3ReflectionOrigin: () => Matrix3;
 /**
  * Reflection about the origin in homogeneous coordinates
  */
-export declare const m3ReflectionOriginH: () => Matrix;
+export declare const m3ReflectionOriginH: () => Matrix4;
 /**
  * Reflection about y=-x
  */
@@ -162,7 +162,7 @@ export declare const m3ReflectionYZ: () => Matrix3;
 /**
  * Reflection relative to YZ plane in homogeneous coordinates
  */
-export declare const m3ReflectionYZH: () => Matrix;
+export declare const m3ReflectionYZH: () => Matrix4;
 /**
  * Reflection relative to XZ plane in non-homogeneous coordinates
  */
@@ -170,7 +170,7 @@ export declare const m3ReflectionXZ: () => Matrix3;
 /**
  * Reflection relative to XZ plane in homogeneous coordinates
  */
-export declare const m3ReflectionXZH: () => Matrix;
+export declare const m3ReflectionXZH: () => Matrix4;
 /**
  * Reflection relative to XY plane in non-homogeneous coordinates
  */
@@ -178,7 +178,7 @@ export declare const m3ReflectionXY: () => Matrix3;
 /**
  * Reflection relative to XY plane in homogeneous coordinates
  */
-export declare const m3ReflectionXYH: () => Matrix;
+export declare const m3ReflectionXYH: () => Matrix4;
 /**
  * Shearing in y-axis, with x-axis fixed with (0,1) moving to (factor, 1)
  */
