@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Sine Wave Movement using "m2hToCSS" Function</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../css/styles-1.css" rel="stylesheet" />
+    <style>
+        body{
+            align-items: center;
+            justify-content: flex-start;
+        }
+    </style>
+</head>
+<body>
+<h1>Sine Wave Movement</h1>
+<div id="star">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-north-star" width="50" height="50" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M3 12h18"></path>
+        <path d="M12 21v-18"></path>
+        <path d="M7.5 7.5l9 9"></path>
+        <path d="M7.5 16.5l9 -9"></path>
+    </svg>
+</div>
+
+<script src="../../dist/tc-math.min.js"></script>
+<script>
+    let handler = null;
+
+    /**
+     * Animation ------------------------------------------
+     */
+    const animate = () => {
+
+        // star element
+        const $star = document.getElementById('star');
+        const starBox = $star.getBoundingClientRect();
+
+        const ANIMATION_DURATION = Infinity; // Infinity;
+        let start, previousTimeStamp;
+
+        // initial angle
+        let x = 0;
+        let direction = 1;
+        let STEP = 10;
+
+        const amplitude = 100;
+        const frequency = 0.003;
+        const phase = 0;
+
+        /**
+         * Animation step -----------------------------------------
+         */
+        const step = (timestamp) => {
+            if (start === undefined) {
+                start = timestamp;
+            }
+
+            const elapsed = timestamp - start;
+
+            if (previousTimeStamp !== timestamp) {
+
+                const position = TCMath.sineWaveMovement(x, amplitude, frequency, phase);
+
+                const translationMatrix = TCMath.m2TranslationH([...position, 1]);
+                $star.style.transform = TCMath.m2hToCSS(translationMatrix);
+
+                // OR
+                // $star.style.transform = `translate(${position[0]}px, ${position[1]}px)`;
+
+                if(x > (window.innerWidth - starBox.width - 20) && direction > 0 || x < 0 && direction < 0){
+                    direction = -direction;
+                }
+
+                x += STEP * direction;
+
+            }
+
+            if (elapsed < ANIMATION_DURATION) {
+                previousTimeStamp = timestamp;
+                window.requestAnimationFrame(step);
+            }
+        };
+
+        handler = window.requestAnimationFrame(step);
+    };
+
+    /**
+     * handle window resize => restart the animation
+     */
+    const observer = new ResizeObserver(entries => {
+        for (const entry of entries) {
+            window.cancelAnimationFrame(handler);
+            animate();
+        }
+    });
+    observer.observe(document.body, {box: 'border-box'});
+</script>
+</body>
+</html>
