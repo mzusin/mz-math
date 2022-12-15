@@ -1,4 +1,6 @@
 declare const api: {
+    circleMovement: (center: import("./types").Vector2, angle: number, radius: number) => import("./types").Vector2;
+    ellipseMovement: (center: import("./types").Vector2, angle: number, radius1: number, radius2: number) => import("./types").Vector2;
     equationSystem2: (equation1: import("./types").Vector3, equation2: import("./types").Vector3, decimalPlaces?: number) => import("./types").Vector2 | null;
     equationSystem3: (equation1: import("./types").Vector, equation2: import("./types").Vector, equation3: import("./types").Vector, decimalPlaces?: number) => import("./types").Vector3 | null;
     equationSystemN: (equations: import("./types").Matrix, decimalPlaces?: number) => import("./types").Vector | null;
@@ -177,3 +179,4 @@ export * from './other';
 export * from './convert';
 export * from './bezier-curve';
 export * from './equations';
+export * from './path-movement';

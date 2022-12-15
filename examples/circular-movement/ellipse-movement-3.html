@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>Simple rotation using circle equation</title>
+    <title>Simple rotation using ellipse equation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="../css/styles-1.css" rel="stylesheet" />
 </head>
 <body>
-<h1>Simple rotation using circle equation</h1>
+<h1>Simple rotation using ellipse equation</h1>
 <div id="star" style="position: absolute">
     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-north-star" width="50" height="50" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -47,7 +47,8 @@
         // initial angle
         let angle = 0;
 
-        const radius = 250; // px
+        const radius1 = 350; // px
+        const radius2 = 150; // px
 
         /**
          * Animation step -----------------------------------------
@@ -65,7 +66,7 @@
                 angle += 0.01;
                 angle = angle % 360;
 
-                const position = TCMath.circleMovement(center, angle, radius);
+                const position = TCMath.ellipseMovement(center, angle, radius1, radius2);
 
                 // set star css position ----------------------
                 $star.style.left = `${ position[0] - starBox.width/2 }px`;

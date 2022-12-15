@@ -84,9 +84,6 @@ This project is a collection of TypeScript math helpers and utilities for the br
   - [Convert range](#convert-range)
   - [Do ranges overlap?](#check-if-two-ranges-overlap)
   - [Can be converted to number?](#check-if-value-can-be-converted-to-number)
-- Examples
-  - [Circle Movement Example](https://github.com/toolcool-org/toolcool-math/blob/main/examples/circular-movement/circle-movement-1.html)
-  - [Matrix to CSS transform example (rotation)](https://github.com/toolcool-org/toolcool-math/blob/main/examples/matrix-to-css-rotation.html)
 - [License](#license)
 
 ## TypeScript Usage
@@ -2731,15 +2728,29 @@ const result: Vector|null = equationSystemN(parameters, 2); // round to 2 decima
 ## Circle Movement
 
 ```js
-import { circularMovement, Vector2 } from 'toolcool-math';
+import { circleMovement, Vector2 } from 'toolcool-math';
 
 const center: Vector2 = [100, 100];
 const angle = Math.PI/2;
 const radius = 250; 
-const newPosition: Vector2 = circularMovement(center, angle, radius);
+const newPosition: Vector2 = circleMovement(center, angle, radius);
 ```
 
 [Example](https://github.com/toolcool-org/toolcool-math/blob/main/examples/circular-movement/circle-movement-3.html)
+
+## Ellipse Movement
+
+```js
+import { ellipseMovement, Vector2 } from 'toolcool-math';
+
+const center: Vector2 = [100, 100];
+const angle = Math.PI/2;
+const radius1 = 350;
+const radius2 = 150;
+const newPosition: Vector2 = ellipseMovement(center, angle, radius1, radius2);
+```
+
+[Example](https://github.com/toolcool-org/toolcool-math/blob/main/examples/circular-movement/ellipse-movement-3.html)
 
 -----------------------------------------------
 
