@@ -211,4 +211,5 @@ declare module 'toolcool-math' {
 
     export const circleMovement: (center: Vector2, angle: number, radius: number) => Vector2;
     export const ellipseMovement: (center: Vector2, angle: number, radius1: number, radius2: number) => Vector2;
+    export const sineWaveMovement: (x: number, amplitude: number, frequency: number, phase: number) => Vector2;
 }

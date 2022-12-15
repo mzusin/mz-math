@@ -80,6 +80,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
 - Path Movement
   - [Circle Movement](#circle-movement)
   - [Ellipse Movement](#ellipse-movement)
+  - [Sine Wave Movement](#)
 - Other
   - [Modulo](#modulo)
   - [Convert range](#convert-range)
@@ -2752,6 +2753,20 @@ const newPosition: Vector2 = ellipseMovement(center, angle, radius1, radius2);
 ```
 
 [Example](https://github.com/toolcool-org/toolcool-math/blob/main/examples/circular-movement/ellipse-movement-3.html)
+
+## Sine Wave Movement
+
+```js
+import { ellipseMovement, Vector2 } from 'toolcool-math';
+
+const amplitude = 100; // the peak deviation of the function from zero
+const frequency = 0.003; // number of cycles
+const phase = 0; // starting point "shifting"
+const x = 0; // changes from 0 to .... N
+const newPosition: Vector2 = ellipseMovement(x, amplitude, frequency, phase);
+```
+
+[Example](https://github.com/toolcool-org/toolcool-math/blob/main/examples/wave-movement/wave-movement-1.html)
 
 -----------------------------------------------
 
