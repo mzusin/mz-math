@@ -13,6 +13,13 @@ body{
     justify-content: center;
 }
 
+h1{
+    position: absolute;
+    top: 1rem;
+    font-size: 1rem;
+    font-weight: normal;
+}
+
 #center {
     width: 1rem;
     height: 1rem;

@@ -28,7 +28,7 @@ export const m2hToCSS = (m: Matrix3) : string => {
     const c = m[0][1];
     const d = m[1][1];
     const tx = m[0][2];
-    const ty = m[1][1];
+    const ty = m[1][2];
 
     return `matrix(${ a }, ${ b }, ${ c }, ${ d }, ${ tx }, ${ ty })`;
 };
@@ -43,7 +43,7 @@ export const m2hToCSS3d = (m: Matrix3) : string => {
     const c = m[0][1];
     const d = m[1][1];
     const tx = m[0][2];
-    const ty = m[1][1];
+    const ty = m[1][2];
 
     return `matrix3d(${ a }, ${ b }, 0, 0, ${ c }, ${ d }, 0, 0, 0, 0, 1, 0, ${ tx }, ${ ty }, 0, 1)`;
 };

@@ -77,13 +77,15 @@ This project is a collection of TypeScript math helpers and utilities for the br
   - [Get a point on a cubic Bézier curve](#get-a-point-on-a-cubic-bézier-curve)
 - Equations
   - [System of linear equations](#system-of-linear-equations)
+- Path Movement
+  - [Circle Movement](#)
 - Other
   - [Modulo](#modulo)
   - [Convert range](#convert-range)
   - [Do ranges overlap?](#check-if-two-ranges-overlap)
   - [Can be converted to number?](#check-if-value-can-be-converted-to-number)
 - Examples
-  - [Circle Movement Example](https://github.com/toolcool-org/toolcool-math/blob/main/examples/circle-movement.html)
+  - [Circle Movement Example](https://github.com/toolcool-org/toolcool-math/blob/main/examples/circular-movement/circle-movement-1.html)
   - [Matrix to CSS transform example (rotation)](https://github.com/toolcool-org/toolcool-math/blob/main/examples/matrix-to-css-rotation.html)
 - [License](#license)
 
@@ -1698,7 +1700,7 @@ const mat3: Matrix3 = m2RotationAroundPointH(
 );
 ```
 
-[Circle Movement Example](https://github.com/toolcool-org/toolcool-math/blob/main/examples/circle-movement.html)
+[Circle Movement Example](https://github.com/toolcool-org/toolcool-math/blob/main/examples/circular-movement/circle-movement-1.html)
 
 -----------------------------------------------
 
@@ -2721,6 +2723,23 @@ const result: Vector|null = equationSystemN(parameters, 2); // round to 2 decima
 
 // The result: [-1, 2, 1, 3] i.e. x = -1, y = 2, z = 1, w = 3
 ```
+
+-----------------------------------------------
+
+# Path Movement
+
+## Circle Movement
+
+```js
+import { circularMovement, Vector2 } from 'toolcool-math';
+
+const center: Vector2 = [100, 100];
+const angle = Math.PI/2;
+const radius = 250; 
+const newPosition: Vector2 = circularMovement(center, angle, radius);
+```
+
+[Example](https://github.com/toolcool-org/toolcool-math/blob/main/examples/circular-movement/circle-movement-3.html)
 
 -----------------------------------------------
 

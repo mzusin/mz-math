@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Simple rotation using circle equation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../css/styles-1.css" rel="stylesheet" />
+</head>
+<body>
+<h1>Simple rotation using circle equation</h1>
+<div id="star" style="position: absolute">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-north-star" width="50" height="50" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M3 12h18"></path>
+        <path d="M12 21v-18"></path>
+        <path d="M7.5 7.5l9 9"></path>
+        <path d="M7.5 16.5l9 -9"></path>
+    </svg>
+</div>
+
+<div id="center"></div>
+
+<script src="../../dist/tc-math.min.js"></script>
+<script>
+    let handler = null;
+
+    /**
+     * Animation ------------------------------------------
+     */
+    const animate = () => {
+        // red dot in the center
+        const $center = document.getElementById('center');
+        const centerBox = $center.getBoundingClientRect();
+
+        const center = [
+            centerBox.x + centerBox.width/2,
+            centerBox.y + centerBox.height/2,
+        ];
+
+        // star element
+        const $star = document.getElementById('star');
+        const starBox = $star.getBoundingClientRect();
+
+        const ANIMATION_DURATION = Infinity; // Infinity;
+        let start, previousTimeStamp;
+
+        // initial angle
+        let angle = 0;
+
+        const radius = 250; // px
+
+        /**
+         * Animation step -----------------------------------------
+         */
+        const step = (timestamp) => {
+            if (start === undefined) {
+                start = timestamp;
+            }
+
+            const elapsed = timestamp - start;
+
+            if (previousTimeStamp !== timestamp) {
+                // const percent = Math.min(elapsed * 100 / TIME, 100);
+
+                angle += 0.01;
+                angle = angle % 360;
+
+                const position = TCMath.circularMovement(center, angle, radius);
+
+                // set star css position ----------------------
+                $star.style.left = `${ position[0] - starBox.width/2 }px`;
+                $star.style.top = `${ position[1] - starBox.height/2 }px`;
+            }
+
+            if (elapsed < ANIMATION_DURATION) {
+                previousTimeStamp = timestamp;
+                window.requestAnimationFrame(step);
+            }
+        };
+
+        handler = window.requestAnimationFrame(step);
+    };
+
+    /**
+     * handle window resize => restart the animation
+     */
+    const observer = new ResizeObserver(entries => {
+        for (const entry of entries) {
+            window.cancelAnimationFrame(handler);
+            animate();
+        }
+    });
+    observer.observe(document.body, {box: 'border-box'});
+</script>
+</body>
+</html>
