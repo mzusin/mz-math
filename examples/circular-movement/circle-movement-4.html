@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Circle movement on canvas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../css/styles-3.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>Circle movement on canvas</h1>
+    <canvas id="canvas"></canvas>
+
+    <script src="../../dist/tc-math.min.js"></script>
+    <script>
+        let handler = null;
+
+        /**
+         * Animation ------------------------------------------
+         */
+        const animate = () => {
+
+            const $canvas = document.getElementById('canvas');
+            const context = $canvas.getContext('2d');
+
+            $canvas.width = 800;
+            $canvas.height = 800;
+
+            const width = $canvas.width;
+            const height = $canvas.height;
+
+            const center = [
+                width / 2,
+                height / 2,
+            ];
+
+            const radius = 200;
+            const itemRadius = 30;
+
+            let angle = 0;
+
+            const ANIMATION_DURATION = Infinity; // Infinity;
+            let start, previousTimeStamp;
+
+            /**
+             * Animation step -----------------------------------------
+             */
+            const step = (timestamp) => {
+                if (start === undefined) {
+                    start = timestamp;
+                }
+
+                const elapsed = timestamp - start;
+
+                if (previousTimeStamp !== timestamp) {
+                    // const percent = Math.min(elapsed * 100 / TIME, 100);
+
+                    angle += 0.01;
+                    angle = angle % 360;
+
+                    const position = TCMath.circleMovement(center, angle, radius);
+
+                    context.clearRect(0, 0, width, height);
+
+                    // draw the center
+                    context.beginPath();
+                    context.arc(center[0], center[1], 10, 0, 2 * Math.PI, false);
+                    context.fillStyle = 'red';
+                    context.fill();
+
+                    // draw the circle path
+                    context.beginPath();
+                    context.arc(center[0], center[1], 200, 0, 2 * Math.PI, false);
+                    context.lineWidth = 1;
+                    context.strokeStyle = '#81b2d6';
+                    context.stroke();
+
+                    // draw a rotated circle
+                    context.beginPath();
+                    context.arc(position[0] , position[1], itemRadius, 0, 2 * Math.PI, false);
+                    context.fillStyle = '#fff';
+                    context.fill();
+                }
+
+                if (elapsed < ANIMATION_DURATION) {
+                    previousTimeStamp = timestamp;
+                    window.requestAnimationFrame(step);
+                }
+            };
+
+            handler = window.requestAnimationFrame(step);
+        };
+
+        /**
+         * handle window resize => restart the animation
+         */
+        const observer = new ResizeObserver(entries => {
+            for (const entry of entries) {
+                window.cancelAnimationFrame(handler);
+                animate();
+            }
+        });
+        observer.observe(document.body, {box: 'border-box'});
+    </script>
+</body>
+</html>
