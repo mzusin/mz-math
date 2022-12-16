@@ -39,14 +39,8 @@
             // offsetX and offsetY are relative to the parent container,
             const mouse = [evt?.clientX ?? 0, evt?.clientY ?? 0];
 
-            const vector = TCMath.v2Sub(mouse, center);
-            const angle = TCMath.getV2Angle(vector);
-
-            // convert the angle 0.5 from the range [0, Math.PI*2] to the range [0, Math.PI]
-            const angle2 = TCMath.convertRange(angle, 0, Math.PI*2, 0, Math.PI);
-
-            // set star css position ----------------------
-            const position = TCMath.circleMovement(center, angle2, radius);
+            // set circle css position ----------------------
+            const position = TCMath.circleMovementAfterMouse(mouse, center, radius);
             $star.style.left = `${ position[0] }px`;
             $star.style.top = `${ position[1] }px`;
         };

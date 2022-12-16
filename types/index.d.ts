@@ -1,5 +1,6 @@
 declare const api: {
     circleMovement: (center: import("./types").Vector2, angle: number, radius: number) => import("./types").Vector2;
+    circleMovementAfterMouse: (mouse: import("./types").Vector2, center: import("./types").Vector2, radius: number) => import("./types").Vector2;
     ellipseMovement: (center: import("./types").Vector2, angle: number, radius1: number, radius2: number) => import("./types").Vector2;
     sineWaveMovement: (x: number, amplitude: number, frequency: number, phase: number) => import("./types").Vector2;
     equationSystem2: (equation1: import("./types").Vector3, equation2: import("./types").Vector3, decimalPlaces?: number) => import("./types").Vector2 | null;
