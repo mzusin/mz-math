@@ -80,7 +80,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
   - [System of linear equations](#system-of-linear-equations)
 - Path Movement
   - [Circle Movement](#circle-movement)
-  - [Circle movement after mouse](#circle-movement)
+  - [Circle movement after mouse](#circle-movement-after-mouse)
   - [Ellipse Movement](#ellipse-movement)
   - [Sine Wave Movement](#sine-wave-movement)
 - Other
