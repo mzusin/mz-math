@@ -3,6 +3,15 @@ import { v2Sub } from './vector';
 import { getV2Angle } from './angle';
 import { convertRange } from './other';
 
+/**
+ * Circle Equation
+ * x^2 + y^2 = radius^2
+ * ----------------------
+ * Circle Parametric Equation
+ * x(t) = radius * cos(t)
+ * y(t) = radius * sin(t)
+ * t is the parameter = angle
+ */
 export const circleMovement = (center: Vector2, angle: number, radius: number): Vector2 => {
     angle = angle % Math.PI * 2;
 
@@ -36,6 +45,15 @@ export const circleMovementAfterMouse = (
     return circleMovement(center, angle, radius);
 };
 
+/**
+ * Ellipse Equation
+ * (x - centerX)^2 / (radius1^2) + (y - centerY)^2 / (radius2^2) = 1
+ * -----------------------------------------------------------------
+ * Ellipse Parametric Equation
+ * x(t) = radius1 * cos(t)
+ * y(t) = radius2 * sin(t)
+ * t is the parameter = angle
+ */
 export const ellipseMovement = (center: Vector2, angle: number, radius1: number, radius2: number): Vector2 => {
     angle = angle % Math.PI * 2;
 
@@ -46,7 +64,9 @@ export const ellipseMovement = (center: Vector2, angle: number, radius1: number,
 };
 
 /**
- * Sine Wave (Sinusoid)
+ * Sine Wave Equation (Sinusoid)
+ * -----------------------------
+ * const y = amplitude * Math.sin(2 * Math.PI * frequency * x + phase);
  * amplitude = the peak deviation of the function from zero
  * frequency = number of cycles
  * phase = specifies (in radians) where in its cycle the oscillation is at t = 0.
