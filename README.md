@@ -22,6 +22,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
     - [Normalize Vector](#normalize-vector)
     - [Dot Product](#vectors-dot-product)
     - [Cross Product](#vectors-cross-product)
+    - [Get distance between 2 vectors](#get-distance-between-2-vectors)
     - Helpers
       - [Vector Initialization Helpers](#vector-initialization-helpers)
       - [Check if 2 vectors are equal](#check-if-2-vectors-are-equal)
@@ -387,6 +388,38 @@ const v3: Vector3 = [1.1143, 2.1205, 3.57294];
 const v4: Vector3 = [4.8294, 5.0001111, 6.48634];
 // round to 2 decimal places after the dot
 const res2 = v3CrossProduct(v3, v4, 2); // [-4.11, 10.03, -4.67]
+```
+
+## Get distance between 2 vectors
+
+**2D vectors**
+
+```js
+import { v2Distance, Vector2 } from 'toolcool-math';
+
+const v1: Vector2 = [1, 2];
+const v2: Vector2 = [4, 5];
+const distance = v2Distance(v1, v2);
+```
+
+**3D vectors**
+
+```js
+import { v3Distance, Vector2 } from 'toolcool-math';
+
+const v1: Vector2 = [1, 2, 3];
+const v2: Vector2 = [4, 5, 6];
+const distance = v3Distance(v1, v2);
+```
+
+**General case**
+
+```js
+import { vDistance, Vector } from 'toolcool-math';
+
+const v1: Vector = [1, 2, 3];
+const v2: Vector = [4, 5, 6];
+const distance = vDistance(v1, v2);
 ```
 
 ## Vector Initialization Helpers

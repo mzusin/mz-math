@@ -15,6 +15,9 @@ export declare const vLength: (vector: Vector, decimalPlaces?: number) => number
 export declare const v2Length: (vector: Vector2, decimalPlaces?: number) => number;
 export declare const v3Length: (vector: Vector3, decimalPlaces?: number) => number;
 export declare const v2SetLength: (v2: Vector2, newLength: number, decimalPlaces?: number) => Vector2;
+export declare const vDistance: (vector1: Vector, vector2: Vector, decimalPlaces?: number) => number;
+export declare const v2Distance: (vector1: Vector2, vector2: Vector2, decimalPlaces?: number) => number;
+export declare const v3Distance: (vector1: Vector3, vector2: Vector3, decimalPlaces?: number) => number;
 /**
  * Normalization creates a unit vector, which is a vector of length 1.
  */

@@ -5,6 +5,7 @@ export declare const radiansToDegrees: (radians: number, decimalPlaces?: number)
 export declare const degreesToRadians: (degrees: number, decimalPlaces?: number) => number;
 /**
  * Returns the range [0, Math.PI]
+ * A = Math.acos( dot(v1, v2)/(v1.length()*v2.length()) );
  */
 export declare const getVNAngleBetween: (vector1: Vector, vector2: Vector, decimalPlaces?: number) => number;
 export declare const getV2AngleBetween: (vector1: Vector2, vector2: Vector2, decimalPlaces?: number) => number;

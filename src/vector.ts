@@ -116,6 +116,23 @@ export const v2SetLength = (v2: Vector2, newLength: number, decimalPlaces = Infi
     ];
 };
 
+// ----------- DISTANCE ------------------------
+
+export const vDistance = (vector1: Vector, vector2: Vector, decimalPlaces = Infinity) => {
+    const diff = vSub(vector1, vector2);
+    return vLength(diff, decimalPlaces);
+};
+
+export const v2Distance = (vector1: Vector2, vector2: Vector2, decimalPlaces = Infinity) => {
+    const diff = vSub(vector1, vector2);
+    return vLength(diff, decimalPlaces);
+};
+
+export const v3Distance = (vector1: Vector3, vector2: Vector3, decimalPlaces = Infinity) => {
+    const diff = vSub(vector1, vector2);
+    return vLength(diff, decimalPlaces);
+};
+
 // ------------ NORMALIZE ------------------------
 
 /**

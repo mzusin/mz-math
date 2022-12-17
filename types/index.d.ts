@@ -174,6 +174,9 @@ declare const api: {
     v2Length: (vector: import("./types").Vector2, decimalPlaces?: number) => number;
     v3Length: (vector: import("./types").Vector3, decimalPlaces?: number) => number;
     v2SetLength: (v2: import("./types").Vector2, newLength: number, decimalPlaces?: number) => import("./types").Vector2;
+    vDistance: (vector1: import("./types").Vector, vector2: import("./types").Vector, decimalPlaces?: number) => number;
+    v2Distance: (vector1: import("./types").Vector2, vector2: import("./types").Vector2, decimalPlaces?: number) => number;
+    v3Distance: (vector1: import("./types").Vector3, vector2: import("./types").Vector3, decimalPlaces?: number) => number;
     vNormalize: (v: import("./types").Vector, decimalPlaces?: number) => import("./types").Vector;
     v2Normalize: (v2: import("./types").Vector2, decimalPlaces?: number) => import("./types").Vector2;
     v3Normalize: (v3: import("./types").Vector3, decimalPlaces?: number) => import("./types").Vector3;

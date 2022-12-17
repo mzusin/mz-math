@@ -32,4 +32,13 @@ describe('Set Decimal Places', () => {
     test('4 decimal places of 1.239999 => 1.2399', () => {
         expect(setDecimalPlaces(1.239999, 4)).toStrictEqual(1.24);
     });
+
+    test('-4 with Infinite negative places', () => {
+        expect(setDecimalPlaces(-4, Infinity)).toStrictEqual(-4);
+    });
+
+    test('-4.22222 with 2 negative places', () => {
+        expect(setDecimalPlaces(-4.22222, 2)).toStrictEqual(-4.22);
+    });
+
 });
