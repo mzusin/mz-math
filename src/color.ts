@@ -18,7 +18,7 @@ export const getRandomHexColor = () : string => {
 export const getRandomHSLColor = () : HSLColor => {
     const h = getRandom(1, 360);
     const s = getRandom(0, 100);
-    const l = getRandom(0, 95); // [95, 100] is too light
+    const l = getRandom(0, 100);
     return [h, s, l];
 };
 
@@ -27,7 +27,7 @@ export const getRandomHSLColor = () : HSLColor => {
  */
 export const getRandomHSLColorWithHue = (h: number) : HSLColor => {
     const s = getRandom(0, 100);
-    const l = getRandom(0, 95); // [95, 100] is too light
+    const l = getRandom(0, 100);
     return [h, s, l];
 };
 
@@ -36,7 +36,7 @@ export const getRandomHSLColorWithHue = (h: number) : HSLColor => {
  */
 export const getRandomHSLColorWithSaturation = (s: number) : HSLColor => {
     const h = getRandom(1, 360);
-    const l = getRandom(0, 95); // [95, 100] is too light
+    const l = getRandom(0, 100);
     return [h, s, l];
 };
 
@@ -61,7 +61,7 @@ export const getRandomHSLColorWithinRanges = (
 ) : HSLColor => {
     const h = getRandom(hueStart, hueEnd);
     const s = getRandom(saturationStart, saturationEnd);
-    const l = getRandom(lightStart, lightEnd); // [95, 100] is too light
+    const l = getRandom(lightStart, lightEnd);
     return [h, s, l];
 };
 

@@ -41,9 +41,15 @@
         velocity = TCMath.v2SetLength(velocity, speed);
         velocity = TCMath.setV2Angle(velocity, direction);
 
+        const hslColor = TCMath.getRandomHSLColorWithinRanges(
+            0, 360,
+            50, 100,
+            50, 100
+        );
         items.push({
             position,
             velocity,
+            color: TCMath.hslToHex(hslColor),
         });
     }
 
@@ -65,11 +71,21 @@
                 false // counterclockwise
             );
 
-            context.fillStyle = '#efefef';
+            context.fillStyle = item.color;
             context.fill();
 
             // update the position -----
-            item.position = TCMath.v2Sum(item.position, item.velocity);
+            if(item.position[0] < 0 || item.position[0] > width ||
+                item.position[1] < 0 || item.position[1] > height){
+                item.position = [
+                    width/2, // center of the canvas
+                    height/2, // center of the canvas
+                ];
+            }
+            else{
+                item.position = TCMath.v2Sum(item.position, item.velocity);
+            }
+
         }
 
         // loop the animation -------------------
