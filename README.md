@@ -86,6 +86,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
   - [Lissajous curve](#lissajous-curve)
 - [Color](#color)
   - [Get random color](#get-random-color)
+  - [Convert colors](#convert-colors)
 - Other
   - [Modulo](#modulo)
   - [Convert range](#convert-range)
@@ -2955,6 +2956,21 @@ const hslColor4: HSLColor = getRandomHSLColorWithinRanges(
 
 // get random gray color
 const hslColor5: HSLColor = getRandomGrayscaleHSLColor();
+```
+
+## Convert colors
+
+```js
+import { HSLColor, RGBColor, hslToRgb, rgbToHsl } from 'toolcool-math';
+
+const decimalPlaces = 2; // optioanl
+
+// convert RGB color to HSL color
+const hslColor: HSLColor = rgbToHsl([255, 0, 0], decimalPlaces); // [0, 100, 50] - red
+
+// convert HSL color to RGB color
+const rgbColor: RGBColor = hslToRgb([100, 100, 100], decimalPlaces);
+
 ```
 
 -----------------------------------------------

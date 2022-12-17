@@ -1,6 +1,7 @@
 import { getRandom } from './random';
 import { HSLColor, RGBColor } from './types';
 import { mod } from './other';
+import { setDecimalPlaces } from './format';
 
 // ------------------------ RANDOM COLOR -------------------------------------
 
@@ -54,8 +55,117 @@ export const getRandomHSLColorWithinRanges = (
     return [h, s, l];
 };
 
-// -------------------------------------------------------------
+// ----------------------- CONVERT COLORS --------------------------------------
 
+export const rgbToHsl = (rgb: RGBColor, decimalPlaces = Infinity): HSLColor => {
+
+    // convert rgb values to the range [0, 1]
+    const r = rgb[0] / 255;
+    const g = rgb[1] / 255;
+    const b = rgb[2] / 255;
+
+    // find the minimum and maximum values of r, g, and b
+    const min = Math.min(r, g, b);
+    const max = Math.max(r, g, b);
+
+    // calculate the luminance value in %
+    const l = getLuminance(r, g, b, min, max);
+
+    // calculate the saturation in %
+    const s = getSaturation(r, g, b, min, max, l);
+
+    // calculate the hue in % (not in degrees!)
+    const h = getHue(r, g, b, min, max);
+
+    if(h > 360 || s > 100 || l > 100){
+        return [0, 0, 100];
+    }
+
+    if(h < 0 || s < 0 || l < 0){
+        return [0, 0, 0];
+    }
+
+    return [
+        setDecimalPlaces(h, decimalPlaces),
+        setDecimalPlaces(s, decimalPlaces),
+        setDecimalPlaces(l, decimalPlaces),
+    ];
+};
+
+/**
+ * helper: HSL to RGB
+ */
+const hslToRgbHelper = (helper1 : number, helper2 : number, colorHelper : number) : number => {
+
+    // all values need to be between 0 and 1
+    // if you get a negative value you need to add 1 to it
+    if(colorHelper < 0) colorHelper += 1;
+
+    // if you get a value above 1 you need to subtract 1 from it.
+    if(colorHelper > 1) colorHelper -= 1;
+
+    if(colorHelper * 6 < 1) return helper2 + (helper1 - helper2) * 6 * colorHelper;
+
+    if(colorHelper * 2 < 1) return helper1;
+
+    if(colorHelper * 3 < 2){
+        return helper2 + (helper1 - helper2) * (0.666 - colorHelper) * 6;
+    }
+    else{
+        return helper2;
+    }
+};
+
+export const hslToRgb = (hsl: HSLColor, decimalPlaces = Infinity): RGBColor => {
+
+    // convert all values to [0, 1] from %
+    const h = hsl[0] / 100;
+    const s = hsl[1] / 100;
+    const l = hsl[2] / 100;
+
+    // if there is no saturation -> it’s grey
+    if(s === 0){
+        // convert the luminance from [0, 1] to [0, 255]
+        const gray = l * 255;
+        return [gray, gray, gray];
+    }
+
+    // check the level of luminance
+    const helper1 = (l < 0.5) ?
+        (l * (1.0 + s)) :
+        (l + s - l * s);
+
+    const helper2 = 2 * l - helper1;
+
+    let rHelper = h + 0.333;
+    let gHelper = h;
+    let bHelper = h - 0.333;
+
+    let r = hslToRgbHelper(helper1, helper2, rHelper);
+    let g = hslToRgbHelper(helper1, helper2, gHelper);
+    let b = hslToRgbHelper(helper1, helper2, bHelper);
+
+    // convert rgb to [0, 255]
+    r *= 255;
+    g *= 255;
+    b *= 255;
+
+    if(r > 255 || g > 255 || b > 255){
+        return [255, 255, 255];
+    }
+
+    if(r < 0 || g < 0 || b < 0){
+        return [0, 0, 0];
+    }
+
+    return [
+        setDecimalPlaces(r, decimalPlaces),
+        setDecimalPlaces(g, decimalPlaces),
+        setDecimalPlaces(b, decimalPlaces),
+    ];
+};
+
+// ----------------------- AAA --------------------------------------
 
 export const getShiftedHue = (color: HSLColor, shift = 180) : HSLColor => {
     let hue = color[0];
@@ -253,93 +363,3 @@ export const getHue = (r : number, g : number, b : number, min : number | undefi
 
     return 0;
 };
-
-/**
- * convert RGB to HSL
- * r, g, and b should be in the range [0, 255]
- */
-export const rgbToHsl = (r : number, g : number, b : number): HSLColor => {
-
-    // convert rgb values to the range [0, 1]
-    r /= 255;
-    g /= 255;
-    b /= 255;
-
-    // find the minimum and maximum values of r, g, and b
-    const min = Math.min(r, g, b);
-    const max = Math.max(r, g, b);
-
-    // calculate the luminance value in %
-    const l = getLuminance(r, g, b, min, max);
-
-    // calculate the saturation in %
-    const s = getSaturation(r, g, b, min, max, l);
-
-    // calculate the hue in % (not in degrees!)
-    const h = getHue(r, g, b, min, max);
-
-    return [l, s, h];
-};
-
-/**
- * helper: HSL to RGB
- */
-const hslToRgbHelper = (helper1 : number, helper2 : number, colorHelper : number) : number => {
-
-    // all values need to be between 0 and 1
-    // if you get a negative value you need to add 1 to it
-    if(colorHelper < 0) colorHelper += 1;
-
-    // if you get a value above 1 you need to subtract 1 from it.
-    if(colorHelper > 1) colorHelper -= 1;
-
-    if(colorHelper * 6 < 1) return helper2 + (helper1 - helper2) * 6 * colorHelper;
-
-    if(colorHelper * 2 < 1) return helper1;
-
-    if(colorHelper * 3 < 2){
-        return helper2 + (helper1 - helper2) * (0.666 - colorHelper) * 6;
-    }
-    else{
-        return helper2;
-    }
-};
-
-export const hslToRgb = (h : number, s : number, l : number): RGBColor => {
-
-    // convert all values to [0, 1] from %
-    h /= 100;
-    s /= 100;
-    l /= 100;
-
-    // if there is no saturation -> it’s grey
-    if(s === 0){
-        // convert the luminance from [0, 1] to [0, 255]
-        const gray = l * 255;
-        return [gray, gray, gray];
-    }
-
-    // check the level of luminance
-    const helper1 = (l < 0.5) ?
-        (l * (1.0 + s)) :
-        (l + s - l * s);
-
-    const helper2 = 2 * l - helper1;
-
-    let rHelper = h + 0.333;
-    let gHelper = h;
-    let bHelper = h - 0.333;
-
-    let r = hslToRgbHelper(helper1, helper2, rHelper);
-    let g = hslToRgbHelper(helper1, helper2, gHelper);
-    let b = hslToRgbHelper(helper1, helper2, bHelper);
-
-    // convert rgb to [0, 255]
-    r *= 255;
-    g *= 255;
-    b *= 255;
-
-    return [r, g, b];
-};
-
-
