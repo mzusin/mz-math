@@ -2,6 +2,8 @@ import { getRandom } from './random';
 import { HSLColor, RGBColor } from './types';
 import { mod } from './other';
 
+// ------------------------ RANDOM COLOR -------------------------------------
+
 export const getRandomHSLColor = () : HSLColor => {
     const h = getRandom(1, 360);
     const s = getRandom(0, 100);
@@ -51,6 +53,8 @@ export const getRandomHSLColorWithinRanges = (
     const l = getRandom(lightStart, lightEnd); // [95, 100] is too light
     return [h, s, l];
 };
+
+// -------------------------------------------------------------
 
 
 export const getShiftedHue = (color: HSLColor, shift = 180) : HSLColor => {

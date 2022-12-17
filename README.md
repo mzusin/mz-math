@@ -84,6 +84,8 @@ This project is a collection of TypeScript math helpers and utilities for the br
   - [Ellipse Movement](#ellipse-movement)
   - [Sine Wave Movement](#sine-wave-movement)
   - [Lissajous curve](#lissajous-curve)
+- [Color](#color)
+  - [Get random color](#get-random-color)
 - Other
   - [Modulo](#modulo)
   - [Convert range](#convert-range)
@@ -2909,6 +2911,51 @@ f(t) = B * cos(n * t - p)
 ```
 
 [Example](https://github.com/toolcool-org/toolcool-math/blob/main/examples/lissajous-curves/lissajous-curves-canvas.html)
+
+-----------------------------------------------
+
+# Color
+
+The library contains several color helper functions. It works with the following color types:
+
+```js
+import { HSLColor, RGBColor } from 'toolcool-math';
+
+// [hue, saturation, lightness] 
+const hslColor: HSLColor = [0, 0, 0]; // [0-360, 0-100, 0-100]
+
+// [r, g, b] 
+const rgbColor: RGBColor = [255, 255, 255]; // [0, 255, 0, 255, 0, 255]
+```
+
+## Get random color
+
+```js
+import { HSLColor, getRandomHSLColor, getRandomHSLColorWithHue, getRandomHSLColorWithSaturation, getRandomHSLColorWithinRanges, getRandomGrayscaleHSLColor } from 'toolcool-math';
+
+// get random HSL color
+const hslColor1: HSLColor = getRandomHSLColor();
+
+// get random HSL color with the specified hue
+const hslColor2: HSLColor = getRandomHSLColorWithHue(300); // hue = 300
+
+// get random HSL color with the specified saturation
+const hslColor2: HSLColor = getRandomHSLColorWithSaturation(50); // saturation = 50
+
+// get random HSL color with the specified lightness
+const hslColor3: HSLColor = getRandomHSLColorWithLightness(50); // lightness = 50
+
+// get random HSL color with the specified ranges:
+// hue: [10, 20], saturation: [0, 100], lightness: [30, 50]
+const hslColor4: HSLColor = getRandomHSLColorWithinRanges(
+    10, 20, // hue range
+    0, 100, // saturation range
+    30, 50, // lightness range
+);
+
+// get random gray color
+const hslColor5: HSLColor = getRandomGrayscaleHSLColor();
+```
 
 -----------------------------------------------
 
