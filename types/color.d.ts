@@ -24,34 +24,3 @@ export declare const hslToHex: (hsl: HSLColor) => string;
 export declare const getShiftedHue: (color: HSLColor, shift?: number) => HSLColor;
 export declare const getShiftedLightness: (color: HSLColor, shift?: number) => HSLColor;
 export declare const getShiftedSaturation: (color: HSLColor, shift?: number) => HSLColor;
-/**
- * get luminance from RGB
- * @param {number} r [0, 255]
- * @param {number} g [0, 255]
- * @param {number} b [0, 255]
- * @param {number|undefined=} min - min number of [r, g, b]
- * @param {number|undefined=} max - max number of [r, g, b]
- * @return {number} [0, 100] %
- */
-export declare const getLuminance: (r: number, g: number, b: number, min?: number | undefined, max?: number | undefined) => number;
-/**
- * get saturation from RGB
- * @param {number} r [0, 255]
- * @param {number} g [0, 255]
- * @param {number} b [0, 255]
- * @param {number|undefined=} min - min number of [r, g, b]
- * @param {number|undefined=} max - max number of [r, g, b]
- * @param {number|undefined=} l - luminance in [0, 100] %
- * @return {number} [0, 100] %
- */
-export declare const getSaturation: (r: number, g: number, b: number, min?: number | undefined, max?: number | undefined, l?: number | undefined) => number;
-/**
- * get hue from RGB
- * @param {number} r [0, 255]
- * @param {number} g [0, 255]
- * @param {number} b [0, 255]
- * @param {number|undefined=} min - min number of [r, g, b]
- * @param {number|undefined=} max - max number of [r, g, b]
- * @return {number} [0, 100] % - we use here % instead of [0, 359] degrees
- */
-export declare const getHue: (r: number, g: number, b: number, min?: number | undefined, max?: number | undefined) => number;

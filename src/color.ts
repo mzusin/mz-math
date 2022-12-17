@@ -57,6 +57,128 @@ export const getRandomHSLColorWithinRanges = (
 
 // ----------------------- CONVERT COLORS --------------------------------------
 
+/**
+ * helper: convert hue value to %
+ * @param {number} h
+ * @return {number} [0, 100] %
+ */
+const convertHueToPercent = (h : number) : number => {
+
+    // the hue value needs to be multiplied by 60 to convert it to degrees
+    h *= 60;
+
+    // if hue becomes negative, you need to add 360 to, because a circle has 360 degrees
+    if(h < 0){
+        h += 360;
+    }
+
+    // convert huw to %
+    return h * 100 / 360;
+};
+
+/**
+ * get hue from RGB
+ * @param {number} r [0, 255]
+ * @param {number} g [0, 255]
+ * @param {number} b [0, 255]
+ * @param {number|undefined=} min - min number of [r, g, b]
+ * @param {number|undefined=} max - max number of [r, g, b]
+ * @return {number} [0, 100] % - we use here % instead of [0, 359] degrees
+ */
+const getHue = (r : number, g : number, b : number, min : number | undefined = undefined, max : number | undefined = undefined) : number => {
+
+    // find the minimum and maximum values of r, g, and b if they are not provided
+    min = (min === undefined) ? Math.min(r, g, b) : min;
+    max = (min === undefined) ? Math.max(r, g, b) : max;
+
+    // if the min and max value are the same -> no hue, as it's gray
+    if(min === max) return 0;
+
+    // if red is max
+    if(max === r){
+        return convertHueToPercent((g - b) / (max - min));
+    }
+
+    // if green is max
+    if(max === g){
+        return convertHueToPercent(2.0 + (b - r) / (max - min));
+    }
+
+    // if blue is max
+    if(max === b){
+        return convertHueToPercent(4.0 + (r - g) / (max - min));
+    }
+
+    return 0;
+};
+
+/**
+ * get luminance from RGB
+ * @param {number} r [0, 255]
+ * @param {number} g [0, 255]
+ * @param {number} b [0, 255]
+ * @param {number|undefined=} min - min number of [r, g, b]
+ * @param {number|undefined=} max - max number of [r, g, b]
+ * @return {number} [0, 100] %
+ */
+const getLuminance = (
+    r : number,
+    g : number,
+    b : number,
+    min : number | undefined = undefined,
+    max : number | undefined = undefined) : number => {
+
+    // find the minimum and maximum values of r, g, and b if they are not provided
+    min = (min === undefined) ? Math.min(r, g, b) : min;
+    max = (min === undefined) ? Math.max(r, g, b) : max;
+
+    // calculate the luminance value
+    // @ts-ignore
+    const l = (min + max) / 2; // [0, 1]
+
+    // return l value in %
+    return l * 100;
+};
+
+/**
+ * get saturation from RGB
+ * @param {number} r [0, 255]
+ * @param {number} g [0, 255]
+ * @param {number} b [0, 255]
+ * @param {number|undefined=} min - min number of [r, g, b]
+ * @param {number|undefined=} max - max number of [r, g, b]
+ * @param {number|undefined=} l - luminance in [0, 100] %
+ * @return {number} [0, 100] %
+ */
+const getSaturation = (
+    r : number,
+    g : number,
+    b : number,
+    min : number | undefined = undefined,
+    max : number | undefined = undefined,
+    l : number | undefined = undefined) : number => {
+
+    // find the minimum and maximum values of r, g, and b if they are not provided
+    min = (min === undefined) ? Math.min(r, g, b) : min;
+    max = (min === undefined) ? Math.max(r, g, b) : max;
+
+    // if the min and max value are the same -> no saturation, as it's gray
+    if(min === max) return 0;
+
+    // calculate luminance if it's not provided
+    l = (l === undefined) ? getLuminance(r, g, b) : l;
+
+    // check the level of luminance
+    const s = (l <= 50) ?
+        // @ts-ignore
+        ((max - min) / (max + min)) : // this formula is used when luminance <= 50%
+        // @ts-ignore
+        (max - min) / (2.0 - max - min);  // this formula is used when luminance > 50%
+
+    // return saturation in %
+    return s * 100;
+};
+
 export const rgbToHsl = (rgb: RGBColor, decimalPlaces = Infinity): HSLColor => {
 
     // convert rgb values to the range [0, 1]
@@ -209,7 +331,7 @@ export const hslToHex = (hsl: HSLColor) => {
     return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
 };
 
-// ----------------------- AAA --------------------------------------
+// ----------------------- GET SHIFTED COLORS --------------------------------------
 
 export const getShiftedHue = (color: HSLColor, shift = 180) : HSLColor => {
     let hue = color[0];
@@ -226,12 +348,8 @@ export const getShiftedLightness = (color: HSLColor, shift = 10) : HSLColor => {
     let lightness = color[2];
     lightness += shift;
 
-    if (lightness > 100) {
-        lightness = 100;
-    }
-
-    if(lightness < 0){
-        lightness += 100;
+    if (lightness > 100 || lightness < 0) {
+        lightness = mod(lightness, 100);
     }
 
     return [color[0], color[1], lightness];
@@ -250,126 +368,4 @@ export const getShiftedSaturation = (color: HSLColor, shift = 10) : HSLColor => 
     }
 
     return [color[0], saturation, color[2]];
-};
-
-/**
- * get luminance from RGB
- * @param {number} r [0, 255]
- * @param {number} g [0, 255]
- * @param {number} b [0, 255]
- * @param {number|undefined=} min - min number of [r, g, b]
- * @param {number|undefined=} max - max number of [r, g, b]
- * @return {number} [0, 100] %
- */
-export const getLuminance = (
-    r : number,
-    g : number,
-    b : number,
-    min : number | undefined = undefined,
-    max : number | undefined = undefined) : number => {
-
-    // find the minimum and maximum values of r, g, and b if they are not provided
-    min = (min === undefined) ? Math.min(r, g, b) : min;
-    max = (min === undefined) ? Math.max(r, g, b) : max;
-
-    // calculate the luminance value
-    // @ts-ignore
-    const l = (min + max) / 2; // [0, 1]
-
-    // return l value in %
-    return l * 100;
-};
-
-/**
- * get saturation from RGB
- * @param {number} r [0, 255]
- * @param {number} g [0, 255]
- * @param {number} b [0, 255]
- * @param {number|undefined=} min - min number of [r, g, b]
- * @param {number|undefined=} max - max number of [r, g, b]
- * @param {number|undefined=} l - luminance in [0, 100] %
- * @return {number} [0, 100] %
- */
-export const getSaturation = (
-    r : number,
-    g : number,
-    b : number,
-    min : number | undefined = undefined,
-    max : number | undefined = undefined,
-    l : number | undefined = undefined) : number => {
-
-    // find the minimum and maximum values of r, g, and b if they are not provided
-    min = (min === undefined) ? Math.min(r, g, b) : min;
-    max = (min === undefined) ? Math.max(r, g, b) : max;
-
-    // if the min and max value are the same -> no saturation, as it's gray
-    if(min === max) return 0;
-
-    // calculate luminance if it's not provided
-    l = (l === undefined) ? getLuminance(r, g, b) : l;
-
-    // check the level of luminance
-    const s = (l <= 50) ?
-        // @ts-ignore
-        ((max - min) / (max + min)) : // this formula is used when luminance <= 50%
-        // @ts-ignore
-        (max - min) / (2.0 - max - min);  // this formula is used when luminance > 50%
-
-    // return saturation in %
-    return s * 100;
-};
-
-/**
- * helper: convert hue value to %
- * @param {number} h
- * @return {number} [0, 100] %
- */
-const convertHueToPercent = (h : number) : number => {
-
-    // the hue value needs to be multiplied by 60 to convert it to degrees
-    h *= 60;
-
-    // if hue becomes negative, you need to add 360 to, because a circle has 360 degrees
-    if(h < 0){
-        h += 360;
-    }
-
-    // convert huw to %
-    return h * 100 / 360;
-};
-
-/**
- * get hue from RGB
- * @param {number} r [0, 255]
- * @param {number} g [0, 255]
- * @param {number} b [0, 255]
- * @param {number|undefined=} min - min number of [r, g, b]
- * @param {number|undefined=} max - max number of [r, g, b]
- * @return {number} [0, 100] % - we use here % instead of [0, 359] degrees
- */
-export const getHue = (r : number, g : number, b : number, min : number | undefined = undefined, max : number | undefined = undefined) : number => {
-
-    // find the minimum and maximum values of r, g, and b if they are not provided
-    min = (min === undefined) ? Math.min(r, g, b) : min;
-    max = (min === undefined) ? Math.max(r, g, b) : max;
-
-    // if the min and max value are the same -> no hue, as it's gray
-    if(min === max) return 0;
-
-    // if red is max
-    if(max === r){
-        return convertHueToPercent((g - b) / (max - min));
-    }
-
-    // if green is max
-    if(max === g){
-        return convertHueToPercent(2.0 + (b - r) / (max - min));
-    }
-
-    // if blue is max
-    if(max === b){
-        return convertHueToPercent(4.0 + (r - g) / (max - min));
-    }
-
-    return 0;
 };

@@ -240,7 +240,4 @@ declare module 'toolcool-math' {
     export const getShiftedHue: (color: HSLColor, shift?: number) => HSLColor;
     export const getShiftedLightness: (color: HSLColor, shift?: number) => HSLColor;
     export const getShiftedSaturation: (color: HSLColor, shift?: number) => HSLColor;
-    export const getLuminance: (r: number, g: number, b: number, min?: number | undefined, max?: number | undefined) => number;
-    export const getSaturation: (r: number, g: number, b: number, min?: number | undefined, max?: number | undefined, l?: number | undefined) => number;
-    export const getHue: (r: number, g: number, b: number, min?: number | undefined, max?: number | undefined) => number;
 }

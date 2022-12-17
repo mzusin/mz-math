@@ -1,4 +1,4 @@
-import { rgbToHsl, hslToRgb, hslToHex } from '../src/color';
+import { rgbToHsl, hslToRgb, hslToHex, getShiftedHue, getShiftedSaturation, getShiftedLightness } from '../src/color';
 
 describe('Convert RGB to HSL', () => {
     test('rgb[100, 100, 100] to hsl with 2 decimal places', () => {
@@ -80,5 +80,31 @@ describe('Convert HSL to HEX', () => {
 
     test('hsl[10, 10, 10] to hex', () => {
         expect(hslToHex([10, 10, 10])).toStrictEqual('#1c1817');
+    });
+});
+
+describe('Shift colors', () => {
+    test('shift hue in [0, 0, 39] by 10 degrees', () => {
+        expect(getShiftedHue([0, 0, 39], 10)).toStrictEqual([10, 0, 39]);
+    });
+
+    test('shift hue in [0, 0, 39] by -10 degrees', () => {
+        expect(getShiftedHue([0, 0, 39], -10)).toStrictEqual([350, 0, 39]);
+    });
+
+    test('shift saturation in [0, 0, 39] by 10', () => {
+        expect(getShiftedSaturation([0, 0, 39], 10)).toStrictEqual([0, 10, 39]);
+    });
+
+    test('shift saturation in [0, 100, 39] by 10', () => {
+        expect(getShiftedSaturation([0, 100, 39], 10)).toStrictEqual([0, 10, 39]);
+    });
+
+    test('shift lightness in [0, 0, 39] by 10', () => {
+        expect(getShiftedLightness([0, 0, 39], 10)).toStrictEqual([0, 0, 49]);
+    });
+
+    test('shift lightness in [0, 10, 1009] by 10', () => {
+        expect(getShiftedLightness([0, 10, 100], 10)).toStrictEqual([0, 10, 10]);
     });
 });

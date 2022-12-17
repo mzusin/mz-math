@@ -11,9 +11,6 @@ declare const api: {
     getShiftedHue: (color: import("./types").HSLColor, shift?: number) => import("./types").HSLColor;
     getShiftedLightness: (color: import("./types").HSLColor, shift?: number) => import("./types").HSLColor;
     getShiftedSaturation: (color: import("./types").HSLColor, shift?: number) => import("./types").HSLColor;
-    getLuminance: (r: number, g: number, b: number, min?: number | undefined, max?: number | undefined) => number;
-    getSaturation: (r: number, g: number, b: number, min?: number | undefined, max?: number | undefined, l?: number | undefined) => number;
-    getHue: (r: number, g: number, b: number, min?: number | undefined, max?: number | undefined) => number;
     circleMovement: (center: import("./types").Vector2, angle: number, radius: number) => import("./types").Vector2;
     circleMovementAfterMouse: (mouse: import("./types").Vector2, center: import("./types").Vector2, radius: number) => import("./types").Vector2;
     ellipseMovement: (center: import("./types").Vector2, angle: number, radius1: number, radius2: number) => import("./types").Vector2;

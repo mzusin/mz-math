@@ -87,6 +87,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
 - [Color](#color)
   - [Get random color](#get-random-color)
   - [Convert colors](#convert-colors)
+  - [Shift colors](#shift-colors)
 - Other
   - [Modulo](#modulo)
   - [Convert range](#convert-range)
@@ -2973,6 +2974,21 @@ const rgbColor: RGBColor = hslToRgb([100, 100, 100], decimalPlaces);
 
 // convert HSL color to hex
 const hex: string = hslToHex([10, 10, 10]); // #1c1817
+```
+
+## Shift colors
+
+```js
+import { HSLColor, getShiftedHue, getShiftedSaturation, getShiftedLightness } from 'toolcool-math';
+
+// shift hue in [0, 0, 39] by -10 degrees
+const hslColor1: HSLColor = getShiftedHue([0, 0, 39], -10); // [350, 0, 39]
+
+// shift saturation in [0, 0, 39] by 10
+const hslColor2: HSLColor = getShiftedSaturation([0, 100, 39], 10); // [0, 10, 39]
+
+// shift lightness in [0, 0, 39] by 10
+const hslColor3: HSLColor = getShiftedLightness([0, 0, 39], 10); // [10, 0, 39]
 ```
 
 -----------------------------------------------
