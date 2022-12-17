@@ -84,3 +84,36 @@ export const sineWaveMovement = (x: number, amplitude: number, frequency: number
 
     return [x, y];
 };
+
+/**
+ * Lissajous curve (Lissajous figure or Bowditch curve)
+ * Parametric equation #1
+ * f(t) = A * sin(k * t + m)
+ * f(t) = B * sin(n * t)
+ * 0 <= m <= PI/2
+ * k, n >= 1
+ * -----------------------
+ * Parametric equation #2
+ * f(t) = A * cos(k * t - m)
+ * f(t) = B * cos(n * t - p)
+ * -----------------------------
+ * Shapes:
+ * k = 1, n = 1, m = 0, p = 0 ---> line
+ * A = B,  k = 1, n = 1, m = PI/2, p = PI/2 ----> circle
+ * A != B, k = 1, n = 1, m = PI/2, p = PI/2 ----> ellipse
+ * k = 2, n = 2, m = PI/2, p = PI/2 ----> section of a parabola
+ */
+export const lissajousCurve = (
+    width: number,
+    height: number,
+    t: number,
+    k: number,
+    n: number,
+    m: number,
+    p: number
+) :Vector2 => {
+    return [
+        width * Math.cos(k * t - m),
+        height * Math.cos(n * t - p),
+    ];
+};

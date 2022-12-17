@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Lissajous Curves on canvas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../css/styles-3.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>Lissajous Curves on canvas</h1>
+    <canvas id="canvas"></canvas>
+
+    <script src="../../dist/tc-math.min.js"></script>
+    <script>
+        const $canvas = document.getElementById('canvas');
+        const context = $canvas.getContext('2d');
+
+        $canvas.width = 800;
+        $canvas.height = 800;
+
+        const width = $canvas.width;
+        const height = $canvas.height;
+
+        let handler;
+        const MAX_ITEMS = 50;
+
+        const items = [];
+
+        for(let i = 0; i < MAX_ITEMS; i += 1) {
+            items.push({
+                angleX: TCMath.getRandom(0, Math.PI * 2), // [0, 360]
+                angleY: TCMath.getRandom(0, Math.PI * 2), // [0, 360]
+                speedX: TCMath.getRandom(0.001, Math.PI / 100),
+                speedY: TCMath.getRandom(0.001, Math.PI / 100),
+                radius1: TCMath.getRandom(0, 300),
+                radius2: TCMath.getRandom(0, 300),
+            });
+        }
+
+        const step = () => {
+            context.clearRect(0, 0, width, height);
+
+            // draw the items -----------------------
+            for(let i = 0; i < MAX_ITEMS; i += 1) {
+                const item = items[i];
+
+                const m = 0;
+                const p = 0;
+                const t = 1;
+
+                const k = item.angleX;
+                const n = item.angleY;
+
+                const pos = TCMath.lissajousCurve(
+                    item.radius1, // width
+                    item.radius2, // height
+                    t,
+                    k,
+                    n,
+                    m,
+                    p
+                );
+
+                item.angleX += item.speedX;
+                item.angleY += item.speedY;
+
+                // draw the item -----------------
+                const x = pos[0];
+                const y = pos[1];
+                context.beginPath();
+                context.arc(
+                    width/2 + x,
+                    height / 2 + y,
+                    2, // radius
+                    0, // startAngle
+                    Math.PI * 2, // endAngle
+                    false // counterclockwise
+                );
+
+                context.fillStyle = '#efefef';
+                context.fill();
+            }
+
+            // loop the animation -------------------
+            handler = requestAnimationFrame(step);
+        };
+
+        /**
+         * handle window resize => restart the animation
+         */
+        const observer = new ResizeObserver(entries => {
+            for (const entry of entries) {
+                window.cancelAnimationFrame(handler);
+                step();
+            }
+        });
+        observer.observe(document.body, {box: 'border-box'});
+    </script>
+</body>
+</html>

@@ -83,6 +83,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
   - [Circle movement after mouse](#circle-movement-after-mouse)
   - [Ellipse Movement](#ellipse-movement)
   - [Sine Wave Movement](#sine-wave-movement)
+  - [Lissajous curve](#lissajous-curve)
 - Other
   - [Modulo](#modulo)
   - [Convert range](#convert-range)
@@ -2874,6 +2875,40 @@ const newPosition: Vector2 = ellipseMovement(x, amplitude, frequency, phase);
 ```
 
 [Example](https://github.com/toolcool-org/toolcool-math/blob/main/examples/wave-movement/wave-movement-1.html)
+
+## Lissajous curve
+
+```js
+import { lissajousCurve, Vector2, getRandom } from 'toolcool-math';
+
+const m = 0;
+const p = 0;
+const t = 1;
+
+const k = getRandom(0, Math.PI * 2); // [0, 360]
+const n = getRandom(0, Math.PI * 2); // [0, 360]
+
+const A = getRandom(0, 100);  // [0, 100] - width
+const B = getRandom(0, 100);  // [0, 100] - height
+
+const newPosition: Vector2 = TCMath.lissajousCurve(
+    A, // width
+    B, // height
+    t,
+    k,
+    n,
+    m,
+    p
+);
+
+/*
+Parametric equation
+f(t) = A * cos(k * t - m)
+f(t) = B * cos(n * t - p)
+ */
+```
+
+[Example](https://github.com/toolcool-org/toolcool-math/blob/main/examples/lissajous-curves/lissajous-curves-canvas.html)
 
 -----------------------------------------------
 

@@ -3,6 +3,7 @@ declare const api: {
     circleMovementAfterMouse: (mouse: import("./types").Vector2, center: import("./types").Vector2, radius: number) => import("./types").Vector2;
     ellipseMovement: (center: import("./types").Vector2, angle: number, radius1: number, radius2: number) => import("./types").Vector2;
     sineWaveMovement: (x: number, amplitude: number, frequency: number, phase: number) => import("./types").Vector2;
+    lissajousCurve: (width: number, height: number, t: number, k: number, n: number, m: number, p: number) => import("./types").Vector2;
     equationSystem2: (equation1: import("./types").Vector3, equation2: import("./types").Vector3, decimalPlaces?: number) => import("./types").Vector2 | null;
     equationSystem3: (equation1: import("./types").Vector, equation2: import("./types").Vector, equation3: import("./types").Vector, decimalPlaces?: number) => import("./types").Vector3 | null;
     equationSystemN: (equations: import("./types").Matrix, decimalPlaces?: number) => import("./types").Vector | null;
