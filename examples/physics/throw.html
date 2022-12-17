@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>A Throw</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../css/styles-4.css" rel="stylesheet" />
+</head>
+<body>
+<h1>A Throw</h1>
+<canvas id="canvas"></canvas>
+
+<script src="../../dist/tc-math.min.js"></script>
+<script>
+    const $canvas = document.getElementById('canvas');
+    const context = $canvas.getContext('2d');
+
+    $canvas.width = 800;
+    $canvas.height = 800;
+
+    const width = $canvas.width;
+    const height = $canvas.height;
+
+    let handler;
+    const ITEM_RADIUS = 5;
+    let position = [0, height];
+
+    const direction = -Math.PI/2;
+    const speed = 10;
+
+    let velocity = [0, 2];
+    velocity = TCMath.v2SetLength(velocity, speed);
+    velocity = TCMath.setV2Angle(velocity, direction);
+
+    const acceleration = [0.1, 0.1];
+
+    const step = () => {
+        context.clearRect(0, 0, width, height);
+
+        // draw the item
+        context.beginPath();
+        context.arc(
+            position[0],
+            position[1],
+            ITEM_RADIUS, // radius
+            0, // startAngle
+            Math.PI * 2, // endAngle
+            false // counterclockwise
+        );
+
+        context.fillStyle = '#efefef';
+        context.fill();
+
+        // velocity changes over time by applying the constant acceleration
+        velocity = TCMath.v2Sum(velocity, acceleration);
+
+        // update position with the current velocity
+        position = TCMath.v2Sum(position, velocity);
+
+        // loop the animation -------------------
+        handler = requestAnimationFrame(step);
+    };
+
+    /**
+     * handle window resize => restart the animation
+     */
+    const observer = new ResizeObserver(entries => {
+        for (const entry of entries) {
+            window.cancelAnimationFrame(handler);
+            step();
+        }
+    });
+    observer.observe(document.body, {box: 'border-box'});
+</script>
+</body>
+</html>
