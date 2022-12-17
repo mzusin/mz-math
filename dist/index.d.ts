@@ -1,3 +1,5 @@
+import { HSLColor } from '../types/types';
+
 declare module 'toolcool-math' {
 
     export type Vector2 = [number, number];
@@ -9,6 +11,9 @@ declare module 'toolcool-math' {
     export type Matrix3 = Vector3[];
     export type Matrix4 = Vector4[];
     export type Matrix = Vector[];
+
+    export type HSLColor = [number, number, number]; // [hue, saturation, lightness] [0-360, 0-100, 0-100]
+    export type RGBColor = [number, number, number]; // [r, g, b] [0, 255, 0, 255, 0, 255]
 
     export const v2: (defaultValue?: number) => Vector2;
     export const v3: (defaultValue?: number) => Vector3;
@@ -219,4 +224,21 @@ declare module 'toolcool-math' {
     export const circleMovementAfterMouse: (mouse: Vector2, center: Vector2, radius: number) => Vector2;
     export const ellipseMovement: (center: Vector2, angle: number, radius1: number, radius2: number) => Vector2;
     export const sineWaveMovement: (x: number, amplitude: number, frequency: number, phase: number) => Vector2;
+    export const lissajousCurve: (width: number, height: number, t: number, k: number, n: number, m: number, p: number) => Vector2;
+
+    export const getRandomHSLColor: () => HSLColor;
+    export const getRandomHSLColorWithHue: (h: number) => HSLColor;
+    export const getRandomHSLColorWithSaturation: (s: number) => HSLColor;
+    export const getRandomHSLColorWithLightness: (l: number) => HSLColor;
+    export const getRandomGrayscaleHSLColor: () => HSLColor;
+    export const getRandomHSLColorWithinRanges: (hueStart?: number, hueEnd?: number, saturationStart?: number, saturationEnd?: number, lightStart?: number, lightEnd?: number) => HSLColor;
+    export const getShiftedHue: (color: HSLColor, shift?: number) => HSLColor;
+    export const getShiftedLightness: (color: HSLColor, shift?: number) => HSLColor;
+    export const getShiftedSaturation: (color: HSLColor, shift?: number) => HSLColor;
+    export const hslToHex: (h: number, s: number, l: number) => string;
+    export const getLuminance: (r: number, g: number, b: number, min?: number | undefined, max?: number | undefined) => number;
+    export const getSaturation: (r: number, g: number, b: number, min?: number | undefined, max?: number | undefined, l?: number | undefined) => number;
+    export const getHue: (r: number, g: number, b: number, min?: number | undefined, max?: number | undefined) => number;
+    export const rgbToHsl: (r: number, g: number, b: number) => HSLColor;
+    export const hslToRgb: (h: number, s: number, l: number) => RGBColor;
 }

@@ -9,6 +9,7 @@ import * as convert from './convert';
 import * as bezierCurve from './bezier-curve';
 import * as equations from './equations';
 import * as pathMovement from './path-movement';
+import * as color from './color';
 
 const api = {
     ...vector,
@@ -22,6 +23,7 @@ const api = {
     ...bezierCurve,
     ...equations,
     ...pathMovement,
+    ...color,
 };
 
 declare global {
@@ -43,3 +45,4 @@ export * from './convert';
 export * from './bezier-curve';
 export * from './equations';
 export * from './path-movement';
+export * from './color';

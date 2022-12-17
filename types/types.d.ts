@@ -6,3 +6,5 @@ export type Matrix2 = Vector2[];
 export type Matrix3 = Vector3[];
 export type Matrix4 = Vector4[];
 export type Matrix = Vector[];
+export type HSLColor = [number, number, number];
+export type RGBColor = [number, number, number];
