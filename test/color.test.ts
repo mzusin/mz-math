@@ -1,4 +1,4 @@
-import { rgbToHsl, hslToRgb } from '../src/color';
+import { rgbToHsl, hslToRgb, hslToHex } from '../src/color';
 
 describe('Convert RGB to HSL', () => {
     test('rgb[100, 100, 100] to hsl with 2 decimal places', () => {
@@ -49,5 +49,36 @@ describe('Convert HSL to RGB', () => {
 
     test('hsl[0, 100, 50] to rgb with 2 decimal places', () => {
         expect(hslToRgb([0, 100, 50], 2)).toStrictEqual([255, 0, 0]); // red
+    });
+});
+
+
+describe('Convert HSL to HEX', () => {
+    test('hsl[0, 0, 39] to hex', () => {
+        expect(hslToHex([0, 0, 39])).toStrictEqual('#636363');
+    });
+
+    test('hsl[0, 0, 0] to hex', () => {
+        expect(hslToHex([0, 0, 0])).toStrictEqual('#000000');
+    });
+
+    test('hsl[0, 0, 100] to hex', () => {
+        expect(hslToHex([0, 0, 100])).toStrictEqual('#ffffff');
+    });
+
+    test('hsl to hex - out of range - above', () => {
+        expect(hslToHex([500, 500, 500])).toStrictEqual('#ffffff');
+    });
+
+    test('hsl to hex - out of range - below', () => {
+        expect(hslToHex([-100, -100, -100])).toStrictEqual('#000000');
+    });
+
+    test('hsl[0, 100, 50] to hex', () => {
+        expect(hslToHex([0, 100, 50])).toStrictEqual('#ff0000'); // red
+    });
+
+    test('hsl[10, 10, 10] to hex', () => {
+        expect(hslToHex([10, 10, 10])).toStrictEqual('#1c1817');
     });
 });

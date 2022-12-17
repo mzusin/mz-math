@@ -7,10 +7,10 @@ declare const api: {
     getRandomHSLColorWithinRanges: (hueStart?: number, hueEnd?: number, saturationStart?: number, saturationEnd?: number, lightStart?: number, lightEnd?: number) => import("./types").HSLColor;
     rgbToHsl: (rgb: import("./types").RGBColor, decimalPlaces?: number) => import("./types").HSLColor;
     hslToRgb: (hsl: import("./types").HSLColor, decimalPlaces?: number) => import("./types").RGBColor;
+    hslToHex: (hsl: import("./types").HSLColor) => string;
     getShiftedHue: (color: import("./types").HSLColor, shift?: number) => import("./types").HSLColor;
     getShiftedLightness: (color: import("./types").HSLColor, shift?: number) => import("./types").HSLColor;
     getShiftedSaturation: (color: import("./types").HSLColor, shift?: number) => import("./types").HSLColor;
-    hslToHex: (h: number, s: number, l: number) => string;
     getLuminance: (r: number, g: number, b: number, min?: number | undefined, max?: number | undefined) => number;
     getSaturation: (r: number, g: number, b: number, min?: number | undefined, max?: number | undefined, l?: number | undefined) => number;
     getHue: (r: number, g: number, b: number, min?: number | undefined, max?: number | undefined) => number;

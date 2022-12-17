@@ -16,14 +16,14 @@ export declare const getRandomGrayscaleHSLColor: () => HSLColor;
 export declare const getRandomHSLColorWithinRanges: (hueStart?: number, hueEnd?: number, saturationStart?: number, saturationEnd?: number, lightStart?: number, lightEnd?: number) => HSLColor;
 export declare const rgbToHsl: (rgb: RGBColor, decimalPlaces?: number) => HSLColor;
 export declare const hslToRgb: (hsl: HSLColor, decimalPlaces?: number) => RGBColor;
-export declare const getShiftedHue: (color: HSLColor, shift?: number) => HSLColor;
-export declare const getShiftedLightness: (color: HSLColor, shift?: number) => HSLColor;
-export declare const getShiftedSaturation: (color: HSLColor, shift?: number) => HSLColor;
 /**
  * HSL to hex
  * hslToHex(360, 100, 50)  // [360, 100, 5] ==> "#ff0000" (red)
  */
-export declare const hslToHex: (h: number, s: number, l: number) => string;
+export declare const hslToHex: (hsl: HSLColor) => string;
+export declare const getShiftedHue: (color: HSLColor, shift?: number) => HSLColor;
+export declare const getShiftedLightness: (color: HSLColor, shift?: number) => HSLColor;
+export declare const getShiftedSaturation: (color: HSLColor, shift?: number) => HSLColor;
 /**
  * get luminance from RGB
  * @param {number} r [0, 255]

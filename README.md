@@ -2958,12 +2958,12 @@ const hslColor4: HSLColor = getRandomHSLColorWithinRanges(
 const hslColor5: HSLColor = getRandomGrayscaleHSLColor();
 ```
 
-## Convert colors
+## Convert Colors
 
 ```js
-import { HSLColor, RGBColor, hslToRgb, rgbToHsl } from 'toolcool-math';
+import { HSLColor, RGBColor, hslToRgb, rgbToHsl, hslToHex } from 'toolcool-math';
 
-const decimalPlaces = 2; // optioanl
+const decimalPlaces = 2; // optional
 
 // convert RGB color to HSL color
 const hslColor: HSLColor = rgbToHsl([255, 0, 0], decimalPlaces); // [0, 100, 50] - red
@@ -2971,6 +2971,8 @@ const hslColor: HSLColor = rgbToHsl([255, 0, 0], decimalPlaces); // [0, 100, 50]
 // convert HSL color to RGB color
 const rgbColor: RGBColor = hslToRgb([100, 100, 100], decimalPlaces);
 
+// convert HSL color to hex
+const hex: string = hslToHex([10, 10, 10]); // #1c1817
 ```
 
 -----------------------------------------------
