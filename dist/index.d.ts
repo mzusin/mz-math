@@ -226,6 +226,8 @@ declare module 'toolcool-math' {
     export const sineWaveMovement: (x: number, amplitude: number, frequency: number, phase: number) => Vector2;
     export const lissajousCurve: (width: number, height: number, t: number, k: number, n: number, m: number, p: number) => Vector2;
 
+    export const getRandomRGBColor: () => RGBColor;
+    export const getRandomHexColor: () => string;
     export const getRandomHSLColor: () => HSLColor;
     export const getRandomHSLColorWithHue: (h: number) => HSLColor;
     export const getRandomHSLColorWithSaturation: (s: number) => HSLColor;

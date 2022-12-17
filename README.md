@@ -2933,7 +2933,18 @@ const rgbColor: RGBColor = [255, 255, 255]; // [0, 255, 0, 255, 0, 255]
 ## Get random color
 
 ```js
-import { HSLColor, getRandomHSLColor, getRandomHSLColorWithHue, getRandomHSLColorWithSaturation, getRandomHSLColorWithinRanges, getRandomGrayscaleHSLColor } from 'toolcool-math';
+import { 
+  HSLColor, RGBColor, getRandomHexColor,
+  getRandomRGBColor, getRandomHSLColor, 
+  getRandomHSLColorWithHue, getRandomHSLColorWithSaturation, 
+  getRandomHSLColorWithinRanges, getRandomGrayscaleHSLColor 
+} from 'toolcool-math';
+
+// get random HEX color
+const rgbColor: string = getRandomHexColor();
+
+// get random RGB color
+const rgbColor: RGBColor = getRandomRGBColor();
 
 // get random HSL color
 const hslColor1: HSLColor = getRandomHSLColor();

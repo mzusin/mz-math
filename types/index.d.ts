@@ -1,4 +1,6 @@
 declare const api: {
+    getRandomRGBColor: () => import("./types").RGBColor;
+    getRandomHexColor: () => string;
     getRandomHSLColor: () => import("./types").HSLColor;
     getRandomHSLColorWithHue: (h: number) => import("./types").HSLColor;
     getRandomHSLColorWithSaturation: (s: number) => import("./types").HSLColor;

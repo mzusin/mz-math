@@ -1,4 +1,6 @@
 import { HSLColor, RGBColor } from './types';
+export declare const getRandomRGBColor: () => RGBColor;
+export declare const getRandomHexColor: () => string;
 export declare const getRandomHSLColor: () => HSLColor;
 /**
  * generate random color with the given hue

@@ -5,6 +5,16 @@ import { setDecimalPlaces } from './format';
 
 // ------------------------ RANDOM COLOR -------------------------------------
 
+export const getRandomRGBColor = () : RGBColor => {
+    const hslColor = getRandomHSLColor();
+    return hslToRgb(hslColor);
+};
+
+export const getRandomHexColor = () : string => {
+    const hslColor = getRandomHSLColor();
+    return hslToHex(hslColor);
+};
+
 export const getRandomHSLColor = () : HSLColor => {
     const h = getRandom(1, 360);
     const s = getRandom(0, 100);
@@ -259,9 +269,9 @@ export const hslToRgb = (hsl: HSLColor, decimalPlaces = Infinity): RGBColor => {
 
     const helper2 = 2 * l - helper1;
 
-    let rHelper = h + 0.333;
-    let gHelper = h;
-    let bHelper = h - 0.333;
+    const rHelper = h + 0.333;
+    const gHelper = h;
+    const bHelper = h - 0.333;
 
     let r = hslToRgbHelper(helper1, helper2, rHelper);
     let g = hslToRgbHelper(helper1, helper2, gHelper);
