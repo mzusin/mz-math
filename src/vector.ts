@@ -1,6 +1,6 @@
 import { Vector, Vector2, Vector3, Vector4 } from './types';
 import { setDecimalPlaces } from './format';
-import { getV2Angle } from './angle';
+import { getV2Angle, setV2Angle } from './angle';
 
 // ------------ SUM ------------------------
 
@@ -216,6 +216,15 @@ export const vN = (N: number, defaultValue = 0): Vector => {
         vector.push(defaultValue);
     }
     return vector;
+};
+
+/**
+ * Initialize vector using polar coordinates
+ */
+export const v2FromPolarCoords = (distance: number, angleRad: number): Vector2 => {
+    let vector: Vector2 = [0, 0];
+    vector = v2SetLength(vector, distance);
+    return setV2Angle(vector, angleRad);
 };
 
 // --------------- EQUALITY -------------------------

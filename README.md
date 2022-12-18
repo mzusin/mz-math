@@ -442,6 +442,16 @@ const v5 = vN(5); // [0, 0, 0, 0, 0]
 const v5_10 = vN(5, 10); // [10, 10, 10, 10, 10]
 ```
 
+**Initialize vector using polar coordinates**
+
+```js
+import { Vector2 } from 'toolcool-math';
+
+const distance = 10;
+const angleRad = Math.PI/4;
+const v2: Vector2 = v2FromPolarCoords(distance, angleRad);
+```
+
 ## Check if 2 vectors are equal
 
 It's possible to perform a deep comparison of two vectors using the **vEqual** function:

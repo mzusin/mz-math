@@ -9,3 +9,4 @@ export * from './bezier-curve';
 export * from './equations';
 export * from './path-movement';
 export * from './color';
+export * from './physics';

@@ -19,6 +19,7 @@ declare module 'toolcool-math' {
     export const v3: (defaultValue?: number) => Vector3;
     export const v4: (defaultValue?: number) => Vector4;
     export const vN: (N: number, defaultValue?: number) => Vector;
+    export const v2FromPolarCoords: (distance: number, angleRad: number) => Vector2;
 
     export const m2x2: (defaultValue?: number) => Matrix2;
     export const m3x3: (defaultValue?: number) => Matrix3;

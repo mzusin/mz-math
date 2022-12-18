@@ -36,4 +36,8 @@ export declare const v2: (defaultValue?: number) => Vector2;
 export declare const v3: (defaultValue?: number) => Vector3;
 export declare const v4: (defaultValue?: number) => Vector4;
 export declare const vN: (N: number, defaultValue?: number) => Vector;
+/**
+ * Initialize vector using polar coordinates
+ */
+export declare const v2FromPolarCoords: (distance: number, angleRad: number) => Vector2;
 export declare const vEqual: (vector1: Vector, vector2: Vector) => boolean;

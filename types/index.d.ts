@@ -188,6 +188,7 @@ declare const api: {
     v3: (defaultValue?: number) => import("./types").Vector3;
     v4: (defaultValue?: number) => import("./types").Vector4;
     vN: (N: number, defaultValue?: number) => import("./types").Vector;
+    v2FromPolarCoords: (distance: number, angleRad: number) => import("./types").Vector2;
     vEqual: (vector1: import("./types").Vector, vector2: import("./types").Vector) => boolean;
 };
 declare global {
@@ -207,3 +208,4 @@ export * from './bezier-curve';
 export * from './equations';
 export * from './path-movement';
 export * from './color';
+export * from './physics';
