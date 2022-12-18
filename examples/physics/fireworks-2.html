@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Fireworks with gravity</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../css/styles-4.css" rel="stylesheet" />
+</head>
+<body>
+<h1>Fireworks with gravity</h1>
+<canvas id="canvas"></canvas>
+
+<script src="../../dist/tc-math.min.js"></script>
+<script>
+    const $canvas = document.getElementById('canvas');
+    const context = $canvas.getContext('2d');
+
+    $canvas.width = 800;
+    $canvas.height = 800;
+
+    const width = $canvas.width;
+    const height = $canvas.height;
+
+    let handler;
+    const MAX_ITEMS = 50;
+
+    const items = [];
+    const ITEM_RADIUS = 5;
+
+    const gravity = [0, 0.03];
+
+    for(let i = 0; i < MAX_ITEMS; i += 1) {
+
+        const position = [
+            width/2, // center of the canvas
+            height/2, // center of the canvas
+        ];
+
+        const direction = TCMath.getRandom(0, Math.PI * 2);
+        const speed = TCMath.getRandom(1, 4);
+
+        let velocity = [0, 2];
+        velocity = TCMath.v2SetLength(velocity, speed);
+        velocity = TCMath.setV2Angle(velocity, direction);
+
+        const hslColor = TCMath.getRandomHSLColorWithinRanges(
+            0, 360,
+            50, 100,
+            50, 100
+        );
+        items.push({
+            position,
+            velocity,
+            color: TCMath.hslToHex(hslColor),
+        });
+    }
+
+    const step = () => {
+        context.clearRect(0, 0, width, height);
+
+        // draw the items -----------------------
+        for(let i = 0; i < MAX_ITEMS; i += 1) {
+            const item = items[i];
+
+            // draw the item
+            context.beginPath();
+            context.arc(
+                item.position[0],
+                item.position[1],
+                ITEM_RADIUS, // radius
+                0, // startAngle
+                Math.PI * 2, // endAngle
+                false // counterclockwise
+            );
+
+            context.fillStyle = item.color;
+            context.fill();
+
+            // update the position -----
+            if(item.position[0] < 0 || item.position[0] > width ||
+                item.position[1] < 0 || item.position[1] > height){
+                item.position = [
+                    width/2, // center of the canvas
+                    height/2, // center of the canvas
+                ];
+            }
+            else{
+                item.velocity = TCMath.v2Sum(item.velocity, gravity);
+                item.position = TCMath.v2Sum(item.position, item.velocity);
+
+            }
+
+        }
+
+        // loop the animation -------------------
+        handler = requestAnimationFrame(step);
+    };
+
+    /**
+     * handle window resize => restart the animation
+     */
+    const observer = new ResizeObserver(entries => {
+        for (const entry of entries) {
+            window.cancelAnimationFrame(handler);
+            step();
+        }
+    });
+    observer.observe(document.body, {box: 'border-box'});
+</script>
+</body>
+</html>
