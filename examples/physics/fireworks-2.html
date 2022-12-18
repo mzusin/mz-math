@@ -24,36 +24,43 @@
     let handler;
     const MAX_ITEMS = 50;
 
-    const items = [];
+    let items = [];
     const ITEM_RADIUS = 5;
 
     const gravity = [0, 0.03];
 
-    for(let i = 0; i < MAX_ITEMS; i += 1) {
+    const createItems = () => {
+        items = [];
+        for(let i = 0; i < MAX_ITEMS; i += 1) {
 
-        const position = [
-            width/2, // center of the canvas
-            height/2, // center of the canvas
-        ];
+            const position = [
+                width/2, // center of the canvas
+                height/2, // center of the canvas
+            ];
 
-        const direction = TCMath.getRandom(0, Math.PI * 2);
-        const speed = TCMath.getRandom(1, 4);
+            const direction = TCMath.getRandom(0, Math.PI * 2);
+            const speed = TCMath.getRandom(1, 4);
 
-        let velocity = [0, 2];
-        velocity = TCMath.v2SetLength(velocity, speed);
-        velocity = TCMath.setV2Angle(velocity, direction);
+            let velocity = [0, 2];
+            velocity = TCMath.v2SetLength(velocity, speed);
+            velocity = TCMath.setV2Angle(velocity, direction);
 
-        const hslColor = TCMath.getRandomHSLColorWithinRanges(
-            0, 360,
-            50, 100,
-            50, 100
-        );
-        items.push({
-            position,
-            velocity,
-            color: TCMath.hslToHex(hslColor),
-        });
-    }
+            const hslColor = TCMath.getRandomHSLColorWithinRanges(
+                0, 360,
+                50, 100,
+                50, 100
+            );
+            items.push({
+                position,
+                velocity,
+                color: TCMath.hslToHex(hslColor),
+                alpha: 1,
+            });
+        }
+    };
+
+    createItems();
+    let itemsCounter = 0;
 
     const step = () => {
         context.clearRect(0, 0, width, height);
@@ -63,6 +70,7 @@
             const item = items[i];
 
             // draw the item
+            context.globalAlpha = item.alpha;
             context.beginPath();
             context.arc(
                 item.position[0],
@@ -75,21 +83,25 @@
 
             context.fillStyle = item.color;
             context.fill();
+            context.globalAlpha = 1;
 
             // update the position -----
-            if(item.position[0] < 0 || item.position[0] > width ||
+            if(item.alpha <= 0 || item.position[0] < 0 || item.position[0] > width ||
                 item.position[1] < 0 || item.position[1] > height){
-                item.position = [
-                    width/2, // center of the canvas
-                    height/2, // center of the canvas
-                ];
+
+                if(itemsCounter >= MAX_ITEMS){
+                    itemsCounter = 0;
+                    createItems();
+                }
+                else{
+                    itemsCounter++;
+                }
             }
             else{
                 item.velocity = TCMath.v2Sum(item.velocity, gravity);
                 item.position = TCMath.v2Sum(item.position, item.velocity);
-
+                item.alpha -= 0.01;
             }
-
         }
 
         // loop the animation -------------------
