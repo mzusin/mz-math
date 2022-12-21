@@ -1,10 +1,11 @@
 {
   "name": "toolcool-math",
-  "version": "1.0.22",
+  "version": "1.0.24",
   "description": "A collection of TypeScript-based math helpers.",
   "main": "./dist/tc-math.min.js",
   "module": "./dist/tc-math.esm.js",
   "types": "./dist/index.d.ts",
+  "exports": "./dist/tc-math.esm.js",
   "scripts": {
     "build:all": "npm run build:es6 & npm run build:node & npm run build:esm",
     "watch:all": "npm run watch:es6 & npm run watch:node & npm run watch:esm",
