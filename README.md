@@ -74,6 +74,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
   - [Get random integer](#get-random-integer)
   - [Get random boolean value](#get-random-boolean-value)
   - [Get random item from array](#get-random-item-from-array)
+  - [Random ID or GUID](#random-id-or-guid)
 - Bézier Curve
   - [Get a point on a quadratic Bézier curve](#get-a-point-on-a-quadratic-bézier-curve)
   - [Get a point on a cubic Bézier curve](#get-a-point-on-a-cubic-bézier-curve)
@@ -2663,6 +2664,15 @@ import { getRandomItemFromArray } from 'toolcool-math';
 const item1 = getRandomItemFromArray([1,2,3,4,5]); // 2
 const item2 = getRandomItemFromArray(['a', 'b', 'c']); // 'a'
 const item3 = getRandomItemFromArray([{ test: 1 }, { test: 2 }, { test: 3 }]); // { test: 3 }
+```
+
+## Random ID or GUID
+
+```js
+import { guid, newId } from 'toolcool-math';
+
+const res1 = newId(); // a string like 'df4unio1opulby2uqh4'
+const res2 = guid(); // a guid like '932ade5e-c515-4807-ac01-73b20ab3fb66'
 ```
 
 -----------------------------------------------

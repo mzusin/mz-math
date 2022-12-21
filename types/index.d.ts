@@ -1,4 +1,6 @@
 declare const api: {
+    guid: () => string;
+    newId: () => string;
     getRandomRGBColor: () => import("./types").RGBColor;
     getRandomHexColor: () => string;
     getRandomHSLColor: () => import("./types").HSLColor;
@@ -30,6 +32,8 @@ declare const api: {
     convertRange: (x: number, a: number, b: number, c: number, d: number) => number;
     doRangesOverlap: (a: number, b: number, c: number, d: number) => boolean;
     isNumber: (value: any) => boolean;
+    getPx: (percent: number, size: number) => number;
+    getSquareInCircleSide: (radius: number) => number;
     getRandom: (min: number, max: number, decimalPlaces?: number) => number;
     getRandomInt: (min: number, max: number) => number;
     getRandomBoolean: () => boolean;
@@ -209,3 +213,4 @@ export * from './equations';
 export * from './path-movement';
 export * from './color';
 export * from './physics';
+export * from './id';
