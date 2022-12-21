@@ -25,15 +25,3 @@ esbuild
         console.log(watch ? 'Watching...' : 'Done.');
     })
     .catch(() => process.exit(1));
-
-/*
-// compile for node.js
-esbuild
-    .build({
-        ...settings,
-        platform: 'node',
-    })
-    .then(result => {
-        console.log(watch ? 'Watching...' : 'Done.');
-    })
-    .catch(() => process.exit(1));*/

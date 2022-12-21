@@ -61,18 +61,6 @@
     "type": "git",
     "url": "https://github.com/toolcool-org/toolcool-math.git"
   },
-  "nodemonConfig": {
-    "restartable": "rs",
-    "ignore": [
-      ".git",
-      "node_modules/**/node_modules"
-    ],
-    "verbose": false,
-    "watch": [
-      "src/docs/"
-    ],
-    "ext": "js,json,html,css,md,ts,tsx,glsl"
-  },
   "devDependencies": {
     "@babel/preset-env": "^7.20.2",
     "@types/jest": "^29.2.3",
