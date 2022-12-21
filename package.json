@@ -1,6 +1,6 @@
 {
   "name": "toolcool-math",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "A collection of TypeScript-based math helpers.",
   "main": "./dist/tc-math.min.js",
   "module": "./dist/tc-math.esm.js",

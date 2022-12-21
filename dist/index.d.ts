@@ -250,4 +250,6 @@ declare module 'toolcool-math' {
 
     export const guid: () => string;
     export const newId: () => string;
+
+    export const getSquareInCircleSide: (radius: number, decimalPlaces?: number) => number;
 }
