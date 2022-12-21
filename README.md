@@ -90,6 +90,8 @@ This project is a collection of TypeScript math helpers and utilities for the br
   - [Get random color](#get-random-color)
   - [Convert colors](#convert-colors)
   - [Shift colors](#shift-colors)
+- Shapes
+  - [Square in circle](#square-in-circle)
 - Other
   - [Modulo](#modulo)
   - [Convert range](#convert-range)
@@ -3053,6 +3055,22 @@ const hslColor2: HSLColor = getShiftedSaturation([0, 100, 39], 10); // [0, 10, 3
 
 // shift lightness in [0, 0, 39] by 10
 const hslColor3: HSLColor = getShiftedLightness([0, 0, 39], 10); // [10, 0, 39]
+```
+
+-----------------------------------------------
+# Shapes
+
+## Square in circle
+
+Get the side of a square inscribed in a circle of a given radius:
+
+```js
+import { getSquareInCircleSide } from 'toolcool-math';
+
+const circleRadius = 10;
+const decimalPlaces = 2; // optional
+
+const squareSide = getSquareInCircleSide(10); // 14.14
 ```
 
 -----------------------------------------------

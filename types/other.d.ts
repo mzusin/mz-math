@@ -9,8 +9,3 @@ export declare const convertRange: (x: number, a: number, b: number, c: number, 
  */
 export declare const doRangesOverlap: (a: number, b: number, c: number, d: number) => boolean;
 export declare const isNumber: (value: any) => boolean;
-export declare const getPx: (percent: number, size: number) => number;
-/**
- * get the side of a square inscribed in a circle
- */
-export declare const getSquareInCircleSide: (radius: number) => number;

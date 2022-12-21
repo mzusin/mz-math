@@ -11,3 +11,4 @@ export * from './path-movement';
 export * from './color';
 export * from './physics';
 export * from './id';
+export * from './shapes';

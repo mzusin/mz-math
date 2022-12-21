@@ -12,6 +12,7 @@ import * as pathMovement from './path-movement';
 import * as color from './color';
 import * as physics from './physics';
 import * as id from './id';
+import * as shapes from './shapes';
 
 const api = {
     ...vector,
@@ -28,6 +29,7 @@ const api = {
     ...color,
     ...physics,
     ...id,
+    ...shapes,
 };
 
 declare global {
@@ -52,3 +54,4 @@ export * from './path-movement';
 export * from './color';
 export * from './physics';
 export * from './id';
+export * from './shapes';
