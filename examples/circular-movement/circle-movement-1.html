@@ -20,7 +20,7 @@
 
     <div id="center"></div>
 
-    <script src="../../dist/tc-math.min.js"></script>
+    <script src="../../dist/mz-math.min.js"></script>
     <script>
         let handler = null;
 
@@ -66,7 +66,7 @@
                     // const percent = Math.min(elapsed * 100 / TIME, 100);
 
                     const isClockwise = true;
-                    pos = TCMath.m2RotateAroundPointH(angle, transformOrigin, pos, isClockwise);
+                    pos = MZMath.m2RotateAroundPointH(angle, transformOrigin, pos, isClockwise);
 
                     // set star css position ----------------------
                     $star.style.left = `${ pos[0] - starBox.width/2 }px`;

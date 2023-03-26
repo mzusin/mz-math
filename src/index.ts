@@ -34,11 +34,11 @@ const api = {
 
 declare global {
     interface Window {
-        TCMath: typeof api,
+        MZMath: typeof api,
     }
 }
 
-window.TCMath = window.TCMath || api;
+window.MZMath = window.MZMath || api;
 
 export * from './vector';
 export * from './matrix';

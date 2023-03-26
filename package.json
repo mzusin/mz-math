@@ -1,11 +1,11 @@
 {
-  "name": "toolcool-math",
-  "version": "1.0.24",
+  "name": "mz-math",
+  "version": "2.0.0",
   "description": "A collection of TypeScript-based math helpers.",
-  "main": "./dist/tc-math.min.js",
-  "module": "./dist/tc-math.esm.js",
+  "main": "./dist/mz-math.min.js",
+  "module": "./dist/mz-math.esm.js",
   "types": "./dist/index.d.ts",
-  "exports": "./dist/tc-math.esm.js",
+  "exports": "./dist/mz-math.esm.js",
   "scripts": {
     "build:all": "npm run build:es6 & npm run build:node & npm run build:esm",
     "watch:all": "npm run watch:es6 & npm run watch:node & npm run watch:esm",
@@ -51,7 +51,7 @@
     "css transform",
     "color"
   ],
-  "author": "Tool Cool <toolcool.org@gmail.com>",
+  "author": "Miriam Zusin <miriam.zusin@gmail.com>",
   "license": "MIT",
   "browserslist": [
     ">0.2%",
@@ -60,7 +60,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/toolcool-org/toolcool-math.git"
+    "url": "https://github.com/mzusin/mz-math.git"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.20.2",

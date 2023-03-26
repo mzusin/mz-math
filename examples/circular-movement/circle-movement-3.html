@@ -20,7 +20,7 @@
 
 <div id="center"></div>
 
-<script src="../../dist/tc-math.min.js"></script>
+<script src="../../dist/mz-math.min.js"></script>
 <script>
     let handler = null;
 
@@ -65,7 +65,7 @@
                 angle += 0.01;
                 angle = angle % 360;
 
-                const position = TCMath.circleMovement(center, angle, radius);
+                const position = MZMath.circleMovement(center, angle, radius);
 
                 // set star css position ----------------------
                 $star.style.left = `${ position[0] - starBox.width/2 }px`;

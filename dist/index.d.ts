@@ -1,6 +1,4 @@
-import { HSLColor } from '../types/types';
-
-declare module 'toolcool-math' {
+declare module 'mz-math' {
 
     export type Vector2 = [number, number];
     export type Vector3 = [number, number, number];

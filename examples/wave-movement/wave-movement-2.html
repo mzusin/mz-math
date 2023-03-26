@@ -24,7 +24,7 @@
     </svg>
 </div>
 
-<script src="../../dist/tc-math.min.js"></script>
+<script src="../../dist/mz-math.min.js"></script>
 <script>
     let handler = null;
 
@@ -61,10 +61,10 @@
 
             if (previousTimeStamp !== timestamp) {
 
-                const position = TCMath.sineWaveMovement(x, amplitude, frequency, phase);
+                const position = MZMath.sineWaveMovement(x, amplitude, frequency, phase);
 
-                const translationMatrix = TCMath.m2TranslationH([...position, 1]);
-                $star.style.transform = TCMath.m2hToCSS(translationMatrix);
+                const translationMatrix = MZMath.m2TranslationH([...position, 1]);
+                $star.style.transform = MZMath.m2hToCSS(translationMatrix);
 
                 // OR
                 // $star.style.transform = `translate(${position[0]}px, ${position[1]}px)`;

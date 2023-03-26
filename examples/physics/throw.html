@@ -10,7 +10,7 @@
 <h1>A Throw</h1>
 <canvas id="canvas"></canvas>
 
-<script src="../../dist/tc-math.min.js"></script>
+<script src="../../dist/mz-math.min.js"></script>
 <script>
     const $canvas = document.getElementById('canvas');
     const context = $canvas.getContext('2d');
@@ -27,7 +27,7 @@
 
     const direction = -Math.PI/2;
     const speed = 10;
-    let velocity = TCMath.v2FromPolarCoords(speed, direction);
+    let velocity = MZMath.v2FromPolarCoords(speed, direction);
     const acceleration = [0.1, 0.1];
 
     const step = () => {
@@ -48,10 +48,10 @@
         context.fill();
 
         // velocity changes over time by applying the constant acceleration
-        velocity = TCMath.v2Sum(velocity, acceleration);
+        velocity = MZMath.v2Sum(velocity, acceleration);
 
         // update position with the current velocity
-        position = TCMath.v2Sum(position, velocity);
+        position = MZMath.v2Sum(position, velocity);
 
         // loop the animation -------------------
         handler = requestAnimationFrame(step);

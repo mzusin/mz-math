@@ -10,7 +10,7 @@
     <h1>Circle movement on canvas</h1>
     <canvas id="canvas"></canvas>
 
-    <script src="../../dist/tc-math.min.js"></script>
+    <script src="../../dist/mz-math.min.js"></script>
     <script>
         let handler = null;
 
@@ -57,7 +57,7 @@
                     angle += 0.01;
                     angle = angle % 360;
 
-                    const position = TCMath.circleMovement(center, angle, radius);
+                    const position = MZMath.circleMovement(center, angle, radius);
 
                     context.clearRect(0, 0, width, height);
 

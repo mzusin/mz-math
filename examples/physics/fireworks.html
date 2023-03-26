@@ -10,7 +10,7 @@
 <h1>Fireworks</h1>
 <canvas id="canvas"></canvas>
 
-<script src="../../dist/tc-math.min.js"></script>
+<script src="../../dist/mz-math.min.js"></script>
 <script>
     const $canvas = document.getElementById('canvas');
     const context = $canvas.getContext('2d');
@@ -34,14 +34,14 @@
             height/2, // center of the canvas
         ];
 
-        const direction = TCMath.getRandom(0, Math.PI * 2);
-        const speed = TCMath.getRandom(1, 4);
+        const direction = MZMath.getRandom(0, Math.PI * 2);
+        const speed = MZMath.getRandom(1, 4);
 
         let velocity = [0, 2];
-        velocity = TCMath.v2SetLength(velocity, speed);
-        velocity = TCMath.setV2Angle(velocity, direction);
+        velocity = MZMath.v2SetLength(velocity, speed);
+        velocity = MZMath.setV2Angle(velocity, direction);
 
-        const hslColor = TCMath.getRandomHSLColorWithinRanges(
+        const hslColor = MZMath.getRandomHSLColorWithinRanges(
             0, 360,
             50, 100,
             50, 100
@@ -49,7 +49,7 @@
         items.push({
             position,
             velocity,
-            color: TCMath.hslToHex(hslColor),
+            color: MZMath.hslToHex(hslColor),
         });
     }
 
@@ -83,7 +83,7 @@
                 ];
             }
             else{
-                item.position = TCMath.v2Sum(item.position, item.velocity);
+                item.position = MZMath.v2Sum(item.position, item.velocity);
             }
 
         }

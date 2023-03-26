@@ -20,7 +20,7 @@
 
 <div id="center"></div>
 
-<script src="../../dist/tc-math.min.js"></script>
+<script src="../../dist/mz-math.min.js"></script>
 <script>
     let handler = null;
 
@@ -57,10 +57,10 @@
                 angle += 0.01;
                 angle = angle % 360;
 
-                const position = TCMath.ellipseMovement(center, angle, radius1, radius2);
+                const position = MZMath.ellipseMovement(center, angle, radius1, radius2);
 
-                const translationMatrix = TCMath.m2TranslationH(position);
-                $star.style.transform = TCMath.m2hToCSS(translationMatrix);
+                const translationMatrix = MZMath.m2TranslationH(position);
+                $star.style.transform = MZMath.m2hToCSS(translationMatrix);
 
                 // OR
                 // $star.style.transform = `translate(${position[0]}px, ${position[1]}px)`;

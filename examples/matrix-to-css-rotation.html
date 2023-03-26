@@ -19,7 +19,7 @@
 
     <div id="center"></div>
 
-    <script src="../../dist/tc-math.min.js"></script>
+    <script src="../dist/mz-math.min.js"></script>
     <script>
         let handler = null;
 
@@ -43,7 +43,7 @@
                     angle += 0.01;
                     angle = angle % 360;
 
-                    $star.style.transform = TCMath.m2hToCSS(TCMath.m2RotationH(angle));
+                    $star.style.transform = MZMath.m2hToCSS(MZMath.m2RotationH(angle));
                 }
 
                 if (elapsed < TIME) {

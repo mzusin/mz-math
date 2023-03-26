@@ -18,7 +18,7 @@
     </svg>
 </div>
 
-<script src="../../dist/tc-math.min.js"></script>
+<script src="../../dist/mz-math.min.js"></script>
 <script>
     let handler = null;
 
@@ -55,7 +55,7 @@
 
             if (previousTimeStamp !== timestamp) {
 
-                const position = TCMath.sineWaveMovement(x, amplitude, frequency, phase);
+                const position = MZMath.sineWaveMovement(x, amplitude, frequency, phase);
 
                 // set star css position ----------------------
                 $star.style.left = `${ position[0] }px`;

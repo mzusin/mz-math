@@ -1,11 +1,5 @@
 # A collection of TypeScript-based math helpers 🚀
 
-[![GitHub license](https://img.shields.io/github/license/toolcool-org/toolcool-math)](https://github.com/toolcool-org/toolcool-math/blob/main/LICENSE)
-![GitHub package.json version](https://img.shields.io/github/package-json/v/toolcool-org/toolcool-math)
-[![npm](https://img.shields.io/npm/dw/toolcool-math)](https://www.npmjs.com/package/toolcool-math)
-[![NPM](https://img.shields.io/badge/npm-math-brightgreen)](https://www.npmjs.com/package/toolcool-math)
-[![Twitter](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Ftoolcool-org%2Ftoolcool-math)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Ftoolcool-org%2Ftoolcool-math)
-
 This project is a collection of TypeScript math helpers and utilities for the browser and Node.js. The modular approach allows to select only the required functions. It works well with all modern bundlers and supports **tree shaking** 🌲. The library is built using immutable/pure functions.
 
 ## Table of contents
@@ -104,12 +98,12 @@ This project is a collection of TypeScript math helpers and utilities for the br
 To use the library with TypeScript, you need to install the module from npm:
 
 ```
-npm install toolcool-math
+npm install mz-math
 ```
 
 The import any function like **v2Sum**:
 ```js
-import { v2Sum, Vector2 } from 'toolcool-math';
+import { v2Sum, Vector2 } from 'mz-math';
 
 const v1: Vector2 = [1, 2];
 const v2: Vector2 = [3, 4];
@@ -120,22 +114,22 @@ const sum = v2Sum(v1, v2); // [4, 6]
 
 ## Browser Usage
 
-Any function can also be used in the browser using the **tc-math.min.js** file. All functions are located in the **TCMath** namespace:
+Any function can also be used in the browser using the **mz-math.min.js** file. All functions are located in the **MZMath** namespace:
 
 ```html
-<script src="tc-math.min.js"></script>
+<script src="mz-math.min.js"></script>
 <script>
-    const sum = TCMath.v2Sum([1, 2], [3, 4]);
+    const sum = MZMath.v2Sum([1, 2], [3, 4]);
     console.log(sum);
 </script>
 ```
 
-The library is also available on the [jsDelivr CND](https://www.jsdelivr.com/package/npm/toolcool-math):
+The library is also available on the [jsDelivr CND](https://www.jsdelivr.com/package/npm/mz-math):
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/toolcool-math/dist/tc-math.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mzusin/dist/mz-math.min.js"></script>
 <script>
-    const sum = TCMath.v2Sum([1, 2], [3, 4]);
+    const sum = MZMath.v2Sum([1, 2], [3, 4]);
     console.log(sum);
 </script>
 ```
@@ -146,11 +140,11 @@ The library is also available on the [jsDelivr CND](https://www.jsdelivr.com/pac
 The library can also be used in Node.js.
 
 ```
-npm install toolcool-math
+npm install mz-math
 ```
 
 ```js
-const { setDecimalPlaces } = require('toolcool-math/dist/tc-math.node.cjs');
+const { setDecimalPlaces } = require('mz-math/dist/mz-math.node.cjs');
 
 const rounded = setDecimalPlaces(Math.PI, 2);
 console.log(rounded);
@@ -164,7 +158,7 @@ There are the following types of vectors:
 **Vector2** for a 2D vector, **Vector3** for a 3D vector, and **Vector** for the general case.
 
 ```js
-import { Vector2, Vector3, Vector4, Vector } from 'toolcool-math';
+import { Vector2, Vector3, Vector4, Vector } from 'mz-math';
 
 const v2: Vector2 = [1, 2];
 const v3: Vector3 = [1, 2, 3];
@@ -180,7 +174,7 @@ The following functions are used to add vectors: **v2Sum** for a 2D vector, **v3
 
 **2D Vector**
 ```js
-import { v2Sum, Vector2 } from 'toolcool-math';
+import { v2Sum, Vector2 } from 'mz-math';
 
 const sum1 = v2Sum([1, 2], [3, 4]); // [4, 6]
 
@@ -191,7 +185,7 @@ const sum2 = v2Sum(vector1, vector2, 2); // [8.25, 10.57]
 
 **3D Vector**
 ```js
-import { v3Sum, Vector3 } from 'toolcool-math';
+import { v3Sum, Vector3 } from 'mz-math';
 
 const sum1 = v3Sum([1, 2, 3], [3, 4, 4]); // [4, 6, 7]
 
@@ -202,7 +196,7 @@ const sum2 = v3Sum(vector1, vector2, 2); // [9.35, 11.22, 13.59]
 
 **General Case**
 ```js
-import { vSum, Vector } from 'toolcool-math';
+import { vSum, Vector } from 'mz-math';
 
 const v1: Vector = [1, 2, 3, 4];
 const v2: Vector = [5, 6, 7, 8];
@@ -215,7 +209,7 @@ The following functions are used to add vectors: **v2Sub** for a 2D vector, **v3
 
 **2D Vector**
 ```js
-import { v2Sub, Vector2 } from 'toolcool-math';
+import { v2Sub, Vector2 } from 'mz-math';
 
 const sub1 = v2Sub([1, 2], [3, 4]); // [-2, -2]
 
@@ -226,7 +220,7 @@ const sub2 = v2Sub(vector1, vector2, 2); // [-4.36, -6.59]
 
 **3D Vector**
 ```js
-import { v3Sub, Vector3 } from 'toolcool-math';
+import { v3Sub, Vector3 } from 'mz-math';
 
 const sub1 = v3Sub([1, 2, 3], [3, 4, 4]); // [-2, -2, -1]
 
@@ -237,7 +231,7 @@ const sub2 = v3Sub(vector1, vector2, 2); // [-6.22, -5.36, -5.89]
 
 **General Case**
 ```js
-import { vSub, Vector } from 'toolcool-math';
+import { vSub, Vector } from 'mz-math';
 
 const v1: Vector = [1, 2, 3, 4];
 const v2: Vector = [5, 6, 7, 8];
@@ -250,7 +244,7 @@ The following functions are used to multiply a vector by a scalar: **v2MulScalar
 
 **2D Vector**
 ```js
-import { v2MulScalar } from 'toolcool-math';
+import { v2MulScalar } from 'mz-math';
 
 const res = v2MulScalar([1, 2], 2); // [2, 4]
 const res = v2MulScalar([1, 2], 0.5); // [0.5, 1]
@@ -260,7 +254,7 @@ const res = v2MulScalar([1, 2], Math.PI, 2); // [3.14, 6.28]
 
 **3D Vector**
 ```js
-import { v3MulScalar } from 'toolcool-math';
+import { v3MulScalar } from 'mz-math';
 
 const res = v3MulScalar([1, 2, 3], 2); // [2, 4, 6]
 const res = v3MulScalar([1, 2, 3], 0.5); // [0.5, 1, 1.5]
@@ -270,7 +264,7 @@ const res = v3MulScalar([1, 2, 3], Math.PI, 2); // [3.14, 6.28, 9.42]
 
 **General Case**
 ```js
-import { vMulScalar } from 'toolcool-math';
+import { vMulScalar } from 'mz-math';
 
 const res = v3MulScalar([1, 2, 3, 4], 2); // [2, 4, 6, 8]
 ```
@@ -281,7 +275,7 @@ The following functions are used to divide a vector by a scalar: **v2DivideScala
 
 **2D Vector**
 ```js
-import { v2DivideScalar } from 'toolcool-math';
+import { v2DivideScalar } from 'mz-math';
 
 const res = v2DivideScalar([1, 2], 2); // [0.5, 1]
 const res = v2DivideScalar([1, 2], 0.5); // [2, 4]
@@ -291,7 +285,7 @@ const res = v2DivideScalar([1, 2], Math.PI, 2); // [0.32, 0.64]
 
 **3D Vector**
 ```js
-import { v3DivideScalar } from 'toolcool-math';
+import { v3DivideScalar } from 'mz-math';
 
 const res = v3DivideScalar([1, 2, 3], 2); // [0.5, 1, 1.5]
 const res = v3DivideScalar([1, 2, 3], 0.5); // [2, 4, 6]
@@ -301,7 +295,7 @@ const res = v3DivideScalar([1, 2, 3], Math.PI, 2); // [0.32, 0.64, 0.95]
 
 **General Case**
 ```js
-import { vDivideScalar } from 'toolcool-math';
+import { vDivideScalar } from 'mz-math';
 
 const res = vDivideScalar([1, 2, 3, 4], 2); // [0.5, 1, 1.5, 2]
 ```
@@ -311,7 +305,7 @@ const res = vDivideScalar([1, 2, 3, 4], 2); // [0.5, 1, 1.5, 2]
 Vector length can be found using the **v2Length**, **v3Length**, and **vLength** functions. Each function receives an optional **decimalPlaces** parameter.
 
 ```js
-import { v2Length, v3Length, vLength } from 'toolcool-math';
+import { v2Length, v3Length, vLength } from 'mz-math';
 
 // 2D vector
 const len1 = v2Length([1, 2]); // 2.23606797749979
@@ -331,7 +325,7 @@ const len6 = vLength([1, 2, 3, 4], 2); // 5.48
 It's possible to update vector length using **v2SetLength** function. The function receives an optional **decimalPlaces** parameter.
 
 ```js
-import { v2SetLength } from 'toolcool-math';
+import { v2SetLength } from 'mz-math';
 
 const res1 = v2SetLength([1, 2], 10); // [4.4721359549995805, 8.94427190999916]
 const res2 = v2SetLength([1, 2], 10, 2); // [4.47, 8.94]
@@ -343,7 +337,7 @@ const res2 = v2SetLength([1, 2], 10, 2); // [4.47, 8.94]
 It's possible to normalize vectors using the **v2Normalize**, **v3Normalize**, and **vNormalize** functions. Each function receives an optional **decimalPlaces** parameter.
 
 ```js
-import { v2Normalize, v3Normalize, vNormalize } from 'toolcool-math';
+import { v2Normalize, v3Normalize, vNormalize } from 'mz-math';
 
 // 2D vector
 const res1 = v2Normalize([10, 20]); // [0.4472135954999579, 0.8944271909999159]
@@ -363,7 +357,7 @@ const res6 = vNormalize([10, 20, 30, 40], 2); // [0.18, 0.37, 0.55, 0.73]
 It's possible to calculate vector dot product using the **v2DotProduct**, **v3DotProduct**, and **vDotProduct** functions. Each function receives an optional **decimalPlaces** parameter.
 
 ```js
-import { v2DotProduct, v3DotProduct, vDotProduct } from 'toolcool-math';
+import { v2DotProduct, v3DotProduct, vDotProduct } from 'mz-math';
 
 // 2D vector
 const res1 = v2DotProduct([1, 2], [3, 4]); // 11
@@ -381,7 +375,7 @@ const res6 = vDotProduct([1.123, 2.123, 3.123, 4.123], [5.123, 6.123, 7.123, 8.1
 ## Vectors Cross Product
 
 ```js
-import { v3CrossProduct, Vector3 } from 'toolcool-math';
+import { v3CrossProduct, Vector3 } from 'mz-math';
 
 const v1: Vector3 = [1, 2, 3];
 const v2: Vector3 = [4, 5, 6];
@@ -398,7 +392,7 @@ const res2 = v3CrossProduct(v3, v4, 2); // [-4.11, 10.03, -4.67]
 **2D vectors**
 
 ```js
-import { v2Distance, Vector2 } from 'toolcool-math';
+import { v2Distance, Vector2 } from 'mz-math';
 
 const v1: Vector2 = [1, 2];
 const v2: Vector2 = [4, 5];
@@ -408,7 +402,7 @@ const distance = v2Distance(v1, v2);
 **3D vectors**
 
 ```js
-import { v3Distance, Vector2 } from 'toolcool-math';
+import { v3Distance, Vector2 } from 'mz-math';
 
 const v1: Vector2 = [1, 2, 3];
 const v2: Vector2 = [4, 5, 6];
@@ -418,7 +412,7 @@ const distance = v3Distance(v1, v2);
 **General case**
 
 ```js
-import { vDistance, Vector } from 'toolcool-math';
+import { vDistance, Vector } from 'mz-math';
 
 const v1: Vector = [1, 2, 3];
 const v2: Vector = [4, 5, 6];
@@ -430,7 +424,7 @@ const distance = vDistance(v1, v2);
 There are helpers for creating v2, v3 and vN vectors with a default value. If no default value is specified, it will be zero.
 
 ```js
-import { v2, v3, v4, vN } from 'toolcool-math';
+import { v2, v3, v4, vN } from 'mz-math';
 
 const v2 = v2(); // [0, 0]
 const v2_10 = v2(10); // [10, 10]
@@ -448,7 +442,7 @@ const v5_10 = vN(5, 10); // [10, 10, 10, 10, 10]
 **Initialize vector using polar coordinates**
 
 ```js
-import { Vector2 } from 'toolcool-math';
+import { Vector2 } from 'mz-math';
 
 const distance = 10;
 const angleRad = Math.PI/4;
@@ -460,7 +454,7 @@ const v2: Vector2 = v2FromPolarCoords(distance, angleRad);
 It's possible to perform a deep comparison of two vectors using the **vEqual** function:
 
 ```js
-import { vEqual } from 'toolcool-math';
+import { vEqual } from 'mz-math';
 
 const res1 = vEqual([1, 0], [1, 0]); // true
 const res2 = vEqual([1, 0], [0, 1]); // false
@@ -476,7 +470,7 @@ There are the following types of matrices:
 **Matrix2**
 
 ```js
-import { Matrix2 } from 'toolcool-math';
+import { Matrix2 } from 'mz-math';
 
 const m2: Matrix2 = [
   [1, 2],
@@ -501,7 +495,7 @@ const m2: Matrix2 = [
 **Matrix3**
 
 ```js
-import { Matrix3 } from 'toolcool-math';
+import { Matrix3 } from 'mz-math';
 
 const m3: Matrix3 = [
   [1, 2, 3],
@@ -528,7 +522,7 @@ const m3: Matrix3 = [
 **Matrix4**
 
 ```js
-import { Matrix4 } from 'toolcool-math';
+import { Matrix4 } from 'mz-math';
 
 const m4: Matrix4 = [
   [1, 2, 3, 4],
@@ -556,7 +550,7 @@ const m4: Matrix4 = [
 The generic **Matrix** type is used for all other cases:
 
 ```js
-import { Matrix } from 'toolcool-math';
+import { Matrix } from 'mz-math';
 
 const m: Matrix = [
   [1, 2, 3, 4, 5],
@@ -576,7 +570,7 @@ const m: Matrix = [
 There are helpers for creating **m2x2**, **m3x3**, and **mNxM** matrices with a default value. If no default value is specified, it will be zero.
 
 ```js
-import { m2x2, m3x3, m4x4, mNxM } from 'toolcool-math';
+import { m2x2, m3x3, m4x4, mNxM } from 'mz-math';
 
 const mat2x2 = m2x2(); 
 /*
@@ -644,7 +638,7 @@ const matNxM = mNxM(2, 3, 1);
 There are helpers for creating identity matrices: **identity2**, **identity3**, and **identityN**.
 
 ```js
-import { identity2, identity3, identity4, identityN } from 'toolcool-math';
+import { identity2, identity3, identity4, identityN } from 'mz-math';
 
 const idt2 = identity2();
 /*
@@ -695,7 +689,7 @@ const idt5 = identityN(5);
 It's possible to perform a deep comparison of two matrices using the **mEqual** function:
 
 ```js
-import { mEqual } from 'toolcool-math';
+import { mEqual } from 'mz-math';
 
 const res1 = mEqual(
         [
@@ -723,7 +717,7 @@ const res2 = mEqual(
 There are 3 function for matrices deep copy: **m2DeepCopy** for 2D matrices, **m3DeepCopy** for 3D matrices, and **mDeepCopy** for the general case:
 
 ```js
-import { Matrix2, m2DeepCopy } from 'toolcool-math';
+import { Matrix2, m2DeepCopy } from 'mz-math';
 
 const m2: Matrix2 = [
   [3, 5],
@@ -733,7 +727,7 @@ const copyM2 = m2DeepCopy(m2);
 ```
 
 ```js
-import { Matrix3, m3DeepCopy } from 'toolcool-math';
+import { Matrix3, m3DeepCopy } from 'mz-math';
 
 const m2: Matrix3 = [
   [3, 5, 1],
@@ -743,7 +737,7 @@ const copyM3 = m2DeepCopy(m3);
 ```
 
 ```js
-import { Matrix, mDeepCopy } from 'toolcool-math';
+import { Matrix, mDeepCopy } from 'mz-math';
 
 const m: Matrix = [
   [1, 0, 1, 2, 4],
@@ -755,7 +749,7 @@ const copy = mDeepCopy(m);
 ### Append or prepend a row to a matrix
 
 ```js
-import { Matrix2, Vector2, m2AppendRow, m2PrependRow } from 'toolcool-math';
+import { Matrix2, Vector2, m2AppendRow, m2PrependRow } from 'mz-math';
 
 const m2: Matrix2 = [
   [3, 5],
@@ -782,7 +776,7 @@ const res2 = m2PrependRow(m2, v2);
 ```
 
 ```js
-import { Matrix3, Vector3, m3AppendRow, m3PrependRow } from 'toolcool-math';
+import { Matrix3, Vector3, m3AppendRow, m3PrependRow } from 'mz-math';
 
 const m3: Matrix3 = [
   [1, 2, 3],
@@ -808,7 +802,7 @@ const res2 = m3PrependRow(m3, v3);
 ```
 
 ```js
-import { Matrix, Vector, mAppendRow, mPrependRow } from 'toolcool-math';
+import { Matrix, Vector, mAppendRow, mPrependRow } from 'mz-math';
 
 const m: Matrix = [
   [1, 2, 3, 4],
@@ -836,7 +830,7 @@ const res2 = mPrependRow(m, v);
 ### Append or prepend a column to a matrix
 
 ```js
-import { Matrix, Vector, mAppendCol, mPrependCol } from 'toolcool-math';
+import { Matrix, Vector, mAppendCol, mPrependCol } from 'mz-math';
 
 const m: Matrix = [
   [1, 2, 3, 4],
@@ -864,7 +858,7 @@ const res2 = mPrependCol(m, v);
 **Delete last row**
 
 ```js
-import { mDelLastRow } from 'toolcool-math';
+import { mDelLastRow } from 'mz-math';
 
 const res = mDelLastRow(
         [
@@ -882,7 +876,7 @@ const res = mDelLastRow(
 **Delete first row**
 
 ```js
-import { mDelFirstRow } from 'toolcool-math';
+import { mDelFirstRow } from 'mz-math';
 
 const res = mDelFirstRow(
         [
@@ -900,7 +894,7 @@ const res = mDelFirstRow(
 **Delete last column**
 
 ```js
-import { mDelLastColumn } from 'toolcool-math';
+import { mDelLastColumn } from 'mz-math';
 
 const res = mDelLastColumn(
         [
@@ -919,7 +913,7 @@ const res = mDelLastColumn(
 **Delete first column**
 
 ```js
-import { mDelFirstColumn } from 'toolcool-math';
+import { mDelFirstColumn } from 'mz-math';
 
 const res = mDelFirstColumn(
         [
@@ -938,7 +932,7 @@ const res = mDelFirstColumn(
 ## Get column from matrix
 
 ```js
-import { Matrix, mGetFirstColumn, mGetLastColumn, mGetColumn } from 'toolcool-math';
+import { Matrix, mGetFirstColumn, mGetLastColumn, mGetColumn } from 'mz-math';
 
 const m: Matrix = [
   [1, 0, 1, 1],
@@ -961,7 +955,7 @@ The following functions are used to add matrices: **m2Sum** for a 2D matrices, *
 **2D Matrix**
 
 ```js
-import { m2Sum, Matrix2 } from 'toolcool-math';
+import { m2Sum, Matrix2 } from 'mz-math';
 
 const matrix1: Matrix2 = [
   [1, 2],
@@ -984,7 +978,7 @@ const sum = m2Sum(matrix1, matrix2);
 
 **3D Matrix**
 ```js
-import { m3Sum, Matrix3 } from 'toolcool-math';
+import { m3Sum, Matrix3 } from 'mz-math';
 
 const matrix1: Matrix3 = [
   [1, 2, 10],
@@ -1007,7 +1001,7 @@ const sum = m3Sum(matrix1, matrix2);
 
 **General Case**
 ```js
-import { mSum, Matrix } from 'toolcool-math';
+import { mSum, Matrix } from 'mz-math';
 
 const matrix1: Matrix = [
   [1, 2, 3, 4],
@@ -1034,7 +1028,7 @@ The following functions are used to subtract matrices: **m2Sub** for a 2D matric
 
 **2D Matrix**
 ```js
-import { m2Sub, Matrix2 } from 'toolcool-math';
+import { m2Sub, Matrix2 } from 'mz-math';
 
 const matrix1: Matrix2 = [
   [1, 2],
@@ -1057,7 +1051,7 @@ const sub = m2Sub(matrix1, matrix2);
 
 **3D Matrix**
 ```js
-import { m2Sub, Matrix3 } from 'toolcool-math';
+import { m2Sub, Matrix3 } from 'mz-math';
 
 const matrix1: Matrix3 = [
   [1, 2, 10],
@@ -1081,7 +1075,7 @@ const sub = m2Sub(matrix1, matrix2);
 **General Case**
 
 ```js
-import { mSub, Matrix } from 'toolcool-math';
+import { mSub, Matrix } from 'mz-math';
 
 const matrix1: Matrix = [
   [1, 2, 3, 4],
@@ -1109,7 +1103,7 @@ You can multiply a matrix by a scalar using the **m2MulScalar**, **m3MulScalar**
 **2D Matrix**
 
 ```js
-import { m2MulScalar, Matrix2 } from 'toolcool-math';
+import { m2MulScalar, Matrix2 } from 'mz-math';
 
 const m2: Matrix2 = [
     [1, 2],
@@ -1126,7 +1120,7 @@ const res = m2MulScalar(m2, 5);
 ```
 
 ```js
-import { m2MulScalar, Matrix2 } from 'toolcool-math';
+import { m2MulScalar, Matrix2 } from 'mz-math';
 
 const m2: Matrix2 = [
   [1.12345, 12.66746776],
@@ -1145,7 +1139,7 @@ const res = m2MulScalar(m2, 10, 2); // 2 decimal places
 **3D Matrix**
 
 ```js
-import { m3MulScalar, Matrix3 } from 'toolcool-math';
+import { m3MulScalar, Matrix3 } from 'mz-math';
 
 const m3: Matrix3 = [
   [1, 2, 3],
@@ -1162,7 +1156,7 @@ const res = m3MulScalar(m3, 2);
 ```
 
 ```js
-import { m3MulScalar, Matrix3 } from 'toolcool-math';
+import { m3MulScalar, Matrix3 } from 'mz-math';
 
 const m3: Matrix3 = [
   [1, 2, 3],
@@ -1188,7 +1182,7 @@ You can multiply a matrix by a scalar using the **m2DivideScalar**, **m3DivideSc
 **2D Matrix**
 
 ```js
-import { m2DivideScalar, Matrix2 } from 'toolcool-math';
+import { m2DivideScalar, Matrix2 } from 'mz-math';
 
 const m2: Matrix2 = [
     [1, 2],
@@ -1205,7 +1199,7 @@ const res = m2DivideScalar(m2, 5);
 ```
 
 ```js
-import { m2DivideScalar, Matrix2 } from 'toolcool-math';
+import { m2DivideScalar, Matrix2 } from 'mz-math';
 
 const m2: Matrix2 = [
   [1.12345, 12.66746776],
@@ -1224,7 +1218,7 @@ const res = m2DivideScalar(m2, 10, 2); // 2 decimal places
 **3D Matrix**
 
 ```js
-import { m3DivideScalar, Matrix3 } from 'toolcool-math';
+import { m3DivideScalar, Matrix3 } from 'mz-math';
 
 const m3: Matrix3 = [
   [1, 2, 3],
@@ -1241,7 +1235,7 @@ const res = m3DivideScalar(m3, 2);
 ```
 
 ```js
-import { m3DivideScalar, Matrix3 } from 'toolcool-math';
+import { m3DivideScalar, Matrix3 } from 'mz-math';
 
 const m3: Matrix3 = [
   [1, 2, 3],
@@ -1260,7 +1254,7 @@ const res = m3DivideScalar(m3, 1.5123123, 1); // 1 decimal place
 **General Case**
 
 ```js
-import { mDivideScalar, Matrix } from 'toolcool-math';
+import { mDivideScalar, Matrix } from 'mz-math';
 
 const matrix: Matrix = [
   [1, 2, 3, 4],
@@ -1283,7 +1277,7 @@ You can transpose a matrix using the **m2Transpose**, **m3Transpose**, or **mTra
 **2D Matrix**
 
 ```js
-import { m2Transpose, Matrix2 } from 'toolcool-math';
+import { m2Transpose, Matrix2 } from 'mz-math';
 
 const m2: Matrix2 = [
   [-1, 5],
@@ -1302,7 +1296,7 @@ const res = m2Transpose(m2);
 **3D Matrix**
 
 ```js
-import { m3Transpose, Matrix3 } from 'toolcool-math';
+import { m3Transpose, Matrix3 } from 'mz-math';
 
 const m3: Matrix3 = [
   [1, 3, 7],
@@ -1322,7 +1316,7 @@ const res = m3Transpose(m3);
 **General Case**
 
 ```js
-import { mTranspose, Matrix } from 'toolcool-math';
+import { mTranspose, Matrix } from 'mz-math';
 
 const matrix: Matrix = [
   [1, 2, 3, 4],
@@ -1345,7 +1339,7 @@ const res = mTranspose(matrix);
 You can multiply matrices using the **mMul** function. The function receives an optional **decimalPlaces** parameter.
 
 ```js
-import { mMul, Matrix3, Matrix2 } from 'toolcool-math';
+import { mMul, Matrix3, Matrix2 } from 'mz-math';
 
 const matrix1: Matrix3 = [
     [0, 3, 5],
@@ -1369,7 +1363,7 @@ const res = mMul(matrix1, matrix2);
 ```
 
 ```js
-import { mMul, Matrix2 } from 'toolcool-math';
+import { mMul, Matrix2 } from 'mz-math';
 
 const matrix1: Matrix2 = [
   [2.092345, -2.2345234],
@@ -1396,7 +1390,7 @@ const res = mMul(matrix1, matrix2, 2); // round to 2 decimal places
 You can multiply matrix by vector using the **mMulVector** function. The function receives an optional **decimalPlaces** parameter.
 
 ```js
-import { mMulVector, Matrix3 } from 'toolcool-math';
+import { mMulVector, Matrix3 } from 'mz-math';
 
 const matrix: Matrix3 = [
     [0, 3, 5],
@@ -1415,7 +1409,7 @@ It is possible to reset all matrix values with some default value. If no default
 **2D Matrix**
 
 ```js
-import { Matrix2, m2Reset } from 'toolcool-math';
+import { Matrix2, m2Reset } from 'mz-math';
 
 const m2: Matrix2 = [
   [1, 2],
@@ -1432,7 +1426,7 @@ const res = m2Reset(m2);
 ```
 
 ```js
-import { Matrix2, m2Reset } from 'toolcool-math';
+import { Matrix2, m2Reset } from 'mz-math';
 
 const m2: Matrix2 = [
   [1, 2],
@@ -1451,7 +1445,7 @@ const res = m2Reset(m2, 10);
 **3D Matrix**
 
 ```js
-import { Matrix3, m3Reset } from 'toolcool-math';
+import { Matrix3, m3Reset } from 'mz-math';
 
 const m3: Matrix3 = [
   [1, 2, 3],
@@ -1468,7 +1462,7 @@ const res = m3Reset(m3);
 ```
 
 ```js
-import { Matrix3, m3Reset } from 'toolcool-math';
+import { Matrix3, m3Reset } from 'mz-math';
 
 const m3: Matrix3 = [
   [1, 2, 3],
@@ -1487,7 +1481,7 @@ const res = m3Reset(m3, 1.5);
 **General Case**
 
 ```js
-import { Matrix, m3Reset } from 'toolcool-math';
+import { Matrix, m3Reset } from 'mz-math';
 
 const m: Matrix = [
   [1, 2, 3, 4, 5],
@@ -1504,7 +1498,7 @@ const res = m3Reset(m);
 ```
 
 ```js
-import { Matrix, m3Reset } from 'toolcool-math';
+import { Matrix, m3Reset } from 'mz-math';
 
 const m: Matrix = [
   [1, 2, 3, 4, 5],
@@ -1531,7 +1525,7 @@ It's possible to get a translation matrix using the functions below. Each functi
 **Translation in non-homogeneous coordinates**
 
 ```js
-import { m2Translation, m3Translation, Matrix2, Matrix3 } from 'toolcool-math';
+import { m2Translation, m3Translation, Matrix2, Matrix3 } from 'mz-math';
 
 // translation matrix for the position [10, 20]
 const mat1: Matrix2 = m2Translation([10, 20]);
@@ -1560,7 +1554,7 @@ const mat2: Matrix3 = m3Translation([10, 20, 30]);
 **Translation in homogeneous coordinates**
 
 ```js
-import { m2TranslationH, m3TranslationH, Matrix3, Matrix4 } from 'toolcool-math';
+import { m2TranslationH, m3TranslationH, Matrix3, Matrix4 } from 'mz-math';
 
 // translation matrix for the position [10, 20] in homogeneous coordinates.
 const mat1: Matrix3 = m2TranslationH([10, 20, 1]);
@@ -1593,7 +1587,7 @@ const mat2: Matrix4 = m3TranslationH([10, 20, 30, 1]);
 It's possible to get a 2D rotation matrix for a given angle in radians as follows:
 
 ```js
-import { m2Rotation, Matrix2, Matrix3 } from 'toolcool-math';
+import { m2Rotation, Matrix2, Matrix3 } from 'mz-math';
 
 // Rotation of an angle 90deg about the origin
 let angle = Math.PI/2; // radians
@@ -1625,7 +1619,7 @@ let mat2: Matrix3 = m2RotationH(angle, isClockwise, decimalPlaces);
 It is also possible to get the actual rotated vector using the **v2Rotate** and **v2RotateH** functions. Each function supports an optional **decimalPlaces** parameter.
 
 ```js
-import { Vector2, Vector3, v2Rotate, v2RotateH } from 'toolcool-math';
+import { Vector2, Vector3, v2Rotate, v2RotateH } from 'mz-math';
 
 // vector rotated by 90 degrees around the origin
 let angle = Math.PI/2; // radians
@@ -1649,7 +1643,7 @@ It's possible to get the following 3D rotation matrices:
 **non-homogeneous coordinates**
 
 ```js
-import { m3RotationX, m3RotationY, m3RotationZ, Matrix3 } from 'toolcool-math';
+import { m3RotationX, m3RotationY, m3RotationZ, Matrix3 } from 'mz-math';
 
 // rotation matrix around the X axis
 let angle = Math.PI/2; // radians
@@ -1673,7 +1667,7 @@ const rmat3z: Matrix3 = m3RotationZ(angle, isClockwise, decimalPlaces);
 **homogeneous coordinates**
 
 ```js
-import { m3RotationXH, m3RotationYH, m3RotationZH, Matrix4 } from 'toolcool-math';
+import { m3RotationXH, m3RotationYH, m3RotationZH, Matrix4 } from 'mz-math';
 
 // rotation matrix around the X axis
 let angle = Math.PI/2; // radians
@@ -1697,7 +1691,7 @@ const rmat3z: Matrix4 = m3RotationZH(angle, isClockwise, decimalPlaces);
 It is also possible to get the actual rotated vector using the following functions:
 
 ```js
-import { Vector3, v3RotateX, v3RotateY, v3RotateZ } from 'toolcool-math';
+import { Vector3, v3RotateX, v3RotateY, v3RotateZ } from 'mz-math';
 
 // rotation around the X axis
 let angle = Math.PI/2; // radians
@@ -1726,7 +1720,7 @@ const rotatedVector3: Vector3 = v3RotateZ(angle, vector, isClockwise, decimalPla
 It's possible to rotate a point [x, y] (in homogeneous coordinates) around the given origin as follows:
 
 ```js
-import { Vector3, m2RotationAroundPointH } from 'toolcool-math';
+import { Vector3, m2RotationAroundPointH } from 'mz-math';
 
 const angle = Math.PI/4; // radians
 const transformOrigin = [100, 100, 1]; // in homogeneous coordinates
@@ -1752,7 +1746,7 @@ const mat3: Matrix3 = m2RotationAroundPointH(
 );
 ```
 
-[Circle Movement Example](https://github.com/toolcool-org/toolcool-math/blob/main/examples/circular-movement/circle-movement-1.html)
+[Circle Movement Example](https://github.com/mzusin/mz-math/blob/main/examples/circular-movement/circle-movement-1.html)
 
 -----------------------------------------------
 
@@ -1763,7 +1757,7 @@ const mat3: Matrix3 = m2RotationAroundPointH(
 It's possible to get a 2D scale matrix for a given scale vector as follows:
 
 ```js
-import { m2Scale, m2ScaleX, m2ScaleH, m2ScaleXH, m2ScaleYH, Matrix2, Matrix3 } from 'toolcool-math';
+import { m2Scale, m2ScaleX, m2ScaleH, m2ScaleXH, m2ScaleYH, Matrix2, Matrix3 } from 'mz-math';
 
 // scale matrix with 2x and 4y - non-homogeneous coordinates
 const mat1: Matrix2 = m2Scale([2, 4]); 
@@ -1826,7 +1820,7 @@ const mat3: Matrix3 = m2ScaleYH(2);
 It is also possible to get the actual scaled vector using the **v2Scale** function:
 
 ```js
-import { Vector2, v2Scale } from 'toolcool-math';
+import { Vector2, v2Scale } from 'mz-math';
 
 // scale the vector [10, 20] with [2, 4] scale vector
 const scaledVector: Vector2 = v2Scale([2, 4], [10, 20]); 
@@ -1837,7 +1831,7 @@ const scaledVector: Vector2 = v2Scale([2, 4], [10, 20]);
 It's possible to get a 3D scale matrix for a given scale vector as follows:
 
 ```js
-import { m3Scale, m3ScaleH, Matrix3, Matrix4 } from 'toolcool-math';
+import { m3Scale, m3ScaleH, Matrix3, Matrix4 } from 'mz-math';
 
 // scale matrix with 2x, 4y, and 6z - non-homogeneous coordinates
 const smat3: Matrix3 = m3Scale([2, 4, 6]);
@@ -1864,7 +1858,7 @@ const smat3: Matrix4 = m3ScaleH([2, 4, 6, 1]);
 It is also possible to get the actual scaled vector using the **v3Scale** function:
 
 ```js
-import { Vector3, v3Scale } from 'toolcool-math';
+import { Vector3, v3Scale } from 'mz-math';
 
 // scale the vector [10, 20, 30] with [2, 4, 6] scale vector
 const scaledVector: Vector3 = v3Scale([2, 4, 6], [10, 20, 30]); 
@@ -1873,7 +1867,7 @@ const scaledVector: Vector3 = v3Scale([2, 4, 6], [10, 20, 30]);
 Stretch in different directions:
 
 ```js
-import { m3ScaleX, m3ScaleY, m3ScaleZ, m3ScaleXH, Matrix3, Matrix4 } from 'toolcool-math';
+import { m3ScaleX, m3ScaleY, m3ScaleZ, m3ScaleXH, Matrix3, Matrix4 } from 'mz-math';
 
 // stretch in x-direction - non-homogeneous coordinates
 const mat: Matrix3 = m3ScaleX(2); 
@@ -1945,7 +1939,7 @@ const mat: Matrix4 = m3ScaleZH(2);
 It's possible to scale a point [x, y] (in homogeneous coordinates) around the given pivot point as follows:
 
 ```js
-import { Vector3, m2ScaleAtPointH, m2ScaleAtPointHMatrix } from 'toolcool-math';
+import { Vector3, m2ScaleAtPointH, m2ScaleAtPointHMatrix } from 'mz-math';
 
 const scaleVector: Vector3 = [2, 4, 1]; // in homogeneous coordinates
 const transformOrigin = [100, 100, 1]; // in homogeneous coordinates
@@ -1983,7 +1977,7 @@ import {
     m2ReflectionY, m2ReflectionYH,
     m2ReflectionYX, m2ReflectionYmX, 
     Matrix2 
-} from 'toolcool-math';
+} from 'mz-math';
 
 // reflection about the origin in non-homogeneous coordinates
 const mat0: Matrix2 = m2ReflectionOrigin();
@@ -2072,7 +2066,7 @@ import {
   m3ReflectionYZ, m3ReflectionYZH,
   m3ReflectionXZ, m3ReflectionXZH,
   m3ReflectionXY, m3ReflectionXYH,
-  Matrix3, Matrix4 } from 'toolcool-math';
+  Matrix3, Matrix4 } from 'mz-math';
 
 // reflection about the origin in non-homogeneous coordinates
 const mat0: Matrix3 = m3ReflectionOrigin();
@@ -2166,7 +2160,7 @@ const mat2: Matrix4 = m3ReflectionXYH();
 **2D shearing matrix**
 
 ```js
-import { m2ShearingX, m2ShearingY, Matrix2 } from 'toolcool-math';
+import { m2ShearingX, m2ShearingY, Matrix2 } from 'mz-math';
 
 // shearing in x-axis, with y-axis fixed with (1,0) moving to (1, factor)
 const factor = 5;
@@ -2196,7 +2190,7 @@ const mat2: Matrix2 = m2ShearingY(factor);
 The functions below help to convert the matrix to the following CSS functions: [matrix()](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix) and [matrix3d()](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix3d).
 
 ```js
-import { Matrix3, m2hToCSS } from 'toolcool-math';
+import { Matrix3, m2hToCSS } from 'mz-math';
 
 // 2d matrix in homogeneous coordinates
 const mat: Matrix3 = [
@@ -2218,7 +2212,7 @@ It can be used as:
 [matrix3d()](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix3d) representation:
 
 ```js
-import { Matrix3, m2hToCSS3d } from 'toolcool-math';
+import { Matrix3, m2hToCSS3d } from 'mz-math';
 
 // 2d matrix in homogeneous coordinates
 const mat: Matrix3 = [
@@ -2232,7 +2226,7 @@ const str1 = m2hToCSS3d(mat); // matrix3d(1, 3, 0, 0, 2, 4, 0, 0, 0, 0, 1, 0, 0,
 Non-homogeneous coordinates version:
 
 ```js
-import { Matrix2, m2ToCSS } from 'toolcool-math';
+import { Matrix2, m2ToCSS } from 'mz-math';
 
 // 2d matrix in homogeneous coordinates
 const mat: Matrix2 = [
@@ -2245,7 +2239,7 @@ const str1 = m2ToCSS(mat); // matrix(1, 3, 2, 4, 0, 0)
 3D matrix in homogeneous coordinates:
 
 ```js
-import { Matrix4, m3hToCSS3d } from 'toolcool-math';
+import { Matrix4, m3hToCSS3d } from 'mz-math';
 
 // 2d matrix in homogeneous coordinates
 const mat: Matrix4 = [
@@ -2265,7 +2259,7 @@ matrix3d(
  */
 ```
 
-[Matrix to CSS transform example (rotation)](https://github.com/toolcool-org/toolcool-math/blob/main/examples/matrix-to-css-rotation.html)
+[Matrix to CSS transform example (rotation)](https://github.com/mzusin/mz-math/blob/main/examples/matrix-to-css-rotation.html)
 
 -----------------------------------------------
 
@@ -2276,7 +2270,7 @@ The determinant can be calculated for any square matrix using the **m2Determinan
 Calculating the determinant for a 2x2 matrix:
 
 ```js
-import { Matrix2, m2Determinant } from 'toolcool-math';
+import { Matrix2, m2Determinant } from 'mz-math';
 
 const m2x2: Matrix2 = [
   [5, 3],
@@ -2289,7 +2283,7 @@ const d = m2Determinant(m2x2); // 23
 Calculating the determinant for a 3x3 matrix:
 
 ```js
-import { Matrix3, m3Determinant } from 'toolcool-math';
+import { Matrix3, m3Determinant } from 'mz-math';
 
 const m3x3: Matrix3 = [
   [4, -1, 1],
@@ -2303,7 +2297,7 @@ const d = m3Determinant(m3x3); // 16
 Calculating the determinant for a 4x4 matrix or above:
 
 ```js
-import { Matrix, mDeterminant } from 'toolcool-math';
+import { Matrix, mDeterminant } from 'mz-math';
 
 const m4x4: Matrix = [
   [4, 3, 2, 2],
@@ -2324,7 +2318,7 @@ To inverse matrices, you can use the **m2Inverse**, **m3Inverse**, or **mInverse
 **2x2 matrix**
 
 ```js
-import { Matrix2, m2Inverse } from 'toolcool-math';
+import { Matrix2, m2Inverse } from 'mz-math';
 
 const m2x2: Matrix2 = [
   [3, 5],
@@ -2343,7 +2337,7 @@ const inverted: Matrix2|null = m2Inverse(m2x2, 3); // round to 3 decimal places
 **3x3 matrix**
 
 ```js
-import { Matrix3, m3Inverse } from 'toolcool-math';
+import { Matrix3, m3Inverse } from 'mz-math';
 
 const m3x3: Matrix3 = [
   [-1, -2, 2],
@@ -2364,7 +2358,7 @@ const inverted: Matrix3|null = m3Inverse(m3x3, 2); // round to 2 decimal places
 **3x3 matrix or above**
 
 ```js
-import { Matrix, mInverse } from 'toolcool-math';
+import { Matrix, mInverse } from 'mz-math';
 
 const m4x4: Matrix = [
   [1, 1, 1, -1],
@@ -2389,7 +2383,7 @@ const inverted: Matrix|null = mInverse(m4x4);
 ### Check if matrix is singular
 
 ```js
-import { Matrix, isSingularMatrix } from 'toolcool-math';
+import { Matrix, isSingularMatrix } from 'mz-math';
 
 const m: Matrix = [
   [3, 5],
@@ -2400,7 +2394,7 @@ const isSingular = isSingularMatrix(m); // false
 ```
 
 ```js
-import { Matrix, isSingularMatrix } from 'toolcool-math';
+import { Matrix, isSingularMatrix } from 'mz-math';
 
 const m: Matrix = [
   [2, 4, 6],
@@ -2420,7 +2414,7 @@ To adjugate matrices, you can use the **m2Adjugate**, **m3Adjugate**, or **mAdju
 **2x2 matrix**
 
 ```js
-import { Matrix2, m2Adjugate } from 'toolcool-math';
+import { Matrix2, m2Adjugate } from 'mz-math';
 
 const m2x2: Matrix2 = [
   [3, 5],
@@ -2440,7 +2434,7 @@ const adj: Matrix2 | null = m2Adjugate(m2x2);
 **3x3 matrix**
 
 ```js
-import { Matrix3, m3Adjugate } from 'toolcool-math';
+import { Matrix3, m3Adjugate } from 'mz-math';
 
 const m3x3: Matrix3 = [
   [3, 5, 1],
@@ -2462,7 +2456,7 @@ const adj: Matrix3 | null = m3Adjugate(m3x3);
 **4x4 matrix or above**
 
 ```js
-import { Matrix, mAdjugate } from 'toolcool-math';
+import { Matrix, mAdjugate } from 'mz-math';
 
 const m4x4: Matrix = [
   [1, 1, 1, -1],
@@ -2488,7 +2482,7 @@ const adj: Matrix | null = mAdjugate(m4x4);
 ## Get Matrix Minor
 
 ```js
-import { Matrix, mMinor } from 'toolcool-math';
+import { Matrix, mMinor } from 'mz-math';
 
 const m: Matrix = [
   [4, 3, 2, 2],
@@ -2510,7 +2504,7 @@ const minor: Matrix = mMinor(m, 0, 0); // -60
 The **getV2Angle** function returns the angle **in radians** between the positive x-axis and the ray from (0, 0) to the vector (x, y). It supports an optional **decimalPlaces** parameter. Each function returns a result in the range [0, Math.PI].
 
 ```js
-import { getV2Angle } from 'toolcool-math';
+import { getV2Angle } from 'mz-math';
 
 const angle1 = getV2Angle([10, 20]); // 1.1071487177940904 radians
 const angle2 = getV2Angle([10, 20], 2); // 1.11 radians
@@ -2521,7 +2515,7 @@ const angle2 = getV2Angle([10, 20], 2); // 1.11 radians
 If a 2D vector is given, change it to have the new angle (in radians). This function supports an optional **decimalPlaces** parameter.
 
 ```js
-import { setV2Angle } from 'toolcool-math';
+import { setV2Angle } from 'mz-math';
 
 const updatedVector1 = setV2Angle([10, 20], 1.22); // [7.684152489413291, 20.99889998355732]
 const updatedVector2 = setV2Angle([10, 20], 1.22, 2); // [7.68, 21]
@@ -2534,7 +2528,7 @@ The following functions can be used to find the angle between two vectors. Each 
 **2D vectors:**
 
 ```js
-import { getV2AngleBetween, Vector2 } from 'toolcool-math';
+import { getV2AngleBetween, Vector2 } from 'mz-math';
 
 const vector1: Vector2 = [10, 20];
 const vector2: Vector2 = [100, 150];
@@ -2545,7 +2539,7 @@ const angle = getV2AngleBetween(vector1, vector2, decimalPlaces);
 **3D vectors:**
 
 ```js
-import { getV3AngleBetween, Vector3 } from 'toolcool-math';
+import { getV3AngleBetween, Vector3 } from 'mz-math';
 
 const vector1: Vector3 = [10, 20, 1];
 const vector2: Vector3 = [100, 150, 1];
@@ -2556,7 +2550,7 @@ const angle = getV3AngleBetween(vector1, vector2, decimalPlaces);
 **General case:**
 
 ```js
-import { getVNAngleBetween, Vector } from 'toolcool-math';
+import { getVNAngleBetween, Vector } from 'mz-math';
 
 const vector1: Vector = [10, 20, 1];
 const vector2: Vector = [100, 150, 1];
@@ -2569,7 +2563,7 @@ const angle = getVNAngleBetween(vector1, vector2, decimalPlaces);
 ## Degrees to radians
 
 ```js
-import { degreesToRadians } from 'toolcool-math';
+import { degreesToRadians } from 'mz-math';
 
 const res1 = degreesToRadians(90); // 1.5707963267948966
 const res2 = degreesToRadians(90, 2); // 1.57
@@ -2578,7 +2572,7 @@ const res2 = degreesToRadians(90, 2); // 1.57
 ## Radians to degrees
 
 ```js
-import { radiansToDegrees } from 'toolcool-math';
+import { radiansToDegrees } from 'mz-math';
 
 const res = radiansToDegrees(1.5708); // 90.00021045914971
 const res = radiansToDegrees(1.5708, 0); // 90
@@ -2595,7 +2589,7 @@ const res = radiansToDegrees(4.71239, 3); // 270
 This helper allows to format a number to show a selected number of decimal places.
 
 ```js
-import { setDecimalPlaces } from 'toolcool-math';
+import { setDecimalPlaces } from 'mz-math';
 
 const res = setDecimalPlaces(1.2345, 2); // 1.23
 const res = setDecimalPlaces(1.2399, 2); // 1.24
@@ -2617,7 +2611,7 @@ const res = setDecimalPlaces(1.239999, 4); // 1.2400 = 1.24
 This function converts a numeric string to a number. If the string is not a number, it returns the provided default value.
 
 ```js
-import { stringToNumber } from 'toolcool-math';
+import { stringToNumber } from 'mz-math';
 
 const res = stringToNumber('10.1234', 10); // 10.1234
 const res = stringToNumber(undefined, 10); // 10
@@ -2634,7 +2628,7 @@ const res = stringToNumber('aaa', 10); // 10
 This function returns a random number in the range [min, max]. It supports an optional **decimalPlaces** parameter.
 
 ```js
-import { getRandom } from 'toolcool-math';
+import { getRandom } from 'mz-math';
 
 const res1 = getRandom(10, 100); // 93.57877355999018
 const res2 = getRandom(10, 100, 2); // 80.28
@@ -2645,7 +2639,7 @@ const res2 = getRandom(10, 100, 2); // 80.28
 This function returns a random integer number in the range [min, max].
 
 ```js
-import { getRandomInt } from 'toolcool-math';
+import { getRandomInt } from 'mz-math';
 
 const res = getRandomInt(0, 100); // 63
 ```
@@ -2653,7 +2647,7 @@ const res = getRandomInt(0, 100); // 63
 ## Get random boolean value
 
 ```js
-import { getRandomBoolean } from 'toolcool-math';
+import { getRandomBoolean } from 'mz-math';
 
 const res = getRandomBoolean(); // true or false
 ```
@@ -2661,7 +2655,7 @@ const res = getRandomBoolean(); // true or false
 ## Get random item from array
 
 ```js
-import { getRandomItemFromArray } from 'toolcool-math';
+import { getRandomItemFromArray } from 'mz-math';
 
 const item1 = getRandomItemFromArray([1,2,3,4,5]); // 2
 const item2 = getRandomItemFromArray(['a', 'b', 'c']); // 'a'
@@ -2671,7 +2665,7 @@ const item3 = getRandomItemFromArray([{ test: 1 }, { test: 2 }, { test: 3 }]); /
 ## Random ID or GUID
 
 ```js
-import { guid, newId } from 'toolcool-math';
+import { guid, newId } from 'mz-math';
 
 const res1 = newId(); // a string like 'df4unio1opulby2uqh4'
 const res2 = guid(); // a guid like '932ade5e-c515-4807-ac01-73b20ab3fb66'
@@ -2688,7 +2682,7 @@ Get a point on a quadratic Bézier curve as a function of time, where t is in th
 **2D Vector**
 
 ```js
-import { v2QuadraticBezierCurve } from 'toolcool-math';
+import { v2QuadraticBezierCurve } from 'mz-math';
 
 const v2 = v2QuadraticBezierCurve(
         0.5,
@@ -2715,7 +2709,7 @@ const v2 = v2QuadraticBezierCurve(
 **3D Vector**
 
 ```js
-import { v3QuadraticBezierCurve } from 'toolcool-math';
+import { v3QuadraticBezierCurve } from 'mz-math';
 
 const v3 = v3QuadraticBezierCurve(
         0.5,
@@ -2746,7 +2740,7 @@ Get a point on a cubic Bézier curve as a function of time, where t is in the ra
 **2D Vector**
 
 ```js
-import { v2CubicBezierCurve } from 'toolcool-math';
+import { v2CubicBezierCurve } from 'mz-math';
 
 const v2 = v2CubicBezierCurve(
         0.5,
@@ -2776,7 +2770,7 @@ const v2 = v2CubicBezierCurve(
 **3D Vector**
 
 ```js
-import { v3CubicBezierCurve } from 'toolcool-math';
+import { v3CubicBezierCurve } from 'mz-math';
 
 const v3 = v3CubicBezierCurve(
         0.5,
@@ -2817,7 +2811,7 @@ If the system of equations has no solution, then **null** is returned.
 
 For example:
 ```js
-import { equationSystem2, Vector2, Vector3 } from 'toolcool-math';
+import { equationSystem2, Vector2, Vector3 } from 'mz-math';
 
 // 3x + 2y = 7 
 // -6x + 6y = 6
@@ -2835,7 +2829,7 @@ If the system of equations has no solution, then **null** is returned.
 
 For example:
 ```js
-import { equationSystem3, Vector3, Vector } from 'toolcool-math';
+import { equationSystem3, Vector3, Vector } from 'mz-math';
 
 // 2x + y + 2z = -2
 // -2x + 2y -z = -5
@@ -2855,7 +2849,7 @@ If the system of equations has no solution, then **null** is returned.
 
 For example:
 ```js
-import { equationSystem, Vector } from 'toolcool-math';
+import { equationSystem, Vector } from 'mz-math';
 
 /*
 y + z - 2w = -3
@@ -2883,7 +2877,7 @@ const result: Vector|null = equationSystemN(parameters, 2); // round to 2 decima
 ## Circle Movement
 
 ```js
-import { circleMovement, Vector2 } from 'toolcool-math';
+import { circleMovement, Vector2 } from 'mz-math';
 
 const center: Vector2 = [100, 100];
 const angle = Math.PI/2;
@@ -2891,12 +2885,12 @@ const radius = 250;
 const newPosition: Vector2 = circleMovement(center, angle, radius);
 ```
 
-[Example](https://github.com/toolcool-org/toolcool-math/blob/main/examples/circular-movement/circle-movement-3.html)
+[Example](https://github.com/mzusin/mz-math/blob/main/examples/circular-movement/circle-movement-3.html)
 
 ## Circle movement after mouse
 
 ```js
-import { circleMovementAfterMouse, Vector2 } from 'toolcool-math';
+import { circleMovementAfterMouse, Vector2 } from 'mz-math';
 
 const mouse = [evt.clientX, evt.clientY];
 const center: Vector2 = [100, 100];
@@ -2905,12 +2899,12 @@ const radius = 250;
 const position: Vector2 = circleMovementAfterMouse(mouse, center, radius);
 ```
 
-[Example](https://github.com/toolcool-org/toolcool-math/blob/main/examples/circular-movement/circle-movement-mouse-1.html)
+[Example](https://github.com/mzusin/mz-math/blob/main/examples/circular-movement/circle-movement-mouse-1.html)
 
 ## Ellipse Movement
 
 ```js
-import { ellipseMovement, Vector2 } from 'toolcool-math';
+import { ellipseMovement, Vector2 } from 'mz-math';
 
 const center: Vector2 = [100, 100];
 const angle = Math.PI/2;
@@ -2919,12 +2913,12 @@ const radius2 = 150;
 const newPosition: Vector2 = ellipseMovement(center, angle, radius1, radius2);
 ```
 
-[Example](https://github.com/toolcool-org/toolcool-math/blob/main/examples/circular-movement/ellipse-movement-3.html)
+[Example](https://github.com/mzusin/mz-math/blob/main/examples/circular-movement/ellipse-movement-3.html)
 
 ## Sine Wave Movement
 
 ```js
-import { ellipseMovement, Vector2 } from 'toolcool-math';
+import { ellipseMovement, Vector2 } from 'mz-math';
 
 const amplitude = 100; // the peak deviation of the function from zero
 const frequency = 0.003; // number of cycles
@@ -2933,12 +2927,12 @@ const x = 0; // changes from 0 to .... N
 const newPosition: Vector2 = ellipseMovement(x, amplitude, frequency, phase);
 ```
 
-[Example](https://github.com/toolcool-org/toolcool-math/blob/main/examples/wave-movement/wave-movement-1.html)
+[Example](https://github.com/mzusin/mz-math/blob/main/examples/wave-movement/wave-movement-1.html)
 
 ## Lissajous curve
 
 ```js
-import { lissajousCurve, Vector2, getRandom } from 'toolcool-math';
+import { lissajousCurve, Vector2, getRandom } from 'mz-math';
 
 const m = 0;
 const p = 0;
@@ -2950,7 +2944,7 @@ const n = getRandom(0, Math.PI * 2); // [0, 360]
 const A = getRandom(0, 100);  // [0, 100] - width
 const B = getRandom(0, 100);  // [0, 100] - height
 
-const newPosition: Vector2 = TCMath.lissajousCurve(
+const newPosition: Vector2 = MZMath.lissajousCurve(
     A, // width
     B, // height
     t,
@@ -2967,7 +2961,7 @@ f(t) = B * cos(n * t - p)
  */
 ```
 
-[Example](https://github.com/toolcool-org/toolcool-math/blob/main/examples/lissajous-curves/lissajous-curves-canvas.html)
+[Example](https://github.com/mzusin/mz-math/blob/main/examples/lissajous-curves/lissajous-curves-canvas.html)
 
 -----------------------------------------------
 
@@ -2976,7 +2970,7 @@ f(t) = B * cos(n * t - p)
 The library contains several color helper functions. It works with the following color types:
 
 ```js
-import { HSLColor, RGBColor } from 'toolcool-math';
+import { HSLColor, RGBColor } from 'mz-math';
 
 // [hue, saturation, lightness] 
 const hslColor: HSLColor = [0, 0, 0]; // [0-360, 0-100, 0-100]
@@ -2993,7 +2987,7 @@ import {
   getRandomRGBColor, getRandomHSLColor, 
   getRandomHSLColorWithHue, getRandomHSLColorWithSaturation, 
   getRandomHSLColorWithinRanges, getRandomGrayscaleHSLColor 
-} from 'toolcool-math';
+} from 'mz-math';
 
 // get random HEX color
 const rgbColor: string = getRandomHexColor();
@@ -3028,7 +3022,7 @@ const hslColor5: HSLColor = getRandomGrayscaleHSLColor();
 ## Convert Colors
 
 ```js
-import { HSLColor, RGBColor, hslToRgb, rgbToHsl, hslToHex } from 'toolcool-math';
+import { HSLColor, RGBColor, hslToRgb, rgbToHsl, hslToHex } from 'mz-math';
 
 const decimalPlaces = 2; // optional
 
@@ -3045,7 +3039,7 @@ const hex: string = hslToHex([10, 10, 10]); // #1c1817
 ## Shift colors
 
 ```js
-import { HSLColor, getShiftedHue, getShiftedSaturation, getShiftedLightness } from 'toolcool-math';
+import { HSLColor, getShiftedHue, getShiftedSaturation, getShiftedLightness } from 'mz-math';
 
 // shift hue in [0, 0, 39] by -10 degrees
 const hslColor1: HSLColor = getShiftedHue([0, 0, 39], -10); // [350, 0, 39]
@@ -3065,7 +3059,7 @@ const hslColor3: HSLColor = getShiftedLightness([0, 0, 39], 10); // [10, 0, 39]
 Get the side of a square inscribed in a circle of a given radius:
 
 ```js
-import { getSquareInCircleSide } from 'toolcool-math';
+import { getSquareInCircleSide } from 'mz-math';
 
 const circleRadius = 10;
 const decimalPlaces = 2; // optional
@@ -3082,7 +3076,7 @@ const squareSide = getSquareInCircleSide(10); // 14.14
 Calculate the modulo for positive or negative numbers.
 
 ```js
-import { mod } from 'toolcool-math';
+import { mod } from 'mz-math';
 
 const res1 = mod(-21, 4); // 3
 const res2 = mod(7, 3); // 1
@@ -3093,7 +3087,7 @@ const res2 = mod(7, 3); // 1
 Converting a number from the range [a,b] to the range [c,d].
 
 ```js
-import { convertRange } from 'toolcool-math';
+import { convertRange } from 'mz-math';
 
 // convert the value 0.5 from the range [0,1] to the range [100,200]
 const res = convertRange(0.5, 0, 1, 100, 200); // 150
@@ -3102,7 +3096,7 @@ const res = convertRange(0.5, 0, 1, 100, 200); // 150
 ## Check if two ranges overlap
 
 ```js
-import { doRangesOverlap } from 'toolcool-math';
+import { doRangesOverlap } from 'mz-math';
 
 // [0,1] and [100,200] don't overlap
 const res1 = doRangesOverlap(0, 1, 100, 200); // false
@@ -3114,7 +3108,7 @@ const res2 = doRangesOverlap(0, 1, 0.5, 1.5); // true
 ## Check if value can be converted to number
 
 ```js
-import { isNumber } from 'toolcool-math';
+import { isNumber } from 'mz-math';
 
 const res = isNumber('12'); // true
 const res = isNumber(12.5); // true
@@ -3130,6 +3124,6 @@ const res = isNumber(Infinity); // false
 -----------------------------------------------
 
 ## License
-[MIT license](https://github.com/toolcool-org/toolcool-math/blob/main/LICENSE)
+[MIT license](https://github.com/mzusin/mz-math/blob/main/LICENSE)
 
 It can be used **for free** in any personal or commercial project :gift: 

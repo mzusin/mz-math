@@ -20,7 +20,7 @@
 
 <div id="center"></div>
 
-<script src="../../dist/tc-math.min.js"></script>
+<script src="../../dist/mz-math.min.js"></script>
 <script>
     let handler = null;
 
@@ -59,14 +59,14 @@
 
                 // translate to the next point in the circle
                 const isClockwise = true;
-                pos = TCMath.m2RotateAroundPointH(angle, [0, 0, 1], pos, isClockwise);
-                const translationMatrix = TCMath.m2TranslationH(pos);
+                pos = MZMath.m2RotateAroundPointH(angle, [0, 0, 1], pos, isClockwise);
+                const translationMatrix = MZMath.m2TranslationH(pos);
 
                 // rotate the star
-                const rotationMatrix = TCMath.m2RotationH(rotationAngle);
-                const mat = TCMath.mMul(translationMatrix, rotationMatrix);
+                const rotationMatrix = MZMath.m2RotationH(rotationAngle);
+                const mat = MZMath.mMul(translationMatrix, rotationMatrix);
 
-                $star.style.transform = TCMath.m2hToCSS(mat);
+                $star.style.transform = MZMath.m2hToCSS(mat);
 
                 // update the star rotation angle
                 rotationAngle += 0.03;

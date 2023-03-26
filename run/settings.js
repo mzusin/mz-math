@@ -15,14 +15,14 @@ export const settings = {
     sourcemap: 'linked', // external
     minify: true,
     target: ['es6'],
-    outfile: './dist/tc-math.min.js',
+    outfile: './dist/mz-math.min.js',
     banner: {
         js: `/* 
-Tool Cool Math Helpers
+TypeScript Math Helpers
 Version: ${version}
-Documentation: https://github.com/toolcool-org/toolcool-math
+Documentation: https://github.com/mzusin/mz-math
 License: MIT License        
-Author: Tool Cool, toolcool.org@gmail.com>                          
+Author: Miriam Zusin, miriam.zusin@gmail.com>                          
 */`,
     },
 };

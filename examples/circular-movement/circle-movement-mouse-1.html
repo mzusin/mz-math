@@ -22,7 +22,7 @@
 
     <div id="center"></div>
 
-    <script src="../../dist/tc-math.min.js"></script>
+    <script src="../../dist/mz-math.min.js"></script>
     <script>
         const $star = document.getElementById('star');
         const $center = document.getElementById('center');
@@ -40,7 +40,7 @@
             const mouse = [evt?.clientX ?? 0, evt?.clientY ?? 0];
 
             // set circle css position ----------------------
-            const position = TCMath.circleMovementAfterMouse(mouse, center, radius);
+            const position = MZMath.circleMovementAfterMouse(mouse, center, radius);
             $star.style.left = `${ position[0] }px`;
             $star.style.top = `${ position[1] }px`;
         };

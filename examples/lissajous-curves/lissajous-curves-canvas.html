@@ -10,7 +10,7 @@
     <h1>Lissajous Curves on canvas</h1>
     <canvas id="canvas"></canvas>
 
-    <script src="../../dist/tc-math.min.js"></script>
+    <script src="../../dist/mz-math.min.js"></script>
     <script>
         const $canvas = document.getElementById('canvas');
         const context = $canvas.getContext('2d');
@@ -28,12 +28,12 @@
 
         for(let i = 0; i < MAX_ITEMS; i += 1) {
             items.push({
-                angleX: TCMath.getRandom(0, Math.PI * 2), // [0, 360]
-                angleY: TCMath.getRandom(0, Math.PI * 2), // [0, 360]
-                speedX: TCMath.getRandom(0.001, Math.PI / 100),
-                speedY: TCMath.getRandom(0.001, Math.PI / 100),
-                radius1: TCMath.getRandom(0, 300),
-                radius2: TCMath.getRandom(0, 300),
+                angleX: MZMath.getRandom(0, Math.PI * 2), // [0, 360]
+                angleY: MZMath.getRandom(0, Math.PI * 2), // [0, 360]
+                speedX: MZMath.getRandom(0.001, Math.PI / 100),
+                speedY: MZMath.getRandom(0.001, Math.PI / 100),
+                radius1: MZMath.getRandom(0, 300),
+                radius2: MZMath.getRandom(0, 300),
             });
         }
 
@@ -51,7 +51,7 @@
                 const k = item.angleX;
                 const n = item.angleY;
 
-                const pos = TCMath.lissajousCurve(
+                const pos = MZMath.lissajousCurve(
                     item.radius1, // width
                     item.radius2, // height
                     t,
