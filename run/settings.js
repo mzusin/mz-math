@@ -18,7 +18,7 @@ export const settings = {
     outfile: './dist/mz-math.min.js',
     banner: {
         js: `/* 
-TypeScript Math Helpers
+MZMath - TypeScript Math Helpers
 Version: ${version}
 Documentation: https://github.com/mzusin/mz-math
 License: MIT License        

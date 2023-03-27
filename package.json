@@ -1,7 +1,7 @@
 {
   "name": "mz-math",
-  "version": "2.0.0",
-  "description": "A collection of TypeScript-based math helpers.",
+  "version": "2.0.1",
+  "description": "MZMath - a collection of TypeScript-based math helpers.",
   "main": "./dist/mz-math.min.js",
   "module": "./dist/mz-math.esm.js",
   "types": "./dist/index.d.ts",

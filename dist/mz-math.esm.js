@@ -1,6 +1,6 @@
 /* 
-TypeScript Math Helpers
-Version: 2.0.0
+MZMath - TypeScript Math Helpers
+Version: 2.0.1
 Documentation: https://github.com/mzusin/mz-math
 License: MIT License        
 Author: Miriam Zusin, miriam.zusin@gmail.com>                          
