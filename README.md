@@ -1,5 +1,8 @@
 # MZMath - a collection of TypeScript-based math helpers 🚀
 
+![GitHub package.json version](https://img.shields.io/github/package-json/v/mzusin/mz-math)
+[![NPM](https://img.shields.io/badge/npm-math-brightgreen)](https://www.npmjs.com/package/toolcool-math)
+
 This project is a collection of TypeScript math helpers and utilities for the browser and Node.js. The modular approach allows to select only the required functions. It works well with all modern bundlers and supports **tree shaking** 🌲. The library is built using immutable/pure functions. 
 
 ## Table of contents
