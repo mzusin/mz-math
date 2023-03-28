@@ -18,11 +18,12 @@ export const settings = {
     outfile: './dist/mz-math.min.js',
     banner: {
         js: `/* 
-MZMath - TypeScript Math Helpers
+MZMath - a collection of TypeScript-based math helpers.
 Version: ${version}
+Author: Miriam Zusin     
+Contact: miriam.zusin@gmail.com
 Documentation: https://github.com/mzusin/mz-math
-License: MIT License        
-Author: Miriam Zusin, miriam.zusin@gmail.com>                          
+Licensed GPLv3 for open source use, or Commercial License for commercial use - https://github.com/mzusin/index/blob/main/LICENSE.md                 
 */`,
     },
 };
