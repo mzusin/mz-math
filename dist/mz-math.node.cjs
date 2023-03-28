@@ -1,6 +1,6 @@
 /* 
 MZMath - a collection of TypeScript-based math helpers.
-Version: 2.0.1
+Version: 2.0.2
 Author: Miriam Zusin     
 Contact: miriam.zusin@gmail.com
 Documentation: https://github.com/mzusin/mz-math
