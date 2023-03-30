@@ -1,6 +1,6 @@
 {
   "name": "mz-math",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "MZMath - a collection of TypeScript-based math helpers.",
   "main": "./dist/mz-math.min.js",
   "module": "./dist/mz-math.esm.js",
@@ -52,7 +52,7 @@
     "color"
   ],
   "author": "Miriam Zusin <miriam.zusin@gmail.com>",
-  "license": "MIT",
+  "license": "SEE LICENSE IN LICENSE.md",
   "browserslist": [
     ">0.2%",
     "not dead",
