@@ -34,11 +34,11 @@ const api = {
 
 declare global {
     interface Window {
-        MZMath: typeof api,
+        mzMath: typeof api,
     }
 }
 
-window.MZMath = window.MZMath || api;
+window.mzMath = window.mzMath || api;
 
 export * from './vector';
 export * from './matrix';

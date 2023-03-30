@@ -1,4 +1,4 @@
-# MZMath - a collection of TypeScript-based math helpers 🚀
+# mzMath - a collection of TypeScript-based math helpers 🚀
 
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/mzusin/mz-math)
 [![NPM](https://img.shields.io/badge/npm-math-brightgreen)](https://www.npmjs.com/package/mz-math)
@@ -117,12 +117,12 @@ const sum = v2Sum(v1, v2); // [4, 6]
 
 ## Browser Usage
 
-Any function can also be used in the browser using the **mz-math.min.js** file. All functions are located in the **MZMath** namespace:
+Any function can also be used in the browser using the **mz-math.min.js** file. All functions are located in the **mzMath** namespace:
 
 ```html
 <script src="mz-math.min.js"></script>
 <script>
-    const sum = MZMath.v2Sum([1, 2], [3, 4]);
+    const sum = mzMath.v2Sum([1, 2], [3, 4]);
     console.log(sum);
 </script>
 ```
@@ -132,7 +132,7 @@ The library is also available on the [jsDelivr CND](https://www.jsdelivr.com/pac
 ```html
 <script src="https://cdn.jsdelivr.net/npm/mzusin/dist/mz-math.min.js"></script>
 <script>
-    const sum = MZMath.v2Sum([1, 2], [3, 4]);
+    const sum = mzMath.v2Sum([1, 2], [3, 4]);
     console.log(sum);
 </script>
 ```
@@ -2947,7 +2947,7 @@ const n = getRandom(0, Math.PI * 2); // [0, 360]
 const A = getRandom(0, 100);  // [0, 100] - width
 const B = getRandom(0, 100);  // [0, 100] - height
 
-const newPosition: Vector2 = MZMath.lissajousCurve(
+const newPosition: Vector2 = mzMath.lissajousCurve(
     A, // width
     B, // height
     t,

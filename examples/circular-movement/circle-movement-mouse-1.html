@@ -40,7 +40,7 @@
             const mouse = [evt?.clientX ?? 0, evt?.clientY ?? 0];
 
             // set circle css position ----------------------
-            const position = MZMath.circleMovementAfterMouse(mouse, center, radius);
+            const position = mzMath.circleMovementAfterMouse(mouse, center, radius);
             $star.style.left = `${ position[0] }px`;
             $star.style.top = `${ position[1] }px`;
         };

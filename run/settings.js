@@ -18,7 +18,7 @@ export const settings = {
     outfile: './dist/mz-math.min.js',
     banner: {
         js: `/* 
-MZMath - a collection of TypeScript-based math helpers.
+mzMath - a collection of TypeScript-based math helpers.
 Version: ${version}
 Author: Miriam Zusin     
 Contact: miriam.zusin@gmail.com

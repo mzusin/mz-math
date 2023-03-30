@@ -38,14 +38,14 @@
                 height/2, // center of the canvas
             ];
 
-            const direction = MZMath.getRandom(0, Math.PI * 2);
-            const speed = MZMath.getRandom(1, 4);
+            const direction = mzMath.getRandom(0, Math.PI * 2);
+            const speed = mzMath.getRandom(1, 4);
 
             let velocity = [0, 2];
-            velocity = MZMath.v2SetLength(velocity, speed);
-            velocity = MZMath.setV2Angle(velocity, direction);
+            velocity = mzMath.v2SetLength(velocity, speed);
+            velocity = mzMath.setV2Angle(velocity, direction);
 
-            const hslColor = MZMath.getRandomHSLColorWithinRanges(
+            const hslColor = mzMath.getRandomHSLColorWithinRanges(
                 0, 360,
                 50, 100,
                 50, 100
@@ -53,7 +53,7 @@
             items.push({
                 position,
                 velocity,
-                color: MZMath.hslToHex(hslColor),
+                color: mzMath.hslToHex(hslColor),
                 alpha: 1,
             });
         }
@@ -98,8 +98,8 @@
                 }
             }
             else{
-                item.velocity = MZMath.v2Sum(item.velocity, gravity);
-                item.position = MZMath.v2Sum(item.position, item.velocity);
+                item.velocity = mzMath.v2Sum(item.velocity, gravity);
+                item.position = mzMath.v2Sum(item.position, item.velocity);
                 item.alpha -= 0.01;
             }
         }

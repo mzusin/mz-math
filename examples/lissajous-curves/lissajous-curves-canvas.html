@@ -28,12 +28,12 @@
 
         for(let i = 0; i < MAX_ITEMS; i += 1) {
             items.push({
-                angleX: MZMath.getRandom(0, Math.PI * 2), // [0, 360]
-                angleY: MZMath.getRandom(0, Math.PI * 2), // [0, 360]
-                speedX: MZMath.getRandom(0.001, Math.PI / 100),
-                speedY: MZMath.getRandom(0.001, Math.PI / 100),
-                radius1: MZMath.getRandom(0, 300),
-                radius2: MZMath.getRandom(0, 300),
+                angleX: mzMath.getRandom(0, Math.PI * 2), // [0, 360]
+                angleY: mzMath.getRandom(0, Math.PI * 2), // [0, 360]
+                speedX: mzMath.getRandom(0.001, Math.PI / 100),
+                speedY: mzMath.getRandom(0.001, Math.PI / 100),
+                radius1: mzMath.getRandom(0, 300),
+                radius2: mzMath.getRandom(0, 300),
             });
         }
 
@@ -51,7 +51,7 @@
                 const k = item.angleX;
                 const n = item.angleY;
 
-                const pos = MZMath.lissajousCurve(
+                const pos = mzMath.lissajousCurve(
                     item.radius1, // width
                     item.radius2, // height
                     t,

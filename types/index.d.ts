@@ -196,7 +196,7 @@ declare const api: {
 };
 declare global {
     interface Window {
-        MZMath: typeof api;
+        mzMath: typeof api;
     }
 }
 export * from './vector';

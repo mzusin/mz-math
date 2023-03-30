@@ -57,10 +57,10 @@
                 angle += 0.01;
                 angle = angle % 360;
 
-                const position = MZMath.ellipseMovement(center, angle, radius1, radius2);
+                const position = mzMath.ellipseMovement(center, angle, radius1, radius2);
 
-                const translationMatrix = MZMath.m2TranslationH(position);
-                $star.style.transform = MZMath.m2hToCSS(translationMatrix);
+                const translationMatrix = mzMath.m2TranslationH(position);
+                $star.style.transform = mzMath.m2hToCSS(translationMatrix);
 
                 // OR
                 // $star.style.transform = `translate(${position[0]}px, ${position[1]}px)`;

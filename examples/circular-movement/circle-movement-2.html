@@ -57,10 +57,10 @@
                 // const percent = Math.min(elapsed * 100 / TIME, 100);
 
                 const isClockwise = true;
-                pos = MZMath.m2RotateAroundPointH(angle, [0, 0, 1], pos, isClockwise);
+                pos = mzMath.m2RotateAroundPointH(angle, [0, 0, 1], pos, isClockwise);
 
-                const translationMatrix = MZMath.m2TranslationH(pos);
-                $star.style.transform = MZMath.m2hToCSS(translationMatrix);
+                const translationMatrix = mzMath.m2TranslationH(pos);
+                $star.style.transform = mzMath.m2hToCSS(translationMatrix);
 
                 // OR
                 // $star.style.transform = `translate(${position[0]}px, ${position[1]}px)`;
