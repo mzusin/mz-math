@@ -2993,7 +2993,7 @@ import {
 } from 'mz-math';
 
 // get random HEX color
-const rgbColor: string = getRandomHexColor();
+const hexColor: string = getRandomHexColor();
 
 // get random RGB color
 const rgbColor: RGBColor = getRandomRGBColor();
