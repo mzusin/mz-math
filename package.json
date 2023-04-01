@@ -1,11 +1,15 @@
 {
   "name": "mz-math",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "mzMath - a collection of TypeScript-based math helpers.",
   "main": "./dist/mz-math.min.js",
   "module": "./dist/mz-math.esm.js",
   "types": "./dist/index.d.ts",
-  "exports": "./dist/mz-math.esm.js",
+  "exports": {
+    "import": "./dist/mz-math.esm.js",
+    "require": "./dist/mz-math.node.cjs",
+    "default": "./dist/mz-math.esm.js"
+  },
   "scripts": {
     "build:all": "npm run build:es6 & npm run build:node & npm run build:esm",
     "watch:all": "npm run watch:es6 & npm run watch:node & npm run watch:esm",
