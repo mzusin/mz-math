@@ -127,10 +127,10 @@ Any function can also be used in the browser using the **mz-math.min.js** file. 
 </script>
 ```
 
-The library is also available on the [jsDelivr CND](https://www.jsdelivr.com/package/npm/mz-math):
+The library is also available on the [jsDelivr CND](https://cdn.jsdelivr.net/npm/mz-math/dist/mz-math.min.js):
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/mzusin/dist/mz-math.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mz-math/dist/mz-math.min.js"></script>
 <script>
     const sum = mzMath.v2Sum([1, 2], [3, 4]);
     console.log(sum);
