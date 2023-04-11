@@ -1,5 +1,6 @@
 export * from './vector';
 export * from './matrix';
+export * from './matrix-transformations';
 export * from './format';
 export * from './angle';
 export * from './random';
