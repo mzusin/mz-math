@@ -1723,7 +1723,7 @@ const rotatedVector3: Vector3 = v3RotateZ(angle, vector, isClockwise, decimalPla
 It's possible to rotate a point [x, y] (in homogeneous coordinates) around the given origin as follows:
 
 ```js
-import { Vector3, m2RotationAroundPointH } from 'mz-math';
+import { Vector3, m2RotateAroundPointH, m2RotationAroundPointH } from 'mz-math';
 
 const angle = Math.PI/4; // radians
 const transformOrigin = [100, 100, 1]; // in homogeneous coordinates
