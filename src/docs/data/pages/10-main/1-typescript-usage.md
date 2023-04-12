@@ -6,6 +6,12 @@ To use the library with TypeScript, you need to install the module from npm:
 npm install mz-math
 ```
 
+Or using Yarn:
+
+```shell
+yarn add mz-svg
+```
+
 The import any function like **v2Sum**:
 ```js
 import { v2Sum, Vector2 } from 'mz-math';

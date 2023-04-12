@@ -1,6 +1,6 @@
 ## Browser Usage
 
-Any function can also be used in the browser using the **mz-math.min.js** file. All functions are located in the **mzMath** namespace:
+The library can also be used directly in browsers without TypeScript. First, download the [mz-math.min.js](https://github.com/mzusin/mz-math/blob/main/dist/mz-math.min.js) file from the GitHub repository. Then use the **mzMath** global namespace to call any API or function.
 
 ```html
 <script src="mz-math.min.js"></script>

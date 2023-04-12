@@ -5,8 +5,8 @@ https://math.mzsoft.org/pages/nodejs-usage.html
 https://math.mzsoft.org/pages/vectors.html
 https://math.mzsoft.org/pages/vectors-sum.html
 https://math.mzsoft.org/pages/vectors-subtraction.html
-https://math.mzsoft.org/pages/multiply-by-scalar.html
-https://math.mzsoft.org/pages/divide-by-scalar.html
+https://math.mzsoft.org/pages/multiply-vector-by-scalar.html
+https://math.mzsoft.org/pages/divide-vector-by-scalar.html
 https://math.mzsoft.org/pages/vector-length.html
 https://math.mzsoft.org/pages/normalize-vector.html
 https://math.mzsoft.org/pages/dot-product.html

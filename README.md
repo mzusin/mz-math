@@ -9,13 +9,13 @@ This project is a collection of TypeScript math helpers and utilities for the br
 ### Main 
 - [Typescript Usage](https://math.mzsoft.org/pages/typescript-usage.html)
 - [Browser Usage](https://math.mzsoft.org/pages/browser-usage.html)
-- [Nodejs Usage](https://math.mzsoft.org/pages/nodejs-usage.html)
+- [Node.js Usage](https://math.mzsoft.org/pages/nodejs-usage.html)
 ### Vectors 
 - [Vectors](https://math.mzsoft.org/pages/vectors.html)
 - [Vectors Sum](https://math.mzsoft.org/pages/vectors-sum.html)
 - [Vectors Subtraction](https://math.mzsoft.org/pages/vectors-subtraction.html)
-- [Multiply By Scalar](https://math.mzsoft.org/pages/multiply-by-scalar.html)
-- [Divide By Scalar](https://math.mzsoft.org/pages/divide-by-scalar.html)
+- [Multiply by Scalar](https://math.mzsoft.org/pages/multiply-vector-by-scalar.html)
+- [Divide by Scalar](https://math.mzsoft.org/pages/divide-vector-by-scalar.html)
 - [Vector Length](https://math.mzsoft.org/pages/vector-length.html)
 - [Normalize Vector](https://math.mzsoft.org/pages/normalize-vector.html)
 - [Dot Product](https://math.mzsoft.org/pages/dot-product.html)
@@ -89,6 +89,29 @@ This project is a collection of TypeScript math helpers and utilities for the br
 - [Check If Ranges Overlap](https://math.mzsoft.org/pages/check-if-ranges-overlap.html)
 - [Check If Value Is Number](https://math.mzsoft.org/pages/Check-if-value-is-number.html)
 ------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
