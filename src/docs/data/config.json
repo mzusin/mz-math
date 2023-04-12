@@ -1,6 +1,7 @@
 {
   "website": {
-    "name": "mzMath"
+    "name": "mzMath",
+    "url": "https://math.mzsoft.org"
   },
   "social": {
     "github": "https://github.com/mzusin/mz-math",

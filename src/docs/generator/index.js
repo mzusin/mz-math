@@ -74,6 +74,7 @@ const init = async () => {
 
   // render sitemap
   renderSitemap(
+    mainConfig?.website?.url || '',
     path.join(OUTPUT_FOLDER),
     pagesList
   );
