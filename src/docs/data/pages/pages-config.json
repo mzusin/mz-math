@@ -1,0 +1,71 @@
+{
+  "1-main": {
+    "title": "Getting Started"
+  },
+  "2-nodejs.md": {
+    "title": "Node.js & JS Bundlers"
+  },
+  "3-get-set-values-and-change-event.md": {
+    "title": "Get/Set Values & Change Event"
+  },
+  "6-min-and-max.md": {
+    "title": "Range: min & max"
+  },
+  "9-non-linear-step.md": {
+    "title": "Non-linear Slider"
+  },
+  "10-list-of-individual-values-and-text-data.md": {
+    "title": "Range: Values List"
+  },
+  "1-width-height-and-border-radius.md": {
+    "title": "Width, Height, & Border Radius"
+  },
+  "3-css-links.md": {
+    "title": "CSS Links"
+  },
+  "6-images-and-svgs-as-pointers.md": {
+    "title": "Images & SVGs as pointers"
+  },
+  "8-add-css-api.md": {
+    "title": "Add CSS API"
+  },
+  "11-right-to-left-support.md": {
+    "title": "Right to Left"
+  },
+  "1-touch-and-keyboard-support.md": {
+    "title": "Touch & Keyboard Support"
+  },
+  "4-storage.md": {
+    "title": "Storage Plugin"
+  },
+  "7-max-and-min-pointers-distance.md": {
+    "title": "Max/Min Pointers Distance"
+  },
+  "9-origin-at-center-plugin.md": {
+    "title": "Origin at Center Plugin"
+  },
+  "3-react-typescript.md": {
+    "title": "React & TypeScript"
+  },
+  "4-add-remove-pointer.md": {
+    "title": "Add/Remove Pointer API"
+  },
+  "1-javascript-plugins.md": {
+    "title": "JavaScript Plugins"
+  },
+  "2-javascript-plugin-interface.md": {
+    "title": "Plugin Interface"
+  },
+  "3-javascript-plugin-example.md": {
+    "title": "JS Plugin Example"
+  },
+  "5-plugin-getters-interface.md": {
+    "title": "'Getters' Object Interface"
+  },
+  "6-plugin-setters-interface.md": {
+    "title": "'Setters' Object Interface"
+  },
+  "7-css-themes.md": {
+    "title": "CSS Themes"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "website": {
+    "name": "mzMath"
+  },
+  "social": {
+    "github": "https://github.com/mzusin/mz-math",
+    "email": "miriam.zusin@gmail.com"
+  },
+  "analytics": {
+    "gtag": ""
+  }
+}

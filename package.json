@@ -22,7 +22,10 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "eslint": "eslint ./src/**",
-    "typescript-declarations": "tsc --emitDeclarationOnly"
+    "typescript-declarations": "tsc --emitDeclarationOnly",
+    "docs:website": "http-server ./docs",
+    "docs:build": "node ./src/docs/generator/index.js",
+    "docs:watch": "nodemon ./src/docs/generator/index.js"
   },
   "type": "module",
   "keywords": [
@@ -74,7 +77,20 @@
     "esbuild": "^0.16.3",
     "eslint": "^8.27.0",
     "jest": "^29.3.1",
+    "markdown-documentation-maker": "^1.0.13",
     "ts-jest": "^29.0.3",
     "ts-node": "^10.9.1"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "ignore": [
+      ".git",
+      "node_modules/**/node_modules"
+    ],
+    "verbose": false,
+    "watch": [
+      "src/"
+    ],
+    "ext": "js,json,html,css,md,ts,tsx,glsl"
   }
 }
