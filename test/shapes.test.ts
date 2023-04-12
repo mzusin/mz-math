@@ -1,4 +1,4 @@
-import { getSquareInCircleSide } from '../src/shapes';
+import { getSquareInCircleSide } from '../src/main/shapes';
 
 describe('Shapes', () => {
     test('square side in circle with radius = 10', () => {

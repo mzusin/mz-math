@@ -20,8 +20,8 @@ import {
     v3DotProduct,
     v3CrossProduct, v2, v3, vN,
     vEqual, v2DivideScalar, v3DivideScalar, vDivideScalar
-} from '../src/vector';
-import { Vector, Vector2, Vector3 } from '../src/types';
+} from '../src/main/vector';
+import { Vector, Vector2, Vector3 } from '../src/main/types';
 
 describe('Vector Sum', () => {
     test('[1, 2] + [3, 4]', () => {

@@ -1,4 +1,4 @@
-import { rgbToHsl, hslToRgb, hslToHex, getShiftedHue, getShiftedSaturation, getShiftedLightness } from '../src/color';
+import { rgbToHsl, hslToRgb, hslToHex, getShiftedHue, getShiftedSaturation, getShiftedLightness } from '../src/main/color';
 
 describe('Convert RGB to HSL', () => {
     test('rgb[100, 100, 100] to hsl with 2 decimal places', () => {

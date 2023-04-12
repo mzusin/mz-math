@@ -1,4 +1,4 @@
-import { stringToNumber } from '../src/convert';
+import { stringToNumber } from '../src/main/convert';
 
 describe('String to Number', () => {
     test('If undefined is provided => return the default value', () => {

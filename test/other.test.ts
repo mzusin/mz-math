@@ -1,4 +1,4 @@
-import { mod, convertRange, doRangesOverlap, isNumber } from '../src/other';
+import { mod, convertRange, doRangesOverlap, isNumber } from '../src/main/other';
 
 describe('Modulo', () => {
     test('-21 % 4 => 3', () => {

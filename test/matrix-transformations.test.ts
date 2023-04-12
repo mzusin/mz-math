@@ -1,5 +1,5 @@
-import { m3RotationZ, m3RotationY, m3RotationX, m2Rotation, m2hToCSS, m2ToCSS, m2hToCSS3d, m3hToCSS3d } from '../src/matrix-transformations';
-import { Matrix4, Matrix3, Matrix2 } from '../src/types';
+import { m3RotationZ, m3RotationY, m3RotationX, m2Rotation, m2hToCSS, m2ToCSS, m2hToCSS3d, m3hToCSS3d } from '../src/main/matrix-transformations';
+import { Matrix4, Matrix3, Matrix2 } from '../src/main/types';
 
 describe('Rotation', () => {
     test('2d rotation by 90 degrees about the origin with 2 decimal places', () => {

@@ -1,4 +1,4 @@
-import { setDecimalPlaces } from '../src/format';
+import { setDecimalPlaces } from '../src/main/format';
 
 describe('Set Decimal Places', () => {
     test('2 decimal places of 1.2345 => 1.23', () => {

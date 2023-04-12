@@ -1,4 +1,4 @@
-import { equationSystem2, equationSystem3, equationSystemN } from '../src/equations';
+import { equationSystem2, equationSystem3, equationSystemN } from '../src/main/equations';
 import { Vector3, Vector, Matrix } from '../types/types';
 
 describe('System of equations', () => {

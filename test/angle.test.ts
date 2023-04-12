@@ -1,4 +1,4 @@
-import { degreesToRadians, getV2Angle, radiansToDegrees, setV2Angle } from '../src/angle';
+import { degreesToRadians, getV2Angle, radiansToDegrees, setV2Angle } from '../src/main/angle';
 
 describe('Get Vector Angle', () => {
     test('angle of [10, 20] should be 1.11', () => {
