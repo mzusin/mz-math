@@ -9,7 +9,7 @@ import { loadConfig, renderPages } from './render/pages-provider.js';
 import { collectSideMenuData, getPagesList } from './render/side-menu-provider.js';
 import { getRoot, getTimeStamp } from './common-provider.js';
 import { renderSpecialPages } from './render/special-pages-provider.js';
-import { renderSitemap } from './render/sitemap-provider.js';
+import { renderSitemap, updateReadmeDocs } from './render/sitemap-provider.js';
 
 export const DATA_FOLDER = path.join(process.cwd(), './src/docs/data');
 export const OUTPUT_FOLDER = path.join(process.cwd(), './docs');
@@ -81,6 +81,13 @@ const init = async () => {
 
   compileClientSideScripts(jsTimeStamp);
   await compileClientSideCSS(cssTimeStamp);
+
+  updateReadmeDocs(
+      mainConfig?.website?.url || '',
+      path.join(OUTPUT_FOLDER),
+      sideMenuMap,
+      pagesConfig
+  );
 };
 
 await init();

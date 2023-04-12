@@ -5,94 +5,91 @@
 
 This project is a collection of TypeScript math helpers and utilities for the browser and Node.js. The modular approach allows to select only the required functions. It works well with all modern bundlers and supports **tree shaking** 🌲. The library is built using immutable/pure functions. 
 
-## Table of contents
-- [TypeScript Usage](#typescript-usage)
-- [Browser Usage](#browser-usage)
-- [Node.js Usage](#nodejs-usage)
-- [Vectors](#vectors)
-    - [Vectors Sum](#vectors-sum)
-    - [Vectors Subtraction](#vectors-subtraction)
-    - [Multiple vector by scalar](#multiply-vector-by-scalar)
-    - [Divide vector by scalar](#divide-vector-by-scalar)
-    - [Get Vector Length](#get-vector-length)
-    - [Set Vector Length](#set-vector-length)
-    - [Normalize Vector](#normalize-vector)
-    - [Dot Product](#vectors-dot-product)
-    - [Cross Product](#vectors-cross-product)
-    - [Get distance between 2 vectors](#get-distance-between-2-vectors)
-    - Helpers
-      - [Vector Initialization Helpers](#vector-initialization-helpers)
-      - [Check if 2 vectors are equal](#check-if-2-vectors-are-equal)
-- [Matrix](#matrix)
-  - Initialization Helpers
-    - [m2x2, m3x3, and mNxM](#m2x2-m3x3-and-mnxm)
-    - [Identity Matrix](#identity-matrix)
-  - Manipulation Helpers
-    - [Check if 2 matrices are equal](#check-if-2-matrices-are-equal)
-    - [Matrix deep copy](#matrix-deep-copy)
-    - [Append / prepend row](#append-or-prepend-a-row-to-a-matrix)
-    - [Append / prepend column](#append-or-prepend-a-column-to-a-matrix)
-    - [Delete row / column](#remove-row-or-column-from-matrix)
-    - [Get column](#get-column-from-matrix)
-  - [Matrix Sum](#matrix-sum)
-  - [Matrix Subtraction](#matrix-subtraction)
-  - [Multiply matrix by scalar](#multiply-matrix-by-scalar)
-  - [Divide matrix by scalar](#divide-matrix-by-scalar)
-  - [Matrix Transposition](#matrix-transposition)
-  - [Matrix Multiplication](#matrix-multiplication)
-  - [Multiply matrix by vector](#multiply-matrix-by-vector)
-  - [Reset matrix with a default value](#reset-matrix-with-a-default-value)
-  - Transformation Matrices
-    - [Translation Matrix](#translation-matrix)
-    - [Rotation Matrix](#rotation-matrix)
-    - [Rotate around the point](#rotate-around-the-point)
-    - [Scale/Stretch Matrix](#scalestretch-matrix)
-    - [Scale about an arbitrary pivot point P](#scale-about-an-arbitrary-pivot-point-p)
-    - [Reflection Matrix](#reflection-matrix)
-    - [Shearing Matrix](#shearing-matrix)
-  - [Matrix to CSS transform](#matrix-to-css-transform)
-  - [Matrix Determinant](#matrix-determinant)
-  - [Inverse Matrix](#inverse-matrix)
-  - [Check if matrix is singular](#check-if-matrix-is-singular)
-  - [Adjugate Matrix](#adjugate-matrix)
-  - [Get Matrix Minor](#get-matrix-minor)
-- Angles
-  - [Get vector angle](#get-vector-angle)
-  - [Set vector angle](#set-vector-angle)
-  - [Get angle between two vectors](#get-angle-between-two-vectors)
-  - [Degrees to radians](#degrees-to-radians)
-  - [Radians to degrees](#radians-to-degrees)
-- Format
-  - [Set decimal places](#set-decimal-places)
-- Convert
-  - [Convert string to number](#convert-string-to-number)
-- Random
-  - [Get random number in range](#get-random-number-in-range)
-  - [Get random integer](#get-random-integer)
-  - [Get random boolean value](#get-random-boolean-value)
-  - [Get random item from array](#get-random-item-from-array)
-  - [Random ID or GUID](#random-id-or-guid)
-- Bézier Curve
-  - [Get a point on a quadratic Bézier curve](#get-a-point-on-a-quadratic-bézier-curve)
-  - [Get a point on a cubic Bézier curve](#get-a-point-on-a-cubic-bézier-curve)
-- Equations
-  - [System of linear equations](#system-of-linear-equations)
-- Path Movement
-  - [Circle Movement](#circle-movement)
-  - [Circle movement after mouse](#circle-movement-after-mouse)
-  - [Ellipse Movement](#ellipse-movement)
-  - [Sine Wave Movement](#sine-wave-movement)
-  - [Lissajous curve](#lissajous-curve)
-- [Color](#color)
-  - [Get random color](#get-random-color)
-  - [Convert colors](#convert-colors)
-  - [Shift colors](#shift-colors)
-- Shapes
-  - [Square in circle](#square-in-circle)
-- Other
-  - [Modulo](#modulo)
-  - [Convert range](#convert-range)
-  - [Do ranges overlap?](#check-if-two-ranges-overlap)
-  - [Can be converted to number?](#check-if-value-can-be-converted-to-number)
-- [Contribution Guidelines](https://github.com/mzusin/index/blob/main/CONTRIBUTING.md)
+## Documentation 🔖
+### Main 
+- [Typescript Usage](https://math.mzsoft.org/pages/typescript-usage.html)
+- [Browser Usage](https://math.mzsoft.org/pages/browser-usage.html)
+- [Nodejs Usage](https://math.mzsoft.org/pages/nodejs-usage.html)
+### Vectors 
+- [Vectors](https://math.mzsoft.org/pages/vectors.html)
+- [Vectors Sum](https://math.mzsoft.org/pages/vectors-sum.html)
+- [Vectors Subtraction](https://math.mzsoft.org/pages/vectors-subtraction.html)
+- [Multiply By Scalar](https://math.mzsoft.org/pages/multiply-by-scalar.html)
+- [Divide By Scalar](https://math.mzsoft.org/pages/divide-by-scalar.html)
+- [Vector Length](https://math.mzsoft.org/pages/vector-length.html)
+- [Normalize Vector](https://math.mzsoft.org/pages/normalize-vector.html)
+- [Dot Product](https://math.mzsoft.org/pages/dot-product.html)
+- [Cross Product](https://math.mzsoft.org/pages/cross-product.html)
+- [Distance Between Vectors](https://math.mzsoft.org/pages/distance-between-vectors.html)
+- [Vector Initialization](https://math.mzsoft.org/pages/vector-initialization.html)
+- [Vectors Equality](https://math.mzsoft.org/pages/vectors-equality.html)
+### Matrix 
+- [Matrix](https://math.mzsoft.org/pages/matrix.html)
+- [Matrix Sum](https://math.mzsoft.org/pages/matrix-sum.html)
+- [Matrix Subtraction](https://math.mzsoft.org/pages/matrix-subtraction.html)
+- [Multiply By Scalar](https://math.mzsoft.org/pages/multiply-by-scalar.html)
+- [Divide By Scalar](https://math.mzsoft.org/pages/divide-by-scalar.html)
+- [Matrix Transposition](https://math.mzsoft.org/pages/matrix-transposition.html)
+- [Matrix Multiplication](https://math.mzsoft.org/pages/matrix-multiplication.html)
+- [Multiply Matrix By Vector](https://math.mzsoft.org/pages/multiply-matrix-by-vector.html)
+- [Matrix Determinant](https://math.mzsoft.org/pages/matrix-determinant.html)
+- [Inverse Matrix](https://math.mzsoft.org/pages/inverse-matrix.html)
+- [Matrix Singularity](https://math.mzsoft.org/pages/matrix-singularity.html)
+- [Adjugate Matrix](https://math.mzsoft.org/pages/adjugate-matrix.html)
+- [Get Matrix Minor](https://math.mzsoft.org/pages/get-matrix-minor.html)
+### Matrix Manipulation 
+- [Matrix Initialization](https://math.mzsoft.org/pages/matrix-initialization.html)
+- [Matrix Equality](https://math.mzsoft.org/pages/matrix-equality.html)
+- [Matrix Deep Copy](https://math.mzsoft.org/pages/matrix-deep-copy.html)
+- [Append Or Prepend Row](https://math.mzsoft.org/pages/append-or-prepend-row.html)
+- [Append Or Prepend Column](https://math.mzsoft.org/pages/append-or-prepend-column.html)
+- [Remove Row Or Column](https://math.mzsoft.org/pages/remove-row-or-column.html)
+- [Get Column](https://math.mzsoft.org/pages/get-column.html)
+- [Reset Matrix](https://math.mzsoft.org/pages/reset-matrix.html)
+### Transformation Matrices 
+- [Translation Matrix](https://math.mzsoft.org/pages/translation-matrix.html)
+- [Rotation Matrix](https://math.mzsoft.org/pages/rotation-matrix.html)
+- [Rotate Around Point](https://math.mzsoft.org/pages/rotate-around-point.html)
+- [Scale And Stretch Matrix](https://math.mzsoft.org/pages/scale-and-stretch-matrix.html)
+- [Scale About Point](https://math.mzsoft.org/pages/scale-about-point.html)
+- [Reflection Matrix](https://math.mzsoft.org/pages/reflection-matrix.html)
+- [Shearing Matrix](https://math.mzsoft.org/pages/shearing-matrix.html)
+- [Matrix To Css Transform](https://math.mzsoft.org/pages/matrix-to-CSS-transform.html)
+### Angles 
+- [Vector Angle](https://math.mzsoft.org/pages/vector-angle.html)
+- [Angle Between Vectors](https://math.mzsoft.org/pages/angle-between-vectors.html)
+- [Degrees And Radians](https://math.mzsoft.org/pages/degrees-and-radians.html)
+### Random 
+- [Get Random Number In Range](https://math.mzsoft.org/pages/get-random-number-in-range.html)
+- [Get Random Integer](https://math.mzsoft.org/pages/get-random-integer.html)
+- [Get Random Boolean](https://math.mzsoft.org/pages/get-random-boolean.html)
+- [Get Random Item From Array](https://math.mzsoft.org/pages/get-random-item-from-array.html)
+- [Random Id Or Guid](https://math.mzsoft.org/pages/random-id-or-GUID.html)
+### Bezier Curve 
+- [Get Point On Quadratic Bezier Curve](https://math.mzsoft.org/pages/get-point-on-quadratic-bezier-curve.html)
+- [Get Point On Cubic Bezier Curve](https://math.mzsoft.org/pages/get-point-on-cubic-bezier-curve.html)
+### Equations 
+- [System Of Linear Equations](https://math.mzsoft.org/pages/system-of-linear-equations.html)
+### Path Movement 
+- [Circle Movement](https://math.mzsoft.org/pages/circle-movement.html)
+- [Ellipse Movement](https://math.mzsoft.org/pages/ellipse-movement.html)
+- [Sine Wave Movement](https://math.mzsoft.org/pages/sine-wave-movement.html)
+- [Lissajous Curve](https://math.mzsoft.org/pages/lissajous-curve.html)
+### Color 
+- [Color](https://math.mzsoft.org/pages/color.html)
+- [Random Color](https://math.mzsoft.org/pages/random-color.html)
+- [Convert Colors](https://math.mzsoft.org/pages/convert-colors.html)
+- [Shift Colors](https://math.mzsoft.org/pages/shift-colors.html)
+### Other 
+- [Set Decimal Places](https://math.mzsoft.org/pages/set-decimal-places.html)
+- [Convert String To Number](https://math.mzsoft.org/pages/convert-string-to-number.html)
+- [Square In Circle](https://math.mzsoft.org/pages/square-in-circle.html)
+- [Modulo](https://math.mzsoft.org/pages/modulo.html)
+- [Convert Range](https://math.mzsoft.org/pages/convert-range.html)
+- [Check If Ranges Overlap](https://math.mzsoft.org/pages/check-if-ranges-overlap.html)
+- [Check If Value Is Number](https://math.mzsoft.org/pages/Check-if-value-is-number.html)
+------------------------------
+
+
+
 
