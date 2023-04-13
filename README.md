@@ -83,6 +83,9 @@ This project is a collection of TypeScript math helpers and utilities for the br
 ### Linear Interpolation 
 - [Lerp](https://math.mzsoft.org/pages/lerp.html)
 - [General Case](https://math.mzsoft.org/pages/general-case.html)
+### Derivatives 
+- [Polynomial](https://math.mzsoft.org/pages/polynomial.html)
+- [Trigonometric Functions](https://math.mzsoft.org/pages/trigonometric-functions.html)
 ### Other 
 - [Set Decimal Places](https://math.mzsoft.org/pages/set-decimal-places.html)
 - [Convert String To Number](https://math.mzsoft.org/pages/convert-string-to-number.html)
@@ -92,6 +95,47 @@ This project is a collection of TypeScript math helpers and utilities for the br
 - [Check If Ranges Overlap](https://math.mzsoft.org/pages/check-if-ranges-overlap.html)
 - [Check If Value Is Number](https://math.mzsoft.org/pages/Check-if-value-is-number.html)
 ------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

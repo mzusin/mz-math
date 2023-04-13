@@ -1,4 +1,14 @@
-import { dxPolynomial } from '../src/main/derivative';
+import {
+    dxPolynomial,
+    dxSin,
+    dxCos,
+    dxTan,
+    dxCot,
+    dxArcSin,
+    dxArcCos,
+    dxArcTan,
+    dxArcCot
+} from '../src/main/derivative';
 
 describe('Derivative', () => {
 
@@ -32,6 +42,41 @@ describe('Derivative', () => {
             expect(dxPolynomial(2, [[5, -1/3]], 2)).toStrictEqual(-0.66);
         });
 
+    });
+
+    describe('Trigonometric Functions', () => {
+
+        test('dxSin(Math.PI, 2)', () => {
+            expect(dxSin(Math.PI, 2)).toStrictEqual(-1);
+        });
+
+        test('dxCos(Math.PI/2, 2)', () => {
+            expect(dxCos(Math.PI/2, 2)).toStrictEqual(-1);
+        });
+
+        test('dxTan(Math.PI, 2)', () => {
+            expect(dxTan(Math.PI, 2)).toStrictEqual(1);
+        });
+
+        test('dxCot(Math.PI/2, 2)', () => {
+            expect(dxCot(Math.PI/2, 2)).toStrictEqual(-1);
+        });
+
+        test('dxArcSin(Math.PI/4, 2)', () => {
+            expect(dxArcSin(Math.PI/4, 2)).toStrictEqual(1.62);
+        });
+
+        test('dxArcCos(Math.PI/4, 2)', () => {
+            expect(dxArcCos(Math.PI/4, 2)).toStrictEqual(-1.62);
+        });
+
+        test('dxArcTan(Math.PI/4, 2)', () => {
+            expect(dxArcTan(Math.PI/4, 2)).toStrictEqual(0.62);
+        });
+
+        test('dxArcCot(Math.PI/4, 2)', () => {
+            expect(dxArcCot(Math.PI/4, 2)).toStrictEqual(-0.62);
+        });
     });
 
 });

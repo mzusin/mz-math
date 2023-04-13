@@ -167,7 +167,7 @@
           <path d="m7 7 5 5-5 5m6-10 5 5-5 5"/>
         </svg>
 
-    </div><div class="flex flex-col" data-links><a href="/pages/circle-movement.html" title="" class="pl-3 border-l border-slate-150 pb-2 text-sky-500">Circle Movement</a><a href="/pages/ellipse-movement.html" title="" class="pl-3 border-l border-slate-150 pb-2 text-slate-500">Ellipse Movement</a><a href="/pages/sine-wave-movement.html" title="" class="pl-3 border-l border-slate-150 pb-2 text-slate-500">Sine Wave Movement</a><a href="/pages/lissajous-curve.html" title="" class="pl-3 border-l border-slate-150  text-slate-500">Lissajous Curve</a></div><div class="text-xl my-4 flex items-center cursor-pointer" data-collapsible-title data-opened="true" data-id="100-color">
+    </div><div class="flex flex-col" data-links><a href="/pages/circle-movement.html" title="" class="pl-3 border-l border-slate-150 pb-2 text-slate-500">Circle Movement</a><a href="/pages/ellipse-movement.html" title="" class="pl-3 border-l border-slate-150 pb-2 text-slate-500">Ellipse Movement</a><a href="/pages/sine-wave-movement.html" title="" class="pl-3 border-l border-slate-150 pb-2 text-slate-500">Sine Wave Movement</a><a href="/pages/lissajous-curve.html" title="" class="pl-3 border-l border-slate-150  text-slate-500">Lissajous Curve</a></div><div class="text-xl my-4 flex items-center cursor-pointer" data-collapsible-title data-opened="true" data-id="100-color">
         Color 
         <svg data-arrow xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#626e7f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="ml-2 rotate-90" viewBox="0 0 24 24">
           <path stroke="none" d="M0 0h24v24H0z"/>
@@ -188,7 +188,7 @@
           <path d="m7 7 5 5-5 5m6-10 5 5-5 5"/>
         </svg>
 
-    </div><div class="flex flex-col" data-links><a href="/pages/polynomial.html" title="" class="pl-3 border-l border-slate-150 pb-2 text-slate-500">Polynomial</a><a href="/pages/trigonometric-functions.html" title="" class="pl-3 border-l border-slate-150  text-slate-500">Trigonometric Functions</a></div><div class="text-xl my-4 flex items-center cursor-pointer" data-collapsible-title data-opened="true" data-id="1000-other">
+    </div><div class="flex flex-col" data-links><a href="/pages/polynomial.html" title="" class="pl-3 border-l border-slate-150 pb-2 text-sky-500">Polynomial</a><a href="/pages/trigonometric-functions.html" title="" class="pl-3 border-l border-slate-150  text-slate-500">Trigonometric Functions</a></div><div class="text-xl my-4 flex items-center cursor-pointer" data-collapsible-title data-opened="true" data-id="1000-other">
         Other 
         <svg data-arrow xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#626e7f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="ml-2 rotate-90" viewBox="0 0 24 24">
           <path stroke="none" d="M0 0h24v24H0z"/>
@@ -200,28 +200,24 @@
     </div>
 
     <div class="p-4 overflow-y-auto h-full md:w-100-350 dark:bg-slate-800">
-      <div class="w-800 max-w-full mx-auto my-10 leading-7 text-lg text-slate-800 dark:text-slate-200"><h1 class="text-3xl mb-8">Circle Movement</h1>
-<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">import</span> { circleMovement, <span class="hljs-title class_">Vector2</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mz-math&#x27;</span>;
+      <div class="w-800 max-w-full mx-auto my-10 leading-7 text-lg text-slate-800 dark:text-slate-200"><h1 class="text-3xl mb-8">Derivatives of Polynomials</h1>
+<p class="mb-4">To take derivatives of a polynomial, you can use <strong class="font-bold">dxPolynomial()</strong> function.
+The polynomial is represented as an array, where each element is [coefficient, power]. For example, <strong class="font-bold">y = 3x+2</strong> is represented as <strong class="font-bold">[[3, 1], [2, 0]]</strong>.</p>
+<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">import</span> { dxPolynomial } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mz-math&#x27;</span>;
 
-<span class="hljs-keyword">const</span> <span class="hljs-attr">center</span>: <span class="hljs-title class_">Vector2</span> = [<span class="hljs-number">100</span>, <span class="hljs-number">100</span>];
-<span class="hljs-keyword">const</span> angle = <span class="hljs-title class_">Math</span>.<span class="hljs-property">PI</span>/<span class="hljs-number">2</span>;
-<span class="hljs-keyword">const</span> radius = <span class="hljs-number">250</span>; 
-<span class="hljs-keyword">const</span> <span class="hljs-attr">newPosition</span>: <span class="hljs-title class_">Vector2</span> = <span class="hljs-title function_">circleMovement</span>(center, angle, radius);</code></pre>
-<p class="mb-4"><a href="https://github.com/mzusin/mz-math/blob/main/examples/circular-movement/circle-movement-3.html" class="text-sky-500">Example</a></p>
-<h2 class="text-3xl mb-8">Circle movement after mouse</h2>
-<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">import</span> { circleMovementAfterMouse, <span class="hljs-title class_">Vector2</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mz-math&#x27;</span>;
+<span class="hljs-keyword">const</span> x = <span class="hljs-number">10</span>;
 
-<span class="hljs-keyword">const</span> mouse = [evt.<span class="hljs-property">clientX</span>, evt.<span class="hljs-property">clientY</span>];
-<span class="hljs-keyword">const</span> <span class="hljs-attr">center</span>: <span class="hljs-title class_">Vector2</span> = [<span class="hljs-number">100</span>, <span class="hljs-number">100</span>];
-<span class="hljs-keyword">const</span> radius = <span class="hljs-number">250</span>;
+<span class="hljs-comment">// y = 3x+2</span>
+<span class="hljs-keyword">const</span> polynomial = [[<span class="hljs-number">3</span>, <span class="hljs-number">1</span>], [<span class="hljs-number">2</span>, <span class="hljs-number">0</span>]];
 
-<span class="hljs-keyword">const</span> <span class="hljs-attr">position</span>: <span class="hljs-title class_">Vector2</span> = <span class="hljs-title function_">circleMovementAfterMouse</span>(mouse, center, radius);</code></pre>
-<p class="mb-4"><a href="https://github.com/mzusin/mz-math/blob/main/examples/circular-movement/circle-movement-mouse-1.html" class="text-sky-500">Example</a></p>
+<span class="hljs-keyword">const</span> decimalPlaces = <span class="hljs-number">2</span>; <span class="hljs-comment">// optional</span>
+
+<span class="hljs-keyword">const</span> result = <span class="hljs-title function_">dxPolynomial</span>(x, polynomial, decimalPlaces);</code></pre>
 </div>
 
       <div class="w-800 max-w-full mx-auto grid lg:grid-cols-2 gap-8 items-center text-slate-500">
 <div class="flex justify-between items-start border border-slate-200 rounded p-4">
-  <a href="/pages/system-of-linear-equations.html" title="" class="mr-4 hover:text-blue-500">
+  <a href="/pages/general-case.html" title="" class="mr-4 hover:text-blue-500">
     <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24">
     <path stroke="none" d="M0 0h24v24H0z"/>
     <path d="M5 12h14M5 12l6 6m-6-6 6-6"/>
@@ -229,7 +225,7 @@
   </a>
   <div class="flex flex-col items-end justify-center">
     <div class="mb-2 text-sm text-slate-300">Previous</div>
-    <a href="/pages/system-of-linear-equations.html" title="" class="hover:text-blue-500">System Of Linear Equations</a>
+    <a href="/pages/general-case.html" title="" class="hover:text-blue-500">General Case</a>
   </div>
 </div>      
     
@@ -237,10 +233,10 @@
   
   <div class="flex flex-col justify-center">
     <div class="mb-2 text-sm text-slate-300">Next</div>
-    <a href="/pages/ellipse-movement.html" title="" class="hover:text-blue-500">Ellipse Movement</a>
+    <a href="/pages/trigonometric-functions.html" title="" class="hover:text-blue-500">Trigonometric Functions</a>
   </div>
   
-  <a href="/pages/ellipse-movement.html" title="" class="mr-4 hover:text-blue-500">
+  <a href="/pages/trigonometric-functions.html" title="" class="mr-4 hover:text-blue-500">
     <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24">
      <path stroke="none" d="M0 0h24v24H0z"/>
      <path d="M5 12h14m-6 6 6-6m-6-6 6 6"/>
