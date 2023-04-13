@@ -3,7 +3,7 @@ import {
     v3QuadraticBezierCurve,
     v2CubicBezierCurve,
     v3CubicBezierCurve
-} from '../src/main/bezier-curve';
+} from '../src/main/bezier-curves/bezier-curve';
 
 describe('Get a point on a quadratic Bézier curve', () => {
     test('test #1', () => {

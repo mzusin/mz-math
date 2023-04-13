@@ -1,7 +1,7 @@
-import { Matrix2, Matrix3, Matrix4, Matrix, Vector2, Vector3, Vector4 } from './types';
+import { Matrix2, Matrix3, Matrix4, Matrix, Vector2, Vector3, Vector4 } from '../../types';
 import { v2Normalize, v3MulScalar, v3Normalize } from './vector';
 import { mMulVector, mMul } from './matrix';
-import { setDecimalPlaces } from './format';
+import { setDecimalPlaces } from '../format';
 
 /*
 Any 2D affine transformation can be decomposed

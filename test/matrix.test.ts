@@ -54,8 +54,8 @@ import {
     mGetFirstColumn,
     mGetLastColumn,
     mGetColumn, isSingularMatrix
-} from '../src/main/matrix';
-import { Matrix, Matrix2, Matrix3, Vector3 } from '../src/main/types';
+} from '../src/main/linear-algebra/matrix';
+import { Matrix, Matrix2, Matrix3, Vector3 } from '../src/types';
 
 describe('Matrix Sum', () => {
     test(`[

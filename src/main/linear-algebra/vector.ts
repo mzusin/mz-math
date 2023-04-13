@@ -1,6 +1,6 @@
-import { Vector, Vector2, Vector3, Vector4 } from './types';
-import { setDecimalPlaces } from './format';
-import { getV2Angle, setV2Angle } from './angle';
+import { Vector, Vector2, Vector3, Vector4 } from '../../types';
+import { setDecimalPlaces } from '../format';
+import { getV2Angle, setV2Angle } from '../angle';
 
 // ------------ SUM ------------------------
 

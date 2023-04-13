@@ -1,4 +1,62 @@
-import { Vector2, Vector3 } from './types';
+import { Vector2, Vector3 } from '../../types';
+
+/**
+ * Bézier Curves
+ * t in range [0, 1]
+ * linear: (1 - t) + t
+ * square: (1 - t)^2 + 2*(1 - t) + t^2
+ * cubic:  (1 - t)^3 + 3*(1 - t)^2 + 3*(1 - t) * t^2 + t^3
+ */
+
+/*
+extrema() {
+    const result = {};
+    let roots = [];
+
+    this.dims.forEach(
+      function (dim) {
+        let mfn = function (v) {
+          return v[dim];
+        };
+        let p = this.dpoints[0].map(mfn);
+        result[dim] = utils.droots(p);
+        if (this.order === 3) {
+          p = this.dpoints[1].map(mfn);
+          result[dim] = result[dim].concat(utils.droots(p));
+        }
+        result[dim] = result[dim].filter(function (t) {
+          return t >= 0 && t <= 1;
+        });
+        roots = roots.concat(result[dim].sort(utils.numberSort));
+      }.bind(this)
+    );
+
+    result.values = roots.sort(utils.numberSort).filter(function (v, idx) {
+      return roots.indexOf(v) === idx;
+    });
+
+    return result;
+  }
+ */
+
+/**
+ * Get the bounding box of a quadratic Bézier curve
+ */
+export const getQBezierCurveBBox = () => {
+
+    /*
+     const extrema = this.extrema(),
+      result = {};
+        this.dims.forEach(
+          function (d) {
+            result[d] = utils.getminmax(this, d, extrema[d]);
+          }.bind(this)
+        );
+        return result;
+     */
+};
+
+// -------------------- GET POINT ON CURVE --------------------------
 
 /**
  * Get a point on a quadratic Bézier curve as a function of time.

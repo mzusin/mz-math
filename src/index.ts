@@ -1,18 +1,19 @@
-import * as vector from './main/vector';
-import * as matrix from './main/matrix';
-import * as matrixTransformations from './main/matrix-transformations';
+import * as vector from './main/linear-algebra/vector';
+import * as matrix from './main/linear-algebra/matrix';
+import * as matrixTransformations from './main/linear-algebra/matrix-transformations';
 import * as format from './main/format';
 import * as angle from './main/angle';
 import * as random from './main/random';
 import * as other from './main/other';
 import * as convert from './main/convert';
-import * as bezierCurve from './main/bezier-curve';
+import * as bezierCurve from './main/bezier-curves/bezier-curve';
 import * as equations from './main/equations';
 import * as pathMovement from './main/path-movement';
 import * as color from './main/color';
 import * as physics from './main/physics';
 import * as id from './main/id';
 import * as shapes from './main/shapes';
+import * as derivative from './main/derivative';
 
 const api = {
     ...vector,
@@ -30,6 +31,7 @@ const api = {
     ...physics,
     ...id,
     ...shapes,
+    ...derivative,
 };
 
 declare global {
@@ -40,18 +42,19 @@ declare global {
 
 window.mzMath = window.mzMath || api;
 
-export * from './main/vector';
-export * from './main/matrix';
-export * from './main/matrix-transformations';
+export * from './main/linear-algebra/vector';
+export * from './main/linear-algebra/matrix';
+export * from './main/linear-algebra/matrix-transformations';
 export * from './main/format';
 export * from './main/angle';
 export * from './main/random';
 export * from './main/other';
 export * from './main/convert';
-export * from './main/bezier-curve';
+export * from './main/bezier-curves/bezier-curve';
 export * from './main/equations';
 export * from './main/path-movement';
 export * from './main/color';
 export * from './main/physics';
 export * from './main/id';
 export * from './main/shapes';
+export * from './main/derivative';

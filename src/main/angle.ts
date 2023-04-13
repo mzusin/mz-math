@@ -1,6 +1,6 @@
-import { Vector, Vector2, Vector3 } from './types';
+import { Vector, Vector2, Vector3 } from '../types';
 import { setDecimalPlaces } from './format';
-import { v2Length, vNormalize, vDotProduct, vSub } from './vector';
+import { v2Length, vNormalize, vDotProduct, vSub } from './linear-algebra/vector';
 
 export const getV2Angle = (v2: Vector2, decimalPlaces = Infinity) => {
     const angle = Math.atan2(v2[1], v2[0]);

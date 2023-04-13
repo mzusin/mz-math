@@ -1,4 +1,4 @@
-import { Matrix2, Matrix3, Matrix4, Matrix, Vector, Vector2, Vector3 } from './types';
+import { Matrix2, Matrix3, Matrix4, Matrix, Vector, Vector2, Vector3 } from '../../types';
 import { vMulScalar, vSum, vSub, vDotProduct, vN, vEqual, vDivideScalar } from './vector';
 
 // --------------- SUM ----------------------

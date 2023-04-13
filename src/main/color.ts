@@ -1,5 +1,5 @@
 import { getRandom } from './random';
-import { HSLColor, RGBColor } from './types';
+import { HSLColor, RGBColor } from '../types';
 import { mod } from './other';
 import { setDecimalPlaces } from './format';
 

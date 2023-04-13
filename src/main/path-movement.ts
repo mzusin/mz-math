@@ -1,5 +1,5 @@
-import { Vector2 } from './types';
-import { v2Sub } from './vector';
+import { Vector2 } from '../types';
+import { v2Sub } from './linear-algebra/vector';
 import { getV2Angle } from './angle';
 import { convertRange } from './other';
 

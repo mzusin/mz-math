@@ -1,5 +1,5 @@
-import { Matrix, Matrix2, Matrix3, Vector, Vector2, Vector3 } from './types';
-import { m2Inverse, m3Inverse, mInverse, mMulVector, mDelLastColumn, mGetLastColumn } from './matrix';
+import { Matrix, Matrix2, Matrix3, Vector, Vector2, Vector3 } from '../types';
+import { m2Inverse, m3Inverse, mInverse, mMulVector, mDelLastColumn, mGetLastColumn } from './linear-algebra/matrix';
 
 /**
  * System of 2 linear equations.

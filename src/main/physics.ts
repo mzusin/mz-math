@@ -1,4 +1,4 @@
-import { Vector2 } from './types';
+import { Vector2 } from '../types';
 
 /**
  * Speed = how far something moves in a given amount of time.
