@@ -32,6 +32,9 @@ export const dxPolynomial = (x: number, polynomial: number[][], decimalPlaces = 
 
 // ---------------------- Bezier Curves ---------------------------
 
+/**
+ * Derivative of Bezier Curve is another Bezier Curve.
+ */
 export const dxV2QuadraticBezierCurve = (
     t: number,
     startControlPoint: Vector2,

@@ -1,6 +1,5 @@
 import { setDecimalPlaces } from './format';
-import { Vector2, Vector3 } from '../../types/main/types';
-import { Matrix, Matrix2, Matrix3, Vector } from '../types';
+import { Matrix, Matrix2, Matrix3, Vector, Vector2, Vector3 } from '../types';
 
 // ------------------------ LINEAR INTERPOLATION in general form ----------------------------
 

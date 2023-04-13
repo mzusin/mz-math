@@ -250,4 +250,28 @@ declare module 'mz-math' {
     export const newId: () => string;
 
     export const getSquareInCircleSide: (radius: number, decimalPlaces?: number) => number;
+
+    export const dxPolynomial: (x: number, polynomial: number[][], decimalPlaces?: number) => number;
+    export const dxV2QuadraticBezierCurve: (t: number, startControlPoint: Vector2, centerControlPoint: Vector2, endControlPoint: Vector2, decimalPlaces?: number) => Vector2;
+    export const dxV3QuadraticBezierCurve: (t: number, startControlPoint: Vector3, centerControlPoint: Vector3, endControlPoint: Vector3, decimalPlaces?: number) => Vector3;
+    export const dxV2CubicBezierCurve: (t: number, startControlPoint: Vector2, center1ControlPoint: Vector2, center2ControlPoint: Vector2, endControlPoint: Vector2, decimalPlaces?: number) => Vector2;
+    export const dxV3CubicBezierCurve: (t: number, startControlPoint: Vector3, center1ControlPoint: Vector3, center2ControlPoint: Vector3, endControlPoint: Vector3, decimalPlaces?: number) => Vector3;
+    export const dxSin: (x: number, decimalPlaces?: number) => number;
+    export const dxCos: (x: number, decimalPlaces?: number) => number;
+    export const dxTan: (x: number, decimalPlaces?: number) => number;
+    export const dxCot: (x: number, decimalPlaces?: number) => number;
+    export const dxArcSin: (x: number, decimalPlaces?: number) => number;
+    export const dxArcCos: (x: number, decimalPlaces?: number) => number;
+    export const dxArcTan: (x: number, decimalPlaces?: number) => number;
+    export const dxArcCot: (x: number, decimalPlaces?: number) => number;
+
+    export const linearInterpolation: (x: number, start: Vector2, end: Vector2, decimalPlaces?: number) => number;
+    export const lerp: (x: number, start: number, end: number, decimalPlaces?: number) => number;
+    export const vLerp: (x: number, start: Vector, end: Vector, decimalPlaces?: number) => Vector;
+    export const v3Lerp: (x: number, start: Vector3, end: Vector3, decimalPlaces?: number) => Vector3;
+    export const v2Lerp: (x: number, start: Vector2, end: Vector2, decimalPlaces?: number) => Vector2;
+    export const mLerp: (x: number, start: Matrix, end: Matrix, decimalPlaces?: number) => Matrix;
+    export const m3Lerp: (x: number, start: Matrix3, end: Matrix3, decimalPlaces?: number) => Matrix3;
+    export const m2Lerp: (x: number, start: Matrix2, end: Matrix2, decimalPlaces?: number) => Matrix2;
+
 }

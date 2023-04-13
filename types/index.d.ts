@@ -1,6 +1,9 @@
 declare const api: {
     dxPolynomial: (x: number, polynomial: number[][], decimalPlaces?: number) => number;
-    dxQuadraticBezierCurve: (t: number, startControlPoint: import("./types").Vector2, centerControlPoint: import("./types").Vector2, endControlPoint: import("./types").Vector2, decimalPlaces?: number) => import("./types").Vector2;
+    dxV2QuadraticBezierCurve: (t: number, startControlPoint: import("./types").Vector2, centerControlPoint: import("./types").Vector2, endControlPoint: import("./types").Vector2, decimalPlaces?: number) => import("./types").Vector2;
+    dxV3QuadraticBezierCurve: (t: number, startControlPoint: import("./types").Vector3, centerControlPoint: import("./types").Vector3, endControlPoint: import("./types").Vector3, decimalPlaces?: number) => import("./types").Vector3;
+    dxV2CubicBezierCurve: (t: number, startControlPoint: import("./types").Vector2, center1ControlPoint: import("./types").Vector2, center2ControlPoint: import("./types").Vector2, endControlPoint: import("./types").Vector2, decimalPlaces?: number) => import("./types").Vector2;
+    dxV3CubicBezierCurve: (t: number, startControlPoint: import("./types").Vector3, center1ControlPoint: import("./types").Vector3, center2ControlPoint: import("./types").Vector3, endControlPoint: import("./types").Vector3, decimalPlaces?: number) => import("./types").Vector3;
     dxSin: (x: number, decimalPlaces?: number) => number;
     dxCos: (x: number, decimalPlaces?: number) => number;
     dxTan: (x: number, decimalPlaces?: number) => number;
