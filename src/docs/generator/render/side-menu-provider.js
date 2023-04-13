@@ -111,7 +111,7 @@ export const renderSideMenu = (
 ` : '';
 
     // add title html --------
-    html += `<div class="text-xl my-4 flex items-center ${ hasLinks ? 'cursor-pointer' : '' }" ${ hasLinks ? 'data-collapsible-title data-opened="true"' : ''}>
+    html += `<div class="text-xl my-4 flex items-center ${ hasLinks ? 'cursor-pointer' : '' }" ${ hasLinks ? 'data-collapsible-title data-opened="true"' : ''} data-id="${ section }">
         ${ sectionTitle } ${ arrow }
     </div>`;
 
