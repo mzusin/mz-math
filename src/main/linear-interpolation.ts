@@ -40,7 +40,7 @@ Y = x * end + start(1 - x)
 
 /**
  * Performs a linear interpolation in range [0, 1].
- * x - a value that linearly interpolates between the x parameter and the y parameter.
+ * x - a value that linearly interpolates between the start parameter and the end parameter.
  */
 export const lerp = (
     x: number,

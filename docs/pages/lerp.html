@@ -111,7 +111,7 @@
           <path d="m7 7 5 5-5 5m6-10 5 5-5 5"/>
         </svg>
 
-    </div><div class="flex flex-col" data-links><a href="/pages/vectors.html" title="" class="pl-3 border-l border-slate-150 pb-2 text-slate-500">Vectors</a><a href="/pages/vectors-sum.html" title="" class="pl-3 border-l border-slate-150 pb-2 text-slate-500">Vectors Sum</a><a href="/pages/vectors-subtraction.html" title="" class="pl-3 border-l border-slate-150 pb-2 text-slate-500">Vectors Subtraction</a><a href="/pages/multiply-vector-by-scalar.html" title="" class="pl-3 border-l border-slate-150 pb-2 text-slate-500">Multiply by Scalar</a><a href="/pages/divide-vector-by-scalar.html" title="" class="pl-3 border-l border-slate-150 pb-2 text-slate-500">Divide by Scalar</a><a href="/pages/vector-length.html" title="" class="pl-3 border-l border-slate-150 pb-2 text-sky-500">Vector Length</a><a href="/pages/normalize-vector.html" title="" class="pl-3 border-l border-slate-150 pb-2 text-slate-500">Normalize Vector</a><a href="/pages/dot-product.html" title="" class="pl-3 border-l border-slate-150 pb-2 text-slate-500">Dot Product</a><a href="/pages/cross-product.html" title="" class="pl-3 border-l border-slate-150 pb-2 text-slate-500">Cross Product</a><a href="/pages/distance-between-vectors.html" title="" class="pl-3 border-l border-slate-150 pb-2 text-slate-500">Distance Between Vectors</a><a href="/pages/vector-initialization.html" title="" class="pl-3 border-l border-slate-150 pb-2 text-slate-500">Vector Initialization</a><a href="/pages/vectors-equality.html" title="" class="pl-3 border-l border-slate-150  text-slate-500">Vectors Equality</a></div><div class="text-xl my-4 flex items-center cursor-pointer" data-collapsible-title data-opened="true">
+    </div><div class="flex flex-col" data-links><a href="/pages/vectors.html" title="" class="pl-3 border-l border-slate-150 pb-2 text-slate-500">Vectors</a><a href="/pages/vectors-sum.html" title="" class="pl-3 border-l border-slate-150 pb-2 text-slate-500">Vectors Sum</a><a href="/pages/vectors-subtraction.html" title="" class="pl-3 border-l border-slate-150 pb-2 text-slate-500">Vectors Subtraction</a><a href="/pages/multiply-vector-by-scalar.html" title="" class="pl-3 border-l border-slate-150 pb-2 text-slate-500">Multiply by Scalar</a><a href="/pages/divide-vector-by-scalar.html" title="" class="pl-3 border-l border-slate-150 pb-2 text-slate-500">Divide by Scalar</a><a href="/pages/vector-length.html" title="" class="pl-3 border-l border-slate-150 pb-2 text-slate-500">Vector Length</a><a href="/pages/normalize-vector.html" title="" class="pl-3 border-l border-slate-150 pb-2 text-slate-500">Normalize Vector</a><a href="/pages/dot-product.html" title="" class="pl-3 border-l border-slate-150 pb-2 text-slate-500">Dot Product</a><a href="/pages/cross-product.html" title="" class="pl-3 border-l border-slate-150 pb-2 text-slate-500">Cross Product</a><a href="/pages/distance-between-vectors.html" title="" class="pl-3 border-l border-slate-150 pb-2 text-slate-500">Distance Between Vectors</a><a href="/pages/vector-initialization.html" title="" class="pl-3 border-l border-slate-150 pb-2 text-slate-500">Vector Initialization</a><a href="/pages/vectors-equality.html" title="" class="pl-3 border-l border-slate-150  text-slate-500">Vectors Equality</a></div><div class="text-xl my-4 flex items-center cursor-pointer" data-collapsible-title data-opened="true">
         Matrix 
         <svg data-arrow xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#626e7f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="ml-2 rotate-90" viewBox="0 0 24 24">
           <path stroke="none" d="M0 0h24v24H0z"/>
@@ -181,7 +181,7 @@
           <path d="m7 7 5 5-5 5m6-10 5 5-5 5"/>
         </svg>
 
-    </div><div class="flex flex-col" data-links><a href="/pages/lerp.html" title="" class="pl-3 border-l border-slate-150 pb-2 text-slate-500">Lerp</a><a href="/pages/general-case.html" title="" class="pl-3 border-l border-slate-150  text-slate-500">General Case</a></div><div class="text-xl my-4 flex items-center cursor-pointer" data-collapsible-title data-opened="true">
+    </div><div class="flex flex-col" data-links><a href="/pages/lerp.html" title="" class="pl-3 border-l border-slate-150 pb-2 text-sky-500">Lerp</a><a href="/pages/general-case.html" title="" class="pl-3 border-l border-slate-150  text-slate-500">General Case</a></div><div class="text-xl my-4 flex items-center cursor-pointer" data-collapsible-title data-opened="true">
         Other 
         <svg data-arrow xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#626e7f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="ml-2 rotate-90" viewBox="0 0 24 24">
           <path stroke="none" d="M0 0h24v24H0z"/>
@@ -193,32 +193,96 @@
     </div>
 
     <div class="p-4 overflow-y-auto h-full md:w-100-350 dark:bg-slate-800">
-      <div class="w-800 max-w-full mx-auto my-10 leading-7 text-lg text-slate-800 dark:text-slate-200"><h2 class="text-3xl mb-8">Get Vector Length</h2>
-<p class="mb-4">Vector length can be found using the <strong class="font-bold">v2Length</strong>, <strong class="font-bold">v3Length</strong>, and <strong class="font-bold">vLength</strong> functions. Each function receives an optional <strong class="font-bold">decimalPlaces</strong> parameter.</p>
-<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">import</span> { v2Length, v3Length, vLength } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mz-math&#x27;</span>;
+      <div class="w-800 max-w-full mx-auto my-10 leading-7 text-lg text-slate-800 dark:text-slate-200"><h1 class="text-3xl mb-8">Lerp</h1>
+<p class="mb-4">Lerp function performs a linear interpolation in the given range.
+Here <strong class="font-bold">x</strong> is a value that linearly interpolates between the <strong class="font-bold">start</strong> parameter and the <strong class="font-bold">end</strong> parameter.</p>
+<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">import</span> { lerp } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mz-math&#x27;</span>;
 
-<span class="hljs-comment">// 2D vector</span>
-<span class="hljs-keyword">const</span> len1 = <span class="hljs-title function_">v2Length</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]); <span class="hljs-comment">// 2.23606797749979</span>
-<span class="hljs-keyword">const</span> len2 = <span class="hljs-title function_">v2Length</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>], <span class="hljs-number">2</span>); <span class="hljs-comment">// 2.24</span>
+<span class="hljs-keyword">const</span> x = <span class="hljs-number">5</span>;
+<span class="hljs-keyword">const</span> start = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">const</span> end = <span class="hljs-number">100</span>;
+<span class="hljs-keyword">const</span> decimalPlaces = <span class="hljs-number">2</span>; <span class="hljs-comment">// optional</span>
 
-<span class="hljs-comment">// 3D vector</span>
-<span class="hljs-keyword">const</span> len3 = <span class="hljs-title function_">v3Length</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]); <span class="hljs-comment">// 3.7416573867739413</span>
-<span class="hljs-keyword">const</span> len4 = <span class="hljs-title function_">v3Length</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-number">2</span>); <span class="hljs-comment">// 3.74</span>
+<span class="hljs-keyword">const</span> result = <span class="hljs-title function_">lerp</span>(x, start, end, decimalPlaces); <span class="hljs-comment">// 500</span></code></pre>
+<p class="mb-4">There are also versions of the lerp function for working with vectors of numbers:</p>
+<p class="mb-4"><strong class="font-bold">2D Vector</strong></p>
+<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">import</span> { v2Lerp, <span class="hljs-title class_">Vector2</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mz-math&#x27;</span>;
 
-<span class="hljs-comment">// General case</span>
-<span class="hljs-keyword">const</span> len5 = <span class="hljs-title function_">vLength</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>]); <span class="hljs-comment">// 5.477225575051661</span>
-<span class="hljs-keyword">const</span> len6 = <span class="hljs-title function_">vLength</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], <span class="hljs-number">2</span>); <span class="hljs-comment">// 5.48</span></code></pre>
-<h2 class="text-3xl mb-8">Set Vector Length</h2>
-<p class="mb-4">It’s possible to update vector length using <strong class="font-bold">v2SetLength</strong> function. The function receives an optional <strong class="font-bold">decimalPlaces</strong> parameter.</p>
-<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">import</span> { v2SetLength } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mz-math&#x27;</span>;
+<span class="hljs-keyword">const</span> x = <span class="hljs-number">15</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-attr">start</span>: <span class="hljs-title class_">Vector2</span> = [<span class="hljs-number">0</span>, <span class="hljs-number">100</span>];
+<span class="hljs-keyword">const</span> <span class="hljs-attr">end</span>: <span class="hljs-title class_">Vector2</span> = [<span class="hljs-number">50</span>, <span class="hljs-number">1000</span>];
+<span class="hljs-keyword">const</span> decimalPlaces = <span class="hljs-number">2</span>; <span class="hljs-comment">// optional</span>
 
-<span class="hljs-keyword">const</span> res1 = <span class="hljs-title function_">v2SetLength</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>], <span class="hljs-number">10</span>); <span class="hljs-comment">// [4.4721359549995805, 8.94427190999916]</span>
-<span class="hljs-keyword">const</span> res2 = <span class="hljs-title function_">v2SetLength</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>], <span class="hljs-number">10</span>, <span class="hljs-number">2</span>); <span class="hljs-comment">// [4.47, 8.94]</span></code></pre>
+<span class="hljs-keyword">const</span> <span class="hljs-attr">result</span>: <span class="hljs-title class_">Vector2</span> = <span class="hljs-title function_">v2Lerp</span>(x, start, end, decimalPlaces);</code></pre>
+<p class="mb-4"><strong class="font-bold">3D Vector</strong></p>
+<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">import</span> { v3Lerp, <span class="hljs-title class_">Vector3</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mz-math&#x27;</span>;
+
+<span class="hljs-keyword">const</span> x = <span class="hljs-number">15</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-attr">start</span>: <span class="hljs-title class_">Vector3</span> = [<span class="hljs-number">0</span>, <span class="hljs-number">100</span>, <span class="hljs-number">500</span>];
+<span class="hljs-keyword">const</span> <span class="hljs-attr">end</span>: <span class="hljs-title class_">Vector3</span> = [<span class="hljs-number">50</span>, <span class="hljs-number">400</span>, <span class="hljs-number">900</span>];
+<span class="hljs-keyword">const</span> decimalPlaces = <span class="hljs-number">2</span>; <span class="hljs-comment">// optional</span>
+
+<span class="hljs-keyword">const</span> <span class="hljs-attr">result</span>: <span class="hljs-title class_">Vector3</span> = <span class="hljs-title function_">v3Lerp</span>(x, start, end, decimalPlaces);</code></pre>
+<p class="mb-4"><strong class="font-bold">General Case</strong></p>
+<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">import</span> { vLerp, <span class="hljs-title class_">Vector</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mz-math&#x27;</span>;
+
+<span class="hljs-keyword">const</span> x = <span class="hljs-number">15</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-attr">start</span>: <span class="hljs-title class_">Vector</span> = [<span class="hljs-number">0</span>, <span class="hljs-number">100</span>, <span class="hljs-number">500</span>, <span class="hljs-number">1500</span>];
+<span class="hljs-keyword">const</span> <span class="hljs-attr">end</span>: <span class="hljs-title class_">Vector</span> = [<span class="hljs-number">50</span>, <span class="hljs-number">400</span>, <span class="hljs-number">900</span>, <span class="hljs-number">2000</span>];
+<span class="hljs-keyword">const</span> decimalPlaces = <span class="hljs-number">2</span>; <span class="hljs-comment">// optional</span>
+
+<span class="hljs-keyword">const</span> <span class="hljs-attr">result</span>: <span class="hljs-title class_">Vector</span> = <span class="hljs-title function_">vLerp</span>(x, start, end, decimalPlaces);</code></pre>
+<p class="mb-4">There are also versions of the lerp function for working with matrices of numbers:</p>
+<p class="mb-4"><strong class="font-bold">2D Matrix</strong></p>
+<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">import</span> { m2Lerp, <span class="hljs-title class_">Matrix2</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mz-math&#x27;</span>;
+
+<span class="hljs-keyword">const</span> x = <span class="hljs-number">15</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-attr">start</span>: <span class="hljs-title class_">Matrix2</span> = [
+    [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>],
+    [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>],
+];
+<span class="hljs-keyword">const</span> <span class="hljs-attr">end</span>: <span class="hljs-title class_">Matrix2</span> = [
+    [<span class="hljs-number">100</span>, <span class="hljs-number">200</span>],
+    [<span class="hljs-number">300</span>, <span class="hljs-number">400</span>],
+];
+<span class="hljs-keyword">const</span> decimalPlaces = <span class="hljs-number">2</span>; <span class="hljs-comment">// optional</span>
+
+<span class="hljs-keyword">const</span> <span class="hljs-attr">result</span>: <span class="hljs-title class_">Matrix2</span> = <span class="hljs-title function_">m2Lerp</span>(x, start, end, decimalPlaces);</code></pre>
+<p class="mb-4"><strong class="font-bold">3D Matrix</strong></p>
+<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">import</span> { m3Lerp, <span class="hljs-title class_">Matrix3</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mz-math&#x27;</span>;
+
+<span class="hljs-keyword">const</span> x = <span class="hljs-number">15</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-attr">start</span>: <span class="hljs-title class_">Matrix3</span> = [
+    [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>],
+    [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>],
+];
+<span class="hljs-keyword">const</span> <span class="hljs-attr">end</span>: <span class="hljs-title class_">Matrix3</span> = [
+    [<span class="hljs-number">100</span>, <span class="hljs-number">200</span>, <span class="hljs-number">300</span>],
+    [<span class="hljs-number">400</span>, <span class="hljs-number">500</span>, <span class="hljs-number">600</span>],
+];
+<span class="hljs-keyword">const</span> decimalPlaces = <span class="hljs-number">2</span>; <span class="hljs-comment">// optional</span>
+
+<span class="hljs-keyword">const</span> <span class="hljs-attr">result</span>: <span class="hljs-title class_">Matrix3</span> = <span class="hljs-title function_">m3Lerp</span>(x, start, end, decimalPlaces);</code></pre>
+<p class="mb-4"><strong class="font-bold">General Case</strong></p>
+<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">import</span> { mLerp, <span class="hljs-title class_">Matrix</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mz-math&#x27;</span>;
+
+<span class="hljs-keyword">const</span> x = <span class="hljs-number">25</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-attr">start</span>: <span class="hljs-title class_">Matrix</span> = [
+    [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>],
+    [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">12</span>],
+];
+<span class="hljs-keyword">const</span> <span class="hljs-attr">end</span>: <span class="hljs-title class_">Matrix</span> = [
+    [<span class="hljs-number">100</span>, <span class="hljs-number">200</span>, <span class="hljs-number">300</span>, <span class="hljs-number">800</span>],
+    [<span class="hljs-number">400</span>, <span class="hljs-number">500</span>, <span class="hljs-number">600</span>, <span class="hljs-number">1200</span>],
+];
+<span class="hljs-keyword">const</span> decimalPlaces = <span class="hljs-number">2</span>; <span class="hljs-comment">// optional</span>
+
+<span class="hljs-keyword">const</span> <span class="hljs-attr">result</span>: <span class="hljs-title class_">Matrix</span> = <span class="hljs-title function_">mLerp</span>(x, start, end, decimalPlaces);</code></pre>
 </div>
 
       <div class="w-800 max-w-full mx-auto grid lg:grid-cols-2 gap-8 items-center text-slate-500">
 <div class="flex justify-between items-start border border-slate-200 rounded p-4">
-  <a href="/pages/divide-vector-by-scalar.html" title="" class="mr-4 hover:text-blue-500">
+  <a href="/pages/shift-colors.html" title="" class="mr-4 hover:text-blue-500">
     <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24">
     <path stroke="none" d="M0 0h24v24H0z"/>
     <path d="M5 12h14M5 12l6 6m-6-6 6-6"/>
@@ -226,7 +290,7 @@
   </a>
   <div class="flex flex-col items-end justify-center">
     <div class="mb-2 text-sm text-slate-300">Previous</div>
-    <a href="/pages/divide-vector-by-scalar.html" title="" class="hover:text-blue-500">Divide by Scalar</a>
+    <a href="/pages/shift-colors.html" title="" class="hover:text-blue-500">Shift Colors</a>
   </div>
 </div>      
     
@@ -234,10 +298,10 @@
   
   <div class="flex flex-col justify-center">
     <div class="mb-2 text-sm text-slate-300">Next</div>
-    <a href="/pages/normalize-vector.html" title="" class="hover:text-blue-500">Normalize Vector</a>
+    <a href="/pages/general-case.html" title="" class="hover:text-blue-500">General Case</a>
   </div>
   
-  <a href="/pages/normalize-vector.html" title="" class="mr-4 hover:text-blue-500">
+  <a href="/pages/general-case.html" title="" class="mr-4 hover:text-blue-500">
     <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24">
      <path stroke="none" d="M0 0h24v24H0z"/>
      <path d="M5 12h14m-6 6 6-6m-6-6 6 6"/>
