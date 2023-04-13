@@ -1,4 +1,4 @@
-import { Vector2 } from './types';
+import { Vector2 } from '../types';
 /**
  * Circle Equation
  * x^2 + y^2 = radius^2

@@ -1,4 +1,4 @@
-import { HSLColor, RGBColor } from './types';
+import { HSLColor, RGBColor } from '../types';
 export declare const getRandomRGBColor: () => RGBColor;
 export declare const getRandomHexColor: () => string;
 export declare const getRandomHSLColor: () => HSLColor;

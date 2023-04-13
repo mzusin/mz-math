@@ -1,4 +1,4 @@
-import { Matrix, Vector, Vector2, Vector3 } from './types';
+import { Matrix, Vector, Vector2, Vector3 } from '../types';
 /**
  * System of 2 linear equations.
  * [x, y] = inverse(Matrix of equation parameters) x (vector of equation results)
