@@ -233,12 +233,12 @@ export const v2CubicBezierCurveExtrema = (
     const a1 = -3  * startControlPoint[0] + 9 * center1ControlPoint[0] - 9 * center2ControlPoint[0] + 3 * endControlPoint[0];
     const b1 = 6  * startControlPoint[0] - 12 * center1ControlPoint[0] + 6 * center2ControlPoint[0];
     const c1 = -3  * startControlPoint[0] + 3 * center1ControlPoint[0];
-    const equation1: Vector = [a1, b1, c1];
+    const equation1: Vector = [a1, b1, c1, 0];
 
     const a2 = -3  * startControlPoint[1] + 9 * center1ControlPoint[1] - 9 * center2ControlPoint[1] + 3 * endControlPoint[1];
     const b2 = 6  * startControlPoint[1] - 12 * center1ControlPoint[1] + 6 * center2ControlPoint[1];
     const c2 = -3  * startControlPoint[1] + 3 * center1ControlPoint[1];
-    const equation2: Vector = [a2, b2, c2];
+    const equation2: Vector = [a2, b2, c2, 0];
 
     // Any value between 0 and 1 is a root that matters for Bézier curves, anything below or above that is irrelevant (because Bézier curves are only defined over the interval [0,1]).
     const res1 = quadraticEquation(equation1, decimalPlaces).filter(num => num >= 0 && num <= 1);
@@ -302,12 +302,30 @@ export const v2CubicBezierBBox = (
     decimalPlaces = Infinity
 ) => {
 
-    const extrema = v2CubicBezierCurveExtrema(startControlPoint, center1ControlPoint, center2ControlPoint, endControlPoint, decimalPlaces) || [];
+    const extrema = v2CubicBezierCurveExtrema(startControlPoint, center1ControlPoint, center2ControlPoint, endControlPoint) || [];
 
-    const minX = Math.min(extrema[0] ?? Infinity, startControlPoint[0], endControlPoint[0]);
-    const maxX = Math.max(extrema[0] ?? -Infinity, startControlPoint[0], endControlPoint[0]);
-    const minY = Math.min(extrema[1] ?? Infinity, startControlPoint[1], endControlPoint[1]);
-    const maxY = Math.max(extrema[1] ?? -Infinity, startControlPoint[1], endControlPoint[1]);
+    let minX = Infinity;
+    let minY = Infinity;
+    let maxX = -Infinity;
+    let maxY = -Infinity;
+
+    for(const percent of extrema){
+        const point = v2CubicBezierCurve(percent, startControlPoint, center1ControlPoint, center2ControlPoint, endControlPoint);
+
+        const x = point[0];
+        const y = point[1];
+
+        minX = Math.min(minX, x ?? Infinity);
+        maxX = Math.max(maxX, x ?? -Infinity);
+
+        minY = Math.min(minY, y ?? Infinity);
+        maxY = Math.max(maxY, y ?? -Infinity);
+    }
+
+    minX = setDecimalPlaces(Math.min(minX, startControlPoint[0], endControlPoint[0]), decimalPlaces);
+    maxX = setDecimalPlaces(Math.max(maxX, startControlPoint[0], endControlPoint[0]), decimalPlaces);
+    minY = setDecimalPlaces(Math.min(minY, startControlPoint[1], endControlPoint[1]), decimalPlaces);
+    maxY = setDecimalPlaces(Math.max(maxY, startControlPoint[1], endControlPoint[1]), decimalPlaces);
 
     return {
         minX,

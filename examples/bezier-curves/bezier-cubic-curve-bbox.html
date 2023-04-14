@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Bezier Cubic Curve BBox</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../css/styles-5.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>Bezier Cubic Curve BBox</h1>
+    <div id="wrapper" style="position: absolute">
+        <svg xmlns="http://www.w3.org/2000/svg" width="550" height="650">
+            <path stroke="red" d="M 100 200 C 100 50 200 150 300 250" fill="none"></path>
+<!--
+            <path stroke="green" d="M 350 350 Q 500 50 250 150" fill="none"></path>
+
+            <path stroke="brown" d="M 150 550 Q 400 300 50 550" fill="none"></path>-->
+        </svg>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/mz-svg/dist/mz-svg.min.js"></script>
+    <script src="../../dist/mz-math.min.js"></script>
+    <script>
+        const init = () => {
+
+            const $svg = document.querySelector('svg');
+            if(!$svg) return;
+
+            // -------------- 1 -------------------
+            const res = mzMath.v2CubicBezierBBox(
+                [100, 200],
+                [100, 50],
+                [200, 150],
+                [300, 250],
+            );
+
+            console.log(res);
+
+            $svg.append(mzSVG.createRect({
+                x: res.minX,
+                y: res.minY,
+                width: res.maxX - res.minX,
+                height: res.maxY - res.minY,
+                stroke: 'blue',
+                fill: 'none',
+            }));
+
+            /*// -------------- 2 -------------------
+            const res2 = mzMath.v2QuadraticBezierBBox(
+                [350, 350],
+                [500, 50],
+                [250, 150]
+            );
+
+            // console.log(res2);
+
+            $svg.append(mzSVG.createRect({
+                x: res2.minX,
+                y: res2.minY,
+                width: res2.maxX - res2.minX,
+                height: res2.maxY - res2.minY,
+                stroke: 'blue',
+                fill: 'none',
+            }));
+
+            // -------------- 3 -------------------
+            const res3 = mzMath.v2QuadraticBezierBBox(
+                [150, 550],
+                [400, 300],
+                [50, 550]
+            );
+
+            console.log(res3);
+
+            $svg.append(mzSVG.createRect({
+                x: res3.minX,
+                y: res3.minY,
+                width: res3.maxX - res3.minX,
+                height: res3.maxY - res3.minY,
+                stroke: 'blue',
+                fill: 'none',
+            }));*/
+        };
+
+        init();
+</script>
+</body>
+</html>

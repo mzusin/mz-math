@@ -2,17 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>Bezier Curve BBox</title>
+    <title>Bezier Quadratic Curve BBox</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="../css/styles-5.css" rel="stylesheet" />
 </head>
 <body>
-    <h1>Bezier Curve BBox</h1>
+    <h1>Bezier Quadratic Curve BBox</h1>
     <div id="wrapper" style="position: absolute">
-        <svg xmlns="http://www.w3.org/2000/svg" width="550" height="450">
+        <svg xmlns="http://www.w3.org/2000/svg" width="550" height="650">
             <path stroke="red" d="M 100 200 Q 100 50 200 150" fill="none"></path>
 
             <path stroke="green" d="M 350 350 Q 500 50 250 150" fill="none"></path>
+
+            <path stroke="brown" d="M 150 550 Q 400 300 50 550" fill="none"></path>
         </svg>
     </div>
 
@@ -49,7 +51,7 @@
                 [250, 150]
             );
 
-            console.log(res2);
+            // console.log(res2);
 
             $svg.append(mzSVG.createRect({
                 x: res2.minX,
@@ -60,12 +62,23 @@
                 fill: 'none',
             }));
 
-           /* $svg.append(mzSVG.createCircle({
-                cx: 136,
-                cy: 110,
-                r: 5,
-                fill: 'red'
-            }));*/
+            // -------------- 3 -------------------
+            const res3 = mzMath.v2QuadraticBezierBBox(
+                [150, 550],
+                [400, 300],
+                [50, 550]
+            );
+
+            console.log(res3);
+
+            $svg.append(mzSVG.createRect({
+                x: res3.minX,
+                y: res3.minY,
+                width: res3.maxX - res3.minX,
+                height: res3.maxY - res3.minY,
+                stroke: 'blue',
+                fill: 'none',
+            }));
         };
 
         init();
