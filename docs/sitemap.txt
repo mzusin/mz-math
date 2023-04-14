@@ -68,6 +68,7 @@ https://math.mzsoft.org/pages/lerp.html
 https://math.mzsoft.org/pages/general-case.html
 https://math.mzsoft.org/pages/polynomial.html
 https://math.mzsoft.org/pages/trigonometric-functions.html
+https://math.mzsoft.org/pages/bezier-curves.html
 https://math.mzsoft.org/pages/set-decimal-places.html
 https://math.mzsoft.org/pages/convert-string-to-number.html
 https://math.mzsoft.org/pages/square-in-circle.html

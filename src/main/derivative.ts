@@ -34,6 +34,7 @@ export const dxPolynomial = (x: number, polynomial: number[][], decimalPlaces = 
 
 /**
  * Derivative of Bezier Curve is another Bezier Curve.
+ * t must min in range [0, 1]
  */
 export const dxV2QuadraticBezierCurve = (
     t: number,
