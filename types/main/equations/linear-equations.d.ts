@@ -1,10 +1,10 @@
 import { Matrix, Vector, Vector2, Vector3 } from '../../types';
 /**
  * Linear equation
- * ax + b = 0
- * x = -b/a, a != 0
+ * ax + b = c
+ * x = (c - b) / a; a != 0
  */
-export declare const linearEquation: (equation: Vector2, decimalPlaces?: number) => number;
+export declare const linearEquation: (equation: Vector3, decimalPlaces?: number) => number;
 /**
  * System of 2 linear equations.
  * [x, y] = inverse(Matrix of equation parameters) x (vector of equation results)

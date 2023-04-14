@@ -34,7 +34,7 @@ declare const api: {
     ellipseMovement: (center: import("./types").Vector2, angle: number, radius1: number, radius2: number) => import("./types").Vector2;
     sineWaveMovement: (x: number, amplitude: number, frequency: number, phase: number) => import("./types").Vector2;
     lissajousCurve: (width: number, height: number, t: number, k: number, n: number, m: number, p: number) => import("./types").Vector2;
-    linearEquation: (equation: import("./types").Vector2, decimalPlaces?: number) => number;
+    linearEquation: (equation: import("./types").Vector3, decimalPlaces?: number) => number;
     linearEquationSystem2: (equation1: import("./types").Vector3, equation2: import("./types").Vector3, decimalPlaces?: number) => import("./types").Vector2 | null;
     linearEquationSystem3: (equation1: import("./types").Vector, equation2: import("./types").Vector, equation3: import("./types").Vector, decimalPlaces?: number) => import("./types").Vector3 | null;
     linearEquationSystemN: (equations: import("./types").Matrix, decimalPlaces?: number) => import("./types").Vector | null;

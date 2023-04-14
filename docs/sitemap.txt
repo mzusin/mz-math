@@ -55,6 +55,7 @@ https://math.mzsoft.org/pages/get-point-on-quadratic-bezier-curve.html
 https://math.mzsoft.org/pages/get-point-on-cubic-bezier-curve.html
 https://math.mzsoft.org/pages/linear-equation.html
 https://math.mzsoft.org/pages/system-of-linear-equations.html
+https://math.mzsoft.org/pages/quadratic-equation.html
 https://math.mzsoft.org/pages/circle-movement.html
 https://math.mzsoft.org/pages/ellipse-movement.html
 https://math.mzsoft.org/pages/sine-wave-movement.html

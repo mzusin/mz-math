@@ -224,6 +224,7 @@ declare module 'mz-math' {
     export const linearEquationSystem2: (equation1: Vector3, equation2: Vector3, decimalPlaces?: number) => Vector2 | null;
     export const linearEquationSystem3: (equation1: Vector, equation2: Vector, equation3: Vector, decimalPlaces?: number) => Vector3 | null;
     export const linearEquationSystemN: (equations: Matrix, decimalPlaces?: number) => Vector | null;
+    export const quadraticEquation: (equation: Vector, decimalPlaces?: number) => Vector;
 
     export const m2ToCSS: (m: Matrix2) => string;
     export const m2hToCSS: (m: Matrix3) => string;

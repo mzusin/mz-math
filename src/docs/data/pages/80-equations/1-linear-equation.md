@@ -1,6 +1,6 @@
 # Linear Equation
 
-Using the **linearEquation()** function, you can solve a simple linear equation.
+Using the **linearEquation()** function, you can a simple linear equation.
 
 ```js
 import { linearEquation, Vector3 } from 'mz-math';
