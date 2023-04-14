@@ -156,7 +156,7 @@ export const v3CubicBezierCurveTangent = (
 
 /**
  * Normal is a vector that runs at a right angle to the direction of the curve, and is typically of length 1.
- * To find it, we take the normalised tangent vector, and then rotate it by a quarter turn.
+ * To find it, we take the normalised tangent vector, and then rotate it by a 90 degrees.
  */
 export const v2QuadraticBezierCurveNormal = (
     t: number,

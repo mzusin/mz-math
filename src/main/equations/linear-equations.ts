@@ -1,5 +1,24 @@
-import { Matrix, Matrix2, Matrix3, Vector, Vector2, Vector3 } from '../types';
-import { m2Inverse, m3Inverse, mInverse, mMulVector, mDelLastColumn, mGetLastColumn } from './linear-algebra/matrix';
+import { Matrix, Matrix2, Matrix3, Vector, Vector2, Vector3 } from '../../types';
+import { m2Inverse, m3Inverse, mInverse, mMulVector, mDelLastColumn, mGetLastColumn } from '../linear-algebra/matrix';
+import { setDecimalPlaces } from '../format';
+
+/**
+ * Linear equation
+ * ax + b = c
+ * x = (c - b) / a; a != 0
+ */
+export const linearEquation = (equation: Vector3, decimalPlaces = Infinity) : number => {
+    const a = equation[0];
+    const b = equation[1];
+    const c = equation[2];
+
+    const diff = c - b;
+
+    if(a === 0 && diff === 0) return Infinity; // any number is a solution
+    if(a === 0) return NaN; // no solution
+
+    return setDecimalPlaces(diff / a, decimalPlaces);
+};
 
 /**
  * System of 2 linear equations.
@@ -8,7 +27,7 @@ import { m2Inverse, m3Inverse, mInverse, mMulVector, mDelLastColumn, mGetLastCol
  * 3x + 2y = 7
  * -6x + 6y = 6
  */
-export const equationSystem2 = (equation1: Vector3, equation2: Vector3, decimalPlaces = Infinity) : Vector2 | null => {
+export const linearEquationSystem2 = (equation1: Vector3, equation2: Vector3, decimalPlaces = Infinity) : Vector2 | null => {
     const equationParams: Matrix2 = [
         [equation1[0], equation1[1]],
         [equation2[0], equation2[1]],
@@ -32,7 +51,7 @@ export const equationSystem2 = (equation1: Vector3, equation2: Vector3, decimalP
  * -6x + 6y + 6z = 6
  * 2x + 7y - z = 4
  */
-export const equationSystem3 = (
+export const linearEquationSystem3 = (
     equation1: Vector,
     equation2: Vector,
     equation3: Vector,
@@ -58,7 +77,7 @@ export const equationSystem3 = (
 /**
  * System of N linear equations.
  */
-export const equationSystemN = (equations: Matrix, decimalPlaces = Infinity) : Vector | null => {
+export const linearEquationSystemN = (equations: Matrix, decimalPlaces = Infinity) : Vector | null => {
     if(equations.length <= 0) return null;
 
     const equationParams = mDelLastColumn(equations);

@@ -24,7 +24,7 @@ export declare const v2CubicBezierCurveTangent: (t: number, startControlPoint: V
 export declare const v3CubicBezierCurveTangent: (t: number, startControlPoint: Vector3, center1ControlPoint: Vector3, center2ControlPoint: Vector3, endControlPoint: Vector3, decimalPlaces?: number) => Vector3;
 /**
  * Normal is a vector that runs at a right angle to the direction of the curve, and is typically of length 1.
- * To find it, we take the normalised tangent vector, and then rotate it by a quarter turn.
+ * To find it, we take the normalised tangent vector, and then rotate it by a 90 degrees.
  */
 export declare const v2QuadraticBezierCurveNormal: (t: number, startControlPoint: Vector2, centerControlPoint: Vector2, endControlPoint: Vector2, decimalPlaces?: number) => Vector2;
 export declare const v2CubicBezierCurveNormal: (t: number, startControlPoint: Vector2, center1ControlPoint: Vector2, center2ControlPoint: Vector2, endControlPoint: Vector2, decimalPlaces?: number) => Vector2;

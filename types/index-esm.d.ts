@@ -7,7 +7,7 @@ export * from './main/random';
 export * from './main/other';
 export * from './main/convert';
 export * from './main/bezier-curves/bezier-curve';
-export * from './main/equations';
+export * from './main/equations/linear-equations';
 export * from './main/path-movement';
 export * from './main/color';
 export * from './main/physics';

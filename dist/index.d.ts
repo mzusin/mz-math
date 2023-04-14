@@ -220,9 +220,10 @@ declare module 'mz-math' {
     export const v2QuadraticBezierCurveNormal: (t: number, startControlPoint: Vector2, centerControlPoint: Vector2, endControlPoint: Vector2, decimalPlaces?: number) => Vector2;
     export const v2CubicBezierCurveNormal: (t: number, startControlPoint: Vector2, center1ControlPoint: Vector2, center2ControlPoint: Vector2, endControlPoint: Vector2, decimalPlaces?: number) => Vector2;
 
-    export const equationSystem2: (equation1: Vector3, equation2: Vector3, decimalPlaces?: number) => Vector2 | null;
-    export const equationSystem3: (equation1: Vector, equation2: Vector, equation3: Vector, decimalPlaces?: number) => Vector3 | null;
-    export const equationSystemN: (equations: Matrix, decimalPlaces?: number) => Vector | null;
+    export const linearEquation: (equation: Vector2, decimalPlaces?: number) => number;
+    export const linearEquationSystem2: (equation1: Vector3, equation2: Vector3, decimalPlaces?: number) => Vector2 | null;
+    export const linearEquationSystem3: (equation1: Vector, equation2: Vector, equation3: Vector, decimalPlaces?: number) => Vector3 | null;
+    export const linearEquationSystemN: (equations: Matrix, decimalPlaces?: number) => Vector | null;
 
     export const m2ToCSS: (m: Matrix2) => string;
     export const m2hToCSS: (m: Matrix3) => string;
