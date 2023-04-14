@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Bezier Curve BBox</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../css/styles-5.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>Bezier Curve BBox</h1>
+    <div id="wrapper" style="position: absolute">
+        <svg xmlns="http://www.w3.org/2000/svg" width="550" height="450">
+            <path stroke="red" d="M 100 200 Q 100 50 200 150" fill="none"></path>
+        </svg>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/mz-svg/dist/mz-svg.min.js"></script>
+    <script src="../../dist/mz-math.min.js"></script>
+    <script>
+        const init = () => {
+            const res = mzMath.v2QuadraticBezierBBox(
+                [100, 200],
+                [100, 50],
+                [200, 150]
+            );
+
+            console.log(res);
+
+            const $svg = document.querySelector('svg');
+            if(!$svg) return;
+
+            const $rect = mzSVG.createRect({
+                x: res.minX,
+                y: res.minY,
+                width: res.maxX - res.minX,
+                height: res.maxY - res.minY,
+                stroke: 'blue',
+                fill: 'none',
+            });
+
+            $svg.append($rect);
+
+           /* $svg.append(mzSVG.createCircle({
+                cx: 136,
+                cy: 110,
+                r: 5,
+                fill: 'red'
+            }));*/
+        };
+
+        init();
+</script>
+</body>
+</html>

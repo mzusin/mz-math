@@ -189,6 +189,7 @@ export const v2CubicBezierCurveNormal = (
 
 /**
  * Find maxima and minima by solving the equation B'(t) = 0
+ * Returns result in [0, 1] range.
  */
 export const v2QuadraticBezierCurveExtrema = (
     startControlPoint: Vector2,
@@ -217,6 +218,10 @@ export const v2QuadraticBezierCurveExtrema = (
     ];
 };
 
+/**
+ * Find maxima and minima by solving the equation B'(t) = 0
+ * Returns result in [0, 1] range.
+ */
 export const v2CubicBezierCurveExtrema = (
     startControlPoint: Vector2,
     center1ControlPoint: Vector2,
@@ -256,12 +261,30 @@ export const v2QuadraticBezierBBox = (
     decimalPlaces = Infinity
 ) => {
 
-    const extrema = v2QuadraticBezierCurveExtrema(startControlPoint, centerControlPoint, endControlPoint, decimalPlaces);
+    const extrema = v2QuadraticBezierCurveExtrema(startControlPoint, centerControlPoint, endControlPoint);
 
-    const minX = Math.min(extrema[0], startControlPoint[0], endControlPoint[0]);
-    const maxX = Math.max(extrema[0], startControlPoint[0], endControlPoint[0]);
-    const minY = Math.min(extrema[1], startControlPoint[1], endControlPoint[1]);
-    const maxY = Math.max(extrema[1], startControlPoint[1], endControlPoint[1]);
+    let minX = Infinity;
+    let minY = Infinity;
+    let maxX = -Infinity;
+    let maxY = -Infinity;
+
+    for(const percent of extrema){
+        const point = v2QuadraticBezierCurve(percent, startControlPoint, centerControlPoint, endControlPoint);
+
+        const x = point[0];
+        const y = point[1];
+
+        minX = Math.min(minX, x);
+        maxX = Math.max(minX, x);
+
+        minY = Math.min(minY, y);
+        maxY = Math.max(maxY, y);
+    }
+
+    minX = setDecimalPlaces(Math.min(minX, startControlPoint[0], endControlPoint[0]), decimalPlaces);
+    maxX = setDecimalPlaces(Math.max(maxX, startControlPoint[0], endControlPoint[0]), decimalPlaces);
+    minY = setDecimalPlaces(Math.min(minY, startControlPoint[1], endControlPoint[1]), decimalPlaces);
+    maxY = setDecimalPlaces(Math.max(maxY, startControlPoint[1], endControlPoint[1]), decimalPlaces);
 
     return {
         minX,
