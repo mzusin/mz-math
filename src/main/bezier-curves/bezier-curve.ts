@@ -1,4 +1,4 @@
-import { Vector2, Vector3 } from '../../types';
+import { Vector, Vector2, Vector3 } from '../../types';
 import { setDecimalPlaces } from '../format';
 import {
     dxV2CubicBezierCurve,
@@ -7,6 +7,8 @@ import {
     dxV3QuadraticBezierCurve
 } from '../derivative';
 import { v2Normalize, v3Normalize } from '../linear-algebra/vector';
+import { linearEquation } from '../equations/linear-equations';
+import { quadraticEquation } from '../equations/quadratic-equations';
 
 /**
  * Bézier Curves
@@ -181,6 +183,115 @@ export const v2CubicBezierCurveNormal = (
 
     const tangent = v2CubicBezierCurveTangent(t, startControlPoint, center1ControlPoint, center2ControlPoint, endControlPoint, decimalPlaces);
     return [-tangent[1], tangent[0]];
+};
+
+// -------------------- EXTREMA --------------------------
+
+/**
+ * Find maxima and minima by solving the equation B'(t) = 0
+ */
+export const v2QuadraticBezierCurveExtrema = (
+    startControlPoint: Vector2,
+    centerControlPoint: Vector2,
+    endControlPoint: Vector2,
+    decimalPlaces = Infinity
+) : Vector2 => {
+
+   /*
+    (-2 * (1 - t)) * startControlPoint[0] + (2 - 4 * t) * centerControlPoint[0] + (2 * t) * endControlPoint[0]
+    2 * t * startControlPoint[0] - 4 * t * centerControlPoint[0] + 2 * t * endControlPoint[0] - 2 * startControlPoint[0] + 2 * centerControlPoint[0]
+    t * (2  * startControlPoint[0] - 4 * centerControlPoint[0] + 2 * endControlPoint[0]) + (- 2 * startControlPoint[0] + 2 * centerControlPoint[0])
+    */
+
+    const a1 = 2  * startControlPoint[0] - 4 * centerControlPoint[0] + 2 * endControlPoint[0];
+    const b1 = -2 * startControlPoint[0] + 2 * centerControlPoint[0];
+    const equation1: Vector3 = [a1, b1, 0];
+
+    const a2 = 2  * startControlPoint[1] - 4 * centerControlPoint[1] + 2 * endControlPoint[1];
+    const b2 = -2 * startControlPoint[1] + 2 * centerControlPoint[1];
+    const equation2: Vector3 = [a2, b2, 0];
+
+    return [
+        linearEquation(equation1, decimalPlaces),
+        linearEquation(equation2, decimalPlaces),
+    ];
+};
+
+export const v2CubicBezierCurveExtrema = (
+    startControlPoint: Vector2,
+    center1ControlPoint: Vector2,
+    center2ControlPoint: Vector2,
+    endControlPoint: Vector2,
+    decimalPlaces = Infinity
+) : Vector2|null => {
+
+    const a1 = -3  * startControlPoint[0] + 9 * center1ControlPoint[0] - 9 * center2ControlPoint[0] + 3 * endControlPoint[0];
+    const b1 = 6  * startControlPoint[0] - 12 * center1ControlPoint[0] + 6 * center2ControlPoint[0];
+    const c1 = -3  * startControlPoint[0] + 3 * center1ControlPoint[0];
+    const equation1: Vector = [a1, b1, c1];
+
+    const a2 = -3  * startControlPoint[1] + 9 * center1ControlPoint[1] - 9 * center2ControlPoint[1] + 3 * endControlPoint[1];
+    const b2 = 6  * startControlPoint[1] - 12 * center1ControlPoint[1] + 6 * center2ControlPoint[1];
+    const c2 = -3  * startControlPoint[1] + 3 * center1ControlPoint[1];
+    const equation2: Vector = [a2, b2, c2];
+
+    // Any value between 0 and 1 is a root that matters for Bézier curves, anything below or above that is irrelevant (because Bézier curves are only defined over the interval [0,1]).
+    const res1 = quadraticEquation(equation1, decimalPlaces).filter(num => num >= 0 && num <= 1);
+    const res2 = quadraticEquation(equation2, decimalPlaces).filter(num => num >= 0 && num <= 1);
+
+    const res = [...res1, ...res2];
+    if(res.length === 2){
+        return [...res1, ...res2] as Vector2;
+    }
+
+    return null;
+};
+
+// -------------------- BOUNDING BOX --------------------------
+
+export const v2QuadraticBezierBBox = (
+    startControlPoint: Vector2,
+    centerControlPoint: Vector2,
+    endControlPoint: Vector2,
+    decimalPlaces = Infinity
+) => {
+
+    const extrema = v2QuadraticBezierCurveExtrema(startControlPoint, centerControlPoint, endControlPoint, decimalPlaces);
+
+    const minX = Math.min(extrema[0], startControlPoint[0], endControlPoint[0]);
+    const maxX = Math.max(extrema[0], startControlPoint[0], endControlPoint[0]);
+    const minY = Math.min(extrema[1], startControlPoint[1], endControlPoint[1]);
+    const maxY = Math.max(extrema[1], startControlPoint[1], endControlPoint[1]);
+
+    return {
+        minX,
+        minY,
+        maxX,
+        maxY,
+    }
+};
+
+export const v2CubicBezierBBox = (
+    startControlPoint: Vector2,
+    center1ControlPoint: Vector2,
+    center2ControlPoint: Vector2,
+    endControlPoint: Vector2,
+    decimalPlaces = Infinity
+) => {
+
+    const extrema = v2CubicBezierCurveExtrema(startControlPoint, center1ControlPoint, center2ControlPoint, endControlPoint, decimalPlaces) || [];
+
+    const minX = Math.min(extrema[0] ?? Infinity, startControlPoint[0], endControlPoint[0]);
+    const maxX = Math.max(extrema[0] ?? -Infinity, startControlPoint[0], endControlPoint[0]);
+    const minY = Math.min(extrema[1] ?? Infinity, startControlPoint[1], endControlPoint[1]);
+    const maxY = Math.max(extrema[1] ?? -Infinity, startControlPoint[1], endControlPoint[1]);
+
+    return {
+        minX,
+        minY,
+        maxX,
+        maxY,
+    }
 };
 
 

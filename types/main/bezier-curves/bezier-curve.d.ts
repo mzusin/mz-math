@@ -28,3 +28,20 @@ export declare const v3CubicBezierCurveTangent: (t: number, startControlPoint: V
  */
 export declare const v2QuadraticBezierCurveNormal: (t: number, startControlPoint: Vector2, centerControlPoint: Vector2, endControlPoint: Vector2, decimalPlaces?: number) => Vector2;
 export declare const v2CubicBezierCurveNormal: (t: number, startControlPoint: Vector2, center1ControlPoint: Vector2, center2ControlPoint: Vector2, endControlPoint: Vector2, decimalPlaces?: number) => Vector2;
+/**
+ * Find maxima and minima by solving the equation B'(t) = 0
+ */
+export declare const v2QuadraticBezierCurveExtrema: (startControlPoint: Vector2, centerControlPoint: Vector2, endControlPoint: Vector2, decimalPlaces?: number) => Vector2;
+export declare const v2CubicBezierCurveExtrema: (startControlPoint: Vector2, center1ControlPoint: Vector2, center2ControlPoint: Vector2, endControlPoint: Vector2, decimalPlaces?: number) => Vector2 | null;
+export declare const v2QuadraticBezierBBox: (startControlPoint: Vector2, centerControlPoint: Vector2, endControlPoint: Vector2, decimalPlaces?: number) => {
+    minX: number;
+    minY: number;
+    maxX: number;
+    maxY: number;
+};
+export declare const v2CubicBezierBBox: (startControlPoint: Vector2, center1ControlPoint: Vector2, center2ControlPoint: Vector2, endControlPoint: Vector2, decimalPlaces?: number) => {
+    minX: number;
+    minY: number;
+    maxX: number;
+    maxY: number;
+};
