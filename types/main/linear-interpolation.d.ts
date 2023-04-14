@@ -6,7 +6,7 @@ import { Matrix, Matrix2, Matrix3, Vector, Vector2, Vector3 } from '../types';
 export declare const linearInterpolation: (x: number, start: Vector2, end: Vector2, decimalPlaces?: number) => number;
 /**
  * Performs a linear interpolation in range [0, 1].
- * x - a value that linearly interpolates between the x parameter and the y parameter.
+ * x - a value that linearly interpolates between the start parameter and the end parameter.
  */
 export declare const lerp: (x: number, start: number, end: number, decimalPlaces?: number) => number;
 /**

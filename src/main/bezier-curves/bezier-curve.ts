@@ -1,5 +1,12 @@
 import { Vector2, Vector3 } from '../../types';
 import { setDecimalPlaces } from '../format';
+import {
+    dxV2CubicBezierCurve,
+    dxV2QuadraticBezierCurve,
+    dxV3CubicBezierCurve,
+    dxV3QuadraticBezierCurve
+} from '../derivative';
+import { v2Normalize, v3Normalize } from '../linear-algebra/vector';
 
 /**
  * Bézier Curves
@@ -94,3 +101,57 @@ export const v3CubicBezierCurve = (
         setDecimalPlaces(temp1 * startControlPoint[2] + temp2 * center1ControlPoint[2] + temp3 * center2ControlPoint[2] + temp4 * endControlPoint[2], decimalPlaces),
     ];
 };
+
+// -------------------- GET POINT ON CURVE --------------------------
+
+/**
+ * Tangent indicates the direction of travel at specific points along the Bézier curve,
+ * and is literally just the first derivative of our curve.
+ */
+export const v2QuadraticBezierCurveTangent = (
+    t: number,
+    startControlPoint: Vector2,
+    centerControlPoint: Vector2,
+    endControlPoint: Vector2,
+    decimalPlaces = Infinity
+) : Vector2 => {
+    const dxVector = dxV2QuadraticBezierCurve(t, startControlPoint, centerControlPoint, endControlPoint);
+    return v2Normalize(dxVector, decimalPlaces);
+};
+
+export const v3QuadraticBezierCurveTangent = (
+    t: number,
+    startControlPoint: Vector3,
+    centerControlPoint: Vector3,
+    endControlPoint: Vector3,
+    decimalPlaces = Infinity
+) : Vector3 => {
+    const dxVector = dxV3QuadraticBezierCurve(t, startControlPoint, centerControlPoint, endControlPoint);
+    return v3Normalize(dxVector, decimalPlaces);
+};
+
+export const v2CubicBezierCurveTangent = (
+    t: number,
+    startControlPoint: Vector2,
+    center1ControlPoint: Vector2,
+    center2ControlPoint: Vector2,
+    endControlPoint: Vector2,
+    decimalPlaces = Infinity
+) : Vector2 => {
+    const dxVector = dxV2CubicBezierCurve(t, startControlPoint, center1ControlPoint, center2ControlPoint, endControlPoint);
+    return v2Normalize(dxVector, decimalPlaces);
+};
+
+export const v3CubicBezierCurveTangent = (
+    t: number,
+    startControlPoint: Vector3,
+    center1ControlPoint: Vector3,
+    center2ControlPoint: Vector3,
+    endControlPoint: Vector3,
+    decimalPlaces = Infinity
+) : Vector3 => {
+    const dxVector = dxV3CubicBezierCurve(t, startControlPoint, center1ControlPoint, center2ControlPoint, endControlPoint);
+    return v3Normalize(dxVector, decimalPlaces);
+};
+
+

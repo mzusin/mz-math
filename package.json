@@ -56,7 +56,10 @@
     "shearing",
     "shearing matrix",
     "css transform",
-    "color"
+    "color",
+    "derivatives",
+    "lerp",
+    "linear interpolation"
   ],
   "author": "Miriam Zusin <miriam.zusin@gmail.com>",
   "license": "SEE LICENSE IN LICENSE.md",
