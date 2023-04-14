@@ -10,10 +10,8 @@ import { v2Normalize, v3Normalize } from '../linear-algebra/vector';
 
 /**
  * Bézier Curves
+ * quadratic: y = P1 * (1-t)² + P2 * 2 * (1-t)t + P3 * t²
  * t in range [0, 1]
- * linear: (1 - t) + t
- * square: (1 - t)^2 + 2*(1 - t) + t^2
- * cubic:  (1 - t)^3 + 3*(1 - t)^2 + 3*(1 - t) * t^2 + t^3
  */
 
 // -------------------- GET POINT ON CURVE --------------------------
@@ -102,7 +100,7 @@ export const v3CubicBezierCurve = (
     ];
 };
 
-// -------------------- GET POINT ON CURVE --------------------------
+// -------------------- TANGENT --------------------------
 
 /**
  * Tangent indicates the direction of travel at specific points along the Bézier curve,
@@ -152,6 +150,37 @@ export const v3CubicBezierCurveTangent = (
 ) : Vector3 => {
     const dxVector = dxV3CubicBezierCurve(t, startControlPoint, center1ControlPoint, center2ControlPoint, endControlPoint);
     return v3Normalize(dxVector, decimalPlaces);
+};
+
+// -------------------- NORMAL --------------------------
+
+/**
+ * Normal is a vector that runs at a right angle to the direction of the curve, and is typically of length 1.
+ * To find it, we take the normalised tangent vector, and then rotate it by a quarter turn.
+ */
+export const v2QuadraticBezierCurveNormal = (
+    t: number,
+    startControlPoint: Vector2,
+    centerControlPoint: Vector2,
+    endControlPoint: Vector2,
+    decimalPlaces = Infinity
+) : Vector2 => {
+
+    const tangent = v2QuadraticBezierCurveTangent(t, startControlPoint, centerControlPoint, endControlPoint, decimalPlaces);
+    return [-tangent[1], tangent[0]];
+};
+
+export const v2CubicBezierCurveNormal = (
+    t: number,
+    startControlPoint: Vector2,
+    center1ControlPoint: Vector2,
+    center2ControlPoint: Vector2,
+    endControlPoint: Vector2,
+    decimalPlaces = Infinity
+) : Vector2 => {
+
+    const tangent = v2CubicBezierCurveTangent(t, startControlPoint, center1ControlPoint, center2ControlPoint, endControlPoint, decimalPlaces);
+    return [-tangent[1], tangent[0]];
 };
 
 

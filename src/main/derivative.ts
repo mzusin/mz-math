@@ -43,6 +43,8 @@ export const dxV2QuadraticBezierCurve = (
     decimalPlaces = Infinity
 ) : Vector2 => {
 
+    // The derivative: P1 * (2t-2) + (2*P3-4*P2) * t + 2 * P2
+
     const temp1 = -2 * (1 - t); // Math.pow(1 - t, 2)
     const temp2 = 2 - 4 * t; // (1 - t) * 2 * t
     const temp3 = 2 * t; //t * t;

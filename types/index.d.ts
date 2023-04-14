@@ -45,6 +45,8 @@ declare const api: {
     v3QuadraticBezierCurveTangent: (t: number, startControlPoint: import("./types").Vector3, centerControlPoint: import("./types").Vector3, endControlPoint: import("./types").Vector3, decimalPlaces?: number) => import("./types").Vector3;
     v2CubicBezierCurveTangent: (t: number, startControlPoint: import("./types").Vector2, center1ControlPoint: import("./types").Vector2, center2ControlPoint: import("./types").Vector2, endControlPoint: import("./types").Vector2, decimalPlaces?: number) => import("./types").Vector2;
     v3CubicBezierCurveTangent: (t: number, startControlPoint: import("./types").Vector3, center1ControlPoint: import("./types").Vector3, center2ControlPoint: import("./types").Vector3, endControlPoint: import("./types").Vector3, decimalPlaces?: number) => import("./types").Vector3;
+    v2QuadraticBezierCurveNormal: (t: number, startControlPoint: import("./types").Vector2, centerControlPoint: import("./types").Vector2, endControlPoint: import("./types").Vector2, decimalPlaces?: number) => import("./types").Vector2;
+    v2CubicBezierCurveNormal: (t: number, startControlPoint: import("./types").Vector2, center1ControlPoint: import("./types").Vector2, center2ControlPoint: import("./types").Vector2, endControlPoint: import("./types").Vector2, decimalPlaces?: number) => import("./types").Vector2;
     stringToNumber: (value: string | number | null | undefined, defaultNumber: number) => number;
     mod: (n: number, m: number) => number;
     convertRange: (x: number, a: number, b: number, c: number, d: number) => number;
