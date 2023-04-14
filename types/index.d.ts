@@ -50,18 +50,8 @@ declare const api: {
     v2CubicBezierCurveNormal: (t: number, startControlPoint: import("./types").Vector2, center1ControlPoint: import("./types").Vector2, center2ControlPoint: import("./types").Vector2, endControlPoint: import("./types").Vector2, decimalPlaces?: number) => import("./types").Vector2;
     v2QuadraticBezierCurveExtrema: (startControlPoint: import("./types").Vector2, centerControlPoint: import("./types").Vector2, endControlPoint: import("./types").Vector2, decimalPlaces?: number) => import("./types").Vector2;
     v2CubicBezierCurveExtrema: (startControlPoint: import("./types").Vector2, center1ControlPoint: import("./types").Vector2, center2ControlPoint: import("./types").Vector2, endControlPoint: import("./types").Vector2, decimalPlaces?: number) => import("./types").Vector2 | null;
-    v2QuadraticBezierBBox: (startControlPoint: import("./types").Vector2, centerControlPoint: import("./types").Vector2, endControlPoint: import("./types").Vector2, decimalPlaces?: number) => {
-        minX: number;
-        minY: number;
-        maxX: number;
-        maxY: number;
-    };
-    v2CubicBezierBBox: (startControlPoint: import("./types").Vector2, center1ControlPoint: import("./types").Vector2, center2ControlPoint: import("./types").Vector2, endControlPoint: import("./types").Vector2, decimalPlaces?: number) => {
-        minX: number;
-        minY: number;
-        maxX: number;
-        maxY: number;
-    };
+    v2QuadraticBezierBBox: (startControlPoint: import("./types").Vector2, centerControlPoint: import("./types").Vector2, endControlPoint: import("./types").Vector2, decimalPlaces?: number) => import("./types").IBBox;
+    v2CubicBezierBBox: (startControlPoint: import("./types").Vector2, center1ControlPoint: import("./types").Vector2, center2ControlPoint: import("./types").Vector2, endControlPoint: import("./types").Vector2, decimalPlaces?: number) => import("./types").IBBox;
     stringToNumber: (value: string | number | null | undefined, defaultNumber: number) => number;
     mod: (n: number, m: number) => number;
     convertRange: (x: number, a: number, b: number, c: number, d: number) => number;

@@ -1,4 +1,4 @@
-import { Vector, Vector2, Vector3 } from '../../types';
+import { IBBox, Vector, Vector2, Vector3 } from '../../types';
 import { setDecimalPlaces } from '../format';
 import {
     dxV2CubicBezierCurve,
@@ -259,7 +259,7 @@ export const v2QuadraticBezierBBox = (
     centerControlPoint: Vector2,
     endControlPoint: Vector2,
     decimalPlaces = Infinity
-) => {
+) : IBBox => {
 
     const extrema = v2QuadraticBezierCurveExtrema(startControlPoint, centerControlPoint, endControlPoint);
 
@@ -287,10 +287,12 @@ export const v2QuadraticBezierBBox = (
     maxY = setDecimalPlaces(Math.max(maxY, startControlPoint[1], endControlPoint[1]), decimalPlaces);
 
     return {
-        minX,
-        minY,
-        maxX,
-        maxY,
+        x: minX,
+        y: minY,
+        w: Math.abs(maxX - minX),
+        h: Math.abs(maxY - minY),
+        x2: maxX,
+        y2: maxY,
     }
 };
 
@@ -300,7 +302,7 @@ export const v2CubicBezierBBox = (
     center2ControlPoint: Vector2,
     endControlPoint: Vector2,
     decimalPlaces = Infinity
-) => {
+) : IBBox => {
 
     const extrema = v2CubicBezierCurveExtrema(startControlPoint, center1ControlPoint, center2ControlPoint, endControlPoint) || [];
 
@@ -328,10 +330,12 @@ export const v2CubicBezierBBox = (
     maxY = setDecimalPlaces(Math.max(maxY, startControlPoint[1], endControlPoint[1]), decimalPlaces);
 
     return {
-        minX,
-        minY,
-        maxX,
-        maxY,
+        x: minX,
+        y: minY,
+        w: Math.abs(maxX - minX),
+        h: Math.abs(maxY - minY),
+        x2: maxX,
+        y2: maxY,
     }
 };
 

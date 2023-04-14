@@ -221,18 +221,18 @@ declare module 'mz-math' {
     export const v2CubicBezierCurveNormal: (t: number, startControlPoint: Vector2, center1ControlPoint: Vector2, center2ControlPoint: Vector2, endControlPoint: Vector2, decimalPlaces?: number) => Vector2;
     export const v2QuadraticBezierCurveExtrema: (startControlPoint: Vector2, centerControlPoint: Vector2, endControlPoint: Vector2, decimalPlaces?: number) => Vector2;
     export const v2CubicBezierCurveExtrema: (startControlPoint: Vector2, center1ControlPoint: Vector2, center2ControlPoint: Vector2, endControlPoint: Vector2, decimalPlaces?: number) => Vector2 | null;
-    export const v2QuadraticBezierBBox: (startControlPoint: Vector2, centerControlPoint: Vector2, endControlPoint: Vector2, decimalPlaces?: number) => {
-        minX: number;
-        minY: number;
-        maxX: number;
-        maxY: number;
-    };
-    export const v2CubicBezierBBox: (startControlPoint: Vector2, center1ControlPoint: Vector2, center2ControlPoint: Vector2, endControlPoint: Vector2, decimalPlaces?: number) => {
-        minX: number;
-        minY: number;
-        maxX: number;
-        maxY: number;
-    };
+
+    export interface IBBox {
+        x: number;
+        y: number;
+        w: number;
+        h: number;
+        x2: number;
+        y2: number;
+    }
+
+    export const v2QuadraticBezierBBox: (startControlPoint: Vector2, centerControlPoint: Vector2, endControlPoint: Vector2, decimalPlaces?: number) => IBBox;
+    export const v2CubicBezierBBox: (startControlPoint: Vector2, center1ControlPoint: Vector2, center2ControlPoint: Vector2, endControlPoint: Vector2, decimalPlaces?: number) => IBBox;
 
     export const linearEquation: (equation: Vector2, decimalPlaces?: number) => number;
     export const linearEquationSystem2: (equation1: Vector3, equation2: Vector3, decimalPlaces?: number) => Vector2 | null;

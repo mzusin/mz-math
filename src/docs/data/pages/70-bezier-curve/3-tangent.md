@@ -43,6 +43,7 @@ const result: Vector3 = v3CubicBezierCurveTangent(
     decimalPlaces
 );
 ```
+
 **Quadratic Bézier curve tangent for 2D Vector**
 
 ```js

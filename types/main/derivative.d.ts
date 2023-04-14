@@ -14,6 +14,7 @@ import { Vector2, Vector3 } from '../types';
 export declare const dxPolynomial: (x: number, polynomial: number[][], decimalPlaces?: number) => number;
 /**
  * Derivative of Bezier Curve is another Bezier Curve.
+ * t must min in range [0, 1]
  */
 export declare const dxV2QuadraticBezierCurve: (t: number, startControlPoint: Vector2, centerControlPoint: Vector2, endControlPoint: Vector2, decimalPlaces?: number) => Vector2;
 export declare const dxV3QuadraticBezierCurve: (t: number, startControlPoint: Vector3, centerControlPoint: Vector3, endControlPoint: Vector3, decimalPlaces?: number) => Vector3;

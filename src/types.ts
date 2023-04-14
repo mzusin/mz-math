@@ -10,3 +10,12 @@ export type Matrix = Vector[];
 
 export type HSLColor = [number, number, number]; // [hue, saturation, lightness] [0-360, 0-100, 0-100]
 export type RGBColor = [number, number, number]; // [r, g, b] [0, 255, 0, 255, 0, 255]
+
+export interface IBBox {
+    x: number;
+    y: number;
+    w: number;
+    h: number;
+    x2: number;
+    y2: number;
+}

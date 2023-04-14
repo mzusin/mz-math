@@ -1,4 +1,4 @@
-import { Vector2, Vector3 } from '../../types';
+import { IBBox, Vector2, Vector3 } from '../../types';
 /**
  * Bézier Curves
  * quadratic: y = P1 * (1-t)² + P2 * 2 * (1-t)t + P3 * t²
@@ -30,18 +30,13 @@ export declare const v2QuadraticBezierCurveNormal: (t: number, startControlPoint
 export declare const v2CubicBezierCurveNormal: (t: number, startControlPoint: Vector2, center1ControlPoint: Vector2, center2ControlPoint: Vector2, endControlPoint: Vector2, decimalPlaces?: number) => Vector2;
 /**
  * Find maxima and minima by solving the equation B'(t) = 0
+ * Returns result in [0, 1] range.
  */
 export declare const v2QuadraticBezierCurveExtrema: (startControlPoint: Vector2, centerControlPoint: Vector2, endControlPoint: Vector2, decimalPlaces?: number) => Vector2;
+/**
+ * Find maxima and minima by solving the equation B'(t) = 0
+ * Returns result in [0, 1] range.
+ */
 export declare const v2CubicBezierCurveExtrema: (startControlPoint: Vector2, center1ControlPoint: Vector2, center2ControlPoint: Vector2, endControlPoint: Vector2, decimalPlaces?: number) => Vector2 | null;
-export declare const v2QuadraticBezierBBox: (startControlPoint: Vector2, centerControlPoint: Vector2, endControlPoint: Vector2, decimalPlaces?: number) => {
-    minX: number;
-    minY: number;
-    maxX: number;
-    maxY: number;
-};
-export declare const v2CubicBezierBBox: (startControlPoint: Vector2, center1ControlPoint: Vector2, center2ControlPoint: Vector2, endControlPoint: Vector2, decimalPlaces?: number) => {
-    minX: number;
-    minY: number;
-    maxX: number;
-    maxY: number;
-};
+export declare const v2QuadraticBezierBBox: (startControlPoint: Vector2, centerControlPoint: Vector2, endControlPoint: Vector2, decimalPlaces?: number) => IBBox;
+export declare const v2CubicBezierBBox: (startControlPoint: Vector2, center1ControlPoint: Vector2, center2ControlPoint: Vector2, endControlPoint: Vector2, decimalPlaces?: number) => IBBox;

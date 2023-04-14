@@ -8,3 +8,11 @@ export type Matrix4 = Vector4[];
 export type Matrix = Vector[];
 export type HSLColor = [number, number, number];
 export type RGBColor = [number, number, number];
+export interface IBBox {
+    x: number;
+    y: number;
+    w: number;
+    h: number;
+    x2: number;
+    y2: number;
+}

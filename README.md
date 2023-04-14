@@ -69,6 +69,9 @@ This project is a collection of TypeScript math helpers and utilities for the br
 - [Get Point On Quadratic Bezier Curve](https://math.mzsoft.org/pages/get-point-on-quadratic-bezier-curve.html)
 - [Get Point On Cubic Bezier Curve](https://math.mzsoft.org/pages/get-point-on-cubic-bezier-curve.html)
 - [Tangent](https://math.mzsoft.org/pages/tangent.html)
+- [Normal](https://math.mzsoft.org/pages/normal.html)
+- [Extrema](https://math.mzsoft.org/pages/extrema.html)
+- [Bounding Box](https://math.mzsoft.org/pages/bounding-box.html)
 ### Equations 
 - [Linear Equation](https://math.mzsoft.org/pages/linear-equation.html)
 - [System Of Linear Equations](https://math.mzsoft.org/pages/system-of-linear-equations.html)
@@ -99,6 +102,42 @@ This project is a collection of TypeScript math helpers and utilities for the br
 - [Check If Ranges Overlap](https://math.mzsoft.org/pages/check-if-ranges-overlap.html)
 - [Check If Value Is Number](https://math.mzsoft.org/pages/Check-if-value-is-number.html)
 ------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
