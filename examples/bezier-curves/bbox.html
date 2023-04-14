@@ -11,6 +11,8 @@
     <div id="wrapper" style="position: absolute">
         <svg xmlns="http://www.w3.org/2000/svg" width="550" height="450">
             <path stroke="red" d="M 100 200 Q 100 50 200 150" fill="none"></path>
+
+            <path stroke="green" d="M 350 350 Q 500 50 250 150" fill="none"></path>
         </svg>
     </div>
 
@@ -18,27 +20,45 @@
     <script src="../../dist/mz-math.min.js"></script>
     <script>
         const init = () => {
+
+            const $svg = document.querySelector('svg');
+            if(!$svg) return;
+
+            // -------------- 1 -------------------
             const res = mzMath.v2QuadraticBezierBBox(
                 [100, 200],
                 [100, 50],
                 [200, 150]
             );
 
-            console.log(res);
+            // console.log(res);
 
-            const $svg = document.querySelector('svg');
-            if(!$svg) return;
-
-            const $rect = mzSVG.createRect({
+            $svg.append(mzSVG.createRect({
                 x: res.minX,
                 y: res.minY,
                 width: res.maxX - res.minX,
                 height: res.maxY - res.minY,
                 stroke: 'blue',
                 fill: 'none',
-            });
+            }));
 
-            $svg.append($rect);
+            // -------------- 2 -------------------
+            const res2 = mzMath.v2QuadraticBezierBBox(
+                [350, 350],
+                [500, 50],
+                [250, 150]
+            );
+
+            console.log(res2);
+
+            $svg.append(mzSVG.createRect({
+                x: res2.minX,
+                y: res2.minY,
+                width: res2.maxX - res2.minX,
+                height: res2.maxY - res2.minY,
+                stroke: 'blue',
+                fill: 'none',
+            }));
 
            /* $svg.append(mzSVG.createCircle({
                 cx: 136,

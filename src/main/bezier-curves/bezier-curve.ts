@@ -275,7 +275,7 @@ export const v2QuadraticBezierBBox = (
         const y = point[1];
 
         minX = Math.min(minX, x);
-        maxX = Math.max(minX, x);
+        maxX = Math.max(maxX, x);
 
         minY = Math.min(minY, y);
         maxY = Math.max(maxY, y);
