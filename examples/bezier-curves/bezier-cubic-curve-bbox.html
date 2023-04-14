@@ -11,10 +11,10 @@
     <div id="wrapper" style="position: absolute">
         <svg xmlns="http://www.w3.org/2000/svg" width="550" height="650">
             <path stroke="red" d="M 100 200 C 100 50 200 150 300 250" fill="none"></path>
-<!--
-            <path stroke="green" d="M 350 350 Q 500 50 250 150" fill="none"></path>
 
-            <path stroke="brown" d="M 150 550 Q 400 300 50 550" fill="none"></path>-->
+            <path stroke="green" d="M 500 350 C 500 50 500 50 450 150" fill="none"></path>
+
+            <path stroke="brown" d="M 350 550 C 250 450 150 650 50 550" fill="none"></path>
         </svg>
     </div>
 
@@ -34,7 +34,7 @@
                 [300, 250],
             );
 
-            console.log(res);
+            // console.log(res);
 
             $svg.append(mzSVG.createRect({
                 x: res.minX,
@@ -45,11 +45,12 @@
                 fill: 'none',
             }));
 
-            /*// -------------- 2 -------------------
-            const res2 = mzMath.v2QuadraticBezierBBox(
-                [350, 350],
+            // -------------- 2 -------------------
+            const res2 = mzMath.v2CubicBezierBBox(
+                [500, 350],
                 [500, 50],
-                [250, 150]
+                [500, 50],
+                [450, 150],
             );
 
             // console.log(res2);
@@ -64,9 +65,10 @@
             }));
 
             // -------------- 3 -------------------
-            const res3 = mzMath.v2QuadraticBezierBBox(
-                [150, 550],
-                [400, 300],
+            const res3 = mzMath.v2CubicBezierBBox(
+                [350, 550],
+                [250, 450],
+                [150, 650],
                 [50, 550]
             );
 
@@ -79,7 +81,7 @@
                 height: res3.maxY - res3.minY,
                 stroke: 'blue',
                 fill: 'none',
-            }));*/
+            }));
         };
 
         init();
