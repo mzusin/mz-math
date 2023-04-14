@@ -7,12 +7,15 @@ Get a point on a cubic Bézier curve as a function of time, where t is in the ra
 ```js
 import { v2CubicBezierCurve } from 'mz-math';
 
+const decimalPlaces = 2; // optional
+
 const v2 = v2CubicBezierCurve(
         0.5,
         [0, 100],
         [0, 0],
         [100, 0],
-        [100, 100]
+        [100, 100],
+        decimalPlaces
 ); // [50, 25]
 
 const v2 = v2CubicBezierCurve(
@@ -20,7 +23,8 @@ const v2 = v2CubicBezierCurve(
         [0, 100],
         [0, 0],
         [100, 0],
-        [100, 100]
+        [100, 100],
+        decimalPlaces
 ); // [0, 100]
 
 const v2 = v2CubicBezierCurve(
@@ -28,7 +32,8 @@ const v2 = v2CubicBezierCurve(
         [0, 100],
         [0, 0],
         [100, 0],
-        [100, 100]
+        [100, 100],
+        decimalPlaces
 ); // [100, 100]
 ```
 
@@ -37,12 +42,15 @@ const v2 = v2CubicBezierCurve(
 ```js
 import { v3CubicBezierCurve } from 'mz-math';
 
+const decimalPlaces = 2; // optional
+
 const v3 = v3CubicBezierCurve(
         0.5,
         [0, 100, 0],
         [0, 0, 0],
         [100, 0, 0],
-        [100, 100, 0]
+        [100, 100, 0],
+        decimalPlaces
 ); // [50, 25, 0]
 
 const v3 = v3CubicBezierCurve(
@@ -50,7 +58,8 @@ const v3 = v3CubicBezierCurve(
         [0, 100, 0],
         [0, 0, 0],
         [100, 0, 0],
-        [100, 100, 0]
+        [100, 100, 0],
+        decimalPlaces
 ); // [0, 100, 0]
 
 const v3 = v3CubicBezierCurve(
@@ -58,6 +67,7 @@ const v3 = v3CubicBezierCurve(
         [0, 100, 0],
         [0, 0, 0],
         [100, 0, 0],
-        [100, 100, 0]
+        [100, 100, 0],
+        decimalPlaces
 ); // [100, 100, 0]
 ```

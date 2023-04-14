@@ -53,6 +53,7 @@ https://math.mzsoft.org/pages/get-random-item-from-array.html
 https://math.mzsoft.org/pages/random-id-or-GUID.html
 https://math.mzsoft.org/pages/get-point-on-quadratic-bezier-curve.html
 https://math.mzsoft.org/pages/get-point-on-cubic-bezier-curve.html
+https://math.mzsoft.org/pages/tangent.html
 https://math.mzsoft.org/pages/linear-equation.html
 https://math.mzsoft.org/pages/system-of-linear-equations.html
 https://math.mzsoft.org/pages/quadratic-equation.html
