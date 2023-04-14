@@ -5,6 +5,7 @@ import {
     linearEquationSystemN
 } from '../src/main/equations/linear-equations';
 import { Vector3, Vector, Matrix } from '../types/types';
+import { quadraticEquation } from '../src/main/equations/quadratic-equations';
 
 describe('Equations', () => {
 
@@ -96,6 +97,49 @@ describe('Equations', () => {
                 [1, -4, -7, -1, -19],
             ];
             expect(linearEquationSystemN(parameters, 2)).toStrictEqual([-1, 2, 1, 3]);
+        });
+    });
+
+    describe('Quadratic equation', () => {
+
+        test(`-6x^2 = 0`, () => {
+            const equation: Vector = [-6, 0, 0, 0];
+            expect(quadraticEquation(equation)).toStrictEqual([0]);
+        });
+
+        test(`8x^2 + 5 = 0`, () => {
+            const equation: Vector = [8, 0, 5, 0];
+            expect(quadraticEquation(equation)).toStrictEqual([]);
+        });
+
+        test(`-4x^2 + 28x - 49 = 0`, () => {
+            const equation: Vector = [-4, 28, -49, 0];
+            expect(quadraticEquation(equation)).toStrictEqual([3.5]);
+        });
+
+        test(`x^2 - x = 0`, () => {
+            const equation: Vector = [1, -1, 0, 0];
+            expect(quadraticEquation(equation)).toStrictEqual([1, 0]);
+        });
+
+        test(`3x^2 - 4x + 94 = 0`, () => {
+            const equation: Vector = [3, -4, 94, 0];
+            expect(quadraticEquation(equation)).toStrictEqual([]);
+        });
+
+        test(`x^2 - 10 = 39`, () => {
+            const equation: Vector = [1, 0, -10, 39];
+            expect(quadraticEquation(equation)).toStrictEqual([7, -7]);
+        });
+
+        test(`-6x^2 + 54 = 0`, () => {
+            const equation: Vector = [-6, 0, 54, 0];
+            expect(quadraticEquation(equation)).toStrictEqual([-3, 3]);
+        });
+
+        test(`0.5x^2 + 0.125x = 0`, () => {
+            const equation: Vector = [0.5, 0.125, 0, 0];
+            expect(quadraticEquation(equation)).toStrictEqual([0, -0.25]);
         });
     });
 });
