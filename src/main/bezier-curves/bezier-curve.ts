@@ -9,6 +9,7 @@ import {
 import { v2Normalize, v3Normalize } from '../linear-algebra/vector';
 import { linearEquation } from '../equations/linear-equations';
 import { quadraticEquation } from '../equations/quadratic-equations';
+import { isNumber } from '../other';
 
 /**
  * Bézier Curves
@@ -196,7 +197,7 @@ export const v2QuadraticBezierCurveExtrema = (
     centerControlPoint: Vector2,
     endControlPoint: Vector2,
     decimalPlaces = Infinity
-) : Vector2 => {
+) : Vector => {
 
    /*
     (-2 * (1 - t)) * startControlPoint[0] + (2 - 4 * t) * centerControlPoint[0] + (2 * t) * endControlPoint[0]
@@ -207,15 +208,24 @@ export const v2QuadraticBezierCurveExtrema = (
     const a1 = 2  * startControlPoint[0] - 4 * centerControlPoint[0] + 2 * endControlPoint[0];
     const b1 = -2 * startControlPoint[0] + 2 * centerControlPoint[0];
     const equation1: Vector3 = [a1, b1, 0];
+    const res1 = linearEquation(equation1, decimalPlaces);
 
     const a2 = 2  * startControlPoint[1] - 4 * centerControlPoint[1] + 2 * endControlPoint[1];
     const b2 = -2 * startControlPoint[1] + 2 * centerControlPoint[1];
     const equation2: Vector3 = [a2, b2, 0];
+    const res2 = linearEquation(equation2, decimalPlaces);
 
-    return [
-        linearEquation(equation1, decimalPlaces),
-        linearEquation(equation2, decimalPlaces),
-    ];
+    const res: Vector = [];
+
+    if(isNumber(res1)){
+        res.push(res1);
+    }
+
+    if(isNumber(res2)){
+        res.push(res2);
+    }
+
+    return res;
 };
 
 /**

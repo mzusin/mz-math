@@ -17,8 +17,8 @@
   <link id="favicon-16" rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16.png" />
 
   <link rel="stylesheet" href="/highlight.js/styles/tokyo-night-dark.css" />
-  <link rel="stylesheet" href="/css/styles.1681543346367.css" />
-  <!--<link rel="stylesheet" href="/js/index.1681543346367.css" />-->
+  <link rel="stylesheet" href="/css/styles.1681545165797.css" />
+  <!--<link rel="stylesheet" href="/js/index.1681545165797.css" />-->
 
 </head>
 <body class="h-screen flex flex-col font-roboto bg-white dark:bg-slate-900 dark:text-slate-100">
@@ -202,7 +202,7 @@
     <div class="p-4 overflow-y-auto h-full md:w-100-350 dark:bg-slate-800">
       <div class="w-800 max-w-full mx-auto my-10 leading-7 text-lg text-slate-800 dark:text-slate-200"><h1 class="text-3xl mb-8">Bezier Curve Extrema</h1>
 <p class="mb-4"><strong class="font-bold">Cubic Bézier Extrema</strong></p>
-<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">import</span> { v2QuadraticBezierCurveExtrema, <span class="hljs-title class_">Vector2</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mz-math&#x27;</span>;
+<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">import</span> { v2QuadraticBezierCurveExtrema, <span class="hljs-title class_">Vector2</span>, <span class="hljs-title class_">Vector</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mz-math&#x27;</span>;
 
 <span class="hljs-keyword">const</span> <span class="hljs-attr">startControlPoint</span>: <span class="hljs-title class_">Vector2</span> = [<span class="hljs-number">100</span>, <span class="hljs-number">200</span>];
 <span class="hljs-keyword">const</span> <span class="hljs-attr">center1ControlPoint</span>: <span class="hljs-title class_">Vector2</span> = [<span class="hljs-number">100</span>, <span class="hljs-number">50</span>];
@@ -210,7 +210,7 @@
 <span class="hljs-keyword">const</span> <span class="hljs-attr">endControlPoint</span>: <span class="hljs-title class_">Vector2</span> = [<span class="hljs-number">300</span>, <span class="hljs-number">250</span>];
 <span class="hljs-keyword">const</span> decimalPlaces = <span class="hljs-number">2</span>; <span class="hljs-comment">// optional</span>
 
-<span class="hljs-keyword">const</span> <span class="hljs-attr">result</span>: <span class="hljs-title class_">Vector2</span> = <span class="hljs-title function_">v2QuadraticBezierCurveExtrema</span>(
+<span class="hljs-keyword">const</span> <span class="hljs-attr">result</span>: <span class="hljs-title class_">Vector</span> = <span class="hljs-title function_">v2QuadraticBezierCurveExtrema</span>(
     startControlPoint,
     center1ControlPoint,
     center2ControlPoint,
@@ -273,6 +273,6 @@
   </div>
 </footer>-->
 
-<script src="/js/index.1681543346367.js"></script>
+<script src="/js/index.1681545165797.js"></script>
 </body>
 </html>

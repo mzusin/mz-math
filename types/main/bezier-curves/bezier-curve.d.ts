@@ -1,4 +1,4 @@
-import { IBBox, Vector2, Vector3 } from '../../types';
+import { IBBox, Vector, Vector2, Vector3 } from '../../types';
 /**
  * Bézier Curves
  * quadratic: y = P1 * (1-t)² + P2 * 2 * (1-t)t + P3 * t²
@@ -32,7 +32,7 @@ export declare const v2CubicBezierCurveNormal: (t: number, startControlPoint: Ve
  * Find maxima and minima by solving the equation B'(t) = 0
  * Returns result in [0, 1] range.
  */
-export declare const v2QuadraticBezierCurveExtrema: (startControlPoint: Vector2, centerControlPoint: Vector2, endControlPoint: Vector2, decimalPlaces?: number) => Vector2;
+export declare const v2QuadraticBezierCurveExtrema: (startControlPoint: Vector2, centerControlPoint: Vector2, endControlPoint: Vector2, decimalPlaces?: number) => Vector;
 /**
  * Find maxima and minima by solving the equation B'(t) = 0
  * Returns result in [0, 1] range.

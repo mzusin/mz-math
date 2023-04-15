@@ -3,7 +3,7 @@
 **Cubic Bézier Extrema**
 
 ```js
-import { v2QuadraticBezierCurveExtrema, Vector2 } from 'mz-math';
+import { v2QuadraticBezierCurveExtrema, Vector2, Vector } from 'mz-math';
 
 const startControlPoint: Vector2 = [100, 200];
 const center1ControlPoint: Vector2 = [100, 50];
@@ -11,7 +11,7 @@ const center2ControlPoint: Vector2 = [200, 150];
 const endControlPoint: Vector2 = [300, 250];
 const decimalPlaces = 2; // optional
 
-const result: Vector2 = v2QuadraticBezierCurveExtrema(
+const result: Vector = v2QuadraticBezierCurveExtrema(
     startControlPoint,
     center1ControlPoint,
     center2ControlPoint,
