@@ -39,7 +39,7 @@ https://math.mzsoft.org/pages/translation-matrix.html
 https://math.mzsoft.org/pages/rotation-matrix.html
 https://math.mzsoft.org/pages/rotate-around-point.html
 https://math.mzsoft.org/pages/scale-and-stretch-matrix.html
-https://math.mzsoft.org/pages/scale-about-point.html
+https://math.mzsoft.org/pages/scale-around-point.html
 https://math.mzsoft.org/pages/reflection-matrix.html
 https://math.mzsoft.org/pages/shearing-matrix.html
 https://math.mzsoft.org/pages/matrix-to-CSS-transform.html

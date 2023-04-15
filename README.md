@@ -51,7 +51,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
 - [Rotation Matrix](https://math.mzsoft.org/pages/rotation-matrix.html)
 - [Rotate Around Point](https://math.mzsoft.org/pages/rotate-around-point.html)
 - [Scale And Stretch Matrix](https://math.mzsoft.org/pages/scale-and-stretch-matrix.html)
-- [Scale About Point](https://math.mzsoft.org/pages/scale-about-point.html)
+- [Scale Around Point](https://math.mzsoft.org/pages/scale-around-point.html)
 - [Reflection Matrix](https://math.mzsoft.org/pages/reflection-matrix.html)
 - [Shearing Matrix](https://math.mzsoft.org/pages/shearing-matrix.html)
 - [Matrix To Css Transform](https://math.mzsoft.org/pages/matrix-to-CSS-transform.html)
@@ -102,6 +102,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
 - [Check If Ranges Overlap](https://math.mzsoft.org/pages/check-if-ranges-overlap.html)
 - [Check If Value Is Number](https://math.mzsoft.org/pages/Check-if-value-is-number.html)
 ------------------------------
+
 
 
 

@@ -1,4 +1,4 @@
-# Scale about an arbitrary pivot point P
+# Scale around an arbitrary pivot point P
 
 It's possible to scale a point [x, y] (in homogeneous coordinates) around the given pivot point as follows:
 
