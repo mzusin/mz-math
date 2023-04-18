@@ -59,6 +59,8 @@ const restoreCollapsible = () => {
 
     for(const menuItem of menu){
         const $title = document.querySelector(`.side-menu [data-id="${ menuItem.id }"]`) as HTMLElement;
+        if(!$title) continue;
+
         toggle($title, menuItem.opened, false);
     }
 };
@@ -82,6 +84,7 @@ export const initMenuCollapsible = () => {
     const $titles = document.querySelectorAll('.side-menu [data-collapsible-title]') as NodeListOf<HTMLElement>;
 
     for(const $title of $titles){
+
         $title.addEventListener('click', () => {
             const isOpened = $title.getAttribute('data-opened') === 'true';
             toggle($title, !isOpened, true);
