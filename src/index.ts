@@ -15,6 +15,7 @@ import * as id from './main/id';
 import * as shapes from './main/shapes';
 import * as derivative from './main/derivative';
 import * as collisions from './main/collision-detection';
+import * as animation from './main/animation';
 
 const api = {
     ...vector,
@@ -34,6 +35,7 @@ const api = {
     ...shapes,
     ...derivative,
     ...collisions,
+    ...animation,
 };
 
 declare global {
@@ -61,3 +63,4 @@ export * from './main/id';
 export * from './main/shapes';
 export * from './main/derivative';
 export * from './main/collision-detection';
+export * from './main/animation';

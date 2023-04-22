@@ -1,4 +1,6 @@
+import * as animation from './main/animation';
 declare const api: {
+    animate: (props: animation.IAnimationProps) => animation.IAnimationResult;
     rectCollide: (rect1: import("./types").IRect, rect2: import("./types").IRect) => boolean;
     circleCollide: (circle1: import("./types").ICircle, circle2: import("./types").ICircle) => boolean;
     convexPolygonsCollide: (poly1: import("./types").IPolygon, poly2: import("./types").IPolygon) => boolean;
@@ -244,3 +246,4 @@ export * from './main/id';
 export * from './main/shapes';
 export * from './main/derivative';
 export * from './main/collision-detection';
+export * from './main/animation';

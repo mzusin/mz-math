@@ -317,4 +317,21 @@ declare module 'mz-math' {
     export const circleCollide: (circle1: ICircle, circle2: ICircle) => boolean;
     export const convexPolygonsCollide: (poly1: IPolygon, poly2: IPolygon) => boolean;
 
+    export interface IAnimationProps {
+        duration?: number;
+        callback: (result: IAnimationResult) => void;
+    }
+    export interface IAnimationResult {
+        start: () => void;
+        stop: () => void;
+        pause: () => void;
+        resume: () => void;
+        restart: () => void;
+        isAnimating: () => boolean;
+        getStartTime: () => number | undefined;
+        getElapsedTime: () => number | undefined;
+        getPercent: () => number | undefined;
+    }
+    export const animate: (props: IAnimationProps) => IAnimationResult;
+
 }
