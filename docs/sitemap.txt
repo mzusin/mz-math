@@ -77,6 +77,8 @@ https://math.mzsoft.org/pages/bezier-curves.html
 https://math.mzsoft.org/pages/rectangles-collision.html
 https://math.mzsoft.org/pages/circles-collision.html
 https://math.mzsoft.org/pages/convex-polygons-collision.html
+https://math.mzsoft.org/pages/animation.html
+https://math.mzsoft.org/pages/get-animation-data.html
 https://math.mzsoft.org/pages/set-decimal-places.html
 https://math.mzsoft.org/pages/convert-string-to-number.html
 https://math.mzsoft.org/pages/square-in-circle.html

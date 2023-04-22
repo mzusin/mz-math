@@ -166,7 +166,7 @@
           <path d="m7 7 5 5-5 5m6-10 5 5-5 5"/>
         </svg>
 
-    </div><div class="flex flex-col" data-links><a href="/pages/get-point-on-quadratic-bezier-curve.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Get Point On Quadratic Bezier Curve</a><a href="/pages/get-point-on-cubic-bezier-curve.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-sky-500">Get Point On Cubic Bezier Curve</a><a href="/pages/tangent.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Tangent</a><a href="/pages/normal.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Normal</a><a href="/pages/extrema.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Extrema</a><a href="/pages/bounding-box.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600  text-slate-500">Bounding Box</a></div><div class="text-xl my-4 flex items-center cursor-pointer" data-collapsible-title data-opened="true" data-id="80-equations">
+    </div><div class="flex flex-col" data-links><a href="/pages/get-point-on-quadratic-bezier-curve.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Get Point On Quadratic Bezier Curve</a><a href="/pages/get-point-on-cubic-bezier-curve.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Get Point On Cubic Bezier Curve</a><a href="/pages/tangent.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Tangent</a><a href="/pages/normal.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Normal</a><a href="/pages/extrema.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Extrema</a><a href="/pages/bounding-box.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600  text-slate-500">Bounding Box</a></div><div class="text-xl my-4 flex items-center cursor-pointer" data-collapsible-title data-opened="true" data-id="80-equations">
         Equations 
         <svg data-arrow xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#626e7f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="ml-2 rotate-90" viewBox="0 0 24 24">
           <path stroke="none" d="M0 0h24v24H0z"/>
@@ -215,7 +215,7 @@
           <path d="m7 7 5 5-5 5m6-10 5 5-5 5"/>
         </svg>
 
-    </div><div class="flex flex-col" data-links><a href="/pages/animation.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Animation</a><a href="/pages/get-animation-data.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600  text-slate-500">Get Animation Data</a></div><div class="text-xl my-4 flex items-center cursor-pointer" data-collapsible-title data-opened="true" data-id="1000-other">
+    </div><div class="flex flex-col" data-links><a href="/pages/animation.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-sky-500">Animation</a><a href="/pages/get-animation-data.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600  text-slate-500">Get Animation Data</a></div><div class="text-xl my-4 flex items-center cursor-pointer" data-collapsible-title data-opened="true" data-id="1000-other">
         Other 
         <svg data-arrow xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#626e7f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="ml-2 rotate-90" viewBox="0 0 24 24">
           <path stroke="none" d="M0 0h24v24H0z"/>
@@ -227,75 +227,63 @@
     </div>
 
     <div class="p-4 overflow-y-auto h-full md:w-100-350 dark:bg-slate-800">
-      <div class="w-800 max-w-full mx-auto my-10 leading-7 text-lg text-slate-800 dark:text-slate-200"><h1 class="text-3xl mb-8">Get a point on a cubic Bézier curve</h1>
-<p class="mb-4">Get a point on a cubic Bézier curve as a function of time, where t is in the range [0, 1].</p>
-<p class="mb-4"><strong class="font-bold">2D Vector</strong></p>
-<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">import</span> { v2CubicBezierCurve } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mz-math&#x27;</span>;
+      <div class="w-800 max-w-full mx-auto my-10 leading-7 text-lg text-slate-800 dark:text-slate-200"><h1 class="text-3xl mb-8">Animation</h1>
+<p class="mb-4">The library contains an animation API that can control the animation flow. Basic usage:</p>
+<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">import</span> { animate, <span class="hljs-title class_">IAnimationResult</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mz-math&#x27;</span>;
 
-<span class="hljs-keyword">const</span> decimalPlaces = <span class="hljs-number">2</span>; <span class="hljs-comment">// optional</span>
+<span class="hljs-keyword">const</span> <span class="hljs-attr">api</span>: <span class="hljs-title class_">IAnimationResult</span> = <span class="hljs-title function_">animate</span>({
+    
+    <span class="hljs-comment">// A function to be called on each animation frame. </span>
+    <span class="hljs-comment">// It receives an object of type IAnimationResult.</span>
+    <span class="hljs-attr">callback</span>: <span class="hljs-function">(<span class="hljs-params">result: IAnimationResult</span>) =&gt;</span> {
+        <span class="hljs-comment">// DO ANY RENDERING LOGIC HERE</span>
+    },
+    
+    <span class="hljs-comment">// Optional property.</span>
+    <span class="hljs-comment">// If true, the animation will restart whenever </span>
+    <span class="hljs-comment">// the size of the document body changes. Default is false.</span>
+    <span class="hljs-attr">restartOnResize</span>: <span class="hljs-literal">true</span>,
 
-<span class="hljs-keyword">const</span> v2 = <span class="hljs-title function_">v2CubicBezierCurve</span>(
-        <span class="hljs-number">0.5</span>,
-        [<span class="hljs-number">0</span>, <span class="hljs-number">100</span>],
-        [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>],
-        [<span class="hljs-number">100</span>, <span class="hljs-number">0</span>],
-        [<span class="hljs-number">100</span>, <span class="hljs-number">100</span>],
-        decimalPlaces
-); <span class="hljs-comment">// [50, 25]</span>
+    <span class="hljs-comment">// Optional property.</span>
+    <span class="hljs-comment">// The duration of the animation in milliseconds. </span>
+    <span class="hljs-comment">// If not provided, the animation will continue indefinitely.</span>
+    <span class="hljs-attr">duration</span>: <span class="hljs-number">1000</span>,
+});
 
-<span class="hljs-keyword">const</span> v2 = <span class="hljs-title function_">v2CubicBezierCurve</span>(
-        <span class="hljs-number">0</span>,
-        [<span class="hljs-number">0</span>, <span class="hljs-number">100</span>],
-        [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>],
-        [<span class="hljs-number">100</span>, <span class="hljs-number">0</span>],
-        [<span class="hljs-number">100</span>, <span class="hljs-number">100</span>],
-        decimalPlaces
-); <span class="hljs-comment">// [0, 100]</span>
+<span class="hljs-comment">// Starts the animation.</span>
+api.<span class="hljs-title function_">start</span>();
 
-<span class="hljs-keyword">const</span> v2 = <span class="hljs-title function_">v2CubicBezierCurve</span>(
-        <span class="hljs-number">1</span>,
-        [<span class="hljs-number">0</span>, <span class="hljs-number">100</span>],
-        [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>],
-        [<span class="hljs-number">100</span>, <span class="hljs-number">0</span>],
-        [<span class="hljs-number">100</span>, <span class="hljs-number">100</span>],
-        decimalPlaces
-); <span class="hljs-comment">// [100, 100]</span></code></pre>
-<p class="mb-4"><strong class="font-bold">3D Vector</strong></p>
-<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">import</span> { v3CubicBezierCurve } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mz-math&#x27;</span>;
+<span class="hljs-comment">/*
+// Stops the animation.
+api.stop(); 
 
-<span class="hljs-keyword">const</span> decimalPlaces = <span class="hljs-number">2</span>; <span class="hljs-comment">// optional</span>
+// Pauses the animation.
+api.pause();
 
-<span class="hljs-keyword">const</span> v3 = <span class="hljs-title function_">v3CubicBezierCurve</span>(
-        <span class="hljs-number">0.5</span>,
-        [<span class="hljs-number">0</span>, <span class="hljs-number">100</span>, <span class="hljs-number">0</span>],
-        [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>],
-        [<span class="hljs-number">100</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>],
-        [<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">0</span>],
-        decimalPlaces
-); <span class="hljs-comment">// [50, 25, 0]</span>
+// Resumes the animation from where it was paused.
+api.resume();
 
-<span class="hljs-keyword">const</span> v3 = <span class="hljs-title function_">v3CubicBezierCurve</span>(
-        <span class="hljs-number">0</span>,
-        [<span class="hljs-number">0</span>, <span class="hljs-number">100</span>, <span class="hljs-number">0</span>],
-        [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>],
-        [<span class="hljs-number">100</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>],
-        [<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">0</span>],
-        decimalPlaces
-); <span class="hljs-comment">// [0, 100, 0]</span>
-
-<span class="hljs-keyword">const</span> v3 = <span class="hljs-title function_">v3CubicBezierCurve</span>(
-        <span class="hljs-number">1</span>,
-        [<span class="hljs-number">0</span>, <span class="hljs-number">100</span>, <span class="hljs-number">0</span>],
-        [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>],
-        [<span class="hljs-number">100</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>],
-        [<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">0</span>],
-        decimalPlaces
-); <span class="hljs-comment">// [100, 100, 0]</span></code></pre>
+// Restarts the animation from the beginning.
+api.restart();
+ */</span></code></pre>
+<p class="mb-4">The <strong class="font-bold">IAnimationResult</strong> interface defines the methods and properties returned by the animate function.</p>
+<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">IAnimationResult</span> {
+    <span class="hljs-attr">start</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">void</span>;
+    <span class="hljs-attr">stop</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">void</span>;
+    <span class="hljs-attr">pause</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">void</span>;
+    <span class="hljs-attr">resume</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">void</span>;
+    <span class="hljs-attr">restart</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">void</span>;
+    <span class="hljs-attr">isAnimating</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">boolean</span>;
+    <span class="hljs-attr">getStartTime</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">number</span>|<span class="hljs-literal">undefined</span>;
+    <span class="hljs-attr">getElapsedTime</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">number</span>|<span class="hljs-literal">undefined</span>;
+    <span class="hljs-attr">getPercent</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">number</span>|<span class="hljs-literal">undefined</span>;
+    <span class="hljs-attr">getResizeObserver</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-title class_">ResizeObserver</span>|<span class="hljs-literal">undefined</span>;
+}</code></pre>
 </div>
 
       <div class="w-800 max-w-full mx-auto grid lg:grid-cols-2 gap-8 items-center text-slate-500">
 <div class="flex justify-between items-start border border-slate-200 dark:border-slate-600 rounded p-4">
-  <a href="/pages/get-point-on-quadratic-bezier-curve.html" title="" class="mr-4 hover:text-blue-500">
+  <a href="/pages/convex-polygons-collision.html" title="" class="mr-4 hover:text-blue-500">
     <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24">
     <path stroke="none" d="M0 0h24v24H0z"/>
     <path d="M5 12h14M5 12l6 6m-6-6 6-6"/>
@@ -303,7 +291,7 @@
   </a>
   <div class="flex flex-col items-end justify-center">
     <div class="mb-2 text-sm text-slate-300">Previous</div>
-    <a href="/pages/get-point-on-quadratic-bezier-curve.html" title="" class="hover:text-blue-500">Get Point On Quadratic Bezier Curve</a>
+    <a href="/pages/convex-polygons-collision.html" title="" class="hover:text-blue-500">Convex Polygons Collision</a>
   </div>
 </div>      
     
@@ -311,10 +299,10 @@
   
   <div class="flex flex-col justify-center">
     <div class="mb-2 text-sm text-slate-300">Next</div>
-    <a href="/pages/tangent.html" title="" class="hover:text-blue-500">Tangent</a>
+    <a href="/pages/get-animation-data.html" title="" class="hover:text-blue-500">Get Animation Data</a>
   </div>
   
-  <a href="/pages/tangent.html" title="" class="mr-4 hover:text-blue-500">
+  <a href="/pages/get-animation-data.html" title="" class="mr-4 hover:text-blue-500">
     <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24">
      <path stroke="none" d="M0 0h24v24H0z"/>
      <path d="M5 12h14m-6 6 6-6m-6-6 6 6"/>
