@@ -87,6 +87,8 @@ declare module 'mz-math' {
 
     export const v3CrossProduct: (vector1: Vector3, vector2: Vector3, decimalPlaces?: number) => Vector3;
 
+    export const v2GetNormal: (vector1: Vector2, vector2: Vector2) => Vector2;
+
     export const mSum: (matrix1: Matrix, matrix2: Matrix, decimalPlaces?: number) => Matrix;
     export const m2Sum: (matrix1: Matrix2, matrix2: Matrix2, decimalPlaces?: number) => Matrix2;
     export const m3Sum: (matrix1: Matrix3, matrix2: Matrix3, decimalPlaces?: number) => Matrix3;
@@ -295,5 +297,24 @@ declare module 'mz-math' {
     export const mLerp: (x: number, start: Matrix, end: Matrix, decimalPlaces?: number) => Matrix;
     export const m3Lerp: (x: number, start: Matrix3, end: Matrix3, decimalPlaces?: number) => Matrix3;
     export const m2Lerp: (x: number, start: Matrix2, end: Matrix2, decimalPlaces?: number) => Matrix2;
+
+    export interface IRect {
+        x: number;
+        y: number;
+        w: number;
+        h: number;
+    }
+
+    export interface ICircle {
+        cx: number;
+        cy: number;
+        r: number;
+    }
+
+    export type IPolygon = Vector2[];
+
+    export const rectCollide: (rect1: IRect, rect2: IRect) => boolean;
+    export const circleCollide: (circle1: ICircle, circle2: ICircle) => boolean;
+    export const convexPolygonsCollide: (poly1: IPolygon, poly2: IPolygon) => boolean;
 
 }

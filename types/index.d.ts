@@ -217,6 +217,7 @@ declare const api: {
     vN: (N: number, defaultValue?: number) => import("./types").Vector;
     v2FromPolarCoords: (distance: number, angleRad: number) => import("./types").Vector2;
     vEqual: (vector1: import("./types").Vector, vector2: import("./types").Vector) => boolean;
+    v2GetNormal: (vector1: import("./types").Vector2, vector2: import("./types").Vector2) => import("./types").Vector2;
 };
 declare global {
     interface Window {

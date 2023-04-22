@@ -68,13 +68,17 @@ export const convexPolygonsCollide = (poly1: IPolygon, poly2: IPolygon): boolean
     return true;
 };
 
-const projectPolygon = (polygon: IPolygon, axis: Vector2): { min: number, max: number } => {
+/**
+ * Project every polygon point onto the normal.
+ * Then find min and max.
+ */
+const projectPolygon = (polygon: IPolygon, normal: Vector2): { min: number, max: number } => {
     let min = Infinity;
     let max = -Infinity;
 
     // Project each vertex of the polygon onto the axis
     for (const vertex of polygon) {
-        const projection = v2DotProduct(vertex, axis);
+        const projection = v2DotProduct(vertex, normal);
         min = Math.min(min, projection);
         max = Math.max(max, projection);
     }

@@ -16,3 +16,15 @@ export interface IBBox {
     x2: number;
     y2: number;
 }
+export interface IRect {
+    x: number;
+    y: number;
+    w: number;
+    h: number;
+}
+export interface ICircle {
+    cx: number;
+    cy: number;
+    r: number;
+}
+export type IPolygon = Vector2[];
