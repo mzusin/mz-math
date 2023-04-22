@@ -87,7 +87,7 @@ declare module 'mz-math' {
 
     export const v3CrossProduct: (vector1: Vector3, vector2: Vector3, decimalPlaces?: number) => Vector3;
 
-    export const v2GetNormal: (vector1: Vector2, vector2: Vector2) => Vector2;
+    export const v2GetNormal: (vector1: Vector2, vector2: Vector2, decimalPlaces?: number) => Vector2;
 
     export const mSum: (matrix1: Matrix, matrix2: Matrix, decimalPlaces?: number) => Matrix;
     export const m2Sum: (matrix1: Matrix2, matrix2: Matrix2, decimalPlaces?: number) => Matrix2;

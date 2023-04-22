@@ -1,4 +1,7 @@
 declare const api: {
+    rectCollide: (rect1: import("./types").IRect, rect2: import("./types").IRect) => boolean;
+    circleCollide: (circle1: import("./types").ICircle, circle2: import("./types").ICircle) => boolean;
+    convexPolygonsCollide: (poly1: import("./types").IPolygon, poly2: import("./types").IPolygon) => boolean;
     dxPolynomial: (x: number, polynomial: number[][], decimalPlaces?: number) => number;
     dxV2QuadraticBezierCurve: (t: number, startControlPoint: import("./types").Vector2, centerControlPoint: import("./types").Vector2, endControlPoint: import("./types").Vector2, decimalPlaces?: number) => import("./types").Vector2;
     dxV3QuadraticBezierCurve: (t: number, startControlPoint: import("./types").Vector3, centerControlPoint: import("./types").Vector3, endControlPoint: import("./types").Vector3, decimalPlaces?: number) => import("./types").Vector3;
@@ -217,7 +220,7 @@ declare const api: {
     vN: (N: number, defaultValue?: number) => import("./types").Vector;
     v2FromPolarCoords: (distance: number, angleRad: number) => import("./types").Vector2;
     vEqual: (vector1: import("./types").Vector, vector2: import("./types").Vector) => boolean;
-    v2GetNormal: (vector1: import("./types").Vector2, vector2: import("./types").Vector2) => import("./types").Vector2;
+    v2GetNormal: (vector1: import("./types").Vector2, vector2: import("./types").Vector2, decimalPlaces?: number) => import("./types").Vector2;
 };
 declare global {
     interface Window {
@@ -240,3 +243,4 @@ export * from './main/physics';
 export * from './main/id';
 export * from './main/shapes';
 export * from './main/derivative';
+export * from './main/collision-detection';

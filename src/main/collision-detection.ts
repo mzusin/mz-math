@@ -30,7 +30,7 @@ export const circleCollide = (circle1: ICircle, circle2: ICircle) => {
     return distance <= circle1.r + circle2.r;
 };
 
-//-------------------- SAT Collision detection -------------------------
+//-------------------- Separating Axis Theorem (SAT) Collision detection -------------------------
 
 const getEdges = (poly: IPolygon) : Matrix2[] => {
     const edges: Matrix2[] = [];

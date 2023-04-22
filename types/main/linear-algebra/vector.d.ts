@@ -41,4 +41,4 @@ export declare const vN: (N: number, defaultValue?: number) => Vector;
  */
 export declare const v2FromPolarCoords: (distance: number, angleRad: number) => Vector2;
 export declare const vEqual: (vector1: Vector, vector2: Vector) => boolean;
-export declare const v2GetNormal: (vector1: Vector2, vector2: Vector2) => Vector2;
+export declare const v2GetNormal: (vector1: Vector2, vector2: Vector2, decimalPlaces?: number) => Vector2;

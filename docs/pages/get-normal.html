@@ -124,7 +124,7 @@
           <path d="m7 7 5 5-5 5m6-10 5 5-5 5"/>
         </svg>
 
-    </div><div class="flex flex-col" data-links><a href="/pages/vectors.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Vectors</a><a href="/pages/vectors-sum.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Vectors Sum</a><a href="/pages/vectors-subtraction.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Vectors Subtraction</a><a href="/pages/multiply-vector-by-scalar.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Multiply by Scalar</a><a href="/pages/divide-vector-by-scalar.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Divide by Scalar</a><a href="/pages/vector-length.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Vector Length</a><a href="/pages/normalize-vector.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Normalized (Unit) Vector</a><a href="/pages/dot-product.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-sky-500">Dot Product</a><a href="/pages/cross-product.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Cross Product</a><a href="/pages/distance-between-vectors.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Distance Between Vectors</a><a href="/pages/vector-initialization.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Vector Initialization</a><a href="/pages/vectors-equality.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Vectors Equality</a><a href="/pages/get-normal.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600  text-slate-500">Get Normal</a></div><div class="text-xl my-4 flex items-center cursor-pointer" data-collapsible-title data-opened="true" data-id="30-matrix">
+    </div><div class="flex flex-col" data-links><a href="/pages/vectors.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Vectors</a><a href="/pages/vectors-sum.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Vectors Sum</a><a href="/pages/vectors-subtraction.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Vectors Subtraction</a><a href="/pages/multiply-vector-by-scalar.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Multiply by Scalar</a><a href="/pages/divide-vector-by-scalar.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Divide by Scalar</a><a href="/pages/vector-length.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Vector Length</a><a href="/pages/normalize-vector.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Normalized (Unit) Vector</a><a href="/pages/dot-product.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Dot Product</a><a href="/pages/cross-product.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Cross Product</a><a href="/pages/distance-between-vectors.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Distance Between Vectors</a><a href="/pages/vector-initialization.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Vector Initialization</a><a href="/pages/vectors-equality.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Vectors Equality</a><a href="/pages/get-normal.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600  text-sky-500">Get Normal</a></div><div class="text-xl my-4 flex items-center cursor-pointer" data-collapsible-title data-opened="true" data-id="30-matrix">
         Matrix 
         <svg data-arrow xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#626e7f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="ml-2 rotate-90" viewBox="0 0 24 24">
           <path stroke="none" d="M0 0h24v24H0z"/>
@@ -220,26 +220,19 @@
     </div>
 
     <div class="p-4 overflow-y-auto h-full md:w-100-350 dark:bg-slate-800">
-      <div class="w-800 max-w-full mx-auto my-10 leading-7 text-lg text-slate-800 dark:text-slate-200"><h2 class="text-3xl mb-8">Vectors Dot Product</h2>
-<p class="mb-4">It’s possible to calculate vector dot product using the <strong class="font-bold">v2DotProduct</strong>, <strong class="font-bold">v3DotProduct</strong>, and <strong class="font-bold">vDotProduct</strong> functions. Each function receives an optional <strong class="font-bold">decimalPlaces</strong> parameter.</p>
-<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">import</span> { v2DotProduct, v3DotProduct, vDotProduct } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mz-math&#x27;</span>;
+      <div class="w-800 max-w-full mx-auto my-10 leading-7 text-lg text-slate-800 dark:text-slate-200"><h2 class="text-3xl mb-8">Get Vector Normal</h2>
+<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">import</span> { v2GetNormal, <span class="hljs-title class_">Vector2</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mz-math&#x27;</span>;
 
-<span class="hljs-comment">// 2D vector</span>
-<span class="hljs-keyword">const</span> res1 = <span class="hljs-title function_">v2DotProduct</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>], [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>]); <span class="hljs-comment">// 11</span>
-<span class="hljs-keyword">const</span> res2 = <span class="hljs-title function_">v2DotProduct</span>([<span class="hljs-number">1.1234</span>, <span class="hljs-number">2.35678</span>], [<span class="hljs-number">3.1265</span>, <span class="hljs-number">4.91355</span>], <span class="hljs-number">2</span>); <span class="hljs-comment">// 15.09</span>
+<span class="hljs-keyword">const</span> <span class="hljs-attr">vector1</span>: <span class="hljs-title class_">Vector2</span> = [<span class="hljs-number">10</span>, <span class="hljs-number">20</span>];
+<span class="hljs-keyword">const</span> <span class="hljs-attr">vector2</span>: <span class="hljs-title class_">Vector2</span> = [<span class="hljs-number">20</span>, <span class="hljs-number">30</span>];
+<span class="hljs-keyword">const</span> decimalPlaces = <span class="hljs-number">2</span>; <span class="hljs-comment">// optional</span>
 
-<span class="hljs-comment">// 3D vector</span>
-<span class="hljs-keyword">const</span> res3 = <span class="hljs-title function_">v3DotProduct</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]); <span class="hljs-comment">// 32</span>
-<span class="hljs-keyword">const</span> res4 = <span class="hljs-title function_">v3DotProduct</span>([<span class="hljs-number">1.73845</span>, <span class="hljs-number">2.88465</span>, <span class="hljs-number">3.000111</span>], [<span class="hljs-number">4.1163</span>, <span class="hljs-number">5.5501</span>, <span class="hljs-number">6.120777</span>], <span class="hljs-number">2</span>); <span class="hljs-comment">// 41.53</span>
-
-<span class="hljs-comment">// General case</span>
-<span class="hljs-keyword">const</span> res5 = <span class="hljs-title function_">vDotProduct</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], [<span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>]); <span class="hljs-comment">// 70</span>
-<span class="hljs-keyword">const</span> res6 = <span class="hljs-title function_">vDotProduct</span>([<span class="hljs-number">1.123</span>, <span class="hljs-number">2.123</span>, <span class="hljs-number">3.123</span>, <span class="hljs-number">4.123</span>], [<span class="hljs-number">5.123</span>, <span class="hljs-number">6.123</span>, <span class="hljs-number">7.123</span>, <span class="hljs-number">8.123</span>], <span class="hljs-number">1</span>); <span class="hljs-comment">// 74.5</span></code></pre>
+<span class="hljs-keyword">const</span> <span class="hljs-attr">res</span>: <span class="hljs-title class_">Vector2</span> = <span class="hljs-title function_">v2GetNormal</span>(vector1, vector2, decimalPlaces); <span class="hljs-comment">// [-10, 10]</span></code></pre>
 </div>
 
       <div class="w-800 max-w-full mx-auto grid lg:grid-cols-2 gap-8 items-center text-slate-500">
 <div class="flex justify-between items-start border border-slate-200 dark:border-slate-600 rounded p-4">
-  <a href="/pages/normalize-vector.html" title="" class="mr-4 hover:text-blue-500">
+  <a href="/pages/vectors-equality.html" title="" class="mr-4 hover:text-blue-500">
     <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24">
     <path stroke="none" d="M0 0h24v24H0z"/>
     <path d="M5 12h14M5 12l6 6m-6-6 6-6"/>
@@ -247,7 +240,7 @@
   </a>
   <div class="flex flex-col items-end justify-center">
     <div class="mb-2 text-sm text-slate-300">Previous</div>
-    <a href="/pages/normalize-vector.html" title="" class="hover:text-blue-500">Normalized (Unit) Vector</a>
+    <a href="/pages/vectors-equality.html" title="" class="hover:text-blue-500">Vectors Equality</a>
   </div>
 </div>      
     
@@ -255,10 +248,10 @@
   
   <div class="flex flex-col justify-center">
     <div class="mb-2 text-sm text-slate-300">Next</div>
-    <a href="/pages/cross-product.html" title="" class="hover:text-blue-500">Cross Product</a>
+    <a href="/pages/matrix.html" title="" class="hover:text-blue-500">Matrix</a>
   </div>
   
-  <a href="/pages/cross-product.html" title="" class="mr-4 hover:text-blue-500">
+  <a href="/pages/matrix.html" title="" class="mr-4 hover:text-blue-500">
     <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24">
      <path stroke="none" d="M0 0h24v24H0z"/>
      <path d="M5 12h14m-6 6 6-6m-6-6 6 6"/>

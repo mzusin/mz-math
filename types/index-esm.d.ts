@@ -14,3 +14,4 @@ export * from './main/physics';
 export * from './main/id';
 export * from './main/shapes';
 export * from './main/derivative';
+export * from './main/collision-detection';

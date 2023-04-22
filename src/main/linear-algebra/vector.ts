@@ -241,7 +241,10 @@ export const vEqual = (vector1: Vector, vector2: Vector): boolean => {
 
 // --------------- NORMAL --------------------------
 
-export const v2GetNormal = (vector1: Vector2, vector2: Vector2): Vector2 => {
+export const v2GetNormal = (vector1: Vector2, vector2: Vector2, decimalPlaces = Infinity): Vector2 => {
     const sub = v2Sub(vector2, vector1);
-    return [ -sub[1], sub[0] ];
+    return [
+        -setDecimalPlaces(sub[1], decimalPlaces),
+        setDecimalPlaces(sub[0], decimalPlaces)
+    ];
 };

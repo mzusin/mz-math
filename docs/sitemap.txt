@@ -14,6 +14,7 @@ https://math.mzsoft.org/pages/cross-product.html
 https://math.mzsoft.org/pages/distance-between-vectors.html
 https://math.mzsoft.org/pages/vector-initialization.html
 https://math.mzsoft.org/pages/vectors-equality.html
+https://math.mzsoft.org/pages/get-normal.html
 https://math.mzsoft.org/pages/matrix.html
 https://math.mzsoft.org/pages/matrix-sum.html
 https://math.mzsoft.org/pages/matrix-subtraction.html
@@ -73,6 +74,9 @@ https://math.mzsoft.org/pages/general-case.html
 https://math.mzsoft.org/pages/polynomial.html
 https://math.mzsoft.org/pages/trigonometric-functions.html
 https://math.mzsoft.org/pages/bezier-curves.html
+https://math.mzsoft.org/pages/rectangles-collision.html
+https://math.mzsoft.org/pages/circles-collision.html
+https://math.mzsoft.org/pages/convex-polygons-collision.html
 https://math.mzsoft.org/pages/set-decimal-places.html
 https://math.mzsoft.org/pages/convert-string-to-number.html
 https://math.mzsoft.org/pages/square-in-circle.html

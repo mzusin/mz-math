@@ -19,7 +19,8 @@ import {
     v2DotProduct,
     v3DotProduct,
     v3CrossProduct, v2, v3, vN,
-    vEqual, v2DivideScalar, v3DivideScalar, vDivideScalar
+    vEqual, v2DivideScalar, v3DivideScalar, vDivideScalar,
+    v2GetNormal
 } from '../src/main/linear-algebra/vector';
 import { Vector, Vector2, Vector3 } from '../src/types';
 
@@ -412,4 +413,15 @@ describe('Vectors Equality', () => {
     test('[0, 0, 0] and [0, 0, 0] => true', () => {
         expect(vEqual([0, 0, 0] , [0, 0, 0])).toStrictEqual(true);
     });
+});
+
+describe('Get Normal', () => {
+
+    test('v2GetNormal([10, 20], [20, 30])', () => {
+        const vector1: Vector2 = [10, 20];
+        const vector2: Vector2 = [20, 30];
+
+        expect(v2GetNormal(vector1, vector2)).toStrictEqual([-10, 10]);
+    });
+
 });

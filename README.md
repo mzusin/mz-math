@@ -23,6 +23,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
 - [Distance Between Vectors](https://math.mzsoft.org/pages/distance-between-vectors.html)
 - [Vector Initialization](https://math.mzsoft.org/pages/vector-initialization.html)
 - [Vectors Equality](https://math.mzsoft.org/pages/vectors-equality.html)
+- [Get Normal](https://math.mzsoft.org/pages/get-normal.html)
 ### Matrix 
 - [Matrix](https://math.mzsoft.org/pages/matrix.html)
 - [Matrix Sum](https://math.mzsoft.org/pages/matrix-sum.html)
@@ -93,6 +94,10 @@ This project is a collection of TypeScript math helpers and utilities for the br
 - [Polynomial](https://math.mzsoft.org/pages/polynomial.html)
 - [Trigonometric Functions](https://math.mzsoft.org/pages/trigonometric-functions.html)
 - [Bezier Curves](https://math.mzsoft.org/pages/bezier-curves.html)
+### Collision Detection 
+- [Rectangles Collision](https://math.mzsoft.org/pages/rectangles-collision.html)
+- [Circles Collision](https://math.mzsoft.org/pages/circles-collision.html)
+- [Convex Polygons Collision](https://math.mzsoft.org/pages/convex-polygons-collision.html)
 ### Other 
 - [Set Decimal Places](https://math.mzsoft.org/pages/set-decimal-places.html)
 - [Convert String To Number](https://math.mzsoft.org/pages/convert-string-to-number.html)
@@ -102,6 +107,55 @@ This project is a collection of TypeScript math helpers and utilities for the br
 - [Check If Ranges Overlap](https://math.mzsoft.org/pages/check-if-ranges-overlap.html)
 - [Check If Value Is Number](https://math.mzsoft.org/pages/Check-if-value-is-number.html)
 ------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
