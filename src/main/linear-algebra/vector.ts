@@ -159,7 +159,7 @@ export const v3Normalize = (v3: Vector3, decimalPlaces = Infinity) : Vector3 => 
 
 // ------------ DOT PRODUCT ------------------------
 
-export const vDotProduct = (vector1: Vector, vector2: Vector, decimalPlaces = Infinity) => {
+export const vDotProduct = (vector1: Vector, vector2: Vector, decimalPlaces = Infinity) : number => {
     let sum = 0;
 
     for(let i=0; i<vector1.length; i++){
@@ -169,11 +169,11 @@ export const vDotProduct = (vector1: Vector, vector2: Vector, decimalPlaces = In
     return setDecimalPlaces(sum, decimalPlaces);
 };
 
-export const v2DotProduct = (vector1: Vector2, vector2: Vector2, decimalPlaces = Infinity) => {
+export const v2DotProduct = (vector1: Vector2, vector2: Vector2, decimalPlaces = Infinity) : number => {
     return vDotProduct(vector1, vector2, decimalPlaces);
 };
 
-export const v3DotProduct = (vector1: Vector3, vector2: Vector3, decimalPlaces = Infinity) => {
+export const v3DotProduct = (vector1: Vector3, vector2: Vector3, decimalPlaces = Infinity) : number => {
     return vDotProduct(vector1, vector2, decimalPlaces);
 };
 
@@ -237,4 +237,11 @@ export const vEqual = (vector1: Vector, vector2: Vector): boolean => {
     }
 
     return true;
+};
+
+// --------------- NORMAL --------------------------
+
+export const v2GetNormal = (vector1: Vector2, vector2: Vector2): Vector2 => {
+    const sub = v2Sub(vector2, vector1);
+    return [ -sub[1], sub[0] ];
 };

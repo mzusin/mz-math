@@ -1,4 +1,4 @@
-## Normalize Vector
+## Normalized Vector (Unit Vector)
 
 It's possible to normalize vectors using the **v2Normalize**, **v3Normalize**, and **vNormalize** functions. Each function receives an optional **decimalPlaces** parameter.
 
