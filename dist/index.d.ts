@@ -320,6 +320,7 @@ declare module 'mz-math' {
     export interface IAnimationProps {
         duration?: number;
         callback: (result: IAnimationResult) => void;
+        restartOnResize?: boolean;
     }
     export interface IAnimationResult {
         start: () => void;
@@ -331,6 +332,7 @@ declare module 'mz-math' {
         getStartTime: () => number | undefined;
         getElapsedTime: () => number | undefined;
         getPercent: () => number | undefined;
+        getResizeObserver: () => ResizeObserver | undefined;
     }
     export const animate: (props: IAnimationProps) => IAnimationResult;
 

@@ -1,6 +1,7 @@
 export interface IAnimationProps {
     duration?: number;
     callback: (result: IAnimationResult) => void;
+    restartOnResize?: boolean;
 }
 
 export interface IAnimationResult {
@@ -13,6 +14,7 @@ export interface IAnimationResult {
     getStartTime: () => number|undefined;
     getElapsedTime: () => number|undefined;
     getPercent: () => number|undefined;
+    getResizeObserver: () => ResizeObserver|undefined;
 }
 
 export const animate = (props: IAnimationProps) : IAnimationResult => {
@@ -27,6 +29,7 @@ export const animate = (props: IAnimationProps) : IAnimationResult => {
     let previousTimeStamp: number|undefined = undefined;
 
     let animating = false;
+    let observer: ResizeObserver|undefined = undefined;
 
     // -------------------- COMMANDS ---------------------
 
@@ -35,6 +38,11 @@ export const animate = (props: IAnimationProps) : IAnimationResult => {
         elapsed = undefined;
         previousTimeStamp = undefined;
         animating = false;
+
+        /*if(observer !== undefined){
+            observer.disconnect();
+            observer = undefined;
+        }*/
 
         if(animationId === undefined) return;
         window.cancelAnimationFrame(animationId);
@@ -66,12 +74,10 @@ export const animate = (props: IAnimationProps) : IAnimationResult => {
         // the time elapsed since the start of the animation (in milliseconds)
         elapsed = timeStamp - startTime;
 
-        if (animating && previousTimeStamp !== timeStamp) {
+        if (animating && previousTimeStamp !== timeStamp && typeof props.callback === 'function') {
 
             // do the rendering .............
-            if(typeof props.callback === 'function'){
-                props.callback(getResult());
-            }
+            props.callback(getResult());
         }
 
         if(elapsed <= _duration){
@@ -83,13 +89,23 @@ export const animate = (props: IAnimationProps) : IAnimationResult => {
         }
     };
 
+    const observerHandler = (_entries: ResizeObserverEntry[], _observer: ResizeObserver) => {
+        restart();
+    };
+
     const start = () => {
         startTime = undefined;
         elapsed = undefined;
         previousTimeStamp = undefined;
         animating = true;
 
-        animationId = window.requestAnimationFrame(step);
+        if(props.restartOnResize && window.ResizeObserver && observer === undefined){
+            observer = new ResizeObserver(observerHandler);
+            observer.observe(document.body, { box: 'border-box' });
+        }
+        else{
+            animationId = window.requestAnimationFrame(step);
+        }
     };
 
     // --------------- GET INFO ----------------------
@@ -114,6 +130,10 @@ export const animate = (props: IAnimationProps) : IAnimationResult => {
         return elapsed * 100 / _duration;
     };
 
+    const getResizeObserver = () => {
+      return observer;
+    };
+
     const getResult = () : IAnimationResult => {
         return {
 
@@ -129,6 +149,7 @@ export const animate = (props: IAnimationProps) : IAnimationResult => {
             getElapsedTime,
             getStartTime,
             getPercent,
+            getResizeObserver,
         };
     };
 

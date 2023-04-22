@@ -20,74 +20,42 @@
 
 <script src="../../dist/mz-math.min.js"></script>
 <script>
-    let handler = null;
+     // star element
+     const $star = document.getElementById('star');
+     const starBox = $star.getBoundingClientRect();
 
-    /**
-     * Animation ------------------------------------------
-     */
-    const animate = () => {
+     // initial angle
+     let x = 0;
+     let direction = 1;
+     let STEP = 10;
 
-        // star element
-        const $star = document.getElementById('star');
-        const starBox = $star.getBoundingClientRect();
+     const amplitude = 100;
+     const frequency = 0.003;
+     const phase = 0;
 
-        const ANIMATION_DURATION = Infinity; // Infinity;
-        let start, previousTimeStamp;
+     const api = mzMath.animate({
+        callback: () => {
+            const position = mzMath.sineWaveMovement(x, amplitude, frequency, phase);
 
-        // initial angle
-        let x = 0;
-        let direction = 1;
-        let STEP = 10;
+            // set star css position ----------------------
+            $star.style.left = `${ position[0] }px`;
+            $star.style.top = `${ position[1] + (window.innerHeight/2 - starBox.height/2) }px`;
 
-        const amplitude = 100;
-        const frequency = 0.003;
-        const phase = 0;
-
-        /**
-         * Animation step -----------------------------------------
-         */
-        const step = (timestamp) => {
-            if (start === undefined) {
-                start = timestamp;
+            if(x > (window.innerWidth - starBox.width - 20) && direction > 0 || x < 0 && direction < 0){
+                direction = -direction;
             }
 
-            const elapsed = timestamp - start;
+            x += STEP * direction;
 
-            if (previousTimeStamp !== timestamp) {
+            // console.log('Elapsed', api.getElapsedTime())
+        },
+        restartOnResize: true,
+     });
 
-                const position = mzMath.sineWaveMovement(x, amplitude, frequency, phase);
+     // console.log(api);
 
-                // set star css position ----------------------
-                $star.style.left = `${ position[0] }px`;
-                $star.style.top = `${ position[1] + (window.innerHeight/2 - starBox.height/2) }px`;
+     api.start();
 
-                if(x > (window.innerWidth - starBox.width - 20) && direction > 0 || x < 0 && direction < 0){
-                    direction = -direction;
-                }
-
-                x += STEP * direction;
-
-            }
-
-            if (elapsed < ANIMATION_DURATION) {
-                previousTimeStamp = timestamp;
-                window.requestAnimationFrame(step);
-            }
-        };
-
-        handler = window.requestAnimationFrame(step);
-    };
-
-    /**
-     * handle window resize => restart the animation
-     */
-    const observer = new ResizeObserver(entries => {
-        for (const entry of entries) {
-            window.cancelAnimationFrame(handler);
-            animate();
-        }
-    });
-    observer.observe(document.body, {box: 'border-box'});
 </script>
 </body>
 </html>

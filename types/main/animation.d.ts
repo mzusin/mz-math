@@ -1,6 +1,7 @@
 export interface IAnimationProps {
     duration?: number;
     callback: (result: IAnimationResult) => void;
+    restartOnResize?: boolean;
 }
 export interface IAnimationResult {
     start: () => void;
@@ -12,5 +13,6 @@ export interface IAnimationResult {
     getStartTime: () => number | undefined;
     getElapsedTime: () => number | undefined;
     getPercent: () => number | undefined;
+    getResizeObserver: () => ResizeObserver | undefined;
 }
 export declare const animate: (props: IAnimationProps) => IAnimationResult;
