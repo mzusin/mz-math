@@ -17,8 +17,8 @@
   <link id="favicon-16" rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16.png" />
 
   <link rel="stylesheet" href="/highlight.js/styles/tokyo-night-dark.css" />
-  <link rel="stylesheet" href="/css/styles.1682185361746.css" />
-  <!--<link rel="stylesheet" href="/js/index.1682185361746.css" />-->
+  <link rel="stylesheet" href="/css/styles.1682367593984.css" />
+  <!--<link rel="stylesheet" href="/js/index.1682367593984.css" />-->
 
 </head>
 <body class="h-screen flex flex-col font-roboto bg-white dark:bg-slate-900 dark:text-slate-100">
@@ -240,14 +240,19 @@
     },
     
     <span class="hljs-comment">// Optional property.</span>
+    <span class="hljs-comment">// The duration of the animation in milliseconds. </span>
+    <span class="hljs-comment">// If not provided, the animation will continue indefinitely.</span>
+    <span class="hljs-attr">duration</span>: <span class="hljs-number">1000</span>,
+    
+    <span class="hljs-comment">// Optional property.</span>
     <span class="hljs-comment">// If true, the animation will restart whenever </span>
     <span class="hljs-comment">// the size of the document body changes. Default is false.</span>
     <span class="hljs-attr">restartOnResize</span>: <span class="hljs-literal">true</span>,
 
     <span class="hljs-comment">// Optional property.</span>
-    <span class="hljs-comment">// The duration of the animation in milliseconds. </span>
-    <span class="hljs-comment">// If not provided, the animation will continue indefinitely.</span>
-    <span class="hljs-attr">duration</span>: <span class="hljs-number">1000</span>,
+    <span class="hljs-attr">resizeCallback</span>: <span class="hljs-function">(<span class="hljs-params">_entries: ResizeObserverEntry[], _observer: ResizeObserver</span>) =&gt;</span> {
+        <span class="hljs-comment">// Do something on resize</span>
+    }
 });
 
 <span class="hljs-comment">// Starts the animation.</span>
@@ -321,6 +326,6 @@ api.restart();
   </div>
 </footer>-->
 
-<script src="/js/index.1682185361746.js"></script>
+<script src="/js/index.1682367593984.js"></script>
 </body>
 </html>

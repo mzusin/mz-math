@@ -2,6 +2,7 @@ export interface IAnimationProps {
     duration?: number;
     callback: (result: IAnimationResult) => void;
     restartOnResize?: boolean;
+    resizeCallback?: (_entries: ResizeObserverEntry[], _observer: ResizeObserver) => void;
 }
 
 export interface IAnimationResult {
@@ -91,6 +92,10 @@ export const animate = (props: IAnimationProps) : IAnimationResult => {
 
     const observerHandler = (_entries: ResizeObserverEntry[], _observer: ResizeObserver) => {
         restart();
+
+        if(typeof props.resizeCallback === 'function'){
+            props.resizeCallback(_entries, _observer);
+        }
     };
 
     const start = () => {

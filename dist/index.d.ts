@@ -321,6 +321,7 @@ declare module 'mz-math' {
         duration?: number;
         callback: (result: IAnimationResult) => void;
         restartOnResize?: boolean;
+        resizeCallback?: (_entries: ResizeObserverEntry[], _observer: ResizeObserver) => void;
     }
     export interface IAnimationResult {
         start: () => void;

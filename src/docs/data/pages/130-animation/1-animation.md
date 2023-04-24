@@ -14,14 +14,19 @@ const api: IAnimationResult = animate({
     },
     
     // Optional property.
+    // The duration of the animation in milliseconds. 
+    // If not provided, the animation will continue indefinitely.
+    duration: 1000,
+    
+    // Optional property.
     // If true, the animation will restart whenever 
     // the size of the document body changes. Default is false.
     restartOnResize: true,
 
     // Optional property.
-    // The duration of the animation in milliseconds. 
-    // If not provided, the animation will continue indefinitely.
-    duration: 1000,
+    resizeCallback: (_entries: ResizeObserverEntry[], _observer: ResizeObserver) => {
+        // Do something on resize
+    }
 });
 
 // Starts the animation.
