@@ -349,9 +349,9 @@ export const m2ScaleAtPointHMatrix = (
     decimalPlaces = Infinity): Matrix3 => {
 
     const translation = m2TranslationH(transformOrigin, decimalPlaces);
-    const rotation = m2ScaleH(scaleVector);
+    const scale = m2ScaleH(scaleVector);
     const translationBack = m2TranslationH(v3MulScalar(transformOrigin, -1), decimalPlaces);
-    const temp1 = mMul(translation, rotation);
+    const temp1 = mMul(translation, scale);
     return mMul(temp1, translationBack) as Matrix3;
 };
 
