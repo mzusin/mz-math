@@ -33,11 +33,13 @@
   </div>
 </header>
 
-<div id="hp-main">
-  <div class="relative max-w-5xl mx-auto pt-20 sm:pt-24 lg:pt-32 mb-20">
-    <h1 class="text-slate-100 font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-center px-4">{% website-name %}</h1>
+<div id="hp-main" class="flex-1 relative">
+  <div id="hp-animation" class="absolute left-0 top-0 w-full h-full"></div>
 
-    <p class="mt-12 sm:text-2xl lg:text-3x text-slate-400 text-center max-w-3xl mx-auto px-4 pb-6">This project is a collection of TypeScript math helpers and utilities for the browser and Node.js. The modular approach allows to select only the required functions. It works well with all modern bundlers and supports tree shaking 🌲. The library is built using immutable/pure functions.</p>
+  <div class="relative max-w-5xl mx-auto pt-20 sm:pt-24 lg:pt-32 mb-20">
+    <h1 class="text-slate-100 font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-center px-4 text-shadow">{% website-name %}</h1>
+
+    <p class="mt-12 sm:text-2xl lg:text-3x text-slate-100 text-center max-w-3xl mx-auto px-4 pb-6 text-shadow">This project is a collection of TypeScript math helpers and utilities for the browser and Node.js. The modular approach allows to select only the required functions. It works well with all modern bundlers and supports tree shaking 🌲. The library is built using immutable/pure functions.</p>
 
     <div class="mt-12 sm:mt-10 flex justify-center space-x-6 text-sm">
       <a class="get-started-btn bg-slate-100 hover:bg-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-200 focus:ring-offset-2 focus:ring-offset-slate-50 text-gray-900 font-semibold px-14 py-5 text-lg rounded-lg flex items-center justify-center sm:w-auto" href="/pages/typescript-usage.html">

@@ -80,8 +80,10 @@
     "@typescript-eslint/parser": "^5.43.0",
     "esbuild": "^0.16.3",
     "eslint": "^8.27.0",
+    "highlight.js": "^11.7.0",
     "jest": "^29.3.1",
     "markdown-documentation-maker": "^1.0.13",
+    "mz-particles": "^1.0.3",
     "ts-jest": "^29.0.3",
     "ts-node": "^10.9.1"
   },

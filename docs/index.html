@@ -16,12 +16,12 @@
   <link id="favicon-32" rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32.png" />
   <link id="favicon-16" rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16.png" />
 
-  <link rel="stylesheet" href="/highlight.js/styles/tokyo-night-dark.css" />
-  <link rel="stylesheet" href="/css/styles.1682367593984.css" />
-  <!--<link rel="stylesheet" href="/js/index.1682367593984.css" />-->
+  <link rel="stylesheet" href="/css/styles.1682441866438.css" />
+  <!--<link rel="stylesheet" href="/js/index.1682441866438.css" />-->
 
 </head>
-<body class="font-roboto bg-gray-900 text-gray-100" id="special-page">
+<body class="hp-gradient font-roboto bg-gray-900 text-gray-100 relative flex flex-col w-screen h-screen" id="special-page">
+
   <div class="flex justify-center items-center bg-purple-800 border-b border-purple-700">
   <p class="text-center p-2 text-sm">
     🤩 If you like this project, please support us by starring our <a target="_blank" rel="noopener noreferrer" href="https://github.com/mzusin/mz-math" class="underline">GitHub repository</a> 🤩</p>
@@ -57,11 +57,13 @@
   </div>
 </header>
 
-<div id="hp-main">
-  <div class="relative max-w-5xl mx-auto pt-20 sm:pt-24 lg:pt-32 mb-20">
-    <h1 class="text-slate-100 font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-center px-4">mzMath</h1>
+<div id="hp-main" class="flex-1 relative">
+  <div id="hp-animation" class="absolute left-0 top-0 w-full h-full"></div>
 
-    <p class="mt-12 sm:text-2xl lg:text-3x text-slate-400 text-center max-w-3xl mx-auto px-4 pb-6">This project is a collection of TypeScript math helpers and utilities for the browser and Node.js. The modular approach allows to select only the required functions. It works well with all modern bundlers and supports tree shaking 🌲. The library is built using immutable/pure functions.</p>
+  <div class="relative max-w-5xl mx-auto pt-20 sm:pt-24 lg:pt-32 mb-20">
+    <h1 class="text-slate-100 font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-center px-4 text-shadow">mzMath</h1>
+
+    <p class="mt-12 sm:text-2xl lg:text-3x text-slate-100 text-center max-w-3xl mx-auto px-4 pb-6 text-shadow">This project is a collection of TypeScript math helpers and utilities for the browser and Node.js. The modular approach allows to select only the required functions. It works well with all modern bundlers and supports tree shaking 🌲. The library is built using immutable/pure functions.</p>
 
     <div class="mt-12 sm:mt-10 flex justify-center space-x-6 text-sm">
       <a class="get-started-btn bg-slate-100 hover:bg-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-200 focus:ring-offset-2 focus:ring-offset-slate-50 text-gray-900 font-semibold px-14 py-5 text-lg rounded-lg flex items-center justify-center sm:w-auto" href="/pages/typescript-usage.html">
@@ -72,33 +74,6 @@
 </div>
 
 
-<!--<footer class="px-4 py-4 py-6">
-  <div class="flex flex-wrap items-center justify-center text-center px-4 py-3">
-
-    <span class="flex items-center justify-center mx-4 my-2">
-        <a class="ml-2 underline" href="/">mzMath</a>
-    </span>
-
-    <span class="flex items-center justify-center mx-4 my-2">© All rights reserved.</span>
-
-    <a href="mailto:miriam.zusin@gmail.com" title="" class="mx-4 my-2 flex items-center">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20">
-        <path fill="#111" d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path>
-      </svg> <span class="ml-2 underline">Contact Us</span>
-    </a>
-
-  </div>
-</footer>-->
-
-<script src="/js/index.1682367593984.js"></script>
-<script src="/highlight.js/highlight.min.js"></script>
-<script>
-  try{
-    if(window.hljs){
-      window.hljs.highlightAll();
-    }
-  }
-  catch(ex){}
-</script>
+  <script src="/js/index.1682441866438.js"></script>
 </body>
 </html>
