@@ -83,7 +83,7 @@
     "highlight.js": "^11.7.0",
     "jest": "^29.3.1",
     "markdown-documentation-maker": "^1.0.13",
-    "mz-particles": "^1.0.3",
+    "mz-particles": "^1.0.5",
     "ts-jest": "^29.0.3",
     "ts-node": "^10.9.1"
   },
