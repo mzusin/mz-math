@@ -28,7 +28,7 @@ export const isNumber = (value: any) => {
 /**
  * Convert polar coordinates to cartesian coordinates.
  */
-export const polarToCartesian = (center: Vector2, radii: Vector2, angleInRad: number, decimalPlaces = Infinity) => {
+export const polarToCartesian = (center: Vector2, radii: Vector2, angleInRad: number, decimalPlaces = Infinity) : Vector2 => {
     const [cx, cy] = center;
     const [rx, ry] = radii;
 

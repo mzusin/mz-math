@@ -337,4 +337,6 @@ declare module 'mz-math' {
     }
     export const animate: (props: IAnimationProps) => IAnimationResult;
 
+    export const polarToCartesian: (center: Vector2, radii: Vector2, angleInRad: number, decimalPlaces?: number) => Vector2;
+
 }
