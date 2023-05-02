@@ -85,4 +85,5 @@ https://math.mzsoft.org/pages/square-in-circle.html
 https://math.mzsoft.org/pages/modulo.html
 https://math.mzsoft.org/pages/convert-range.html
 https://math.mzsoft.org/pages/check-if-ranges-overlap.html
-https://math.mzsoft.org/pages/Check-if-value-is-number.html
+https://math.mzsoft.org/pages/check-if-value-is-number.html
+https://math.mzsoft.org/pages/polar-to-cartesian.html

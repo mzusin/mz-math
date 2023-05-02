@@ -1,4 +1,5 @@
-import { mod, convertRange, doRangesOverlap, isNumber } from '../src/main/other';
+import { mod, convertRange, doRangesOverlap, isNumber, polarToCartesian } from '../src/main/other';
+import { Vector2 } from '../src/types';
 
 describe('Modulo', () => {
     test('-21 % 4 => 3', () => {
@@ -118,5 +119,16 @@ describe('Is Number?', () => {
 
     test(`Infinity is not a number`, () => {
         expect(isNumber(Infinity)).toStrictEqual(false);
+    });
+});
+
+describe('Polar to Cartesian', () => {
+    test('polarToCartesian()', () => {
+        const center: Vector2 = [0, 0];
+        const radii: Vector2 = [10, 20];
+        const angleInRad = Math.PI / 4;
+        const decimalPlaces = 2;
+
+        expect(polarToCartesian(center, radii, angleInRad, decimalPlaces)).toStrictEqual([7.07, 14.14]);
     });
 });

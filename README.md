@@ -108,8 +108,10 @@ This project is a collection of TypeScript math helpers and utilities for the br
 - [Modulo](https://math.mzsoft.org/pages/modulo.html)
 - [Convert Range](https://math.mzsoft.org/pages/convert-range.html)
 - [Check If Ranges Overlap](https://math.mzsoft.org/pages/check-if-ranges-overlap.html)
-- [Check If Value Is Number](https://math.mzsoft.org/pages/Check-if-value-is-number.html)
+- [Check If Value Is Number](https://math.mzsoft.org/pages/check-if-value-is-number.html)
+- [Polar To Cartesian](https://math.mzsoft.org/pages/polar-to-cartesian.html)
 ------------------------------
+
 
 
 
