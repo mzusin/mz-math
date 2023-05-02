@@ -64,6 +64,30 @@ export const ellipseMovement = (center: Vector2, angle: number, radius1: number,
 };
 
 /**
+ * Ellipse Movement After Mouse.
+ * Mouse Positions:
+ * - pageX/Y coordinates are relative to the top left corner of the whole rendered page (including parts hidden by scrolling),
+ * - screenX and screenY: Relative to the top left of the physical screen/monitor, this reference point only moves if you increase or decrease the number of monitors or the monitor resolution.
+ * - clientX/Y coordinates are relative to the top left corner of the visible part of the page, "seen" through browser window.
+ * - offsetX and offsetY are relative to the parent container,
+ */
+export const ellipseMovementAfterMouse = (
+    mouse: Vector2,
+    center: Vector2,
+    radii: Vector2
+): Vector2 => {
+
+    const vector = v2Sub(mouse, center);
+
+    let angle = getV2Angle(vector);
+
+    // convert the angle from the range [0, Math.PI*2] to the range [0, Math.PI]
+    angle = convertRange(angle, 0, Math.PI*2, 0, Math.PI);
+
+    return ellipseMovement(center, angle, radii[0], radii[1]);
+};
+
+/**
  * Sine Wave Equation (Sinusoid)
  * -----------------------------
  * const y = amplitude * Math.sin(2 * Math.PI * frequency * x + phase);

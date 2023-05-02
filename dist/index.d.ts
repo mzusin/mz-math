@@ -250,6 +250,7 @@ declare module 'mz-math' {
     export const circleMovement: (center: Vector2, angle: number, radius: number) => Vector2;
     export const circleMovementAfterMouse: (mouse: Vector2, center: Vector2, radius: number) => Vector2;
     export const ellipseMovement: (center: Vector2, angle: number, radius1: number, radius2: number) => Vector2;
+    export const ellipseMovementAfterMouse: (mouse: Vector2, center: Vector2, radii: Vector2) => Vector2;
     export const sineWaveMovement: (x: number, amplitude: number, frequency: number, phase: number) => Vector2;
     export const lissajousCurve: (width: number, height: number, t: number, k: number, n: number, m: number, p: number) => Vector2;
 
