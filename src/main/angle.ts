@@ -1,6 +1,7 @@
 import { Vector, Vector2, Vector3 } from '../types';
 import { setDecimalPlaces } from './format';
 import { v2Length, vNormalize, vDotProduct, vSub } from './linear-algebra/vector';
+import { mod } from './other';
 
 export const getV2Angle = (v2: Vector2, decimalPlaces = Infinity) => {
     const angle = Math.atan2(v2[1], v2[0]);
@@ -46,4 +47,12 @@ export const getV2AngleBetween = (vector1: Vector2, vector2: Vector2, decimalPla
 
 export const getV3AngleBetween = (vector1: Vector3, vector2: Vector3, decimalPlaces = Infinity) : number => {
     return getVNAngleBetween(vector1, vector2, decimalPlaces);
+};
+
+/**
+ * Shortest distance (angular) between two angles.
+ */
+export const getAnglesSub = (angleDegrees1: number, angleDegrees2: number, decimalPlaces = Infinity) : number => {
+    const angleDistance = Math.abs(mod(angleDegrees1, 360) - mod(angleDegrees2, 360));
+    return setDecimalPlaces(angleDistance <= 180 ? angleDistance : 360 - angleDistance, decimalPlaces);
 };

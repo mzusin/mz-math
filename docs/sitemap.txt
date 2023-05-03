@@ -47,6 +47,7 @@ https://math.mzsoft.org/pages/matrix-to-CSS-transform.html
 https://math.mzsoft.org/pages/vector-angle.html
 https://math.mzsoft.org/pages/angle-between-vectors.html
 https://math.mzsoft.org/pages/degrees-and-radians.html
+https://math.mzsoft.org/pages/angles-subtraction.html
 https://math.mzsoft.org/pages/get-random-number-in-range.html
 https://math.mzsoft.org/pages/get-random-integer.html
 https://math.mzsoft.org/pages/get-random-boolean.html

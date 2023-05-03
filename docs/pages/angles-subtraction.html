@@ -151,7 +151,7 @@
           <path d="m7 7 5 5-5 5m6-10 5 5-5 5"/>
         </svg>
 
-    </div><div class="flex flex-col" data-links><a href="/pages/vector-angle.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Vector Angle</a><a href="/pages/angle-between-vectors.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Angle Between Vectors</a><a href="/pages/degrees-and-radians.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Degrees And Radians</a><a href="/pages/angles-subtraction.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600  text-slate-500">Angles Subtraction</a></div><div class="text-xl my-4 flex items-center cursor-pointer" data-collapsible-title data-opened="true" data-id="60-random">
+    </div><div class="flex flex-col" data-links><a href="/pages/vector-angle.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Vector Angle</a><a href="/pages/angle-between-vectors.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Angle Between Vectors</a><a href="/pages/degrees-and-radians.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Degrees And Radians</a><a href="/pages/angles-subtraction.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600  text-sky-500">Angles Subtraction</a></div><div class="text-xl my-4 flex items-center cursor-pointer" data-collapsible-title data-opened="true" data-id="60-random">
         Random 
         <svg data-arrow xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#626e7f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="ml-2 rotate-90" viewBox="0 0 24 24">
           <path stroke="none" d="M0 0h24v24H0z"/>
@@ -172,7 +172,7 @@
           <path d="m7 7 5 5-5 5m6-10 5 5-5 5"/>
         </svg>
 
-    </div><div class="flex flex-col" data-links><a href="/pages/linear-equation.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Linear Equation</a><a href="/pages/system-of-linear-equations.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-sky-500">System Of Linear Equations</a><a href="/pages/quadratic-equation.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600  text-slate-500">Quadratic Equation</a></div><div class="text-xl my-4 flex items-center cursor-pointer" data-collapsible-title data-opened="true" data-id="90-path-movement">
+    </div><div class="flex flex-col" data-links><a href="/pages/linear-equation.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Linear Equation</a><a href="/pages/system-of-linear-equations.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">System Of Linear Equations</a><a href="/pages/quadratic-equation.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600  text-slate-500">Quadratic Equation</a></div><div class="text-xl my-4 flex items-center cursor-pointer" data-collapsible-title data-opened="true" data-id="90-path-movement">
         Path Movement 
         <svg data-arrow xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#626e7f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="ml-2 rotate-90" viewBox="0 0 24 24">
           <path stroke="none" d="M0 0h24v24H0z"/>
@@ -226,61 +226,20 @@
     </div>
 
     <div class="p-4 overflow-y-auto h-full md:w-100-350 dark:bg-slate-800">
-      <div class="w-800 max-w-full mx-auto my-10 leading-7 text-lg text-slate-800 dark:text-slate-200"><h1 class="text-3xl mb-8">System of linear Equations</h1>
-<p class="mb-4"><strong class="font-bold">System of 2 linear equations</strong></p>
-<p class="mb-4">Using the <strong class="font-bold">linearEquationSystem2()</strong> function, you can solve a system of 2 linear equations. It receives <strong class="font-bold">2 vectors</strong> of equation parameters and an optional <strong class="font-bold">decimalPlaces</strong> parameter.</p>
-<p class="mb-4">If the system of equations has no solution, then <strong class="font-bold">null</strong> is returned.</p>
-<p class="mb-4">For example:</p>
-<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">import</span> { linearEquationSystem2, <span class="hljs-title class_">Vector2</span>, <span class="hljs-title class_">Vector3</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mz-math&#x27;</span>;
+      <div class="w-800 max-w-full mx-auto my-10 leading-7 text-lg text-slate-800 dark:text-slate-200"><h2 class="text-3xl mb-8">Angles Subtraction (Angular Distance)</h2>
+<p class="mb-4">The helper function below finds the shortest distance (angular) between two angles.</p>
+<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">import</span> { getAnglesSub } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mz-math&#x27;</span>;
 
-<span class="hljs-comment">// 3x + 2y = 7 </span>
-<span class="hljs-comment">// -6x + 6y = 6</span>
+<span class="hljs-keyword">const</span> angleDegrees1 = <span class="hljs-number">315</span>;
+<span class="hljs-keyword">const</span> angleDegrees2 = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">const</span> decimalPlaces = <span class="hljs-number">2</span>; <span class="hljs-comment">// optional</span>
 
-<span class="hljs-keyword">const</span> <span class="hljs-attr">equation1</span>: <span class="hljs-title class_">Vector3</span> = [<span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">7</span>];
-<span class="hljs-keyword">const</span> <span class="hljs-attr">equation2</span>: <span class="hljs-title class_">Vector3</span> = [-<span class="hljs-number">6</span>, <span class="hljs-number">6</span>, <span class="hljs-number">6</span>];
-<span class="hljs-keyword">const</span> <span class="hljs-attr">result</span>: <span class="hljs-title class_">Vector2</span>|<span class="hljs-literal">null</span> = <span class="hljs-title function_">linearEquationSystem2</span>(equation1, equation2); <span class="hljs-comment">// [1, 2] i.e. x=1, y=2</span></code></pre>
-<p class="mb-4"><strong class="font-bold">System of 3 linear equations</strong></p>
-<p class="mb-4">Using the <strong class="font-bold">linearEquationSystem3()</strong> function, you can solve a system of 3 linear equations. It receives <strong class="font-bold">3 vectors</strong> of equation parameters and an optional <strong class="font-bold">decimalPlaces</strong> parameter.</p>
-<p class="mb-4">If the system of equations has no solution, then <strong class="font-bold">null</strong> is returned.</p>
-<p class="mb-4">For example:</p>
-<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">import</span> { linearEquationSystem3, <span class="hljs-title class_">Vector3</span>, <span class="hljs-title class_">Vector</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mz-math&#x27;</span>;
-
-<span class="hljs-comment">// 2x + y + 2z = -2</span>
-<span class="hljs-comment">// -2x + 2y -z = -5</span>
-<span class="hljs-comment">// 4x + y + 2x = 0</span>
-
-<span class="hljs-keyword">const</span> <span class="hljs-attr">equation1</span>: <span class="hljs-title class_">Vector</span> = [<span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, -<span class="hljs-number">2</span>];
-<span class="hljs-keyword">const</span> <span class="hljs-attr">equation2</span>: <span class="hljs-title class_">Vector</span> = [-<span class="hljs-number">2</span>, <span class="hljs-number">2</span>, -<span class="hljs-number">1</span>, -<span class="hljs-number">5</span>];
-<span class="hljs-keyword">const</span> <span class="hljs-attr">equation3</span>: <span class="hljs-title class_">Vector</span> = [<span class="hljs-number">4</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">0</span>];
-<span class="hljs-keyword">const</span> <span class="hljs-attr">result</span>: <span class="hljs-title class_">Vector3</span>|<span class="hljs-literal">null</span> = <span class="hljs-title function_">linearEquationSystem3</span>(equation1, equation2, equation3); <span class="hljs-comment">// [1, -2, -1] i.e. x=1, y=-2, z=-1</span></code></pre>
-<p class="mb-4"><strong class="font-bold">System of N linear equations</strong></p>
-<p class="mb-4">Using the <strong class="font-bold">linearEquationSystemN()</strong> function, you can solve a system of N linear equations. It receives a matrix of equation parameters, and an optional <strong class="font-bold">decimalPlaces</strong> parameter.</p>
-<p class="mb-4">If the system of equations has no solution, then <strong class="font-bold">null</strong> is returned.</p>
-<p class="mb-4">For example:</p>
-<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">import</span> { linearEquationSystem, <span class="hljs-title class_">Vector</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mz-math&#x27;</span>;
-
-<span class="hljs-comment">/*
-y + z - 2w = -3
-x + 2y - z = 2
-2x + 4y + z - 3w = -2
-x - 4y - 7z - w = -19
- */</span>
-
-<span class="hljs-keyword">const</span> <span class="hljs-attr">parameters</span>: <span class="hljs-title class_">Matrix</span> = [
-  [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, -<span class="hljs-number">2</span>, -<span class="hljs-number">3</span>],
-  [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, -<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>],
-  [<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">1</span>, -<span class="hljs-number">3</span>, -<span class="hljs-number">2</span>],
-  [<span class="hljs-number">1</span>, -<span class="hljs-number">4</span>, -<span class="hljs-number">7</span>, -<span class="hljs-number">1</span>, -<span class="hljs-number">19</span>],
-];
-
-<span class="hljs-keyword">const</span> <span class="hljs-attr">result</span>: <span class="hljs-title class_">Vector</span>|<span class="hljs-literal">null</span> = <span class="hljs-title function_">linearEquationSystemN</span>(parameters, <span class="hljs-number">2</span>); <span class="hljs-comment">// round to 2 decimal places</span>
-
-<span class="hljs-comment">// The result: [-1, 2, 1, 3] i.e. x = -1, y = 2, z = 1, w = 3</span></code></pre>
+<span class="hljs-keyword">const</span> angle1 = <span class="hljs-title function_">getAnglesSub</span>(angleDegrees1, angleDegrees2, decimalPlaces); <span class="hljs-comment">// 45 degrees</span></code></pre>
 </div>
 
       <div class="w-800 max-w-full mx-auto grid lg:grid-cols-2 gap-8 items-center text-slate-500">
 <div class="flex justify-between items-start border border-slate-200 dark:border-slate-600 rounded p-4">
-  <a href="/pages/linear-equation.html" title="" class="mr-4 hover:text-blue-500">
+  <a href="/pages/degrees-and-radians.html" title="" class="mr-4 hover:text-blue-500">
     <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24">
     <path stroke="none" d="M0 0h24v24H0z"/>
     <path d="M5 12h14M5 12l6 6m-6-6 6-6"/>
@@ -288,7 +247,7 @@ x - 4y - 7z - w = -19
   </a>
   <div class="flex flex-col items-end justify-center">
     <div class="mb-2 text-sm text-slate-300">Previous</div>
-    <a href="/pages/linear-equation.html" title="" class="hover:text-blue-500">Linear Equation</a>
+    <a href="/pages/degrees-and-radians.html" title="" class="hover:text-blue-500">Degrees And Radians</a>
   </div>
 </div>      
     
@@ -296,10 +255,10 @@ x - 4y - 7z - w = -19
   
   <div class="flex flex-col justify-center">
     <div class="mb-2 text-sm text-slate-300">Next</div>
-    <a href="/pages/quadratic-equation.html" title="" class="hover:text-blue-500">Quadratic Equation</a>
+    <a href="/pages/get-random-number-in-range.html" title="" class="hover:text-blue-500">Get Random Number In Range</a>
   </div>
   
-  <a href="/pages/quadratic-equation.html" title="" class="mr-4 hover:text-blue-500">
+  <a href="/pages/get-random-number-in-range.html" title="" class="mr-4 hover:text-blue-500">
     <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24">
      <path stroke="none" d="M0 0h24v24H0z"/>
      <path d="M5 12h14m-6 6 6-6m-6-6 6 6"/>

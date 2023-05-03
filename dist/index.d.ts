@@ -196,6 +196,7 @@ declare module 'mz-math' {
     export const getVNAngleBetween: (vector1: Vector, vector2: Vector, decimalPlaces?: number) => number;
     export const getV2AngleBetween: (vector1: Vector2, vector2: Vector2, decimalPlaces?: number) => number;
     export const getV3AngleBetween: (vector1: Vector3, vector2: Vector3, decimalPlaces?: number) => number;
+    export const getAnglesSub: (angleDegrees1: number, angleDegrees2: number, decimalPlaces?: number) => number;
 
     export const setDecimalPlaces: (num: number, decimalPlaces?: number | undefined) => number;
 
