@@ -56,3 +56,13 @@ export const getAnglesSub = (angleDegrees1: number, angleDegrees2: number, decim
     const angleDistance = Math.abs(mod(angleDegrees1, 360) - mod(angleDegrees2, 360));
     return setDecimalPlaces(angleDistance <= 180 ? angleDistance : 360 - angleDistance, decimalPlaces);
 };
+
+export const isAngleBetween = (angleDegrees: number, startAngleDegrees: number, endAngleDegrees: number) : boolean => {
+    const distance = getAnglesSub(startAngleDegrees, endAngleDegrees);
+    const distance1 = getAnglesSub(startAngleDegrees, angleDegrees);
+    const distance2 = getAnglesSub(endAngleDegrees, angleDegrees);
+    const totalDistance = distance1 + distance2;
+
+    // Use a small threshold for floating point errors
+    return Math.abs(totalDistance - distance) <= 0.001;
+}

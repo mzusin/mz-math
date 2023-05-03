@@ -1,4 +1,11 @@
-import { degreesToRadians, getV2Angle, radiansToDegrees, setV2Angle, getAnglesSub } from '../src/main/angle';
+import {
+    degreesToRadians,
+    getV2Angle,
+    radiansToDegrees,
+    setV2Angle,
+    getAnglesSub,
+    isAngleBetween
+} from '../src/main/angle';
 
 describe('Get Vector Angle', () => {
     test('angle of [10, 20] should be 1.11', () => {
@@ -145,4 +152,72 @@ describe('Get Angular Distance', () => {
     test('getAnglesSub(280 + 360 * 3, 10)', () => {
         expect(getAnglesSub(280 + 360 * 3, 10)).toStrictEqual(90);
     });
+});
+
+describe('Is Angle Between', () => {
+
+    test('isAngleBetween(45, 0, 90)', () => {
+        expect(isAngleBetween(45, 0, 90)).toStrictEqual(true);
+    });
+
+    test('isAngleBetween(-10, 0, 90)', () => {
+        expect(isAngleBetween(-10, 0, 90)).toStrictEqual(false);
+    });
+
+    test('isAngleBetween(180, 0, 90)', () => {
+        expect(isAngleBetween(180, 0, 90)).toStrictEqual(false);
+    });
+
+    test('isAngleBetween(0, -10, 45)', () => {
+        expect(isAngleBetween(0, -10, 45)).toStrictEqual(true);
+    });
+
+    test('isAngleBetween(10, 280, 45)', () => {
+        expect(isAngleBetween(10, 280, 45)).toStrictEqual(true);
+    });
+
+    test('isAngleBetween(30, 0, 60)', () => {
+        expect(isAngleBetween(30, 0, 60)).toStrictEqual(true);
+    });
+
+    test('isAngleBetween(30, 0, 60)', () => {
+        expect(isAngleBetween(60, 0, 60)).toStrictEqual(true);
+    });
+
+    test('isAngleBetween(0, 0, 60)', () => {
+        expect(isAngleBetween(0, 0, 60)).toStrictEqual(true);
+    });
+
+    test('isAngleBetween(359, 350, 10)', () => {
+        expect(isAngleBetween(359, 350, 10)).toStrictEqual(true);
+    });
+
+    test('isAngleBetween(0, 0, 60)', () => {
+        expect(isAngleBetween(0, 0, 60)).toStrictEqual(true);
+    });
+
+    test('isAngleBetween(0, 0, 0)', () => {
+        expect(isAngleBetween(0, 0, 0)).toStrictEqual(true);
+    });
+
+    test('isAngleBetween(359, 0, 359)', () => {
+        expect(isAngleBetween(359, 0, 359)).toStrictEqual(true);
+    });
+
+    test('isAngleBetween(70, 0, 60)', () => {
+        expect(isAngleBetween(70, 0, 60)).toStrictEqual(false);
+    });
+
+    test('isAngleBetween(300, 0, 60)', () => {
+        expect(isAngleBetween(300, 0, 60)).toStrictEqual(false);
+    });
+
+    test('isAngleBetween(0, 10, 20)', () => {
+        expect(isAngleBetween(0, 10, 20)).toStrictEqual(false);
+    });
+
+    test('isAngleBetween(10, 20, 30)', () => {
+        expect(isAngleBetween(10, 20, 30)).toStrictEqual(false);
+    });
+
 });
