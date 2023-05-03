@@ -82,67 +82,67 @@ describe('Degrees to radians', () => {
 });
 
 describe('Get Angular Distance', () => {
-    test('getAngularDistance(0, 90)', () => {
+    test('getAnglesSub(0, 90)', () => {
         expect(getAnglesSub(0, 90)).toStrictEqual(90);
     });
 
-    test('getAngularDistance(0, 45)', () => {
+    test('getAnglesSub(0, 45)', () => {
         expect(getAnglesSub(0, 45)).toStrictEqual(45);
     });
 
-    test('getAngularDistance(315, 0)', () => {
+    test('getAnglesSub(315, 0)', () => {
         expect(getAnglesSub(315, 0)).toStrictEqual(45);
     });
 
-    test('getAngularDistance(0, 180)', () => {
+    test('getAnglesSub(0, 180)', () => {
         expect(getAnglesSub(0, 180)).toStrictEqual(180);
     });
 
-    test('getAngularDistance(45, 270)', () => {
+    test('getAnglesSub(45, 270)', () => {
         expect(getAnglesSub(45, 270)).toStrictEqual(135);
     });
 
-    test('getAngularDistance(270, 360)', () => {
+    test('getAnglesSub(270, 360)', () => {
         expect(getAnglesSub(270, 360)).toStrictEqual(90);
     });
 
-    test('getAngularDistance(270, 0)', () => {
+    test('getAnglesSub(270, 0)', () => {
         expect(getAnglesSub(270, 0)).toStrictEqual(90);
     });
 
-    test('getAngularDistance(270, 10)', () => {
+    test('getAnglesSub(270, 10)', () => {
         expect(getAnglesSub(270, 10)).toStrictEqual(100);
     });
 
-    test('getAngularDistance(-10, 90)', () => {
+    test('getAnglesSub(-10, 90)', () => {
         expect(getAnglesSub(-10, 90)).toStrictEqual(100);
     });
 
-    test('getAngularDistance(-10, 0)', () => {
+    test('getAnglesSub(-10, 0)', () => {
         expect(getAnglesSub(-10, 0)).toStrictEqual(10);
     });
 
-    test('getAngularDistance(-90, 90)', () => {
+    test('getAnglesSub(-90, 90)', () => {
         expect(getAnglesSub(-90, 90)).toStrictEqual(180);
     });
 
-    test('getAngularDistance(0, 0)', () => {
+    test('getAnglesSub(0, 0)', () => {
         expect(getAnglesSub(0, 0)).toStrictEqual(0);
     });
 
-    test('getAngularDistance(0, 360)', () => {
+    test('getAnglesSub(0, 360)', () => {
         expect(getAnglesSub(0, 360)).toStrictEqual(0);
     });
 
-    test('getAngularDistance(0, 720)', () => {
+    test('getAnglesSub(0, 720)', () => {
         expect(getAnglesSub(0, 720)).toStrictEqual(0);
     });
 
-    test('getAngularDistance(0, 740)', () => {
+    test('getAnglesSub(0, 740)', () => {
         expect(getAnglesSub(0, 740)).toStrictEqual(20);
     });
 
-    test('getAngularDistance(280 + 360 * 3, 10)', () => {
+    test('getAnglesSub(280 + 360 * 3, 10)', () => {
         expect(getAnglesSub(280 + 360 * 3, 10)).toStrictEqual(90);
     });
 });
