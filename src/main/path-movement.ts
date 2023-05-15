@@ -11,6 +11,8 @@ import { convertRange } from './other';
  * x(t) = radius * cos(t)
  * y(t) = radius * sin(t)
  * t is the parameter = angle
+ *
+ * Angle should be in the range [0, Math.PI]
  */
 export const circleMovement = (center: Vector2, angle: number, radius: number): Vector2 => {
     angle = angle % Math.PI * 2;
@@ -53,6 +55,8 @@ export const circleMovementAfterMouse = (
  * x(t) = radius1 * cos(t)
  * y(t) = radius2 * sin(t)
  * t is the parameter = angle
+ *
+ * Angle should be in the range [0, Math.PI]
  */
 export const ellipseMovement = (center: Vector2, angle: number, radius1: number, radius2: number): Vector2 => {
     angle = angle % Math.PI * 2;

@@ -8,6 +8,11 @@ export const getV2Angle = (v2: Vector2, decimalPlaces = Infinity) => {
     return setDecimalPlaces(angle, decimalPlaces);
 };
 
+export const getV2AngleInEllipse = (v2: Vector2, radii: Vector2, decimalPlaces = Infinity) => {
+    const angle = Math.atan2(v2[1]/radii[1], v2[0]/radii[0]);
+    return setDecimalPlaces(angle, decimalPlaces);
+};
+
 export const setV2Angle = (v2: Vector2, newAngleRad: number, decimalPlaces = Infinity): Vector2 => {
     const length = v2Length(v2);
     return [

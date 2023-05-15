@@ -191,6 +191,7 @@ declare module 'mz-math' {
 
     export const getV2Angle: (v2: Vector2, decimalPlaces?: number) => number;
     export const setV2Angle: (v2: Vector2, newAngleRad: number, decimalPlaces?: number) => Vector2;
+    export const getV2AngleInEllipse: (v2: Vector2, radii: Vector2, decimalPlaces?: number) => number;
     export const radiansToDegrees: (radians: number, decimalPlaces?: number) => number;
     export const degreesToRadians: (degrees: number, decimalPlaces?: number) => number;
     export const getVNAngleBetween: (vector1: Vector, vector2: Vector, decimalPlaces?: number) => number;

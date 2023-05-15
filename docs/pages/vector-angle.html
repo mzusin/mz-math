@@ -16,8 +16,8 @@
   <link id="favicon-32" rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32.png" />
   <link id="favicon-16" rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16.png" />
 
-  <link rel="stylesheet" href="/css/styles.1683138378121.css" />
-  <!--<link rel="stylesheet" href="/js/index.1683138378121.css" />-->
+  <link rel="stylesheet" href="/css/styles.1684152519267.css" />
+  <!--<link rel="stylesheet" href="/js/index.1684152519267.css" />-->
 
 </head>
 <body class="h-screen flex flex-col font-roboto bg-white dark:bg-slate-900 dark:text-slate-100">
@@ -238,6 +238,14 @@
 
 <span class="hljs-keyword">const</span> updatedVector1 = <span class="hljs-title function_">setV2Angle</span>([<span class="hljs-number">10</span>, <span class="hljs-number">20</span>], <span class="hljs-number">1.22</span>); <span class="hljs-comment">// [7.684152489413291, 20.99889998355732]</span>
 <span class="hljs-keyword">const</span> updatedVector2 = <span class="hljs-title function_">setV2Angle</span>([<span class="hljs-number">10</span>, <span class="hljs-number">20</span>], <span class="hljs-number">1.22</span>, <span class="hljs-number">2</span>); <span class="hljs-comment">// [7.68, 21]</span></code></pre>
+<h2 class="text-3xl mb-8">getV2AngleInEllipse()</h2>
+<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">import</span> { getV2AngleInEllipse } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mz-math&#x27;</span>;
+
+<span class="hljs-keyword">const</span> <span class="hljs-attr">v2</span>: <span class="hljs-title class_">Vector2</span> = [<span class="hljs-number">10</span>, <span class="hljs-number">20</span>];
+<span class="hljs-keyword">const</span> <span class="hljs-attr">radii</span>: <span class="hljs-title class_">Vector2</span> = [<span class="hljs-number">100</span>, <span class="hljs-number">200</span>];
+<span class="hljs-keyword">const</span> decimalPlaces = <span class="hljs-number">2</span>; <span class="hljs-comment">// optional</span>
+
+<span class="hljs-keyword">const</span> angle = <span class="hljs-title function_">getV2AngleInEllipse</span>(v2, radii, decimalPlaces); <span class="hljs-comment">// 0.79 radians</span></code></pre>
 </div>
 
       <div class="w-800 max-w-full mx-auto grid lg:grid-cols-2 gap-8 items-center text-slate-500">
@@ -274,6 +282,6 @@
   </div>
 </div>
 
-<script src="/js/index.1683138378121.js"></script>
+<script src="/js/index.1684152519267.js"></script>
 </body>
 </html>

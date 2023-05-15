@@ -16,8 +16,8 @@
   <link id="favicon-32" rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32.png" />
   <link id="favicon-16" rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16.png" />
 
-  <link rel="stylesheet" href="/css/styles.1683138378121.css" />
-  <!--<link rel="stylesheet" href="/js/index.1683138378121.css" />-->
+  <link rel="stylesheet" href="/css/styles.1684152519267.css" />
+  <!--<link rel="stylesheet" href="/js/index.1684152519267.css" />-->
 
 </head>
 <body class="h-screen flex flex-col font-roboto bg-white dark:bg-slate-900 dark:text-slate-100">
@@ -230,10 +230,10 @@
 <pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">import</span> { ellipseMovement, <span class="hljs-title class_">Vector2</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mz-math&#x27;</span>;
 
 <span class="hljs-keyword">const</span> <span class="hljs-attr">center</span>: <span class="hljs-title class_">Vector2</span> = [<span class="hljs-number">100</span>, <span class="hljs-number">100</span>];
-<span class="hljs-keyword">const</span> angle = <span class="hljs-title class_">Math</span>.<span class="hljs-property">PI</span>/<span class="hljs-number">2</span>;
+<span class="hljs-keyword">const</span> radiansAngle = <span class="hljs-title class_">Math</span>.<span class="hljs-property">PI</span>/<span class="hljs-number">2</span>; <span class="hljs-comment">// Angle should be in the range [0, Math.PI]</span>
 <span class="hljs-keyword">const</span> radius1 = <span class="hljs-number">350</span>;
 <span class="hljs-keyword">const</span> radius2 = <span class="hljs-number">150</span>;
-<span class="hljs-keyword">const</span> <span class="hljs-attr">newPosition</span>: <span class="hljs-title class_">Vector2</span> = <span class="hljs-title function_">ellipseMovement</span>(center, angle, radius1, radius2);</code></pre>
+<span class="hljs-keyword">const</span> <span class="hljs-attr">newPosition</span>: <span class="hljs-title class_">Vector2</span> = <span class="hljs-title function_">ellipseMovement</span>(center, radiansAngle, radius1, radius2);</code></pre>
 <p class="mb-4"><a href="https://github.com/mzusin/mz-math/blob/main/examples/circular-movement/ellipse-movement-3.html" class="text-sky-500">Example</a></p>
 <h2 class="text-3xl mb-8">Ellipse movement after mouse</h2>
 <pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">import</span> { ellipseMovementAfterMouse, <span class="hljs-title class_">Vector2</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mz-math&#x27;</span>;
@@ -279,6 +279,6 @@
   </div>
 </div>
 
-<script src="/js/index.1683138378121.js"></script>
+<script src="/js/index.1684152519267.js"></script>
 </body>
 </html>

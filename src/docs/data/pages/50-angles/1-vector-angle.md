@@ -20,3 +20,15 @@ const updatedVector1 = setV2Angle([10, 20], 1.22); // [7.684152489413291, 20.998
 const updatedVector2 = setV2Angle([10, 20], 1.22, 2); // [7.68, 21]
 ```
 
+## getV2AngleInEllipse()
+
+```js
+import { getV2AngleInEllipse } from 'mz-math';
+
+const v2: Vector2 = [10, 20];
+const radii: Vector2 = [100, 200];
+const decimalPlaces = 2; // optional
+
+const angle = getV2AngleInEllipse(v2, radii, decimalPlaces); // 0.79 radians
+```
+

@@ -1,6 +1,7 @@
 import {
     degreesToRadians,
     getV2Angle,
+    getV2AngleInEllipse,
     radiansToDegrees,
     setV2Angle,
     getAnglesSub,
@@ -22,6 +23,10 @@ describe('Get Vector Angle', () => {
 
     test('angle of [0, 10] should be 1.5707963267948966', () => {
         expect(getV2Angle([0, 10])).toStrictEqual(1.5707963267948966);
+    });
+
+    test('getV2AngleInEllipse([10, 20], [100, 200], 2)', () => {
+        expect(getV2AngleInEllipse([10, 20], [100, 200], 2)).toStrictEqual(0.79);
     });
 });
 
