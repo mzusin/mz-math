@@ -79,6 +79,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
 - [Linear Equation](https://math.mzsoft.org/pages/linear-equation.html)
 - [System Of Linear Equations](https://math.mzsoft.org/pages/system-of-linear-equations.html)
 - [Quadratic Equation](https://math.mzsoft.org/pages/quadratic-equation.html)
+- [Get Linear Equation By 2 Points](https://math.mzsoft.org/pages/get-linear-equation-by-2-points.html)
 ### Path Movement 
 - [Circle Movement](https://math.mzsoft.org/pages/circle-movement.html)
 - [Ellipse Movement](https://math.mzsoft.org/pages/ellipse-movement.html)
@@ -113,6 +114,19 @@ This project is a collection of TypeScript math helpers and utilities for the br
 - [Check If Value Is Number](https://math.mzsoft.org/pages/check-if-value-is-number.html)
 - [Polar To Cartesian](https://math.mzsoft.org/pages/polar-to-cartesian.html)
 ------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
