@@ -1,6 +1,7 @@
 import { Matrix, Matrix2, Matrix3, Vector, Vector2, Vector3 } from '../../types';
 import { m2Inverse, m3Inverse, mInverse, mMulVector, mDelLastColumn, mGetLastColumn } from '../linear-algebra/matrix';
 import { setDecimalPlaces } from '../format';
+import { v2Sub } from '../linear-algebra/vector';
 
 /**
  * Linear equation
@@ -89,4 +90,51 @@ export const linearEquationSystemN = (equations: Matrix, decimalPlaces = Infinit
     const equationResults = mGetLastColumn(equations);
 
     return mMulVector(inversed, equationResults, decimalPlaces) as Vector;
+};
+
+/**
+ * Calculate the equation of a line given two points in a 2D space.
+ * y = ax + b
+ * y - y1 = m(x - x1)
+ * m = (y2 - y1) / (x2 - x1)
+ */
+export const getLinearEquationBy2Points = (point1: Vector2, point2: Vector2) : {
+    slope: number|undefined,
+    yIntercept: number|undefined,
+    xIntercept: number|undefined,
+    formula: string,
+} => {
+    const [deltaX, deltaY] = v2Sub(point2, point1);
+    const [x, y] = point1;
+
+    if(deltaX === 0) {
+        return {
+            slope: undefined,
+            xIntercept: x,
+            yIntercept: undefined,
+            formula: `x = ${ x }`,
+        };
+    }
+
+    const m = deltaY / deltaX;
+    const b = y - m * x;
+    let formula = '';
+
+    if(m === 0) {
+        formula = `y = ${ b }`;
+    }
+    else{
+        formula = `y = ${ m === 1 ? '' : m }x`;
+
+        if(b !== 0) {
+            formula += ` ${ b < 0 ? '-' : '+' } ${ Math.abs(b) }`;
+        }
+    }
+
+    return {
+        slope: m,
+        xIntercept: undefined,
+        yIntercept: b,
+        formula,
+    };
 };

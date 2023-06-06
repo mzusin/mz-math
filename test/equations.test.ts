@@ -2,9 +2,10 @@ import {
     linearEquation,
     linearEquationSystem2,
     linearEquationSystem3,
-    linearEquationSystemN
+    linearEquationSystemN,
+    getLinearEquationBy2Points
 } from '../src/main/equations/linear-equations';
-import { Vector3, Vector, Matrix } from '../types/types';
+import { Vector3, Vector, Matrix, Vector2 } from '../types/types';
 import { quadraticEquation } from '../src/main/equations/quadratic-equations';
 
 describe('Equations', () => {
@@ -140,6 +141,116 @@ describe('Equations', () => {
         test(`0.5x^2 + 0.125x = 0`, () => {
             const equation: Vector = [0.5, 0.125, 0, 0];
             expect(quadraticEquation(equation)).toStrictEqual([0, -0.25]);
+        });
+    });
+
+    describe('Linear Equation By 2 Points', () => {
+        test('calculates the linear equation for two distinct points', () => {
+            const point1: Vector2 = [2, 3];
+            const point2: Vector2 = [4, 7];
+            const result = getLinearEquationBy2Points(point1, point2);
+            expect(result).toEqual({
+                formula: "y = 2x - 1",
+                slope: 2,
+                yIntercept: -1,
+                xIntercept: undefined,
+            });
+        });
+
+        test('calculates the linear equation for two points with the same y-coordinate', () => {
+            const point1: Vector2 = [1, 5];
+            const point2: Vector2 = [3, 5];
+            const result = getLinearEquationBy2Points(point1, point2);
+            expect(result).toEqual({
+                formula: "y = 5",
+                slope: 0,
+                yIntercept: 5,
+                xIntercept: undefined,
+            });
+        });
+
+        test('calculates the linear equation for two points with the same x-coordinate', () => {
+            const point1: Vector2 = [2, 3];
+            const point2: Vector2 = [2, 7];
+            const result = getLinearEquationBy2Points(point1, point2);
+            expect(result).toEqual({
+                formula: "x = 2",
+                slope: undefined,
+                yIntercept: undefined,
+                xIntercept: 2,
+            });
+        });
+
+        test('calculates the linear equation for two points where the line is vertical', () => {
+            const point1: Vector2 = [4, 2];
+            const point2: Vector2 = [4, 6];
+            const result = getLinearEquationBy2Points(point1, point2);
+            expect(result).toEqual({
+                formula: "x = 4",
+                slope: undefined,
+                yIntercept: undefined,
+                xIntercept: 4,
+            });
+        });
+
+        test('calculates the linear equation for points with negative coordinates', () => {
+            const point1: Vector2 = [-3, -4];
+            const point2: Vector2 = [2, 1];
+            const result = getLinearEquationBy2Points(point1, point2);
+            expect(result).toEqual({
+                formula: "y = x - 1",
+                slope: 1,
+                yIntercept: -1,
+                xIntercept: undefined,
+            });
+        });
+
+        test('calculates the linear equation for points with decimal coordinates', () => {
+            const point1: Vector2 = [0.5, 1.5];
+            const point2: Vector2 = [1.5, 3.5];
+            const result = getLinearEquationBy2Points(point1, point2);
+            expect(result).toEqual({
+                formula: "y = 2x + 0.5",
+                slope: 2,
+                yIntercept: 0.5,
+                xIntercept: undefined,
+            });
+        });
+
+        test('calculates the linear equation when point1 is higher than point2', () => {
+            const point1: Vector2 = [4, 7];
+            const point2: Vector2 = [2, 3];
+            const result = getLinearEquationBy2Points(point1, point2);
+            expect(result).toEqual({
+                formula: "y = 2x - 1",
+                slope: 2,
+                yIntercept: -1,
+                xIntercept: undefined,
+            });
+        });
+
+        test('calculates the linear equation when point2 is higher than point1', () => {
+            const point1: Vector2 = [2, 3];
+            const point2: Vector2 = [4, 7];
+            const result = getLinearEquationBy2Points(point1, point2);
+            expect(result).toEqual({
+                formula: "y = 2x - 1",
+                slope: 2,
+                yIntercept: -1,
+                xIntercept: undefined,
+            });
+        });
+
+        test('calculates the linear equation when both points have zero coordinates', () => {
+            const point1: Vector2 = [0, 0];
+            const point2: Vector2 = [0, 0];
+            const result = getLinearEquationBy2Points(point1, point2);
+            expect(result).toEqual({
+                formula: "x = 0",
+                slope: undefined,
+                yIntercept: undefined,
+                xIntercept: 0,
+            });
         });
     });
 });
