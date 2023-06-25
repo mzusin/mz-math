@@ -208,7 +208,7 @@ declare module 'mz-math' {
     export const getRandomItemFromArray: (array: any[]) => any;
 
     export const mod: (n: number, m: number) => number;
-    export const convertRange: (a: number, b: number, c: number, d: number, x: number) => number;
+    export const convertRange: (x: number, a: number, b: number, c: number, d: number) => number;
     export const doRangesOverlap: (a: number, b: number, c: number, d: number) => boolean;
     export const isNumber: (value: any) => boolean;
 
