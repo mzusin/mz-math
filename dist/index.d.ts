@@ -203,8 +203,8 @@ declare module 'mz-math' {
     export const getAnglesDistance: (angle1Deg: number, angle2Deg: number, startAngleDeg?: number, decimalPlaces?: number) => number;
     export const percentToAngle: (percent: number, startAngleDeg: number, endAngleDeg: number, circleStartAngle?: number) => number;
 
-    export const getCircleCircumference: (radius: number) => number;
-    export const getEllipseCircumference: (radius1: number, radius2: number) => number;
+    export const getCircleCircumference: (radius: number, decimalPlaces?: number) => number;
+    export const getEllipseCircumference: (radius1: number, radius2: number, decimalPlaces?: number) => number;
     export const isAngleInCircleArc: (startAngleDeg: number, endAngleDeg: number, currentDegrees: number) => boolean;
 
     export const setDecimalPlaces: (num: number, decimalPlaces?: number | undefined) => number;

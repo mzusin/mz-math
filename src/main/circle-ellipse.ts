@@ -1,11 +1,11 @@
 import { setDecimalPlaces } from './format';
 
-export const getCircleCircumference = (radius: number) => {
-    return 2 * Math.PI * radius;
+export const getCircleCircumference = (radius: number, decimalPlaces = Infinity) => {
+    return setDecimalPlaces(2 * Math.PI * radius, decimalPlaces);
 };
 
-export const getEllipseCircumference = (radius1: number, radius2: number) => {
-    return 2 * Math.PI * Math.sqrt((radius1 ** 2 + radius2 ** 2) / 2);
+export const getEllipseCircumference = (radius1: number, radius2: number, decimalPlaces = Infinity) => {
+    return setDecimalPlaces(2 * Math.PI * Math.sqrt((radius1 ** 2 + radius2 ** 2) / 2), decimalPlaces);
 };
 
 export const isAngleInCircleArc = (startAngleDeg: number, endAngleDeg: number, currentDegrees: number) : boolean => {

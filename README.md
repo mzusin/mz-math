@@ -60,8 +60,10 @@ This project is a collection of TypeScript math helpers and utilities for the br
 - [Vector Angle](https://math.mzsoft.org/pages/vector-angle.html)
 - [Angle Between Vectors](https://math.mzsoft.org/pages/angle-between-vectors.html)
 - [Degrees And Radians](https://math.mzsoft.org/pages/degrees-and-radians.html)
-- [Angles Subtraction](https://math.mzsoft.org/pages/angles-subtraction.html)
+- [Angles Distance](https://math.mzsoft.org/pages/angles-distance.html)
 - [Is Angle Between](https://math.mzsoft.org/pages/is-angle-between.html)
+- [Is Clockwise](https://math.mzsoft.org/pages/is-clockwise.html)
+- [Percent To Angle](https://math.mzsoft.org/pages/percent-to-angle.html)
 ### Random 
 - [Get Random Number In Range](https://math.mzsoft.org/pages/get-random-number-in-range.html)
 - [Get Random Integer](https://math.mzsoft.org/pages/get-random-integer.html)
@@ -104,6 +106,9 @@ This project is a collection of TypeScript math helpers and utilities for the br
 ### Animation 
 - [Animation](https://math.mzsoft.org/pages/animation.html)
 - [Get Animation Data](https://math.mzsoft.org/pages/get-animation-data.html)
+### Circle And Ellipse 
+- [Circumference](https://math.mzsoft.org/pages/circumference.html)
+- [Is Angle In Circle Arc](https://math.mzsoft.org/pages/is-angle-in-circle-arc.html)
 ### Other 
 - [Set Decimal Places](https://math.mzsoft.org/pages/set-decimal-places.html)
 - [Convert String To Number](https://math.mzsoft.org/pages/convert-string-to-number.html)
@@ -114,6 +119,71 @@ This project is a collection of TypeScript math helpers and utilities for the br
 - [Check If Value Is Number](https://math.mzsoft.org/pages/check-if-value-is-number.html)
 - [Polar To Cartesian](https://math.mzsoft.org/pages/polar-to-cartesian.html)
 ------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
