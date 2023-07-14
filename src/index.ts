@@ -12,10 +12,10 @@ import * as pathMovement from './main/path-movement';
 import * as color from './main/color';
 import * as physics from './main/physics';
 import * as id from './main/id';
-import * as shapes from './main/shapes';
 import * as derivative from './main/derivative';
 import * as collisions from './main/collision-detection';
 import * as animation from './main/animation';
+import * as circleEllipse from './main/circle-ellipse';
 
 const api = {
     ...vector,
@@ -32,10 +32,10 @@ const api = {
     ...color,
     ...physics,
     ...id,
-    ...shapes,
     ...derivative,
     ...collisions,
     ...animation,
+    ...circleEllipse,
 };
 
 declare global {
@@ -60,7 +60,7 @@ export * from './main/path-movement';
 export * from './main/color';
 export * from './main/physics';
 export * from './main/id';
-export * from './main/shapes';
 export * from './main/derivative';
 export * from './main/collision-detection';
 export * from './main/animation';
+export * from './main/circle-ellipse';

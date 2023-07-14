@@ -12,7 +12,7 @@ export * from './main/path-movement';
 export * from './main/color';
 export * from './main/physics';
 export * from './main/id';
-export * from './main/shapes';
 export * from './main/derivative';
 export * from './main/collision-detection';
 export * from './main/animation';
+export * from './main/circle-ellipse';

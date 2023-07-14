@@ -199,6 +199,13 @@ declare module 'mz-math' {
     export const getV3AngleBetween: (vector1: Vector3, vector2: Vector3, decimalPlaces?: number) => number;
     export const getAnglesSub: (angleDegrees1: number, angleDegrees2: number, decimalPlaces?: number) => number;
     export const isAngleBetween: (angleDegrees: number, startAngleDegrees: number, endAngleDegrees: number) => boolean;
+    export const isClockwise: (angle1Deg: number, angle2Deg: number, startAngleDeg?: number) => boolean;
+    export const getAnglesDistance: (angle1Deg: number, angle2Deg: number, startAngleDeg?: number, decimalPlaces?: number) => number;
+    export const percentToAngle: (percent: number, startAngleDeg: number, endAngleDeg: number, circleStartAngle?: number) => number;
+
+    export const getCircleCircumference: (radius: number) => number;
+    export const getEllipseCircumference: (radius1: number, radius2: number) => number;
+    export const isAngleInCircleArc: (startAngleDeg: number, endAngleDeg: number, currentDegrees: number) => boolean;
 
     export const setDecimalPlaces: (num: number, decimalPlaces?: number | undefined) => number;
 

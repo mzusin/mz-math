@@ -54,14 +54,6 @@ export const getV3AngleBetween = (vector1: Vector3, vector2: Vector3, decimalPla
     return getVNAngleBetween(vector1, vector2, decimalPlaces);
 };
 
-/**
- * Shortest distance (angular) between two angles.
- */
-export const getAnglesSub = (angleDegrees1: number, angleDegrees2: number, decimalPlaces = Infinity) : number => {
-    const angleDistance = Math.abs(mod(angleDegrees1, 360) - mod(angleDegrees2, 360));
-    return setDecimalPlaces(angleDistance <= 180 ? angleDistance : 360 - angleDistance, decimalPlaces);
-};
-
 export const isAngleBetween = (angleDegrees: number, startAngleDegrees: number, endAngleDegrees: number) : boolean => {
     const distance = getAnglesSub(startAngleDegrees, endAngleDegrees);
     const distance1 = getAnglesSub(startAngleDegrees, angleDegrees);
@@ -71,3 +63,66 @@ export const isAngleBetween = (angleDegrees: number, startAngleDegrees: number, 
     // Use a small threshold for floating point errors
     return Math.abs(totalDistance - distance) <= 0.001;
 }
+
+export const isClockwise = (angle1Deg: number, angle2Deg: number, startAngleDeg = 0) => {
+    angle1Deg = angle1Deg % 360;
+    angle2Deg = angle2Deg % 360;
+
+    if(angle1Deg < startAngleDeg) {
+        angle1Deg += 360;
+    }
+
+    if(angle2Deg < startAngleDeg) {
+        angle2Deg += 360;
+    }
+
+    return angle2Deg >= angle1Deg;
+};
+
+/**
+ * Shortest distance (angular) between two angles.
+ */
+export const getAnglesSub = (angleDegrees1: number, angleDegrees2: number, decimalPlaces = Infinity) : number => {
+    const angleDistance = Math.abs(mod(angleDegrees1, 360) - mod(angleDegrees2, 360));
+    return setDecimalPlaces(angleDistance <= 180 ? angleDistance : 360 - angleDistance, decimalPlaces);
+};
+
+export const getAnglesDistance = (angle1Deg: number, angle2Deg: number, startAngleDeg = 0, decimalPlaces = Infinity) => {
+    angle1Deg = angle1Deg % 360;
+    angle2Deg = angle2Deg % 360;
+
+    if(angle1Deg < startAngleDeg) {
+        angle1Deg += 360;
+    }
+
+    if(angle2Deg < startAngleDeg) {
+        angle2Deg += 360;
+    }
+
+    if(isClockwise(angle1Deg, angle2Deg, startAngleDeg)) {
+        return setDecimalPlaces((angle2Deg - angle1Deg + 360) % 360, decimalPlaces);
+    }
+    else{
+        return setDecimalPlaces((angle1Deg - angle2Deg + 360) % 360, decimalPlaces);
+    }
+};
+
+export const percentToAngle = (percent: number, startAngleDeg: number, endAngleDeg: number, circleStartAngle = 0) => {
+    if(percent < 0) {
+        percent = 0;
+    }
+
+    if(percent > 100) {
+        percent = 100;
+    }
+
+    const distance = getAnglesDistance(startAngleDeg, endAngleDeg, circleStartAngle);
+
+    const clockwise = isClockwise(startAngleDeg, endAngleDeg, circleStartAngle);
+    if(clockwise) {
+        return mod(circleStartAngle + (percent * distance / 100), 360);
+    }
+    else {
+        return mod(circleStartAngle - (percent * distance / 100), 360);
+    }
+};
