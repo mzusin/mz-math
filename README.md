@@ -109,6 +109,9 @@ This project is a collection of TypeScript math helpers and utilities for the br
 ### Circle And Ellipse 
 - [Circumference](https://math.mzsoft.org/pages/circumference.html)
 - [Is Angle In Circle Arc](https://math.mzsoft.org/pages/is-angle-in-circle-arc.html)
+### Sequence 
+- [Natural Numbers Sequence Sum](https://math.mzsoft.org/pages/natural-numbers-sequence-sum.html)
+- [Arithmetic Sequence Sum](https://math.mzsoft.org/pages/arithmetic-sequence-sum.html)
 ### Other 
 - [Set Decimal Places](https://math.mzsoft.org/pages/set-decimal-places.html)
 - [Convert String To Number](https://math.mzsoft.org/pages/convert-string-to-number.html)
@@ -119,6 +122,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
 - [Check If Value Is Number](https://math.mzsoft.org/pages/check-if-value-is-number.html)
 - [Polar To Cartesian](https://math.mzsoft.org/pages/polar-to-cartesian.html)
 ------------------------------
+
 
 
 

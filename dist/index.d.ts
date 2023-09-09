@@ -351,4 +351,7 @@ declare module 'mz-math' {
 
     export const polarToCartesian: (center: Vector2, radii: Vector2, angleInRad: number, decimalPlaces?: number) => Vector2;
 
+    export const naturalNumbersSequenceSum: (n: number) => number;
+    export const arithmeticSequenceSum: (n: number, a: number, d: number) => number;
+
 }

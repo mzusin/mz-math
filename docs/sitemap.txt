@@ -86,6 +86,8 @@ https://math.mzsoft.org/pages/animation.html
 https://math.mzsoft.org/pages/get-animation-data.html
 https://math.mzsoft.org/pages/circumference.html
 https://math.mzsoft.org/pages/is-angle-in-circle-arc.html
+https://math.mzsoft.org/pages/natural-numbers-sequence-sum.html
+https://math.mzsoft.org/pages/arithmetic-sequence-sum.html
 https://math.mzsoft.org/pages/set-decimal-places.html
 https://math.mzsoft.org/pages/convert-string-to-number.html
 https://math.mzsoft.org/pages/square-in-circle.html

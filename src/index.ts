@@ -16,6 +16,7 @@ import * as derivative from './main/derivative';
 import * as collisions from './main/collision-detection';
 import * as animation from './main/animation';
 import * as circleEllipse from './main/circle-ellipse';
+import * as sequence from './main/sequence';
 
 const api = {
     ...vector,
@@ -36,6 +37,7 @@ const api = {
     ...collisions,
     ...animation,
     ...circleEllipse,
+    ...sequence,
 };
 
 declare global {
@@ -64,3 +66,4 @@ export * from './main/derivative';
 export * from './main/collision-detection';
 export * from './main/animation';
 export * from './main/circle-ellipse';
+export * from './main/sequence';
