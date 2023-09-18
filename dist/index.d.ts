@@ -277,6 +277,8 @@ declare module 'mz-math' {
     export const rgbToHsl: (rgb: RGBColor, decimalPlaces?: number) => HSLColor;
     export const hslToRgb: (hsl: HSLColor, decimalPlaces?: number) => RGBColor;
     export const hslToHex: (hsl: HSLColor) => string;
+    export const rgbToHex: (rgb: RGBColor) => string;
+    export const hexToRgb: (hex: string) => RGBColor | null;
 
     export const getShiftedHue: (color: HSLColor, shift?: number) => HSLColor;
     export const getShiftedLightness: (color: HSLColor, shift?: number) => HSLColor;

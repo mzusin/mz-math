@@ -1,7 +1,15 @@
 # Convert Colors
 
 ```js
-import { HSLColor, RGBColor, hslToRgb, rgbToHsl, hslToHex } from 'mz-math';
+import { 
+    HSLColor, 
+    RGBColor, 
+    hslToRgb, 
+    rgbToHsl, 
+    hslToHex,
+    rgbToHex,
+    hexToRgb,
+} from 'mz-math';
 
 const decimalPlaces = 2; // optional
 
@@ -13,4 +21,10 @@ const rgbColor: RGBColor = hslToRgb([100, 100, 100], decimalPlaces);
 
 // convert HSL color to hex
 const hex: string = hslToHex([10, 10, 10]); // #1c1817
+
+// convert RGB color to hex
+const hex: string = rgbToHex([235, 64, 52]); // #eb4034
+
+// convert HEX color to RGB
+const rgbColor: RGBColor = hexToRgb('#eb4034'); // [235, 64, 52]
 ```

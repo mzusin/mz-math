@@ -16,8 +16,8 @@
   <link id="favicon-32" rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32.png" />
   <link id="favicon-16" rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16.png" />
 
-  <link rel="stylesheet" href="/css/styles.1694279219512.css" />
-  <!--<link rel="stylesheet" href="/js/index.1694279219512.css" />-->
+  <link rel="stylesheet" href="/css/styles.1695032582070.css" />
+  <!--<link rel="stylesheet" href="/js/index.1695032582070.css" />-->
 
 </head>
 <body class="h-screen flex flex-col font-roboto bg-white dark:bg-slate-900 dark:text-slate-100">
@@ -241,7 +241,15 @@
 
     <div class="p-4 overflow-y-auto h-full md:w-100-350 dark:bg-slate-800">
       <div class="w-800 max-w-full mx-auto my-10 leading-7 text-lg text-slate-800 dark:text-slate-200"><h1 class="text-3xl mb-8">Convert Colors</h1>
-<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">import</span> { <span class="hljs-title class_">HSLColor</span>, <span class="hljs-title class_">RGBColor</span>, hslToRgb, rgbToHsl, hslToHex } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mz-math&#x27;</span>;
+<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">import</span> { 
+    <span class="hljs-title class_">HSLColor</span>, 
+    <span class="hljs-title class_">RGBColor</span>, 
+    hslToRgb, 
+    rgbToHsl, 
+    hslToHex,
+    rgbToHex,
+    hexToRgb,
+} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mz-math&#x27;</span>;
 
 <span class="hljs-keyword">const</span> decimalPlaces = <span class="hljs-number">2</span>; <span class="hljs-comment">// optional</span>
 
@@ -252,7 +260,13 @@
 <span class="hljs-keyword">const</span> <span class="hljs-attr">rgbColor</span>: <span class="hljs-title class_">RGBColor</span> = <span class="hljs-title function_">hslToRgb</span>([<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">100</span>], decimalPlaces);
 
 <span class="hljs-comment">// convert HSL color to hex</span>
-<span class="hljs-keyword">const</span> <span class="hljs-attr">hex</span>: string = <span class="hljs-title function_">hslToHex</span>([<span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>]); <span class="hljs-comment">// #1c1817</span></code></pre>
+<span class="hljs-keyword">const</span> <span class="hljs-attr">hex</span>: string = <span class="hljs-title function_">hslToHex</span>([<span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>]); <span class="hljs-comment">// #1c1817</span>
+
+<span class="hljs-comment">// convert RGB color to hex</span>
+<span class="hljs-keyword">const</span> <span class="hljs-attr">hex</span>: string = <span class="hljs-title function_">rgbToHex</span>([<span class="hljs-number">235</span>, <span class="hljs-number">64</span>, <span class="hljs-number">52</span>]); <span class="hljs-comment">// #eb4034</span>
+
+<span class="hljs-comment">// convert HEX color to RGB</span>
+<span class="hljs-keyword">const</span> <span class="hljs-attr">rgbColor</span>: <span class="hljs-title class_">RGBColor</span> = <span class="hljs-title function_">hexToRgb</span>(<span class="hljs-string">&#x27;#eb4034&#x27;</span>); <span class="hljs-comment">// [235, 64, 52]</span></code></pre>
 </div>
 
       <div class="w-800 max-w-full mx-auto grid lg:grid-cols-2 gap-8 items-center text-slate-500">
@@ -289,6 +303,6 @@
   </div>
 </div>
 
-<script src="/js/index.1694279219512.js"></script>
+<script src="/js/index.1695032582070.js"></script>
 </body>
 </html>

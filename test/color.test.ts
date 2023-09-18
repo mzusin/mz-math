@@ -1,4 +1,13 @@
-import { rgbToHsl, hslToRgb, hslToHex, getShiftedHue, getShiftedSaturation, getShiftedLightness } from '../src/main/color';
+import {
+    rgbToHsl,
+    hslToRgb,
+    hslToHex,
+    getShiftedHue,
+    getShiftedSaturation,
+    getShiftedLightness,
+    rgbToHex,
+    hexToRgb,
+} from '../src/main/color';
 
 describe('Convert RGB to HSL', () => {
     test('rgb[100, 100, 100] to hsl with 2 decimal places', () => {
@@ -51,7 +60,6 @@ describe('Convert HSL to RGB', () => {
         expect(hslToRgb([0, 100, 50], 2)).toStrictEqual([255, 0, 0]); // red
     });
 });
-
 
 describe('Convert HSL to HEX', () => {
     test('hsl[0, 0, 39] to hex', () => {
@@ -106,5 +114,63 @@ describe('Shift colors', () => {
 
     test('shift lightness in [0, 10, 1009] by 10', () => {
         expect(getShiftedLightness([0, 10, 100], 10)).toStrictEqual([0, 10, 10]);
+    });
+});
+
+describe('Convert RGB to HEX', () => {
+
+    test('rgb[235, 64, 52] to hex', () => {
+        expect(rgbToHex([235, 64, 52])).toStrictEqual('#eb4034');
+    });
+
+    test('rgb[158, 97, 27] to hex', () => {
+        expect(rgbToHex([158, 97, 27])).toStrictEqual('#9e611b');
+    });
+
+    test('rgb[16, 163, 134] to hex', () => {
+        expect(rgbToHex([16, 163, 134])).toStrictEqual('#10a386');
+    });
+
+    test('rgb[255, 255, 255] to hex', () => {
+        expect(rgbToHex([255, 255, 255])).toStrictEqual('#ffffff');
+    });
+
+    test('rgb[0, 0, 0] to hex', () => {
+        expect(rgbToHex([0, 0, 0])).toStrictEqual('#000000');
+    });
+});
+
+describe('Convert HEX to RGB', () => {
+
+    test('hexToRgb(#eb4034)', () => {
+        expect(hexToRgb('#eb4034')).toStrictEqual([235, 64, 52]);
+    });
+
+    test('hexToRgb(#9e611b)', () => {
+        expect(hexToRgb('#9e611b')).toStrictEqual([158, 97, 27]);
+    });
+
+    test('hexToRgb(#10a386)', () => {
+        expect(hexToRgb('#10a386')).toStrictEqual([16, 163, 134]);
+    });
+
+    test('hexToRgb(#ffffff)', () => {
+        expect(hexToRgb('#ffffff')).toStrictEqual([255, 255, 255]);
+    });
+
+    test('hexToRgb(#fff)', () => {
+        expect(hexToRgb('#fff')).toStrictEqual([255, 255, 255]);
+    });
+
+    test('hexToRgb(#000000)', () => {
+        expect(hexToRgb('#000000')).toStrictEqual([0, 0, 0]);
+    });
+
+    test('hexToRgb(#000)', () => {
+        expect(hexToRgb('#000')).toStrictEqual([0, 0, 0]);
+    });
+
+    test('hexToRgb(xyz)', () => {
+        expect(hexToRgb('xyz')).toStrictEqual(null);
     });
 });
