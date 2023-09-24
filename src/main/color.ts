@@ -68,11 +68,11 @@ export const getRandomHSLColorWithinRanges = (
 // ----------------------- CONVERT COLORS --------------------------------------
 
 /**
- * helper: convert hue value to %
+ * helper: convert hue value to degrees.
  * @param {number} h
- * @return {number} [0, 100] %
+ * @return {number} [0, 360] degrees
  */
-const convertHueToPercent = (h : number) : number => {
+const convertHueToDegrees = (h : number) : number => {
 
     // the hue value needs to be multiplied by 60 to convert it to degrees
     h *= 60;
@@ -82,8 +82,9 @@ const convertHueToPercent = (h : number) : number => {
         h += 360;
     }
 
+    return h;
     // convert huw to %
-    return h * 100 / 360;
+    // return h * 100 / 360;
 };
 
 /**
@@ -99,27 +100,31 @@ const getHue = (r : number, g : number, b : number, min : number | undefined = u
 
     // find the minimum and maximum values of r, g, and b if they are not provided
     min = (min === undefined) ? Math.min(r, g, b) : min;
-    max = (min === undefined) ? Math.max(r, g, b) : max;
+    max = (max === undefined) ? Math.max(r, g, b) : max;
 
     // if the min and max value are the same -> no hue, as it's gray
     if(min === max) return 0;
 
+    const diff = max - min;
+
+    let h = 0;
+
     // if red is max
     if(max === r){
-        return convertHueToPercent((g - b) / (max - min));
+        h = (g - b) / diff + (g < b ? 6 : 0);
     }
 
     // if green is max
     if(max === g){
-        return convertHueToPercent(2.0 + (b - r) / (max - min));
+        h = 2 + (b - r) / diff;
     }
 
     // if blue is max
     if(max === b){
-        return convertHueToPercent(4.0 + (r - g) / (max - min));
+        h = 4 + (r - g) / diff;
     }
 
-    return 0;
+    return convertHueToDegrees(h);
 };
 
 /**

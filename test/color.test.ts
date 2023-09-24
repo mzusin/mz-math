@@ -30,8 +30,12 @@ describe('Convert RGB to HSL', () => {
         expect(rgbToHsl([-100, -100, -100], 2)).toStrictEqual([0, 0, 0]);
     });
 
-    test('rgb[255, 0, 0] to hsl with 2 decimal places', () => {
-        expect(rgbToHsl([255, 0, 0], 2)).toStrictEqual([0, 100, 50]); // red
+    test('rgb[253, 247, 226] to hsl', () => {
+        expect(rgbToHsl([253, 247, 226], 0)).toStrictEqual([47, 87, 94]);
+    });
+
+    test('rgb[216, 233, 247] to hsl', () => {
+        expect(rgbToHsl([216, 233, 247], 0)).toStrictEqual([207, 66, 91]);
     });
 });
 
