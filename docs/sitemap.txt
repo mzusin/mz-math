@@ -74,6 +74,7 @@ https://math.mzsoft.org/pages/color.html
 https://math.mzsoft.org/pages/random-color.html
 https://math.mzsoft.org/pages/convert-colors.html
 https://math.mzsoft.org/pages/shift-colors.html
+https://math.mzsoft.org/pages/similar-colors.html
 https://math.mzsoft.org/pages/lerp.html
 https://math.mzsoft.org/pages/general-case.html
 https://math.mzsoft.org/pages/polynomial.html

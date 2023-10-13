@@ -1,3 +1,5 @@
+import { LABColor } from '../types/types';
+
 declare module 'mz-math' {
 
     export type Vector2 = [number, number];
@@ -10,8 +12,9 @@ declare module 'mz-math' {
     export type Matrix4 = Vector4[];
     export type Matrix = Vector[];
 
-    export type HSLColor = [number, number, number]; // [hue, saturation, lightness] [0-360, 0-100, 0-100]
-    export type RGBColor = [number, number, number]; // [r, g, b] [0, 255, 0, 255, 0, 255]
+    export type HSLColor = [number, number, number];
+    export type RGBColor = [number, number, number];
+    export type LABColor = [number, number, number];
 
     export const v2: (defaultValue?: number) => Vector2;
     export const v3: (defaultValue?: number) => Vector3;
@@ -279,10 +282,14 @@ declare module 'mz-math' {
     export const hslToHex: (hsl: HSLColor) => string;
     export const rgbToHex: (rgb: RGBColor) => string;
     export const hexToRgb: (hex: string) => RGBColor | null;
+    export const rgbToLab: (rgb: RGBColor, decimalPlaces?: number) => LABColor;
+    export const labToRgb: (lab: LABColor, decimalPlaces?: number) => RGBColor;
 
     export const getShiftedHue: (color: HSLColor, shift?: number) => HSLColor;
     export const getShiftedLightness: (color: HSLColor, shift?: number) => HSLColor;
     export const getShiftedSaturation: (color: HSLColor, shift?: number) => HSLColor;
+
+    export const getColorsDelta: (rgbA: RGBColor, rgbB: RGBColor, decimalPlaces?: number) => number;
 
     export const guid: () => string;
     export const newId: () => string;

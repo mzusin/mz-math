@@ -92,6 +92,7 @@ This project is a collection of TypeScript math helpers and utilities for the br
 - [Random Color](https://math.mzsoft.org/pages/random-color.html)
 - [Convert Colors](https://math.mzsoft.org/pages/convert-colors.html)
 - [Shift Colors](https://math.mzsoft.org/pages/shift-colors.html)
+- [Similar Colors](https://math.mzsoft.org/pages/similar-colors.html)
 ### Linear Interpolation 
 - [Lerp](https://math.mzsoft.org/pages/lerp.html)
 - [General Case](https://math.mzsoft.org/pages/general-case.html)
@@ -122,6 +123,13 @@ This project is a collection of TypeScript math helpers and utilities for the br
 - [Check If Value Is Number](https://math.mzsoft.org/pages/check-if-value-is-number.html)
 - [Polar To Cartesian](https://math.mzsoft.org/pages/polar-to-cartesian.html)
 ------------------------------
+
+
+
+
+
+
+
 
 
 

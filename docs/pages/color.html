@@ -16,8 +16,8 @@
   <link id="favicon-32" rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32.png" />
   <link id="favicon-16" rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16.png" />
 
-  <link rel="stylesheet" href="/css/styles.1695032582070.css" />
-  <!--<link rel="stylesheet" href="/js/index.1695032582070.css" />-->
+  <link rel="stylesheet" href="/css/styles.1697194310286.css" />
+  <!--<link rel="stylesheet" href="/js/index.1697194310286.css" />-->
 
 </head>
 <body class="h-screen flex flex-col font-roboto bg-white dark:bg-slate-900 dark:text-slate-100">
@@ -186,7 +186,7 @@
           <path d="m7 7 5 5-5 5m6-10 5 5-5 5"/>
         </svg>
 
-    </div><div class="flex flex-col" data-links><a href="/pages/color.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-sky-500">Color</a><a href="/pages/random-color.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Random Color</a><a href="/pages/convert-colors.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Convert Colors</a><a href="/pages/shift-colors.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600  text-slate-500">Shift Colors</a></div><div class="text-xl my-4 flex items-center cursor-pointer" data-collapsible-title data-opened="true" data-id="105-linear-interpolation">
+    </div><div class="flex flex-col" data-links><a href="/pages/color.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-sky-500">Color</a><a href="/pages/random-color.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Random Color</a><a href="/pages/convert-colors.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Convert Colors</a><a href="/pages/shift-colors.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Shift Colors</a><a href="/pages/similar-colors.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600  text-slate-500">Similar Colors</a></div><div class="text-xl my-4 flex items-center cursor-pointer" data-collapsible-title data-opened="true" data-id="105-linear-interpolation">
         Linear Interpolation 
         <svg data-arrow xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#626e7f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="ml-2 rotate-90" viewBox="0 0 24 24">
           <path stroke="none" d="M0 0h24v24H0z"/>
@@ -242,13 +242,16 @@
     <div class="p-4 overflow-y-auto h-full md:w-100-350 dark:bg-slate-800">
       <div class="w-800 max-w-full mx-auto my-10 leading-7 text-lg text-slate-800 dark:text-slate-200"><h1 class="text-3xl mb-8">Color</h1>
 <p class="mb-4">The library contains several color helper functions. It works with the following color types:</p>
-<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">import</span> { <span class="hljs-title class_">HSLColor</span>, <span class="hljs-title class_">RGBColor</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mz-math&#x27;</span>;
+<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">import</span> { <span class="hljs-title class_">HSLColor</span>, <span class="hljs-title class_">RGBColor</span>, <span class="hljs-title class_">LABColor</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mz-math&#x27;</span>;
 
 <span class="hljs-comment">// [hue, saturation, lightness] </span>
 <span class="hljs-keyword">const</span> <span class="hljs-attr">hslColor</span>: <span class="hljs-title class_">HSLColor</span> = [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>]; <span class="hljs-comment">// [0-360, 0-100, 0-100]</span>
 
 <span class="hljs-comment">// [r, g, b] </span>
-<span class="hljs-keyword">const</span> <span class="hljs-attr">rgbColor</span>: <span class="hljs-title class_">RGBColor</span> = [<span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">255</span>]; <span class="hljs-comment">// [0, 255, 0, 255, 0, 255]</span></code></pre>
+<span class="hljs-keyword">const</span> <span class="hljs-attr">rgbColor</span>: <span class="hljs-title class_">RGBColor</span> = [<span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">255</span>]; <span class="hljs-comment">// [0, 255, 0, 255, 0, 255]</span>
+
+<span class="hljs-comment">// [l, a, b]</span>
+<span class="hljs-keyword">const</span> <span class="hljs-attr">labColor</span>: <span class="hljs-title class_">LABColor</span> = [<span class="hljs-number">100</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>];</code></pre>
 </div>
 
       <div class="w-800 max-w-full mx-auto grid lg:grid-cols-2 gap-8 items-center text-slate-500">
@@ -285,6 +288,6 @@
   </div>
 </div>
 
-<script src="/js/index.1695032582070.js"></script>
+<script src="/js/index.1697194310286.js"></script>
 </body>
 </html>

@@ -2,13 +2,10 @@
 
 ```js
 import { 
-    HSLColor, 
-    RGBColor, 
-    hslToRgb, 
-    rgbToHsl, 
-    hslToHex,
-    rgbToHex,
-    hexToRgb,
+    HSLColor, RGBColor, LABColor,
+    hslToRgb, rgbToHsl, 
+    hslToHex, rgbToHex, hexToRgb, 
+    rgbToLab, labToRgb,
 } from 'mz-math';
 
 const decimalPlaces = 2; // optional
@@ -27,4 +24,10 @@ const hex: string = rgbToHex([235, 64, 52]); // #eb4034
 
 // convert HEX color to RGB
 const rgbColor: RGBColor = hexToRgb('#eb4034'); // [235, 64, 52]
+
+// convert RGB color to LAB
+const labColor: LABColor = rgbToLab([255, 255, 255], decimalPlaces); // [100, 0, 0]
+
+// convert LAB color to RGB
+const rgbColor: RGBColor = labToRgb([100, 0, 0], decimalPlaces); // [255, 255, 255]
 ```

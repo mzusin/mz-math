@@ -7,7 +7,11 @@ import {
     getShiftedLightness,
     rgbToHex,
     hexToRgb,
+    rgbToLab,
+    labToRgb,
+    getColorsDelta,
 } from '../src/main/color';
+import { RGBColor } from '../types/types';
 
 describe('Convert RGB to HSL', () => {
     test('rgb[100, 100, 100] to hsl with 2 decimal places', () => {
@@ -176,5 +180,64 @@ describe('Convert HEX to RGB', () => {
 
     test('hexToRgb(xyz)', () => {
         expect(hexToRgb('xyz')).toStrictEqual(null);
+    });
+});
+
+describe('Convert RGB to LAB', () => {
+    it('should convert white RGB to LAB', () => {
+        expect(rgbToLab([255, 255, 255], 0)).toEqual([100, 0, -0]);
+    });
+
+    it('should convert black RGB to LAB', () => {
+        expect(rgbToLab([0, 0, 0])).toEqual([0, 0, 0]);
+    });
+
+    it('should convert a mid-gray RGB to LAB', () => {
+        expect(rgbToLab([128, 128, 128], 2)).toEqual([53.59, 0, -0.01]);
+    });
+});
+
+describe('Convert LAB to RGB', () => {
+    it('should convert white LAB to RGB', () => {
+        expect(labToRgb([100, 0, 0], 0)).toEqual([255, 255, 255]);
+    });
+
+    it('should convert black LAB to RGB', () => {
+        expect(labToRgb([0, 0, 0], 0)).toEqual([0, 0, 0]);
+    });
+
+    it('should convert a mid-gray LAB to RGB', () => {
+        expect(labToRgb([53.585, 0, 0], 0)).toEqual([128, 128, 128]);
+    });
+
+    it('should handle lower bounds of LAB', () => {
+        expect(labToRgb([0, -128, -128], 0)).toEqual([0, 64, 194]);
+    });
+
+    it('should handle upper bounds of LAB', () => {
+        expect(labToRgb([100, 128, 128], 0)).toEqual([255, 65, 0]);
+    });
+});
+
+describe('getColorsDelta()' ,() => {
+    it('should calculate delta between identical colors as 0', () => {
+        const colorA: RGBColor = [255, 0, 0];
+        const colorB: RGBColor = [255, 0, 0];
+        const delta = getColorsDelta(colorA, colorB);
+        expect(delta).toBeCloseTo(0, 2); // You can adjust the number of decimal places
+    });
+
+    it('should calculate delta for different but visually identical colors', () => {
+        const colorA: RGBColor = [255, 0, 0];
+        const colorB: RGBColor = [252, 3, 3];
+        const delta = getColorsDelta(colorA, colorB);
+        expect(delta).toBeLessThan(2);
+    });
+
+    it('should calculate delta for perceptibly different colors', () => {
+        const colorA: RGBColor = [255, 0, 0];
+        const colorB: RGBColor = [0, 0, 255];
+        const delta = getColorsDelta(colorA, colorB);
+        expect(delta).toBeGreaterThan(10);
     });
 });
