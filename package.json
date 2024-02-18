@@ -1,6 +1,6 @@
 {
   "name": "mz-math",
-  "version": "3.0.22",
+  "version": "3.0.23",
   "description": "mzMath - a collection of TypeScript-based math helpers.",
   "main": "./dist/mz-math.min.js",
   "module": "./dist/mz-math.esm.js",
@@ -60,7 +60,8 @@
     "derivatives",
     "lerp",
     "linear interpolation",
-    "collision detection"
+    "collision detection",
+    "statistics"
   ],
   "author": "Miriam Zusin <miriam.zusin@gmail.com>",
   "license": "SEE LICENSE IN LICENSE.md",

@@ -17,6 +17,7 @@ import * as collisions from './main/collision-detection';
 import * as animation from './main/animation';
 import * as circleEllipse from './main/circle-ellipse';
 import * as sequence from './main/sequence';
+import * as statistics from './main/statistics';
 
 const api = {
     ...vector,
@@ -38,6 +39,7 @@ const api = {
     ...animation,
     ...circleEllipse,
     ...sequence,
+    ...statistics,
 };
 
 declare global {
@@ -67,3 +69,4 @@ export * from './main/collision-detection';
 export * from './main/animation';
 export * from './main/circle-ellipse';
 export * from './main/sequence';
+export * from './main/statistics';

@@ -3,20 +3,16 @@
     "target": "es6",
     "module": "es2015",
     "moduleResolution": "node",
-
     "outDir": "./types",
     "allowJs": true,
-
     "isolatedModules": true,
     "esModuleInterop": true,
     "useDefineForClassFields": true,
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
     "suppressImplicitAnyIndexErrors": true,
-
     "declaration": true,
     "declarationMap": false,
-
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,

@@ -17,3 +17,4 @@ export * from './main/collision-detection';
 export * from './main/animation';
 export * from './main/circle-ellipse';
 export * from './main/sequence';
+export * from './main/statistics';
