@@ -1,29 +1,34 @@
+
+// -------------------- CENTRAL TENDENCY ----------------------------
+
+import { setDecimalPlaces } from './format';
+
 /**
  * Central tendency: Calculate the Average (mean)
  * Sum of all numbers divided by the array length.
  */
-export const getArithmeticMean = (data: number[]) : number|undefined => {
+export const getArithmeticMean = (data: number[], decimalPlaces = Infinity) : number|undefined => {
     if(!data || data.length <= 0) return undefined;
 
     const sum = data.reduce((acc, val) => acc + val, 0);
-    return sum / data.length;
+    return setDecimalPlaces(sum / data.length, decimalPlaces);
 };
 
 /**
  * Central tendency: What is the central number in the sorted array?
  * Good for lists like [3, 3, 3, 3, 3, 3, 100] - 100 here is called "Outlier"
  */
-export const getMedian = (data: number[]) : number|undefined => {
+export const getMedian = (data: number[], decimalPlaces = Infinity) : number|undefined => {
     if(!data || data.length <= 0) return undefined;
 
     const copy = [...data].sort((num1, num2) => num1 - num2);
     const mid = Math.floor(copy.length / 2);
 
     if(copy.length % 2 === 0) {
-        return (copy[mid] + copy[mid - 1]) / 2;
+        return setDecimalPlaces((copy[mid] + copy[mid - 1]) / 2, decimalPlaces);
     }
     else {
-        return copy[mid];
+        return setDecimalPlaces(copy[mid], decimalPlaces);
     }
 };
 
@@ -67,6 +72,20 @@ export const getMode = (data: number[]) : number[]|undefined => {
 TODO:
 - geometric mean
 - harmonic mean
-- median
-- mode
  */
+
+// -------------------- DISPERSION ----------------------------
+
+/**
+ * Dispersion: the average square distance from the mean.
+ */
+export const getVariance = (data: number[], decimalPlaces = Infinity) : number|undefined => {
+    if(!data || data.length <= 0) return undefined;
+
+    const mean = getArithmeticMean(data);
+    if(mean === undefined) return undefined;
+
+    const sum = data.reduce((acc, val) => acc + ((val - mean) ** 2), 0);
+
+    return setDecimalPlaces(sum / data.length, decimalPlaces);
+};
