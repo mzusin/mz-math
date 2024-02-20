@@ -88,3 +88,7 @@ export const getVariance = (data: number[], decimalPlaces = Infinity) : number|u
 
     return setDecimalPlaces(sum / data.length, decimalPlaces);
 };
+
+export const getStandardDeviation = (data: number[], decimalPlaces = Infinity) => {
+
+};
