@@ -18,6 +18,7 @@ import * as animation from './main/animation';
 import * as circleEllipse from './main/circle-ellipse';
 import * as sequence from './main/sequence';
 import * as statistics from './main/statistics';
+import * as ml from './main/ml';
 
 const api = {
     ...vector,
@@ -40,6 +41,7 @@ const api = {
     ...circleEllipse,
     ...sequence,
     ...statistics,
+    ...ml,
 };
 
 declare global {
@@ -70,3 +72,4 @@ export * from './main/animation';
 export * from './main/circle-ellipse';
 export * from './main/sequence';
 export * from './main/statistics';
+export * from './main/ml';

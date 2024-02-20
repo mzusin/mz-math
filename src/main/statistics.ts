@@ -1,7 +1,6 @@
+import { setDecimalPlaces } from './format';
 
 // -------------------- CENTRAL TENDENCY ----------------------------
-
-import { setDecimalPlaces } from './format';
 
 /**
  * Central tendency: Calculate the Average (mean)
