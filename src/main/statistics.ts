@@ -90,5 +90,6 @@ export const getVariance = (data: number[], decimalPlaces = Infinity) : number|u
 };
 
 export const getStandardDeviation = (data: number[], decimalPlaces = Infinity) => {
-
+    const variance = getVariance(data) ?? 0;
+    return setDecimalPlaces(Math.sqrt(variance), decimalPlaces);
 };
