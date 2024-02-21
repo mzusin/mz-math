@@ -21,6 +21,8 @@ export const mlNormalize = (data: number[], decimalPlaces = Infinity): number[] 
     return copy;
 };
 
+// --------------------- STANDARDIZE --------------------------------
+
 /**
  * Changes value to be in the range [-1, 1].
  */
@@ -46,4 +48,11 @@ export const mlStandardizeTestData = (data: number[], decimalPlaces = Infinity):
         stdDev: setDecimalPlaces(stdDev, decimalPlaces),
         data: _data,
     };
+};
+
+/**
+ * Alias.
+ */
+export const mlStandardizeUnseenData = (data: number[], mean: number, stdDev: number, decimalPlaces = Infinity): number[] => {
+    return mlStandardizeArray(data, mean, stdDev, decimalPlaces);
 };
