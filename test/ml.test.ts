@@ -1,27 +1,23 @@
-import { mlNormalize, mlStandardizeValue } from '../src/main/ml';
+import { mlNormalizeValue, mlStandardizeValue } from '../src/main/ml';
 
 describe('ML', () => {
 
-    describe('mlNormalize()', () => {
+    describe('mlNormalizeValue()', () => {
 
-        test('[]', () => {
-            expect(mlNormalize([])).toStrictEqual([]);
+        it('10, 5, 5', () => {
+            expect(mlNormalizeValue(10, 5, 5)).toBe(0);
         });
 
-        test('[2]', () => {
-            expect(mlNormalize([2])).toStrictEqual([0]);
+        it('10, 5, 15', () => {
+            expect(mlNormalizeValue(10, 5, 15)).toBe(0.5);
         });
 
-        test('[1, 2, 3]', () => {
-            expect(mlNormalize([1, 2, 3])).toStrictEqual([0, 0.5, 1]);
+        it('10, 5, 15, 2', () => {
+            expect(mlNormalizeValue(10, 5, 15, 2)).toBe(0.5);
         });
 
-        test('[-1, -2]', () => {
-            expect(mlNormalize([-1, -2])).toStrictEqual([1, 0]);
-        });
-
-        test('[1, 1, 2, 3, 4]', () => {
-            expect(mlNormalize([1, 1, 2, 3, 4], 2)).toStrictEqual([0, 0, 0.33, 0.67, 1]);
+        it('10, -5, 15', () => {
+            expect(mlNormalizeValue(10, -5, 15)).toBe(0.75);
         });
     });
 
@@ -38,7 +34,7 @@ describe('ML', () => {
             expect(mlStandardizeValue(10, 5, 2, 2)).toStrictEqual(2.5);
         });
 
-        it('10, -5, -2n', () => {
+        it('10, -5, -2', () => {
             expect(mlStandardizeValue(10, -5, -2)).toStrictEqual(-7.5);
         });
     });

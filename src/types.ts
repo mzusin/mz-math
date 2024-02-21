@@ -41,3 +41,9 @@ export interface IMlStandardizeResult {
     stdDev: number;
     data: number[];
 }
+
+export interface IMlNormalizeResult {
+    min: number;
+    max: number;
+    data: number[];
+}
