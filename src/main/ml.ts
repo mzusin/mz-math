@@ -3,7 +3,6 @@ import { getArithmeticMean, getStandardDeviation } from './statistics';
 
 /**
  * Returns a copy of array, where each value will be in the range [0, 1].
- * const newValue = (value - array_min) / (array_max - array_min)
  */
 export const mlNormalize = (data: number[], decimalPlaces = Infinity): number[] => {
     const copy = [...data];
@@ -21,8 +20,12 @@ export const mlNormalize = (data: number[], decimalPlaces = Infinity): number[] 
     return copy;
 };
 
+/**
+ * Returns a copy of array, where each value will be in the range [-1, 1]
+ */
 export const mlStandardize = (data: number[], decimalPlaces = Infinity): number[] => {
-    const mean = getArithmeticMean(data) ?? 0;
-    const stdDev = getStandardDeviation(data, decimalPlaces);
-    return data.map(val => (val - mean) / stdDev);
+    const copy = [...data];
+    const mean = getArithmeticMean(copy) ?? 0;
+    const stdDev = getStandardDeviation(copy, decimalPlaces);
+    return copy.map(val => (val - mean) / stdDev);
 };
