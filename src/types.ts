@@ -35,3 +35,9 @@ export interface ICircle {
 }
 
 export type IPolygon = Vector2[];
+
+export interface IMlStandardizeResult {
+    mean: number;
+    stdDev: number;
+    data: number[];
+}
