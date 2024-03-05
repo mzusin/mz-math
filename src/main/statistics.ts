@@ -77,6 +77,7 @@ TODO:
 
 /**
  * Dispersion: the average square distance from the mean.
+ * Sum of (x - mean)^2 / N
  */
 export const getVariance = (data: number[], decimalPlaces = Infinity) : number|undefined => {
     if(!data || data.length <= 0) return undefined;
@@ -87,6 +88,21 @@ export const getVariance = (data: number[], decimalPlaces = Infinity) : number|u
     const sum = data.reduce((acc, val) => acc + ((val - mean) ** 2), 0);
 
     return setDecimalPlaces(sum / data.length, decimalPlaces);
+};
+
+/**
+ * Another formula
+ * (Sum of x^2) / N - (mean ^ 2)
+ */
+export const getVariance1 = (data: number[], decimalPlaces = Infinity) : number|undefined => {
+    if(!data || data.length <= 0) return undefined;
+
+    const mean = getArithmeticMean(data);
+    if(mean === undefined) return undefined;
+
+    const sum = data.reduce((acc, val) => acc + (val ** 2), 0);
+
+    return setDecimalPlaces((sum / data.length) - (mean ** 2), decimalPlaces);
 };
 
 export const getStandardDeviation = (data: number[], decimalPlaces = Infinity) => {

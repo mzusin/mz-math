@@ -1,4 +1,11 @@
-import { getArithmeticMean, getMedian, getMode, getVariance, getStandardDeviation } from '../src/main/statistics';
+import {
+    getArithmeticMean,
+    getMedian,
+    getMode,
+    getVariance,
+    getVariance1,
+    getStandardDeviation
+} from '../src/main/statistics';
 
 describe('Statistics', () => {
 
@@ -101,6 +108,29 @@ describe('Statistics', () => {
 
             test('[1, 2, 3, 8, 7]', () => {
                 expect(getVariance([1, 2, 3, 8, 7])).toStrictEqual(7.76);
+            });
+        });
+
+        describe('getVariance1()', () => {
+
+            test('[]', () => {
+                expect(getVariance1([])).toStrictEqual(undefined);
+            });
+
+            test('[2]', () => {
+                expect(getVariance1([2])).toStrictEqual(0);
+            });
+
+            test('[2, 2, 3, 3]', () => {
+                expect(getVariance1([2, 2, 3, 3])).toStrictEqual(0.25);
+            });
+
+            test('[0, 0, 5, 5]', () => {
+                expect(getVariance1([0, 0, 5, 5])).toStrictEqual(6.25);
+            });
+
+            test('[1, 2, 3, 8, 7]', () => {
+                expect(getVariance1([1, 2, 3, 8, 7], 2)).toStrictEqual(7.76);
             });
         });
 
