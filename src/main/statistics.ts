@@ -3,7 +3,7 @@ import { setDecimalPlaces } from './format';
 // -------------------- CENTRAL TENDENCY ----------------------------
 
 /**
- * Central tendency: Calculate the Average (mean)
+ * Central tendency: Calculate the Average (mean = μ)
  * Sum of all numbers divided by the array length.
  */
 export const getArithmeticMean = (data: number[], decimalPlaces = Infinity) : number|undefined => {
@@ -79,7 +79,7 @@ TODO:
  * Dispersion: the average square distance from the mean.
  * Sum of (x - mean)^2 / N
  */
-export const getVariance = (data: number[], decimalPlaces = Infinity) : number|undefined => {
+export const getVariance1 = (data: number[], decimalPlaces = Infinity) : number|undefined => {
     if(!data || data.length <= 0) return undefined;
 
     const mean = getArithmeticMean(data);
@@ -91,10 +91,10 @@ export const getVariance = (data: number[], decimalPlaces = Infinity) : number|u
 };
 
 /**
- * Another formula
+ * Another formula of dispersion - the average square distance from the mean.
  * (Sum of x^2) / N - (mean ^ 2)
  */
-export const getVariance1 = (data: number[], decimalPlaces = Infinity) : number|undefined => {
+export const getVariance = (data: number[], decimalPlaces = Infinity) : number|undefined => {
     if(!data || data.length <= 0) return undefined;
 
     const mean = getArithmeticMean(data);
@@ -105,6 +105,9 @@ export const getVariance1 = (data: number[], decimalPlaces = Infinity) : number|
     return setDecimalPlaces((sum / data.length) - (mean ** 2), decimalPlaces);
 };
 
+/**
+ * σ
+ */
 export const getStandardDeviation = (data: number[], decimalPlaces = Infinity) => {
     const variance = getVariance(data) ?? 0;
     return setDecimalPlaces(Math.sqrt(variance), decimalPlaces);
