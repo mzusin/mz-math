@@ -4,7 +4,8 @@ import {
     getMode,
     getVariance,
     getVariance1,
-    getStandardDeviation
+    getStandardDeviation,
+    getArithmeticMeanFromFrequency,
 } from '../src/main/statistics';
 
 describe('Statistics', () => {
@@ -31,6 +32,18 @@ describe('Statistics', () => {
 
             test('[1, 1, 2, 3, 4]', () => {
                 expect(getArithmeticMean([1, 1, 2, 3, 4])).toStrictEqual(2.2);
+            });
+        });
+
+        describe('getArithmeticMeanFromFrequency()', () => {
+
+            test('map 1', () => {
+                const map = new Map();
+                map.set(3, 0.6); // 60% of number 3
+                map.set(4, 0.2); // 20% of number 4
+                map.set(5, 0.2); // 20% of number 5
+
+                expect(getArithmeticMeanFromFrequency(map, 2)).toStrictEqual(3.6);
             });
         });
 

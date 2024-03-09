@@ -14,6 +14,20 @@ export const getArithmeticMean = (data: number[], decimalPlaces = Infinity) : nu
 };
 
 /**
+ * Frequency map: number ---> it's frequency
+ */
+export const getArithmeticMeanFromFrequency = (frequencyMap: Map<number, number>, decimalPlaces = Infinity) => {
+
+    let mean = 0;
+
+    for(const [val, frequency] of frequencyMap) {
+        mean += val * frequency;
+    }
+
+    return setDecimalPlaces(mean, decimalPlaces);
+};
+
+/**
  * Central tendency: What is the central number in the sorted array?
  * Good for lists like [3, 3, 3, 3, 3, 3, 100] - 100 here is called "Outlier"
  */
