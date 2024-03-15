@@ -97,3 +97,4 @@ https://math.mzsoft.org/pages/convert-range.html
 https://math.mzsoft.org/pages/check-if-ranges-overlap.html
 https://math.mzsoft.org/pages/check-if-value-is-number.html
 https://math.mzsoft.org/pages/polar-to-cartesian.html
+https://math.mzsoft.org/pages/temperature-conversion.html

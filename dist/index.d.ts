@@ -363,4 +363,11 @@ declare module 'mz-math' {
     export const naturalNumbersSequenceSum: (n: number) => number;
     export const arithmeticSequenceSum: (n: number, a: number, d: number) => number;
 
+    export const celsiusToFahrenheit: (celsius: number, decimalPlaces?: number) => number;
+    export const celsiusToKelvin: (celsius: number, decimalPlaces?: number) => number;
+    export const fahrenheitToCelsius: (fahrenheit: number, decimalPlaces?: number) => number;
+    export const fahrenheitToKelvin: (fahrenheit: number, decimalPlaces?: number) => number;
+    export const kelvinToCelsius: (kelvin: number, decimalPlaces?: number) => number;
+    export const kelvinToFahrenheit: (kelvin: number, decimalPlaces?: number) => number;
+
 }
