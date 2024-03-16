@@ -123,7 +123,9 @@ This project is a collection of TypeScript math helpers and utilities for the br
 - [Check If Value Is Number](https://math.mzsoft.org/pages/check-if-value-is-number.html)
 - [Polar To Cartesian](https://math.mzsoft.org/pages/polar-to-cartesian.html)
 - [Temperature Conversion](https://math.mzsoft.org/pages/temperature-conversion.html)
+- [Series](https://math.mzsoft.org/pages/series.html)
 ------------------------------
+
 
 
 

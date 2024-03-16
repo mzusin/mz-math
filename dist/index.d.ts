@@ -370,4 +370,6 @@ declare module 'mz-math' {
     export const kelvinToCelsius: (kelvin: number, decimalPlaces?: number) => number;
     export const kelvinToFahrenheit: (kelvin: number, decimalPlaces?: number) => number;
 
+    export const naturalNumbersSum1ToN: (n: number) => number;
+    export const naturalNumbersSumMToN: (m: number, n: number) => number;
 }

@@ -19,6 +19,7 @@ import * as circleEllipse from './main/circle-ellipse';
 import * as sequence from './main/sequence';
 import * as statistics from './main/statistics';
 import * as ml from './main/ml';
+import * as series from './main/series';
 
 const api = {
     ...vector,
@@ -42,6 +43,7 @@ const api = {
     ...sequence,
     ...statistics,
     ...ml,
+    ...series,
 };
 
 declare global {
@@ -73,3 +75,4 @@ export * from './main/circle-ellipse';
 export * from './main/sequence';
 export * from './main/statistics';
 export * from './main/ml';
+export * from './main/series';

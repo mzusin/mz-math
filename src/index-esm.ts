@@ -19,3 +19,4 @@ export * from './main/circle-ellipse';
 export * from './main/sequence';
 export * from './main/statistics';
 export * from './main/ml';
+export * from './main/series';
