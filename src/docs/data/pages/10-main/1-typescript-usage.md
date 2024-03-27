@@ -9,7 +9,7 @@ npm install mz-math
 Or using Yarn:
 
 ```shell
-yarn add mz-svg
+yarn add mz-math
 ```
 
 The import any function like **v2Sum**:
