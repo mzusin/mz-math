@@ -1,5 +1,5 @@
 /* 
-mzMath v3.0.25
+mzMath v3.0.26
 A collection of TypeScript-based math helpers.
 https://github.com/mzusin/mz-math
 Licensed GPLv3 for open source use, or Commercial License for commercial use - https://github.com/mzusin/index/blob/main/LICENSE.md       
