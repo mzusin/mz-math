@@ -1,4 +1,9 @@
-import { permutationsWithRepetition, permutationsWithoutRepetition, combinationsWithoutRepetition } from '../src/main/combinatorics/combinatorics';
+import {
+    permutationsWithRepetition,
+    permutationsWithoutRepetition,
+    combinationsWithoutRepetition,
+    combinationsWithRepetition,
+} from '../src/main/combinatorics/combinatorics';
 
 describe('Combinatorics', () => {
 
@@ -67,6 +72,38 @@ describe('Combinatorics', () => {
         it('throws an error if n or r are not integers', () => {
             expect(() => combinationsWithoutRepetition(5.5, 3)).toThrow('Both n and r should be integers.');
             expect(() => combinationsWithoutRepetition(5, 2.7)).toThrow('Both n and r should be integers.');
+        });
+    });
+
+    describe('combinationsWithRepetition()', () => {
+        it('calculates simple combinations with repetition correctly', () => {
+            expect(combinationsWithRepetition(5, 3)).toBe(35);
+            expect(combinationsWithRepetition(3, 2)).toBe(6); // C(3+2-1, 2) = C(4, 2) = 6
+            expect(combinationsWithRepetition(4, 3)).toBe(20); // C(4+3-1, 3) = C(6, 3) = 20
+        });
+
+        it('returns 1 when r is 0, regardless of n', () => {
+            expect(combinationsWithRepetition(5, 0)).toBe(1); // C(5-1, 0) = C(4, 0) = 1
+            expect(combinationsWithRepetition(10, 0)).toBe(1); // C(10-1, 0) = C(9, 0) = 1
+        });
+
+        it('calculates combinations correctly when n is 1', () => {
+            expect(combinationsWithRepetition(1, 1)).toBe(1);
+            expect(combinationsWithRepetition(1, 5)).toBe(1); // C(1+5-1, 5) = C(5, 5) = 1
+        });
+
+        it('throws an error if n or r are negative', () => {
+            expect(() => combinationsWithRepetition(-1, 3)).toThrow('Both n and r should be non-negative integers.');
+            expect(() => combinationsWithRepetition(5, -1)).toThrow('Both n and r should be non-negative integers.');
+        });
+
+        it('handles edge cases for large n and small r', () => {
+            expect(combinationsWithRepetition(100, 1)).toBe(100); // C(100+1-1, 1) = C(100, 1) = 100
+        });
+
+        it('handles cases where n is 0', () => {
+            expect(combinationsWithRepetition(0, 0)).toBe(1); // C(0+0-1, 0) = C(-1, 0) = 1 (special handled)
+            expect(combinationsWithRepetition(0, 1)).toBe(1); // C(0+1-1, 1) = C(0, 1) = 1 (special handled)
         });
     });
 });

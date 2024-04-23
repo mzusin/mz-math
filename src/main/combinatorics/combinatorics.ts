@@ -128,7 +128,7 @@ export const combinationsWithoutRepetition = (n: number, r: number) : number => 
 };
 
 /**
- * Combinations with repetitions:
+ * Combinations with repetitions (multi-choose):
  * - "n" is the number of things to choose from
  * - we choose "r" of them
  * - order doesn't matter
@@ -145,8 +145,8 @@ export const combinationsWithoutRepetition = (n: number, r: number) : number => 
  *   We can have three scoops. How many variations will there be?
  *
  * Tabulation (Bottom-Up Dynamic Programming).
- * Time Complexity:
- * Space Complexity:
+ * Time Complexity: 𝑂((r + n) × r)
+ * Space Complexity: 𝑂((r + n) × r)
  */
 export const combinationsWithRepetition = (n: number, r: number) : number => {
     if (n < 0 || r < 0) {
@@ -156,6 +156,26 @@ export const combinationsWithRepetition = (n: number, r: number) : number => {
         throw new Error('Both n and r should be integers.');
     }
 
+    if(n === 0) return 1;
 
+    // Calculate adjusted values for indices in the DP table
+    const totalItems = r + n - 1;
+    const chooseItems = r;
+
+    // Initialize DP table
+    const dp: number[][] = Array.from({ length: totalItems + 1 }, () => Array(chooseItems + 1).fill(0));
+
+    // Base case initialization: C(i, 0) = 1 for all i, because there's one way to choose nothing
+    for (let i = 0; i <= totalItems; i++) {
+        dp[i][0] = 1;
+    }
+
+    for (let i = 1; i <= totalItems; i++) {
+        for (let j = 1; j <= Math.min(i, chooseItems); j++) {
+            dp[i][j] = dp[i - 1][j] + dp[i - 1][j - 1];
+        }
+    }
+
+    return dp[totalItems][chooseItems];
 };
 
