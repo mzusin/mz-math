@@ -44,10 +44,34 @@ describe('Combinatorics', () => {
             expect(() => permutationsWithoutRepetition(0, 5)).toThrow('r cannot be greater than n.');
             expect(() => permutationsWithoutRepetition(2, 5)).toThrow('r cannot be greater than n.');
         });
+
+        it('calculates simple permutations without repetition correctly', () => {
+            expect(permutationsWithoutRepetition(5, 3)).toBe(60); // 5P3 = 5 * 4 * 3 = 60
+            expect(permutationsWithoutRepetition(4, 4)).toBe(24); // 4P4 = 4 * 3 * 2 * 1 = 24
+        });
+
+        it('throws an error if n or r are negative', () => {
+            expect(() => permutationsWithoutRepetition(-1, 3)).toThrow('Both n and r should be non-negative integers.');
+            expect(() => permutationsWithoutRepetition(5, -1)).toThrow('Both n and r should be non-negative integers.');
+        });
+
+        it('throws an error if r is greater than n', () => {
+            expect(() => permutationsWithoutRepetition(3, 5)).toThrow('r cannot be greater than n.');
+        });
+
+        it('throws an error if n or r are not integers', () => {
+            expect(() => permutationsWithoutRepetition(5.5, 3)).toThrow('Both n and r should be integers.');
+            expect(() => permutationsWithoutRepetition(5, 2.7)).toThrow('Both n and r should be integers.');
+        });
+
+        it('handles large n and r correctly', () => {
+            expect(permutationsWithoutRepetition(20, 19)).toBe(2432902008176640000); // 20P19 = 20!
+        });
     });
 
     describe('combinationsWithoutRepetition()', () => {
         it('calculates small combinations correctly', () => {
+            expect(combinationsWithoutRepetition(3, 2)).toBe(3);
             expect(combinationsWithoutRepetition(16, 3)).toBe(560);
             expect(combinationsWithoutRepetition(5, 3)).toBe(10);
             expect(combinationsWithoutRepetition(6, 2)).toBe(15);

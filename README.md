@@ -113,6 +113,9 @@ This project is a collection of TypeScript math helpers and utilities for the br
 ### Sequence 
 - [Natural Numbers Sequence Sum](https://math.mzsoft.org/pages/natural-numbers-sequence-sum.html)
 - [Arithmetic Sequence Sum](https://math.mzsoft.org/pages/arithmetic-sequence-sum.html)
+### Combinatorics 
+- [Factorial](https://math.mzsoft.org/pages/factorial.html)
+- [Combinatorics](https://math.mzsoft.org/pages/combinatorics.html)
 ### Other 
 - [Set Decimal Places](https://math.mzsoft.org/pages/set-decimal-places.html)
 - [Convert String To Number](https://math.mzsoft.org/pages/convert-string-to-number.html)
@@ -125,6 +128,8 @@ This project is a collection of TypeScript math helpers and utilities for the br
 - [Temperature Conversion](https://math.mzsoft.org/pages/temperature-conversion.html)
 - [Series](https://math.mzsoft.org/pages/series.html)
 ------------------------------
+
+
 
 
 

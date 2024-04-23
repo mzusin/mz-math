@@ -235,32 +235,35 @@
           <path d="m7 7 5 5-5 5m6-10 5 5-5 5"/>
         </svg>
 
-    </div><div class="flex flex-col" data-links><a href="/pages/factorial.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Factorial</a><a href="/pages/combinatorics.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600  text-slate-500">Combinatorics</a></div><div class="text-xl my-4 flex items-center cursor-pointer" data-collapsible-title data-opened="true" data-id="1000-other">
+    </div><div class="flex flex-col" data-links><a href="/pages/factorial.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Factorial</a><a href="/pages/combinatorics.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600  text-sky-500">Combinatorics</a></div><div class="text-xl my-4 flex items-center cursor-pointer" data-collapsible-title data-opened="true" data-id="1000-other">
         Other 
         <svg data-arrow xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#626e7f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="ml-2 rotate-90" viewBox="0 0 24 24">
           <path stroke="none" d="M0 0h24v24H0z"/>
           <path d="m7 7 5 5-5 5m6-10 5 5-5 5"/>
         </svg>
 
-    </div><div class="flex flex-col" data-links><a href="/pages/set-decimal-places.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-sky-500">Set Decimal Places</a><a href="/pages/convert-string-to-number.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Convert String To Number</a><a href="/pages/square-in-circle.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Square In Circle</a><a href="/pages/modulo.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Modulo</a><a href="/pages/convert-range.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Convert Range</a><a href="/pages/check-if-ranges-overlap.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Check If Ranges Overlap</a><a href="/pages/check-if-value-is-number.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Check If Value Is Number</a><a href="/pages/polar-to-cartesian.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Polar To Cartesian</a><a href="/pages/temperature-conversion.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Temperature Conversion</a><a href="/pages/series.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600  text-slate-500">Series</a></div>
+    </div><div class="flex flex-col" data-links><a href="/pages/set-decimal-places.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Set Decimal Places</a><a href="/pages/convert-string-to-number.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Convert String To Number</a><a href="/pages/square-in-circle.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Square In Circle</a><a href="/pages/modulo.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Modulo</a><a href="/pages/convert-range.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Convert Range</a><a href="/pages/check-if-ranges-overlap.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Check If Ranges Overlap</a><a href="/pages/check-if-value-is-number.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Check If Value Is Number</a><a href="/pages/polar-to-cartesian.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Polar To Cartesian</a><a href="/pages/temperature-conversion.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Temperature Conversion</a><a href="/pages/series.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600  text-slate-500">Series</a></div>
       </div>
     </div>
 
     <div class="p-4 overflow-y-auto h-full md:w-100-350 dark:bg-slate-800">
-      <div class="w-800 max-w-full mx-auto my-10 leading-7 text-lg text-slate-800 dark:text-slate-200"><h1 class="text-3xl mb-8">Set Decimal Places</h1>
-<p class="mb-4">This helper allows to format a number to show a selected number of decimal places.</p>
-<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">import</span> { setDecimalPlaces } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mz-math&#x27;</span>;
+      <div class="w-800 max-w-full mx-auto my-10 leading-7 text-lg text-slate-800 dark:text-slate-200"><h1 class="text-3xl mb-8">Combinatorics</h1>
+<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">import</span> {
+    permutationsWithRepetition,
+    permutationsWithoutRepetition,
+    combinationsWithoutRepetition,
+    combinationsWithRepetition,
+} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mz-math&#x27;</span>;
 
-<span class="hljs-keyword">const</span> res = <span class="hljs-title function_">setDecimalPlaces</span>(<span class="hljs-number">1.2345</span>, <span class="hljs-number">2</span>); <span class="hljs-comment">// 1.23</span>
-<span class="hljs-keyword">const</span> res = <span class="hljs-title function_">setDecimalPlaces</span>(<span class="hljs-number">1.2399</span>, <span class="hljs-number">2</span>); <span class="hljs-comment">// 1.24</span>
-<span class="hljs-keyword">const</span> res = <span class="hljs-title function_">setDecimalPlaces</span>(<span class="hljs-number">1.2399</span>, <span class="hljs-number">0</span>); <span class="hljs-comment">// 1</span></code></pre>
-<p class="mb-4">The result of this function is a number (not a string), so sometimes fewer decimal places will be displayed after rounding:</p>
-<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">const</span> res = <span class="hljs-title function_">setDecimalPlaces</span>(<span class="hljs-number">1.239999</span>, <span class="hljs-number">4</span>); <span class="hljs-comment">// 1.2400 = 1.24</span></code></pre>
+<span class="hljs-keyword">const</span> res1 = <span class="hljs-title function_">permutationsWithRepetition</span>(<span class="hljs-number">3</span>, <span class="hljs-number">2</span>); <span class="hljs-comment">// 9</span>
+<span class="hljs-keyword">const</span> res2 = <span class="hljs-title function_">permutationsWithoutRepetition</span>(<span class="hljs-number">4</span>, <span class="hljs-number">4</span>); <span class="hljs-comment">// 24</span>
+<span class="hljs-keyword">const</span> res3 = <span class="hljs-title function_">combinationsWithoutRepetition</span>(<span class="hljs-number">16</span>, <span class="hljs-number">3</span>); <span class="hljs-comment">// 560</span>
+<span class="hljs-keyword">const</span> res4 = <span class="hljs-title function_">combinationsWithRepetition</span>(<span class="hljs-number">5</span>, <span class="hljs-number">3</span>); <span class="hljs-comment">// 35</span></code></pre>
 </div>
 
       <div class="w-800 max-w-full mx-auto grid lg:grid-cols-2 gap-8 items-center text-slate-500">
 <div class="flex justify-between items-start border border-slate-200 dark:border-slate-600 rounded p-4">
-  <a href="/pages/combinatorics.html" title="" class="mr-4 hover:text-blue-500">
+  <a href="/pages/factorial.html" title="" class="mr-4 hover:text-blue-500">
     <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24">
     <path stroke="none" d="M0 0h24v24H0z"/>
     <path d="M5 12h14M5 12l6 6m-6-6 6-6"/>
@@ -268,7 +271,7 @@
   </a>
   <div class="flex flex-col items-end justify-center">
     <div class="mb-2 text-sm text-slate-300">Previous</div>
-    <a href="/pages/combinatorics.html" title="" class="hover:text-blue-500">Combinatorics</a>
+    <a href="/pages/factorial.html" title="" class="hover:text-blue-500">Factorial</a>
   </div>
 </div>      
     
@@ -276,10 +279,10 @@
   
   <div class="flex flex-col justify-center">
     <div class="mb-2 text-sm text-slate-300">Next</div>
-    <a href="/pages/convert-string-to-number.html" title="" class="hover:text-blue-500">Convert String To Number</a>
+    <a href="/pages/set-decimal-places.html" title="" class="hover:text-blue-500">Set Decimal Places</a>
   </div>
   
-  <a href="/pages/convert-string-to-number.html" title="" class="mr-4 hover:text-blue-500">
+  <a href="/pages/set-decimal-places.html" title="" class="mr-4 hover:text-blue-500">
     <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24">
      <path stroke="none" d="M0 0h24v24H0z"/>
      <path d="M5 12h14m-6 6 6-6m-6-6 6 6"/>
