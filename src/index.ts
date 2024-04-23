@@ -20,6 +20,8 @@ import * as sequence from './main/sequence';
 import * as statistics from './main/statistics';
 import * as ml from './main/ml';
 import * as series from './main/series';
+import * as factorial from './main/combinatorics/factorial';
+import * as combinatorics from './main/combinatorics/combinatorics';
 
 const api = {
     ...vector,
@@ -44,6 +46,8 @@ const api = {
     ...statistics,
     ...ml,
     ...series,
+    ...factorial,
+    ...combinatorics,
 };
 
 declare global {
@@ -76,3 +80,5 @@ export * from './main/sequence';
 export * from './main/statistics';
 export * from './main/ml';
 export * from './main/series';
+export * from './main/combinatorics/factorial';
+export * from './main/combinatorics/combinatorics';

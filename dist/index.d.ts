@@ -372,4 +372,11 @@ declare module 'mz-math' {
 
     export const naturalNumbersSum1ToN: (n: number) => number;
     export const naturalNumbersSumMToN: (m: number, n: number) => number;
+
+    export const factorialIterative: (n: number, start?: number) => number;
+    export const factorialRecursive: (n: number, start?: number) => number;
+    export const factorialMemoized: (n: number, start?: number) => number;
+    export const factorial: (n: number, start?: number) => number;
+
+    export const permutationsWithRepetition: (n: number, r: number) => number;
 }

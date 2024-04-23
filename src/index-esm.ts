@@ -20,3 +20,5 @@ export * from './main/sequence';
 export * from './main/statistics';
 export * from './main/ml';
 export * from './main/series';
+export * from './main/combinatorics/factorial';
+export * from './main/combinatorics/combinatorics';

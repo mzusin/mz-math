@@ -120,7 +120,7 @@ describe('Statistics', () => {
             });
 
             test('[1, 2, 3, 8, 7]', () => {
-                expect(getVariance([1, 2, 3, 8, 7])).toStrictEqual(7.76);
+                expect(getVariance([1, 2, 3, 8, 7], 2)).toStrictEqual(7.76);
             });
         });
 
