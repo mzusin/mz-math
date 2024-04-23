@@ -1,4 +1,4 @@
-import { permutationsWithRepetition } from '../src/main/combinatorics/combinatorics';
+import { permutationsWithRepetition, permutationsWithoutRepetition } from '../src/main/combinatorics/combinatorics';
 
 describe('Combinatorics', () => {
 
@@ -23,6 +23,12 @@ describe('Combinatorics', () => {
         it('handles edge cases with zero correctly', () => {
             expect(permutationsWithRepetition(0, 5)).toBe(0); // 0^5 should be 0
             expect(permutationsWithRepetition(5, 0)).toBe(1); // 5^0 should be 1
+        });
+    });
+
+    describe('permutationsWithoutRepetition()', () => {
+        it('calculates correct permutations for valid inputs', () => {
+            expect(permutationsWithoutRepetition(16, 3)).toBe(3360);
         });
     });
 });

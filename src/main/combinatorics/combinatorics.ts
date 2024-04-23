@@ -1,3 +1,5 @@
+import { factorial } from './factorial';
+
 /**
  * Order doesn't matter.
  */
@@ -6,17 +8,6 @@ export const combinations = (n: number) => {
 
 };
 */
-
-/**
- * Order does matter.
- * A Permutation is an ordered Combination.
- */
-/*
-export const permutations = (n: number, isRepetitionAllowed: boolean) => {
-    if(isRepetitionAllowed) {
-        // n!
-    }
-};*/
 
 /**
  * Permutations with repetitions:
@@ -76,6 +67,6 @@ export const permutationsWithoutRepetition = (n: number, r: number) => {
         throw new Error('Both n and r should be integers.');
     }
 
-    return n ** r;
+    return factorial(n, n - r + 1);
 };
 
