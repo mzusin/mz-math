@@ -85,6 +85,7 @@ export const combinationsWithRepetition = () => {
  * - no repetitions
  *
  * And is also known as the Binomial Coefficient.
+ * We can also use Pascal's Triangle to find the values.
  *
  * Formula:
  * --------
