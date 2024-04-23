@@ -380,4 +380,5 @@ declare module 'mz-math' {
 
     export const permutationsWithRepetition: (n: number, r: number) => number;
     export const permutationsWithoutRepetition: (n: number, r: number) => number;
+    export const combinationsWithoutRepetition: (n: number, r: number) => number;
 }
