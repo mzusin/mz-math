@@ -93,6 +93,10 @@ export const combinationsWithRepetition = () => {
  * Example:
  * --------
  * Such as lottery numbers (2, 14, 15, 27, 30, 33).
+ *
+ * Tabulation (Bottom-Up Dynamic Programming).
+ * Time Complexity: 𝑂(n × r)
+ * Space Complexity: 𝑂(n × r)
  */
 export const combinationsWithoutRepetition = (n: number, r: number) : number => {
     if (n < 0 || r < 0) {
