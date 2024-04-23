@@ -27,6 +27,11 @@ export const permutationsWithRepetition = (n: number, r: number) => {
     if (n < 0 || r < 0) {
         throw new Error('Both n and r should be non-negative integers.');
     }
+
+    if(r > n) {
+        throw new Error('r cannot be greater than n.');
+    }
+
     if (!Number.isInteger(n) || !Number.isInteger(r)) {
         throw new Error('Both n and r should be integers.');
     }
@@ -58,6 +63,11 @@ export const permutationsWithoutRepetition = (n: number, r: number) => {
     if (n < 0 || r < 0) {
         throw new Error('Both n and r should be non-negative integers.');
     }
+
+    if(r > n) {
+        throw new Error('r cannot be greater than n.');
+    }
+
     if (!Number.isInteger(n) || !Number.isInteger(r)) {
         throw new Error('Both n and r should be integers.');
     }
@@ -91,6 +101,11 @@ export const combinationsWithoutRepetition = (n: number, r: number) : number => 
     if (n < 0 || r < 0) {
         throw new Error('Both n and r should be non-negative integers.');
     }
+
+    if(r > n) {
+        throw new Error('r cannot be greater than n.');
+    }
+
     if (!Number.isInteger(n) || !Number.isInteger(r)) {
         throw new Error('Both n and r should be integers.');
     }
@@ -152,6 +167,11 @@ export const combinationsWithRepetition = (n: number, r: number) : number => {
     if (n < 0 || r < 0) {
         throw new Error('Both n and r should be non-negative integers.');
     }
+
+    if(r > n) {
+        throw new Error('r cannot be greater than n.');
+    }
+
     if (!Number.isInteger(n) || !Number.isInteger(r)) {
         throw new Error('Both n and r should be integers.');
     }

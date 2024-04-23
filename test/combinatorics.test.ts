@@ -26,14 +26,23 @@ describe('Combinatorics', () => {
         });
 
         it('handles edge cases with zero correctly', () => {
-            expect(permutationsWithRepetition(0, 5)).toBe(0); // 0^5 should be 0
             expect(permutationsWithRepetition(5, 0)).toBe(1); // 5^0 should be 1
+        });
+
+        it('throws an error if r is greater than n', () => {
+            expect(() => permutationsWithRepetition(0, 5)).toThrow('r cannot be greater than n.');
+            expect(() => permutationsWithRepetition(2, 5)).toThrow('r cannot be greater than n.');
         });
     });
 
     describe('permutationsWithoutRepetition()', () => {
         it('calculates correct permutations for valid inputs', () => {
             expect(permutationsWithoutRepetition(16, 3)).toBe(3360);
+        });
+
+        it('throws an error if r is greater than n', () => {
+            expect(() => permutationsWithoutRepetition(0, 5)).toThrow('r cannot be greater than n.');
+            expect(() => permutationsWithoutRepetition(2, 5)).toThrow('r cannot be greater than n.');
         });
     });
 
@@ -65,9 +74,11 @@ describe('Combinatorics', () => {
             expect(() => combinationsWithoutRepetition(5, -1)).toThrow('Both n and r should be non-negative integers.');
         });
 
-        /*it('throws an error if r is greater than n', () => {
-            expect(() => combinationsWithoutRepetition(3, 5)).toThrow('n and r must be non-negative integers, and r cannot be greater than n.');
-        });*/
+        it('throws an error if r is greater than n', () => {
+            expect(() => combinationsWithoutRepetition(3, 5)).toThrow('r cannot be greater than n.');
+            expect(() => combinationsWithoutRepetition(2, 5)).toThrow('r cannot be greater than n.');
+            expect(() => combinationsWithoutRepetition(0, 5)).toThrow('r cannot be greater than n.');
+        });
 
         it('throws an error if n or r are not integers', () => {
             expect(() => combinationsWithoutRepetition(5.5, 3)).toThrow('Both n and r should be integers.');
@@ -89,7 +100,6 @@ describe('Combinatorics', () => {
 
         it('calculates combinations correctly when n is 1', () => {
             expect(combinationsWithRepetition(1, 1)).toBe(1);
-            expect(combinationsWithRepetition(1, 5)).toBe(1); // C(1+5-1, 5) = C(5, 5) = 1
         });
 
         it('throws an error if n or r are negative', () => {
@@ -103,7 +113,12 @@ describe('Combinatorics', () => {
 
         it('handles cases where n is 0', () => {
             expect(combinationsWithRepetition(0, 0)).toBe(1); // C(0+0-1, 0) = C(-1, 0) = 1 (special handled)
-            expect(combinationsWithRepetition(0, 1)).toBe(1); // C(0+1-1, 1) = C(0, 1) = 1 (special handled)
+        });
+
+        it('throws an error if r is greater than n', () => {
+            expect(() => combinationsWithRepetition(3, 5)).toThrow('r cannot be greater than n.');
+            expect(() => combinationsWithRepetition(2, 5)).toThrow('r cannot be greater than n.');
+            expect(() => combinationsWithRepetition(0, 5)).toThrow('r cannot be greater than n.');
         });
     });
 });
