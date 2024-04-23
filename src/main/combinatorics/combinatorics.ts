@@ -66,18 +66,6 @@ export const permutationsWithoutRepetition = (n: number, r: number) => {
 };
 
 /**
- * Order doesn't matter.
- *
- * Example:
- * --------
- * Coins in your pocket (5, 5, 5, 10, 10).
-
-export const combinationsWithRepetition = () => {
-
-};
- */
-
-/**
  * Combinations without repetitions:
  * - "n" is the number of things to choose from
  * - we choose "r" of them
@@ -137,5 +125,37 @@ export const combinationsWithoutRepetition = (n: number, r: number) : number => 
     }
 
     return dp[n][r];
+};
+
+/**
+ * Combinations with repetitions:
+ * - "n" is the number of things to choose from
+ * - we choose "r" of them
+ * - order doesn't matter
+ * - repetition is allowed
+ *
+ * Formula:
+ * --------
+ * (r + n − 1)! / r!(n − 1)! = C(r + n − 1, r) = C(r + n − 1, n − 1)
+ *
+ * Example:
+ * --------
+ * - Coins in your pocket (5, 5, 5, 10, 10).
+ * - Let us say there are five flavors of ice cream: banana, chocolate, lemon, strawberry and vanilla.å
+ *   We can have three scoops. How many variations will there be?
+ *
+ * Tabulation (Bottom-Up Dynamic Programming).
+ * Time Complexity:
+ * Space Complexity:
+ */
+export const combinationsWithRepetition = (n: number, r: number) : number => {
+    if (n < 0 || r < 0) {
+        throw new Error('Both n and r should be non-negative integers.');
+    }
+    if (!Number.isInteger(n) || !Number.isInteger(r)) {
+        throw new Error('Both n and r should be integers.');
+    }
+
+
 };
 

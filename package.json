@@ -61,7 +61,8 @@
     "lerp",
     "linear interpolation",
     "collision detection",
-    "statistics"
+    "statistics",
+    "combinatorics"
   ],
   "author": "Miriam Zusin <miriam.zusin@gmail.com>",
   "license": "SEE LICENSE IN LICENSE.md",
