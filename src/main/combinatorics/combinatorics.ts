@@ -96,6 +96,9 @@ export const permutationsWithoutRepetition = (n: number, r: number) => {
  * Tabulation (Bottom-Up Dynamic Programming).
  * Time Complexity: 𝑂(n × r)
  * Space Complexity: 𝑂(n × r)
+ *
+ * When r = 2:
+ * n! / (2! * (n - 2)!) = (n * (n-1) * (n - 2)!) / (2! * (n - 2)!) = n * (n-1) / 2
  */
 export const combinationsWithoutRepetition = (n: number, r: number) : number => {
     if (n < 0 || r < 0) {
