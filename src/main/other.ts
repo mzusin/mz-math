@@ -37,3 +37,27 @@ export const polarToCartesian = (center: Vector2, radii: Vector2, angleInRad: nu
         setDecimalPlaces(cy + (ry * Math.sin(angleInRad)), decimalPlaces),
     ];
 };
+
+/**
+ * Greatest common divisor (GCD).
+ * O( log(min(num1, num2)) ).
+ * GCD is always defined as a non-negative number.
+ * If num2 is 0, then the GCD is num1.
+ *
+ * a=48,𝑏=18 ---> 48 % 18 = 12
+ * a=18,b=12 ---> 18 % 12 = 6
+ * a=12,b=6 ---> 12 % 6 = 0
+ * a=6,b=0 ---> result is 6
+ */
+export const gcd = (num1: number, num2: number): number => {
+    num1 = Math.abs(num1);
+    num2 = Math.abs(num2);
+
+    while (num2 !== 0) {
+        const temp = num2;
+        num2 = num1 % num2;
+        num1 = temp;
+    }
+
+    return num1;
+};

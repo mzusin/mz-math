@@ -1,4 +1,4 @@
-import { mod, convertRange, doRangesOverlap, isNumber, polarToCartesian } from '../src/main/other';
+import { mod, convertRange, doRangesOverlap, isNumber, polarToCartesian, gcd } from '../src/main/other';
 import { Vector2 } from '../src/types';
 
 describe('Modulo', () => {
@@ -130,5 +130,40 @@ describe('Polar to Cartesian', () => {
         const decimalPlaces = 2;
 
         expect(polarToCartesian(center, radii, angleInRad, decimalPlaces)).toStrictEqual([7.07, 14.14]);
+    });
+});
+
+describe('Greatest common divisor', () => {
+
+    test('gcd(18, 6)', () => {
+        expect(gcd(18, 6)).toStrictEqual(6);
+    });
+
+    test('gcd(-18, 6)', () => {
+        expect(gcd(-18, 6)).toStrictEqual(6);
+    });
+
+    test('gcd(18, -6)', () => {
+        expect(gcd(18, -6)).toStrictEqual(6);
+    });
+
+    test('gcd(-18, -6)', () => {
+        expect(gcd(-18, -6)).toStrictEqual(6);
+    });
+
+    test('gcd(6, 10)', () => {
+        expect(gcd(6, 10)).toStrictEqual(2);
+    });
+
+    test('gcd(10, 3)', () => {
+        expect(gcd(10, 3)).toStrictEqual(1);
+    });
+
+    test('gcd(10, 0)', () => {
+        expect(gcd(10, 0)).toStrictEqual(10);
+    });
+
+    test('gcd(0, 10)', () => {
+        expect(gcd(0, 10)).toStrictEqual(10);
     });
 });

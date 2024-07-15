@@ -101,3 +101,4 @@ https://math.mzsoft.org/pages/check-if-value-is-number.html
 https://math.mzsoft.org/pages/polar-to-cartesian.html
 https://math.mzsoft.org/pages/temperature-conversion.html
 https://math.mzsoft.org/pages/series.html
+https://math.mzsoft.org/pages/gcd.html

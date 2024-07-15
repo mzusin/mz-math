@@ -127,7 +127,9 @@ This project is a collection of TypeScript math helpers and utilities for the br
 - [Polar To Cartesian](https://math.mzsoft.org/pages/polar-to-cartesian.html)
 - [Temperature Conversion](https://math.mzsoft.org/pages/temperature-conversion.html)
 - [Series](https://math.mzsoft.org/pages/series.html)
+- [Gcd](https://math.mzsoft.org/pages/gcd.html)
 ------------------------------
+
 
 
 
