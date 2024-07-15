@@ -39,7 +39,7 @@ export const polarToCartesian = (center: Vector2, radii: Vector2, angleInRad: nu
 };
 
 /**
- * Greatest common divisor (GCD).
+ * Greatest common divisor (GCD) - Euclidean algorithm.
  * O( log(min(num1, num2)) ).
  *
  * GCD is always defined as a non-negative number.
