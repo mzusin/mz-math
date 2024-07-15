@@ -41,8 +41,10 @@ export const polarToCartesian = (center: Vector2, radii: Vector2, angleInRad: nu
 /**
  * Greatest common divisor (GCD).
  * O( log(min(num1, num2)) ).
+ *
  * GCD is always defined as a non-negative number.
  * If num2 is 0, then the GCD is num1.
+ * Otherwise, the GCD of num1 and num2 is the same as the GCD of num2 and num1 % num2.
  *
  * a=48,𝑏=18 ---> 48 % 18 = 12
  * a=18,b=12 ---> 18 % 12 = 6
